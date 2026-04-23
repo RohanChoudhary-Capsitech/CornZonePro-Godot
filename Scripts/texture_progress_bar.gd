@@ -8,5 +8,4 @@ func _ready():
 
 func _on_loading_finished():
 	print("Loading complete!")
-	UIManager.disable_canvas($"../..")
-	UIManager.enable_canvas($"../../../LoadingScreen2")
+	UIManager.enable_canvas($"../../../LoginScreen")
