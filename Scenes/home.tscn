@@ -29,7 +29,7 @@ mesh = SubResource("BoxMesh_1ey7h")
 shape = SubResource("BoxShape3D_1ey7h")
 metadata/_edit_group_ = true
 
-[node name="board combine (2)" parent="." unique_id=496892006 instance=ExtResource("2_12ycv")]
+[node name="Board" parent="." unique_id=496892006 instance=ExtResource("2_12ycv")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 35.468597)
 
 [node name="SpawnPOINT" type="Node3D" parent="." unique_id=1295221534]
