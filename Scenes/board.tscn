@@ -17,7 +17,7 @@ disable_mode = 1
 transform = Transform3D(-1.5298985e-08, 0.35, -1.5298985e-08, 0, -1.5298985e-08, -0.35, -0.35, -1.5298985e-08, 6.687399e-16, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_psm7c")
 
-[node name="throwingStand_grp" parent="." index="1" unique_id=1728115376]
+[node name="throwingStand_grp" parent="." index="1" unique_id=949480625]
 transform = Transform3D(-1.5298985e-08, 0.35, -1.5298985e-08, 0, -1.5298985e-08, -0.35, -0.35, -1.5298985e-08, 6.687399e-16, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="." index="2" unique_id=1634738992]
