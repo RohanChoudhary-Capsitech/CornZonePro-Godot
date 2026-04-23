@@ -59,8 +59,9 @@ offset_bottom = 60.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 36
 
-[node name="UIManager" type="Node" parent="." unique_id=1343059379]
+[node name="UIManager" type="Node" parent="." unique_id=1343059379 node_paths=PackedStringArray("canvas_layers")]
 script = ExtResource("4_q1yq7")
+canvas_layers = [NodePath("LoadingScreen"), NodePath("LoginScreen")]
 
 [node name="LoadingScreen" type="CanvasLayer" parent="UIManager" unique_id=1544671716]
 
@@ -121,10 +122,9 @@ text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LoadingScreen2" type="CanvasLayer" parent="UIManager" unique_id=1588224233]
-visible = false
+[node name="LoginScreen" type="CanvasLayer" parent="UIManager" unique_id=1588224233]
 
-[node name="BG" type="TextureRect" parent="UIManager/LoadingScreen2" unique_id=635102092]
+[node name="BG" type="TextureRect" parent="UIManager/LoginScreen" unique_id=635102092]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -133,7 +133,7 @@ grow_vertical = 2
 texture = ExtResource("4_12ycv")
 expand_mode = 4
 
-[node name="LoginPanel" type="Control" parent="UIManager/LoadingScreen2" unique_id=225060287]
+[node name="LoginPanel" type="Control" parent="UIManager/LoginScreen" unique_id=225060287]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -141,7 +141,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelBG" type="TextureRect" parent="UIManager/LoadingScreen2/LoginPanel" unique_id=1110555549]
+[node name="PanelBG" type="TextureRect" parent="UIManager/LoginScreen/LoginPanel" unique_id=1110555549]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -151,7 +151,7 @@ grow_vertical = 2
 texture = ExtResource("9_cykap")
 expand_mode = 4
 
-[node name="LineEdit" type="LineEdit" parent="UIManager/LoadingScreen2/LoginPanel" unique_id=491425386]
+[node name="LineEdit" type="LineEdit" parent="UIManager/LoginScreen/LoginPanel" unique_id=491425386]
 layout_mode = 0
 offset_right = 68.5
 offset_bottom = 31.0
