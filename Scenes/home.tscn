@@ -12,6 +12,9 @@
 [ext_resource type="FontFile" uid="uid://4qjurbql7g3n" path="res://Fonts/Inter_18pt-SemiBold.ttf" id="10_8riyq"]
 [ext_resource type="Texture2D" uid="uid://cijoie8i5b5b" path="res://Texture Or Sprites/Login Screen/input_bg.png" id="10_nw1ns"]
 [ext_resource type="Texture2D" uid="uid://bd46b8iankgmr" path="res://Texture Or Sprites/Login Screen/BtnBg.png" id="12_gyiet"]
+[ext_resource type="Texture2D" uid="uid://c2dbjirpm1ase" path="res://Texture Or Sprites/Login Screen/Line 14.png" id="13_jjai4"]
+[ext_resource type="Texture2D" uid="uid://cgqyho8ne3j3a" path="res://Texture Or Sprites/Login Screen/Google.png" id="14_lddgv"]
+[ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(10, 0.25, 100)
@@ -32,6 +35,24 @@ texture = ExtResource("12_gyiet")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyiet"]
 texture = ExtResource("12_gyiet")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dyher"]
+texture = ExtResource("14_lddgv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkgvh"]
+texture = ExtResource("14_lddgv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_848r5"]
+texture = ExtResource("14_lddgv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ppvi3"]
+texture = ExtResource("15_smgrs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lddgv"]
+texture = ExtResource("15_smgrs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smgrs"]
+texture = ExtResource("15_smgrs")
 
 [node name="Home" type="Node3D" unique_id=1397785541]
 
@@ -182,6 +203,7 @@ offset_right = 150.0
 offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 
 [node name="UserName" type="LineEdit" parent="UIManager/LoginScreen/LoginPanel/Panel" unique_id=491425386]
 clip_contents = true
@@ -200,17 +222,44 @@ text_direction = 1
 
 [node name="SubmitButton" type="Button" parent="UIManager/LoginScreen/LoginPanel/Panel" unique_id=151783331]
 clip_contents = true
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("7_vkfas")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxTexture_jjai4")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t7s13")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gyiet")
 text = "Play as guest"
 text_overrun_behavior = 2
+
+[node name="TextureRect" type="TextureRect" parent="UIManager/LoginScreen/LoginPanel/Panel" unique_id=1779299529]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("13_jjai4")
+expand_mode = 2
+
+[node name="OauthContainer" type="HBoxContainer" parent="UIManager/LoginScreen/LoginPanel/Panel" unique_id=1263272692]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Google" type="Button" parent="UIManager/LoginScreen/LoginPanel/Panel/OauthContainer" unique_id=838207043]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_dyher")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pkgvh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_848r5")
+
+[node name="Apple" type="Button" parent="UIManager/LoginScreen/LoginPanel/Panel/OauthContainer" unique_id=1763007030]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ppvi3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lddgv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_smgrs")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
