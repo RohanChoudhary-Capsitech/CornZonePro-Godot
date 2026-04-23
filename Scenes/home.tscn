@@ -3,6 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="1_ibywg"]
 [ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="2_12ycv"]
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="3_llnbm"]
+[ext_resource type="Texture2D" uid="uid://bnldalqvq6i6t" path="res://Texture Or Sprites/Home Screen/loading_bg.png" id="4_12ycv"]
+[ext_resource type="Script" uid="uid://dfx1esru4gan0" path="res://Scripts/UIManager.gd" id="4_q1yq7"]
+[ext_resource type="Texture2D" uid="uid://242sv0rapna0" path="res://Texture Or Sprites/Home Screen/Rectangle 352.png" id="5_fhpuh"]
+[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="7_vkfas"]
+[ext_resource type="Script" uid="uid://3msnhuobdxpi" path="res://Scripts/texture_progress_bar.gd" id="8_cykap"]
+[ext_resource type="Texture2D" uid="uid://hd2ok3ihi8lq" path="res://Texture Or Sprites/Home Screen/PanelBg.png" id="9_cykap"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(10, 0.25, 100)
@@ -52,5 +58,102 @@ offset_right = 41.0
 offset_bottom = 60.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 36
+
+[node name="UIManager" type="Node" parent="." unique_id=1343059379]
+script = ExtResource("4_q1yq7")
+
+[node name="LoadingScreen" type="CanvasLayer" parent="UIManager" unique_id=1544671716]
+
+[node name="BG" type="TextureRect" parent="UIManager/LoadingScreen" unique_id=1198044369]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_12ycv")
+expand_mode = 4
+
+[node name="LoadPanel" type="Control" parent="UIManager/LoadingScreen" unique_id=1411730518]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UIManager/LoadingScreen/LoadPanel" unique_id=1853004373]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -120.0
+offset_right = 150.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+step = 0.0
+radial_fill_degrees = 180.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_fhpuh")
+texture_progress = ExtResource("5_fhpuh")
+tint_progress = Color(0.99607843, 0.6666667, 0.1882353, 1)
+script = ExtResource("8_cykap")
+
+[node name="LoadingText" type="RichTextLabel" parent="UIManager/LoadingScreen/LoadPanel" unique_id=771067393]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -190.0
+offset_right = 150.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("7_vkfas")
+theme_override_font_sizes/normal_font_size = 36
+text = "Loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoadingScreen2" type="CanvasLayer" parent="UIManager" unique_id=1588224233]
+visible = false
+
+[node name="BG" type="TextureRect" parent="UIManager/LoadingScreen2" unique_id=635102092]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_12ycv")
+expand_mode = 4
+
+[node name="LoginPanel" type="Control" parent="UIManager/LoadingScreen2" unique_id=225060287]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelBG" type="TextureRect" parent="UIManager/LoadingScreen2/LoginPanel" unique_id=1110555549]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_cykap")
+expand_mode = 4
+
+[node name="LineEdit" type="LineEdit" parent="UIManager/LoadingScreen2/LoginPanel" unique_id=491425386]
+layout_mode = 0
+offset_right = 68.5
+offset_bottom = 31.0
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
