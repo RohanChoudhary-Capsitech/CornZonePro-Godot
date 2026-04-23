@@ -9,6 +9,9 @@
 [ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="7_vkfas"]
 [ext_resource type="Script" uid="uid://3msnhuobdxpi" path="res://Scripts/texture_progress_bar.gd" id="8_cykap"]
 [ext_resource type="Texture2D" uid="uid://hd2ok3ihi8lq" path="res://Texture Or Sprites/Home Screen/PanelBg.png" id="9_cykap"]
+[ext_resource type="FontFile" uid="uid://4qjurbql7g3n" path="res://Fonts/Inter_18pt-SemiBold.ttf" id="10_8riyq"]
+[ext_resource type="Texture2D" uid="uid://cijoie8i5b5b" path="res://Texture Or Sprites/Login Screen/input_bg.png" id="10_nw1ns"]
+[ext_resource type="Texture2D" uid="uid://bd46b8iankgmr" path="res://Texture Or Sprites/Login Screen/BtnBg.png" id="12_gyiet"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(10, 0.25, 100)
@@ -17,6 +20,18 @@ size = Vector3(10, 0.25, 100)
 size = Vector3(10, 0.25, 100)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cykap"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nw1ns"]
+texture = ExtResource("10_nw1ns")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jjai4"]
+texture = ExtResource("12_gyiet")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t7s13"]
+texture = ExtResource("12_gyiet")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyiet"]
+texture = ExtResource("12_gyiet")
 
 [node name="Home" type="Node3D" unique_id=1397785541]
 
@@ -168,16 +183,34 @@ offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LineEdit" type="LineEdit" parent="UIManager/LoginScreen/LoginPanel/Panel" unique_id=491425386]
-modulate = Color(18.892157, 18.892157, 18.892157, 1)
+[node name="UserName" type="LineEdit" parent="UIManager/LoginScreen/LoginPanel/Panel" unique_id=491425386]
 clip_contents = true
-custom_minimum_size = Vector2(50, 20)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 36
+theme_override_colors/font_placeholder_color = Color(0.62352943, 0.62352943, 0.62352943, 1)
+theme_override_fonts/font = ExtResource("10_8riyq")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxTexture_nw1ns")
+placeholder_text = "Type your name"
 alignment = 1
 max_length = 12
 text_direction = 1
+
+[node name="SubmitButton" type="Button" parent="UIManager/LoginScreen/LoginPanel/Panel" unique_id=151783331]
+clip_contents = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxTexture_jjai4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t7s13")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gyiet")
+text = "Play as guest"
+text_overrun_behavior = 2
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
