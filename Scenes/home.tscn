@@ -15,9 +15,27 @@
 [ext_resource type="Texture2D" uid="uid://c2dbjirpm1ase" path="res://Texture Or Sprites/Login Screen/Line 14.png" id="13_jjai4"]
 [ext_resource type="Texture2D" uid="uid://cgqyho8ne3j3a" path="res://Texture Or Sprites/Login Screen/Google.png" id="14_lddgv"]
 [ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
-[ext_resource type="Texture2D" uid="uid://4q7gxugxcs4x" path="res://Texture Or Sprites/Home Screen/Bg.png" id="16_smgrs"]
-[ext_resource type="Texture2D" uid="uid://cpaect1hyewca" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
+[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/BG.png" id="16_848r5"]
+[ext_resource type="Texture2D" uid="uid://df3uq3lg4t57f" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
+[ext_resource type="Texture2D" uid="uid://c841fqdpt4bif" path="res://Texture Or Sprites/Home Screen/XPBg.png" id="17_yxu73"]
+[ext_resource type="Texture2D" uid="uid://18xdrq7xrdl2" path="res://Texture Or Sprites/Home Screen/DailyReward.png" id="18_848r5"]
+[ext_resource type="Texture2D" uid="uid://d0m2tntjy8sdo" path="res://Texture Or Sprites/Home Screen/Coin.png" id="18_kx4oe"]
 [ext_resource type="Texture2D" uid="uid://c8m6hjr6dhre8" path="res://Texture Or Sprites/Home Screen/RightPanel.png" id="18_ppvi3"]
+[ext_resource type="Texture2D" uid="uid://b5bryhtvbharh" path="res://Texture Or Sprites/Home Screen/xp.png" id="18_uo4rt"]
+[ext_resource type="Texture2D" uid="uid://ci1a7ul0of74y" path="res://Texture Or Sprites/Home Screen/Setting.png" id="19_kx4oe"]
+[ext_resource type="Texture2D" uid="uid://b42mg77pltmtv" path="res://Texture Or Sprites/Home Screen/Achievement.png" id="19_pkgvh"]
+[ext_resource type="Texture2D" uid="uid://cn8thjv6khfxw" path="res://Texture Or Sprites/Home Screen/Info.png" id="20_7wmtr"]
+[ext_resource type="Texture2D" uid="uid://dnixknar12hk7" path="res://Texture Or Sprites/Home Screen/Timer.png" id="22_y6p71"]
+[ext_resource type="Texture2D" uid="uid://b3tadmvujpdd" path="res://Texture Or Sprites/Home Screen/LAN.png" id="23_guf2q"]
+[ext_resource type="Texture2D" uid="uid://bwtocr4556f4t" path="res://Texture Or Sprites/Home Screen/PassNPlay.png" id="24_0qnmp"]
+[ext_resource type="Texture2D" uid="uid://pfd2ygg3scgp" path="res://Texture Or Sprites/Home Screen/Locked.png" id="25_0qnmp"]
+[ext_resource type="Texture2D" uid="uid://bnvq7do33wb05" path="res://Texture Or Sprites/Home Screen/ButtonBG.png" id="26_h6vkq"]
+[ext_resource type="Texture2D" uid="uid://te0vc2hpgdcq" path="res://Texture Or Sprites/Home Screen/PlayBg.png" id="27_3crrv"]
+[ext_resource type="Texture2D" uid="uid://dyl7w8wg6qtfw" path="res://Texture Or Sprites/Home Screen/Shop.png" id="27_wflhj"]
+[ext_resource type="Texture2D" uid="uid://dt04wp8g38tdf" path="res://Texture Or Sprites/Home Screen/Inventory.png" id="28_krc7t"]
+[ext_resource type="Texture2D" uid="uid://3s0vfahwau58" path="res://Texture Or Sprites/Home Screen/PlayiconBg.png" id="30_hk3dx"]
+[ext_resource type="Texture2D" uid="uid://dvwxkku6qo65k" path="res://Texture Or Sprites/Home Screen/LockBtn.png" id="30_iw3j6"]
+[ext_resource type="Texture2D" uid="uid://0fjc2e2mdyqo" path="res://Texture Or Sprites/Home Screen/PlayAnimIcon.png" id="31_vihvb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(10, 0.25, 100)
@@ -56,6 +74,116 @@ texture = ExtResource("15_smgrs")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smgrs"]
 texture = ExtResource("15_smgrs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jv2cb"]
+texture = ExtResource("19_kx4oe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62iqh"]
+texture = ExtResource("19_kx4oe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aoomy"]
+texture = ExtResource("19_kx4oe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7wmtr"]
+texture = ExtResource("18_848r5")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6p71"]
+texture = ExtResource("18_848r5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayluw"]
+texture = ExtResource("18_848r5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_guf2q"]
+texture = ExtResource("19_pkgvh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0qnmp"]
+texture = ExtResource("19_pkgvh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6vkq"]
+texture = ExtResource("19_pkgvh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3crrv"]
+texture = ExtResource("20_7wmtr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wflhj"]
+texture = ExtResource("20_7wmtr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_krc7t"]
+texture = ExtResource("20_7wmtr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iw3j6"]
+texture = ExtResource("22_y6p71")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hk3dx"]
+texture = ExtResource("22_y6p71")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vihvb"]
+texture = ExtResource("22_y6p71")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s14yv"]
+texture = ExtResource("23_guf2q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wrq7k"]
+texture = ExtResource("23_guf2q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxu73"]
+texture = ExtResource("23_guf2q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uo4rt"]
+texture = ExtResource("24_0qnmp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kx4oe"]
+texture = ExtResource("24_0qnmp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g2bjx"]
+texture = ExtResource("24_0qnmp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_55ff8"]
+texture = ExtResource("25_0qnmp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ao7do"]
+texture = ExtResource("25_0qnmp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uctue"]
+texture = ExtResource("25_0qnmp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ridcw"]
+texture = ExtResource("27_wflhj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mqkx"]
+texture = ExtResource("27_wflhj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vdfna"]
+texture = ExtResource("27_wflhj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sxluj"]
+texture = ExtResource("28_krc7t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3n2e"]
+texture = ExtResource("28_krc7t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fq71w"]
+texture = ExtResource("28_krc7t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bih4p"]
+texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cmu2r"]
+texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mkkvt"]
+texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3bm7"]
+texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0htr1"]
+texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44eka"]
+texture = ExtResource("30_iw3j6")
 
 [node name="Home" type="Node3D" unique_id=1397785541]
 
@@ -273,7 +401,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("16_smgrs")
+texture = ExtResource("16_848r5")
 expand_mode = 4
 
 [node name="Panel" type="Control" parent="UIManager/HomeScreen" unique_id=689472103]
@@ -287,28 +415,168 @@ grow_vertical = 2
 [node name="TopPanel" type="HBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=472766109]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 80.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -268.0
+offset_right = 268.0
+offset_bottom = 141.0
 grow_horizontal = 2
+theme_override_constants/separation = 2
+
+[node name="Coin" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel" unique_id=1463064628]
+layout_mode = 2
+texture = ExtResource("17_yxu73")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="CoinIcon" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel/Coin" unique_id=674128418]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -58.5
+offset_right = 58.5
+offset_bottom = 58.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_kx4oe")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="CoinText" type="Label" parent="UIManager/HomeScreen/Panel/TopPanel/Coin" unique_id=1975595066]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "235"
+
+[node name="XP" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel" unique_id=1572530790]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+texture = ExtResource("17_yxu73")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Xpicon" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel/XP" unique_id=385052147]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_uo4rt")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="XpText" type="Label" parent="UIManager/HomeScreen/Panel/TopPanel/XP" unique_id=731114475]
+custom_minimum_size = Vector2(-50, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.07369551
+text = "50"
+
+[node name="SettingButton" type="Button" parent="UIManager/HomeScreen/Panel/TopPanel" unique_id=768354547]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_jv2cb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_62iqh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aoomy")
 
 [node name="LeftPanel" type="VBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=817961446]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 35.0
-offset_top = -138.64375
-offset_right = 108.0
-offset_bottom = 50.356262
+offset_top = -190.0
+offset_right = 73.0
+offset_bottom = 5.0
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="UIManager/HomeScreen/Panel/LeftPanel" unique_id=965988182]
+[node name="LeftPanelBG" type="TextureRect" parent="UIManager/HomeScreen/Panel/LeftPanel" unique_id=965988182]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 texture = ExtResource("17_dyher")
 expand_mode = 5
 stretch_mode = 4
+
+[node name="DailyRewardButton" type="Button" parent="UIManager/HomeScreen/Panel/LeftPanel/LeftPanelBG" unique_id=1810297332]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.0
+offset_top = 10.0
+offset_right = 24.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_7wmtr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y6p71")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ayluw")
+icon_alignment = 1
+
+[node name="AchievementButton" type="Button" parent="UIManager/HomeScreen/Panel/LeftPanel/LeftPanelBG" unique_id=1308842282]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -22.50032
+offset_right = 23.5
+offset_bottom = 27.49968
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_guf2q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0qnmp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h6vkq")
+
+[node name="InfoButton" type="Button" parent="UIManager/HomeScreen/Panel/LeftPanel/LeftPanelBG" unique_id=1429055669]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -53.999634
+offset_right = 18.0
+offset_bottom = -15.999634
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3crrv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wflhj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_krc7t")
 
 [node name="RightPanel" type="VBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=740011782]
 layout_mode = 1
@@ -317,26 +585,240 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -217.0
-offset_bottom = 137.0
+offset_left = -120.0
+offset_top = -225.0
+offset_bottom = 145.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="UIManager/HomeScreen/Panel/RightPanel" unique_id=1562719810]
-custom_minimum_size = Vector2(120, 0)
+[node name="RightPanelBG" type="TextureRect" parent="UIManager/HomeScreen/Panel/RightPanel" unique_id=1562719810]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 texture = ExtResource("18_ppvi3")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="BottomPanel" type="HBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=314104605]
+[node name="TimerButton" type="Button" parent="UIManager/HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=1948553678]
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -110.0
+offset_top = 10.0
+offset_bottom = 90.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_iw3j6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hk3dx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vihvb")
+
+[node name="LANButton" type="Button" parent="UIManager/HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=1713150641]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -84.99955
+offset_bottom = -4.999542
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_s14yv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wrq7k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yxu73")
+
+[node name="PassNPlayButton" type="Button" parent="UIManager/HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=224458733]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 5.0004425
+offset_bottom = 85.00046
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_uo4rt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kx4oe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g2bjx")
+
+[node name="LockedButton" type="Button" parent="UIManager/HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=828518004]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -90.00012
+offset_bottom = -10.000122
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_55ff8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ao7do")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uctue")
+
+[node name="BottomPanel" type="HBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=314104605]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -241.0
+offset_top = -87.0
+offset_right = 241.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = -1
+
+[node name="Shop" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel" unique_id=678838603]
+layout_mode = 2
+texture = ExtResource("26_h6vkq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="UIManager/HomeScreen/Panel/BottomPanel/Shop" unique_id=1201021935]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ridcw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6mqkx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vdfna")
+
+[node name="Inventory" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel" unique_id=143819096]
+layout_mode = 2
+texture = ExtResource("26_h6vkq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="UIManager/HomeScreen/Panel/BottomPanel/Inventory" unique_id=84989112]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.729729
+offset_top = -25.0
+offset_right = 22.270271
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_sxluj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_d3n2e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fq71w")
+
+[node name="Play" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel" unique_id=1629769743]
+layout_mode = 2
+texture = ExtResource("27_3crrv")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel/Play" unique_id=1978071196]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.983017
+offset_top = -64.5
+offset_right = 45.983364
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_3crrv")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="PlayIcon" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel/Play" unique_id=41540403]
+z_index = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.042023
+offset_top = -51.0
+offset_right = 30.957981
+offset_bottom = 16.0
+grow_horizontal = 2
+texture = ExtResource("30_hk3dx")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel/Play/PlayIcon" unique_id=230591292]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -19.5
+offset_right = 20.9375
+offset_bottom = 17.9375
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("31_vihvb")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Locked" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel" unique_id=1474820346]
+layout_mode = 2
+texture = ExtResource("26_h6vkq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="UIManager/HomeScreen/Panel/BottomPanel/Locked" unique_id=1471951552]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.99973
+offset_top = -25.0
+offset_right = 27.000267
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_bih4p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cmu2r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mkkvt")
+
+[node name="Locked2" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel" unique_id=574618787]
+layout_mode = 2
+texture = ExtResource("26_h6vkq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="UIManager/HomeScreen/Panel/BottomPanel/Locked2" unique_id=1079596992]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_m3bm7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
