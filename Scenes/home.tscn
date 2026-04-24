@@ -3,18 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="1_ibywg"]
 [ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="2_12ycv"]
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="3_llnbm"]
-[ext_resource type="Texture2D" uid="uid://bnldalqvq6i6t" path="res://Texture Or Sprites/Home Screen/loading_bg.png" id="4_12ycv"]
+[ext_resource type="Texture2D" uid="uid://bnldalqvq6i6t" path="res://Texture Or Sprites/Loading Screen/loading_bg.png" id="4_12ycv"]
 [ext_resource type="Script" uid="uid://dfx1esru4gan0" path="res://Scripts/UIManager.gd" id="4_q1yq7"]
-[ext_resource type="Texture2D" uid="uid://242sv0rapna0" path="res://Texture Or Sprites/Home Screen/Rectangle 352.png" id="5_fhpuh"]
+[ext_resource type="Texture2D" uid="uid://242sv0rapna0" path="res://Texture Or Sprites/Loading Screen/Rectangle 352.png" id="5_fhpuh"]
 [ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="7_vkfas"]
 [ext_resource type="Script" uid="uid://3msnhuobdxpi" path="res://Scripts/texture_progress_bar.gd" id="8_cykap"]
-[ext_resource type="Texture2D" uid="uid://hd2ok3ihi8lq" path="res://Texture Or Sprites/Home Screen/PanelBg.png" id="9_cykap"]
+[ext_resource type="Texture2D" uid="uid://hd2ok3ihi8lq" path="res://Texture Or Sprites/Loading Screen/PanelBg.png" id="9_cykap"]
 [ext_resource type="FontFile" uid="uid://4qjurbql7g3n" path="res://Fonts/Inter_18pt-SemiBold.ttf" id="10_8riyq"]
 [ext_resource type="Texture2D" uid="uid://cijoie8i5b5b" path="res://Texture Or Sprites/Login Screen/input_bg.png" id="10_nw1ns"]
 [ext_resource type="Texture2D" uid="uid://bd46b8iankgmr" path="res://Texture Or Sprites/Login Screen/BtnBg.png" id="12_gyiet"]
 [ext_resource type="Texture2D" uid="uid://c2dbjirpm1ase" path="res://Texture Or Sprites/Login Screen/Line 14.png" id="13_jjai4"]
 [ext_resource type="Texture2D" uid="uid://cgqyho8ne3j3a" path="res://Texture Or Sprites/Login Screen/Google.png" id="14_lddgv"]
 [ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
+[ext_resource type="Texture2D" uid="uid://4q7gxugxcs4x" path="res://Texture Or Sprites/Home Screen/Bg.png" id="16_smgrs"]
+[ext_resource type="Texture2D" uid="uid://cpaect1hyewca" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
+[ext_resource type="Texture2D" uid="uid://c8m6hjr6dhre8" path="res://Texture Or Sprites/Home Screen/RightPanel.png" id="18_ppvi3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(10, 0.25, 100)
@@ -99,7 +102,7 @@ theme_override_font_sizes/font_size = 36
 
 [node name="UIManager" type="Node" parent="." unique_id=1343059379 node_paths=PackedStringArray("canvas_layers")]
 script = ExtResource("4_q1yq7")
-canvas_layers = [NodePath("LoadingScreen"), NodePath("LoginScreen")]
+canvas_layers = [NodePath("LoadingScreen"), NodePath("LoginScreen"), NodePath("HomeScreen")]
 
 [node name="LoadingScreen" type="CanvasLayer" parent="UIManager" unique_id=1544671716]
 
@@ -261,5 +264,79 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ppvi3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lddgv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_smgrs")
+
+[node name="HomeScreen" type="CanvasLayer" parent="UIManager" unique_id=623974019]
+
+[node name="BG" type="TextureRect" parent="UIManager/HomeScreen" unique_id=1445440937]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_smgrs")
+expand_mode = 4
+
+[node name="Panel" type="Control" parent="UIManager/HomeScreen" unique_id=689472103]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopPanel" type="HBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=472766109]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+
+[node name="LeftPanel" type="VBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=817961446]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 35.0
+offset_top = -138.64375
+offset_right = 108.0
+offset_bottom = 50.356262
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UIManager/HomeScreen/Panel/LeftPanel" unique_id=965988182]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("17_dyher")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="RightPanel" type="VBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=740011782]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -217.0
+offset_bottom = 137.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UIManager/HomeScreen/Panel/RightPanel" unique_id=1562719810]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+texture = ExtResource("18_ppvi3")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="BottomPanel" type="HBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=314104605]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
