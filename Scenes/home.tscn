@@ -41,6 +41,12 @@
 [ext_resource type="Texture2D" uid="uid://3s0vfahwau58" path="res://Texture Or Sprites/Home Screen/PlayiconBg.png" id="30_hk3dx"]
 [ext_resource type="Texture2D" uid="uid://dvwxkku6qo65k" path="res://Texture Or Sprites/Home Screen/LockBtn.png" id="30_iw3j6"]
 [ext_resource type="Texture2D" uid="uid://0fjc2e2mdyqo" path="res://Texture Or Sprites/Home Screen/PlayAnimIcon.png" id="31_vihvb"]
+[ext_resource type="Texture2D" uid="uid://bfrgw6srjjs71" path="res://Texture Or Sprites/Setting Screen/SettingBg.png" id="42_ridcw"]
+[ext_resource type="Texture2D" uid="uid://dwu1nf7abokum" path="res://Texture Or Sprites/Setting Screen/CrossIcon.png" id="43_6mqkx"]
+[ext_resource type="Texture2D" uid="uid://b4n1ji3y2jtwr" path="res://Texture Or Sprites/Setting Screen/Rectangle 366.png" id="44_vdfna"]
+[ext_resource type="Texture2D" uid="uid://b1oonxfycxe2h" path="res://Texture Or Sprites/Setting Screen/on.png" id="45_sxluj"]
+[ext_resource type="Texture2D" uid="uid://cnpebfalm5426" path="res://Texture Or Sprites/Setting Screen/off.png" id="46_d3n2e"]
+[ext_resource type="Texture2D" uid="uid://djc8xbwip4qka" path="res://Texture Or Sprites/Setting Screen/ButtonBg.png" id="47_fq71w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(10, 0.25, 100)
@@ -198,6 +204,42 @@ texture = ExtResource("30_iw3j6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44eka"]
 texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0g73e"]
+texture = ExtResource("43_6mqkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fp5a"]
+texture = ExtResource("43_6mqkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_um175"]
+texture = ExtResource("43_6mqkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b16xs"]
+texture = ExtResource("45_sxluj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5id56"]
+texture = ExtResource("45_sxluj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xdufu"]
+texture = ExtResource("45_sxluj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8lqci"]
+texture = ExtResource("46_d3n2e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fa687"]
+texture = ExtResource("46_d3n2e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ssmp"]
+texture = ExtResource("46_d3n2e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jmoue"]
+texture = ExtResource("47_fq71w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0bc6n"]
+texture = ExtResource("47_fq71w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0iwel"]
+texture = ExtResource("47_fq71w")
 
 [node name="Home" type="Node3D" unique_id=1397785541]
 
@@ -889,5 +931,187 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_m3bm7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
+
+[node name="SettingScreen" type="CanvasLayer" parent="UIManager" unique_id=1804771245]
+
+[node name="BG" type="TextureRect" parent="UIManager/SettingScreen" unique_id=552536001]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_cykap")
+expand_mode = 4
+
+[node name="Panel" type="Control" parent="UIManager/SettingScreen" unique_id=2031224292]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.5
+offset_top = -200.0
+offset_right = 164.5
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingBg" type="TextureRect" parent="UIManager/SettingScreen/Panel" unique_id=1243536937]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.20238
+offset_top = -200.0
+offset_right = 167.20238
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("42_ridcw")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="SettingText" type="Label" parent="UIManager/SettingScreen/Panel/SettingBg" unique_id=16375075]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.000015
+offset_top = 6.0
+offset_right = 64.999985
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 28
+text = "Settings"
+
+[node name="CrossButton" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg" unique_id=489184082]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.202393
+offset_top = 15.0
+offset_right = -25.202393
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_0g73e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3fp5a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_um175")
+
+[node name="AudioMusicBg" type="TextureRect" parent="UIManager/SettingScreen/Panel/SettingBg" unique_id=1819199424]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0004
+offset_top = -125.0
+offset_right = 145.9996
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("44_vdfna")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="AudioText" type="Label" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=807528863]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 127.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 28
+text = "Audio"
+
+[node name="MusicText" type="Label" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=1241709567]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 90.0
+offset_right = 130.0
+offset_bottom = 125.0
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 28
+text = "Music"
+
+[node name="MusicOnButton" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=2079967415]
+layout_mode = 0
+offset_left = 153.00038
+offset_top = 40.0
+offset_right = 275.00037
+offset_bottom = 61.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_b16xs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5id56")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xdufu")
+
+[node name="MusicOffButton" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=592955231]
+visible = false
+layout_mode = 0
+offset_left = 153.00038
+offset_top = 40.0
+offset_right = 275.00037
+offset_bottom = 61.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8lqci")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fa687")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4ssmp")
+
+[node name="SoundOnButton" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=2032925972]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 100.0
+offset_right = 275.0
+offset_bottom = 121.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_b16xs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5id56")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xdufu")
+
+[node name="SoundOffButton" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=1555426933]
+visible = false
+layout_mode = 0
+offset_left = 153.0
+offset_top = 100.0
+offset_right = 275.0
+offset_bottom = 121.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8lqci")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fa687")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4ssmp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/SettingScreen/Panel/SettingBg" unique_id=87481471]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.00002
+offset_top = -158.0
+offset_right = 140.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="LoginWithGoogle" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/VBoxContainer" unique_id=1003234960]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_jmoue")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0bc6n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0iwel")
+
+[node name="LoginWithApple" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/VBoxContainer" unique_id=1189951160]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_jmoue")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0bc6n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0iwel")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
