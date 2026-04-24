@@ -14,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://cdug7sre63vt5" path="res://Texture Or Sprites/SinglePlayer/SingleTimer.png" id="12_bxwey"]
 [ext_resource type="Texture2D" uid="uid://8njfj1mnt6bv" path="res://Texture Or Sprites/SinglePlayer/TimerClock.png" id="12_luw2b"]
 [ext_resource type="Script" uid="uid://r8egelqwvacm" path="res://Scripts/timer_slider.gd" id="13_561yc"]
+[ext_resource type="Texture2D" uid="uid://br2f810pal41w" path="res://Texture Or Sprites/SinglePlayer/PanelsBg.png" id="15_3jtxs"]
+[ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="16_k32e6"]
+[ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="17_k32e6"]
+[ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="18_ywqqe"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(50, 0.25, 100)
@@ -63,6 +67,24 @@ texture = ExtResource("11_bctio")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bn77"]
 texture = ExtResource("11_bctio")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1locx"]
+texture = ExtResource("17_k32e6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_odpc6"]
+texture = ExtResource("17_k32e6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jfpn"]
+texture = ExtResource("17_k32e6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b447"]
+texture = ExtResource("18_ywqqe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_coojd"]
+texture = ExtResource("18_ywqqe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpfcn"]
+texture = ExtResource("18_ywqqe")
+
 [node name="Street" type="Node3D" unique_id=1397785541]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
@@ -94,6 +116,7 @@ bag = ExtResource("3_3qr72")
 wait_time = 0.5
 
 [node name="InGame UI" type="CanvasLayer" parent="." unique_id=903377817]
+visible = false
 
 [node name="Label" type="Label" parent="InGame UI" unique_id=1472643477]
 anchors_preset = 5
@@ -387,5 +410,192 @@ grow_vertical = 2
 texture = ExtResource("12_luw2b")
 expand_mode = 3
 stretch_mode = 4
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=918784366]
+
+[node name="Black Bg" type="TextureRect" parent="PauseMenu" unique_id=250150139]
+offset_right = 480.0
+offset_bottom = 720.0
+texture = ExtResource("15_3jtxs")
+expand_mode = 3
+
+[node name="PausePanel BG" type="TextureRect" parent="PauseMenu/Black Bg" unique_id=12311175]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.6875
+offset_top = -169.17752
+offset_right = 140.6875
+offset_bottom = 169.17752
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_k32e6")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="PauseMenu/Black Bg/PausePanel BG" unique_id=627469763]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_font_sizes/font_size = 25
+text = "Paused"
+
+[node name="CoinsText" type="Label" parent="PauseMenu/Black Bg/PausePanel BG" unique_id=456298891]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -84.5
+offset_right = 105.5
+offset_bottom = -11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_font_sizes/font_size = 60
+text = "99955"
+
+[node name="Coins Heading" type="Label" parent="PauseMenu/Black Bg/PausePanel BG/CoinsText" unique_id=75638180]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.5
+offset_top = -21.0
+offset_right = 24.5
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_font_sizes/font_size = 20
+text = "Coin"
+
+[node name="Button" type="Button" parent="PauseMenu/Black Bg/PausePanel BG" unique_id=583836317]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = -0.1775055
+offset_right = 100.0005
+offset_bottom = 34.822495
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="PauseMenu/Black Bg/PausePanel BG/Button" unique_id=1347187510]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_0b447")
+text = "Home"
+
+[node name="Button2" type="Button" parent="PauseMenu/Black Bg/PausePanel BG" unique_id=1443555826]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 52.50049
+offset_right = 100.0005
+offset_bottom = 87.50047
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="PauseMenu/Black Bg/PausePanel BG/Button2" unique_id=94614169]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -11.5
+offset_right = 32.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_0b447")
+text = "Restart"
+
+[node name="Button3" type="Button" parent="PauseMenu/Black Bg/PausePanel BG" unique_id=764830446]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 105.4995
+offset_right = 100.0005
+offset_bottom = 140.4995
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="PauseMenu/Black Bg/PausePanel BG/Button3" unique_id=819756454]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -11.5
+offset_right = 33.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_0b447")
+text = "Resume"
+
+[node name="Cross" type="Button" parent="PauseMenu/Black Bg/PausePanel BG" unique_id=1750672698]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.6875
+offset_top = 11.177521
+offset_right = -20.6875
+offset_bottom = 31.17752
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_0b447")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_coojd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qpfcn")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
