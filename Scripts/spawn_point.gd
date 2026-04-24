@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func spawn_bag():
 	var obj = bag.instantiate()
+	obj.rotation_degrees=Vector3(-87.8,0,90)
 	add_child(obj)
 
 func _on_timer_timeout() -> void:

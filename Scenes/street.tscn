@@ -1,0 +1,347 @@
+[gd_scene format=3 uid="uid://cbdwn7albabob"]
+
+[ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="1_ywqqe"]
+[ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_fbdad"]
+[ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_3qr72"]
+[ext_resource type="Texture2D" uid="uid://btculmbe0q8g1" path="res://Texture Or Sprites/SinglePlayer/InGameBlackBg.png" id="4_wothh"]
+[ext_resource type="Texture2D" uid="uid://dp300l6x0itc6" path="res://Texture Or Sprites/SinglePlayer/NoWind.png" id="5_vt4v3"]
+[ext_resource type="Texture2D" uid="uid://cdm0hrbr0ff5" path="res://Texture Or Sprites/SinglePlayer/Button BG.png" id="6_emnx0"]
+[ext_resource type="Texture2D" uid="uid://crnc1sm38481a" path="res://Texture Or Sprites/SinglePlayer/coin.png" id="7_djhal"]
+[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="8_0b447"]
+[ext_resource type="Texture2D" uid="uid://canberf3sh7ro" path="res://Texture Or Sprites/SinglePlayer/AddTimer.png" id="9_djhal"]
+[ext_resource type="Texture2D" uid="uid://ncvk0n3uqptg" path="res://Texture Or Sprites/SinglePlayer/ShowProjectile.png" id="10_nrnkq"]
+[ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="11_bctio"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
+size = Vector3(50, 0.25, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ey7h"]
+size = Vector3(50, 0.25, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrnkq"]
+texture = ExtResource("5_vt4v3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bctio"]
+texture = ExtResource("5_vt4v3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_luw2b"]
+texture = ExtResource("5_vt4v3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bctio"]
+bg_color = Color(0, 0, 0, 0.7058824)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bxwey"]
+texture = ExtResource("9_djhal")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_561yc"]
+texture = ExtResource("9_djhal")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vtfd7"]
+texture = ExtResource("9_djhal")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3jtxs"]
+texture = ExtResource("10_nrnkq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k32e6"]
+texture = ExtResource("10_nrnkq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywqqe"]
+texture = ExtResource("10_nrnkq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbdad"]
+bg_color = Color(0, 0, 0, 0.7058824)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbdad"]
+texture = ExtResource("11_bctio")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qr72"]
+texture = ExtResource("11_bctio")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bn77"]
+texture = ExtResource("11_bctio")
+
+[node name="Street" type="Node3D" unique_id=1397785541]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
+transform = Transform3D(1, 0, 0, 0, 0.17155087, 0.9851753, 0, -0.9851753, 0.17155087, 0, 6.6319437, 19.546883)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
+transform = Transform3D(1, 0, 0, 0, 0.92229545, 0.38648567, 0, -0.38648567, 0.92229545, 0, 3.1773634, 51.056313)
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=961487849]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=310348646]
+mesh = SubResource("BoxMesh_1ey7h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1311580137]
+shape = SubResource("BoxShape3D_1ey7h")
+metadata/_edit_group_ = true
+
+[node name="Board" parent="." unique_id=496892006 instance=ExtResource("1_ywqqe")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 35.468597)
+
+[node name="SpawnPOINT" type="Node3D" parent="." unique_id=1295221534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2954383, 49.1849)
+script = ExtResource("2_fbdad")
+bag = ExtResource("3_3qr72")
+
+[node name="StartTimer" type="Timer" parent="." unique_id=919203266]
+wait_time = 0.5
+
+[node name="InGame UI" type="CanvasLayer" parent="." unique_id=903377817]
+
+[node name="Label" type="Label" parent="InGame UI" unique_id=1472643477]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.0
+offset_top = 37.0
+offset_right = 41.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+
+[node name="PowerUp Panel" type="VBoxContainer" parent="InGame UI" unique_id=442934000]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -145.0
+offset_bottom = 145.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PowerUp Panel BG" type="TextureRect" parent="InGame UI/PowerUp Panel" unique_id=1908491667]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+texture = ExtResource("4_wothh")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="NoWind" type="Button" parent="InGame UI/PowerUp Panel/PowerUp Panel BG" unique_id=330136007]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.5
+offset_top = 13.0
+offset_right = 27.5
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_nrnkq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bctio")
+theme_override_styles/hover = SubResource("StyleBoxTexture_luw2b")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_bctio")
+
+[node name="Button BG" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/NoWind" unique_id=1999188942]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08181815
+anchor_top = 0.8891135
+anchor_right = 0.9033139
+anchor_bottom = 1.2514435
+offset_right = 2.4945107
+offset_bottom = 0.07185364
+texture = ExtResource("6_emnx0")
+expand_mode = 3
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/NoWind/Button BG" unique_id=2143787756]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.838379
+offset_top = -6.0
+offset_right = -2.838379
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_djhal")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Price" type="Label" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/NoWind/Button BG" unique_id=326467580]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.8383884
+offset_top = -10.000002
+offset_right = 16.161608
+offset_bottom = 6.999998
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_font_sizes/font_size = 10
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AddTimer" type="Button" parent="InGame UI/PowerUp Panel/PowerUp Panel BG" unique_id=933078280]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -38.5
+offset_right = 27.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_bxwey")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_561yc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vtfd7")
+
+[node name="Button BG" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/AddTimer" unique_id=236207888]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -6.098999
+offset_right = 24.676777
+offset_bottom = 13.901001
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_emnx0")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Coin" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/AddTimer/Button BG" unique_id=1768604429]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.838377
+offset_top = -5.151001
+offset_right = -2.8383808
+offset_bottom = 4.848999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_djhal")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/AddTimer/Button BG" unique_id=1213739166]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.838377
+offset_top = -10.151001
+offset_right = 15.161619
+offset_bottom = 6.848999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_font_sizes/font_size = 10
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowProjectile" type="Button" parent="InGame UI/PowerUp Panel/PowerUp Panel BG" unique_id=1145134991]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.5
+offset_top = -88.0
+offset_right = 27.5
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3jtxs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k32e6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ywqqe")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_fbdad")
+
+[node name="TextureRect" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/ShowProjectile" unique_id=1568561768]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -6.098999
+offset_right = 24.676773
+offset_bottom = 13.901001
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_emnx0")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/ShowProjectile/TextureRect" unique_id=844799931]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -6.0
+offset_right = -3.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_djhal")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/ShowProjectile/TextureRect" unique_id=166609968]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -10.5
+offset_right = 16.0
+offset_bottom = 6.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_font_sizes/font_size = 10
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="InGame UI" unique_id=1871371571]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_top = 24.0
+offset_right = -28.0
+offset_bottom = 54.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_fbdad")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3qr72")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7bn77")
+
+[connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
