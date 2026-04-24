@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4ncmanfau2nb"
 path.s3tc="res://.godot/imported/board_Dir_Board_M 4K.png-074c699c32b604551c26433fc4b87fd9.s3tc.ctex"
-path.etc2="res://.godot/imported/board_Dir_Board_M 4K.png-074c699c32b604551c26433fc4b87fd9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://3D Models/board_Dir_Board_M 4K.png"
-dest_files=["res://.godot/imported/board_Dir_Board_M 4K.png-074c699c32b604551c26433fc4b87fd9.s3tc.ctex", "res://.godot/imported/board_Dir_Board_M 4K.png-074c699c32b604551c26433fc4b87fd9.etc2.ctex"]
+dest_files=["res://.godot/imported/board_Dir_Board_M 4K.png-074c699c32b604551c26433fc4b87fd9.s3tc.ctex"]
 
 [params]
 
