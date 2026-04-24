@@ -17,14 +17,19 @@
 [ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
 [ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/BG.png" id="16_848r5"]
 [ext_resource type="Texture2D" uid="uid://df3uq3lg4t57f" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
+[ext_resource type="Texture2D" uid="uid://dhaiu8nexctvx" path="res://Texture Or Sprites/Home Screen/ProfileBG.png" id="17_g2bjx"]
 [ext_resource type="Texture2D" uid="uid://c841fqdpt4bif" path="res://Texture Or Sprites/Home Screen/XPBg.png" id="17_yxu73"]
+[ext_resource type="Texture2D" uid="uid://bo204bpd20ysg" path="res://Texture Or Sprites/Home Screen/ProfileIcon.png" id="18_55ff8"]
 [ext_resource type="Texture2D" uid="uid://18xdrq7xrdl2" path="res://Texture Or Sprites/Home Screen/DailyReward.png" id="18_848r5"]
 [ext_resource type="Texture2D" uid="uid://d0m2tntjy8sdo" path="res://Texture Or Sprites/Home Screen/Coin.png" id="18_kx4oe"]
 [ext_resource type="Texture2D" uid="uid://c8m6hjr6dhre8" path="res://Texture Or Sprites/Home Screen/RightPanel.png" id="18_ppvi3"]
 [ext_resource type="Texture2D" uid="uid://b5bryhtvbharh" path="res://Texture Or Sprites/Home Screen/xp.png" id="18_uo4rt"]
+[ext_resource type="FontFile" uid="uid://b2fmlgiq7kk2o" path="res://Fonts/Inter_18pt-Medium.ttf" id="19_55ff8"]
 [ext_resource type="Texture2D" uid="uid://ci1a7ul0of74y" path="res://Texture Or Sprites/Home Screen/Setting.png" id="19_kx4oe"]
 [ext_resource type="Texture2D" uid="uid://b42mg77pltmtv" path="res://Texture Or Sprites/Home Screen/Achievement.png" id="19_pkgvh"]
 [ext_resource type="Texture2D" uid="uid://cn8thjv6khfxw" path="res://Texture Or Sprites/Home Screen/Info.png" id="20_7wmtr"]
+[ext_resource type="FontFile" uid="uid://bg5bt7yapbbn3" path="res://Fonts/Inter_18pt-Bold.ttf" id="20_ao7do"]
+[ext_resource type="Texture2D" uid="uid://co5dglkknug24" path="res://Texture Or Sprites/Badges/Group 349.png" id="20_uctue"]
 [ext_resource type="Texture2D" uid="uid://dnixknar12hk7" path="res://Texture Or Sprites/Home Screen/Timer.png" id="22_y6p71"]
 [ext_resource type="Texture2D" uid="uid://b3tadmvujpdd" path="res://Texture Or Sprites/Home Screen/LAN.png" id="23_guf2q"]
 [ext_resource type="Texture2D" uid="uid://bwtocr4556f4t" path="res://Texture Or Sprites/Home Screen/PassNPlay.png" id="24_0qnmp"]
@@ -74,6 +79,15 @@ texture = ExtResource("15_smgrs")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smgrs"]
 texture = ExtResource("15_smgrs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43epo"]
+texture = ExtResource("18_55ff8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7q78h"]
+texture = ExtResource("18_55ff8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndhgh"]
+texture = ExtResource("18_55ff8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jv2cb"]
 texture = ExtResource("19_kx4oe")
@@ -418,13 +432,67 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -268.0
-offset_right = 268.0
-offset_bottom = 141.0
+offset_left = -212.0
+offset_top = 40.0
+offset_right = 230.0
+offset_bottom = 70.0
 grow_horizontal = 2
-theme_override_constants/separation = 2
+theme_override_constants/separation = 25
+
+[node name="Profile" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel" unique_id=1919251055]
+layout_mode = 2
+texture = ExtResource("17_g2bjx")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Icon" type="Button" parent="UIManager/HomeScreen/Panel/TopPanel/Profile" unique_id=1614137076]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -22.0
+offset_right = 19.0
+offset_bottom = 21.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_43epo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7q78h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ndhgh")
+
+[node name="Label" type="Label" parent="UIManager/HomeScreen/Panel/TopPanel/Profile" unique_id=883186087]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 2.0
+offset_right = 103.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_fonts/font = ExtResource("19_55ff8")
+theme_override_font_sizes/font_size = 11
+text = "Himanshu 1234"
+
+[node name="TextureRect" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel/Profile" unique_id=1560160933]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 19.0
+offset_right = 49.0
+offset_bottom = 27.0
+texture = ExtResource("20_uctue")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label2" type="Label" parent="UIManager/HomeScreen/Panel/TopPanel/Profile" unique_id=1725353192]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 16.0
+offset_right = 81.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_fonts/font = ExtResource("20_ao7do")
+theme_override_font_sizes/font_size = 9
+text = "Bronze"
 
 [node name="Coin" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel" unique_id=1463064628]
+custom_minimum_size = Vector2(50, 20)
 layout_mode = 2
 texture = ExtResource("17_yxu73")
 expand_mode = 3
@@ -432,16 +500,13 @@ stretch_mode = 4
 
 [node name="CoinIcon" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel/Coin" unique_id=674128418]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -58.5
-offset_top = -58.5
-offset_right = 58.5
-offset_bottom = 58.5
-grow_horizontal = 2
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
 grow_vertical = 2
 texture = ExtResource("18_kx4oe")
 expand_mode = 2
@@ -454,12 +519,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -35.808502
+offset_top = -10.0
+offset_right = 47.191498
+offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 14
 text = "235"
 
 [node name="XP" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel" unique_id=1572530790]
@@ -469,22 +538,18 @@ texture = ExtResource("17_yxu73")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Xpicon" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel/XP" unique_id=385052147]
-custom_minimum_size = Vector2(100, 0)
+[node name="XpIcon" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel/XP" unique_id=1945381247]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
+offset_left = -18.0
+offset_top = -15.0
+offset_right = 14.0
+offset_bottom = 17.0
 grow_vertical = 2
 texture = ExtResource("18_uo4rt")
-expand_mode = 2
+expand_mode = 4
 stretch_mode = 4
 
 [node name="XpText" type="Label" parent="UIManager/HomeScreen/Panel/TopPanel/XP" unique_id=731114475]
@@ -495,16 +560,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -38.808502
+offset_top = -9.0
+offset_right = 50.191498
+offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.07369551
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 14
 text = "50"
 
 [node name="SettingButton" type="Button" parent="UIManager/HomeScreen/Panel/TopPanel" unique_id=768354547]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_jv2cb")

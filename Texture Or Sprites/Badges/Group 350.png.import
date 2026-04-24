@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drmvoxy81hgc2"
-path="res://.godot/imported/BG.png-bc96f23988bd7c09a07710f547389aec.ctex"
+uid="uid://c0ellsocdtmeu"
+path="res://.godot/imported/Group 350.png-e51047adbb2239c624164678ed6e8b1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Home Screen/BG.png"
-dest_files=["res://.godot/imported/BG.png-bc96f23988bd7c09a07710f547389aec.ctex"]
+source_file="res://Texture Or Sprites/Badges/Group 350.png"
+dest_files=["res://.godot/imported/Group 350.png-e51047adbb2239c624164678ed6e8b1d.ctex"]
 
 [params]
 
