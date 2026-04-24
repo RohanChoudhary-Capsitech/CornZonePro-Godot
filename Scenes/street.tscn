@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://canberf3sh7ro" path="res://Texture Or Sprites/SinglePlayer/AddTimer.png" id="9_djhal"]
 [ext_resource type="Texture2D" uid="uid://ncvk0n3uqptg" path="res://Texture Or Sprites/SinglePlayer/ShowProjectile.png" id="10_nrnkq"]
 [ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="11_bctio"]
+[ext_resource type="Texture2D" uid="uid://cdug7sre63vt5" path="res://Texture Or Sprites/SinglePlayer/SingleTimer.png" id="12_bxwey"]
+[ext_resource type="Texture2D" uid="uid://8njfj1mnt6bv" path="res://Texture Or Sprites/SinglePlayer/TimerClock.png" id="12_luw2b"]
+[ext_resource type="Script" uid="uid://r8egelqwvacm" path="res://Scripts/timer_slider.gd" id="13_561yc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(50, 0.25, 100)
@@ -68,7 +71,7 @@ texture = ExtResource("11_bctio")
 transform = Transform3D(1, 0, 0, 0, 0.17155087, 0.9851753, 0, -0.9851753, 0.17155087, 0, 6.6319437, 19.546883)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
-transform = Transform3D(1, 0, 0, 0, 0.92229545, 0.38648567, 0, -0.38648567, 0.92229545, 0, 3.1773634, 51.056313)
+transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.8792332, 0, 4.751979, 51.187668)
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=961487849]
 
@@ -96,10 +99,10 @@ wait_time = 0.5
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -37.0
-offset_top = 37.0
-offset_right = 41.0
-offset_bottom = 60.0
+offset_left = -226.0
+offset_top = 13.0
+offset_right = -148.0
+offset_bottom = 63.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 36
 
@@ -343,5 +346,45 @@ grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_fbdad")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3qr72")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7bn77")
+
+[node name="Slider" type="Control" parent="InGame UI" unique_id=8488534]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 56.0
+offset_right = 150.0
+offset_bottom = 111.0
+grow_horizontal = 2
+
+[node name="TimerSlider" type="TextureProgressBar" parent="InGame UI/Slider" unique_id=733454383]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 300.0
+offset_bottom = 11.5
+grow_vertical = 2
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = ExtResource("12_bxwey")
+texture_progress = ExtResource("12_bxwey")
+tint_progress = Color(0.14117648, 0.8, 0.21960784, 1)
+script = ExtResource("13_561yc")
+
+[node name="TimerClock" type="TextureRect" parent="InGame UI/Slider" unique_id=278918242]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -22.5
+offset_right = 45.403587
+offset_bottom = 22.5
+grow_vertical = 2
+texture = ExtResource("12_luw2b")
+expand_mode = 3
+stretch_mode = 4
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]

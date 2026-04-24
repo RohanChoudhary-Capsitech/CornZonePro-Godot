@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drmvoxy81hgc2"
-path="res://.godot/imported/Bg.png-db2bf5e9c975d387e48f7276bf623906.ctex"
+uid="uid://8njfj1mnt6bv"
+path="res://.godot/imported/TimerClock.png-0679b40481d8508b61356eb19318bdbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Home Screen/Bg.png"
-dest_files=["res://.godot/imported/Bg.png-db2bf5e9c975d387e48f7276bf623906.ctex"]
+source_file="res://Texture Or Sprites/SinglePlayer/TimerClock.png"
+dest_files=["res://.godot/imported/TimerClock.png-0679b40481d8508b61356eb19318bdbb.ctex"]
 
 [params]
 
