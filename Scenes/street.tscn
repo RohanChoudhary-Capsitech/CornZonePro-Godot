@@ -116,7 +116,6 @@ bag = ExtResource("3_3qr72")
 wait_time = 0.5
 
 [node name="InGame UI" type="CanvasLayer" parent="." unique_id=903377817]
-visible = false
 
 [node name="Label" type="Label" parent="InGame UI" unique_id=1472643477]
 anchors_preset = 5
@@ -412,6 +411,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="PauseMenu" type="CanvasLayer" parent="." unique_id=918784366]
+visible = false
 
 [node name="Black Bg" type="TextureRect" parent="PauseMenu" unique_id=250150139]
 offset_right = 480.0
@@ -585,6 +585,198 @@ theme_override_fonts/font = ExtResource("8_0b447")
 text = "Resume"
 
 [node name="Cross" type="Button" parent="PauseMenu/Black Bg/PausePanel BG" unique_id=1750672698]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.6875
+offset_top = 11.177521
+offset_right = -20.6875
+offset_bottom = 31.17752
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_0b447")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_coojd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qpfcn")
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=613420293]
+visible = false
+
+[node name="Black Bg" type="TextureRect" parent="GameOver" unique_id=63578351]
+offset_right = 480.0
+offset_bottom = 720.0
+texture = ExtResource("15_3jtxs")
+expand_mode = 3
+
+[node name="PausePanel BG" type="TextureRect" parent="GameOver/Black Bg" unique_id=1465604677]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.6875
+offset_top = -169.17752
+offset_right = 140.6875
+offset_bottom = 169.17752
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_k32e6")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="GameOver/Black Bg/PausePanel BG" unique_id=1323902586]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_font_sizes/font_size = 25
+text = "Result"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinsText" type="Label" parent="GameOver/Black Bg/PausePanel BG" unique_id=1016460200]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -84.5
+offset_right = 105.5
+offset_bottom = -11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_font_sizes/font_size = 60
+text = "99955"
+
+[node name="Coins Heading" type="Label" parent="GameOver/Black Bg/PausePanel BG/CoinsText" unique_id=2045439388]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.5
+offset_top = -21.0
+offset_right = 24.5
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_font_sizes/font_size = 20
+text = "Coin"
+
+[node name="Button" type="Button" parent="GameOver/Black Bg/PausePanel BG" unique_id=3714039]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = -0.1775055
+offset_right = 100.0005
+offset_bottom = 34.822495
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="GameOver/Black Bg/PausePanel BG/Button" unique_id=1640521056]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_0b447")
+text = "Home"
+
+[node name="Button2" type="Button" parent="GameOver/Black Bg/PausePanel BG" unique_id=194751114]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 52.50049
+offset_right = 100.0005
+offset_bottom = 87.50047
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="GameOver/Black Bg/PausePanel BG/Button2" unique_id=873462206]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -11.5
+offset_right = 32.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_0b447")
+text = "Restart"
+
+[node name="Button3" type="Button" parent="GameOver/Black Bg/PausePanel BG" unique_id=303444037]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 105.4995
+offset_right = 100.0005
+offset_bottom = 140.4995
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="GameOver/Black Bg/PausePanel BG/Button3" unique_id=1532286419]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -11.5
+offset_right = 33.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_0b447")
+text = "Share"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cross" type="Button" parent="GameOver/Black Bg/PausePanel BG" unique_id=1759067023]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
