@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 UIManager="*uid://dfx1esru4gan0"
+GameSession="*uid://uatweii6sv5o"
+Prefs="*uid://bq4vynw7q6sul"
 
 [display]
 
@@ -30,6 +32,10 @@ window/handheld/orientation=1
 [dotnet]
 
 project/assembly_name="Cornzone"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/playerprefs/plugin.cfg")
 
 [physics]
 

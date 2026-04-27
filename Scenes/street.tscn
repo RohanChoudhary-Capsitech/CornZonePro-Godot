@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cdug7sre63vt5" path="res://Texture Or Sprites/SinglePlayer/SingleTimer.png" id="12_bxwey"]
 [ext_resource type="Texture2D" uid="uid://8njfj1mnt6bv" path="res://Texture Or Sprites/SinglePlayer/TimerClock.png" id="12_luw2b"]
 [ext_resource type="Script" uid="uid://r8egelqwvacm" path="res://Scripts/timer_slider.gd" id="13_561yc"]
+[ext_resource type="Resource" uid="uid://ckobu3v1aeo" path="res://Resources/Maps/street.tres" id="14_fbdad"]
 [ext_resource type="Texture2D" uid="uid://br2f810pal41w" path="res://Texture Or Sprites/SinglePlayer/PanelsBg.png" id="15_3jtxs"]
 [ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="16_k32e6"]
 [ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="17_k32e6"]
@@ -396,6 +397,7 @@ texture_under = ExtResource("12_bxwey")
 texture_progress = ExtResource("12_bxwey")
 tint_progress = Color(0.14117648, 0.8, 0.21960784, 1)
 script = ExtResource("13_561yc")
+map_config = ExtResource("14_fbdad")
 
 [node name="TimerClock" type="TextureRect" parent="InGame UI/Slider" unique_id=278918242]
 layout_mode = 1

@@ -8,4 +8,9 @@ func _ready():
 
 func _on_loading_finished():
 	print("Loading complete!")
-	UIManager.enable_canvas($"../../../LoginScreen")
+	var val=Prefs.get_int("user",0)
+	if 1==val:
+		UIManager.enable_canvas($"../../../HomeScreen")
+	else:
+		UIManager.enable_canvas($"../../../LoginScreen")
+	#UIManager.enable_canvas()

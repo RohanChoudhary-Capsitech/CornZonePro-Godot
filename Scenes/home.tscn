@@ -242,16 +242,19 @@ texture = ExtResource("47_fq71w")
 texture = ExtResource("47_fq71w")
 
 [node name="Home" type="Node3D" unique_id=1397785541]
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
 transform = Transform3D(1, 0, 0, 0, 0.17155087, 0.9851753, 0, -0.9851753, 0.17155087, 0, 6.6319437, 19.546883)
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
 transform = Transform3D(1, 0, 0, 0, 0.92229545, 0.38648567, 0, -0.38648567, 0.92229545, 0, 3.8512998, 51.056313)
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=961487849]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=310348646]
 mesh = SubResource("BoxMesh_1ey7h")
@@ -262,35 +265,20 @@ metadata/_edit_group_ = true
 
 [node name="Board" parent="." unique_id=496892006 instance=ExtResource("2_12ycv")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 35.468597)
+visible = false
 
 [node name="SpawnPOINT" type="Node3D" parent="." unique_id=1295221534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2954383, 49.1849)
+visible = false
 script = ExtResource("3_llnbm")
 bag = ExtResource("1_ibywg")
 
 [node name="StartTimer" type="Timer" parent="." unique_id=919203266]
 wait_time = 0.5
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=903377817]
+[node name="LoadingScreen" type="CanvasLayer" parent="." unique_id=1544671716]
 
-[node name="Label" type="Label" parent="UI" unique_id=1472643477]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -37.0
-offset_top = 37.0
-offset_right = 41.0
-offset_bottom = 60.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 36
-
-[node name="UIManager" type="Node" parent="." unique_id=1343059379 node_paths=PackedStringArray("canvas_layers")]
-script = ExtResource("4_q1yq7")
-canvas_layers = [NodePath("LoadingScreen"), NodePath("LoginScreen"), NodePath("HomeScreen")]
-
-[node name="LoadingScreen" type="CanvasLayer" parent="UIManager" unique_id=1544671716]
-
-[node name="BG" type="TextureRect" parent="UIManager/LoadingScreen" unique_id=1198044369]
+[node name="BG" type="TextureRect" parent="LoadingScreen" unique_id=1198044369]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -299,7 +287,7 @@ grow_vertical = 2
 texture = ExtResource("4_12ycv")
 expand_mode = 4
 
-[node name="LoadPanel" type="Control" parent="UIManager/LoadingScreen" unique_id=1411730518]
+[node name="LoadPanel" type="Control" parent="LoadingScreen" unique_id=1411730518]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -307,7 +295,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="UIManager/LoadingScreen/LoadPanel" unique_id=1853004373]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="LoadingScreen/LoadPanel" unique_id=1853004373]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -327,8 +315,9 @@ texture_under = ExtResource("5_fhpuh")
 texture_progress = ExtResource("5_fhpuh")
 tint_progress = Color(0.99607843, 0.6666667, 0.1882353, 1)
 script = ExtResource("8_cykap")
+metadata/_edit_use_anchors_ = true
 
-[node name="LoadingText" type="RichTextLabel" parent="UIManager/LoadingScreen/LoadPanel" unique_id=771067393]
+[node name="LoadingText" type="RichTextLabel" parent="LoadingScreen/LoadPanel" unique_id=771067393]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -347,9 +336,10 @@ text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LoginScreen" type="CanvasLayer" parent="UIManager" unique_id=1588224233]
+[node name="LoginScreen" type="CanvasLayer" parent="." unique_id=1588224233]
+visible = false
 
-[node name="BG" type="TextureRect" parent="UIManager/LoginScreen" unique_id=635102092]
+[node name="BG" type="TextureRect" parent="LoginScreen" unique_id=635102092]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -358,7 +348,7 @@ grow_vertical = 2
 texture = ExtResource("4_12ycv")
 expand_mode = 4
 
-[node name="LoginPanel" type="Control" parent="UIManager/LoginScreen" unique_id=225060287]
+[node name="LoginPanel" type="Control" parent="LoginScreen" unique_id=225060287]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -366,7 +356,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelBG" type="TextureRect" parent="UIManager/LoginScreen/LoginPanel" unique_id=1110555549]
+[node name="PanelBG" type="TextureRect" parent="LoginScreen/LoginPanel" unique_id=1110555549]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -376,7 +366,7 @@ grow_vertical = 2
 texture = ExtResource("9_cykap")
 expand_mode = 4
 
-[node name="Panel" type="VBoxContainer" parent="UIManager/LoginScreen/LoginPanel" unique_id=1766915403]
+[node name="Panel" type="VBoxContainer" parent="LoginScreen/LoginPanel" unique_id=1766915403]
 material = SubResource("CanvasItemMaterial_cykap")
 layout_mode = 1
 anchors_preset = 8
@@ -392,7 +382,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="UserName" type="LineEdit" parent="UIManager/LoginScreen/LoginPanel/Panel" unique_id=491425386]
+[node name="UserName" type="LineEdit" parent="LoginScreen/LoginPanel/Panel" unique_id=491425386]
 clip_contents = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -407,7 +397,7 @@ alignment = 1
 max_length = 12
 text_direction = 1
 
-[node name="SubmitButton" type="Button" parent="UIManager/LoginScreen/LoginPanel/Panel" unique_id=151783331]
+[node name="SubmitButton" type="Button" parent="LoginScreen/LoginPanel/Panel" unique_id=151783331]
 clip_contents = true
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
@@ -422,36 +412,37 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_gyiet")
 text = "Play as guest"
 text_overrun_behavior = 2
 
-[node name="TextureRect" type="TextureRect" parent="UIManager/LoginScreen/LoginPanel/Panel" unique_id=1779299529]
+[node name="TextureRect" type="TextureRect" parent="LoginScreen/LoginPanel/Panel" unique_id=1779299529]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_vertical = 8
 texture = ExtResource("13_jjai4")
 expand_mode = 2
 
-[node name="OauthContainer" type="HBoxContainer" parent="UIManager/LoginScreen/LoginPanel/Panel" unique_id=1263272692]
+[node name="OauthContainer" type="HBoxContainer" parent="LoginScreen/LoginPanel/Panel" unique_id=1263272692]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Google" type="Button" parent="UIManager/LoginScreen/LoginPanel/Panel/OauthContainer" unique_id=838207043]
+[node name="Google" type="Button" parent="LoginScreen/LoginPanel/Panel/OauthContainer" unique_id=838207043]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_dyher")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_pkgvh")
 theme_override_styles/hover = SubResource("StyleBoxTexture_848r5")
 
-[node name="Apple" type="Button" parent="UIManager/LoginScreen/LoginPanel/Panel/OauthContainer" unique_id=1763007030]
+[node name="Apple" type="Button" parent="LoginScreen/LoginPanel/Panel/OauthContainer" unique_id=1763007030]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ppvi3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lddgv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_smgrs")
 
-[node name="HomeScreen" type="CanvasLayer" parent="UIManager" unique_id=623974019]
+[node name="HomeScreen" type="CanvasLayer" parent="." unique_id=623974019]
+visible = false
 
-[node name="BG" type="TextureRect" parent="UIManager/HomeScreen" unique_id=1445440937]
+[node name="BG" type="TextureRect" parent="HomeScreen" unique_id=1445440937]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -460,7 +451,7 @@ grow_vertical = 2
 texture = ExtResource("16_848r5")
 expand_mode = 4
 
-[node name="Panel" type="Control" parent="UIManager/HomeScreen" unique_id=689472103]
+[node name="Panel" type="Control" parent="HomeScreen" unique_id=689472103]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -468,7 +459,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopPanel" type="HBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=472766109]
+[node name="TopPanel" type="HBoxContainer" parent="HomeScreen/Panel" unique_id=472766109]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 1
 anchors_preset = 5
@@ -481,13 +472,13 @@ offset_bottom = 70.0
 grow_horizontal = 2
 theme_override_constants/separation = 25
 
-[node name="Profile" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel" unique_id=1919251055]
+[node name="Profile" type="TextureRect" parent="HomeScreen/Panel/TopPanel" unique_id=1919251055]
 layout_mode = 2
 texture = ExtResource("17_g2bjx")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Icon" type="Button" parent="UIManager/HomeScreen/Panel/TopPanel/Profile" unique_id=1614137076]
+[node name="Icon" type="Button" parent="HomeScreen/Panel/TopPanel/Profile" unique_id=1614137076]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -501,7 +492,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_43epo")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7q78h")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ndhgh")
 
-[node name="Label" type="Label" parent="UIManager/HomeScreen/Panel/TopPanel/Profile" unique_id=883186087]
+[node name="Label" type="Label" parent="HomeScreen/Panel/TopPanel/Profile" unique_id=883186087]
 layout_mode = 0
 offset_left = 23.0
 offset_top = 2.0
@@ -512,7 +503,7 @@ theme_override_fonts/font = ExtResource("19_55ff8")
 theme_override_font_sizes/font_size = 11
 text = "Himanshu 1234"
 
-[node name="TextureRect" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel/Profile" unique_id=1560160933]
+[node name="TextureRect" type="TextureRect" parent="HomeScreen/Panel/TopPanel/Profile" unique_id=1560160933]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 19.0
@@ -522,7 +513,7 @@ texture = ExtResource("20_uctue")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Label2" type="Label" parent="UIManager/HomeScreen/Panel/TopPanel/Profile" unique_id=1725353192]
+[node name="Label2" type="Label" parent="HomeScreen/Panel/TopPanel/Profile" unique_id=1725353192]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 16.0
@@ -533,14 +524,14 @@ theme_override_fonts/font = ExtResource("20_ao7do")
 theme_override_font_sizes/font_size = 9
 text = "Bronze"
 
-[node name="Coin" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel" unique_id=1463064628]
+[node name="Coin" type="TextureRect" parent="HomeScreen/Panel/TopPanel" unique_id=1463064628]
 custom_minimum_size = Vector2(50, 20)
 layout_mode = 2
 texture = ExtResource("17_yxu73")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="CoinIcon" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel/Coin" unique_id=674128418]
+[node name="CoinIcon" type="TextureRect" parent="HomeScreen/Panel/TopPanel/Coin" unique_id=674128418]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -554,7 +545,7 @@ texture = ExtResource("18_kx4oe")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="CoinText" type="Label" parent="UIManager/HomeScreen/Panel/TopPanel/Coin" unique_id=1975595066]
+[node name="CoinText" type="Label" parent="HomeScreen/Panel/TopPanel/Coin" unique_id=1975595066]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -573,14 +564,14 @@ theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 14
 text = "235"
 
-[node name="XP" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel" unique_id=1572530790]
+[node name="XP" type="TextureRect" parent="HomeScreen/Panel/TopPanel" unique_id=1572530790]
 custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 texture = ExtResource("17_yxu73")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="XpIcon" type="TextureRect" parent="UIManager/HomeScreen/Panel/TopPanel/XP" unique_id=1945381247]
+[node name="XpIcon" type="TextureRect" parent="HomeScreen/Panel/TopPanel/XP" unique_id=1945381247]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -594,7 +585,7 @@ texture = ExtResource("18_uo4rt")
 expand_mode = 4
 stretch_mode = 4
 
-[node name="XpText" type="Label" parent="UIManager/HomeScreen/Panel/TopPanel/XP" unique_id=731114475]
+[node name="XpText" type="Label" parent="HomeScreen/Panel/TopPanel/XP" unique_id=731114475]
 custom_minimum_size = Vector2(-50, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -614,7 +605,7 @@ theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 14
 text = "50"
 
-[node name="SettingButton" type="Button" parent="UIManager/HomeScreen/Panel/TopPanel" unique_id=768354547]
+[node name="SettingButton" type="Button" parent="HomeScreen/Panel/TopPanel" unique_id=768354547]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -622,7 +613,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_jv2cb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_62iqh")
 theme_override_styles/hover = SubResource("StyleBoxTexture_aoomy")
 
-[node name="LeftPanel" type="VBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=817961446]
+[node name="LeftPanel" type="VBoxContainer" parent="HomeScreen/Panel" unique_id=817961446]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -632,14 +623,14 @@ offset_right = 73.0
 offset_bottom = 5.0
 grow_vertical = 2
 
-[node name="LeftPanelBG" type="TextureRect" parent="UIManager/HomeScreen/Panel/LeftPanel" unique_id=965988182]
+[node name="LeftPanelBG" type="TextureRect" parent="HomeScreen/Panel/LeftPanel" unique_id=965988182]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 texture = ExtResource("17_dyher")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="DailyRewardButton" type="Button" parent="UIManager/HomeScreen/Panel/LeftPanel/LeftPanelBG" unique_id=1810297332]
+[node name="DailyRewardButton" type="Button" parent="HomeScreen/Panel/LeftPanel/LeftPanelBG" unique_id=1810297332]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 1
 anchors_preset = 5
@@ -655,7 +646,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_y6p71")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ayluw")
 icon_alignment = 1
 
-[node name="AchievementButton" type="Button" parent="UIManager/HomeScreen/Panel/LeftPanel/LeftPanelBG" unique_id=1308842282]
+[node name="AchievementButton" type="Button" parent="HomeScreen/Panel/LeftPanel/LeftPanelBG" unique_id=1308842282]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -672,7 +663,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_guf2q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0qnmp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_h6vkq")
 
-[node name="InfoButton" type="Button" parent="UIManager/HomeScreen/Panel/LeftPanel/LeftPanelBG" unique_id=1429055669]
+[node name="InfoButton" type="Button" parent="HomeScreen/Panel/LeftPanel/LeftPanelBG" unique_id=1429055669]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -689,7 +680,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_3crrv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wflhj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_krc7t")
 
-[node name="RightPanel" type="VBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=740011782]
+[node name="RightPanel" type="VBoxContainer" parent="HomeScreen/Panel" unique_id=740011782]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -702,14 +693,14 @@ offset_bottom = 145.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="RightPanelBG" type="TextureRect" parent="UIManager/HomeScreen/Panel/RightPanel" unique_id=1562719810]
+[node name="RightPanelBG" type="TextureRect" parent="HomeScreen/Panel/RightPanel" unique_id=1562719810]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 texture = ExtResource("18_ppvi3")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="TimerButton" type="Button" parent="UIManager/HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=1948553678]
+[node name="TimerButton" type="Button" parent="HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=1948553678]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -721,8 +712,9 @@ grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_iw3j6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hk3dx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vihvb")
+metadata/_edit_use_anchors_ = true
 
-[node name="LANButton" type="Button" parent="UIManager/HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=1713150641]
+[node name="LANButton" type="Button" parent="HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=1713150641]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -738,7 +730,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_s14yv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wrq7k")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yxu73")
 
-[node name="PassNPlayButton" type="Button" parent="UIManager/HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=224458733]
+[node name="PassNPlayButton" type="Button" parent="HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=224458733]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -754,7 +746,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_uo4rt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_kx4oe")
 theme_override_styles/hover = SubResource("StyleBoxTexture_g2bjx")
 
-[node name="LockedButton" type="Button" parent="UIManager/HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=828518004]
+[node name="LockedButton" type="Button" parent="HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=828518004]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -770,7 +762,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_55ff8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ao7do")
 theme_override_styles/hover = SubResource("StyleBoxTexture_uctue")
 
-[node name="BottomPanel" type="HBoxContainer" parent="UIManager/HomeScreen/Panel" unique_id=314104605]
+[node name="BottomPanel" type="HBoxContainer" parent="HomeScreen/Panel" unique_id=314104605]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -784,13 +776,13 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = -1
 
-[node name="Shop" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel" unique_id=678838603]
+[node name="Shop" type="TextureRect" parent="HomeScreen/Panel/BottomPanel" unique_id=678838603]
 layout_mode = 2
 texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="UIManager/HomeScreen/Panel/BottomPanel/Shop" unique_id=1201021935]
+[node name="Button" type="Button" parent="HomeScreen/Panel/BottomPanel/Shop" unique_id=1201021935]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -807,13 +799,13 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ridcw")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6mqkx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vdfna")
 
-[node name="Inventory" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel" unique_id=143819096]
+[node name="Inventory" type="TextureRect" parent="HomeScreen/Panel/BottomPanel" unique_id=143819096]
 layout_mode = 2
 texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="UIManager/HomeScreen/Panel/BottomPanel/Inventory" unique_id=84989112]
+[node name="Button" type="Button" parent="HomeScreen/Panel/BottomPanel/Inventory" unique_id=84989112]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -830,13 +822,13 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_sxluj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_d3n2e")
 theme_override_styles/hover = SubResource("StyleBoxTexture_fq71w")
 
-[node name="Play" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel" unique_id=1629769743]
+[node name="Play" type="TextureRect" parent="HomeScreen/Panel/BottomPanel" unique_id=1629769743]
 layout_mode = 2
 texture = ExtResource("27_3crrv")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel/Play" unique_id=1978071196]
+[node name="TextureRect" type="TextureRect" parent="HomeScreen/Panel/BottomPanel/Play" unique_id=1978071196]
 z_index = 1
 layout_mode = 1
 anchors_preset = 8
@@ -854,7 +846,7 @@ texture = ExtResource("27_3crrv")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="PlayIcon" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel/Play" unique_id=41540403]
+[node name="PlayIcon" type="TextureRect" parent="HomeScreen/Panel/BottomPanel/Play" unique_id=41540403]
 z_index = 2
 layout_mode = 1
 anchors_preset = 5
@@ -869,7 +861,7 @@ texture = ExtResource("30_hk3dx")
 expand_mode = 4
 stretch_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel/Play/PlayIcon" unique_id=230591292]
+[node name="TextureRect" type="TextureRect" parent="HomeScreen/Panel/BottomPanel/Play/PlayIcon" unique_id=230591292]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -886,13 +878,13 @@ texture = ExtResource("31_vihvb")
 expand_mode = 4
 stretch_mode = 4
 
-[node name="Locked" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel" unique_id=1474820346]
+[node name="Locked" type="TextureRect" parent="HomeScreen/Panel/BottomPanel" unique_id=1474820346]
 layout_mode = 2
 texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="UIManager/HomeScreen/Panel/BottomPanel/Locked" unique_id=1471951552]
+[node name="Button" type="Button" parent="HomeScreen/Panel/BottomPanel/Locked" unique_id=1471951552]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -909,13 +901,13 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_bih4p")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cmu2r")
 theme_override_styles/hover = SubResource("StyleBoxTexture_mkkvt")
 
-[node name="Locked2" type="TextureRect" parent="UIManager/HomeScreen/Panel/BottomPanel" unique_id=574618787]
+[node name="Locked2" type="TextureRect" parent="HomeScreen/Panel/BottomPanel" unique_id=574618787]
 layout_mode = 2
 texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="UIManager/HomeScreen/Panel/BottomPanel/Locked2" unique_id=1079596992]
+[node name="Button" type="Button" parent="HomeScreen/Panel/BottomPanel/Locked2" unique_id=1079596992]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -932,9 +924,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_m3bm7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
-[node name="SettingScreen" type="CanvasLayer" parent="UIManager" unique_id=1804771245]
+[node name="SettingScreen" type="CanvasLayer" parent="." unique_id=1804771245]
+visible = false
 
-[node name="BG" type="TextureRect" parent="UIManager/SettingScreen" unique_id=552536001]
+[node name="BG" type="TextureRect" parent="SettingScreen" unique_id=552536001]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -943,7 +936,7 @@ grow_vertical = 2
 texture = ExtResource("9_cykap")
 expand_mode = 4
 
-[node name="Panel" type="Control" parent="UIManager/SettingScreen" unique_id=2031224292]
+[node name="Panel" type="Control" parent="SettingScreen" unique_id=2031224292]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -957,7 +950,7 @@ offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SettingBg" type="TextureRect" parent="UIManager/SettingScreen/Panel" unique_id=1243536937]
+[node name="SettingBg" type="TextureRect" parent="SettingScreen/Panel" unique_id=1243536937]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -974,7 +967,7 @@ texture = ExtResource("42_ridcw")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="SettingText" type="Label" parent="UIManager/SettingScreen/Panel/SettingBg" unique_id=16375075]
+[node name="SettingText" type="Label" parent="SettingScreen/Panel/SettingBg" unique_id=16375075]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -990,7 +983,7 @@ theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 28
 text = "Settings"
 
-[node name="CrossButton" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg" unique_id=489184082]
+[node name="CrossButton" type="Button" parent="SettingScreen/Panel/SettingBg" unique_id=489184082]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -1004,7 +997,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_0g73e")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3fp5a")
 theme_override_styles/hover = SubResource("StyleBoxTexture_um175")
 
-[node name="AudioMusicBg" type="TextureRect" parent="UIManager/SettingScreen/Panel/SettingBg" unique_id=1819199424]
+[node name="AudioMusicBg" type="TextureRect" parent="SettingScreen/Panel/SettingBg" unique_id=1819199424]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1021,7 +1014,7 @@ texture = ExtResource("44_vdfna")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="AudioText" type="Label" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=807528863]
+[node name="AudioText" type="Label" parent="SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=807528863]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 30.0
@@ -1031,7 +1024,7 @@ theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 28
 text = "Audio"
 
-[node name="MusicText" type="Label" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=1241709567]
+[node name="MusicText" type="Label" parent="SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=1241709567]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 90.0
@@ -1041,7 +1034,7 @@ theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 28
 text = "Music"
 
-[node name="MusicOnButton" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=2079967415]
+[node name="MusicOnButton" type="Button" parent="SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=2079967415]
 layout_mode = 0
 offset_left = 153.00038
 offset_top = 40.0
@@ -1051,7 +1044,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_b16xs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5id56")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xdufu")
 
-[node name="MusicOffButton" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=592955231]
+[node name="MusicOffButton" type="Button" parent="SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=592955231]
 visible = false
 layout_mode = 0
 offset_left = 153.00038
@@ -1062,7 +1055,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_8lqci")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fa687")
 theme_override_styles/hover = SubResource("StyleBoxTexture_4ssmp")
 
-[node name="SoundOnButton" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=2032925972]
+[node name="SoundOnButton" type="Button" parent="SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=2032925972]
 layout_mode = 0
 offset_left = 153.0
 offset_top = 100.0
@@ -1072,7 +1065,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_b16xs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5id56")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xdufu")
 
-[node name="SoundOffButton" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=1555426933]
+[node name="SoundOffButton" type="Button" parent="SettingScreen/Panel/SettingBg/AudioMusicBg" unique_id=1555426933]
 visible = false
 layout_mode = 0
 offset_left = 153.0
@@ -1083,7 +1076,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_8lqci")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fa687")
 theme_override_styles/hover = SubResource("StyleBoxTexture_4ssmp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/SettingScreen/Panel/SettingBg" unique_id=87481471]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingScreen/Panel/SettingBg" unique_id=87481471]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1098,7 +1091,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 10
 
-[node name="LoginWithGoogle" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/VBoxContainer" unique_id=1003234960]
+[node name="LoginWithGoogle" type="Button" parent="SettingScreen/Panel/SettingBg/VBoxContainer" unique_id=1003234960]
 custom_minimum_size = Vector2(250, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1106,12 +1099,22 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_jmoue")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0bc6n")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0iwel")
 
-[node name="LoginWithApple" type="Button" parent="UIManager/SettingScreen/Panel/SettingBg/VBoxContainer" unique_id=1189951160]
+[node name="LoginWithApple" type="Button" parent="SettingScreen/Panel/SettingBg/VBoxContainer" unique_id=1189951160]
 custom_minimum_size = Vector2(250, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_jmoue")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0bc6n")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0iwel")
+
+[node name="UIManager" type="Node" parent="." unique_id=1343059379 node_paths=PackedStringArray("canvas_layers")]
+script = ExtResource("4_q1yq7")
+canvas_layers = [NodePath("../LoadingScreen"), NodePath("../LoginScreen"), NodePath("../HomeScreen"), NodePath("../SettingScreen")]
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
+[connection signal="pressed" from="LoginScreen/LoginPanel/Panel/SubmitButton" to="UIManager" method="_on_submit_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/TopPanel/SettingButton" to="UIManager" method="_on_setting_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/TimerButton" to="UIManager" method="_on_timer_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/LANButton" to="UIManager" method="_on_lan_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/PassNPlayButton" to="UIManager" method="_on_pass_n_play_button_pressed"]
+[connection signal="pressed" from="SettingScreen/Panel/SettingBg/CrossButton" to="UIManager" method="_on_cross_button_pressed"]

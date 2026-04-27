@@ -1,6 +1,8 @@
 extends TextureProgressBar
 
-@export var max_time:float=30.0
+@export var map_config:MapConfig
+
+@export var max_time:int
 @export var smooth_speed:float=30.0
 
 var timer_paused:bool=false
@@ -8,6 +10,9 @@ var current_time:float
 var display_value:float
 
 func _ready() -> void:
+	if map_config:
+		max_time=map_config.time_limit
+	
 	current_time=max_time
 	display_value=max_time
 	
