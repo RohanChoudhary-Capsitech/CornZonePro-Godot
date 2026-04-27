@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dr0rmg33fscfy"]
+
+[ext_resource type="Texture2D" uid="uid://tn4evmrgxmoj" path="res://Texture Or Sprites/Bags/Rogue.png" id="1_c7xmg"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_c7xmg")
+uv1_scale = Vector3(4.195, 4.195, 4.195)
+uv1_offset = Vector3(0.035, 0.02, 0)

@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tn4evmrgxmoj"
-path.s3tc="res://.godot/imported/man  1.png-42a70c088358122a5d1cf379bcdfbcc0.s3tc.ctex"
-path.etc2="res://.godot/imported/man  1.png-42a70c088358122a5d1cf379bcdfbcc0.etc2.ctex"
+uid="uid://dyyrk0wpb7ec8"
+path.s3tc="res://.godot/imported/Neon.png-df1d325a4d1bde0e0d37e04a9006dee1.s3tc.ctex"
+path.etc2="res://.godot/imported/Neon.png-df1d325a4d1bde0e0d37e04a9006dee1.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Texture Or Sprites/man  1.png"
-dest_files=["res://.godot/imported/man  1.png-42a70c088358122a5d1cf379bcdfbcc0.s3tc.ctex", "res://.godot/imported/man  1.png-42a70c088358122a5d1cf379bcdfbcc0.etc2.ctex"]
+source_file="res://Texture Or Sprites/Bags/Neon.png"
+dest_files=["res://.godot/imported/Neon.png-df1d325a4d1bde0e0d37e04a9006dee1.s3tc.ctex", "res://.godot/imported/Neon.png-df1d325a4d1bde0e0d37e04a9006dee1.etc2.ctex"]
 
 [params]
 

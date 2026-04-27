@@ -1,6 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bcruh3rfcnogl"]
-
-[ext_resource type="Texture2D" uid="uid://tn4evmrgxmoj" path="res://Texture Or Sprites/man  1.png" id="1_qomen"]
-
-[resource]
-albedo_texture = ExtResource("1_qomen")

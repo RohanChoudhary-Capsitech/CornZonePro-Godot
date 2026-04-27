@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BagConfig" format=3 uid="uid://cqsvxi6el5e8g"]
+
+[ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/BagConfig.gd" id="1_8dv25"]
+[ext_resource type="Material" uid="uid://dr0rmg33fscfy" path="res://Materials/Rogue.tres" id="1_g6fcd"]
+[ext_resource type="Texture2D" uid="uid://tn4evmrgxmoj" path="res://Texture Or Sprites/Bags/Rogue.png" id="1_ns5wg"]
+
+[resource]
+script = ExtResource("1_8dv25")
+bag_name = "Rogue"
+icon = ExtResource("1_ns5wg")
+material_override = ExtResource("1_g6fcd")
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"

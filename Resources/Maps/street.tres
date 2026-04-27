@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Map_Config" format=3 uid="uid://ckobu3v1aeo"]
+
+[ext_resource type="Script" uid="uid://cb5msbqy6mbc7" path="res://Scripts/Map_Config.gd" id="1_g45g8"]
+
+[resource]
+script = ExtResource("1_g45g8")
+map_name = "Street"
+time_limit = 25.0
+coin_reward = 2.0
+metadata/_custom_type_script = "uid://cb5msbqy6mbc7"

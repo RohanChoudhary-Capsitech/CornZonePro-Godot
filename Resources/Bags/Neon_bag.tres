@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BagConfig" format=3 uid="uid://dkhjc0vtm6mu3"]
+
+[ext_resource type="Texture2D" uid="uid://dyyrk0wpb7ec8" path="res://Texture Or Sprites/Bags/Neon.png" id="1_vj60b"]
+[ext_resource type="Material" uid="uid://brvworqxc0eki" path="res://Materials/Neon.tres" id="2_4eg3t"]
+[ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/BagConfig.gd" id="2_vj60b"]
+
+[resource]
+script = ExtResource("2_vj60b")
+bag_name = "Neon"
+icon = ExtResource("1_vj60b")
+material_override = ExtResource("2_4eg3t")
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
