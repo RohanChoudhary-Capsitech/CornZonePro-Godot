@@ -7,10 +7,8 @@ func _ready():
 	tween.finished.connect(_on_loading_finished)
 
 func _on_loading_finished():
-	print("Loading complete!")
-	var val=Prefs.get_int("user",0)
-	if 1==val:
-		UIManager.enable_canvas($"../../../HomeScreen")
+	var val = Prefs.get_int("user", 0)
+	if 1 == val:
+		UIManager.enable_canvas(UIManager.home_screen)
 	else:
-		UIManager.enable_canvas($"../../../LoginScreen")
-	#UIManager.enable_canvas()
+		UIManager.enable_canvas(UIManager.login_screen)

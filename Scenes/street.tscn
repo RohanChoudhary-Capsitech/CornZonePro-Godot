@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="16_k32e6"]
 [ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="17_k32e6"]
 [ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="18_ywqqe"]
+[ext_resource type="Script" uid="uid://dfx1esru4gan0" path="res://Scripts/UIManager.gd" id="20_3qr72"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(50, 0.25, 100)
@@ -791,5 +792,12 @@ grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_0b447")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_coojd")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qpfcn")
+
+[node name="UIManager" type="Control" parent="." unique_id=1775913290]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("20_3qr72")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]

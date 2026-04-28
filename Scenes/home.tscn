@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bv20jfqyaommi"]
 
+[ext_resource type="Script" uid="uid://c64dap5yua3t2" path="res://Scenes/home.gd" id="1_bih4p"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="1_ibywg"]
 [ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="2_12ycv"]
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="3_llnbm"]
@@ -243,6 +244,7 @@ texture = ExtResource("47_fq71w")
 
 [node name="Home" type="Node3D" unique_id=1397785541]
 visible = false
+script = ExtResource("1_bih4p")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
 
@@ -337,7 +339,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LoginScreen" type="CanvasLayer" parent="." unique_id=1588224233]
-visible = false
 
 [node name="BG" type="TextureRect" parent="LoginScreen" unique_id=635102092]
 anchors_preset = 15
@@ -440,7 +441,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_lddgv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_smgrs")
 
 [node name="HomeScreen" type="CanvasLayer" parent="." unique_id=623974019]
-visible = false
 
 [node name="BG" type="TextureRect" parent="HomeScreen" unique_id=1445440937]
 anchors_preset = 15
@@ -925,7 +925,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
 [node name="SettingScreen" type="CanvasLayer" parent="." unique_id=1804771245]
-visible = false
 
 [node name="BG" type="TextureRect" parent="SettingScreen" unique_id=552536001]
 anchors_preset = 15
@@ -1107,9 +1106,8 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_jmoue")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0bc6n")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0iwel")
 
-[node name="UIManager" type="Node" parent="." unique_id=1343059379 node_paths=PackedStringArray("canvas_layers")]
+[node name="UIManager" type="Node" parent="." unique_id=1343059379]
 script = ExtResource("4_q1yq7")
-canvas_layers = [NodePath("../LoadingScreen"), NodePath("../LoginScreen"), NodePath("../HomeScreen"), NodePath("../SettingScreen")]
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
 [connection signal="pressed" from="LoginScreen/LoginPanel/Panel/SubmitButton" to="UIManager" method="_on_submit_button_pressed"]
