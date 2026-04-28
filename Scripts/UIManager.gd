@@ -38,22 +38,3 @@ func pass_play()->void:
 func local_multiplayer()->void:
 	GameSession.selected_mode="Local"
 	print(GameSession.selected_mode)
-
-func _on_timer_button_pressed() -> void:
-	single_player()
-
-func _on_lan_button_pressed() -> void:
-	local_multiplayer()
-
-func _on_submit_button_pressed() -> void:
-	enable_canvas($"../HomeScreen") 
-	Prefs.set_int("user",1)
-
-func _on_pass_n_play_button_pressed() -> void:
-	pass_play() 
-
-func _on_setting_button_pressed() -> void:
-	toggle_canvas($"../SettingScreen")
-
-func _on_cross_button_pressed() -> void:
-	toggle_canvas($"../SettingScreen")

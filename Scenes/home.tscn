@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bv20jfqyaommi"]
 
-[ext_resource type="Script" path="res://Scenes/home.gd" id="1_bih4p"]
+[ext_resource type="Script" uid="uid://c64dap5yua3t2" path="res://Scripts/home.gd" id="1_bih4p"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="1_ibywg"]
 [ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="2_12ycv"]
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="3_llnbm"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://242sv0rapna0" path="res://Texture Or Sprites/Loading Screen/Rectangle 352.png" id="5_fhpuh"]
 [ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="7_vkfas"]
 [ext_resource type="Script" uid="uid://3msnhuobdxpi" path="res://Scripts/texture_progress_bar.gd" id="8_cykap"]
+[ext_resource type="Script" uid="uid://b8ihjp8mb2wc2" path="res://Scripts/login_panel.gd" id="9_cmu2r"]
 [ext_resource type="Texture2D" uid="uid://hd2ok3ihi8lq" path="res://Texture Or Sprites/Loading Screen/PanelBg.png" id="9_cykap"]
 [ext_resource type="FontFile" uid="uid://4qjurbql7g3n" path="res://Fonts/Inter_18pt-SemiBold.ttf" id="10_8riyq"]
 [ext_resource type="Texture2D" uid="uid://cijoie8i5b5b" path="res://Texture Or Sprites/Login Screen/input_bg.png" id="10_nw1ns"]
@@ -16,9 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://c2dbjirpm1ase" path="res://Texture Or Sprites/Login Screen/Line 14.png" id="13_jjai4"]
 [ext_resource type="Texture2D" uid="uid://cgqyho8ne3j3a" path="res://Texture Or Sprites/Login Screen/Google.png" id="14_lddgv"]
 [ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
-[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/BG.png" id="16_848r5"]
+[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/Bg.png" id="16_848r5"]
 [ext_resource type="Texture2D" uid="uid://df3uq3lg4t57f" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
 [ext_resource type="Texture2D" uid="uid://dhaiu8nexctvx" path="res://Texture Or Sprites/Home Screen/ProfileBG.png" id="17_g2bjx"]
+[ext_resource type="Script" uid="uid://51frmnaa34pj" path="res://Scenes/home_screen.gd" id="17_mkkvt"]
 [ext_resource type="Texture2D" uid="uid://c841fqdpt4bif" path="res://Texture Or Sprites/Home Screen/XPBg.png" id="17_yxu73"]
 [ext_resource type="Texture2D" uid="uid://bo204bpd20ysg" path="res://Texture Or Sprites/Home Screen/ProfileIcon.png" id="18_55ff8"]
 [ext_resource type="Texture2D" uid="uid://18xdrq7xrdl2" path="res://Texture Or Sprites/Home Screen/DailyReward.png" id="18_848r5"]
@@ -44,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://0fjc2e2mdyqo" path="res://Texture Or Sprites/Home Screen/PlayAnimIcon.png" id="31_vihvb"]
 [ext_resource type="Texture2D" uid="uid://bfrgw6srjjs71" path="res://Texture Or Sprites/Setting Screen/SettingBg.png" id="42_ridcw"]
 [ext_resource type="Texture2D" uid="uid://dwu1nf7abokum" path="res://Texture Or Sprites/Setting Screen/CrossIcon.png" id="43_6mqkx"]
+[ext_resource type="Script" uid="uid://braim0r3r8miu" path="res://Scenes/setting_screen.gd" id="44_m3bm7"]
 [ext_resource type="Texture2D" uid="uid://b4n1ji3y2jtwr" path="res://Texture Or Sprites/Setting Screen/Rectangle 366.png" id="44_vdfna"]
 [ext_resource type="Texture2D" uid="uid://b1oonxfycxe2h" path="res://Texture Or Sprites/Setting Screen/on.png" id="45_sxluj"]
 [ext_resource type="Texture2D" uid="uid://cnpebfalm5426" path="res://Texture Or Sprites/Setting Screen/off.png" id="46_d3n2e"]
@@ -340,6 +343,7 @@ vertical_alignment = 1
 
 [node name="LoginScreen" type="CanvasLayer" parent="." unique_id=1588224233]
 visible = false
+script = ExtResource("9_cmu2r")
 
 [node name="BG" type="TextureRect" parent="LoginScreen" unique_id=635102092]
 anchors_preset = 15
@@ -442,6 +446,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_lddgv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_smgrs")
 
 [node name="HomeScreen" type="CanvasLayer" parent="." unique_id=623974019]
+visible = false
+script = ExtResource("17_mkkvt")
 
 [node name="BG" type="TextureRect" parent="HomeScreen" unique_id=1445440937]
 anchors_preset = 15
@@ -928,6 +934,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
 [node name="SettingScreen" type="CanvasLayer" parent="." unique_id=1804771245]
 visible = false
+script = ExtResource("44_m3bm7")
 
 [node name="BG" type="TextureRect" parent="SettingScreen" unique_id=552536001]
 anchors_preset = 15
@@ -1114,9 +1121,9 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_0iwel")
 script = ExtResource("4_q1yq7")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
-[connection signal="pressed" from="LoginScreen/LoginPanel/Panel/SubmitButton" to="UIManager" method="_on_submit_button_pressed"]
-[connection signal="pressed" from="HomeScreen/Panel/TopPanel/SettingButton" to="UIManager" method="_on_setting_button_pressed"]
-[connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/TimerButton" to="UIManager" method="_on_timer_button_pressed"]
-[connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/LANButton" to="UIManager" method="_on_lan_button_pressed"]
-[connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/PassNPlayButton" to="UIManager" method="_on_pass_n_play_button_pressed"]
-[connection signal="pressed" from="SettingScreen/Panel/SettingBg/CrossButton" to="UIManager" method="_on_cross_button_pressed"]
+[connection signal="pressed" from="LoginScreen/LoginPanel/Panel/SubmitButton" to="LoginScreen/LoginPanel" method="_on_submit_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/TopPanel/SettingButton" to="HomeScreen" method="_on_setting_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/TimerButton" to="HomeScreen" method="_on_timer_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/LANButton" to="HomeScreen" method="_on_lan_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/PassNPlayButton" to="HomeScreen" method="_on_pass_n_play_button_pressed"]
+[connection signal="pressed" from="SettingScreen/Panel/SettingBg/CrossButton" to="SettingScreen" method="_on_cross_button_pressed"]

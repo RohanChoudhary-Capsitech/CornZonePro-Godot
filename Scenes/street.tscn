@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="17_k32e6"]
 [ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="18_ywqqe"]
 [ext_resource type="Script" uid="uid://dfx1esru4gan0" path="res://Scripts/UIManager.gd" id="20_3qr72"]
+[ext_resource type="PackedScene" uid="uid://bdeqs0jrryr5c" path="res://3D Models/Bg 1/Bg 1.glb" id="21_7bn77"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(50, 0.25, 100)
@@ -799,5 +800,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("20_3qr72")
+
+[node name="Bg 1" parent="." unique_id=1847298710 instance=ExtResource("21_7bn77")]
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, 0.4706818, 0.125, 44.70993)
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]

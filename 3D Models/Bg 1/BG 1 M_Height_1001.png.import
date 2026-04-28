@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drmvoxy81hgc2"
-path="res://.godot/imported/Bg.png-db2bf5e9c975d387e48f7276bf623906.ctex"
+uid="uid://dnaa8yqeqep8q"
+path="res://.godot/imported/BG 1 M_Height_1001.png-b702776980943096639f51e37b7cc821.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Home Screen/Bg.png"
-dest_files=["res://.godot/imported/Bg.png-db2bf5e9c975d387e48f7276bf623906.ctex"]
+source_file="res://3D Models/Bg 1/BG 1 M_Height_1001.png"
+dest_files=["res://.godot/imported/BG 1 M_Height_1001.png-b702776980943096639f51e37b7cc821.ctex"]
 
 [params]
 
