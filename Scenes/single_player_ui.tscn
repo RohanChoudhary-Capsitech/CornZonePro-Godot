@@ -1,121 +1,83 @@
-[gd_scene format=3 uid="uid://cbdwn7albabob"]
+[gd_scene format=3 uid="uid://ca1f0mn7bx3n7"]
 
-[ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="1_ywqqe"]
-[ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_fbdad"]
-[ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_3qr72"]
-[ext_resource type="Texture2D" uid="uid://btculmbe0q8g1" path="res://Texture Or Sprites/SinglePlayer/InGameBlackBg.png" id="4_wothh"]
-[ext_resource type="Texture2D" uid="uid://dp300l6x0itc6" path="res://Texture Or Sprites/SinglePlayer/NoWind.png" id="5_vt4v3"]
-[ext_resource type="Texture2D" uid="uid://cdm0hrbr0ff5" path="res://Texture Or Sprites/SinglePlayer/Button BG.png" id="6_emnx0"]
-[ext_resource type="Texture2D" uid="uid://crnc1sm38481a" path="res://Texture Or Sprites/SinglePlayer/coin.png" id="7_djhal"]
-[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="8_0b447"]
-[ext_resource type="Texture2D" uid="uid://canberf3sh7ro" path="res://Texture Or Sprites/SinglePlayer/AddTimer.png" id="9_djhal"]
-[ext_resource type="Texture2D" uid="uid://ncvk0n3uqptg" path="res://Texture Or Sprites/SinglePlayer/ShowProjectile.png" id="10_nrnkq"]
-[ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="11_bctio"]
-[ext_resource type="Texture2D" uid="uid://cdug7sre63vt5" path="res://Texture Or Sprites/SinglePlayer/SingleTimer.png" id="12_bxwey"]
-[ext_resource type="Texture2D" uid="uid://8njfj1mnt6bv" path="res://Texture Or Sprites/SinglePlayer/TimerClock.png" id="12_luw2b"]
-[ext_resource type="Script" uid="uid://r8egelqwvacm" path="res://Scripts/timer_slider.gd" id="13_561yc"]
-[ext_resource type="Resource" uid="uid://ckobu3v1aeo" path="res://Resources/Maps/street.tres" id="14_fbdad"]
-[ext_resource type="Texture2D" uid="uid://br2f810pal41w" path="res://Texture Or Sprites/SinglePlayer/PanelsBg.png" id="15_3jtxs"]
-[ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="16_k32e6"]
-[ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="17_k32e6"]
-[ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="18_ywqqe"]
-[ext_resource type="PackedScene" uid="uid://bdeqs0jrryr5c" path="res://3D Models/Bg 1/Bg 1.glb" id="21_7bn77"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
-size = Vector3(50, 0.25, 100)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1ey7h"]
-size = Vector3(50, 0.25, 100)
+[ext_resource type="Texture2D" uid="uid://btculmbe0q8g1" path="res://Texture Or Sprites/SinglePlayer/InGameBlackBg.png" id="4_a4j2k"]
+[ext_resource type="Texture2D" uid="uid://dp300l6x0itc6" path="res://Texture Or Sprites/SinglePlayer/NoWind.png" id="5_lj5j8"]
+[ext_resource type="Texture2D" uid="uid://cdm0hrbr0ff5" path="res://Texture Or Sprites/SinglePlayer/Button BG.png" id="6_dqwjq"]
+[ext_resource type="Texture2D" uid="uid://crnc1sm38481a" path="res://Texture Or Sprites/SinglePlayer/coin.png" id="7_cb7k2"]
+[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="8_5osx7"]
+[ext_resource type="Texture2D" uid="uid://canberf3sh7ro" path="res://Texture Or Sprites/SinglePlayer/AddTimer.png" id="9_ys3pk"]
+[ext_resource type="Texture2D" uid="uid://ncvk0n3uqptg" path="res://Texture Or Sprites/SinglePlayer/ShowProjectile.png" id="10_uitis"]
+[ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="11_rxkni"]
+[ext_resource type="Texture2D" uid="uid://cdug7sre63vt5" path="res://Texture Or Sprites/SinglePlayer/SingleTimer.png" id="12_jewam"]
+[ext_resource type="Script" uid="uid://r8egelqwvacm" path="res://Scripts/timer_slider.gd" id="13_xc60l"]
+[ext_resource type="Resource" uid="uid://ckobu3v1aeo" path="res://Resources/Maps/street.tres" id="14_l7boc"]
+[ext_resource type="Texture2D" uid="uid://8njfj1mnt6bv" path="res://Texture Or Sprites/SinglePlayer/TimerClock.png" id="15_1n0ci"]
+[ext_resource type="Texture2D" uid="uid://br2f810pal41w" path="res://Texture Or Sprites/SinglePlayer/PanelsBg.png" id="16_6toxe"]
+[ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="17_twbvq"]
+[ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="18_bgj4c"]
+[ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="19_jecv4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrnkq"]
-texture = ExtResource("5_vt4v3")
+texture = ExtResource("5_lj5j8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bctio"]
-texture = ExtResource("5_vt4v3")
+texture = ExtResource("5_lj5j8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_luw2b"]
-texture = ExtResource("5_vt4v3")
+texture = ExtResource("5_lj5j8")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bctio"]
 bg_color = Color(0, 0, 0, 0.7058824)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bxwey"]
-texture = ExtResource("9_djhal")
+texture = ExtResource("9_ys3pk")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_561yc"]
-texture = ExtResource("9_djhal")
+texture = ExtResource("9_ys3pk")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vtfd7"]
-texture = ExtResource("9_djhal")
+texture = ExtResource("9_ys3pk")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3jtxs"]
-texture = ExtResource("10_nrnkq")
+texture = ExtResource("10_uitis")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k32e6"]
-texture = ExtResource("10_nrnkq")
+texture = ExtResource("10_uitis")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywqqe"]
-texture = ExtResource("10_nrnkq")
+texture = ExtResource("10_uitis")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbdad"]
 bg_color = Color(0, 0, 0, 0.7058824)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbdad"]
-texture = ExtResource("11_bctio")
+texture = ExtResource("11_rxkni")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qr72"]
-texture = ExtResource("11_bctio")
+texture = ExtResource("11_rxkni")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bn77"]
-texture = ExtResource("11_bctio")
+texture = ExtResource("11_rxkni")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1locx"]
-texture = ExtResource("17_k32e6")
+texture = ExtResource("18_bgj4c")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_odpc6"]
-texture = ExtResource("17_k32e6")
+texture = ExtResource("18_bgj4c")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jfpn"]
-texture = ExtResource("17_k32e6")
+texture = ExtResource("18_bgj4c")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b447"]
-texture = ExtResource("18_ywqqe")
+texture = ExtResource("19_jecv4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_coojd"]
-texture = ExtResource("18_ywqqe")
+texture = ExtResource("19_jecv4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpfcn"]
-texture = ExtResource("18_ywqqe")
+texture = ExtResource("19_jecv4")
 
-[node name="Street" type="Node3D" unique_id=1397785541]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
-transform = Transform3D(1, 0, 0, 0, 0.17155087, 0.9851753, 0, -0.9851753, 0.17155087, 0, 6.6319437, 19.546883)
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
-transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.8792332, 0, 4.751979, 51.187668)
-
-[node name="Ground" type="StaticBody3D" parent="." unique_id=961487849]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=310348646]
-mesh = SubResource("BoxMesh_1ey7h")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1311580137]
-shape = SubResource("BoxShape3D_1ey7h")
-metadata/_edit_group_ = true
-
-[node name="Board" parent="." unique_id=496892006 instance=ExtResource("1_ywqqe")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 35.468597)
-
-[node name="SpawnPOINT" type="Node3D" parent="." unique_id=1295221534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2954383, 49.1849)
-script = ExtResource("2_fbdad")
-bag = ExtResource("3_3qr72")
-
-[node name="StartTimer" type="Timer" parent="." unique_id=919203266]
-wait_time = 0.5
+[node name="SinglePlayerUI" type="Node" unique_id=603995956]
 
 [node name="InGame UI" type="CanvasLayer" parent="." unique_id=903377817]
 
@@ -145,7 +107,7 @@ grow_vertical = 2
 [node name="PowerUp Panel BG" type="TextureRect" parent="InGame UI/PowerUp Panel" unique_id=1908491667]
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
-texture = ExtResource("4_wothh")
+texture = ExtResource("4_a4j2k")
 expand_mode = 5
 stretch_mode = 4
 
@@ -173,7 +135,7 @@ anchor_right = 0.9033139
 anchor_bottom = 1.2514435
 offset_right = 2.4945107
 offset_bottom = 0.07185364
-texture = ExtResource("6_emnx0")
+texture = ExtResource("6_dqwjq")
 expand_mode = 3
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
@@ -191,7 +153,7 @@ offset_right = -2.838379
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_djhal")
+texture = ExtResource("7_cb7k2")
 expand_mode = 3
 stretch_mode = 4
 
@@ -209,7 +171,7 @@ offset_bottom = 6.999998
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 theme_override_font_sizes/font_size = 10
 text = "10"
 horizontal_alignment = 1
@@ -245,7 +207,7 @@ offset_right = 24.676777
 offset_bottom = 13.901001
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_emnx0")
+texture = ExtResource("6_dqwjq")
 expand_mode = 3
 stretch_mode = 4
 
@@ -262,7 +224,7 @@ offset_right = -2.8383808
 offset_bottom = 4.848999
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_djhal")
+texture = ExtResource("7_cb7k2")
 expand_mode = 5
 stretch_mode = 4
 
@@ -280,7 +242,7 @@ offset_bottom = 6.848999
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 theme_override_font_sizes/font_size = 10
 text = "20"
 horizontal_alignment = 1
@@ -317,7 +279,7 @@ offset_right = 24.676773
 offset_bottom = 13.901001
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_emnx0")
+texture = ExtResource("6_dqwjq")
 expand_mode = 3
 stretch_mode = 4
 
@@ -334,7 +296,7 @@ offset_right = -3.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_djhal")
+texture = ExtResource("7_cb7k2")
 expand_mode = 3
 stretch_mode = 4
 
@@ -352,7 +314,7 @@ offset_bottom = 6.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 theme_override_font_sizes/font_size = 10
 text = "30"
 horizontal_alignment = 1
@@ -394,11 +356,11 @@ grow_vertical = 2
 step = 0.01
 fill_mode = 1
 nine_patch_stretch = true
-texture_under = ExtResource("12_bxwey")
-texture_progress = ExtResource("12_bxwey")
+texture_under = ExtResource("12_jewam")
+texture_progress = ExtResource("12_jewam")
 tint_progress = Color(0.14117648, 0.8, 0.21960784, 1)
-script = ExtResource("13_561yc")
-map_config = ExtResource("14_fbdad")
+script = ExtResource("13_xc60l")
+map_config = ExtResource("14_l7boc")
 
 [node name="TimerClock" type="TextureRect" parent="InGame UI/Slider" unique_id=278918242]
 layout_mode = 1
@@ -409,7 +371,7 @@ offset_top = -22.5
 offset_right = 45.403587
 offset_bottom = 22.5
 grow_vertical = 2
-texture = ExtResource("12_luw2b")
+texture = ExtResource("15_1n0ci")
 expand_mode = 3
 stretch_mode = 4
 
@@ -419,7 +381,7 @@ visible = false
 [node name="Black Bg" type="TextureRect" parent="PauseMenu" unique_id=250150139]
 offset_right = 480.0
 offset_bottom = 720.0
-texture = ExtResource("15_3jtxs")
+texture = ExtResource("16_6toxe")
 expand_mode = 3
 
 [node name="PausePanel BG" type="TextureRect" parent="PauseMenu/Black Bg" unique_id=12311175]
@@ -435,7 +397,7 @@ offset_right = 140.6875
 offset_bottom = 169.17752
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("16_k32e6")
+texture = ExtResource("17_twbvq")
 expand_mode = 5
 stretch_mode = 4
 
@@ -450,7 +412,7 @@ offset_right = 48.0
 offset_bottom = 35.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 theme_override_font_sizes/font_size = 25
 text = "Paused"
 
@@ -467,7 +429,7 @@ offset_right = 105.5
 offset_bottom = -11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 theme_override_font_sizes/font_size = 60
 text = "99955"
 
@@ -481,7 +443,7 @@ offset_top = -21.0
 offset_right = 24.5
 offset_bottom = 4.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 theme_override_font_sizes/font_size = 20
 text = "Coin"
 
@@ -516,7 +478,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 text = "Home"
 
 [node name="Button2" type="Button" parent="PauseMenu/Black Bg/PausePanel BG" unique_id=1443555826]
@@ -550,7 +512,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 text = "Restart"
 
 [node name="Button3" type="Button" parent="PauseMenu/Black Bg/PausePanel BG" unique_id=764830446]
@@ -584,7 +546,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 text = "Resume"
 
 [node name="Cross" type="Button" parent="PauseMenu/Black Bg/PausePanel BG" unique_id=1750672698]
@@ -607,7 +569,7 @@ visible = false
 [node name="Black Bg" type="TextureRect" parent="GameOver" unique_id=63578351]
 offset_right = 480.0
 offset_bottom = 720.0
-texture = ExtResource("15_3jtxs")
+texture = ExtResource("16_6toxe")
 expand_mode = 3
 
 [node name="PausePanel BG" type="TextureRect" parent="GameOver/Black Bg" unique_id=1465604677]
@@ -623,7 +585,7 @@ offset_right = 140.6875
 offset_bottom = 169.17752
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("16_k32e6")
+texture = ExtResource("17_twbvq")
 expand_mode = 5
 stretch_mode = 4
 
@@ -638,7 +600,7 @@ offset_right = 48.0
 offset_bottom = 35.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 theme_override_font_sizes/font_size = 25
 text = "Result"
 horizontal_alignment = 1
@@ -657,7 +619,7 @@ offset_right = 105.5
 offset_bottom = -11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 theme_override_font_sizes/font_size = 60
 text = "99955"
 
@@ -671,7 +633,7 @@ offset_top = -21.0
 offset_right = 24.5
 offset_bottom = 4.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 theme_override_font_sizes/font_size = 20
 text = "Coin"
 
@@ -706,7 +668,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 text = "Home"
 
 [node name="Button2" type="Button" parent="GameOver/Black Bg/PausePanel BG" unique_id=194751114]
@@ -740,7 +702,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 text = "Restart"
 
 [node name="Button3" type="Button" parent="GameOver/Black Bg/PausePanel BG" unique_id=303444037]
@@ -774,7 +736,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_0b447")
+theme_override_fonts/font = ExtResource("8_5osx7")
 text = "Share"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -792,8 +754,3 @@ grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_0b447")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_coojd")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qpfcn")
-
-[node name="StadiumScene" parent="." unique_id=1237082087 instance=ExtResource("21_7bn77")]
-transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, 0.4706818, 0.125, 44.70993)
-
-[connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
