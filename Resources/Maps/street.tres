@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_g45g8")
 map_name = "Street"
-time_limit = 2.0
+time_limit = 25.0
 supports_single_player = true
 supports_pass_and_play = true
 single_player_unlocked = true
