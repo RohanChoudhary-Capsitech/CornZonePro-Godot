@@ -12,6 +12,8 @@ config_version=5
 
 config/name="Cornzone"
 run/main_scene="uid://bv20jfqyaommi"
+config/auto_accept_quit=false
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +22,7 @@ config/icon="res://icon.svg"
 UIManager="*uid://dfx1esru4gan0"
 Prefs="*uid://bq4vynw7q6sul"
 GameSession="*uid://uatweii6sv5o"
+DataManager="*uid://b2xdrng7rbmc2"
 
 [display]
 

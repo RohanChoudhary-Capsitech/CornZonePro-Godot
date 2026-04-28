@@ -1,4 +1,8 @@
 extends CanvasLayer
+@onready var coin_text: Label = $Panel/TopPanel/Coin/CoinText
+
+func _ready() -> void:
+	coin_text.text=str(Prefs.get_int("coins",0))
 
 func _on_setting_button_pressed() -> void:
 	UIManager.toggle_canvas($"../SettingScreen")

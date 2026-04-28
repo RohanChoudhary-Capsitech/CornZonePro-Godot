@@ -6,6 +6,11 @@ const UI_SCENES = {
 	#"PassPlay": preload(),
 	#"Local": preload()
 }
+
+signal score_changed
+
+var return_home:bool=false
+
 var selected_map_path:String = ""
 var selected_mode:String = ""
 var required_ui:String=""
@@ -42,6 +47,8 @@ func add_score(player: int, amount: int) -> void:
 		score_p1 += amount
 	elif player == 2:
 		score_p2 += amount
+	
+	score_changed.emit()
 
 
 func next_turn() -> void:

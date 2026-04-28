@@ -1,7 +1,7 @@
 extends Node3D
 
 func _ready() -> void:
-	UIManager.setup(
+	UIManager.home_setup(
 		$LoadingScreen,
 		$HomeScreen,
 		$LoginScreen,

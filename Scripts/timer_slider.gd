@@ -2,6 +2,8 @@ extends TextureProgressBar
 
 @export var map_config:MapConfig
 
+signal time_over
+
 @export var max_time:int
 @export var smooth_speed:float=30.0
 
@@ -29,6 +31,8 @@ func _process(delta: float) -> void:
 	if current_time>0:
 		current_time-=delta
 		current_time=max(current_time,0)
+	else:
+		time_over.emit()
 		
 	#Smooth UI
 	display_value=lerp(display_value,current_time,delta*smooth_speed)
