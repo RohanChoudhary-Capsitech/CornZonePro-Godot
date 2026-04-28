@@ -1,7 +1,14 @@
 extends Node
 
+# GameSession.gd
+const UI_SCENES = {
+	"Single": preload("res://Scenes/single_player_ui.tscn"),
+	#"PassPlay": preload(),
+	#"Local": preload()
+}
 var selected_map_path:String = ""
 var selected_mode:String = ""
+var required_ui:String=""
 
 var player_count: int = 1
 var current_turn: int = 1
@@ -11,9 +18,10 @@ var score_p2: int = 0
 var time_left: float = 20.0
 
 
-func start_match(mode: String, map_path: String, time_limit: float) -> void:
+func start_match(mode: String, map_path: String,ui:String, time_limit: float) -> void:
 	selected_mode = mode
 	selected_map_path = map_path
+	required_ui=ui
 
 	# Decide players based on mode
 	match mode:

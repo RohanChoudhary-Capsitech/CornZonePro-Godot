@@ -118,6 +118,7 @@ bag = ExtResource("3_3qr72")
 wait_time = 0.5
 
 [node name="InGame UI" type="CanvasLayer" parent="." unique_id=903377817]
+visible = false
 
 [node name="Label" type="Label" parent="InGame UI" unique_id=1472643477]
 anchors_preset = 5

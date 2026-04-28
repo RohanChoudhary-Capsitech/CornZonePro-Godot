@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b3xkqv7jt6tis"]
 
 [ext_resource type="PackedScene" uid="uid://bsv1jm1lkvk5f" path="res://3D Models/board combine (2).glb" id="1_p0ybc"]
+[ext_resource type="Script" uid="uid://fiixg7477lo2" path="res://Scenes/board.gd" id="2_uh3b8"]
 [ext_resource type="Script" uid="uid://dumxm1qjslamy" path="res://Scripts/pointer.gd" id="3_8l818"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_psm7c"]
@@ -12,6 +13,7 @@ data = PackedVector3Array(-4.4563, 7.5839996, -0.9374, -4.4765, -7.1193, -6.4609
 
 [node name="Board" unique_id=496892006 instance=ExtResource("1_p0ybc")]
 disable_mode = 1
+script = ExtResource("2_uh3b8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0" unique_id=1297794245]
 transform = Transform3D(-1.5298985e-08, 0.35, -1.5298985e-08, 0, -1.5298985e-08, -0.35, -0.35, -1.5298985e-08, 6.687399e-16, 0, 0, 0)
