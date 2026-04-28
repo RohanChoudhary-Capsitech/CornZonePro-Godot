@@ -5,17 +5,19 @@ var loading_screen: CanvasLayer
 var home_screen: CanvasLayer
 var login_screen: CanvasLayer
 var setting_screen: CanvasLayer
+var map_select_screen: CanvasLayer
 
 var ingame_screen:CanvasLayer
 var pause_screen:CanvasLayer
 var result_screen:CanvasLayer
 
-func home_setup(loading, home, login, setting):
+func home_setup(loading, home, login, setting, map):
 	loading_screen = loading
 	home_screen = home
 	login_screen = login
 	setting_screen = setting
-	canvas_layers = [loading, home, login, setting]
+	map_select_screen = map
+	canvas_layers = [loading, home, login, setting, map]
 
 func single_setup(ingame, pause, result):
 	#loading_screen = loading
