@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bv20jfqyaommi"]
 
-[ext_resource type="Script" uid="uid://c64dap5yua3t2" path="res://Scenes/home.gd" id="1_bih4p"]
+[ext_resource type="Script" path="res://Scenes/home.gd" id="1_bih4p"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="1_ibywg"]
 [ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="2_12ycv"]
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="3_llnbm"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c2dbjirpm1ase" path="res://Texture Or Sprites/Login Screen/Line 14.png" id="13_jjai4"]
 [ext_resource type="Texture2D" uid="uid://cgqyho8ne3j3a" path="res://Texture Or Sprites/Login Screen/Google.png" id="14_lddgv"]
 [ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
-[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/Bg.png" id="16_848r5"]
+[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/BG.png" id="16_848r5"]
 [ext_resource type="Texture2D" uid="uid://df3uq3lg4t57f" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
 [ext_resource type="Texture2D" uid="uid://dhaiu8nexctvx" path="res://Texture Or Sprites/Home Screen/ProfileBG.png" id="17_g2bjx"]
 [ext_resource type="Texture2D" uid="uid://c841fqdpt4bif" path="res://Texture Or Sprites/Home Screen/XPBg.png" id="17_yxu73"]
@@ -339,6 +339,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LoginScreen" type="CanvasLayer" parent="." unique_id=1588224233]
+visible = false
 
 [node name="BG" type="TextureRect" parent="LoginScreen" unique_id=635102092]
 anchors_preset = 15
@@ -449,7 +450,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("16_848r5")
-expand_mode = 4
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Panel" type="Control" parent="HomeScreen" unique_id=689472103]
 layout_mode = 3
@@ -465,18 +467,18 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -212.0
-offset_top = 40.0
-offset_right = 230.0
-offset_bottom = 70.0
+offset_left = -214.0
+offset_top = 50.0
+offset_right = 236.0
+offset_bottom = 82.0
 grow_horizontal = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 20
 
 [node name="Profile" type="TextureRect" parent="HomeScreen/Panel/TopPanel" unique_id=1919251055]
 layout_mode = 2
 texture = ExtResource("17_g2bjx")
 expand_mode = 3
-stretch_mode = 4
+stretch_mode = 6
 
 [node name="Icon" type="Button" parent="HomeScreen/Panel/TopPanel/Profile" unique_id=1614137076]
 layout_mode = 1
@@ -529,7 +531,7 @@ custom_minimum_size = Vector2(50, 20)
 layout_mode = 2
 texture = ExtResource("17_yxu73")
 expand_mode = 3
-stretch_mode = 4
+stretch_mode = 6
 
 [node name="CoinIcon" type="TextureRect" parent="HomeScreen/Panel/TopPanel/Coin" unique_id=674128418]
 layout_mode = 1
@@ -569,7 +571,7 @@ custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 texture = ExtResource("17_yxu73")
 expand_mode = 3
-stretch_mode = 4
+stretch_mode = 6
 
 [node name="XpIcon" type="TextureRect" parent="HomeScreen/Panel/TopPanel/XP" unique_id=1945381247]
 layout_mode = 1
@@ -628,7 +630,7 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 texture = ExtResource("17_dyher")
 expand_mode = 5
-stretch_mode = 4
+stretch_mode = 6
 
 [node name="DailyRewardButton" type="Button" parent="HomeScreen/Panel/LeftPanel/LeftPanelBG" unique_id=1810297332]
 custom_minimum_size = Vector2(30, 30)
@@ -698,7 +700,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 texture = ExtResource("18_ppvi3")
 expand_mode = 5
-stretch_mode = 4
+stretch_mode = 6
 
 [node name="TimerButton" type="Button" parent="HomeScreen/Panel/RightPanel/RightPanelBG" unique_id=1948553678]
 layout_mode = 1
@@ -925,6 +927,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
 [node name="SettingScreen" type="CanvasLayer" parent="." unique_id=1804771245]
+visible = false
 
 [node name="BG" type="TextureRect" parent="SettingScreen" unique_id=552536001]
 anchors_preset = 15
@@ -933,7 +936,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_cykap")
-expand_mode = 4
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Panel" type="Control" parent="SettingScreen" unique_id=2031224292]
 layout_mode = 3
