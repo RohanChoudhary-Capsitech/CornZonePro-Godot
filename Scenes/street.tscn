@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bsi8g3ir87mw0"]
+
+[ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="1_ywqqe"]
+[ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_fbdad"]
+[ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_3qr72"]
+[ext_resource type="PackedScene" uid="uid://bdeqs0jrryr5c" path="res://3D Models/Bg 1/Bg 1.glb" id="21_7bn77"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
+size = Vector3(50, 0.25, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ey7h"]
+size = Vector3(50, 0.25, 100)
+
+[node name="Street" type="Node3D" unique_id=1397785541]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
+transform = Transform3D(1, 0, 0, 0, 0.17155087, 0.9851753, 0, -0.9851753, 0.17155087, 0, 6.6319437, 19.546883)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
+transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.8792332, 0, 4.751979, 51.187668)
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=961487849]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=310348646]
+mesh = SubResource("BoxMesh_1ey7h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1311580137]
+shape = SubResource("BoxShape3D_1ey7h")
+metadata/_edit_group_ = true
+
+[node name="Board" parent="." unique_id=496892006 instance=ExtResource("1_ywqqe")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 35.468597)
+
+[node name="SpawnPOINT" type="Node3D" parent="." unique_id=1295221534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2954383, 49.1849)
+script = ExtResource("2_fbdad")
+bag = ExtResource("3_3qr72")
+
+[node name="StartTimer" type="Timer" parent="." unique_id=919203266]
+wait_time = 0.5
+
+[node name="StadiumScene" parent="." unique_id=1237082087 instance=ExtResource("21_7bn77")]
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, 0.4706818, 0.125, 44.70993)
+
+[connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
