@@ -68,3 +68,4 @@ func reset_match() -> void:
 	score_p1 = 0
 	score_p2 = 0
 	time_left = 20.0
+ 
