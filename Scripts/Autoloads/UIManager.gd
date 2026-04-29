@@ -12,12 +12,14 @@ var map_select_screen: CanvasLayer
 var profile_screen:CanvasLayer
 var info_screen:CanvasLayer
 var daily_rewards_screen:CanvasLayer
+var reward_screen:CanvasLayer
+var local_multiplayer_screen:CanvasLayer
 
 var ingame_screen:CanvasLayer
 var pause_screen:CanvasLayer
 var result_screen:CanvasLayer
 
-func home_setup(loading, home, login, setting, map,profile,info,rewards_list):
+func home_setup(loading, home, login, setting, map,profile,info,rewards_list,reward,local_multilplayer):
 	loading_screen = loading
 	home_screen = home
 	login_screen = login
@@ -26,7 +28,9 @@ func home_setup(loading, home, login, setting, map,profile,info,rewards_list):
 	profile_screen=profile
 	info_screen=info
 	daily_rewards_screen=rewards_list
-	canvas_layers = [loading, home, login, setting, map,profile,info,rewards_list]
+	reward_screen=reward
+	local_multiplayer_screen=local_multilplayer
+	canvas_layers = [loading, home, login, setting, map,profile,info,rewards_list,reward,local_multilplayer]
 
 func single_setup(ingame, pause, result):
 	#loading_screen = loading
@@ -68,4 +72,5 @@ func pass_play()->void:
 	_start_match("PassPlay")
 
 func local_multiplayer()->void:
-	_start_match("Local")
+	toggle_canvas(local_multiplayer_screen)
+	#_start_match("Local")

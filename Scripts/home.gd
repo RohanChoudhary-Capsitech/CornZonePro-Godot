@@ -9,6 +9,8 @@ func _ready() -> void:
 		$MapSelectScreen,
 		$ProfileScreen,
 		$InfoScreen,
-		$DailyRewardScreen
+		$DailyRewardScreen,
+		$RewardScreen,
+		$MultiplayerScreen
 	)
 	UIManager.enable_canvas(UIManager.loading_screen)
