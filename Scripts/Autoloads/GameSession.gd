@@ -11,6 +11,7 @@ const PassPlayMode = preload("res://Scripts/Modes/PassPlayMode.gd")
 const LocalMode = preload("res://Scripts/Modes/LocalMode.gd")
 
 signal score_changed
+signal pots_update
 
 var mode_logic: Node = null
 var selected_map_path: String = ""
