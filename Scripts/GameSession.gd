@@ -2,9 +2,9 @@ extends Node
 
 # GameSession.gd
 const UI_SCENES = {
-	"Single": preload("res://Scenes/single_player_ui.tscn"),
-	#"PassPlay": preload(),
-	#"Local": preload()
+	"Single": preload("res://Scenes/UI/single_player_ui.tscn"),
+	"PassPlay": preload("res://Scenes/UI/pass_play_ui.tscn"),
+	"Local": preload("res://Scenes/UI/local_multiplayer_ui.tscn")
 }
 
 signal score_changed

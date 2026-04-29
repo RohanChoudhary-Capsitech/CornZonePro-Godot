@@ -40,7 +40,7 @@ func toggle_canvas(layer: CanvasLayer):
 
 func single_player()->void:
 	GameSession.selected_mode="Single"
-	GameSession.selected_map_path="res://Scenes/street.tscn"
+	GameSession.selected_map_path="res://Scenes/Maps/street.tscn"
 	print(GameSession.selected_mode)
 	get_tree().change_scene_to_file(GameSession.selected_map_path)
 
