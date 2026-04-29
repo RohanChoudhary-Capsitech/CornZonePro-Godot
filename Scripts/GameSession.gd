@@ -61,11 +61,13 @@ func next_turn() -> void:
 
 
 func reset_match() -> void:
+	if selected_mode=="Single":
+		DataManager.add_coins(score_p1*2)
 	selected_mode = ""
 	selected_map_path = ""
 	player_count = 1
 	current_turn = 1
 	score_p1 = 0
 	score_p2 = 0
-	time_left = 20.0
+	#time_left = 0.0
  
