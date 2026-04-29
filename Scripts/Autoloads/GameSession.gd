@@ -6,6 +6,10 @@ const UI_SCENES = {
 	"Local": preload("res://Scenes/UI/local_multiplayer_ui.tscn")
 }
 
+const SingleMode = preload("res://Scripts/Modes/SingleMode.gd")
+const PassPlayMode = preload("res://Scripts/Modes/PassPlayMode.gd")
+const LocalMode = preload("res://Scripts/Modes/LocalMode.gd")
+
 signal score_changed
 
 var mode_logic: Node = null

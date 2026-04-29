@@ -10,8 +10,6 @@ func _on_setting_button_pressed() -> void:
 func _on_timer_button_pressed() -> void:
 	UIManager.single_player()
 
-
-
 func _on_profile_icon_pressed() -> void:
 	UIManager.toggle_canvas($"../ProfileScreen")
 
