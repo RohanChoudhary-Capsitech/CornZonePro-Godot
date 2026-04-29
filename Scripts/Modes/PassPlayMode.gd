@@ -1,12 +1,8 @@
 extends Node
 
 func on_ball_entered(body: Node3D) -> void:
-	if body.is_in_group("player1_ball"):
-		GameSession.add_score(1, 1)
-		on_score()
-	elif body.is_in_group("player2_ball"):
-		GameSession.add_score(2, 1)
-		on_score()
+	GameSession.add_score(GameSession.current_turn, 1)
+	on_score()
 
 func on_score() -> void:
 	GameSession.next_turn()  # switch turn after each score

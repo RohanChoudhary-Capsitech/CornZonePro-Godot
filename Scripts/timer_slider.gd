@@ -1,4 +1,5 @@
 extends TextureProgressBar
+class_name MatchTimerSlider
 
 @export var map_config:MapConfig
 

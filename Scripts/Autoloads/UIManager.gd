@@ -1,5 +1,8 @@
 extends Node
 
+const DEFAULT_MAP_SCENE_PATH := "res://Scenes/Maps/street.tscn"
+const DEFAULT_MAP_CONFIG := preload("res://Resources/Maps/street.tres")
+
 var canvas_layers: Array[CanvasLayer] = []
 var loading_screen: CanvasLayer
 var home_screen: CanvasLayer
@@ -44,11 +47,17 @@ func enable_canvas(layer: CanvasLayer):
 func toggle_canvas(layer: CanvasLayer):
 	layer.visible = !layer.visible
 
-func single_player()->void:
-	GameSession.selected_mode="Single"
-	GameSession.selected_map_path="res://Scenes/Maps/street.tscn"
-	print(GameSession.selected_mode)
+func _start_match(mode: String) -> void:
+	GameSession.start_match(
+		mode,
+		DEFAULT_MAP_SCENE_PATH,
+		mode,
+		DEFAULT_MAP_CONFIG.time_limit
+	)
 	get_tree().change_scene_to_file(GameSession.selected_map_path)
+
+func single_player()->void:
+	_start_match("Single")
 
 func home()->void:
 	GameSession.reset_match()
@@ -56,9 +65,7 @@ func home()->void:
 	get_tree().change_scene_to_packed(scene)
 
 func pass_play()->void:
-	GameSession.selected_mode="PassPlay"
-	print(GameSession.selected_mode)
+	_start_match("PassPlay")
 
 func local_multiplayer()->void:
-	GameSession.selected_mode="Local"
-	print(GameSession.selected_mode)
+	_start_match("Local")

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var timer_slider: TextureProgressBar = $Slider/TimerSlider
+@onready var timer_slider := $Slider/TimerSlider as MatchTimerSlider
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

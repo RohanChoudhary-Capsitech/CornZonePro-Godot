@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var timer_slider: TextureProgressBar = $"../InGame UI/Slider/TimerSlider"
+@onready var timer_slider := $"../InGame UI/Slider/TimerSlider" as MatchTimerSlider
 
 func _ready() -> void:
 	timer_slider.time_over.connect(gameover)
