@@ -1,0 +1,937 @@
+[gd_scene format=3 uid="uid://d32b1wru8w4cb"]
+
+[ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="1_oeynd"]
+[ext_resource type="Texture2D" uid="uid://mtx40gu2p1hh" path="res://Texture Or Sprites/Multiplayer/ScoreBoard.png" id="2_nfuvo"]
+[ext_resource type="Texture2D" uid="uid://dvf1tnqw6o70h" path="res://Texture Or Sprites/Multiplayer/player1 score.png" id="3_kvliv"]
+[ext_resource type="Texture2D" uid="uid://dh6vyiwxacav2" path="res://Texture Or Sprites/Multiplayer/pointerbox.png" id="4_txe7k"]
+[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="5_hlcc8"]
+[ext_resource type="Texture2D" uid="uid://khkdtkfjx0tc" path="res://Texture Or Sprites/Multiplayer/Player 2 score.png" id="6_p5v8t"]
+[ext_resource type="Texture2D" uid="uid://br2f810pal41w" path="res://Texture Or Sprites/SinglePlayer/PanelsBg.png" id="7_lsgq1"]
+[ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="8_yj4rf"]
+[ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="9_q3ai2"]
+[ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="10_xp3ug"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbdad"]
+texture = ExtResource("1_oeynd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qr72"]
+texture = ExtResource("1_oeynd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bn77"]
+texture = ExtResource("1_oeynd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1locx"]
+texture = ExtResource("9_q3ai2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_odpc6"]
+texture = ExtResource("9_q3ai2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jfpn"]
+texture = ExtResource("9_q3ai2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b447"]
+texture = ExtResource("10_xp3ug")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_coojd"]
+texture = ExtResource("10_xp3ug")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpfcn"]
+texture = ExtResource("10_xp3ug")
+
+[node name="PassPlayUI" type="Node" unique_id=603995956]
+
+[node name="InGame UI" type="CanvasLayer" parent="." unique_id=903377817]
+
+[node name="Pause Button" type="Button" parent="InGame UI" unique_id=1871371571]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_top = 39.0
+offset_right = -28.0
+offset_bottom = 69.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_fbdad")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3qr72")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7bn77")
+
+[node name="ScoreBoard" type="TextureRect" parent="InGame UI" unique_id=995041637]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.98349
+offset_top = 26.0
+offset_right = 86.98349
+offset_bottom = 99.0
+grow_horizontal = 2
+texture = ExtResource("2_nfuvo")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Player 1 Scores" type="TextureRect" parent="InGame UI/ScoreBoard" unique_id=1950513473]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = 24.0
+offset_right = 51.192
+offset_bottom = 59.0
+grow_vertical = 0
+texture = ExtResource("3_kvliv")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="p1" type="TextureRect" parent="InGame UI/ScoreBoard/Player 1 Scores" unique_id=1510321591]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -9.5
+offset_right = 30.0
+offset_bottom = 9.5
+grow_vertical = 2
+texture = ExtResource("4_txe7k")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="1st score" type="Label" parent="InGame UI/ScoreBoard/Player 1 Scores/p1" unique_id=727940510]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 12
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p2" type="TextureRect" parent="InGame UI/ScoreBoard/Player 1 Scores" unique_id=890159146]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -9.5
+offset_right = -15.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_txe7k")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="2nd score" type="Label" parent="InGame UI/ScoreBoard/Player 1 Scores/p2" unique_id=1829293969]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 12
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p3" type="TextureRect" parent="InGame UI/ScoreBoard/Player 1 Scores" unique_id=634061662]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 8.500015
+offset_top = -9.5
+offset_right = 27.500015
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_txe7k")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="3rd score" type="Label" parent="InGame UI/ScoreBoard/Player 1 Scores/p3" unique_id=500155451]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 12
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p4" type="TextureRect" parent="InGame UI/ScoreBoard/Player 1 Scores" unique_id=1712598781]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -9.5
+offset_right = -14.0
+offset_bottom = 9.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_txe7k")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="4th score" type="Label" parent="InGame UI/ScoreBoard/Player 1 Scores/p4" unique_id=1781568694]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 12
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player 1 Heading" type="Label" parent="InGame UI/ScoreBoard/Player 1 Scores" unique_id=1855050755]
+layout_mode = 1
+offset_top = -19.0
+offset_right = 43.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 10
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player 2 Scores" type="TextureRect" parent="InGame UI/ScoreBoard" unique_id=1694841448]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -55.701996
+offset_top = 23.0
+offset_right = 116.0
+offset_bottom = 58.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("6_p5v8t")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="p1" type="TextureRect" parent="InGame UI/ScoreBoard/Player 2 Scores" unique_id=138942303]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -9.5
+offset_right = 29.0
+offset_bottom = 9.5
+grow_vertical = 2
+texture = ExtResource("4_txe7k")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="1st score" type="Label" parent="InGame UI/ScoreBoard/Player 2 Scores/p1" unique_id=1670310324]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 12
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p2" type="TextureRect" parent="InGame UI/ScoreBoard/Player 2 Scores" unique_id=1000936294]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.5
+offset_top = -9.5
+offset_right = -11.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_txe7k")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="2nd score" type="Label" parent="InGame UI/ScoreBoard/Player 2 Scores/p2" unique_id=1226636495]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 12
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p3" type="TextureRect" parent="InGame UI/ScoreBoard/Player 2 Scores" unique_id=1077446709]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 11.5
+offset_top = -9.5
+offset_right = 30.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_txe7k")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="3rd score" type="Label" parent="InGame UI/ScoreBoard/Player 2 Scores/p3" unique_id=1385811540]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 12
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p4" type="TextureRect" parent="InGame UI/ScoreBoard/Player 2 Scores" unique_id=2039831672]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -9.5
+offset_right = -11.0
+offset_bottom = 9.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_txe7k")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="4th score" type="Label" parent="InGame UI/ScoreBoard/Player 2 Scores/p4" unique_id=1063836508]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 12
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player 2 Heading" type="Label" parent="InGame UI/ScoreBoard/Player 2 Scores" unique_id=537522441]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -46.0
+offset_top = -19.0
+offset_right = -3.0
+offset_bottom = 4.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 10
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dash" type="Label" parent="InGame UI/ScoreBoard" unique_id=839741988]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -35.5
+offset_right = 20.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 50
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P1 Total Score" type="Label" parent="InGame UI/ScoreBoard" unique_id=1973654857]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -30.5
+offset_right = 74.0
+offset_bottom = 30.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 45
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P2 Total Score" type="Label" parent="InGame UI/ScoreBoard" unique_id=1984324755]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -30.5
+offset_right = -6.0
+offset_bottom = 30.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 45
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=918784366]
+visible = false
+
+[node name="Control" type="Control" parent="PauseMenu" unique_id=903218827]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Black Bg" type="TextureRect" parent="PauseMenu/Control" unique_id=250150139]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_lsgq1")
+expand_mode = 3
+
+[node name="PausePanel BG" type="TextureRect" parent="PauseMenu/Control/Black Bg" unique_id=12311175]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.6875
+offset_top = -169.17752
+offset_right = 140.6875
+offset_bottom = 169.17752
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_yj4rf")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=627469763]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 25
+text = "Paused"
+
+[node name="Dash" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=456298891]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.75
+offset_top = -90.5
+offset_right = 12.75
+offset_bottom = -17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 60
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score Heading" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Dash" unique_id=75638180]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.5
+offset_top = -21.0
+offset_right = 24.5
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 20
+text = "Score"
+
+[node name="Player 1 Score" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Dash" unique_id=1971497726]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -27.5
+offset_right = -9.0
+offset_bottom = 33.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 50
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player 2 Score" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Dash" unique_id=1052349813]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -27.5
+offset_right = 75.0
+offset_bottom = 33.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 50
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Home" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=583836317]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = -0.1775055
+offset_right = 100.0005
+offset_bottom = 34.822495
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Home" unique_id=1347187510]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_hlcc8")
+text = "Home"
+
+[node name="Restart" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=1443555826]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 52.50049
+offset_right = 100.0005
+offset_bottom = 87.50047
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Restart" unique_id=94614169]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -11.5
+offset_right = 32.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_hlcc8")
+text = "Restart"
+
+[node name="Resume" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=764830446]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 105.4995
+offset_right = 100.0005
+offset_bottom = 140.4995
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Resume" unique_id=819756454]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -11.5
+offset_right = 33.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_hlcc8")
+text = "Resume"
+
+[node name="Cross" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=1750672698]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.6875
+offset_top = 11.177521
+offset_right = -20.6875
+offset_bottom = 31.17752
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_0b447")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_coojd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qpfcn")
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=613420293]
+visible = false
+
+[node name="Control" type="Control" parent="GameOver" unique_id=1047792486]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Black Bg" type="TextureRect" parent="GameOver/Control" unique_id=63578351]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_lsgq1")
+expand_mode = 3
+
+[node name="PausePanel BG" type="TextureRect" parent="GameOver/Control/Black Bg" unique_id=1465604677]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.6875
+offset_top = -169.17752
+offset_right = 140.6875
+offset_bottom = 169.17752
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_yj4rf")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=1323902586]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 25
+text = "Result"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dash" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=1016460200]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.75
+offset_top = -85.5
+offset_right = 23.75
+offset_bottom = -12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 60
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player Winner Declaration" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Dash" unique_id=2045439388]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.5
+offset_top = -21.0
+offset_right = 24.5
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 20
+text = "Player X Wins"
+
+[node name="Player 1 Score" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Dash" unique_id=1626042504]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -27.5
+offset_right = -1.0
+offset_bottom = 33.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 50
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Dash" unique_id=319913611]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -27.5
+offset_right = 69.0
+offset_bottom = 33.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 50
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Home" type="Button" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=3714039]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = -0.1775055
+offset_right = 100.0005
+offset_bottom = 34.822495
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+action_mode = 0
+
+[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Home" unique_id=1640521056]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_hlcc8")
+text = "Home"
+
+[node name="Restart" type="Button" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=194751114]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 52.50049
+offset_right = 100.0005
+offset_bottom = 87.50047
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Restart" unique_id=873462206]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -11.5
+offset_right = 32.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_hlcc8")
+text = "Restart"
+
+[node name="Share" type="Button" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=303444037]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 105.4995
+offset_right = 100.0005
+offset_bottom = 140.4995
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Share" unique_id=1532286419]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -11.5
+offset_right = 33.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_hlcc8")
+text = "Share"
+horizontal_alignment = 1
+vertical_alignment = 1
