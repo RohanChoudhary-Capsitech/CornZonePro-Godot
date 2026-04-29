@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dyyrk0wpb7ec8" path="res://Texture Or Sprites/Bags/Neon.png" id="1_vj60b"]
 [ext_resource type="Material" uid="uid://brvworqxc0eki" path="res://Materials/Neon.tres" id="2_4eg3t"]
-[ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/BagConfig.gd" id="2_vj60b"]
+[ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/Resource Structures/BagConfig.gd" id="2_vj60b"]
 
 [resource]
 script = ExtResource("2_vj60b")
