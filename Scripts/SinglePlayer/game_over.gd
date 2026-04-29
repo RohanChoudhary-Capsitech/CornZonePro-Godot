@@ -8,7 +8,7 @@ func _ready() -> void:
 func gameover()->void:
 	UIManager.enable_canvas($".")
 	$"Control/Black Bg/PausePanel BG/CoinsText".text=str(GameSession.score_p1*2)
-
+	DataManager.add_coins(GameSession.score_p1*2)
 
 
 func _on_home_pressed() -> void:

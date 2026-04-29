@@ -1,43 +1,43 @@
 [gd_scene format=3 uid="uid://but1wuu2trosa"]
 
-[ext_resource type="Texture2D" uid="uid://mtx40gu2p1hh" path="res://Texture Or Sprites/Multiplayer/ScoreBoard.png" id="2_tj2s7"]
-[ext_resource type="Texture2D" uid="uid://dvf1tnqw6o70h" path="res://Texture Or Sprites/Multiplayer/player1 score.png" id="3_qly7t"]
-[ext_resource type="Texture2D" uid="uid://dh6vyiwxacav2" path="res://Texture Or Sprites/Multiplayer/pointerbox.png" id="4_183km"]
-[ext_resource type="Texture2D" uid="uid://khkdtkfjx0tc" path="res://Texture Or Sprites/Multiplayer/Player 2 score.png" id="5_ovlqo"]
-[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="7_3lb6a"]
-[ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="10_aw0ga"]
-[ext_resource type="Texture2D" uid="uid://br2f810pal41w" path="res://Texture Or Sprites/SinglePlayer/PanelsBg.png" id="17_k72wp"]
-[ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="18_ctnse"]
-[ext_resource type="Script" uid="uid://d0kaspfe4voos" path="res://Scripts/PassPlay/game_over.gd" id="18_e3fmc"]
-[ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="19_ofe53"]
-[ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="20_1ahvt"]
+[ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="1_ted4b"]
+[ext_resource type="Texture2D" uid="uid://mtx40gu2p1hh" path="res://Texture Or Sprites/Multiplayer/ScoreBoard.png" id="2_jk3gn"]
+[ext_resource type="Texture2D" uid="uid://dvf1tnqw6o70h" path="res://Texture Or Sprites/Multiplayer/player1 score.png" id="3_golj3"]
+[ext_resource type="Texture2D" uid="uid://dh6vyiwxacav2" path="res://Texture Or Sprites/Multiplayer/pointerbox.png" id="4_t1nm0"]
+[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="5_j2kp1"]
+[ext_resource type="Texture2D" uid="uid://khkdtkfjx0tc" path="res://Texture Or Sprites/Multiplayer/Player 2 score.png" id="6_2xlup"]
+[ext_resource type="Texture2D" uid="uid://br2f810pal41w" path="res://Texture Or Sprites/SinglePlayer/PanelsBg.png" id="7_1c7tm"]
+[ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="8_t6rrx"]
+[ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="9_ae0ph"]
+[ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="10_bkt1t"]
+[ext_resource type="Script" uid="uid://d0kaspfe4voos" path="res://Scripts/PassPlay/game_over.gd" id="11_ltabj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbdad"]
-texture = ExtResource("10_aw0ga")
+texture = ExtResource("1_ted4b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qr72"]
-texture = ExtResource("10_aw0ga")
+texture = ExtResource("1_ted4b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bn77"]
-texture = ExtResource("10_aw0ga")
+texture = ExtResource("1_ted4b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1locx"]
-texture = ExtResource("19_ofe53")
+texture = ExtResource("9_ae0ph")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_odpc6"]
-texture = ExtResource("19_ofe53")
+texture = ExtResource("9_ae0ph")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jfpn"]
-texture = ExtResource("19_ofe53")
+texture = ExtResource("9_ae0ph")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b447"]
-texture = ExtResource("20_1ahvt")
+texture = ExtResource("10_bkt1t")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_coojd"]
-texture = ExtResource("20_1ahvt")
+texture = ExtResource("10_bkt1t")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpfcn"]
-texture = ExtResource("20_1ahvt")
+texture = ExtResource("10_bkt1t")
 
 [node name="PassPlayUI" type="Node" unique_id=603995956]
 
@@ -60,12 +60,12 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_7bn77")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -86.98349
-offset_top = 26.0
-offset_right = 86.98349
-offset_bottom = 99.0
+offset_left = -87.0
+offset_top = 29.0
+offset_right = 86.96698
+offset_bottom = 102.0
 grow_horizontal = 2
-texture = ExtResource("2_tj2s7")
+texture = ExtResource("2_jk3gn")
 expand_mode = 3
 stretch_mode = 4
 
@@ -79,7 +79,7 @@ offset_top = 24.0
 offset_right = 51.192
 offset_bottom = 59.0
 grow_vertical = 0
-texture = ExtResource("3_qly7t")
+texture = ExtResource("3_golj3")
 expand_mode = 3
 stretch_mode = 4
 
@@ -93,7 +93,7 @@ offset_top = -9.5
 offset_right = 30.0
 offset_bottom = 9.5
 grow_vertical = 2
-texture = ExtResource("4_183km")
+texture = ExtResource("4_t1nm0")
 expand_mode = 3
 stretch_mode = 4
 
@@ -111,7 +111,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 12
 text = "3"
 horizontal_alignment = 1
@@ -130,7 +130,7 @@ offset_right = -15.5
 offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_183km")
+texture = ExtResource("4_t1nm0")
 expand_mode = 3
 stretch_mode = 4
 
@@ -148,7 +148,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 12
 text = "3"
 horizontal_alignment = 1
@@ -167,7 +167,7 @@ offset_right = 27.500015
 offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_183km")
+texture = ExtResource("4_t1nm0")
 expand_mode = 3
 stretch_mode = 4
 
@@ -185,7 +185,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 12
 text = "3"
 horizontal_alignment = 1
@@ -204,7 +204,7 @@ offset_right = -14.0
 offset_bottom = 9.5
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("4_183km")
+texture = ExtResource("4_t1nm0")
 expand_mode = 3
 stretch_mode = 4
 
@@ -222,7 +222,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 12
 text = "3"
 horizontal_alignment = 1
@@ -234,7 +234,7 @@ offset_top = -19.0
 offset_right = 43.0
 offset_bottom = 4.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 10
 text = "Player 1"
 horizontal_alignment = 1
@@ -253,7 +253,7 @@ offset_right = 116.0
 offset_bottom = 58.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("5_ovlqo")
+texture = ExtResource("6_2xlup")
 expand_mode = 3
 stretch_mode = 4
 
@@ -267,7 +267,7 @@ offset_top = -9.5
 offset_right = 29.0
 offset_bottom = 9.5
 grow_vertical = 2
-texture = ExtResource("4_183km")
+texture = ExtResource("4_t1nm0")
 expand_mode = 3
 stretch_mode = 4
 
@@ -285,7 +285,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 12
 text = "3"
 horizontal_alignment = 1
@@ -304,7 +304,7 @@ offset_right = -11.5
 offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_183km")
+texture = ExtResource("4_t1nm0")
 expand_mode = 3
 stretch_mode = 4
 
@@ -322,7 +322,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 12
 text = "3"
 horizontal_alignment = 1
@@ -341,7 +341,7 @@ offset_right = 30.5
 offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_183km")
+texture = ExtResource("4_t1nm0")
 expand_mode = 3
 stretch_mode = 4
 
@@ -359,7 +359,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 12
 text = "3"
 horizontal_alignment = 1
@@ -378,7 +378,7 @@ offset_right = -11.0
 offset_bottom = 9.5
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("4_183km")
+texture = ExtResource("4_t1nm0")
 expand_mode = 3
 stretch_mode = 4
 
@@ -396,7 +396,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 12
 text = "3"
 horizontal_alignment = 1
@@ -412,7 +412,7 @@ offset_top = -19.0
 offset_right = -3.0
 offset_bottom = 4.0
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 10
 text = "Player 2"
 horizontal_alignment = 1
@@ -431,7 +431,7 @@ offset_right = 20.0
 offset_bottom = 25.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 50
 text = "-"
 horizontal_alignment = 1
@@ -447,7 +447,7 @@ offset_top = -30.5
 offset_right = 74.0
 offset_bottom = 30.5
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 45
 text = "12"
 horizontal_alignment = 1
@@ -466,7 +466,7 @@ offset_right = -6.0
 offset_bottom = 30.5
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 45
 text = "12"
 horizontal_alignment = 1
@@ -490,7 +490,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("17_k72wp")
+texture = ExtResource("7_1c7tm")
 expand_mode = 3
 
 [node name="PausePanel BG" type="TextureRect" parent="PauseMenu/Control/Black Bg" unique_id=12311175]
@@ -506,7 +506,7 @@ offset_right = 140.6875
 offset_bottom = 169.17752
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("18_ctnse")
+texture = ExtResource("8_t6rrx")
 expand_mode = 5
 stretch_mode = 4
 
@@ -521,7 +521,7 @@ offset_right = 48.0
 offset_bottom = 35.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 25
 text = "Paused"
 
@@ -538,7 +538,7 @@ offset_right = 12.75
 offset_bottom = -17.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 60
 text = "-"
 horizontal_alignment = 1
@@ -554,7 +554,7 @@ offset_top = -21.0
 offset_right = 24.5
 offset_bottom = 4.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 20
 text = "Score"
 
@@ -568,7 +568,7 @@ offset_top = -27.5
 offset_right = -9.0
 offset_bottom = 33.5
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 50
 text = "12"
 horizontal_alignment = 1
@@ -587,7 +587,7 @@ offset_right = 75.0
 offset_bottom = 33.5
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 50
 text = "12"
 horizontal_alignment = 1
@@ -624,7 +624,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 text = "Home"
 
 [node name="Restart" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=1443555826]
@@ -658,7 +658,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 text = "Restart"
 
 [node name="Resume" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=764830446]
@@ -692,7 +692,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 text = "Resume"
 
 [node name="Cross" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=1750672698]
@@ -711,7 +711,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_qpfcn")
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=613420293]
 visible = false
-script = ExtResource("18_e3fmc")
+script = ExtResource("11_ltabj")
 
 [node name="Control" type="Control" parent="GameOver" unique_id=1047792486]
 layout_mode = 3
@@ -728,7 +728,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("17_k72wp")
+texture = ExtResource("7_1c7tm")
 expand_mode = 3
 
 [node name="PausePanel BG" type="TextureRect" parent="GameOver/Control/Black Bg" unique_id=1465604677]
@@ -744,7 +744,7 @@ offset_right = 140.6875
 offset_bottom = 169.17752
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("18_ctnse")
+texture = ExtResource("8_t6rrx")
 expand_mode = 5
 stretch_mode = 4
 
@@ -759,7 +759,7 @@ offset_right = 48.0
 offset_bottom = 35.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 25
 text = "Result"
 horizontal_alignment = 1
@@ -778,7 +778,7 @@ offset_right = 23.75
 offset_bottom = -12.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 60
 text = "-"
 horizontal_alignment = 1
@@ -794,7 +794,7 @@ offset_top = -21.0
 offset_right = 24.5
 offset_bottom = 4.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 20
 text = "Player X Wins"
 
@@ -808,7 +808,7 @@ offset_top = -27.5
 offset_right = -1.0
 offset_bottom = 33.5
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 50
 text = "12"
 horizontal_alignment = 1
@@ -827,7 +827,7 @@ offset_right = 69.0
 offset_bottom = 33.5
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 50
 text = "12"
 horizontal_alignment = 1
@@ -865,7 +865,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 text = "Home"
 
 [node name="Restart" type="Button" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=194751114]
@@ -899,7 +899,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 text = "Restart"
 
 [node name="Share" type="Button" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=303444037]
@@ -933,7 +933,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("7_3lb6a")
+theme_override_fonts/font = ExtResource("5_j2kp1")
 text = "Share"
 horizontal_alignment = 1
 vertical_alignment = 1
