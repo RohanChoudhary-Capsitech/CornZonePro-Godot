@@ -19,10 +19,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+UIManager="*uid://dfx1esru4gan0"
 Prefs="*uid://bq4vynw7q6sul"
 GameSession="*uid://uatweii6sv5o"
 DataManager="*uid://b2xdrng7rbmc2"
-UIManager="*uid://dfx1esru4gan0"
 
 [display]
 
