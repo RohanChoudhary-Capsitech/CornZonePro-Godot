@@ -12,6 +12,7 @@ const LocalMode = preload("res://Scripts/Modes/LocalMode.gd")
 
 signal score_changed
 signal pots_update
+signal match_played
 
 var mode_logic: Node = null
 var selected_map_path: String = ""
@@ -38,6 +39,8 @@ func start_match(mode: String, map_path: String, ui: String, time_limit: float) 
 	_set_mode_logic()  # ← auto setup
 
 func _set_mode_logic() -> void:
+	DataManager.match_played()
+	match_played.emit()
 	match selected_mode:
 		"Single":   mode_logic = SingleMode.new()
 		"PassPlay": mode_logic = PassPlayMode.new()
