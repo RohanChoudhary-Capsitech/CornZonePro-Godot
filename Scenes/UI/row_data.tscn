@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://osb5nqpdetfk"]
 
 [ext_resource type="Texture2D" uid="uid://bpmemy7hamyiq" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle 376.png" id="1_svfq5"]
-[ext_resource type="Texture2D" uid="uid://dvf7kds3bcepb" path="res://Texture Or Sprites/Leaderboard Screen/Group 258.png" id="2_s3143"]
+[ext_resource type="Script" uid="uid://drfwkc6y61u5g" path="res://Scripts/Home/row_data.gd" id="2_2pf5w"]
+[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="3_2pf5w"]
+[ext_resource type="Texture2D" uid="uid://s5wsx11qb1k2" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle 136.png" id="4_tpf1i"]
+[ext_resource type="Texture2D" uid="uid://clo1pi3no6404" path="res://Texture Or Sprites/Leaderboard Screen/Coin.png" id="5_tpf1i"]
 
 [node name="RowData" type="TextureRect" unique_id=1836885732]
 custom_minimum_size = Vector2(0, 30)
@@ -18,56 +21,90 @@ grow_horizontal = 2
 texture = ExtResource("1_svfq5")
 expand_mode = 5
 stretch_mode = 6
+script = ExtResource("2_2pf5w")
 
 [node name="Rank" type="Label" parent="." unique_id=174419691]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = -1
+anchor_left = 0.078
 anchor_top = 0.5
+anchor_right = 0.078
 anchor_bottom = 0.5
-offset_left = 24.0
+offset_left = -9.462002
 offset_top = -11.500002
-offset_right = 43.0
-offset_bottom = 11.499998
+offset_right = 9.537998
+offset_bottom = 11.499996
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_2pf5w")
+theme_override_font_sizes/font_size = 16
 text = "10"
 
 [node name="Username" type="Label" parent="." unique_id=1601908471]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.293
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.293
 anchor_bottom = 0.5
-offset_left = -128.0
+offset_left = -39.197006
 offset_top = -11.5
-offset_right = -50.0
+offset_right = 38.802994
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_2pf5w")
+theme_override_font_sizes/font_size = 16
 text = "himanshu"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1679829885]
+[node name="ScoreGroup" type="TextureRect" parent="." unique_id=1702430566]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = -1
+anchor_left = 0.81700003
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.81700003
 anchor_bottom = 0.5
-offset_left = -143.0
-offset_top = -11.5
-offset_right = -44.0
-offset_bottom = 11.5
+offset_left = -46.49301
+offset_top = -14.0
+offset_right = 46.50699
+offset_bottom = 14.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_constants/separation = 20
+texture = ExtResource("4_tpf1i")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer2" unique_id=191810084]
-layout_mode = 2
-texture = ExtResource("2_s3143")
-expand_mode = 2
+[node name="ScoreIcon" type="TextureRect" parent="ScoreGroup" unique_id=191810084]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.48200002
+anchor_right = 0.043
+anchor_bottom = 0.48200002
+offset_left = -8.999001
+offset_top = -13.496
+offset_right = 17.001
+offset_bottom = 13.504
+grow_vertical = 2
+texture = ExtResource("5_tpf1i")
+expand_mode = 4
 stretch_mode = 6
 
-[node name="Label" type="Label" parent="HBoxContainer2" unique_id=1758630618]
-layout_mode = 2
-text = "3520"
+[node name="Score" type="Label" parent="ScoreGroup" unique_id=1758630618]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.661
+anchor_top = 0.5
+anchor_right = 0.661
+anchor_bottom = 0.5
+offset_left = -34.473
+offset_top = -11.5
+offset_right = 31.527
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_2pf5w")
+theme_override_font_sizes/font_size = 15
+text = "563965"
+vertical_alignment = 1
+autowrap_mode = 2
