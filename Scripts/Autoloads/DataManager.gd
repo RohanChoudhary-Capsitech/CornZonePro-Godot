@@ -1,13 +1,13 @@
 extends Node
 
+signal coins_changed
+
 func add_coins(earned_coins: int) -> void:
-	if earned_coins <= 0:
-		push_error("Invalid coin amount: " + str(earned_coins))
-		return
 	var current_coins: int = Prefs.get_int("coins", 0)
 	current_coins += earned_coins
 	Prefs.set_int("coins", current_coins)
-	print("Coins: +", earned_coins, " | Total: ", current_coins)
+	coins_changed.emit()
+	print(" Total: ", current_coins)
 
 func get_coins()->int:
 	return Prefs.get_int("coins",0)
@@ -19,6 +19,7 @@ func spend_coins(amount:int)->bool:
 		return false
 	Prefs.set_int("coins",current-amount)
 	print("Spent: ", amount, " | Remaining: ", get_coins())
+	coins_changed.emit()
 	return true
 
 func match_played()->void:

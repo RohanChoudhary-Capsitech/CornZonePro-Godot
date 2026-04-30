@@ -4,12 +4,13 @@ extends Node
 
 func on_ball_entered(body: Node3D) -> void:
 	GameSession.add_score(1, 1)
+	on_score()
 
 func on_score() -> void:
-	pass  # no turn switching in single player
+	DataManager.add_coins(2)
 
 func on_match_end() -> void:
-	DataManager.add_coins(GameSession.score_p1 * 2)
+	# DataManager.add_coins(GameSession.score_p1 * 2)
 	_save_scores()
 
 func _save_scores() -> void:

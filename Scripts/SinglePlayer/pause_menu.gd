@@ -5,7 +5,7 @@ extends CanvasLayer
 
 func _on_pause_button_pressed() -> void:
 	UIManager.toggle_canvas($".")
-	coins_text.text = str(GameSession.score_p1 * 2)
+	coins_text.text = str(DataManager.get_coins())
 	timer_slider.pause_timer()
 
 func _on_cross_pressed() -> void:

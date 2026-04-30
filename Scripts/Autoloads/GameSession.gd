@@ -10,7 +10,6 @@ const SingleMode = preload("res://Scripts/Modes/SingleMode.gd")
 const PassPlayMode = preload("res://Scripts/Modes/PassPlayMode.gd")
 const LocalMode = preload("res://Scripts/Modes/LocalMode.gd")
 
-signal score_changed
 signal pots_update
 signal match_played
 
@@ -51,7 +50,6 @@ func add_score(player: int, amount: int) -> void:
 		score_p1 += amount
 	elif player == 2:
 		score_p2 += amount
-	score_changed.emit()
 
 func next_turn() -> void:
 	if player_count <= 1:
