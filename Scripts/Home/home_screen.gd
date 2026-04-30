@@ -28,3 +28,7 @@ func _on_lan_button_pressed() -> void:
 
 func _on_leaderboard_button_pressed() -> void:
 	UIManager.toggle_canvas($"../LeaderBoardScreen")
+
+
+func _on_locked_button_pressed() -> void:
+	UIManager.toggle_canvas($"../MapSelectScreen") 

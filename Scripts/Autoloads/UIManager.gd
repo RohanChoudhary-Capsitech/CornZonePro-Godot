@@ -67,8 +67,13 @@ func single_player()->void:
 
 func home()->void:
 	GameSession.reset_match()
-	var scene = load("res://Scenes/home.tscn") as PackedScene
-	get_tree().change_scene_to_packed(scene)
+	#var scene = load("res://Scenes/home.tscn") as PackedScene
+	#get_tree().change_scene_to_packed(scene)
+	ResourceLoader.load_threaded_request("res://Scenes/home.tscn")
+	var status = ResourceLoader.load_threaded_get_status("res://Scenes/home.tscn")
+	if status == ResourceLoader.THREAD_LOAD_LOADED:
+		var new_scene = ResourceLoader.load_threaded_get("res://Scenes/home.tscn")
+		get_tree().change_scene_to_packed(new_scene)
 
 func pass_play()->void:
 	_start_match("PassPlay")

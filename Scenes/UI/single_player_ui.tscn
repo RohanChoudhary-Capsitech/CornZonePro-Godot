@@ -510,6 +510,7 @@ offset_right = 129.07813
 offset_bottom = 31.999954
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
