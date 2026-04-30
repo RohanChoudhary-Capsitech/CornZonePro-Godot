@@ -1,0 +1,810 @@
+[gd_scene format=3 uid="uid://c6g3ssh3veoap"]
+
+[ext_resource type="Script" path="res://Scripts/single_player_ui.gd" id="1_g0q3a"]
+[ext_resource type="Script" uid="uid://3pggsby7gmny" path="res://Scripts/SinglePlayer/in_game_ui.gd" id="2_3xb4g"]
+[ext_resource type="Texture2D" uid="uid://btculmbe0q8g1" path="res://Texture Or Sprites/SinglePlayer/InGameBlackBg.png" id="4_a4j2k"]
+[ext_resource type="Texture2D" uid="uid://dp300l6x0itc6" path="res://Texture Or Sprites/SinglePlayer/NoWind.png" id="5_lj5j8"]
+[ext_resource type="Texture2D" uid="uid://cdm0hrbr0ff5" path="res://Texture Or Sprites/SinglePlayer/Button BG.png" id="6_dqwjq"]
+[ext_resource type="Texture2D" uid="uid://crnc1sm38481a" path="res://Texture Or Sprites/SinglePlayer/coin.png" id="7_cb7k2"]
+[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="8_5osx7"]
+[ext_resource type="Texture2D" uid="uid://canberf3sh7ro" path="res://Texture Or Sprites/SinglePlayer/AddTimer.png" id="9_ys3pk"]
+[ext_resource type="Texture2D" uid="uid://ncvk0n3uqptg" path="res://Texture Or Sprites/SinglePlayer/ShowProjectile.png" id="10_uitis"]
+[ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="11_rxkni"]
+[ext_resource type="Texture2D" uid="uid://cdug7sre63vt5" path="res://Texture Or Sprites/SinglePlayer/SingleTimer.png" id="12_jewam"]
+[ext_resource type="Texture2D" uid="uid://bcf3cmwpvp2mu" path="res://Texture Or Sprites/SinglePlayer/coins.png" id="13_a15ij"]
+[ext_resource type="Script" uid="uid://r8egelqwvacm" path="res://Scripts/timer_slider.gd" id="13_xc60l"]
+[ext_resource type="Resource" uid="uid://ckobu3v1aeo" path="res://Resources/Maps/street.tres" id="14_l7boc"]
+[ext_resource type="Texture2D" uid="uid://8njfj1mnt6bv" path="res://Texture Or Sprites/SinglePlayer/TimerClock.png" id="15_1n0ci"]
+[ext_resource type="Texture2D" uid="uid://br2f810pal41w" path="res://Texture Or Sprites/SinglePlayer/PanelsBg.png" id="16_6toxe"]
+[ext_resource type="Script" uid="uid://by5223153x0ei" path="res://Scripts/SinglePlayer/pause_menu.gd" id="16_58u1u"]
+[ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="17_twbvq"]
+[ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="18_bgj4c"]
+[ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="19_jecv4"]
+[ext_resource type="Script" uid="uid://53gimtpbtcvx" path="res://Scripts/SinglePlayer/game_over.gd" id="20_wr3r6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrnkq"]
+texture = ExtResource("5_lj5j8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bctio"]
+texture = ExtResource("5_lj5j8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_luw2b"]
+texture = ExtResource("5_lj5j8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bctio"]
+bg_color = Color(0, 0, 0, 0.7058824)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bxwey"]
+texture = ExtResource("9_ys3pk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_561yc"]
+texture = ExtResource("9_ys3pk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vtfd7"]
+texture = ExtResource("9_ys3pk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3jtxs"]
+texture = ExtResource("10_uitis")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k32e6"]
+texture = ExtResource("10_uitis")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywqqe"]
+texture = ExtResource("10_uitis")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbdad"]
+bg_color = Color(0, 0, 0, 0.7058824)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbdad"]
+texture = ExtResource("11_rxkni")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qr72"]
+texture = ExtResource("11_rxkni")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bn77"]
+texture = ExtResource("11_rxkni")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1locx"]
+texture = ExtResource("18_bgj4c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_odpc6"]
+texture = ExtResource("18_bgj4c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jfpn"]
+texture = ExtResource("18_bgj4c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b447"]
+texture = ExtResource("19_jecv4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_coojd"]
+texture = ExtResource("19_jecv4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpfcn"]
+texture = ExtResource("19_jecv4")
+
+[node name="SinglePlayerUI" type="Node" unique_id=603995956]
+script = ExtResource("1_g0q3a")
+
+[node name="InGame UI" type="CanvasLayer" parent="." unique_id=903377817]
+script = ExtResource("2_3xb4g")
+
+[node name="Label" type="Label" parent="InGame UI" unique_id=1472643477]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -226.0
+offset_top = 13.0
+offset_right = -148.0
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+
+[node name="PowerUp Panel" type="VBoxContainer" parent="InGame UI" unique_id=442934000]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -145.0
+offset_bottom = 145.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PowerUp Panel BG" type="TextureRect" parent="InGame UI/PowerUp Panel" unique_id=1908491667]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+texture = ExtResource("4_a4j2k")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="NoWind" type="Button" parent="InGame UI/PowerUp Panel/PowerUp Panel BG" unique_id=330136007]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.5
+offset_top = 13.0
+offset_right = 27.5
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_nrnkq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bctio")
+theme_override_styles/hover = SubResource("StyleBoxTexture_luw2b")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_bctio")
+
+[node name="Button BG" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/NoWind" unique_id=1999188942]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08181815
+anchor_top = 0.8891135
+anchor_right = 0.9033139
+anchor_bottom = 1.2514435
+offset_right = 2.4945107
+offset_bottom = 0.07185364
+texture = ExtResource("6_dqwjq")
+expand_mode = 3
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/NoWind/Button BG" unique_id=2143787756]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.838379
+offset_top = -6.0
+offset_right = -2.838379
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_cb7k2")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Price" type="Label" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/NoWind/Button BG" unique_id=326467580]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.8383884
+offset_top = -10.000002
+offset_right = 16.161608
+offset_bottom = 6.999998
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_5osx7")
+theme_override_font_sizes/font_size = 10
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AddTimer" type="Button" parent="InGame UI/PowerUp Panel/PowerUp Panel BG" unique_id=933078280]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -38.5
+offset_right = 27.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_bxwey")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_561yc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vtfd7")
+
+[node name="Button BG" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/AddTimer" unique_id=236207888]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -6.098999
+offset_right = 24.676777
+offset_bottom = 13.901001
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_dqwjq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Coin" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/AddTimer/Button BG" unique_id=1768604429]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.838377
+offset_top = -5.151001
+offset_right = -2.8383808
+offset_bottom = 4.848999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_cb7k2")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/AddTimer/Button BG" unique_id=1213739166]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.838377
+offset_top = -10.151001
+offset_right = 15.161619
+offset_bottom = 6.848999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_5osx7")
+theme_override_font_sizes/font_size = 10
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowProjectile" type="Button" parent="InGame UI/PowerUp Panel/PowerUp Panel BG" unique_id=1145134991]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.5
+offset_top = -88.0
+offset_right = 27.5
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3jtxs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k32e6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ywqqe")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_fbdad")
+
+[node name="TextureRect" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/ShowProjectile" unique_id=1568561768]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -6.098999
+offset_right = 24.676773
+offset_bottom = 13.901001
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_dqwjq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/ShowProjectile/TextureRect" unique_id=844799931]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -6.0
+offset_right = -3.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_cb7k2")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/ShowProjectile/TextureRect" unique_id=166609968]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -10.5
+offset_right = 16.0
+offset_bottom = 6.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_5osx7")
+theme_override_font_sizes/font_size = 10
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pause Button" type="Button" parent="InGame UI" unique_id=1871371571]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_top = 39.0
+offset_right = -28.0
+offset_bottom = 69.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_fbdad")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3qr72")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7bn77")
+
+[node name="Slider" type="Control" parent="InGame UI" unique_id=8488534]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 62.0
+offset_right = 150.0
+offset_bottom = 117.0
+grow_horizontal = 2
+
+[node name="TimerSlider" type="TextureProgressBar" parent="InGame UI/Slider" unique_id=733454383]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 300.0
+offset_bottom = 11.5
+grow_vertical = 2
+step = 0.01
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = ExtResource("12_jewam")
+texture_progress = ExtResource("12_jewam")
+tint_progress = Color(0.14117648, 0.8, 0.21960784, 1)
+script = ExtResource("13_xc60l")
+map_config = ExtResource("14_l7boc")
+
+[node name="TimerClock" type="TextureRect" parent="InGame UI/Slider" unique_id=278918242]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -22.5
+offset_right = 45.403587
+offset_bottom = 22.5
+grow_vertical = 2
+texture = ExtResource("15_1n0ci")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Coins" type="TextureRect" parent="InGame UI" unique_id=1695119757]
+offset_top = 39.0
+offset_right = 106.365
+offset_bottom = 69.0
+texture = ExtResource("13_a15ij")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="InGame UI/Coins" unique_id=968855231]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.999998
+offset_top = -13.5
+offset_right = 19.999998
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_5osx7")
+theme_override_font_sizes/font_size = 17
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=918784366]
+visible = false
+script = ExtResource("16_58u1u")
+
+[node name="Control" type="Control" parent="PauseMenu" unique_id=903218827]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Black Bg" type="TextureRect" parent="PauseMenu/Control" unique_id=250150139]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_6toxe")
+expand_mode = 3
+
+[node name="PausePanel BG" type="TextureRect" parent="PauseMenu/Control/Black Bg" unique_id=12311175]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.6875
+offset_top = -169.17752
+offset_right = 140.6875
+offset_bottom = 169.17752
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_twbvq")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=627469763]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_5osx7")
+theme_override_font_sizes/font_size = 25
+text = "Paused"
+
+[node name="CoinsText" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=456298891]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -84.5
+offset_right = 105.5
+offset_bottom = -11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_5osx7")
+theme_override_font_sizes/font_size = 60
+text = "99955"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins Heading" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/CoinsText" unique_id=75638180]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.5
+offset_top = -21.0
+offset_right = 24.5
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_5osx7")
+theme_override_font_sizes/font_size = 20
+text = "Coin"
+
+[node name="Home" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=583836317]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = -0.1775055
+offset_right = 100.0005
+offset_bottom = 34.822495
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Home" unique_id=1347187510]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_5osx7")
+text = "Home"
+
+[node name="Restart" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=1443555826]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 52.50049
+offset_right = 100.0005
+offset_bottom = 87.50047
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Restart" unique_id=94614169]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -11.5
+offset_right = 32.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_5osx7")
+text = "Restart"
+
+[node name="Resume" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=764830446]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 105.4995
+offset_right = 100.0005
+offset_bottom = 140.4995
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+
+[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Resume" unique_id=819756454]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -11.5
+offset_right = 33.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_5osx7")
+text = "Resume"
+
+[node name="Cross" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=1750672698]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.6875
+offset_top = 11.177521
+offset_right = -20.6875
+offset_bottom = 31.17752
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_0b447")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_coojd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qpfcn")
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=613420293]
+script = ExtResource("20_wr3r6")
+
+[node name="Black Bg" type="TextureRect" parent="GameOver" unique_id=63578351]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("16_6toxe")
+expand_mode = 3
+
+[node name="Control" type="Control" parent="GameOver" unique_id=1047792486]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PausePanel BG" type="TextureRect" parent="GameOver/Control" unique_id=1465604677]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.6875
+offset_top = -169.17752
+offset_right = 140.6875
+offset_bottom = 169.17749
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("17_twbvq")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="GameOver/Control/PausePanel BG" unique_id=1323902586]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_5osx7")
+theme_override_font_sizes/font_size = 25
+text = "Result"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinsText" type="Label" parent="GameOver/Control/PausePanel BG" unique_id=1016460200]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -84.5
+offset_right = 105.5
+offset_bottom = -11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_5osx7")
+theme_override_font_sizes/font_size = 60
+text = "99955"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins Heading" type="Label" parent="GameOver/Control/PausePanel BG/CoinsText" unique_id=2045439388]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.5
+offset_top = -21.0
+offset_right = 24.5
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_5osx7")
+theme_override_font_sizes/font_size = 20
+text = "Coin"
+
+[node name="Home" type="Button" parent="GameOver/Control/PausePanel BG" unique_id=3714039]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = -0.1775055
+offset_right = 100.0005
+offset_bottom = 34.822495
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+action_mode = 0
+
+[node name="Label" type="Label" parent="GameOver/Control/PausePanel BG/Home" unique_id=1640521056]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_5osx7")
+text = "Home"
+
+[node name="Restart" type="Button" parent="GameOver/Control/PausePanel BG" unique_id=194751114]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 52.822495
+offset_right = 100.0005
+offset_bottom = 87.822495
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+action_mode = 0
+
+[node name="Label" type="Label" parent="GameOver/Control/PausePanel BG/Restart" unique_id=873462206]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -11.5
+offset_right = 32.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_5osx7")
+text = "Restart"
+
+[node name="Share" type="Button" parent="GameOver/Control/PausePanel BG" unique_id=303444037]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9995
+offset_top = 105.822495
+offset_right = 100.0005
+offset_bottom = 140.8225
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+action_mode = 0
+
+[node name="Label2" type="Label" parent="GameOver/Control/PausePanel BG" unique_id=1478603216]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = -51.0
+offset_right = 85.0
+offset_bottom = -28.0
+text = "Click huaw"
+
+[connection signal="pressed" from="InGame UI/Pause Button" to="PauseMenu" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Home" to="PauseMenu" method="_on_home_pressed"]
+[connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Resume" to="PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Cross" to="PauseMenu" method="_on_cross_pressed"]
+[connection signal="pressed" from="GameOver/Control/PausePanel BG/Home" to="GameOver" method="_on_home_pressed"]
+[connection signal="pressed" from="GameOver/Control/PausePanel BG/Restart" to="GameOver" method="_on_restart_pressed"]
+[connection signal="pressed" from="GameOver/Control/PausePanel BG/Share" to="GameOver" method="_on_share_pressed"]

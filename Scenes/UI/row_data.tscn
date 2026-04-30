@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://osb5nqpdetfk"]
+
+[ext_resource type="Texture2D" uid="uid://bpmemy7hamyiq" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle 376.png" id="1_svfq5"]
+[ext_resource type="Texture2D" uid="uid://dvf7kds3bcepb" path="res://Texture Or Sprites/Leaderboard Screen/Group 258.png" id="2_s3143"]
+
+[node name="RowData" type="TextureRect" unique_id=1836885732]
+custom_minimum_size = Vector2(0, 30)
+anchors_preset = -1
+anchor_left = 0.49500003
+anchor_top = 0.089
+anchor_right = 0.49500003
+anchor_bottom = 0.089
+offset_left = -212.60002
+offset_top = -33.365456
+offset_right = 216.39998
+offset_bottom = 40.1799
+grow_horizontal = 2
+texture = ExtResource("1_svfq5")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="Rank" type="Label" parent="." unique_id=174419691]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -11.500002
+offset_right = 43.0
+offset_bottom = 11.499998
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "10"
+
+[node name="Username" type="Label" parent="." unique_id=1601908471]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -11.5
+offset_right = -50.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "himanshu"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1679829885]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -11.5
+offset_right = -44.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2" unique_id=191810084]
+layout_mode = 2
+texture = ExtResource("2_s3143")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="HBoxContainer2" unique_id=1758630618]
+layout_mode = 2
+text = "3520"
