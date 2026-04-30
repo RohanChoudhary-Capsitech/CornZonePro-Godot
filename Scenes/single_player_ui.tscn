@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hp1311k8x3qg"]
 
-[ext_resource type="Script" path="res://Scripts/single_player_ui.gd" id="1_g0q3a"]
+[ext_resource type="Script" uid="uid://ccc4estv522bn" path="res://Scripts/single_player_ui.gd" id="1_g0q3a"]
 [ext_resource type="Script" uid="uid://3pggsby7gmny" path="res://Scripts/SinglePlayer/in_game_ui.gd" id="2_3xb4g"]
 [ext_resource type="Texture2D" uid="uid://btculmbe0q8g1" path="res://Texture Or Sprites/SinglePlayer/InGameBlackBg.png" id="4_a4j2k"]
 [ext_resource type="Texture2D" uid="uid://dp300l6x0itc6" path="res://Texture Or Sprites/SinglePlayer/NoWind.png" id="5_lj5j8"]
@@ -86,7 +86,6 @@ texture = ExtResource("19_jecv4")
 script = ExtResource("1_g0q3a")
 
 [node name="InGame UI" type="CanvasLayer" parent="." unique_id=903377817]
-visible = false
 script = ExtResource("2_3xb4g")
 
 [node name="Label" type="Label" parent="InGame UI" unique_id=1472643477]
@@ -617,6 +616,16 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_qpfcn")
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=613420293]
 script = ExtResource("20_wr3r6")
 
+[node name="Black Bg" type="TextureRect" parent="GameOver" unique_id=63578351]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("16_6toxe")
+expand_mode = 3
+
 [node name="Control" type="Control" parent="GameOver" unique_id=1047792486]
 layout_mode = 3
 anchors_preset = 15
@@ -624,18 +633,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="Black Bg" type="TextureRect" parent="GameOver/Control" unique_id=63578351]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("16_6toxe")
-expand_mode = 3
-
-[node name="PausePanel BG" type="TextureRect" parent="GameOver/Control/Black Bg" unique_id=1465604677]
+[node name="PausePanel BG" type="TextureRect" parent="GameOver/Control" unique_id=1465604677]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -645,14 +646,15 @@ anchor_bottom = 0.5
 offset_left = -140.6875
 offset_top = -169.17752
 offset_right = 140.6875
-offset_bottom = 169.17752
+offset_bottom = 169.17749
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("17_twbvq")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=1323902586]
+[node name="Label" type="Label" parent="GameOver/Control/PausePanel BG" unique_id=1323902586]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -669,7 +671,7 @@ text = "Result"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CoinsText" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=1016460200]
+[node name="CoinsText" type="Label" parent="GameOver/Control/PausePanel BG" unique_id=1016460200]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -688,7 +690,7 @@ text = "99955"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Coins Heading" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/CoinsText" unique_id=2045439388]
+[node name="Coins Heading" type="Label" parent="GameOver/Control/PausePanel BG/CoinsText" unique_id=2045439388]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -702,7 +704,7 @@ theme_override_fonts/font = ExtResource("8_5osx7")
 theme_override_font_sizes/font_size = 20
 text = "Coin"
 
-[node name="Home" type="Button" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=3714039]
+[node name="Home" type="Button" parent="GameOver/Control/PausePanel BG" unique_id=3714039]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -720,7 +722,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
 action_mode = 0
 
-[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Home" unique_id=1640521056]
+[node name="Label" type="Label" parent="GameOver/Control/PausePanel BG/Home" unique_id=1640521056]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -737,7 +739,7 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("8_5osx7")
 text = "Home"
 
-[node name="Restart" type="Button" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=194751114]
+[node name="Restart" type="Button" parent="GameOver/Control/PausePanel BG" unique_id=194751114]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -745,16 +747,17 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -99.9995
-offset_top = 52.50049
+offset_top = 52.822495
 offset_right = 100.0005
-offset_bottom = 87.50047
+offset_bottom = 87.822495
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+action_mode = 0
 
-[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Restart" unique_id=873462206]
+[node name="Label" type="Label" parent="GameOver/Control/PausePanel BG/Restart" unique_id=873462206]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -771,7 +774,7 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("8_5osx7")
 text = "Restart"
 
-[node name="Share" type="Button" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=303444037]
+[node name="Share" type="Button" parent="GameOver/Control/PausePanel BG" unique_id=303444037]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -779,36 +782,29 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -99.9995
-offset_top = 105.4995
+offset_top = 105.822495
 offset_right = 100.0005
-offset_bottom = 140.4995
+offset_bottom = 140.8225
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+action_mode = 0
 
-[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Share" unique_id=1532286419]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -33.5
-offset_top = -11.5
-offset_right = 33.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("8_5osx7")
-text = "Share"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Label2" type="Label" parent="GameOver/Control/PausePanel BG" unique_id=1478603216]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = -51.0
+offset_right = 85.0
+offset_bottom = -28.0
+text = "Click huaw"
 
 [connection signal="pressed" from="InGame UI/Pause Button" to="PauseMenu" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Home" to="PauseMenu" method="_on_home_pressed"]
 [connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Resume" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Cross" to="PauseMenu" method="_on_cross_pressed"]
-[connection signal="pressed" from="GameOver/Control/Black Bg/PausePanel BG/Home" to="GameOver" method="_on_home_pressed"]
+[connection signal="pressed" from="GameOver/Control/PausePanel BG/Home" to="GameOver" method="_on_home_pressed"]
+[connection signal="pressed" from="GameOver/Control/PausePanel BG/Restart" to="GameOver" method="_on_restart_pressed"]
+[connection signal="pressed" from="GameOver/Control/PausePanel BG/Share" to="GameOver" method="_on_share_pressed"]
