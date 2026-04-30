@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://djy01jtr1cfrl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytb70"]
+transparency = 1
+cull_mode = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_ytb70"]
+radius = 0.05
+height = 0.1
+
+[node name="PathDot" type="Node3D" unique_id=179826132]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=170429712]
+material_override = SubResource("StandardMaterial3D_ytb70")
+mesh = SubResource("SphereMesh_ytb70")

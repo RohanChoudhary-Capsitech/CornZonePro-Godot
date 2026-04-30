@@ -2,6 +2,7 @@ extends RigidBody3D
 @onready var swipe_controller: SwipeInputController = $SwipeInputController
  
 var thrown: bool = false
+@export var throw_gravity_scale: float = 4.0
 
 func _ready() -> void:
 	freeze = true
@@ -12,7 +13,7 @@ func _on_swipe_completed(direction: Vector3, strength: float) -> void:
 		return
 	freeze = false
 	print(direction, strength)
-	self.gravity_scale = 4
+	gravity_scale = throw_gravity_scale
 	apply_central_impulse(direction * strength)
 	thrown = true
 	await get_tree().create_timer(1.5).timeout
