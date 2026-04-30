@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func gameover()->void:
 	UIManager.enable_canvas($".")
-	coins_text.text = str(GameSession.score_p1 * 2)
+	coins_text.text = str(DataManager.get_coins())
 
 
 func _on_home_pressed() -> void:

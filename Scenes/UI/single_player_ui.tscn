@@ -709,6 +709,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
 action_mode = 0
 text = "Share"
 
+[connection signal="pressed" from="InGame UI/PowerUp Panel/PowerUp Panel BG/AddTimer" to="InGame UI" method="_on_add_timer_pressed"]
 [connection signal="pressed" from="InGame UI/Pause Button" to="PauseMenu" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Home" to="PauseMenu" method="_on_home_pressed"]
 [connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Restart" to="PauseMenu" method="_on_restart_pressed"]
