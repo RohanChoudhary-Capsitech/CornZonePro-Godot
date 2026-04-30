@@ -12,6 +12,7 @@ const LocalMode = preload("res://Scripts/Modes/LocalMode.gd")
 
 signal pots_update
 signal match_played
+signal projectile_preview_changed(active: bool)
 
 var mode_logic: Node = null
 var selected_map_path: String = ""
@@ -22,6 +23,7 @@ var current_turn: int = 1
 var score_p1: int = 0
 var score_p2: int = 0
 var time_left: float = 20.0
+var projectile_preview_until_msec: int = 0
 
 func start_match(mode: String, map_path: String, ui: String, time_limit: float) -> void:
 	selected_mode = mode
@@ -51,6 +53,17 @@ func add_score(player: int, amount: int) -> void:
 	elif player == 2:
 		score_p2 += amount
 
+func activate_projectile_preview(duration_sec: float) -> void:
+	projectile_preview_until_msec = Time.get_ticks_msec() + int(duration_sec * 1000.0)
+	projectile_preview_changed.emit(true)
+
+func is_projectile_preview_active() -> bool:
+	return Time.get_ticks_msec() < projectile_preview_until_msec
+
+func clear_projectile_preview() -> void:
+	projectile_preview_until_msec = 0
+	projectile_preview_changed.emit(false)
+
 func next_turn() -> void:
 	if player_count <= 1:
 		return
@@ -68,3 +81,4 @@ func reset_match() -> void:
 	current_turn = 1
 	score_p1 = 0
 	score_p2 = 0
+	clear_projectile_preview()
