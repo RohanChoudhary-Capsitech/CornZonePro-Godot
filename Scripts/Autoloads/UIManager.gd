@@ -14,12 +14,13 @@ var info_screen:CanvasLayer
 var daily_rewards_screen:CanvasLayer
 var reward_screen:CanvasLayer
 var local_multiplayer_screen:CanvasLayer
+var leaderboard_screen: CanvasLayer
 
 var ingame_screen:CanvasLayer
 var pause_screen:CanvasLayer
 var result_screen:CanvasLayer
 
-func home_setup(loading, home, login, setting, map,profile,info,rewards_list,reward,local_multilplayer):
+func home_setup(loading, home, login, setting, map,profile,info,rewards_list,reward,local_multilplayer, leaderboard):
 	loading_screen = loading
 	home_screen = home
 	login_screen = login
@@ -30,7 +31,8 @@ func home_setup(loading, home, login, setting, map,profile,info,rewards_list,rew
 	daily_rewards_screen=rewards_list
 	reward_screen=reward
 	local_multiplayer_screen=local_multilplayer
-	canvas_layers = [loading, home, login, setting, map,profile,info,rewards_list,reward,local_multilplayer]
+	leaderboard_screen = leaderboard
+	canvas_layers = [loading, home, login, setting, map,profile,info,rewards_list,reward,local_multilplayer, leaderboard]
 
 func single_setup(ingame, pause, result):
 	#loading_screen = loading
