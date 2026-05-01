@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ca1f0mn7bx3n7"]
 
-[ext_resource type="Script" uid="uid://ccc4estv522bn" path="res://Scripts/single_player_ui.gd" id="1_wn1rh"]
+[ext_resource type="Script" path="res://Scripts/single_player_ui.gd" id="1_wn1rh"]
 [ext_resource type="Script" uid="uid://3pggsby7gmny" path="res://Scripts/SinglePlayer/in_game_ui.gd" id="2_alutp"]
 [ext_resource type="Texture2D" uid="uid://btculmbe0q8g1" path="res://Texture Or Sprites/SinglePlayer/InGameBlackBg.png" id="3_parwe"]
 [ext_resource type="Texture2D" uid="uid://dp300l6x0itc6" path="res://Texture Or Sprites/SinglePlayer/NoWind.png" id="4_ofndc"]
@@ -86,10 +86,10 @@ texture = ExtResource("20_sphmr")
 script = ExtResource("1_wn1rh")
 
 [node name="InGame UI" type="CanvasLayer" parent="." unique_id=903377817]
-visible = false
 script = ExtResource("2_alutp")
 
 [node name="Label" type="Label" parent="InGame UI" unique_id=1472643477]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -329,13 +329,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Pause Button" type="Button" parent="InGame UI" unique_id=1871371571]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -53.0
-offset_top = 39.0
-offset_right = -28.0
-offset_bottom = 69.0
+anchors_preset = -1
+anchor_left = 0.92200005
+anchor_top = 0.125
+anchor_right = 0.92200005
+anchor_bottom = 0.125
+offset_left = -12.560028
+offset_top = -15.0
+offset_right = 12.439972
+offset_bottom = 15.0
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_fbdad")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3qr72")
@@ -384,9 +386,15 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="Coins" type="TextureRect" parent="InGame UI" unique_id=1695119757]
-offset_top = 39.0
-offset_right = 106.365
-offset_bottom = 69.0
+anchors_preset = -1
+anchor_left = 0.11100001
+anchor_top = 0.075
+anchor_right = 0.11100001
+anchor_bottom = 0.075
+offset_left = -53.280003
+offset_top = -15.000004
+offset_right = 53.084995
+offset_bottom = 14.999996
 texture = ExtResource("15_52utu")
 expand_mode = 3
 stretch_mode = 4
@@ -398,21 +406,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -19.999998
+offset_left = -19.999996
 offset_top = -13.5
-offset_right = 19.999998
+offset_right = 50.8175
 offset_bottom = 13.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_fbptx")
 theme_override_font_sizes/font_size = 17
-text = "999"
-horizontal_alignment = 1
+text = "99999"
 vertical_alignment = 1
 
 [node name="PauseMenu" type="CanvasLayer" parent="." unique_id=918784366]
-visible = false
 script = ExtResource("16_w4rqa")
 
 [node name="Black Bg" type="TextureRect" parent="PauseMenu" unique_id=250150139]
@@ -440,9 +446,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -155.844
-offset_top = -187.25652
+offset_top = -187.25653
 offset_right = 155.844
-offset_bottom = 187.25652
+offset_bottom = 187.25653
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_1rofv")
@@ -451,30 +457,34 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="PauseMenu/Control/PausePanel BG" unique_id=627469763]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.060000002
 anchor_right = 0.5
+anchor_bottom = 0.060000002
 offset_left = -48.0
-offset_top = 7.0
+offset_top = -15.470785
 offset_right = 48.0
-offset_bottom = 38.0
+offset_bottom = 15.529215
 grow_horizontal = 2
-theme_override_constants/outline_size = 1
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("7_fbptx")
 theme_override_font_sizes/font_size = 25
 text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CoinsText" type="Label" parent="PauseMenu/Control/PausePanel BG" unique_id=456298891]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.33400002
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.33400002
 offset_left = -105.5
-offset_top = -98.5
+offset_top = -36.33084
 offset_right = 105.5
-offset_bottom = -25.5
+offset_bottom = 36.66916
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_fbptx")
@@ -485,13 +495,15 @@ vertical_alignment = 1
 
 [node name="Coins Heading" type="Label" parent="PauseMenu/Control/PausePanel BG/CoinsText" unique_id=75638180]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = -0.116000004
 anchor_right = 0.5
+anchor_bottom = -0.116000004
 offset_left = -24.5
-offset_top = -21.0
+offset_top = -12.532
 offset_right = 24.5
-offset_bottom = 4.0
+offset_bottom = 12.468
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("7_fbptx")
 theme_override_font_sizes/font_size = 20
@@ -499,18 +511,22 @@ text = "Coin"
 
 [node name="Home" type="Button" parent="PauseMenu/Control/PausePanel BG" unique_id=583836317]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.52500004
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.52500004
 offset_left = -129.079
-offset_top = -13.177536
+offset_top = -22.540375
 offset_right = 129.07813
-offset_bottom = 31.999954
+offset_bottom = 22.637115
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_fbptx")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
@@ -518,17 +534,21 @@ text = "Home"
 
 [node name="Restart" type="Button" parent="PauseMenu/Control/PausePanel BG" unique_id=1443555826]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.69200003
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.69200003
 offset_left = -129.079
-offset_top = 49.500473
+offset_top = -22.406052
 offset_right = 129.07813
-offset_bottom = 94.67798
+offset_bottom = 22.771454
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_fbptx")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
@@ -547,6 +567,10 @@ offset_right = 129.07813
 offset_bottom = 154.67697
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_fbptx")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
@@ -606,32 +630,34 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="GameOver/Control/PausePanel BG" unique_id=1323902586]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.063
 anchor_right = 0.5
+anchor_bottom = 0.063
 offset_left = -48.0
-offset_top = 4.0
+offset_top = -15.918161
 offset_right = 48.0
-offset_bottom = 35.0
+offset_bottom = 16.081839
 grow_horizontal = 2
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_fbptx")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 26
 text = "Result"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CoinsText" type="Label" parent="GameOver/Control/PausePanel BG" unique_id=1016460200]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.38700002
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.38700002
 offset_left = -140.54625
-offset_top = -91.625
+offset_top = -48.724182
 offset_right = 140.54626
-offset_bottom = 5.625
+offset_bottom = 48.525818
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_fbptx")
@@ -642,13 +668,15 @@ vertical_alignment = 1
 
 [node name="Coins Heading" type="Label" parent="GameOver/Control/PausePanel BG/CoinsText" unique_id=2045439388]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = -0.057000004
 anchor_right = 0.5
+anchor_bottom = -0.057000004
 offset_left = -24.5
-offset_top = -21.0
+offset_top = -15.456749
 offset_right = 24.5
-offset_bottom = 4.0
+offset_bottom = 9.543251
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("7_fbptx")
 theme_override_font_sizes/font_size = 25
@@ -656,17 +684,21 @@ text = "Coin"
 
 [node name="Home" type="Button" parent="GameOver/Control/PausePanel BG" unique_id=3714039]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.62100005
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.62100005
 offset_left = -131.42702
-offset_top = 20.000504
+offset_top = -25.937576
 offset_right = 131.42737
-offset_bottom = 72.000015
+offset_bottom = 26.061935
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_fbptx")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
@@ -675,17 +707,21 @@ text = "Home"
 
 [node name="Restart" type="Button" parent="GameOver/Control/PausePanel BG" unique_id=194751114]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.82100004
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.82100004
 offset_left = -131.42702
-offset_top = 96.00047
+offset_top = -25.868256
 offset_right = 131.42737
-offset_bottom = 147.99998
+offset_bottom = 26.131256
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_fbptx")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
