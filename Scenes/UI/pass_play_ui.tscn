@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://br2f810pal41w" path="res://Texture Or Sprites/SinglePlayer/PanelsBg.png" id="7_1c7tm"]
 [ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="8_t6rrx"]
 [ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="9_ae0ph"]
+[ext_resource type="Script" uid="uid://4imbiqfswt4j" path="res://Scripts/PassPlay/pause_menu.gd" id="9_t1nm0"]
 [ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="10_bkt1t"]
 [ext_resource type="Script" uid="uid://d0kaspfe4voos" path="res://Scripts/PassPlay/game_over.gd" id="11_ltabj"]
 
@@ -477,7 +478,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PauseMenu" type="CanvasLayer" parent="." unique_id=918784366]
-visible = false
+script = ExtResource("9_t1nm0")
 
 [node name="Control" type="Control" parent="PauseMenu" unique_id=903218827]
 layout_mode = 3
@@ -942,5 +943,10 @@ text = "Share"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="InGame UI/Pause Button" to="InGame UI" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Home" to="PauseMenu" method="_on_home_pressed"]
+[connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Restart" to="PauseMenu" method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Resume" to="PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Cross" to="PauseMenu" method="_on_cross_pressed"]
 [connection signal="pressed" from="GameOver/Control/Black Bg/PausePanel BG/Home" to="GameOver" method="_on_home_pressed"]
 [connection signal="pressed" from="GameOver/Control/Black Bg/PausePanel BG/Restart" to="GameOver" method="_on_restart_pressed"]

@@ -65,3 +65,7 @@ func _on_match_over() -> void:
 	_sync_total_scores()
 	if UIManager.result_screen:
 		UIManager.enable_canvas(UIManager.result_screen)
+
+
+func _on_pause_button_pressed() -> void:
+	UIManager.toggle_canvas($"../PauseMenu")
