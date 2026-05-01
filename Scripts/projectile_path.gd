@@ -61,7 +61,7 @@ func _process(_delta: float) -> void:
 func _on_swipe_updated(direction: Vector3, strength: float) -> void:
 	if bag == null:
 		return
-	var bag_thrown = bag.get("thrown")
+	var bag_thrown: Variant = bag.get("thrown")
 	if bag_thrown is bool and bag_thrown:
 		clear_path()
 		return
@@ -83,22 +83,22 @@ func show_projectile_path(direction: Vector3, strength: float) -> void:
 
 	clear_path()
 
-	var velocity = direction * strength / bag.mass
-	var pos = bag.global_position
-	var launch_gravity_scale = bag.get("throw_gravity_scale")
+	var velocity: Vector3 = direction * strength / bag.mass
+	var pos: Vector3 = bag.global_position
+	var launch_gravity_scale: Variant = bag.get("throw_gravity_scale")
 	if launch_gravity_scale is int or launch_gravity_scale is float:
 		launch_gravity_scale = float(launch_gravity_scale)
 	else:
 		launch_gravity_scale = bag.gravity_scale
 
-	var default_gravity = ProjectSettings.get_setting("physics/3d/default_gravity", 9.8) as float
-	var default_gravity_vector = ProjectSettings.get_setting(
+	var default_gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity", 9.8) as float
+	var default_gravity_vector: Vector3 = ProjectSettings.get_setting(
 		"physics/3d/default_gravity_vector",
 		Vector3.DOWN
 	) as Vector3
-	var gravity = default_gravity_vector * default_gravity * launch_gravity_scale
-	var linear_damp = bag.linear_damp
-	var space_state = get_world_3d().direct_space_state
+	var gravity: Vector3 = default_gravity_vector * default_gravity * float(launch_gravity_scale)
+	var linear_damp: float = bag.linear_damp
+	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 
 	var world_points: Array[Vector3] = [pos]
 	var hit_position := Vector3.ZERO
@@ -106,14 +106,14 @@ func show_projectile_path(direction: Vector3, strength: float) -> void:
 	var has_hit := false
 
 	for _i in range(POINT_COUNT):
-		var next_velocity = velocity + gravity * TIME_STEP
+		var next_velocity: Vector3 = velocity + gravity * TIME_STEP
 		if linear_damp > 0.0:
 			next_velocity /= 1.0 + (linear_damp * TIME_STEP)
 
-		var next_pos = pos + next_velocity * TIME_STEP
-		var query = PhysicsRayQueryParameters3D.create(pos, next_pos)
+		var next_pos: Vector3 = pos + next_velocity * TIME_STEP
+		var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(pos, next_pos)
 		query.exclude = [bag.get_rid()]
-		var hit = space_state.intersect_ray(query)
+		var hit: Dictionary = space_state.intersect_ray(query)
 		if not hit.is_empty():
 			hit_position = hit.position
 			hit_normal = hit.normal
@@ -134,42 +134,42 @@ func _draw_path(world_points: Array[Vector3]) -> void:
 	if world_points.size() < 2:
 		return
 
-	var camera = get_viewport().get_camera_3d()
+	var camera: Camera3D = get_viewport().get_camera_3d()
 	path_mesh.clear_surfaces()
 	path_mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, path_material)
 
 	for i in range(world_points.size()):
-		var point = world_points[i]
-		var prev_point = world_points[max(i - 1, 0)]
-		var next_point = world_points[min(i + 1, world_points.size() - 1)]
-		var tangent = (next_point - prev_point).normalized()
+		var point: Vector3 = world_points[i]
+		var prev_point: Vector3 = world_points[max(i - 1, 0)]
+		var next_point: Vector3 = world_points[min(i + 1, world_points.size() - 1)]
+		var tangent: Vector3 = (next_point - prev_point).normalized()
 		if tangent.is_zero_approx():
 			tangent = Vector3.FORWARD
 
-		var view_dir = Vector3.UP
+		var view_dir: Vector3 = Vector3.UP
 		if camera:
 			view_dir = (camera.global_position - point).normalized()
 
-		var side = tangent.cross(view_dir).normalized()
+		var side: Vector3 = tangent.cross(view_dir).normalized()
 		if side.is_zero_approx():
 			side = tangent.cross(Vector3.UP).normalized()
 		if side.is_zero_approx():
 			side = tangent.cross(Vector3.RIGHT).normalized()
 
-		var half_width = side * (PATH_WIDTH * 0.5)
+		var half_width: Vector3 = side * (PATH_WIDTH * 0.5)
 		path_mesh.surface_add_vertex(to_local(point - half_width))
 		path_mesh.surface_add_vertex(to_local(point + half_width))
 
 	path_mesh.surface_end()
 
 func _show_endpoint_marker(world_position: Vector3, world_normal: Vector3) -> void:
-	var normal = world_normal.normalized()
+	var normal: Vector3 = world_normal.normalized()
 	if normal.is_zero_approx():
 		normal = Vector3.UP
 
-	var helper = Vector3.UP if abs(normal.dot(Vector3.UP)) < 0.98 else Vector3.RIGHT
-	var tangent = helper.cross(normal).normalized()
-	var bitangent = normal.cross(tangent).normalized()
+	var helper: Vector3 = Vector3.UP if abs(normal.dot(Vector3.UP)) < 0.98 else Vector3.RIGHT
+	var tangent: Vector3 = helper.cross(normal).normalized()
+	var bitangent: Vector3 = normal.cross(tangent).normalized()
 
 	endpoint_marker.global_basis = Basis(tangent, normal, bitangent)
 	endpoint_marker.global_position = world_position + normal * 0.01

@@ -13,7 +13,7 @@ func get_coins()->int:
 	return Prefs.get_int("coins",0)
 
 func spend_coins(amount:int)->bool:
-	var current=get_coins()
+	var current: int = get_coins()
 	if current<amount:
 		print("Not enough coins")
 		return false

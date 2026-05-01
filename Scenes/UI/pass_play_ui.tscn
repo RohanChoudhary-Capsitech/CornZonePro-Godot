@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://but1wuu2trosa"]
 
+[ext_resource type="Script" uid="uid://btk0fiq4exnxk" path="res://Scripts/PassPlay/pass_play_ui.gd" id="1_golj3"]
+[ext_resource type="Script" uid="uid://dxlrr57wc0htr" path="res://Scripts/PassPlay/in_game_ui.gd" id="1_jk3gn"]
 [ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="1_ted4b"]
 [ext_resource type="Texture2D" uid="uid://mtx40gu2p1hh" path="res://Texture Or Sprites/Multiplayer/ScoreBoard.png" id="2_jk3gn"]
 [ext_resource type="Texture2D" uid="uid://dvf1tnqw6o70h" path="res://Texture Or Sprites/Multiplayer/player1 score.png" id="3_golj3"]
@@ -40,8 +42,10 @@ texture = ExtResource("10_bkt1t")
 texture = ExtResource("10_bkt1t")
 
 [node name="PassPlayUI" type="Node" unique_id=603995956]
+script = ExtResource("1_golj3")
 
 [node name="InGame UI" type="CanvasLayer" parent="." unique_id=903377817]
+script = ExtResource("1_jk3gn")
 
 [node name="Pause Button" type="Button" parent="InGame UI" unique_id=1871371571]
 anchors_preset = 1
@@ -939,3 +943,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="GameOver/Control/Black Bg/PausePanel BG/Home" to="GameOver" method="_on_home_pressed"]
+[connection signal="pressed" from="GameOver/Control/Black Bg/PausePanel BG/Restart" to="GameOver" method="_on_restart_pressed"]

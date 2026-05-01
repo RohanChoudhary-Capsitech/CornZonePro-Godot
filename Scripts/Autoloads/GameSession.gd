@@ -13,6 +13,12 @@ const LocalMode = preload("res://Scripts/Modes/LocalMode.gd")
 signal pots_update
 signal match_played
 signal projectile_preview_changed(active: bool)
+signal turns_exhausted
+signal turn_changed(player: int)
+signal bag_result_recorded(player: int, points: int)
+signal bag_result_changed(player: int, index: int, points: int)
+var bags_thrown_this_turn: int = 0
+var match_over: bool = false
 
 var mode_logic: Node = null
 var selected_map_path: String = ""
@@ -24,6 +30,8 @@ var score_p1: int = 0
 var score_p2: int = 0
 var time_left: float = 20.0
 var projectile_preview_until_msec: int = 0
+var p1_bag_results: Array = []
+var p2_bag_results: Array = []
 
 func start_match(mode: String, map_path: String, ui: String, time_limit: float) -> void:
 	selected_mode = mode
@@ -37,6 +45,10 @@ func start_match(mode: String, map_path: String, ui: String, time_limit: float) 
 	current_turn = 1
 	score_p1 = 0
 	score_p2 = 0
+	bags_thrown_this_turn = 0 
+	match_over = false
+	p1_bag_results.clear()
+	p2_bag_results.clear()
 	DataManager.match_played()
 	match_played.emit()
 	_set_mode_logic()  # ← auto setup
@@ -81,4 +93,43 @@ func reset_match() -> void:
 	current_turn = 1
 	score_p1 = 0
 	score_p2 = 0
+	bags_thrown_this_turn = 0
+	match_over = false
+	p1_bag_results.clear()
+	p2_bag_results.clear()
 	clear_projectile_preview()
+
+func on_bag_thrown() -> void:
+	bags_thrown_this_turn += 1
+	if mode_logic:
+		mode_logic.on_bag_thrown()
+
+func record_bag_result(player: int, points: int) -> int:
+	var index: int = 0
+	if player == 1:
+		p1_bag_results.append(points)
+		index = p1_bag_results.size() - 1
+	else:
+		p2_bag_results.append(points)
+		index = p2_bag_results.size() - 1
+	bag_result_recorded.emit(player, points)
+	bag_result_changed.emit(player, index, points)
+	return index
+
+func update_bag_result(player: int, index: int, points: int) -> void:
+	if player == 1:
+		if index < 0 or index >= p1_bag_results.size():
+			return
+		if p1_bag_results[index] == points:
+			return
+		p1_bag_results[index] = points
+	else:
+		if index < 0 or index >= p2_bag_results.size():
+			return
+		if p2_bag_results[index] == points:
+			return
+		p2_bag_results[index] = points
+	bag_result_changed.emit(player, index, points)
+
+func end_match() -> void:
+	match_over = true

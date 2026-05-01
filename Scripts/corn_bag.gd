@@ -6,7 +6,10 @@ var thrown: bool = false
 
 func _ready() -> void:
 	freeze = true
+	contact_monitor = true
+	max_contacts_reported = 8
 	swipe_controller.swipe_completed.connect(_on_swipe_completed)
+	body_entered.connect(_on_body_entered)
 
 func _on_swipe_completed(direction: Vector3, strength: float) -> void:
 	if thrown:
@@ -20,5 +23,20 @@ func _on_swipe_completed(direction: Vector3, strength: float) -> void:
 	request_next_bag()
 
 func request_next_bag():
+	var scoring_player := GameSession.current_turn
+	if has_meta("throw_player"):
+		scoring_player = int(get_meta("throw_player"))
+	var bag_score := int(get_meta("awarded_points", 0))
+	if GameSession.selected_mode == "PassPlay":
+		var bag_result_index := GameSession.record_bag_result(scoring_player, bag_score)
+		set_meta("bag_result_index", bag_result_index)
+		set_meta("awarded_points", bag_score)
+	GameSession.on_bag_thrown()
+	if GameSession.match_over:
+		return
 	get_parent().spawn_bag();
+
+func _on_body_entered(body: Node) -> void:
+	if body.has_method("on_bag_landed"):
+		body.on_bag_landed(self)
 	

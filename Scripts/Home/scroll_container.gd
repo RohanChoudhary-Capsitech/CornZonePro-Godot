@@ -5,8 +5,8 @@ extends ScrollContainer
 @export var normal_scale: float = 1.0
 @export var scroll_speed: float = 0.1
 
-var target_scroll_x = 0.0
-var is_scrolling = false
+var target_scroll_x: float = 0.0
+var is_scrolling: bool = false
 
 func _ready():
 	follow_focus = false
@@ -15,13 +15,13 @@ func _ready():
 
 func _process(_delta):
 	scroll_horizontal = lerp(float(scroll_horizontal), target_scroll_x, scroll_speed)
-	var center_x = scroll_horizontal + (size.x / 2)
+	var center_x: float = scroll_horizontal + (size.x / 2)
 	for child in hbox.get_children():
-		var child_center = child.global_position.x + (child.size.x / 2)
-		var scroll_center = global_position.x + (size.x / 2)
-		var dist = abs(scroll_center - child_center)
-		var t = clamp(1.0 - (dist / (size.x / 2)), 0.0, 1.0)
-		var s = lerp(normal_scale, focused_scale, t)		
+		var child_center: float = child.global_position.x + (child.size.x / 2)
+		var scroll_center: float = global_position.x + (size.x / 2)
+		var dist: float = abs(scroll_center - child_center)
+		var t: float = clamp(1.0 - (dist / (size.x / 2)), 0.0, 1.0)
+		var s: float = lerp(normal_scale, focused_scale, t)		
 		child.scale = Vector2(s, s)
 		
 func _gui_input(event):
@@ -36,13 +36,13 @@ func _gui_input(event):
 		target_scroll_x -= event.relative.x
 
 func _snap_to_closest():
-	var center_x = target_scroll_x + (size.x / 2)
-	var closest_node = null
-	var min_dist = INF
+	var center_x: float = target_scroll_x + (size.x / 2)
+	var closest_node: Control = null
+	var min_dist: float = INF
 
 	for child in hbox.get_children():
-		var child_center = child.position.x + (child.size.x / 2)
-		var dist = abs(center_x - child_center)
+		var child_center: float = child.position.x + (child.size.x / 2)
+		var dist: float = abs(center_x - child_center)
 		if dist < min_dist:
 			min_dist = dist
 			closest_node = child

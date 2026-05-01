@@ -55,28 +55,28 @@ func _input(event: InputEvent) -> void:
 				process_swipe(end_pos, swipe_dis)
 
 func _emit_swipe_preview(current_pos: Vector2) -> void:
-	var dist = start_pos.distance_to(current_pos)
+	var dist: float = start_pos.distance_to(current_pos)
 	if dist < min_swipe_dist:
 		return
 
-	var direction = get_swipe_direction(start_pos, current_pos)
-	var strength = clamp(dist * throw_strength_multiplier, 1.0, 20.0)
+	var direction: Vector3 = get_swipe_direction(start_pos, current_pos)
+	var strength: float = clamp(dist * throw_strength_multiplier, 1.0, 20.0)
 	swipe_updated.emit(direction, strength)
 
 func process_swipe(release_pos: Vector2, dist: float) -> void:
-	var direction = get_swipe_direction(start_pos, release_pos)
-	var strength = clamp(dist * throw_strength_multiplier, 1.0, 20.0)
+	var direction: Vector3 = get_swipe_direction(start_pos, release_pos)
+	var strength: float = clamp(dist * throw_strength_multiplier, 1.0, 20.0)
 	swipe_completed.emit(direction, strength)
 
 func get_swipe_direction(s_pos: Vector2, e_pos: Vector2) -> Vector3:
-	var swipe = s_pos - e_pos
-	var cam_basis = main_camera.global_transform.basis
-	var yaw_angle = deg_to_rad(swipe.x * horizontal_sensitivity)
-	var yaw_basis = Basis(Vector3.UP, yaw_angle)
-	var forward = -cam_basis.z
+	var swipe: Vector2 = s_pos - e_pos
+	var cam_basis: Basis = main_camera.global_transform.basis
+	var yaw_angle: float = deg_to_rad(swipe.x * horizontal_sensitivity)
+	var yaw_basis: Basis = Basis(Vector3.UP, yaw_angle)
+	var forward: Vector3 = -cam_basis.z
 	forward.y = 0
 	forward = forward.normalized()
-	var dir = yaw_basis * forward
-	var pitch_angle = clamp(swipe.y * vertical_sensitivity, 10.0, 45.0)
-	var pitch_basis = Basis(cam_basis.x, deg_to_rad(pitch_angle))
+	var dir: Vector3 = yaw_basis * forward
+	var pitch_angle: float = clamp(swipe.y * vertical_sensitivity, 10.0, 45.0)
+	var pitch_basis: Basis = Basis(cam_basis.x, deg_to_rad(pitch_angle))
 	return (pitch_basis * dir).normalized()
