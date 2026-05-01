@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnldalqvq6i6t"
-path="res://.godot/imported/loading_bg.png-48a48b354352ed5a06b6e354e7580c5f.ctex"
+uid="uid://blo181cronhno"
+path="res://.godot/imported/_Cornzone loading screen 1.png-0a60e48befdb0f18925683af3f956059.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Loading Screen/loading_bg.png"
-dest_files=["res://.godot/imported/loading_bg.png-48a48b354352ed5a06b6e354e7580c5f.ctex"]
+source_file="res://Texture Or Sprites/Loading Screen/_Cornzone loading screen 1.png"
+dest_files=["res://.godot/imported/_Cornzone loading screen 1.png-0a60e48befdb0f18925683af3f956059.ctex"]
 
 [params]
 

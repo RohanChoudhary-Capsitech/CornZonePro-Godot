@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bv20jfqyaommi"]
 
 [ext_resource type="Script" uid="uid://c64dap5yua3t2" path="res://Scripts/home.gd" id="1_bih4p"]
-[ext_resource type="Texture2D" uid="uid://bnldalqvq6i6t" path="res://Texture Or Sprites/Loading Screen/loading_bg.png" id="4_12ycv"]
+[ext_resource type="Texture2D" uid="uid://blo181cronhno" path="res://Texture Or Sprites/Loading Screen/_Cornzone loading screen 1.png" id="2_dwsb2"]
 [ext_resource type="Texture2D" uid="uid://242sv0rapna0" path="res://Texture Or Sprites/Loading Screen/Rectangle 352.png" id="5_fhpuh"]
 [ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="7_vkfas"]
 [ext_resource type="Script" uid="uid://3msnhuobdxpi" path="res://Scripts/texture_progress_bar.gd" id="8_cykap"]
@@ -85,6 +85,9 @@
 [ext_resource type="Texture2D" uid="uid://cb2aor4n4myri" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle .png" id="82_p47cj"]
 [ext_resource type="Texture2D" uid="uid://s5wsx11qb1k2" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle 136.png" id="83_wt16q"]
 [ext_resource type="Texture2D" uid="uid://clo1pi3no6404" path="res://Texture Or Sprites/Leaderboard Screen/Coin.png" id="84_dwsb2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0rbp"]
+load_path = "res://.godot/imported/loading_bg.png-48a48b354352ed5a06b6e354e7580c5f.ctex"
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cykap"]
 
@@ -1828,7 +1831,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_12ycv")
+texture = ExtResource("2_dwsb2")
 expand_mode = 4
 
 [node name="LoadPanel" type="Control" parent="LoadingScreen" unique_id=1411730518]
@@ -1841,15 +1844,15 @@ grow_vertical = 2
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="LoadingScreen/LoadPanel" unique_id=1853004373]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.84700006
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.84700006
 offset_left = -150.0
-offset_top = -120.0
+offset_top = -9.840027
 offset_right = 150.0
-offset_bottom = -100.0
+offset_bottom = 10.159973
 grow_horizontal = 2
 grow_vertical = 0
 step = 0.0
@@ -1863,17 +1866,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LoadingText" type="RichTextLabel" parent="LoadingScreen/LoadPanel" unique_id=771067393]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.79
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -190.0
-offset_right = 150.0
-offset_bottom = -140.0
+anchor_bottom = 0.79
+offset_left = -156.5
+offset_top = -22.299988
+offset_right = 156.5
+offset_bottom = 22.700012
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("7_vkfas")
 theme_override_font_sizes/normal_font_size = 36
 text = "Loading..."
@@ -1889,7 +1892,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_12ycv")
+texture = SubResource("CompressedTexture2D_q0rbp")
 expand_mode = 4
 
 [node name="LoginPanel" type="Control" parent="LoginScreen" unique_id=225060287]
@@ -1921,10 +1924,10 @@ anchor_bottom = 0.5
 offset_left = -150.0
 offset_top = -125.0
 offset_right = 150.0
-offset_bottom = 125.0
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 25
 
 [node name="UserName" type="LineEdit" parent="LoginScreen/LoginPanel/Panel" unique_id=491425386]
 clip_contents = true
@@ -1943,13 +1946,13 @@ text_direction = 1
 
 [node name="SubmitButton" type="Button" parent="LoginScreen/LoginPanel/Panel" unique_id=151783331]
 clip_contents = true
-custom_minimum_size = Vector2(0, 45)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("7_vkfas")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 23
 theme_override_styles/normal = SubResource("StyleBoxTexture_jjai4")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t7s13")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gyiet")
@@ -2007,15 +2010,17 @@ grow_vertical = 2
 [node name="TopPanel" type="HBoxContainer" parent="HomeScreen/Panel" unique_id=472766109]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.05
 anchor_right = 0.5
+anchor_bottom = 0.05
 offset_left = -214.0
-offset_top = 50.0
+offset_top = 14.0
 offset_right = 236.0
-offset_bottom = 82.0
+offset_bottom = 46.0
 grow_horizontal = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 18
 
 [node name="Profile" type="TextureRect" parent="HomeScreen/Panel/TopPanel" unique_id=1919251055]
 layout_mode = 2
@@ -2154,7 +2159,7 @@ theme_override_font_sizes/font_size = 14
 text = "50"
 
 [node name="SettingButton" type="Button" parent="HomeScreen/Panel/TopPanel" unique_id=768354547]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(40, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_jv2cb")
@@ -2163,12 +2168,15 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_aoomy")
 
 [node name="LeftPanel" type="VBoxContainer" parent="HomeScreen/Panel" unique_id=817961446]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -190.0
-offset_right = 73.0
-offset_bottom = 5.0
+anchors_preset = -1
+anchor_left = 0.08400001
+anchor_top = 0.33900002
+anchor_right = 0.08400001
+anchor_bottom = 0.33900002
+offset_left = -40.320004
+offset_top = -107.97043
+offset_right = 40.679996
+offset_bottom = 108.02957
 grow_vertical = 2
 
 [node name="LeftPanelBG" type="TextureRect" parent="HomeScreen/Panel/LeftPanel" unique_id=965988182]
@@ -2230,14 +2238,15 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_krc7t")
 
 [node name="RightPanel" type="VBoxContainer" parent="HomeScreen/Panel" unique_id=740011782]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = -225.0
-offset_bottom = 145.0
+anchors_preset = -1
+anchor_left = 0.87500006
+anchor_top = 0.402
+anchor_right = 0.87500006
+anchor_bottom = 0.402
+offset_left = -60.00003
+offset_top = -166.44
+offset_right = 59.99997
+offset_bottom = 203.56
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -2638,10 +2647,10 @@ anchor_bottom = 1.0
 offset_left = -140.0004
 offset_top = -150.0
 offset_right = 139.9996
-offset_bottom = -57.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 10
+theme_override_constants/separation = 18
 
 [node name="LoginWithGoogle" type="Button" parent="SettingScreen/Panel/SettingBg/VBoxContainer" unique_id=1003234960]
 custom_minimum_size = Vector2(260, 40)
@@ -2725,15 +2734,15 @@ text = "Login with Apple"
 
 [node name="PrivacyPolicyButton" type="Button" parent="SettingScreen/Panel/SettingBg" unique_id=2045312637]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.92
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.92
 offset_left = -46.000015
-offset_top = -46.0
+offset_top = -8.0
 offset_right = 45.999985
-offset_bottom = -30.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.57254905, 0.57254905, 0.57254905, 1)
@@ -2746,6 +2755,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_44eka")
 text = "Privacy policy"
 
 [node name="MapSelectScreen" type="CanvasLayer" parent="." unique_id=1321304884]
+visible = false
 
 [node name="BG" type="TextureRect" parent="MapSelectScreen" unique_id=1114887386]
 anchors_preset = 15
@@ -3953,40 +3963,43 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_fhrbv")
 
 [node name="LineEdit" type="LineEdit" parent="MultiplayerScreen/Panel/PanelBg" unique_id=277391297]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.24100001
 anchor_right = 0.5
+anchor_bottom = 0.24100001
 offset_left = -133.0
-offset_top = 68.0
+offset_top = -28.641006
 offset_right = 133.0
-offset_bottom = 125.0
+offset_bottom = 28.358994
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
 theme_override_fonts/font = ExtResource("20_ao7do")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_u6nbl")
 theme_override_styles/read_only = SubResource("StyleBoxTexture_uahhm")
 theme_override_styles/focus = SubResource("StyleBoxTexture_4xdiu")
-text = "hello"
+placeholder_text = "Enter Room Id"
 alignment = 1
 
 [node name="HostButton" type="Button" parent="MultiplayerScreen/Panel/PanelBg" unique_id=652364819]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.43500003
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.43500003
 offset_left = -123.0
-offset_top = -43.5
+offset_top = -17.435013
 offset_right = 123.0
-offset_bottom = -8.5
+offset_bottom = 22.564987
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("7_vkfas")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_0u48y")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lcqmj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qnn5i")
@@ -3994,21 +4007,21 @@ text = "Host Game"
 
 [node name="JoinButton" type="Button" parent="MultiplayerScreen/Panel/PanelBg" unique_id=1214216740]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.57000005
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.57000005
 offset_left = -123.0
-offset_top = 10.5
+offset_top = -17.570023
 offset_right = 123.0
-offset_bottom = 45.5
+offset_bottom = 22.429977
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("7_vkfas")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_ym5e3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4nqju")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7ylqh")
