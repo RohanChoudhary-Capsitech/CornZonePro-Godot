@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="8_yj4rf"]
 [ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="9_q3ai2"]
 [ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="10_xp3ug"]
-[ext_resource type="Script" path="res://Scripts/PassPlay/in_game_ui.gd" id="11_aq5k4"]
-[ext_resource type="Script" path="res://Scripts/PassPlay/game_over.gd" id="12_ltabj"]
+[ext_resource type="Script" uid="uid://dxlrr57wc0htr" path="res://Scripts/PassPlay/in_game_ui.gd" id="11_aq5k4"]
+[ext_resource type="Script" uid="uid://d0kaspfe4voos" path="res://Scripts/PassPlay/game_over.gd" id="12_ltabj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbdad"]
 texture = ExtResource("1_oeynd")
@@ -65,9 +65,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -86.98349
-offset_top = 26.0
+offset_top = 23.0
 offset_right = 86.98349
-offset_bottom = 99.0
+offset_bottom = 96.0
 grow_horizontal = 2
 texture = ExtResource("2_nfuvo")
 expand_mode = 3

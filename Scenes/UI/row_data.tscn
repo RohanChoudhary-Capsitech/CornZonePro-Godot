@@ -9,14 +9,14 @@
 [node name="RowData" type="TextureRect" unique_id=1836885732]
 custom_minimum_size = Vector2(0, 30)
 anchors_preset = -1
-anchor_left = 0.49500003
-anchor_top = 0.089
-anchor_right = 0.49500003
-anchor_bottom = 0.089
-offset_left = -212.60002
-offset_top = -33.365456
-offset_right = 216.39998
-offset_bottom = 40.1799
+anchor_left = 0.5
+anchor_top = 0.108
+anchor_right = 0.5
+anchor_bottom = 0.108
+offset_left = -210.0
+offset_top = -35.760002
+offset_right = 210.0
+offset_bottom = 36.242447
 grow_horizontal = 2
 texture = ExtResource("1_svfq5")
 expand_mode = 5
