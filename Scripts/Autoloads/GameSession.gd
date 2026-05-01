@@ -101,7 +101,7 @@ func reset_match() -> void:
 
 func on_bag_thrown() -> void:
 	bags_thrown_this_turn += 1
-	if mode_logic:
+	if mode_logic and mode_logic.has_method("on_bag_thrown"):
 		mode_logic.on_bag_thrown()
 
 func record_bag_result(player: int, points: int) -> int:

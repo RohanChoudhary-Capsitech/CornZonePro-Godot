@@ -102,5 +102,4 @@ func pass_play()->void:
 	_start_match("PassPlay")
 
 func local_multiplayer()->void:
-	toggle_canvas(local_multiplayer_screen)
-	#_start_match("Local")
+	_start_match("Local")
