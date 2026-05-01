@@ -21,7 +21,7 @@ func _save_scores() -> void:
 	total_pots += pot
 	# Save updated total
 	Prefs.set_int("total_pots", total_pots)
-	GameSession.pots_update.emit()
+	
 	
 	# Check best score
 	var best: int = Prefs.get_int("max_pots", 0)
