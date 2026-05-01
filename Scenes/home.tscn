@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c2dbjirpm1ase" path="res://Texture Or Sprites/Login Screen/Line 14.png" id="13_jjai4"]
 [ext_resource type="Texture2D" uid="uid://cgqyho8ne3j3a" path="res://Texture Or Sprites/Login Screen/Google.png" id="14_lddgv"]
 [ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
-[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/Bg.png" id="16_848r5"]
+[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/BG.png" id="16_848r5"]
 [ext_resource type="Texture2D" uid="uid://df3uq3lg4t57f" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
 [ext_resource type="Texture2D" uid="uid://dhaiu8nexctvx" path="res://Texture Or Sprites/Home Screen/ProfileBG.png" id="17_g2bjx"]
 [ext_resource type="Script" uid="uid://51frmnaa34pj" path="res://Scripts/Home/home_screen.gd" id="17_mkkvt"]
@@ -48,7 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://cnpebfalm5426" path="res://Texture Or Sprites/Setting Screen/off.png" id="46_d3n2e"]
 [ext_resource type="Texture2D" uid="uid://djc8xbwip4qka" path="res://Texture Or Sprites/Setting Screen/ButtonBg.png" id="47_fq71w"]
 [ext_resource type="Texture2D" uid="uid://1bb5toqsaqp" path="res://Texture Or Sprites/MapsBG/Street.png" id="48_bih4p"]
-[ext_resource type="Script" path="res://Scripts/Home/scroll_container.gd" id="48_q0rbp"]
+[ext_resource type="Script" uid="uid://blp7na1jmy62s" path="res://Scripts/Home/scroll_container.gd" id="48_q0rbp"]
 [ext_resource type="Texture2D" uid="uid://5mhmulnrma25" path="res://Texture Or Sprites/MapsBG/Stadium.png" id="49_cmu2r"]
 [ext_resource type="Texture2D" uid="uid://btpffg6n6cv3v" path="res://Texture Or Sprites/MapsBG/Backyard.png" id="50_mkkvt"]
 [ext_resource type="Texture2D" uid="uid://dlf5m2v5om5e0" path="res://Texture Or Sprites/MapsBG/Rooftop.png" id="51_m3bm7"]
@@ -64,10 +64,10 @@
 [ext_resource type="Texture2D" uid="uid://bvcl7swd13pd5" path="res://Texture Or Sprites/Profile Screen/Group 271.png" id="60_um175"]
 [ext_resource type="Texture2D" uid="uid://cb5cirqsllo4x" path="res://Texture Or Sprites/Info Screen/Group 410.png" id="61_3fp5a"]
 [ext_resource type="Texture2D" uid="uid://bwwsdktfulm2u" path="res://Texture Or Sprites/DailyRewards/Union.png" id="62_5id56"]
-[ext_resource type="Script" uid="uid://nn6aqsvgnste" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
+[ext_resource type="Script" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
 [ext_resource type="Texture2D" uid="uid://blrgnaniuw5ts" path="res://Texture Or Sprites/DailyRewards/Group 275.png" id="62_um175"]
 [ext_resource type="Texture2D" uid="uid://dch1w5blud1y2" path="res://Texture Or Sprites/DailyRewards/Group 278.png" id="63_b16xs"]
-[ext_resource type="Script" uid="uid://dcpb5o46t1dcl" path="res://Scripts/Home/daily_reward_screen_list.gd" id="64_fa687"]
+[ext_resource type="Script" path="res://Scripts/Home/daily_reward_screen_list.gd" id="64_fa687"]
 [ext_resource type="Texture2D" uid="uid://c8nhel4e2gwj6" path="res://Texture Or Sprites/DailyRewards/Group 183.png" id="67_jmoue"]
 [ext_resource type="Texture2D" uid="uid://ca1j6ne1xq86d" path="res://Texture Or Sprites/DailyRewards/Rectangle 11.png" id="69_0iwel"]
 [ext_resource type="Texture2D" uid="uid://dtg5r0c6qfg8i" path="res://Texture Or Sprites/DailyRewards/Group 411.png" id="70_0bc6n"]
@@ -79,9 +79,9 @@
 [ext_resource type="Texture2D" uid="uid://dxf6n2bo32ivg" path="res://Texture Or Sprites/Multiplayer/Rectangle 385.png" id="75_cco2g"]
 [ext_resource type="Texture2D" uid="uid://sv3gugcvj1fd" path="res://Texture Or Sprites/Multiplayer/Rectangle 386.png" id="76_2pxd8"]
 [ext_resource type="Texture2D" uid="uid://ds7mdrl5khx06" path="res://Texture Or Sprites/Leaderboard Screen/Group 257.png" id="78_36lgj"]
-[ext_resource type="Script" path="res://Scripts/Home/leaderboard_screen.gd" id="78_meagp"]
-[ext_resource type="Script" path="res://Scripts/Home/content.gd" id="80_smodv"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/row_data.tscn" id="81_xe1up"]
+[ext_resource type="Script" uid="uid://bu665fyesiov4" path="res://Scripts/Home/leaderboard_screen.gd" id="78_meagp"]
+[ext_resource type="Script" uid="uid://dsd1a0tinias5" path="res://Scripts/Home/content.gd" id="80_smodv"]
+[ext_resource type="PackedScene" uid="uid://osb5nqpdetfk" path="res://Scenes/UI/row_data.tscn" id="81_xe1up"]
 [ext_resource type="Texture2D" uid="uid://cb2aor4n4myri" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle .png" id="82_p47cj"]
 [ext_resource type="Texture2D" uid="uid://s5wsx11qb1k2" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle 136.png" id="83_wt16q"]
 [ext_resource type="Texture2D" uid="uid://clo1pi3no6404" path="res://Texture Or Sprites/Leaderboard Screen/Coin.png" id="84_dwsb2"]
@@ -2774,9 +2774,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -233.0
-offset_top = -221.5
+offset_top = -300.0
 offset_right = 233.0
-offset_bottom = 221.5
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
@@ -2786,12 +2786,12 @@ script = ExtResource("48_q0rbp")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MapSelectScreen/Panel/ScrollContainer" unique_id=1201101715]
 clip_contents = true
-custom_minimum_size = Vector2(1700, 0)
+custom_minimum_size = Vector2(1900, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 3
 mouse_filter = 2
-theme_override_constants/separation = 60
+theme_override_constants/separation = 80
 alignment = 1
 
 [node name="StreetMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=1537847604]
@@ -2799,6 +2799,7 @@ custom_minimum_size = Vector2(220, 350)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_t2fil")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_06dss")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bj8j3")
@@ -2808,6 +2809,7 @@ custom_minimum_size = Vector2(220, 350)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_k0r3p")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_503ab")
 theme_override_styles/hover = SubResource("StyleBoxTexture_nbuyv")
@@ -2817,6 +2819,7 @@ custom_minimum_size = Vector2(220, 350)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_as3ia")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fgm6c")
 theme_override_styles/hover = SubResource("StyleBoxTexture_52jo1")
@@ -2826,6 +2829,7 @@ custom_minimum_size = Vector2(220, 350)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_tuwk5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_r13op")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6xe2f")
@@ -2835,6 +2839,7 @@ custom_minimum_size = Vector2(220, 350)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_lqqs2")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ie2bs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vaya1")
@@ -2844,6 +2849,7 @@ custom_minimum_size = Vector2(220, 350)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_tbwbq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_1wbho")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6rbbw")
