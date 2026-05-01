@@ -52,7 +52,7 @@ script = ExtResource("1_jk3gn")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -55.0
+offset_left = -60.0
 offset_top = 39.0
 offset_right = -23.0
 offset_bottom = 78.0
@@ -682,6 +682,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_coojd")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qpfcn")
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=613420293]
+visible = false
 script = ExtResource("11_ltabj")
 
 [node name="Black Bg" type="TextureRect" parent="GameOver" unique_id=63578351]
