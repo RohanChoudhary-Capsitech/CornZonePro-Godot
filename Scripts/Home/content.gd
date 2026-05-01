@@ -6,7 +6,7 @@ func  _ready() -> void:
 	load_leaderboard()
 	
 func load_leaderboard():
-	var data = [
+	var data: Array[Dictionary] = [
 		{"rank":1, "name":"Himanshu", "score":120},
 		{"rank":2, "name":"Chintu", "score":110},
 		{"rank":3, "name":"Mohan", "score":100},
@@ -20,6 +20,6 @@ func load_leaderboard():
 	]
 	
 	for player in data:
-		var row = row_data.instantiate()
+		var row: Node = row_data.instantiate()
 		add_child(row)
 		row.setup(player)

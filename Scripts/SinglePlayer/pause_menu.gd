@@ -20,4 +20,4 @@ func _on_home_pressed() -> void:
 	UIManager.home()
 
 func _on_restart_pressed() -> void:
-	print("Restart button pressed")
+	UIManager.restart()

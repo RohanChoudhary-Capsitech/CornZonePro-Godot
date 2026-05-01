@@ -3,7 +3,10 @@ extends Node
 
 
 func on_ball_entered(body: Node3D) -> void:
-	GameSession.add_score(1, 1)
+	var awarded_points: int = int(body.get_meta("awarded_points", 0))
+	var delta: int = maxi(0, 3 - awarded_points)
+	body.set_meta("awarded_points", 3)
+	GameSession.add_score(1, delta)
 	on_score()
 
 func on_score() -> void:
@@ -16,7 +19,7 @@ func on_match_end() -> void:
 func _save_scores() -> void:
 	var pot: int = GameSession.score_p1
 	# Get existing total
-	var total_pots: int = Prefs.get_int("total_pots", 0)
+	var total_pots: int = int(Prefs.get_int("total_pots", 0))
 	# Add current score
 	total_pots += pot
 	# Save updated total
@@ -24,7 +27,7 @@ func _save_scores() -> void:
 	
 	
 	# Check best score
-	var best: int = Prefs.get_int("max_pots", 0)
+	var best: int = int(Prefs.get_int("max_pots", 0))
 	if pot > best:
 		Prefs.set_int("max_pots", pot)
 		print("New best pots:", pot)

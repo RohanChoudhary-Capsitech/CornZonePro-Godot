@@ -7,8 +7,9 @@ func _ready() -> void:
 
 
 func spawn_bag():
-	var obj = bag.instantiate()
+	var obj: Node3D = bag.instantiate() as Node3D
 	obj.rotation_degrees=Vector3(-87.8,0,90)
+	obj.set_meta("throw_player", GameSession.current_turn)
 	add_child(obj)
 
 func _on_timer_timeout() -> void:

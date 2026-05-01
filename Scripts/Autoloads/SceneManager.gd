@@ -21,7 +21,7 @@ func _ready() -> void:
 	_preload_critical_scenes()
 
 func _preload_critical_scenes()-> void:
-	var critical=[
+	var critical: Array[String] = [
 		"res://Scenes/home.tscn",
 	]
 	for path in critical:
@@ -40,7 +40,7 @@ func goto_packed(packed:PackedScene)->void:
 	_swap_scene_packed(packed)
 
 func _swap_scene(path:String)->void:
-	var packed=_cache.get(path,null)
+	var packed: PackedScene = _cache.get(path,null) as PackedScene
 	if null==packed:
 		push_error("[SceneManager] Scene not found in cache: " + path)
 		return
@@ -60,7 +60,7 @@ func _swap_scene_packed(packed:PackedScene,path:String="")->void:
 		_current_scene = null
 		print("[SceneManager] Freed scene: ", previous_path)
 	_auto_free_cache()
-	var instance=packed.instantiate()
+	var instance: Node = packed.instantiate()
 	get_tree().root.add_child(instance)
 	get_tree().current_scene=instance
 	_current_scene=instance
@@ -82,15 +82,15 @@ func preload_multiple(paths:Array)->void:
 func _load_to_cache(path:String)->void:
 	if _cache.has(path):
 		return
-	var before=OS.get_static_memory_usage()
-	var packed=load(path)
-	var after=OS.get_static_memory_usage()
+	var before: int = OS.get_static_memory_usage()
+	var packed: PackedScene = load(path) as PackedScene
+	var after: int = OS.get_static_memory_usage()
 	if null==packed:
 		push_error("[SceneManager] Failed to load: " + path)
 		return
 	
 	_cache[path]=packed
-	var used_mb=(after-before)/1024.0/1024.0
+	var used_mb: float = (after-before)/1024.0/1024.0
 	print("[SceneManager] Cached: ", path, " (", snapped(used_mb, 0.01), " MB)")
 	scene_loaded.emit(path)
 
@@ -112,10 +112,10 @@ func _process(delta: float) -> void:
 		return
 	
 	for path in _loading_queue.duplicate():
-		var status=ResourceLoader.load_threaded_get_status(path)
+		var status: int = ResourceLoader.load_threaded_get_status(path)
 		match(status):
 			ResourceLoader.THREAD_LOAD_LOADED:
-				var packed=ResourceLoader.load_threaded_get(path)
+				var packed: PackedScene = ResourceLoader.load_threaded_get(path) as PackedScene
 				_cache[path]=packed
 				_loading_queue.erase(path)
 				print("[SceneManager] Async loaded: ", path)
@@ -141,7 +141,7 @@ func  free_scene(path:String)->void:
 		print("[SceneManager] Freed from cache: ", path)
 
 func free_all(except:Array=[])->void:
-	var to_free=[]
+	var to_free: Array[String] = []
 	for path in _cache.keys():
 		if not ALWAYS_KEEP.has(path) and not except.has(path):
 			to_free.append(path)
@@ -161,8 +161,8 @@ func _auto_free_cache()->void:
 
 #--MEMORY INFO-----------------------
 func print_memory()->void:
-	var ram_mb = OS.get_static_memory_usage() / 1024.0 / 1024.0
-	var peak_mb = OS.get_static_memory_peak_usage() / 1024.0 / 1024.0
+	var ram_mb: float = OS.get_static_memory_usage() / 1024.0 / 1024.0
+	var peak_mb: float = OS.get_static_memory_peak_usage() / 1024.0 / 1024.0
 	print("─────────────────────────────────")
 	print("RAM now:  ", snapped(ram_mb, 0.01), " MB")
 	print("RAM peak: ", snapped(peak_mb, 0.01), " MB")

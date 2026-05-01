@@ -53,15 +53,18 @@ func enable_canvas(layer: CanvasLayer):
 func toggle_canvas(layer: CanvasLayer):
 	layer.visible = !layer.visible
 
+func _begin_match(mode: String, map_path: String, ui: String, time_limit: float) -> void:
+	GameSession.start_match(mode, map_path, ui, time_limit)
+	SceneManager.preload_async(GameSession.selected_map_path)
+	_goto_match()
+
 func _start_match(mode: String) -> void:
-	GameSession.start_match(
+	_begin_match(
 		mode,
 		DEFAULT_MAP_SCENE_PATH,
 		mode,
 		DEFAULT_MAP_CONFIG.time_limit
 	)
-	SceneManager.preload_async(GameSession.selected_map_path)
-	_goto_match()
 
 func _goto_match()->void:
 	await SceneManager.wait_until_loaded(GameSession.selected_map_path)
@@ -81,6 +84,19 @@ func home()->void:
 		#get_tree().change_scene_to_packed(new_scene)
 	SceneManager.free_all()
 	SceneManager.goto("res://Scenes/home.tscn")
+
+func restart()->void:
+	if GameSession.selected_mode.is_empty() or GameSession.selected_map_path.is_empty():
+		push_warning("[UIManager] No active match to restart")
+		return
+
+	var mode := GameSession.selected_mode
+	var map_path := GameSession.selected_map_path
+	var ui := GameSession.required_ui
+	var time_limit := GameSession.time_left
+
+	GameSession.reset_match()
+	_begin_match(mode, map_path, ui, time_limit)
 
 func pass_play()->void:
 	_start_match("PassPlay")

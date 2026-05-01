@@ -18,11 +18,11 @@ func _on_home_pressed() -> void:
 func _on_share_pressed() -> void:
 	print("share button pressed")
 	if Engine.has_singleton("GodotShare"):
-		var share = Engine.get_singleton("GodotShare")
+		var share: Object = Engine.get_singleton("GodotShare")
 		share.shareText("Test from Godot")
 	else:
 		print("Plugin not found")
 
 
 func _on_restart_pressed() -> void:
-	print("restart button pressed")
+	UIManager.restart()
