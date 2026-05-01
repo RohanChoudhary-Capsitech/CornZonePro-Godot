@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var winner_text: Label = $"Control/Black Bg/PausePanel BG/Dash/Player Winner Declaration"
-@onready var p1_score_text: Label = $"Control/Black Bg/PausePanel BG/Dash/Player 1 Score"
-@onready var p2_score_text: Label = $"Control/Black Bg/PausePanel BG/Dash/Label"
+@onready var winner_text: Label = $"Control/GameOver BG/Dash/Player Winner Declaration"
+@onready var p1_score_text: Label = $"Control/GameOver BG/Dash/Player 1 Score"
+@onready var p2_score_text: Label = $"Control/GameOver BG/Dash/Label"
 
 func _ready() -> void:
 	GameSession.turns_exhausted.connect(_update_results)

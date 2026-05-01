@@ -478,7 +478,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PauseMenu" type="CanvasLayer" parent="." unique_id=918784366]
+visible = false
 script = ExtResource("9_t1nm0")
+
+[node name="Black Bg" type="TextureRect" parent="PauseMenu" unique_id=250150139]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_1c7tm")
+expand_mode = 3
 
 [node name="Control" type="Control" parent="PauseMenu" unique_id=903218827]
 layout_mode = 3
@@ -488,17 +498,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Black Bg" type="TextureRect" parent="PauseMenu/Control" unique_id=250150139]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_1c7tm")
-expand_mode = 3
-
-[node name="PausePanel BG" type="TextureRect" parent="PauseMenu/Control/Black Bg" unique_id=12311175]
+[node name="PausePanel BG" type="TextureRect" parent="PauseMenu/Control" unique_id=12311175]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -508,14 +508,14 @@ anchor_bottom = 0.5
 offset_left = -140.6875
 offset_top = -169.17752
 offset_right = 140.6875
-offset_bottom = 169.17752
+offset_bottom = 169.17749
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_t6rrx")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=627469763]
+[node name="Label" type="Label" parent="PauseMenu/Control/PausePanel BG" unique_id=627469763]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -530,7 +530,7 @@ theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 25
 text = "Paused"
 
-[node name="Dash" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=456298891]
+[node name="Dash" type="Label" parent="PauseMenu/Control/PausePanel BG" unique_id=456298891]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -549,7 +549,7 @@ text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Score Heading" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Dash" unique_id=75638180]
+[node name="Score Heading" type="Label" parent="PauseMenu/Control/PausePanel BG/Dash" unique_id=75638180]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -563,7 +563,7 @@ theme_override_fonts/font = ExtResource("5_j2kp1")
 theme_override_font_sizes/font_size = 20
 text = "Score"
 
-[node name="Player 1 Score" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Dash" unique_id=1971497726]
+[node name="Player 1 Score" type="Label" parent="PauseMenu/Control/PausePanel BG/Dash" unique_id=1971497726]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -579,7 +579,7 @@ text = "12"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Player 2 Score" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Dash" unique_id=1052349813]
+[node name="Player 2 Score" type="Label" parent="PauseMenu/Control/PausePanel BG/Dash" unique_id=1052349813]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -598,7 +598,7 @@ text = "12"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Home" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=583836317]
+[node name="Home" type="Button" parent="PauseMenu/Control/PausePanel BG" unique_id=583836317]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -611,28 +611,14 @@ offset_right = 100.0005
 offset_bottom = 34.822495
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_j2kp1")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
-
-[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Home" unique_id=1347187510]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -23.5
-offset_top = -11.5
-offset_right = 23.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("5_j2kp1")
 text = "Home"
 
-[node name="Restart" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=1443555826]
+[node name="Restart" type="Button" parent="PauseMenu/Control/PausePanel BG" unique_id=1443555826]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -645,28 +631,14 @@ offset_right = 100.0005
 offset_bottom = 87.50047
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_j2kp1")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
-
-[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Restart" unique_id=94614169]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -11.5
-offset_right = 32.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("5_j2kp1")
 text = "Restart"
 
-[node name="Resume" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=764830446]
+[node name="Resume" type="Button" parent="PauseMenu/Control/PausePanel BG" unique_id=764830446]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -679,28 +651,14 @@ offset_right = 100.0005
 offset_bottom = 140.4995
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_j2kp1")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
-
-[node name="Label" type="Label" parent="PauseMenu/Control/Black Bg/PausePanel BG/Resume" unique_id=819756454]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -33.5
-offset_top = -11.5
-offset_right = 33.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("5_j2kp1")
 text = "Resume"
 
-[node name="Cross" type="Button" parent="PauseMenu/Control/Black Bg/PausePanel BG" unique_id=1750672698]
+[node name="Cross" type="Button" parent="PauseMenu/Control/PausePanel BG" unique_id=1750672698]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -715,8 +673,16 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_coojd")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qpfcn")
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=613420293]
-visible = false
 script = ExtResource("11_ltabj")
+
+[node name="Black Bg" type="TextureRect" parent="GameOver" unique_id=63578351]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_1c7tm")
+expand_mode = 3
 
 [node name="Control" type="Control" parent="GameOver" unique_id=1047792486]
 layout_mode = 3
@@ -726,42 +692,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Black Bg" type="TextureRect" parent="GameOver/Control" unique_id=63578351]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_1c7tm")
-expand_mode = 3
-
-[node name="PausePanel BG" type="TextureRect" parent="GameOver/Control/Black Bg" unique_id=1465604677]
+[node name="GameOver BG" type="TextureRect" parent="GameOver/Control" unique_id=1465604677]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.6875
-offset_top = -169.17752
-offset_right = 140.6875
-offset_bottom = 169.17752
+offset_left = -158.84375
+offset_top = -191.1943
+offset_right = 158.84375
+offset_bottom = 191.1943
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_t6rrx")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=1323902586]
+[node name="Label" type="Label" parent="GameOver/Control/GameOver BG" unique_id=1323902586]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -48.0
-offset_top = 4.0
+offset_top = 9.0
 offset_right = 48.0
-offset_bottom = 35.0
+offset_bottom = 40.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("5_j2kp1")
@@ -770,7 +726,7 @@ text = "Result"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Dash" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=1016460200]
+[node name="Dash" type="Label" parent="GameOver/Control/GameOver BG" unique_id=1016460200]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -778,9 +734,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -23.75
-offset_top = -85.5
+offset_top = -83.5
 offset_right = 23.75
-offset_bottom = -12.5
+offset_bottom = -10.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_j2kp1")
@@ -789,21 +745,20 @@ text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Player Winner Declaration" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Dash" unique_id=2045439388]
+[node name="Player Winner Declaration" type="Label" parent="GameOver/Control/GameOver BG/Dash" unique_id=2045439388]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -24.5
-offset_top = -21.0
-offset_right = 24.5
-offset_bottom = 4.0
+offset_left = -89.0
+offset_top = -31.0
+offset_right = 89.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("5_j2kp1")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 27
 text = "Player X Wins"
 
-[node name="Player 1 Score" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Dash" unique_id=1626042504]
+[node name="Player 1 Score" type="Label" parent="GameOver/Control/GameOver BG/Dash" unique_id=1626042504]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -819,7 +774,7 @@ text = "12"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Dash" unique_id=319913611]
+[node name="Label" type="Label" parent="GameOver/Control/GameOver BG/Dash" unique_id=319913611]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -838,76 +793,51 @@ text = "12"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Home" type="Button" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=3714039]
+[node name="Home" type="Button" parent="GameOver/Control/GameOver BG" unique_id=3714039]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -99.9995
-offset_top = -0.1775055
-offset_right = 100.0005
-offset_bottom = 34.822495
+offset_left = -120.49975
+offset_top = 13.911255
+offset_right = 120.499756
+offset_bottom = 68.08876
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_j2kp1")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
 action_mode = 0
-
-[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Home" unique_id=1640521056]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -23.5
-offset_top = -11.5
-offset_right = 23.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("5_j2kp1")
 text = "Home"
 
-[node name="Restart" type="Button" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=194751114]
+[node name="Restart" type="Button" parent="GameOver/Control/GameOver BG" unique_id=194751114]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -99.9995
-offset_top = 52.50049
-offset_right = 100.0005
-offset_bottom = 87.50047
+offset_left = -120.49975
+offset_top = 91.91124
+offset_right = 120.499756
+offset_bottom = 146.08876
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_j2kp1")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
+text = "Rematch"
 
-[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Restart" unique_id=873462206]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -11.5
-offset_right = 32.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("5_j2kp1")
-text = "Restart"
-
-[node name="Share" type="Button" parent="GameOver/Control/Black Bg/PausePanel BG" unique_id=303444037]
+[node name="Share" type="Button" parent="GameOver/Control/GameOver BG" unique_id=303444037]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -920,33 +850,17 @@ offset_right = 100.0005
 offset_bottom = 140.4995
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_j2kp1")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
-
-[node name="Label" type="Label" parent="GameOver/Control/Black Bg/PausePanel BG/Share" unique_id=1532286419]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -33.5
-offset_top = -11.5
-offset_right = 33.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("5_j2kp1")
 text = "Share"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="InGame UI/Pause Button" to="InGame UI" method="_on_pause_button_pressed"]
-[connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Home" to="PauseMenu" method="_on_home_pressed"]
-[connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Restart" to="PauseMenu" method="_on_restart_pressed"]
-[connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Resume" to="PauseMenu" method="_on_resume_pressed"]
-[connection signal="pressed" from="PauseMenu/Control/Black Bg/PausePanel BG/Cross" to="PauseMenu" method="_on_cross_pressed"]
-[connection signal="pressed" from="GameOver/Control/Black Bg/PausePanel BG/Home" to="GameOver" method="_on_home_pressed"]
-[connection signal="pressed" from="GameOver/Control/Black Bg/PausePanel BG/Restart" to="GameOver" method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Home" to="PauseMenu" method="_on_home_pressed"]
+[connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Restart" to="PauseMenu" method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Resume" to="PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Cross" to="PauseMenu" method="_on_cross_pressed"]
+[connection signal="pressed" from="GameOver/Control/GameOver BG/Home" to="GameOver" method="_on_home_pressed"]
+[connection signal="pressed" from="GameOver/Control/GameOver BG/Restart" to="GameOver" method="_on_restart_pressed"]

@@ -17,5 +17,5 @@ func _on_home_pressed() -> void:
 	UIManager.home()
 
 func _sync_total_scores() -> void:
-	$"Control/Black Bg/PausePanel BG/Dash/Player 1 Score".text = str(GameSession.score_p1)
-	$"Control/Black Bg/PausePanel BG/Dash/Player 2 Score".text = str(GameSession.score_p2)
+	$"Control/PausePanel BG/Dash/Player 1 Score".text = str(GameSession.score_p1)
+	$"Control/PausePanel BG/Dash/Player 2 Score".text = str(GameSession.score_p2)
