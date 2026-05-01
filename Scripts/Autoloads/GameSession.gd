@@ -37,11 +37,11 @@ func start_match(mode: String, map_path: String, ui: String, time_limit: float) 
 	current_turn = 1
 	score_p1 = 0
 	score_p2 = 0
+	DataManager.match_played()
+	match_played.emit()
 	_set_mode_logic()  # ← auto setup
 
 func _set_mode_logic() -> void:
-	DataManager.match_played()
-	match_played.emit()
 	match selected_mode:
 		"Single":   mode_logic = SingleMode.new()
 		"PassPlay": mode_logic = PassPlayMode.new()
