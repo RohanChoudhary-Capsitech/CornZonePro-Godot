@@ -23,6 +23,10 @@ var result_screen:CanvasLayer
 
 signal UI_required
 
+
+# func _ready() -> void:
+# 	NetworkManager.game_ready.connect(local_multiplayer)
+
 func home_setup(loading, home, login, setting, map,profile,info,rewards_list,reward,local_multilplayer, leaderboard, shop):
 	loading_screen = loading
 	home_screen = home
@@ -107,4 +111,4 @@ func pass_play()->void:
 	_start_match("PassPlay")
 
 func local_multiplayer()->void:
-	_start_match("Local")
+	pass

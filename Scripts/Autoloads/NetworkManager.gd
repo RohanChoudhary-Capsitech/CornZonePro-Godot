@@ -5,6 +5,11 @@ const PORT := 7777
 const MAX_PLAYERS := 2
 const DISCOVERY_PORT := 8888
 
+const MAP_LIST:=[
+	"res://Scenes/Maps/street.tscn",
+	"res://Scenes/Maps/stadium.tscn"
+]
+
 # ─── STATE ────────────────────────────────
 var is_host: bool = false
 var my_id: int = 0
@@ -74,6 +79,9 @@ func join_game(ip: String) -> void:
 	print("[Network] Connecting to:", ip)
 
 # ─── RPC ──────────────────────────────────
+func get_random_map() -> String:
+	return MAP_LIST[randi() % MAP_LIST.size()]
+
 @rpc("any_peer", "reliable")
 func register_player(data: Dictionary):
 	var sender_id = multiplayer.get_remote_sender_id()
@@ -84,6 +92,10 @@ func register_player(data: Dictionary):
 	if is_host and players.size() == MAX_PLAYERS:
 		print("[Network] Game Ready")
 
+		var map = get_random_map()
+		print("[Network] Selected Map:", map)
+
+		start_match_rpc.rpc(map)
 		# 🔥 PRINT FULL PLAYER LIST
 		print("------ FINAL PLAYER LIST ------")
 		for id in players:
@@ -91,6 +103,16 @@ func register_player(data: Dictionary):
 		print("-------------------------------")
 
 		game_ready.emit()
+
+@rpc("any_peer", "reliable")
+func start_match_rpc(map_path: String):
+	print("[RPC RECEIVED] Loading:", map_path)
+
+	GameSession.start_match("Local", map_path, "Local", 20.0)
+	
+	SceneManager.preload_async(map_path)
+	await SceneManager.wait_until_loaded(map_path)
+	SceneManager.goto(map_path)
 
 # ─── CALLBACKS ────────────────────────────
 func _on_peer_connected(id: int) -> void:
