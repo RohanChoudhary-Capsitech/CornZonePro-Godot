@@ -15,3 +15,7 @@ func _ready() -> void:
 		$LeaderBoardScreen
 	)
 	UIManager.enable_canvas(UIManager.loading_screen)
+
+
+func _on_join_button_pressed() -> void:
+	pass # Replace with function body.
