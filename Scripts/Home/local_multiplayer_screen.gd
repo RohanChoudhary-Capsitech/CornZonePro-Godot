@@ -7,8 +7,9 @@ func _on_cross_button_pressed() -> void:
 
 
 func _on_host_button_pressed() -> void:
-	pass # Replace with function body.
+	NetworkManager.host_game()
 
 
 func _on_join_button_pressed() -> void:
-	pass # Replace with function body.
+	#NetworkManager.join_game()
+	pass

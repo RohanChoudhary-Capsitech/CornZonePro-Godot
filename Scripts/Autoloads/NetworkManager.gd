@@ -57,6 +57,11 @@ func  join_game(ip: String)->void:
 	multiplayer.multiplayer_peer=peer
 	print("[Network] Connecting to:", ip)
 
+
+func search_games()->void:
+	pass
+
+
 @rpc("any_peer","reliable")
 func register_player(data:Dictionary):
 	var sender_id=multiplayer.get_remote_sender_id()
