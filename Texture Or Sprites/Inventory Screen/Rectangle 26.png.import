@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drmvoxy81hgc2"
-path="res://.godot/imported/BG.png-bc96f23988bd7c09a07710f547389aec.ctex"
+uid="uid://bmakehfvqjb14"
+path="res://.godot/imported/Rectangle 26.png-a4bd56bb12d30309a0f7eddf7aa64ed6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Home Screen/BG.png"
-dest_files=["res://.godot/imported/BG.png-bc96f23988bd7c09a07710f547389aec.ctex"]
+source_file="res://Texture Or Sprites/Inventory Screen/Rectangle 26.png"
+dest_files=["res://.godot/imported/Rectangle 26.png-a4bd56bb12d30309a0f7eddf7aa64ed6.ctex"]
 
 [params]
 

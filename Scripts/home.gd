@@ -13,6 +13,7 @@ func _ready() -> void:
 		$RewardScreen,
 		$MultiplayerScreen,
 		$LeaderBoardScreen,
-		$ShopScreen
+		$ShopScreen,
+		$InventoryScreen
 	)
 	UIManager.enable_canvas(UIManager.loading_screen)
