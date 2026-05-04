@@ -23,7 +23,7 @@ func _on_pass_n_play_button_pressed() -> void:
 	UIManager.pass_play()
 
 func _on_lan_button_pressed() -> void:
-	UIManager.local_multiplayer()
+	UIManager.toggle_canvas($"../MultiplayerScreen")
 
 
 func _on_leaderboard_button_pressed() -> void:

@@ -1,7 +1,9 @@
 extends CanvasLayer
 
 @export var server_button_scene: PackedScene
-@onready var container = $VBoxContainer
+@onready var container = $Panel/PanelBg/ScrollContainer/RoomsContent
+@onready var host_button: Button = $Panel/PanelBg/HostButton
+@onready var join_button: Button = $Panel/PanelBg/JoinButton
 
 var shown_ips: Array = []
 
@@ -10,17 +12,24 @@ func _ready() -> void:
 	NetworkManager.connection_failed.connect(_on_connection_failed)
 
 func _on_cross_button_pressed() -> void:
+	print("Closing multiplayer session")
+	NetworkManager.disconnect_game()
+	clear_server_list()
+	host_button.disabled = false
+	join_button.disabled = false
 	UIManager.toggle_canvas(self)
 
 # ─── HOST ────────────────────────────────
 func _on_host_button_pressed() -> void:
 	clear_server_list()
 	NetworkManager.host_game()
+	join_button.disabled=true
 	print("Hosting... Waiting for player")
 
 # ─── SEARCH ──────────────────────────────
 func _on_join_button_pressed() -> void:
 	clear_server_list()
+	host_button.disabled=true
 	NetworkManager.start_search()
 
 # ─── SERVER FOUND ────────────────────────

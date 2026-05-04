@@ -33,6 +33,10 @@ func _ready() -> void:
 
 # ─── HOST ─────────────────────────────────
 func host_game() -> void:
+	# 🔥 IMPORTANT FIX
+	if multiplayer.multiplayer_peer != null:
+		disconnect_game()
+
 	is_host = true
 
 	var peer = ENetMultiplayerPeer.new()
@@ -51,8 +55,6 @@ func host_game() -> void:
 	}
 
 	players[my_id] = my_data
-
-	print("[Network] Server started ID:", my_id)
 
 	start_broadcast()
 
@@ -81,6 +83,13 @@ func register_player(data: Dictionary):
 
 	if is_host and players.size() == MAX_PLAYERS:
 		print("[Network] Game Ready")
+
+		# 🔥 PRINT FULL PLAYER LIST
+		print("------ FINAL PLAYER LIST ------")
+		for id in players:
+			print("ID:", id, " Data:", players[id])
+		print("-------------------------------")
+
 		game_ready.emit()
 
 # ─── CALLBACKS ────────────────────────────
@@ -119,13 +128,18 @@ func _on_server_disconnected() -> void:
 
 # ─── DISCONNECT ───────────────────────────
 func disconnect_game() -> void:
+	if multiplayer.multiplayer_peer:
+		multiplayer.multiplayer_peer.close()  # 🔥 force close socket
+	
 	multiplayer.multiplayer_peer = null
 	players.clear()
 	is_host = false
 	my_id = 0
+	
 	stop_broadcast()
 	stop_search()
-	print("[Network] Disconnected")
+
+	print("[Network] Fully Disconnected")
 
 # ─── BROADCAST (HOST) ─────────────────────
 func start_broadcast() -> void:
