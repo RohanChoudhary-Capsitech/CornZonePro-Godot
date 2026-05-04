@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c2dbjirpm1ase" path="res://Texture Or Sprites/Login Screen/Line 14.png" id="13_jjai4"]
 [ext_resource type="Texture2D" uid="uid://cgqyho8ne3j3a" path="res://Texture Or Sprites/Login Screen/Google.png" id="14_lddgv"]
 [ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
-[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/Bg.png" id="16_848r5"]
+[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/BG.png" id="16_848r5"]
 [ext_resource type="Texture2D" uid="uid://df3uq3lg4t57f" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
 [ext_resource type="Texture2D" uid="uid://dhaiu8nexctvx" path="res://Texture Or Sprites/Home Screen/ProfileBG.png" id="17_g2bjx"]
 [ext_resource type="Script" uid="uid://51frmnaa34pj" path="res://Scripts/Home/home_screen.gd" id="17_mkkvt"]
@@ -41,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://dvwxkku6qo65k" path="res://Texture Or Sprites/Home Screen/LockBtn.png" id="30_iw3j6"]
 [ext_resource type="Texture2D" uid="uid://0fjc2e2mdyqo" path="res://Texture Or Sprites/Home Screen/PlayAnimIcon.png" id="31_vihvb"]
 [ext_resource type="Texture2D" uid="uid://bh3fafq7melkt" path="res://Texture Or Sprites/Shop Screen/ShopBG.png" id="41_q0rbp"]
-[ext_resource type="Script" path="res://Scripts/Home/shop_screen.gd" id="41_xfm00"]
+[ext_resource type="Script" uid="uid://6ti8bts85mso" path="res://Scripts/Home/shop_screen.gd" id="41_xfm00"]
 [ext_resource type="Texture2D" uid="uid://b7vfboswoyyd2" path="res://Texture Or Sprites/Shop Screen/Group.png" id="42_2seyu"]
 [ext_resource type="Texture2D" uid="uid://bfrgw6srjjs71" path="res://Texture Or Sprites/Setting Screen/SettingBg.png" id="42_ridcw"]
 [ext_resource type="Texture2D" uid="uid://dwu1nf7abokum" path="res://Texture Or Sprites/Setting Screen/CrossIcon.png" id="43_6mqkx"]
@@ -49,14 +49,19 @@
 [ext_resource type="Script" uid="uid://braim0r3r8miu" path="res://Scripts/Home/setting_screen.gd" id="44_m3bm7"]
 [ext_resource type="Texture2D" uid="uid://5m5jugnw8t7o" path="res://Texture Or Sprites/Shop Screen/Group 231.png" id="44_rdxgg"]
 [ext_resource type="Texture2D" uid="uid://b4n1ji3y2jtwr" path="res://Texture Or Sprites/Setting Screen/Rectangle 366.png" id="44_vdfna"]
+[ext_resource type="Texture2D" uid="uid://dtyqe8slqicdl" path="res://Texture Or Sprites/Shop Screen/Rectangle a.png" id="45_qeivk"]
 [ext_resource type="Texture2D" uid="uid://bn41igymqe1fh" path="res://Texture Or Sprites/Shop Screen/homeicon.png" id="45_rdxgg"]
+[ext_resource type="Texture2D" uid="uid://scwcx3w0wn7h" path="res://Texture Or Sprites/Shop Screen/bags.png" id="45_stdfk"]
 [ext_resource type="Texture2D" uid="uid://b1oonxfycxe2h" path="res://Texture Or Sprites/Setting Screen/on.png" id="45_sxluj"]
 [ext_resource type="Texture2D" uid="uid://cnpebfalm5426" path="res://Texture Or Sprites/Setting Screen/off.png" id="46_d3n2e"]
 [ext_resource type="Texture2D" uid="uid://dy0nduu3w1fnv" path="res://Texture Or Sprites/Shop Screen/Rectangle 94.png" id="46_o3vp4"]
+[ext_resource type="Texture2D" uid="uid://dtdwb8exx5n7c" path="res://Texture Or Sprites/Shop Screen/Group 563.png" id="46_te4e6"]
 [ext_resource type="Texture2D" uid="uid://djc8xbwip4qka" path="res://Texture Or Sprites/Setting Screen/ButtonBg.png" id="47_fq71w"]
 [ext_resource type="Texture2D" uid="uid://1bb5toqsaqp" path="res://Texture Or Sprites/MapsBG/Street.png" id="48_bih4p"]
 [ext_resource type="Script" uid="uid://blp7na1jmy62s" path="res://Scripts/Home/scroll_container.gd" id="48_q0rbp"]
 [ext_resource type="Texture2D" uid="uid://5mhmulnrma25" path="res://Texture Or Sprites/MapsBG/Stadium.png" id="49_cmu2r"]
+[ext_resource type="Texture2D" uid="uid://b4anxdeudcr81" path="res://Texture Or Sprites/Shop Screen/boards.png" id="49_ildo7"]
+[ext_resource type="Texture2D" uid="uid://c81fv812yb54l" path="res://Texture Or Sprites/Shop Screen/Group 564.png" id="50_56oc6"]
 [ext_resource type="Texture2D" uid="uid://btpffg6n6cv3v" path="res://Texture Or Sprites/MapsBG/Backyard.png" id="50_mkkvt"]
 [ext_resource type="Texture2D" uid="uid://dlf5m2v5om5e0" path="res://Texture Or Sprites/MapsBG/Rooftop.png" id="51_m3bm7"]
 [ext_resource type="Texture2D" uid="uid://b223k4hdbcjl" path="res://Texture Or Sprites/MapsBG/Metro.png" id="52_0htr1"]
@@ -71,10 +76,10 @@
 [ext_resource type="Texture2D" uid="uid://bvcl7swd13pd5" path="res://Texture Or Sprites/Profile Screen/Group 271.png" id="60_um175"]
 [ext_resource type="Texture2D" uid="uid://cb5cirqsllo4x" path="res://Texture Or Sprites/Info Screen/Group 410.png" id="61_3fp5a"]
 [ext_resource type="Texture2D" uid="uid://bwwsdktfulm2u" path="res://Texture Or Sprites/DailyRewards/Union.png" id="62_5id56"]
-[ext_resource type="Script" uid="uid://nn6aqsvgnste" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
+[ext_resource type="Script" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
 [ext_resource type="Texture2D" uid="uid://blrgnaniuw5ts" path="res://Texture Or Sprites/DailyRewards/Group 275.png" id="62_um175"]
 [ext_resource type="Texture2D" uid="uid://dch1w5blud1y2" path="res://Texture Or Sprites/DailyRewards/Group 278.png" id="63_b16xs"]
-[ext_resource type="Script" uid="uid://dcpb5o46t1dcl" path="res://Scripts/Home/daily_reward_screen_list.gd" id="64_fa687"]
+[ext_resource type="Script" path="res://Scripts/Home/daily_reward_screen_list.gd" id="64_fa687"]
 [ext_resource type="Texture2D" uid="uid://c8nhel4e2gwj6" path="res://Texture Or Sprites/DailyRewards/Group 183.png" id="67_jmoue"]
 [ext_resource type="Texture2D" uid="uid://ca1j6ne1xq86d" path="res://Texture Or Sprites/DailyRewards/Rectangle 11.png" id="69_0iwel"]
 [ext_resource type="Texture2D" uid="uid://dtg5r0c6qfg8i" path="res://Texture Or Sprites/DailyRewards/Group 411.png" id="70_0bc6n"]
@@ -86,7 +91,7 @@
 [ext_resource type="Texture2D" uid="uid://dxf6n2bo32ivg" path="res://Texture Or Sprites/Multiplayer/Rectangle 385.png" id="75_cco2g"]
 [ext_resource type="Texture2D" uid="uid://sv3gugcvj1fd" path="res://Texture Or Sprites/Multiplayer/Rectangle 386.png" id="76_2pxd8"]
 [ext_resource type="Texture2D" uid="uid://ds7mdrl5khx06" path="res://Texture Or Sprites/Leaderboard Screen/Group 257.png" id="78_36lgj"]
-[ext_resource type="Script" path="res://Scripts/Home/leaderboard_screen.gd" id="78_meagp"]
+[ext_resource type="Script" uid="uid://bu665fyesiov4" path="res://Scripts/Home/leaderboard_screen.gd" id="78_meagp"]
 [ext_resource type="Script" uid="uid://dsd1a0tinias5" path="res://Scripts/Home/content.gd" id="80_smodv"]
 [ext_resource type="PackedScene" uid="uid://osb5nqpdetfk" path="res://Scenes/UI/row_data.tscn" id="81_xe1up"]
 [ext_resource type="Texture2D" uid="uid://cb2aor4n4myri" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle .png" id="82_p47cj"]
@@ -249,6 +254,20 @@ texture = ExtResource("30_iw3j6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44eka"]
 texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ochsh"]
+texture = ExtResource("45_qeivk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sg8ud"]
+resource_local_to_scene = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v6eu8"]
+resource_local_to_scene = true
+texture = ExtResource("45_qeivk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwtdj"]
+resource_local_to_scene = true
+texture = ExtResource("45_qeivk")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ojkg"]
 resource_local_to_scene = true
@@ -2422,9 +2441,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.729729
+offset_left = -25.0
 offset_top = -25.0
-offset_right = 22.270271
+offset_right = 25.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -2446,10 +2465,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -51.596657
+offset_left = -51.655506
 offset_top = -71.0
-offset_right = 47.596657
-offset_bottom = 45.0
+offset_right = 44.99436
+offset_bottom = 42.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("27_3crrv")
@@ -2501,9 +2520,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -22.99973
+offset_left = -24.999998
 offset_top = -25.0
-offset_right = 27.000267
+offset_right = 24.999998
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -2535,7 +2554,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
 [node name="ShopScreen" type="CanvasLayer" parent="." unique_id=1113232569]
-visible = false
 script = ExtResource("41_xfm00")
 
 [node name="BG" type="TextureRect" parent="ShopScreen" unique_id=1759111382]
@@ -2560,11 +2578,12 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 92.0
+offset_top = 1.0
+offset_bottom = 112.0
 grow_horizontal = 2
 texture = ExtResource("42_2seyu")
 expand_mode = 1
-stretch_mode = 6
+stretch_mode = 5
 
 [node name="MidPanel" type="VBoxContainer" parent="ShopScreen/Panel" unique_id=1631213551]
 layout_mode = 1
@@ -2579,7 +2598,7 @@ offset_right = 191.5
 offset_bottom = 204.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 60
 
 [node name="BagPanel" type="TextureRect" parent="ShopScreen/Panel/MidPanel" unique_id=1344024291]
 layout_mode = 2
@@ -2587,11 +2606,177 @@ texture = ExtResource("43_q6kyu")
 expand_mode = 5
 stretch_mode = 4
 
+[node name="Top" type="HBoxContainer" parent="ShopScreen/Panel/MidPanel/BagPanel" unique_id=980806474]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = 8.0
+offset_right = 188.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="ShopScreen/Panel/MidPanel/BagPanel/Top" unique_id=926717864]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+texture = ExtResource("45_stdfk")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="ShopScreen/Panel/MidPanel/BagPanel/Top" unique_id=450838688]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+texture = ExtResource("46_te4e6")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Bottom" type="HBoxContainer" parent="ShopScreen/Panel/MidPanel/BagPanel" unique_id=1519918592]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -169.0
+offset_top = -51.914063
+offset_right = 163.0
+offset_bottom = -3.9140625
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="ShopScreen/Panel/MidPanel/BagPanel/Bottom" unique_id=2106154745]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+text = "Cornzone"
+
+[node name="Label2" type="Label" parent="ShopScreen/Panel/MidPanel/BagPanel/Bottom" unique_id=1639697266]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 30
+text = "Bags"
+
+[node name="Button" type="Button" parent="ShopScreen/Panel/MidPanel/BagPanel/Bottom" unique_id=1811397017]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ochsh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sg8ud")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v6eu8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_dwtdj")
+clip_text = true
+
+[node name="Label" type="Label" parent="ShopScreen/Panel/MidPanel/BagPanel/Bottom/Button" unique_id=2135862928]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -21.5
+offset_right = 27.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 28
+text = "Buy"
+
 [node name="BoardPanel" type="TextureRect" parent="ShopScreen/Panel/MidPanel" unique_id=65650425]
 layout_mode = 2
 texture = ExtResource("44_rdxgg")
 expand_mode = 5
 stretch_mode = 4
+
+[node name="Top" type="HBoxContainer" parent="ShopScreen/Panel/MidPanel/BoardPanel" unique_id=1002389661]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -189.25
+offset_top = 5.0
+offset_right = 189.25
+offset_bottom = 126.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="ShopScreen/Panel/MidPanel/BoardPanel/Top" unique_id=166517315]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+texture = ExtResource("49_ildo7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="ShopScreen/Panel/MidPanel/BoardPanel/Top" unique_id=1310728296]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+texture = ExtResource("50_56oc6")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Bottom" type="HBoxContainer" parent="ShopScreen/Panel/MidPanel/BoardPanel" unique_id=192625244]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.5
+offset_top = -51.914078
+offset_right = 176.5
+offset_bottom = -3.9140778
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="Label" type="Label" parent="ShopScreen/Panel/MidPanel/BoardPanel/Bottom" unique_id=167165978]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+text = "Cornzone"
+
+[node name="Label2" type="Label" parent="ShopScreen/Panel/MidPanel/BoardPanel/Bottom" unique_id=1100721055]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 30
+text = "Boards"
+
+[node name="Button" type="Button" parent="ShopScreen/Panel/MidPanel/BoardPanel/Bottom" unique_id=333058851]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ochsh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sg8ud")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v6eu8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_dwtdj")
+clip_text = true
+
+[node name="Label" type="Label" parent="ShopScreen/Panel/MidPanel/BoardPanel/Bottom/Button" unique_id=1770313500]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -21.5
+offset_right = 27.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 28
+text = "Buy"
 
 [node name="BottomPanel" type="HBoxContainer" parent="ShopScreen/Panel" unique_id=1543029350]
 layout_mode = 1
@@ -2623,8 +2808,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -52.386654
 offset_top = -68.5
-offset_right = 47.243603
-offset_bottom = 48.5
+offset_right = 43.837437
+offset_bottom = 44.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("27_3crrv")
@@ -2632,17 +2817,18 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="ShopScreen/Panel/BottomPanel/Shop/TextureRect" unique_id=461882588]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -30.4789
-offset_top = -26.0
-offset_right = 30.478905
-offset_bottom = 32.0
+offset_left = -29.452162
+offset_top = -34.0
+offset_right = 29.452164
+offset_bottom = 21.0
 grow_horizontal = 2
 texture = ExtResource("27_wflhj")
-expand_mode = 1
+expand_mode = 3
 stretch_mode = 4
 
 [node name="Inventory" type="TextureRect" parent="ShopScreen/Panel/BottomPanel" unique_id=168575035]
@@ -2658,9 +2844,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -25.0
 offset_top = -25.0
-offset_right = 30.0
+offset_right = 25.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -4168,6 +4354,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_gr5sq")
 text = "2x reward"
 
 [node name="MultiplayerScreen" type="CanvasLayer" parent="." unique_id=910901950]
+visible = false
 script = ExtResource("73_2pxd8")
 server_button_scene = ExtResource("82_wg2o6")
 
