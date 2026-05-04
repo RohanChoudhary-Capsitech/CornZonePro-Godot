@@ -96,6 +96,7 @@ func register_player(data: Dictionary):
 		print("[Network] Selected Map:", map)
 
 		start_match_rpc.rpc(map)
+		start_match_rpc(map)
 		# 🔥 PRINT FULL PLAYER LIST
 		print("------ FINAL PLAYER LIST ------")
 		for id in players:
@@ -109,7 +110,7 @@ func start_match_rpc(map_path: String):
 	print("[RPC RECEIVED] Loading:", map_path)
 
 	GameSession.start_match("Local", map_path, "Local", 20.0)
-	
+
 	SceneManager.preload_async(map_path)
 	await SceneManager.wait_until_loaded(map_path)
 	SceneManager.goto(map_path)
