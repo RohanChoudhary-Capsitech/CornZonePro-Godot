@@ -34,6 +34,10 @@ var projectile_preview_until_msec: int = 0
 var p1_bag_results: Array = []
 var p2_bag_results: Array = []
 
+
+func is_network_mode() -> bool:
+	return selected_mode == "Local"
+
 func start_match(mode: String, map_path: String, ui: String, time_limit: float) -> void:
 	selected_mode = mode
 	selected_map_path = map_path
