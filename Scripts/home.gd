@@ -12,10 +12,7 @@ func _ready() -> void:
 		$DailyRewardScreen,
 		$RewardScreen,
 		$MultiplayerScreen,
-		$LeaderBoardScreen
+		$LeaderBoardScreen,
+		$ShopScreen
 	)
 	UIManager.enable_canvas(UIManager.loading_screen)
-
-
-func _on_join_button_pressed() -> void:
-	pass # Replace with function body.

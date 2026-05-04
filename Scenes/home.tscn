@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://dvwxkku6qo65k" path="res://Texture Or Sprites/Home Screen/LockBtn.png" id="30_iw3j6"]
 [ext_resource type="Texture2D" uid="uid://0fjc2e2mdyqo" path="res://Texture Or Sprites/Home Screen/PlayAnimIcon.png" id="31_vihvb"]
 [ext_resource type="Texture2D" uid="uid://bh3fafq7melkt" path="res://Texture Or Sprites/Shop Screen/ShopBG.png" id="41_q0rbp"]
+[ext_resource type="Script" uid="uid://6ti8bts85mso" path="res://Scripts/Home/shop_screen.gd" id="41_xfm00"]
 [ext_resource type="Texture2D" uid="uid://b7vfboswoyyd2" path="res://Texture Or Sprites/Shop Screen/Group.png" id="42_2seyu"]
 [ext_resource type="Texture2D" uid="uid://bfrgw6srjjs71" path="res://Texture Or Sprites/Setting Screen/SettingBg.png" id="42_ridcw"]
 [ext_resource type="Texture2D" uid="uid://dwu1nf7abokum" path="res://Texture Or Sprites/Setting Screen/CrossIcon.png" id="43_6mqkx"]
@@ -48,8 +49,10 @@
 [ext_resource type="Script" uid="uid://braim0r3r8miu" path="res://Scripts/Home/setting_screen.gd" id="44_m3bm7"]
 [ext_resource type="Texture2D" uid="uid://5m5jugnw8t7o" path="res://Texture Or Sprites/Shop Screen/Group 231.png" id="44_rdxgg"]
 [ext_resource type="Texture2D" uid="uid://b4n1ji3y2jtwr" path="res://Texture Or Sprites/Setting Screen/Rectangle 366.png" id="44_vdfna"]
+[ext_resource type="Texture2D" uid="uid://bn41igymqe1fh" path="res://Texture Or Sprites/Shop Screen/homeicon.png" id="45_rdxgg"]
 [ext_resource type="Texture2D" uid="uid://b1oonxfycxe2h" path="res://Texture Or Sprites/Setting Screen/on.png" id="45_sxluj"]
 [ext_resource type="Texture2D" uid="uid://cnpebfalm5426" path="res://Texture Or Sprites/Setting Screen/off.png" id="46_d3n2e"]
+[ext_resource type="Texture2D" uid="uid://dy0nduu3w1fnv" path="res://Texture Or Sprites/Shop Screen/Rectangle 94.png" id="46_o3vp4"]
 [ext_resource type="Texture2D" uid="uid://djc8xbwip4qka" path="res://Texture Or Sprites/Setting Screen/ButtonBg.png" id="47_fq71w"]
 [ext_resource type="Texture2D" uid="uid://1bb5toqsaqp" path="res://Texture Or Sprites/MapsBG/Street.png" id="48_bih4p"]
 [ext_resource type="Script" uid="uid://blp7na1jmy62s" path="res://Scripts/Home/scroll_container.gd" id="48_q0rbp"]
@@ -244,6 +247,51 @@ texture = ExtResource("30_iw3j6")
 texture = ExtResource("30_iw3j6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44eka"]
+texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ojkg"]
+resource_local_to_scene = true
+texture = ExtResource("28_krc7t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jicx3"]
+resource_local_to_scene = true
+texture = ExtResource("28_krc7t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouj5o"]
+resource_local_to_scene = true
+texture = ExtResource("28_krc7t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82hot"]
+texture = ExtResource("45_rdxgg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k0i76"]
+texture = ExtResource("45_rdxgg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oi70t"]
+texture = ExtResource("45_rdxgg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4yy14"]
+resource_local_to_scene = true
+texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2vxpu"]
+resource_local_to_scene = true
+texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvq4h"]
+resource_local_to_scene = true
+texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stky2"]
+resource_local_to_scene = true
+texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n2f85"]
+resource_local_to_scene = true
+texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04qca"]
+resource_local_to_scene = true
 texture = ExtResource("30_iw3j6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0g73e"]
@@ -2335,7 +2383,7 @@ offset_top = -87.0
 offset_right = 241.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = -1
+theme_override_constants/separation = -8
 
 [node name="Shop" type="TextureRect" parent="HomeScreen/Panel/BottomPanel" unique_id=678838603]
 layout_mode = 2
@@ -2343,7 +2391,7 @@ texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="HomeScreen/Panel/BottomPanel/Shop" unique_id=1201021935]
+[node name="ShopButton" type="Button" parent="HomeScreen/Panel/BottomPanel/Shop" unique_id=1201021935]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2385,7 +2433,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_fq71w")
 
 [node name="Play" type="TextureRect" parent="HomeScreen/Panel/BottomPanel" unique_id=1629769743]
 layout_mode = 2
-texture = ExtResource("27_3crrv")
+texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
@@ -2397,32 +2445,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -45.983017
-offset_top = -64.5
-offset_right = 45.983364
-offset_bottom = 43.5
+offset_left = -51.596657
+offset_top = -71.0
+offset_right = 47.596657
+offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("27_3crrv")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="PlayIcon" type="TextureRect" parent="HomeScreen/Panel/BottomPanel/Play" unique_id=41540403]
+[node name="PlayIcon" type="TextureRect" parent="HomeScreen/Panel/BottomPanel/Play/TextureRect" unique_id=41540403]
 z_index = 2
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -36.042023
-offset_top = -51.0
-offset_right = 30.957981
-offset_bottom = 16.0
+offset_left = -36.0422
+offset_top = -30.0
+offset_right = 30.95781
+offset_bottom = 37.000008
 grow_horizontal = 2
 texture = ExtResource("30_hk3dx")
 expand_mode = 4
 stretch_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="HomeScreen/Panel/BottomPanel/Play/PlayIcon" unique_id=230591292]
+[node name="TextureRect" type="TextureRect" parent="HomeScreen/Panel/BottomPanel/Play/TextureRect/PlayIcon" unique_id=230591292]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2486,6 +2534,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
 [node name="ShopScreen" type="CanvasLayer" parent="." unique_id=1113232569]
+visible = false
+script = ExtResource("41_xfm00")
 
 [node name="BG" type="TextureRect" parent="ShopScreen" unique_id=1759111382]
 anchors_preset = 15
@@ -2551,14 +2601,14 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -241.0
 offset_top = -87.0
-offset_right = 241.0
+offset_right = 243.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = -1
+theme_override_constants/separation = -8
 
 [node name="Shop" type="TextureRect" parent="ShopScreen/Panel/BottomPanel" unique_id=1675819836]
 layout_mode = 2
-texture = ExtResource("27_3crrv")
+texture = ExtResource("46_o3vp4")
 expand_mode = 3
 stretch_mode = 4
 
@@ -2570,46 +2620,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -45.983017
-offset_top = -64.5
-offset_right = 45.983364
-offset_bottom = 43.5
+offset_left = -52.386654
+offset_top = -68.5
+offset_right = 47.243603
+offset_bottom = 48.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("27_3crrv")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="PlayIcon" type="TextureRect" parent="ShopScreen/Panel/BottomPanel/Shop" unique_id=1045291148]
-z_index = 2
+[node name="TextureRect" type="TextureRect" parent="ShopScreen/Panel/BottomPanel/Shop/TextureRect" unique_id=461882588]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -36.042023
-offset_top = -51.0
-offset_right = 30.957981
-offset_bottom = 16.0
+offset_left = -30.4789
+offset_top = -26.0
+offset_right = 30.478905
+offset_bottom = 32.0
 grow_horizontal = 2
-texture = ExtResource("30_hk3dx")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="TextureRect" type="TextureRect" parent="ShopScreen/Panel/BottomPanel/Shop/PlayIcon" unique_id=1583781841]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -15.5
-offset_top = -19.5
-offset_right = 20.9375
-offset_bottom = 17.9375
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("31_vihvb")
-expand_mode = 4
+texture = ExtResource("27_wflhj")
+expand_mode = 1
 stretch_mode = 4
 
 [node name="Inventory" type="TextureRect" parent="ShopScreen/Panel/BottomPanel" unique_id=168575035]
@@ -2618,22 +2650,22 @@ texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="ShopScreen/Panel/BottomPanel/Inventory" unique_id=984698403]
+[node name="Button" type="Button" parent="ShopScreen/Panel/BottomPanel/Inventory" unique_id=1345822487]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.729729
+offset_left = -20.0
 offset_top = -25.0
-offset_right = 22.270271
+offset_right = 30.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_sxluj")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_d3n2e")
-theme_override_styles/hover = SubResource("StyleBoxTexture_fq71w")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6ojkg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jicx3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ouj5o")
 
 [node name="Play" type="TextureRect" parent="ShopScreen/Panel/BottomPanel" unique_id=712822359]
 layout_mode = 2
@@ -2641,7 +2673,7 @@ texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="ShopScreen/Panel/BottomPanel/Play" unique_id=94422294]
+[node name="PlayButton" type="Button" parent="ShopScreen/Panel/BottomPanel/Play" unique_id=773622395]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2654,9 +2686,9 @@ offset_right = 25.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_ridcw")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_6mqkx")
-theme_override_styles/hover = SubResource("StyleBoxTexture_vdfna")
+theme_override_styles/normal = SubResource("StyleBoxTexture_82hot")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k0i76")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oi70t")
 
 [node name="Locked" type="TextureRect" parent="ShopScreen/Panel/BottomPanel" unique_id=1212390328]
 layout_mode = 2
@@ -2664,30 +2696,7 @@ texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="ShopScreen/Panel/BottomPanel/Locked" unique_id=1872307175]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -22.99973
-offset_top = -25.0
-offset_right = 27.000267
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_bih4p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_cmu2r")
-theme_override_styles/hover = SubResource("StyleBoxTexture_mkkvt")
-
-[node name="Locked2" type="TextureRect" parent="ShopScreen/Panel/BottomPanel" unique_id=827262824]
-layout_mode = 2
-texture = ExtResource("26_h6vkq")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Button" type="Button" parent="ShopScreen/Panel/BottomPanel/Locked2" unique_id=469561473]
+[node name="Button" type="Button" parent="ShopScreen/Panel/BottomPanel/Locked" unique_id=1875288919]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2700,9 +2709,32 @@ offset_right = 25.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_m3bm7")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
-theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4yy14")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2vxpu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rvq4h")
+
+[node name="Locked2" type="TextureRect" parent="ShopScreen/Panel/BottomPanel" unique_id=827262824]
+layout_mode = 2
+texture = ExtResource("26_h6vkq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="ShopScreen/Panel/BottomPanel/Locked2" unique_id=1492342102]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_stky2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n2f85")
+theme_override_styles/hover = SubResource("StyleBoxTexture_04qca")
 
 [node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=918893846]
 visible = false
@@ -4462,6 +4494,8 @@ autowrap_mode = 2
 [connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/PassNPlayButton" to="HomeScreen" method="_on_pass_n_play_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/LANButton" to="HomeScreen" method="_on_lan_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/LockedButton" to="HomeScreen" method="_on_locked_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/BottomPanel/Shop/ShopButton" to="HomeScreen" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="ShopScreen/Panel/BottomPanel/Play/PlayButton" to="ShopScreen" method="_on_play_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/CrossButton" to="SettingScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/PrivacyPolicyButton" to="SettingScreen" method="_on_privacy_policy_button_pressed"]
 [connection signal="pressed" from="ProfileScreen/Panel/ProfileBg/CrossButton" to="ProfileScreen" method="_on_cross_button_pressed"]
