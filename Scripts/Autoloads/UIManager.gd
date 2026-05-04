@@ -20,6 +20,8 @@ var ingame_screen:CanvasLayer
 var pause_screen:CanvasLayer
 var result_screen:CanvasLayer
 
+signal UI_required
+
 func home_setup(loading, home, login, setting, map,profile,info,rewards_list,reward,local_multilplayer, leaderboard):
 	loading_screen = loading
 	home_screen = home
@@ -86,6 +88,7 @@ func home()->void:
 	SceneManager.goto("res://Scenes/home.tscn")
 
 func restart()->void:
+	UI_required.emit()
 	if GameSession.selected_mode.is_empty() or GameSession.selected_map_path.is_empty():
 		push_warning("[UIManager] No active match to restart")
 		return

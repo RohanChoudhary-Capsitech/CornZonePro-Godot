@@ -3,7 +3,7 @@ extends Node
 const UI_SCENES = {
 	"Single": preload("res://Scenes/UI/single_player_ui.tscn"),
 	"PassPlay": preload("res://Scenes/UI/pass_play_ui.tscn"),
-	"Local": preload("res://Scenes/UI/local_multiplayer_ui.tscn")
+	"Local": preload("res://Scenes/UI/pass_play_ui.tscn")
 }
 
 const SingleMode = preload("res://Scripts/Modes/SingleMode.gd")
@@ -19,6 +19,7 @@ signal bag_result_recorded(player: int, points: int)
 signal bag_result_changed(player: int, index: int, points: int)
 var bags_thrown_this_turn: int = 0
 var match_over: bool = false
+
 
 var mode_logic: Node = null
 var selected_map_path: String = ""
@@ -58,6 +59,13 @@ func _set_mode_logic() -> void:
 		"Single":   mode_logic = SingleMode.new()
 		"PassPlay": mode_logic = PassPlayMode.new()
 		"Local":    mode_logic = LocalMode.new()
+
+func get_ui_scene() -> PackedScene:
+	if UI_SCENES.has(required_ui):
+		return UI_SCENES[required_ui]
+	if UI_SCENES.has(selected_mode):
+		return UI_SCENES[selected_mode]
+	return null
 
 func add_score(player: int, amount: int) -> void:
 	if player == 1:
