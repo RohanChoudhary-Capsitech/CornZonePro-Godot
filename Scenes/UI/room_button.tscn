@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b2ggaod7b75ko"]
+
+[node name="RoomButton" type="Button" unique_id=203050186]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -183.0
+offset_right = 181.0
+offset_bottom = 41.0
+grow_horizontal = 2
+text = "Room no"

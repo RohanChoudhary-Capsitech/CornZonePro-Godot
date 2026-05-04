@@ -4167,7 +4167,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_gr5sq")
 text = "2x reward"
 
 [node name="MultiplayerScreen" type="CanvasLayer" parent="." unique_id=910901950]
-visible = false
 script = ExtResource("73_2pxd8")
 
 [node name="BG" type="TextureRect" parent="MultiplayerScreen" unique_id=1679803532]
@@ -4284,6 +4283,25 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ym5e3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4nqju")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7ylqh")
 text = "Join Game"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MultiplayerScreen/Panel/PanelBg" unique_id=1527211983]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 69.0
+offset_right = 125.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RoomsContent" type="VBoxContainer" parent="MultiplayerScreen/Panel/PanelBg/ScrollContainer" unique_id=1593182253]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 
 [node name="LeaderBoardScreen" type="CanvasLayer" parent="." unique_id=302118161]
 visible = false
