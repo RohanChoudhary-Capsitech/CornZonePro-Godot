@@ -16,6 +16,7 @@ var reward_screen:CanvasLayer
 var local_multiplayer_screen:CanvasLayer
 var leaderboard_screen: CanvasLayer
 var shop_screen: CanvasLayer
+var inventory_screen: CanvasLayer
 
 var ingame_screen:CanvasLayer
 var pause_screen:CanvasLayer
@@ -27,7 +28,7 @@ signal UI_required
 # func _ready() -> void:
 # 	NetworkManager.game_ready.connect(local_multiplayer)
 
-func home_setup(loading, home, login, setting, map,profile,info,rewards_list,reward,local_multilplayer, leaderboard, shop):
+func home_setup(loading, home, login, setting, map, profile, info, rewards_list, reward, local_multilplayer, leaderboard, shop, inventory):
 	loading_screen = loading
 	home_screen = home
 	login_screen = login
@@ -40,7 +41,8 @@ func home_setup(loading, home, login, setting, map,profile,info,rewards_list,rew
 	local_multiplayer_screen=local_multilplayer
 	leaderboard_screen = leaderboard
 	shop_screen = shop
-	canvas_layers = [loading, home, login, setting, map,profile,info,rewards_list,reward,local_multilplayer, leaderboard, shop]
+	inventory_screen = inventory
+	canvas_layers = [loading, home, login, setting, map, profile, info, rewards_list, reward, local_multilplayer, leaderboard, shop, inventory]
 
 func single_setup(ingame, pause, result):
 	#loading_screen = loading
