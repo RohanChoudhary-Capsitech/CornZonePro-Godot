@@ -22,6 +22,8 @@ var ingame_screen:CanvasLayer
 var pause_screen:CanvasLayer
 var result_screen:CanvasLayer
 
+var warning_screen:CanvasLayer
+
 signal UI_required
 
 
@@ -50,6 +52,13 @@ func single_setup(ingame, pause, result):
 	pause_screen = pause
 	result_screen = result
 	canvas_layers = [ingame, pause, result]
+	
+func multiplayer_setup(ingame, pause, result,warning):
+	ingame_screen = ingame
+	pause_screen = pause
+	result_screen = result
+	warning_screen=warning
+	canvas_layers = [ingame, pause, result,warning]
 
 func disable_all_canvaslayers():
 	for item in canvas_layers:
@@ -83,10 +92,14 @@ func _goto_match()->void:
 func single_player()->void:
 	_start_match("Single")
 
-func home()->void:
+func home() -> void:
 	if GameSession.is_network_mode():
-		NetworkManager.disconnect_game()
-	GameSession.reset_match()
+		if multiplayer.is_server():
+			_go_home_rpc.rpc()   # ✅ send first
+			await get_tree().process_frame
+			NetworkManager.disconnect_game()
+
+	_go_home_local()
 	#var scene = load("res://Scenes/home.tscn") as PackedScene
 	#get_tree().change_scene_to_packed(scene)
 	#ResourceLoader.load_threaded_request("res://Scenes/home.tscn")
@@ -94,8 +107,16 @@ func home()->void:
 	#if status == ResourceLoader.THREAD_LOAD_LOADED:
 		#var new_scene = ResourceLoader.load_threaded_get("res://Scenes/home.tscn")
 		#get_tree().change_scene_to_packed(new_scene)
+
+@rpc("authority","reliable")
+func _go_home_rpc():
+	_go_home_local()
+
+func _go_home_local():
+	GameSession.reset_match()
 	SceneManager.free_all()
 	SceneManager.goto("res://Scenes/home.tscn")
+
 
 func restart()->void:
 	UI_required.emit()

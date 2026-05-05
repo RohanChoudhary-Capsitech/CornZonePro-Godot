@@ -26,7 +26,7 @@ func _on_swipe_completed(direction: Vector3, strength: float) -> void:
 	if GameSession.selected_mode != "Local":
 		_apply_throw(direction, strength)
 		return
-
+	#thrown=true
 	# No multiplayer
 	if not multiplayer or multiplayer.multiplayer_peer == null:
 		return
