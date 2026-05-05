@@ -68,6 +68,7 @@
 [ext_resource type="Texture2D" uid="uid://bbku5rr5mt372" path="res://Texture Or Sprites/Inventory Screen/Frame 85.png" id="53_56oc6"]
 [ext_resource type="PackedScene" uid="uid://dkxtmd1so4k4r" path="res://Scenes/UI/bag_data.tscn" id="53_afc64"]
 [ext_resource type="Script" uid="uid://co234yrsdo1xy" path="res://Scripts/Home/inventory_screen.gd" id="53_jl4rm"]
+[ext_resource type="Script" uid="uid://b53a3fuc8clmd" path="res://Scripts/Shop/bag_data_sets.gd" id="54_is5vx"]
 [ext_resource type="Texture2D" uid="uid://cynxb4vuhdeyy" path="res://Texture Or Sprites/Profile Screen/PanelBg.png" id="54_jv2cb"]
 [ext_resource type="Script" uid="uid://b5c44ivano6da" path="res://Scripts/Home/profile_screen.gd" id="54_um175"]
 [ext_resource type="Texture2D" uid="uid://c3sqfc8ekq3uu" path="res://Texture Or Sprites/Shop Screen/Rectangle 2 (1).png" id="54_wyrdr"]
@@ -318,6 +319,15 @@ texture = ExtResource("30_iw3j6")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04qca"]
 resource_local_to_scene = true
 texture = ExtResource("30_iw3j6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmkjb"]
+texture = ExtResource("62_5id56")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qfixt"]
+texture = ExtResource("62_5id56")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_453j7"]
+texture = ExtResource("62_5id56")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afdxe"]
 resource_local_to_scene = true
@@ -2947,16 +2957,30 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 151.0
+offset_top = 114.0
 offset_bottom = -106.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CrossButton" type="Button" parent="ShopScreen/Panel/BagsPanel" unique_id=465299273]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_right = -24.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_pmkjb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qfixt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_453j7")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ShopScreen/Panel/BagsPanel" unique_id=1847081031]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 47.0
 offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -2969,11 +2993,22 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_constants/separation = 35
+script = ExtResource("54_is5vx")
+bag_scene = ExtResource("53_afc64")
 
 [node name="BagData" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=775086764 instance=ExtResource("53_afc64")]
 layout_mode = 2
 
-[node name="BagData2" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=1632161595 instance=ExtResource("53_afc64")]
+[node name="BagData2" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=590386684 instance=ExtResource("53_afc64")]
+layout_mode = 2
+
+[node name="BagData3" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=847393549 instance=ExtResource("53_afc64")]
+layout_mode = 2
+
+[node name="BagData4" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=1159581554 instance=ExtResource("53_afc64")]
+layout_mode = 2
+
+[node name="BagData5" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=669693057 instance=ExtResource("53_afc64")]
 layout_mode = 2
 
 [node name="BoardsPanel" type="Control" parent="ShopScreen/Panel" unique_id=37055526]
