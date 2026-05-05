@@ -704,7 +704,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_coojd")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qpfcn")
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=613420293]
-visible = false
 script = ExtResource("14_bk01i")
 
 [node name="Black Bg" type="TextureRect" parent="GameOver" unique_id=63578351]
@@ -890,6 +889,24 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_1locx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
 text = "Share"
+
+[node name="Label2" type="Label" parent="GameOver/Control/GameOver BG" unique_id=1071145564]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -41.5
+offset_top = -50.0
+offset_right = 41.5
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Opponent left"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="WarningPanel" type="CanvasLayer" parent="." unique_id=888170969]
 visible = false
