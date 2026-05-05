@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ca1f0mn7bx3n7"]
 
-[ext_resource type="Script" path="res://Scripts/single_player_ui.gd" id="1_wn1rh"]
+[ext_resource type="Script" uid="uid://ccc4estv522bn" path="res://Scripts/single_player_ui.gd" id="1_wn1rh"]
 [ext_resource type="Script" uid="uid://3pggsby7gmny" path="res://Scripts/SinglePlayer/in_game_ui.gd" id="2_alutp"]
 [ext_resource type="Texture2D" uid="uid://btculmbe0q8g1" path="res://Texture Or Sprites/SinglePlayer/InGameBlackBg.png" id="3_parwe"]
 [ext_resource type="Texture2D" uid="uid://dp300l6x0itc6" path="res://Texture Or Sprites/SinglePlayer/NoWind.png" id="4_ofndc"]

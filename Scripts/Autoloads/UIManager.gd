@@ -84,6 +84,8 @@ func single_player()->void:
 	_start_match("Single")
 
 func home()->void:
+	if GameSession.is_network_mode():
+		NetworkManager.disconnect_game()
 	GameSession.reset_match()
 	#var scene = load("res://Scenes/home.tscn") as PackedScene
 	#get_tree().change_scene_to_packed(scene)

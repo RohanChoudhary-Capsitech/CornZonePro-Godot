@@ -29,6 +29,10 @@ func on_bag_landed(body: Node3D) -> void:
 	if not (body is RigidBody3D):
 		return
 
+	if GameSession.selected_mode == "Local":
+		if not multiplayer or multiplayer.multiplayer_peer == null or not multiplayer.is_server():
+			return
+
 	var awarded_points: int = int(body.get_meta(AWARDED_POINTS_META, 0))
 	if awarded_points >= 1:
 		return
@@ -42,3 +46,6 @@ func on_bag_landed(body: Node3D) -> void:
 		GameSession.update_bag_result(scoring_player, int(body.get_meta("bag_result_index")), 1)
 
 	GameSession.pots_update.emit()
+
+	if GameSession.selected_mode == "Local" and GameSession.mode_logic and GameSession.mode_logic.has_method("sync_match_state"):
+		GameSession.mode_logic.sync_match_state()

@@ -65,6 +65,9 @@ func host_game() -> void:
 
 # ─── JOIN ─────────────────────────────────
 func join_game(ip: String) -> void:
+	if multiplayer.multiplayer_peer != null:
+		disconnect_game()
+
 	is_host = false
 
 	var peer = ENetMultiplayerPeer.new()
@@ -114,6 +117,8 @@ func start_match_rpc(map_path: String):
 	SceneManager.preload_async(map_path)
 	await SceneManager.wait_until_loaded(map_path)
 	SceneManager.goto(map_path)
+
+
 
 # ─── CALLBACKS ────────────────────────────
 func _on_peer_connected(id: int) -> void:

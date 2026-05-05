@@ -23,6 +23,12 @@ var swipe_time: float = 0.0
 func _ready() -> void:
 	main_camera = get_viewport().get_camera_3d()
 
+func is_network_game() -> bool:
+	return GameSession.selected_mode == "Local"
+
+func get_my_player_id() -> int:
+	return 1 if multiplayer.is_server() else 2
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		if event.pressed:
@@ -55,17 +61,29 @@ func _input(event: InputEvent) -> void:
 				process_swipe(end_pos, swipe_dis)
 
 func _emit_swipe_preview(current_pos: Vector2) -> void:
+	# 🟢 ONLY block in multiplayer
+	# if is_network_game():
+	# 	if GameSession.current_turn != get_my_player_id():
+	# 		return
+
 	var dist: float = start_pos.distance_to(current_pos)
 	if dist < min_swipe_dist:
 		return
 
 	var direction: Vector3 = get_swipe_direction(start_pos, current_pos)
 	var strength: float = clamp(dist * throw_strength_multiplier, 1.0, 20.0)
+
 	swipe_updated.emit(direction, strength)
 
 func process_swipe(release_pos: Vector2, dist: float) -> void:
+	# 🟢 ONLY block in multiplayer
+	if is_network_game():
+		if GameSession.current_turn != get_my_player_id():
+			return
+
 	var direction: Vector3 = get_swipe_direction(start_pos, release_pos)
 	var strength: float = clamp(dist * throw_strength_multiplier, 1.0, 20.0)
+
 	swipe_completed.emit(direction, strength)
 
 func get_swipe_direction(s_pos: Vector2, e_pos: Vector2) -> Vector3:
