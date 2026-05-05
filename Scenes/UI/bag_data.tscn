@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://dkxtmd1so4k4r"]
+
+[ext_resource type="Texture2D" uid="uid://b3ikie3alt8sd" path="res://Texture Or Sprites/Shop Screen/Rectangle 108.png" id="1_rs1bk"]
+[ext_resource type="Script" uid="uid://drspl70d700sl" path="res://Scripts/Shop/bag_data.gd" id="2_43js0"]
+[ext_resource type="Texture2D" uid="uid://bd1rsn0n3og2e" path="res://Texture Or Sprites/Bags/Group 565.png" id="3_f8yo8"]
+[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="4_541g0"]
+[ext_resource type="Texture2D" uid="uid://bvggha24026bo" path="res://Texture Or Sprites/Shop Screen/Rectangle 205.png" id="5_b2qrc"]
+[ext_resource type="Texture2D" uid="uid://yy74v722fdpe" path="res://Texture Or Sprites/Shop Screen/Rectangle 357.png" id="6_b2qrc"]
+[ext_resource type="Texture2D" uid="uid://c8nhel4e2gwj6" path="res://Texture Or Sprites/DailyRewards/Group 183.png" id="7_4h1m5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qg5gt"]
+texture = ExtResource("6_b2qrc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cxigs"]
+texture = ExtResource("6_b2qrc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cuu48"]
+texture = ExtResource("6_b2qrc")
+
+[node name="BagData" type="TextureRect" unique_id=775086764]
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.5
+offset_top = -75.0
+offset_right = 230.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rs1bk")
+expand_mode = 5
+script = ExtResource("2_43js0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1460535429]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.46
+anchor_right = 0.497
+anchor_bottom = 0.46
+offset_left = -228.367
+offset_top = -48.0
+offset_right = 228.633
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1496361931]
+layout_mode = 2
+texture = ExtResource("3_f8yo8")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1110190257]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.99607843, 0.85490197, 0.17254902, 1)
+theme_override_colors/font_outline_color = Color(0.5764706, 0.30980393, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_541g0")
+theme_override_font_sizes/font_size = 18
+text = "Standard"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=1547979933]
+layout_mode = 2
+texture = ExtResource("5_b2qrc")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="." unique_id=297140912]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.70600003
+anchor_top = 0.8
+anchor_right = 0.70600003
+anchor_bottom = 0.8
+offset_left = -89.966
+offset_top = -18.0
+offset_right = 90.034
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_qg5gt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cxigs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cuu48")
+
+[node name="TextureRect" type="TextureRect" parent="Button" unique_id=71617339]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -12.0
+offset_right = -36.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_4h1m5")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Button" unique_id=1505758519]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -14.5
+offset_right = 51.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_541g0")
+theme_override_font_sizes/font_size = 18
+text = "789 Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
