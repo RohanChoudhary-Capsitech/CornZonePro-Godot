@@ -12,7 +12,7 @@ enum Rarity {Standard, Epic, Rare}
 
 @export_group("Swipe")
 @export var horizontal_sensitivity: float = 0.15 # AirControl
-@export var vertical_sensitivity: float = 0.4  # MissTime
+@export var vertical_sensitivity: float = 0.4  # MissClock
 @export var throw_strength_multiplier: float = 0.05
 @export var min_swipe_dist: float = 30.0 # ClutchSpot
 @export var min_pitch_angle: float = 10.0

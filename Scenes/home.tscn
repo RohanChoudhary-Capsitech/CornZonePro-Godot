@@ -96,13 +96,20 @@
 [ext_resource type="Texture2D" uid="uid://ctfga2ywnkuhs" path="res://Texture Or Sprites/Bags/Group 572.png" id="64_qnn5i"]
 [ext_resource type="Texture2D" uid="uid://drc4lr74fovon" path="res://Texture Or Sprites/Bags/Group 573.png" id="65_ym5e3"]
 [ext_resource type="Texture2D" uid="uid://cn4vnibkehdgu" path="res://Texture Or Sprites/Bags/Group 575.png" id="66_ym5e3"]
+[ext_resource type="Texture2D" uid="uid://b1fnoktpawtcr" path="res://Texture Or Sprites/Bags/Group 576.png" id="67_503ab"]
 [ext_resource type="Texture2D" uid="uid://c8nhel4e2gwj6" path="res://Texture Or Sprites/DailyRewards/Group 183.png" id="67_jmoue"]
+[ext_resource type="Texture2D" uid="uid://y750c2vn8orh" path="res://Texture Or Sprites/Bags/Group 578.png" id="68_nbuyv"]
 [ext_resource type="Texture2D" uid="uid://ca1j6ne1xq86d" path="res://Texture Or Sprites/DailyRewards/Rectangle 11.png" id="69_0iwel"]
+[ext_resource type="Texture2D" uid="uid://cdkth1w1of03x" path="res://Texture Or Sprites/Bags/Group 579.png" id="69_as3ia"]
 [ext_resource type="Texture2D" uid="uid://dtg5r0c6qfg8i" path="res://Texture Or Sprites/DailyRewards/Group 411.png" id="70_0bc6n"]
+[ext_resource type="Texture2D" uid="uid://ci5jmtrj7lsee" path="res://Texture Or Sprites/Bags/Group 581.png" id="70_fgm6c"]
 [ext_resource type="Texture2D" uid="uid://4wkegni34mpb" path="res://Texture Or Sprites/DailyRewards/Group 279.png" id="71_0iwel"]
+[ext_resource type="Texture2D" uid="uid://dsrle5x3heb8j" path="res://Texture Or Sprites/Bags/image 5.png" id="71_52jo1"]
 [ext_resource type="Texture2D" uid="uid://cpry17us0mfq7" path="res://Texture Or Sprites/DailyRewards/Rectangle 111 (3).png" id="72_f4aua"]
+[ext_resource type="Texture2D" uid="uid://c6gouvhxs8q47" path="res://Texture Or Sprites/Bags/shild 4.png" id="72_tuwk5"]
 [ext_resource type="Script" uid="uid://dff31wh8m586l" path="res://Scripts/Home/local_multiplayer_screen.gd" id="73_2pxd8"]
 [ext_resource type="Texture2D" uid="uid://b57l4j3nvj2ly" path="res://Texture Or Sprites/Multiplayer/Rectangle 384.png" id="73_f74ik"]
+[ext_resource type="Texture2D" uid="uid://de0koktxpq518" path="res://Texture Or Sprites/Bags/splash  3.png" id="73_r13op"]
 [ext_resource type="Texture2D" uid="uid://wrrua84wko28" path="res://Texture Or Sprites/Multiplayer/Rectangle 126.png" id="74_fhrbv"]
 [ext_resource type="Texture2D" uid="uid://dxf6n2bo32ivg" path="res://Texture Or Sprites/Multiplayer/Rectangle 385.png" id="75_cco2g"]
 [ext_resource type="Texture2D" uid="uid://sv3gugcvj1fd" path="res://Texture Or Sprites/Multiplayer/Rectangle 386.png" id="76_2pxd8"]
@@ -362,7 +369,6 @@ metadata/_custom_type_script = "uid://cs2g11q6pm16d"
 script = ExtResource("56_uh715")
 price = 899
 icon = ExtResource("62_0u48y")
-rarity = 1
 metadata/_custom_type_script = "uid://cs2g11q6pm16d"
 
 [sub_resource type="Resource" id="Resource_ym5e3"]
@@ -383,14 +389,62 @@ metadata/_custom_type_script = "uid://cs2g11q6pm16d"
 script = ExtResource("56_uh715")
 price = 1199
 icon = ExtResource("65_ym5e3")
-rarity = 2
+rarity = 1
 metadata/_custom_type_script = "uid://cs2g11q6pm16d"
 
 [sub_resource type="Resource" id="Resource_t2fil"]
 script = ExtResource("56_uh715")
 price = 899
 icon = ExtResource("66_ym5e3")
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_6xe2f"]
+script = ExtResource("56_uh715")
+price = 1299
+icon = ExtResource("67_503ab")
 rarity = 1
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_lqqs2"]
+script = ExtResource("56_uh715")
+price = 1499
+icon = ExtResource("68_nbuyv")
+rarity = 2
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_ie2bs"]
+script = ExtResource("56_uh715")
+price = 1099
+icon = ExtResource("69_as3ia")
+rarity = 1
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_vaya1"]
+script = ExtResource("56_uh715")
+price = 999
+icon = ExtResource("70_fgm6c")
+rarity = 1
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_tbwbq"]
+script = ExtResource("56_uh715")
+price = 2999
+icon = ExtResource("71_52jo1")
+rarity = 2
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_1wbho"]
+script = ExtResource("56_uh715")
+price = 3999
+icon = ExtResource("72_tuwk5")
+rarity = 2
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_6rbbw"]
+script = ExtResource("56_uh715")
+price = 5999
+icon = ExtResource("73_r13op")
+rarity = 2
 metadata/_custom_type_script = "uid://cs2g11q6pm16d"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afdxe"]
@@ -3061,22 +3115,7 @@ script = ExtResource("54_is5vx")
 green_signal = ExtResource("55_gr5sq")
 white_signal = ExtResource("56_u6nbl")
 bag_data_scene = ExtResource("53_afc64")
-bag_datas = Array[ExtResource("56_uh715")]([SubResource("Resource_eoxhj"), SubResource("Resource_uahhm"), SubResource("Resource_lcqmj"), SubResource("Resource_qnn5i"), SubResource("Resource_ym5e3"), SubResource("Resource_4nqju"), SubResource("Resource_7ylqh"), SubResource("Resource_t2fil")])
-
-[node name="BagData" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=775086764 instance=ExtResource("53_afc64")]
-layout_mode = 2
-
-[node name="BagData2" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=590386684 instance=ExtResource("53_afc64")]
-layout_mode = 2
-
-[node name="BagData3" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=847393549 instance=ExtResource("53_afc64")]
-layout_mode = 2
-
-[node name="BagData4" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=1159581554 instance=ExtResource("53_afc64")]
-layout_mode = 2
-
-[node name="BagData5" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=669693057 instance=ExtResource("53_afc64")]
-layout_mode = 2
+bag_datas = Array[ExtResource("56_uh715")]([SubResource("Resource_eoxhj"), SubResource("Resource_uahhm"), SubResource("Resource_lcqmj"), SubResource("Resource_qnn5i"), SubResource("Resource_ym5e3"), SubResource("Resource_4nqju"), SubResource("Resource_7ylqh"), SubResource("Resource_t2fil"), SubResource("Resource_6xe2f"), SubResource("Resource_lqqs2"), SubResource("Resource_ie2bs"), SubResource("Resource_vaya1"), SubResource("Resource_tbwbq"), SubResource("Resource_1wbho"), SubResource("Resource_6rbbw")])
 
 [node name="BoardsPanel" type="Control" parent="ShopScreen/Panel" unique_id=37055526]
 visible = false
@@ -3120,12 +3159,6 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_constants/separation = 35
-
-[node name="BagData" parent="ShopScreen/Panel/BoardsPanel/ScrollContainer/BoardDataSets" unique_id=1630694916 instance=ExtResource("53_afc64")]
-layout_mode = 2
-
-[node name="BagData2" parent="ShopScreen/Panel/BoardsPanel/ScrollContainer/BoardDataSets" unique_id=1201140725 instance=ExtResource("53_afc64")]
-layout_mode = 2
 
 [node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=918893846]
 visible = false
