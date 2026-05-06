@@ -6,8 +6,6 @@ var thrown: bool = false
 
 @export var throw_gravity_scale: float = 4.0
 
-func _enter_tree():
-	set_multiplayer_authority(1)
 
 func _ready() -> void:
 	print("NODE PATH:", get_path(), " AUTH:", get_multiplayer_authority())
