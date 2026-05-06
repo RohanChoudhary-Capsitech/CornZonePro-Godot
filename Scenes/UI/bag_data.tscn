@@ -59,13 +59,14 @@ stretch_mode = 4
 
 [node name="Rarity" type="Label" parent="HBoxContainer" unique_id=1110190257]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.99607843, 0.85490197, 0.17254902, 1)
 theme_override_colors/font_outline_color = Color(0.5764706, 0.30980393, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("4_541g0")
 theme_override_font_sizes/font_size = 18
-text = "Rare"
+text = "Epic"
 horizontal_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=1547979933]

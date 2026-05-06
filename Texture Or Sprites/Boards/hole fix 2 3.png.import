@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drmvoxy81hgc2"
-path="res://.godot/imported/BG.png-bc96f23988bd7c09a07710f547389aec.ctex"
+uid="uid://cg0qd7xkog8by"
+path="res://.godot/imported/hole fix 2 3.png-cea4f29da0a6d82f27442e74f1a0c4f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Home Screen/BG.png"
-dest_files=["res://.godot/imported/BG.png-bc96f23988bd7c09a07710f547389aec.ctex"]
+source_file="res://Texture Or Sprites/Boards/hole fix 2 3.png"
+dest_files=["res://.godot/imported/hole fix 2 3.png-cea4f29da0a6d82f27442e74f1a0c4f3.ctex"]
 
 [params]
 

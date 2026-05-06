@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bdhfavj1k6vco"]
+
+[ext_resource type="Texture2D" uid="uid://b3ikie3alt8sd" path="res://Texture Or Sprites/Shop Screen/Rectangle 108.png" id="1_0cy6b"]
+[ext_resource type="Script" uid="uid://6df2bueuiaf" path="res://Scripts/Shop/board_data.gd" id="2_0cy6b"]
+[ext_resource type="Texture2D" uid="uid://ctt8ix34drhr3" path="res://Texture Or Sprites/Boards/1 569.png" id="3_aii58"]
+[ext_resource type="Texture2D" uid="uid://yy74v722fdpe" path="res://Texture Or Sprites/Shop Screen/Rectangle 357.png" id="4_42yom"]
+[ext_resource type="Texture2D" uid="uid://c8nhel4e2gwj6" path="res://Texture Or Sprites/DailyRewards/Group 183.png" id="5_34fi1"]
+[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="6_y6278"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qg5gt"]
+texture = ExtResource("4_42yom")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cxigs"]
+texture = ExtResource("4_42yom")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cuu48"]
+texture = ExtResource("4_42yom")
+
+[node name="BoardData" type="TextureRect" unique_id=775086764]
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -75.0
+offset_right = 225.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0cy6b")
+expand_mode = 5
+script = ExtResource("2_0cy6b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1460535429]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.46
+anchor_right = 0.497
+anchor_bottom = 0.46
+offset_left = -197.617
+offset_top = -58.0
+offset_right = 212.34999
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+
+[node name="BoardIcon" type="TextureRect" parent="HBoxContainer" unique_id=534429691]
+layout_mode = 2
+texture = ExtResource("3_aii58")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=706067106]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Rarity" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1549503331]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.99607843, 0.85490197, 0.17254902, 1)
+theme_override_colors/font_outline_color = Color(0.5764706, 0.30980393, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_y6278")
+theme_override_font_sizes/font_size = 22
+text = "Rare"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BagBuyButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=297140912]
+custom_minimum_size = Vector2(196, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_qg5gt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cxigs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cuu48")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/BagBuyButton" unique_id=71617339]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -12.0
+offset_right = -39.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_34fi1")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BoardPrice" type="Label" parent="HBoxContainer/VBoxContainer/BagBuyButton" unique_id=1505758519]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -13.5
+offset_right = 78.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_y6278")
+theme_override_font_sizes/font_size = 18
+text = "711989 Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
