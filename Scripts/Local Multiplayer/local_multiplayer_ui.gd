@@ -5,6 +5,7 @@ func _ready() -> void:
 		$"InGame UI",
 		$PauseMenu,
 		$GameOver,
-		$WarningPanel
+		$WarningPanel,
+		$"Rematch popup"
 	)
 	UIManager.enable_canvas($"InGame UI")

@@ -28,6 +28,7 @@ signal server_disconnected
 signal game_ready
 signal server_found(server: Dictionary)
 signal match_forfeit(reason:String)
+signal rematch_requested
 
 # ─── INIT ─────────────────────────────────
 func _ready() -> void:
@@ -119,8 +120,25 @@ func start_match_rpc(map_path: String):
 	await SceneManager.wait_until_loaded(map_path)
 	SceneManager.goto(map_path)
 
+func send_rematch_request() -> void:
+	for id in players.keys():
+		if id != multiplayer.get_unique_id():
+			receive_rematch_request.rpc_id(id)
 
 
+@rpc("any_peer", "reliable")
+func receive_rematch_request() -> void:
+	rematch_requested.emit()
+
+
+@rpc("any_peer", "reliable")
+func accept_rematch() -> void:
+	start_rematch.rpc()
+
+
+@rpc("authority", "reliable")
+func start_rematch() -> void:
+	UIManager.restart()
 # ─── CALLBACKS ────────────────────────────
 func _on_peer_connected(id: int) -> void:
 	print("[Network] Player connected:", id)

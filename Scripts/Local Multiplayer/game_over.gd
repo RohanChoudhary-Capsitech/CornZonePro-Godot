@@ -9,6 +9,7 @@ extends CanvasLayer
 func _ready() -> void:
 	GameSession.turns_exhausted.connect(_update_results)
 	NetworkManager.match_forfeit.connect(show_message)
+	NetworkManager.rematch_requested.connect(_on_rematch_requested)
 
 func _score_key(base_key: String) -> String:
 	if GameSession.selected_mode == "Local":
@@ -48,4 +49,8 @@ func show_message(reason: String) -> void:
 
 
 func _on_rematch_pressed() -> void:
-		UIManager.restart()
+	restart.disabled=true
+	NetworkManager.send_rematch_request()
+
+func _on_rematch_requested()->void:
+	UIManager.toggle_canvas($"../Rematch popup")

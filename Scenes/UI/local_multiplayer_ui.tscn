@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cueeife8yfgqx" path="res://Texture Or Sprites/Multiplayer/warningbg.png" id="15_kqj4q"]
 [ext_resource type="Texture2D" uid="uid://w0c5b1sd2ro5" path="res://Texture Or Sprites/Multiplayer/heading.png" id="16_0wiir"]
 [ext_resource type="Texture2D" uid="uid://6vsnyed7htdp" path="res://Texture Or Sprites/Multiplayer/yesnobox.png" id="18_edp0u"]
+[ext_resource type="Script" uid="uid://owqqak1qhuqh" path="res://Scripts/Local Multiplayer/rematch_popup.gd" id="19_edp0u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbdad"]
 texture = ExtResource("1_oeynd")
@@ -1040,6 +1041,137 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_or5ox")
 theme_override_styles/hover = SubResource("StyleBoxTexture_agudp")
 text = "NO"
 
+[node name="Rematch popup" type="CanvasLayer" parent="." unique_id=1603761609]
+visible = false
+script = ExtResource("19_edp0u")
+
+[node name="Black Bg" type="TextureRect" parent="Rematch popup" unique_id=670222320]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_lsgq1")
+expand_mode = 3
+
+[node name="Control" type="Control" parent="Rematch popup" unique_id=258889965]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelBg" type="TextureRect" parent="Rematch popup/Control" unique_id=2013428138]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.43951
+offset_top = -102.5
+offset_right = 212.43951
+offset_bottom = 102.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_kqj4q")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="HeadingBox" type="TextureRect" parent="Rematch popup/Control/PanelBg" unique_id=1519683454]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.73743
+offset_top = -20.0
+offset_right = 92.73743
+offset_bottom = 20.0
+grow_horizontal = 2
+texture = ExtResource("16_0wiir")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Rematch popup/Control/PanelBg/HeadingBox" unique_id=334255834]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -14.0
+offset_right = 46.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 21
+text = "Reamtch ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Rematch popup/Control/PanelBg" unique_id=2059320386]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -39.0
+offset_right = 142.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 25
+text = "Your opponent wants to 
+have a rematch !   "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Yes" type="Button" parent="Rematch popup/Control/PanelBg" unique_id=1739789769]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = -21.0
+offset_right = 193.79137
+offset_bottom = 19.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_kxgrs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6kel6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8nca6")
+action_mode = 0
+text = "YES"
+
+[node name="No" type="Button" parent="Rematch popup/Control/PanelBg" unique_id=1275801839]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -194.79138
+offset_top = -21.0
+offset_right = -44.0
+offset_bottom = 19.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_hlcc8")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_iblad")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_or5ox")
+theme_override_styles/hover = SubResource("StyleBoxTexture_agudp")
+text = "NO"
+
 [connection signal="pressed" from="InGame UI/Pause Button" to="InGame UI" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Home" to="PauseMenu" method="_on_home_pressed"]
 [connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Resume" to="PauseMenu" method="_on_resume_pressed"]
@@ -1049,3 +1181,5 @@ text = "NO"
 [connection signal="pressed" from="GameOver/Control/GameOver BG/Rematch" to="GameOver" method="_on_rematch_pressed"]
 [connection signal="pressed" from="WarningPanel/Control/PanelBg/Yes" to="WarningPanel" method="_on_yes_pressed"]
 [connection signal="pressed" from="WarningPanel/Control/PanelBg/No" to="WarningPanel" method="_on_no_pressed"]
+[connection signal="pressed" from="Rematch popup/Control/PanelBg/Yes" to="Rematch popup" method="_on_yes_pressed"]
+[connection signal="pressed" from="Rematch popup/Control/PanelBg/No" to="Rematch popup" method="_on_no_pressed"]

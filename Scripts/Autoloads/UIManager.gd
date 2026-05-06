@@ -23,6 +23,7 @@ var pause_screen:CanvasLayer
 var result_screen:CanvasLayer
 
 var warning_screen:CanvasLayer
+var rematch_popup:CanvasLayer
 
 signal UI_required
 
@@ -53,12 +54,13 @@ func single_setup(ingame, pause, result):
 	result_screen = result
 	canvas_layers = [ingame, pause, result]
 	
-func multiplayer_setup(ingame, pause, result,warning):
+func multiplayer_setup(ingame, pause, result,warning,rematch):
 	ingame_screen = ingame
 	pause_screen = pause
 	result_screen = result
 	warning_screen=warning
-	canvas_layers = [ingame, pause, result,warning]
+	rematch_popup=rematch
+	canvas_layers = [ingame, pause, result,warning,rematch]
 
 func disable_all_canvaslayers():
 	for item in canvas_layers:
