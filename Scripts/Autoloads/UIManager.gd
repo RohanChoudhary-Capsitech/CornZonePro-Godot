@@ -95,12 +95,8 @@ func single_player()->void:
 
 func home() -> void:
 	if GameSession.is_network_mode():
-		if multiplayer.is_server():
-			_go_home_rpc.rpc()   # ✅ send first
-			await get_tree().create_timer(0.1).timeout  # small delay
-			NetworkManager.disconnect_game()
+		NetworkManager.disconnect_game()
 
-	# BOTH host and client run this
 	_go_home_local()
 
 	#var scene = load("res://Scenes/home.tscn") as PackedScene

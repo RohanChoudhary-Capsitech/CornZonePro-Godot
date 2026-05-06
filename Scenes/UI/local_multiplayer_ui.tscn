@@ -847,7 +847,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
 action_mode = 0
 text = "Home"
 
-[node name="Restart" type="Button" parent="GameOver/Control/GameOver BG" unique_id=194751114]
+[node name="Rematch" type="Button" parent="GameOver/Control/GameOver BG" unique_id=194751114]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -890,7 +890,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_odpc6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
 text = "Share"
 
-[node name="Label2" type="Label" parent="GameOver/Control/GameOver BG" unique_id=1071145564]
+[node name="Win message" type="Label" parent="GameOver/Control/GameOver BG" unique_id=1071145564]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1046,6 +1046,6 @@ text = "NO"
 [connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Leave Match" to="PauseMenu" method="_on_leave_match_pressed"]
 [connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Cross" to="PauseMenu" method="_on_cross_pressed"]
 [connection signal="pressed" from="GameOver/Control/GameOver BG/Home" to="GameOver" method="_on_home_pressed"]
-[connection signal="pressed" from="GameOver/Control/GameOver BG/Restart" to="GameOver" method="_on_restart_pressed"]
+[connection signal="pressed" from="GameOver/Control/GameOver BG/Rematch" to="GameOver" method="_on_rematch_pressed"]
 [connection signal="pressed" from="WarningPanel/Control/PanelBg/Yes" to="WarningPanel" method="_on_yes_pressed"]
 [connection signal="pressed" from="WarningPanel/Control/PanelBg/No" to="WarningPanel" method="_on_no_pressed"]

@@ -27,6 +27,7 @@ signal connection_failed
 signal server_disconnected
 signal game_ready
 signal server_found(server: Dictionary)
+signal match_forfeit(reason:String)
 
 # ─── INIT ─────────────────────────────────
 func _ready() -> void:
@@ -132,6 +133,9 @@ func _on_peer_disconnected(id: int) -> void:
 	print("[Network] Player disconnected:", id)
 	players.erase(id)
 	player_disconnected.emit(id)
+	if is_host:
+		match_forfeit.emit("client left")
+
 
 func _on_connected_to_server() -> void:
 	my_id = multiplayer.get_unique_id()
@@ -152,6 +156,7 @@ func _on_connection_failed() -> void:
 func _on_server_disconnected() -> void:
 	print("[Network] Server disconnected")
 	disconnect_game()
+	match_forfeit.emit("host left")
 	server_disconnected.emit()
 
 # ─── DISCONNECT ───────────────────────────
