@@ -101,7 +101,9 @@ func register_player(data: Dictionary):
 		print("[Network] Selected Map:", map)
 
 		start_match_rpc.rpc(map)
-		start_match_rpc(map)
+
+		if multiplayer.is_server():
+			start_match_rpc(map)
 		# 🔥 PRINT FULL PLAYER LIST
 		print("------ FINAL PLAYER LIST ------")
 		for id in players:
@@ -133,7 +135,9 @@ func receive_rematch_request() -> void:
 
 @rpc("any_peer", "reliable")
 func accept_rematch() -> void:
-	start_rematch.rpc()
+	if multiplayer.is_server():
+		start_rematch()
+		start_rematch.rpc()
 
 
 @rpc("authority", "reliable")

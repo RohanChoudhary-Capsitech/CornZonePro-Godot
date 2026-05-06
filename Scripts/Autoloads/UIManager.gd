@@ -119,8 +119,9 @@ func _go_home_local():
 	SceneManager.goto("res://Scenes/home.tscn")
 
 
-func restart()->void:
+func restart() -> void:
 	UI_required.emit()
+
 	if GameSession.selected_mode.is_empty() or GameSession.selected_map_path.is_empty():
 		push_warning("[UIManager] No active match to restart")
 		return
@@ -131,6 +132,9 @@ func restart()->void:
 	var time_limit := GameSession.time_left
 
 	GameSession.reset_match()
+
+	await get_tree().process_frame
+
 	_begin_match(mode, map_path, ui, time_limit)
 
 func pass_play()->void:

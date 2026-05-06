@@ -6,17 +6,25 @@ var thrown: bool = false
 
 @export var throw_gravity_scale: float = 4.0
 
+func _enter_tree():
+	set_multiplayer_authority(1)
 
 func _ready() -> void:
 	print("NODE PATH:", get_path(), " AUTH:", get_multiplayer_authority())
+
 	thrown = false
 	freeze = true
+	sleeping = false
+
 	contact_monitor = true
 	max_contacts_reported = 8
 
-	swipe_controller.swipe_completed.connect(_on_swipe_completed)
-	body_entered.connect(_on_body_entered)
+	# Prevent duplicate signal connections after rematch
+	if not swipe_controller.swipe_completed.is_connected(_on_swipe_completed):
+		swipe_controller.swipe_completed.connect(_on_swipe_completed)
 
+	if not body_entered.is_connected(_on_body_entered):
+		body_entered.connect(_on_body_entered)
 
 func _on_swipe_completed(direction: Vector3, strength: float) -> void:
 	if thrown:
@@ -130,7 +138,7 @@ func request_next_bag() -> void:
 		if multiplayer and multiplayer.is_server():
 			var bag = get_parent().spawn_bag()
 			bag.name = "CornBag"
-			bag.set_multiplayer_authority(1)
+			# bag.set_multiplayer_authority(1)
 			spawn_bag_rpc.rpc()
 	else:
 		get_parent().spawn_bag()
@@ -144,7 +152,7 @@ func spawn_bag_rpc() -> void:
 	var bag = get_parent().spawn_bag()
 	if bag:
 		bag.name = "CornBag"
-		bag.set_multiplayer_authority(1)
+		# bag.set_multiplayer_authority(1)
 		bag.thrown = false
 		print("CLIENT SPAWNED BAG:", bag.get_path())
 # =========================
