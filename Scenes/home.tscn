@@ -356,104 +356,104 @@ texture = ExtResource("62_5id56")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_453j7"]
 texture = ExtResource("62_5id56")
 
-[sub_resource type="Resource" id="Resource_eoxhj"]
-script = ExtResource("56_uh715")
-price = 789
-icon = ExtResource("59_gr5sq")
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_uahhm"]
-script = ExtResource("56_uh715")
-price = 699
-icon = ExtResource("60_u6nbl")
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_lcqmj"]
-script = ExtResource("56_uh715")
-price = 799
-icon = ExtResource("61_4xdiu")
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_qnn5i"]
-script = ExtResource("56_uh715")
-price = 899
-icon = ExtResource("62_0u48y")
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_ym5e3"]
-script = ExtResource("56_uh715")
-price = 799
-icon = ExtResource("63_0u48y")
-rarity = 1
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_4nqju"]
-script = ExtResource("56_uh715")
-price = 899
-icon = ExtResource("64_qnn5i")
-rarity = 1
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_7ylqh"]
-script = ExtResource("56_uh715")
-price = 1199
-icon = ExtResource("65_ym5e3")
-rarity = 1
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_t2fil"]
-script = ExtResource("56_uh715")
-price = 899
-icon = ExtResource("66_ym5e3")
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_6xe2f"]
-script = ExtResource("56_uh715")
-price = 1299
-icon = ExtResource("67_503ab")
-rarity = 1
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_lqqs2"]
-script = ExtResource("56_uh715")
-price = 1499
-icon = ExtResource("68_nbuyv")
-rarity = 2
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
 [sub_resource type="Resource" id="Resource_ie2bs"]
 script = ExtResource("56_uh715")
-price = 1099
-icon = ExtResource("69_as3ia")
-rarity = 1
+price = 799
+icon = ExtResource("59_gr5sq")
 metadata/_custom_type_script = "uid://cs2g11q6pm16d"
 
 [sub_resource type="Resource" id="Resource_vaya1"]
 script = ExtResource("56_uh715")
-price = 999
-icon = ExtResource("70_fgm6c")
-rarity = 1
+price = 899
+icon = ExtResource("60_u6nbl")
 metadata/_custom_type_script = "uid://cs2g11q6pm16d"
 
 [sub_resource type="Resource" id="Resource_tbwbq"]
 script = ExtResource("56_uh715")
-price = 2999
-icon = ExtResource("71_52jo1")
-rarity = 2
+price = 999
+icon = ExtResource("61_4xdiu")
+rarity = 1
 metadata/_custom_type_script = "uid://cs2g11q6pm16d"
 
 [sub_resource type="Resource" id="Resource_1wbho"]
 script = ExtResource("56_uh715")
-price = 3999
-icon = ExtResource("72_tuwk5")
-rarity = 2
+price = 1199
+icon = ExtResource("62_0u48y")
+rarity = 1
 metadata/_custom_type_script = "uid://cs2g11q6pm16d"
 
 [sub_resource type="Resource" id="Resource_6rbbw"]
 script = ExtResource("56_uh715")
-price = 5999
-icon = ExtResource("73_r13op")
+price = 1599
+icon = ExtResource("63_0u48y")
 rarity = 2
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_6ojkg"]
+script = ExtResource("56_uh715")
+price = 999
+icon = ExtResource("64_qnn5i")
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_jicx3"]
+script = ExtResource("56_uh715")
+price = 1099
+icon = ExtResource("65_ym5e3")
+rarity = 1
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_rvq4h"]
+script = ExtResource("56_uh715")
+price = 1299
+icon = ExtResource("66_ym5e3")
+rarity = 1
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_n2f85"]
+script = ExtResource("56_uh715")
+price = 899
+icon = ExtResource("67_503ab")
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_04qca"]
+script = ExtResource("56_uh715")
+price = 1099
+icon = ExtResource("68_nbuyv")
+rarity = 1
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_stky2"]
+script = ExtResource("56_uh715")
+price = 2999
+icon = ExtResource("69_as3ia")
+rarity = 2
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_ochsh"]
+script = ExtResource("56_uh715")
+price = 2499
+icon = ExtResource("70_fgm6c")
+rarity = 2
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_sg8ud"]
+script = ExtResource("56_uh715")
+price = 1899
+icon = ExtResource("71_52jo1")
+rarity = 1
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_v6eu8"]
+script = ExtResource("56_uh715")
+price = 799
+icon = ExtResource("72_tuwk5")
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_dwtdj"]
+script = ExtResource("56_uh715")
+price = 1599
+icon = ExtResource("73_r13op")
+rarity = 1
 metadata/_custom_type_script = "uid://cs2g11q6pm16d"
 
 [sub_resource type="Resource" id="Resource_ouj5o"]
@@ -2748,6 +2748,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
 [node name="ShopScreen" type="CanvasLayer" parent="." unique_id=1113232569]
+visible = false
 script = ExtResource("41_xfm00")
 
 [node name="BG" type="TextureRect" parent="ShopScreen" unique_id=1759111382]
@@ -3164,7 +3165,7 @@ script = ExtResource("54_is5vx")
 green_signal = ExtResource("55_gr5sq")
 white_signal = ExtResource("56_u6nbl")
 bag_data_scene = ExtResource("53_afc64")
-bag_datas = Array[ExtResource("56_uh715")]([SubResource("Resource_eoxhj"), SubResource("Resource_uahhm"), SubResource("Resource_lcqmj"), SubResource("Resource_qnn5i"), SubResource("Resource_ym5e3"), SubResource("Resource_4nqju"), SubResource("Resource_7ylqh"), SubResource("Resource_t2fil"), SubResource("Resource_6xe2f"), SubResource("Resource_lqqs2"), SubResource("Resource_ie2bs"), SubResource("Resource_vaya1"), SubResource("Resource_tbwbq"), SubResource("Resource_1wbho"), SubResource("Resource_6rbbw")])
+bag_datas = Array[ExtResource("56_uh715")]([SubResource("Resource_ie2bs"), SubResource("Resource_vaya1"), SubResource("Resource_tbwbq"), SubResource("Resource_1wbho"), SubResource("Resource_6rbbw"), SubResource("Resource_6ojkg"), SubResource("Resource_jicx3"), SubResource("Resource_rvq4h"), SubResource("Resource_n2f85"), SubResource("Resource_04qca"), SubResource("Resource_stky2"), SubResource("Resource_ochsh"), SubResource("Resource_sg8ud"), SubResource("Resource_v6eu8"), SubResource("Resource_dwtdj")])
 
 [node name="BoardsPanel" type="Control" parent="ShopScreen/Panel" unique_id=37055526]
 visible = false
@@ -3540,10 +3541,10 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
 [node name="Control" type="Control" parent="InventoryScreen/Panel" unique_id=168758776]
 layout_mode = 1
-anchor_top = 0.23200001
+anchor_top = 0.33900002
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 187.95999
+offset_top = 110.91998
 offset_bottom = -87.0
 grow_horizontal = 2
 grow_vertical = 2
