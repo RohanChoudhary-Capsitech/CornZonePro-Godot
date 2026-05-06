@@ -118,7 +118,6 @@ func _go_home_local():
 	SceneManager.free_all()
 	SceneManager.goto("res://Scenes/home.tscn")
 
-
 func restart() -> void:
 	UI_required.emit()
 
@@ -131,11 +130,41 @@ func restart() -> void:
 	var ui := GameSession.required_ui
 	var time_limit := GameSession.time_left
 
+	# RESET GAME SESSION
 	GameSession.reset_match()
 
+	# DESTROY OLD SCENE
+	SceneManager.free_all()
+
+	# wait one frame so old RPC nodes die
 	await get_tree().process_frame
 
-	_begin_match(mode, map_path, ui, time_limit)
+	# START FRESH MATCH
+	GameSession.start_match(mode, map_path, ui, time_limit)
+
+	SceneManager.preload_async(map_path)
+
+	await SceneManager.wait_until_loaded(map_path)
+
+	SceneManager.goto(map_path)
+
+# func restart() -> void:
+# 	UI_required.emit()
+
+# 	if GameSession.selected_mode.is_empty() or GameSession.selected_map_path.is_empty():
+# 		push_warning("[UIManager] No active match to restart")
+# 		return
+
+# 	var mode := GameSession.selected_mode
+# 	var map_path := GameSession.selected_map_path
+# 	var ui := GameSession.required_ui
+# 	var time_limit := GameSession.time_left
+
+# 	GameSession.reset_match()
+
+# 	await get_tree().process_frame
+
+# 	_begin_match(mode, map_path, ui, time_limit)
 
 func pass_play()->void:
 	_start_match("PassPlay")

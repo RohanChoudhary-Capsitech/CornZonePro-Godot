@@ -48,7 +48,7 @@ func _on_swipe_completed(direction: Vector3, strength: float) -> void:
 	else:
 		# Client sends request to server
 		print("CLIENT sending RPC throw")
-		request_throw.rpc_id(1, direction, strength)
+		NetworkManager.request_throw.rpc_id(1, get_path(), direction, strength)
 
 
 func _apply_throw(direction: Vector3, strength: float, from_sync := false) -> void:
@@ -72,31 +72,6 @@ func _apply_throw(direction: Vector3, strength: float, from_sync := false) -> vo
 	if multiplayer and multiplayer.is_server():
 		await get_tree().create_timer(1.5).timeout
 		request_next_bag()
-
-
-# =========================
-# RPC: Client → Server
-# =========================
-@rpc("any_peer", "reliable")
-func request_throw(direction: Vector3, strength: float) -> void:
-	print("RPC HIT on peer:", multiplayer.get_unique_id(), " sender:", multiplayer.get_remote_sender_id())
-
-	# Only server processes
-	if not multiplayer or not multiplayer.is_server():
-		return
-
-	var sender_id: int = multiplayer.get_remote_sender_id()
-	var sender_player := _player_id_for_peer(sender_id)
-
-	print("SERVER: sender_player =", sender_player, " current_turn =", GameSession.current_turn)
-
-	# Validate turn
-	if sender_player != GameSession.current_turn:
-		print("REJECTED THROW (wrong turn)")
-		return
-
-	print("ACCEPTED THROW")
-	_apply_throw(direction, strength)
 
 
 # =========================

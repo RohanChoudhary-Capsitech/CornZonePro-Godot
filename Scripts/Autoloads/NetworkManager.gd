@@ -143,6 +143,25 @@ func accept_rematch() -> void:
 @rpc("authority", "reliable")
 func start_rematch() -> void:
 	UIManager.restart()
+
+@rpc("any_peer", "reliable")
+func request_throw(direction: Vector3, strength: float) -> void:
+	print("RPC HIT on peer:", multiplayer.get_unique_id(), " sender:", multiplayer.get_remote_sender_id())
+
+	if not multiplayer or not multiplayer.is_server():
+		return
+
+	var sender_id: int = multiplayer.get_remote_sender_id()
+	var sender_player := _player_id_for_peer(sender_id)
+
+	print("SERVER: sender_player =", sender_player, " current_turn =", GameSession.current_turn)
+
+	if sender_player != GameSession.current_turn:
+		print("REJECTED THROW (wrong turn)")
+		return
+
+	print("ACCEPTED THROW")
+	_apply_throw(direction, strength)
 # ─── CALLBACKS ────────────────────────────
 func _on_peer_connected(id: int) -> void:
 	print("[Network] Player connected:", id)
