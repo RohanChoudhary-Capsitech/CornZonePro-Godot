@@ -89,75 +89,75 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 3
 
-[node name="ClutchTime" type="HBoxContainer" parent="HBoxContainer/TextureRect2/Powers" unique_id=628080433]
+[node name="ClutchSpot" type="HBoxContainer" parent="HBoxContainer/TextureRect2/Powers" unique_id=628080433]
 layout_mode = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 27
 
-[node name="Label" type="Label" parent="HBoxContainer/TextureRect2/Powers/ClutchTime" unique_id=1847370267]
+[node name="Label" type="Label" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot" unique_id=1847370267]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_4h1m5")
 theme_override_font_sizes/font_size = 10
-text = "ClutchTime"
+text = "ClutchSpot"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/TextureRect2/Powers/ClutchTime" unique_id=825379639]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot" unique_id=825379639]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="Power 1" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchTime/HBoxContainer" unique_id=1513359071]
+[node name="Power 1" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot/HBoxContainer" unique_id=1513359071]
 layout_mode = 2
 texture = ExtResource("7_qg5gt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Power 2" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchTime/HBoxContainer" unique_id=535434330]
+[node name="Power 2" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot/HBoxContainer" unique_id=535434330]
 layout_mode = 2
 texture = ExtResource("7_qg5gt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Power 3" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchTime/HBoxContainer" unique_id=1115981582]
+[node name="Power 3" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot/HBoxContainer" unique_id=1115981582]
 layout_mode = 2
 texture = ExtResource("7_qg5gt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Power 4" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchTime/HBoxContainer" unique_id=1406982332]
+[node name="Power 4" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot/HBoxContainer" unique_id=1406982332]
 layout_mode = 2
 texture = ExtResource("7_qg5gt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Power 5" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchTime/HBoxContainer" unique_id=621090314]
+[node name="Power 5" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot/HBoxContainer" unique_id=621090314]
 layout_mode = 2
 texture = ExtResource("7_qg5gt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Power 6" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchTime/HBoxContainer" unique_id=1151533329]
+[node name="Power 6" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot/HBoxContainer" unique_id=1151533329]
 layout_mode = 2
 texture = ExtResource("7_qg5gt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Power 7" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchTime/HBoxContainer" unique_id=207394520]
+[node name="Power 7" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot/HBoxContainer" unique_id=207394520]
 layout_mode = 2
 texture = ExtResource("7_qg5gt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Power 8" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchTime/HBoxContainer" unique_id=927788937]
+[node name="Power 8" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot/HBoxContainer" unique_id=927788937]
 layout_mode = 2
 texture = ExtResource("7_qg5gt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Power 9" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchTime/HBoxContainer" unique_id=404075470]
+[node name="Power 9" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot/HBoxContainer" unique_id=404075470]
 layout_mode = 2
 texture = ExtResource("7_qg5gt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Power 10" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchTime/HBoxContainer" unique_id=1340967327]
+[node name="Power 10" type="TextureRect" parent="HBoxContainer/TextureRect2/Powers/ClutchSpot/HBoxContainer" unique_id=1340967327]
 layout_mode = 2
 texture = ExtResource("7_qg5gt")
 expand_mode = 3
@@ -382,7 +382,7 @@ texture = ExtResource("7_qg5gt")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="." unique_id=297140912]
+[node name="BagBuyButton" type="Button" parent="." unique_id=297140912]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.70600003
@@ -399,7 +399,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_qg5gt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cxigs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_cuu48")
 
-[node name="TextureRect" type="TextureRect" parent="Button" unique_id=71617339]
+[node name="TextureRect" type="TextureRect" parent="BagBuyButton" unique_id=71617339]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -416,22 +416,22 @@ texture = ExtResource("7_4h1m5")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="Button" unique_id=1505758519]
+[node name="BagPrice" type="Label" parent="BagBuyButton" unique_id=1505758519]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.0
-offset_top = -14.5
-offset_right = 51.0
-offset_bottom = 8.5
+offset_left = -26.0
+offset_top = -13.5
+offset_right = 78.0
+offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("4_541g0")
 theme_override_font_sizes/font_size = 18
-text = "789 Buy"
+text = "711989 Buy"
 horizontal_alignment = 1
 vertical_alignment = 1

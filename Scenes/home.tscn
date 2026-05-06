@@ -73,18 +73,29 @@
 [ext_resource type="Script" uid="uid://b5c44ivano6da" path="res://Scripts/Home/profile_screen.gd" id="54_um175"]
 [ext_resource type="Texture2D" uid="uid://c3sqfc8ekq3uu" path="res://Texture Or Sprites/Shop Screen/Rectangle 2 (1).png" id="54_wyrdr"]
 [ext_resource type="Texture2D" uid="uid://dg4ntbnyepc5q" path="res://Texture Or Sprites/Profile Screen/FemaleIcon.png" id="55_62iqh"]
+[ext_resource type="Texture2D" uid="uid://cxtkg0cyqe1ss" path="res://Texture Or Sprites/Shop Screen/Rectangle 165.png" id="55_gr5sq"]
 [ext_resource type="Texture2D" uid="uid://dy4843x7t2wha" path="res://Texture Or Sprites/Profile Screen/EditIcon.png" id="56_aoomy"]
 [ext_resource type="Texture2D" uid="uid://bmakehfvqjb14" path="res://Texture Or Sprites/Inventory Screen/Rectangle 26.png" id="56_is5vx"]
+[ext_resource type="Texture2D" uid="uid://c357ox0g0yyvy" path="res://Texture Or Sprites/Shop Screen/Rectangle 166.png" id="56_u6nbl"]
+[ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/Resource Structures/BagConfig.gd" id="56_uh715"]
 [ext_resource type="Texture2D" uid="uid://3le37tvidjth" path="res://Texture Or Sprites/Profile Screen/NameBg.png" id="57_43epo"]
 [ext_resource type="Texture2D" uid="uid://2g673pld8oyk" path="res://Texture Or Sprites/Profile Screen/Group 273.png" id="58_0g73e"]
 [ext_resource type="Texture2D" uid="uid://d0vqutakwe4x0" path="res://Texture Or Sprites/Profile Screen/Group 270.png" id="59_3fp5a"]
+[ext_resource type="Texture2D" uid="uid://bl4p6it0edd3p" path="res://Texture Or Sprites/Bags/blue  3.png" id="59_gr5sq"]
+[ext_resource type="Texture2D" uid="uid://bd1rsn0n3og2e" path="res://Texture Or Sprites/Bags/Group 565.png" id="60_u6nbl"]
 [ext_resource type="Texture2D" uid="uid://bvcl7swd13pd5" path="res://Texture Or Sprites/Profile Screen/Group 271.png" id="60_um175"]
 [ext_resource type="Texture2D" uid="uid://cb5cirqsllo4x" path="res://Texture Or Sprites/Info Screen/Group 410.png" id="61_3fp5a"]
+[ext_resource type="Texture2D" uid="uid://dng4caaq31pgn" path="res://Texture Or Sprites/Bags/Group 568.png" id="61_4xdiu"]
+[ext_resource type="Texture2D" uid="uid://b0xkux1bwuy1d" path="res://Texture Or Sprites/Bags/Group 569.png" id="62_0u48y"]
 [ext_resource type="Texture2D" uid="uid://bwwsdktfulm2u" path="res://Texture Or Sprites/DailyRewards/Union.png" id="62_5id56"]
 [ext_resource type="Script" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
 [ext_resource type="Texture2D" uid="uid://blrgnaniuw5ts" path="res://Texture Or Sprites/DailyRewards/Group 275.png" id="62_um175"]
+[ext_resource type="Texture2D" uid="uid://bp3273yyx6uva" path="res://Texture Or Sprites/Bags/Group 571.png" id="63_0u48y"]
 [ext_resource type="Texture2D" uid="uid://dch1w5blud1y2" path="res://Texture Or Sprites/DailyRewards/Group 278.png" id="63_b16xs"]
 [ext_resource type="Script" path="res://Scripts/Home/daily_reward_screen_list.gd" id="64_fa687"]
+[ext_resource type="Texture2D" uid="uid://ctfga2ywnkuhs" path="res://Texture Or Sprites/Bags/Group 572.png" id="64_qnn5i"]
+[ext_resource type="Texture2D" uid="uid://drc4lr74fovon" path="res://Texture Or Sprites/Bags/Group 573.png" id="65_ym5e3"]
+[ext_resource type="Texture2D" uid="uid://cn4vnibkehdgu" path="res://Texture Or Sprites/Bags/Group 575.png" id="66_ym5e3"]
 [ext_resource type="Texture2D" uid="uid://c8nhel4e2gwj6" path="res://Texture Or Sprites/DailyRewards/Group 183.png" id="67_jmoue"]
 [ext_resource type="Texture2D" uid="uid://ca1j6ne1xq86d" path="res://Texture Or Sprites/DailyRewards/Rectangle 11.png" id="69_0iwel"]
 [ext_resource type="Texture2D" uid="uid://dtg5r0c6qfg8i" path="res://Texture Or Sprites/DailyRewards/Group 411.png" id="70_0bc6n"]
@@ -328,6 +339,59 @@ texture = ExtResource("62_5id56")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_453j7"]
 texture = ExtResource("62_5id56")
+
+[sub_resource type="Resource" id="Resource_eoxhj"]
+script = ExtResource("56_uh715")
+price = 789
+icon = ExtResource("59_gr5sq")
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_uahhm"]
+script = ExtResource("56_uh715")
+price = 699
+icon = ExtResource("60_u6nbl")
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_lcqmj"]
+script = ExtResource("56_uh715")
+price = 799
+icon = ExtResource("61_4xdiu")
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_qnn5i"]
+script = ExtResource("56_uh715")
+price = 899
+icon = ExtResource("62_0u48y")
+rarity = 1
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_ym5e3"]
+script = ExtResource("56_uh715")
+price = 799
+icon = ExtResource("63_0u48y")
+rarity = 1
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_4nqju"]
+script = ExtResource("56_uh715")
+price = 899
+icon = ExtResource("64_qnn5i")
+rarity = 1
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_7ylqh"]
+script = ExtResource("56_uh715")
+price = 1199
+icon = ExtResource("65_ym5e3")
+rarity = 2
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
+
+[sub_resource type="Resource" id="Resource_t2fil"]
+script = ExtResource("56_uh715")
+price = 899
+icon = ExtResource("66_ym5e3")
+rarity = 1
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afdxe"]
 resource_local_to_scene = true
@@ -2613,7 +2677,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="MidPanel" type="VBoxContainer" parent="ShopScreen/Panel" unique_id=1631213551]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2953,6 +3016,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_n2f85")
 theme_override_styles/hover = SubResource("StyleBoxTexture_04qca")
 
 [node name="BagsPanel" type="Control" parent="ShopScreen/Panel" unique_id=643986931]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2962,7 +3026,7 @@ offset_bottom = -106.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CrossButton" type="Button" parent="ShopScreen/Panel/BagsPanel" unique_id=465299273]
+[node name="BagCrossButton" type="Button" parent="ShopScreen/Panel/BagsPanel" unique_id=465299273]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -2994,7 +3058,10 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_constants/separation = 35
 script = ExtResource("54_is5vx")
-bag_scene = ExtResource("53_afc64")
+green_signal = ExtResource("55_gr5sq")
+white_signal = ExtResource("56_u6nbl")
+bag_data_scene = ExtResource("53_afc64")
+bag_datas = Array[ExtResource("56_uh715")]([SubResource("Resource_eoxhj"), SubResource("Resource_uahhm"), SubResource("Resource_lcqmj"), SubResource("Resource_qnn5i"), SubResource("Resource_ym5e3"), SubResource("Resource_4nqju"), SubResource("Resource_7ylqh"), SubResource("Resource_t2fil")])
 
 [node name="BagData" parent="ShopScreen/Panel/BagsPanel/ScrollContainer/BagDataSets" unique_id=775086764 instance=ExtResource("53_afc64")]
 layout_mode = 2
@@ -3021,6 +3088,44 @@ offset_top = 108.0
 offset_bottom = -106.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="BoardCrossButton" type="Button" parent="ShopScreen/Panel/BoardsPanel" unique_id=1911548775]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_right = -24.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_pmkjb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qfixt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_453j7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ShopScreen/Panel/BoardsPanel" unique_id=1651355698]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 47.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="BoardDataSets" type="VBoxContainer" parent="ShopScreen/Panel/BoardsPanel/ScrollContainer" unique_id=1738712793]
+custom_minimum_size = Vector2(460, 460)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 35
+
+[node name="BagData" parent="ShopScreen/Panel/BoardsPanel/ScrollContainer/BoardDataSets" unique_id=1630694916 instance=ExtResource("53_afc64")]
+layout_mode = 2
+
+[node name="BagData2" parent="ShopScreen/Panel/BoardsPanel/ScrollContainer/BoardDataSets" unique_id=1201140725 instance=ExtResource("53_afc64")]
+layout_mode = 2
 
 [node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=918893846]
 visible = false
@@ -5173,8 +5278,12 @@ autowrap_mode = 2
 [connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/LockedButton" to="HomeScreen" method="_on_locked_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/BottomPanel/Shop/ShopButton" to="HomeScreen" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/BottomPanel/Inventory/InventoryButton" to="HomeScreen" method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="ShopScreen/Panel/MidPanel/BagPanel/Bottom/BagBuyButton" to="ShopScreen" method="_on_bag_buy_button_pressed"]
+[connection signal="pressed" from="ShopScreen/Panel/MidPanel/BoardPanel/Bottom/BoardBuyButton" to="ShopScreen" method="_on_board_buy_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/BottomPanel/Inventory/InventoryButton" to="ShopScreen" method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/BottomPanel/Play/PlayButton" to="ShopScreen" method="_on_play_button_pressed"]
+[connection signal="pressed" from="ShopScreen/Panel/BagsPanel/BagCrossButton" to="ShopScreen" method="_on_bag_cross_button_pressed"]
+[connection signal="pressed" from="ShopScreen/Panel/BoardsPanel/BoardCrossButton" to="ShopScreen" method="_on_board_cross_button_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Shop/ShopButton" to="InventoryScreen" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Play/PlayButton" to="InventoryScreen" method="_on_play_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/CrossButton" to="SettingScreen" method="_on_cross_button_pressed"]
