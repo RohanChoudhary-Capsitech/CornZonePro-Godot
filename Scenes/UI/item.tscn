@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://chhpkvyv8fja0"]
+
+[ext_resource type="Texture2D" uid="uid://ghlhps58qs8g" path="res://Texture Or Sprites/Inventory Screen/Rectangle 30.png" id="1_2eekc"]
+[ext_resource type="Texture2D" uid="uid://bl4p6it0edd3p" path="res://Texture Or Sprites/Bags/blue  3.png" id="2_6u4ry"]
+[ext_resource type="Script" uid="uid://c0cdod7n0km0d" path="res://Scripts/Inventory/item.gd" id="2_e5txi"]
+[ext_resource type="Texture2D" uid="uid://bo67y4iu5rkb4" path="res://Texture Or Sprites/Inventory Screen/Equipicon.png" id="2_jl4sg"]
+[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="2_lxahe"]
+[ext_resource type="Texture2D" uid="uid://bxxcgad7fpyj2" path="res://Texture Or Sprites/Inventory Screen/EquipedIcon.png" id="4_xmeju"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6u4ry"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e5txi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmeju"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iceo3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4us0v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oppfs"]
+
+[node name="Item" type="TextureRect" unique_id=1109495748]
+custom_minimum_size = Vector2(141.1507, 160)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.57532
+offset_top = -79.0
+offset_right = 70.57538
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2eekc")
+expand_mode = 3
+stretch_mode = 4
+script = ExtResource("2_e5txi")
+equip_icon = ExtResource("2_jl4sg")
+equipped_icon = ExtResource("4_xmeju")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=900780526]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -67.0
+offset_right = 59.5
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6u4ry")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="Icon" unique_id=1025065177]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6u4ry")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e5txi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xmeju")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1355310124]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -69.00003
+offset_top = -35.0
+offset_right = 67.99997
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_jl4sg")
+expand_mode = 1
+
+[node name="EquipButton" type="Button" parent="TextureRect" unique_id=489156161]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -16.5
+offset_right = 68.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_lxahe")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iceo3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4us0v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oppfs")
+text = "Equip"

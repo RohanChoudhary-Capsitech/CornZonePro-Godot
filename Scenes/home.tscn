@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c2dbjirpm1ase" path="res://Texture Or Sprites/Login Screen/Line 14.png" id="13_jjai4"]
 [ext_resource type="Texture2D" uid="uid://cgqyho8ne3j3a" path="res://Texture Or Sprites/Login Screen/Google.png" id="14_lddgv"]
 [ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
-[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/Bg.png" id="16_848r5"]
+[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/BG.png" id="16_848r5"]
 [ext_resource type="Texture2D" uid="uid://df3uq3lg4t57f" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
 [ext_resource type="Texture2D" uid="uid://dhaiu8nexctvx" path="res://Texture Or Sprites/Home Screen/ProfileBG.png" id="17_g2bjx"]
 [ext_resource type="Script" uid="uid://51frmnaa34pj" path="res://Scripts/Home/home_screen.gd" id="17_mkkvt"]
@@ -68,7 +68,7 @@
 [ext_resource type="Texture2D" uid="uid://bbku5rr5mt372" path="res://Texture Or Sprites/Inventory Screen/Frame 85.png" id="53_56oc6"]
 [ext_resource type="PackedScene" uid="uid://dkxtmd1so4k4r" path="res://Scenes/UI/bag_data.tscn" id="53_afc64"]
 [ext_resource type="Script" uid="uid://co234yrsdo1xy" path="res://Scripts/Home/inventory_screen.gd" id="53_jl4rm"]
-[ext_resource type="Script" path="res://Scripts/Shop/bag_data_content.gd" id="54_is5vx"]
+[ext_resource type="Script" uid="uid://b53a3fuc8clmd" path="res://Scripts/Shop/bag_data_content.gd" id="54_is5vx"]
 [ext_resource type="Texture2D" uid="uid://cynxb4vuhdeyy" path="res://Texture Or Sprites/Profile Screen/PanelBg.png" id="54_jv2cb"]
 [ext_resource type="Script" uid="uid://b5c44ivano6da" path="res://Scripts/Home/profile_screen.gd" id="54_um175"]
 [ext_resource type="Texture2D" uid="uid://c3sqfc8ekq3uu" path="res://Texture Or Sprites/Shop Screen/Rectangle 2 (1).png" id="54_wyrdr"]
@@ -88,11 +88,11 @@
 [ext_resource type="Texture2D" uid="uid://dng4caaq31pgn" path="res://Texture Or Sprites/Bags/Group 568.png" id="61_4xdiu"]
 [ext_resource type="Texture2D" uid="uid://b0xkux1bwuy1d" path="res://Texture Or Sprites/Bags/Group 569.png" id="62_0u48y"]
 [ext_resource type="Texture2D" uid="uid://bwwsdktfulm2u" path="res://Texture Or Sprites/DailyRewards/Union.png" id="62_5id56"]
-[ext_resource type="Script" uid="uid://nn6aqsvgnste" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
+[ext_resource type="Script" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
 [ext_resource type="Texture2D" uid="uid://blrgnaniuw5ts" path="res://Texture Or Sprites/DailyRewards/Group 275.png" id="62_um175"]
 [ext_resource type="Texture2D" uid="uid://bp3273yyx6uva" path="res://Texture Or Sprites/Bags/Group 571.png" id="63_0u48y"]
 [ext_resource type="Texture2D" uid="uid://dch1w5blud1y2" path="res://Texture Or Sprites/DailyRewards/Group 278.png" id="63_b16xs"]
-[ext_resource type="Script" uid="uid://dcpb5o46t1dcl" path="res://Scripts/Home/daily_reward_screen_list.gd" id="64_fa687"]
+[ext_resource type="Script" path="res://Scripts/Home/daily_reward_screen_list.gd" id="64_fa687"]
 [ext_resource type="Texture2D" uid="uid://ctfga2ywnkuhs" path="res://Texture Or Sprites/Bags/Group 572.png" id="64_qnn5i"]
 [ext_resource type="Texture2D" uid="uid://drc4lr74fovon" path="res://Texture Or Sprites/Bags/Group 573.png" id="65_ym5e3"]
 [ext_resource type="Texture2D" uid="uid://cn4vnibkehdgu" path="res://Texture Or Sprites/Bags/Group 575.png" id="66_ym5e3"]
@@ -111,14 +111,14 @@
 [ext_resource type="Texture2D" uid="uid://b57l4j3nvj2ly" path="res://Texture Or Sprites/Multiplayer/Rectangle 384.png" id="73_f74ik"]
 [ext_resource type="Texture2D" uid="uid://de0koktxpq518" path="res://Texture Or Sprites/Bags/splash  3.png" id="73_r13op"]
 [ext_resource type="Texture2D" uid="uid://wrrua84wko28" path="res://Texture Or Sprites/Multiplayer/Rectangle 126.png" id="74_fhrbv"]
-[ext_resource type="Script" path="res://Scripts/Shop/board_data_content.gd" id="74_nbuyv"]
+[ext_resource type="Script" uid="uid://busaot12ag5ol" path="res://Scripts/Shop/board_data_content.gd" id="74_nbuyv"]
 [ext_resource type="PackedScene" uid="uid://bdhfavj1k6vco" path="res://Scenes/UI/board_data.tscn" id="75_as3ia"]
 [ext_resource type="Texture2D" uid="uid://dxf6n2bo32ivg" path="res://Texture Or Sprites/Multiplayer/Rectangle 385.png" id="75_cco2g"]
 [ext_resource type="Texture2D" uid="uid://sv3gugcvj1fd" path="res://Texture Or Sprites/Multiplayer/Rectangle 386.png" id="76_2pxd8"]
-[ext_resource type="Script" path="res://Scripts/Resource Structures/BoardConfig.gd" id="76_ie2bs"]
+[ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="76_ie2bs"]
 [ext_resource type="Texture2D" uid="uid://ctt8ix34drhr3" path="res://Texture Or Sprites/Boards/1 569.png" id="77_vaya1"]
 [ext_resource type="Texture2D" uid="uid://ds7mdrl5khx06" path="res://Texture Or Sprites/Leaderboard Screen/Group 257.png" id="78_36lgj"]
-[ext_resource type="Script" path="res://Scripts/Home/leaderboard_screen.gd" id="78_meagp"]
+[ext_resource type="Script" uid="uid://bu665fyesiov4" path="res://Scripts/Home/leaderboard_screen.gd" id="78_meagp"]
 [ext_resource type="Texture2D" uid="uid://cg0qd7xkog8by" path="res://Texture Or Sprites/Boards/hole fix 2 3.png" id="78_tbwbq"]
 [ext_resource type="Texture2D" uid="uid://csdmjw1sfmh2k" path="res://Texture Or Sprites/Boards/hole fix 3 3.png" id="79_1wbho"]
 [ext_resource type="Texture2D" uid="uid://cieryegijog3d" path="res://Texture Or Sprites/Boards/hole fix 5 2.png" id="80_6rbbw"]
@@ -130,6 +130,8 @@
 [ext_resource type="PackedScene" uid="uid://b2ggaod7b75ko" path="res://Scenes/UI/room_button.tscn" id="82_wg2o6"]
 [ext_resource type="Texture2D" uid="uid://s5wsx11qb1k2" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle 136.png" id="83_wt16q"]
 [ext_resource type="Texture2D" uid="uid://clo1pi3no6404" path="res://Texture Or Sprites/Leaderboard Screen/Coin.png" id="84_dwsb2"]
+[ext_resource type="Script" uid="uid://c6bm43mycwtp4" path="res://Scripts/Inventory/content.gd" id="86_tbwbq"]
+[ext_resource type="PackedScene" uid="uid://chhpkvyv8fja0" path="res://Scenes/UI/item.tscn" id="86_vaya1"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0rbp"]
 
@@ -3214,7 +3216,6 @@ board_data_scene = ExtResource("75_as3ia")
 board_data = Array[ExtResource("76_ie2bs")]([SubResource("Resource_ouj5o"), SubResource("Resource_82hot"), SubResource("Resource_k0i76"), SubResource("Resource_oi70t"), SubResource("Resource_4yy14"), SubResource("Resource_2vxpu")])
 
 [node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=918893846]
-visible = false
 script = ExtResource("53_jl4rm")
 
 [node name="BG" type="TextureRect" parent="InventoryScreen" unique_id=2092382539]
@@ -3539,7 +3540,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_m3bm7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
-[node name="Control" type="Control" parent="InventoryScreen/Panel" unique_id=168758776]
+[node name="BottomContent" type="Control" parent="InventoryScreen/Panel" unique_id=168758776]
 layout_mode = 1
 anchor_top = 0.33900002
 anchor_right = 1.0
@@ -3549,7 +3550,7 @@ offset_bottom = -87.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="InventoryScreen/Panel/Control" unique_id=200407274]
+[node name="TextureRect" type="TextureRect" parent="InventoryScreen/Panel/BottomContent" unique_id=200407274]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3561,13 +3562,30 @@ texture = ExtResource("56_is5vx")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Content" type="GridContainer" parent="InventoryScreen/Panel/Control/TextureRect" unique_id=1539206330]
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryScreen/Panel/BottomContent/TextureRect" unique_id=1732140478]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = -16.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Content" type="GridContainer" parent="InventoryScreen/Panel/BottomContent/TextureRect/ScrollContainer" unique_id=1539206330]
+custom_minimum_size = Vector2(450, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 13
+theme_override_constants/v_separation = 15
+columns = 3
+script = ExtResource("86_tbwbq")
+item_scene = ExtResource("86_vaya1")
 
 [node name="SettingScreen" type="CanvasLayer" parent="." unique_id=1804771245]
 visible = false
