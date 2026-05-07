@@ -1,3 +1,6 @@
+# =========================
+# corn_bag.gd
+# =========================
 extends RigidBody3D
 
 @onready var swipe_controller: SwipeInputController = $SwipeInputController
@@ -8,21 +11,34 @@ var thrown: bool = false
 
 
 func _ready() -> void:
+	add_to_group("active_bag")
+
 	print("NODE PATH:", get_path(), " AUTH:", get_multiplayer_authority())
 
 	thrown = false
+
 	freeze = true
 	sleeping = false
 
 	contact_monitor = true
 	max_contacts_reported = 8
 
-	# Prevent duplicate signal connections after rematch
 	if not swipe_controller.swipe_completed.is_connected(_on_swipe_completed):
 		swipe_controller.swipe_completed.connect(_on_swipe_completed)
 
 	if not body_entered.is_connected(_on_body_entered):
 		body_entered.connect(_on_body_entered)
+
+
+func is_waiting_for_throw() -> bool:
+	return not thrown
+
+
+func _mark_as_thrown() -> void:
+	thrown = true
+	if is_in_group("active_bag"):
+		remove_from_group("active_bag")
+
 
 func _on_swipe_completed(direction: Vector3, strength: float) -> void:
 	if thrown:
@@ -32,76 +48,105 @@ func _on_swipe_completed(direction: Vector3, strength: float) -> void:
 	if GameSession.selected_mode != "Local":
 		_apply_throw(direction, strength)
 		return
-	#thrown=true
-	# No multiplayer
+
+	# Multiplayer missing
 	if not multiplayer or multiplayer.multiplayer_peer == null:
 		return
 
-	# Turn check (client-side guard)
+	# Turn check
 	if not _is_my_turn():
 		print("Blocked: Not your turn")
 		return
 
-	# Host executes directly
+	# Host throws directly
 	if multiplayer.is_server():
 		_apply_throw(direction, strength)
 	else:
-		# Client sends request to server
 		print("CLIENT sending RPC throw")
-		NetworkManager.request_throw.rpc_id(1, get_path(), direction, strength)
+
+		# Local visual throw immediately
+		freeze = false
+		gravity_scale = throw_gravity_scale
+		apply_central_impulse(direction * strength)
+		_mark_as_thrown()
+
+		# Tell host
+		NetworkManager.request_throw.rpc_id(1, direction, strength)
+
+
+func server_apply_throw(direction: Vector3, strength: float) -> void:
+	_apply_throw(direction, strength)
 
 
 func _apply_throw(direction: Vector3, strength: float, from_sync := false) -> void:
 	if thrown:
 		return
 
-	# 🔴 Tag who threw this (important for scoring + validation)
-	var throw_player := GameSession.current_turn
-	set_meta("throw_player", throw_player)
+	set_meta("throw_player", GameSession.current_turn)
 
 	freeze = false
-	gravity_scale = throw_gravity_scale
-	apply_central_impulse(direction * strength)
-	thrown = true
 
-	# Server syncs to clients
-	if GameSession.selected_mode == "Local" and multiplayer and multiplayer.is_server() and not from_sync:
+	gravity_scale = throw_gravity_scale
+
+	apply_central_impulse(direction * strength)
+
+	_mark_as_thrown()
+
+	# Sync to clients
+	if (
+		GameSession.selected_mode == "Local"
+		and multiplayer
+		and multiplayer.is_server()
+		and not from_sync
+	):
 		sync_throw.rpc(direction, strength)
 
-	# Only server advances game
+	# Host progresses match
 	if multiplayer and multiplayer.is_server():
 		await get_tree().create_timer(1.5).timeout
-		request_next_bag()
+		call_deferred("request_next_bag")
 
 
-# =========================
-# RPC: Server → Clients
-# =========================
 @rpc("authority", "reliable")
 func sync_throw(direction: Vector3, strength: float) -> void:
-	# Server ignores its own sync
-	if multiplayer and multiplayer.is_server():
+	if multiplayer.is_server():
 		return
 
-	_apply_throw(direction, strength, true)
+	# Force sync visually on client
+	freeze = false
+	sleeping = false
+	gravity_scale = throw_gravity_scale
+
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
+
+	apply_central_impulse(direction * strength)
+
+	_mark_as_thrown()
 
 
-# =========================
-# Turn + bag progression
-# =========================
 func request_next_bag() -> void:
 	var scoring_player: int = GameSession.current_turn
+
 	if has_meta("throw_player"):
 		scoring_player = int(get_meta("throw_player"))
 
 	var bag_score: int = int(get_meta("awarded_points", 0))
-	var uses_bag_result_slots: bool = GameSession.selected_mode == "PassPlay" or GameSession.selected_mode == "Local"
+
+	var uses_bag_result_slots := (
+		GameSession.selected_mode == "PassPlay"
+		or GameSession.selected_mode == "Local"
+	)
 
 	if uses_bag_result_slots:
-		var bag_result_index: int = GameSession.record_bag_result(scoring_player, bag_score)
+		var bag_result_index := GameSession.record_bag_result(
+			scoring_player,
+			bag_score
+		)
+
 		set_meta("bag_result_index", bag_result_index)
 		set_meta("awarded_points", bag_score)
-
+	# deactivate_bag()
 	GameSession.on_bag_thrown()
 
 	if GameSession.match_over:
@@ -109,12 +154,10 @@ func request_next_bag() -> void:
 
 	if GameSession.selected_mode == "Local":
 		if multiplayer and multiplayer.is_server():
-			var bag = get_parent().spawn_bag()
-			bag.name = "CornBag"
-			# bag.set_multiplayer_authority(1)
+			get_parent().call_deferred("spawn_bag")
 			spawn_bag_rpc.rpc()
 	else:
-		get_parent().spawn_bag()
+		get_parent().call_deferred("spawn_bag")
 
 
 @rpc("authority", "reliable")
@@ -122,17 +165,7 @@ func spawn_bag_rpc() -> void:
 	if multiplayer.is_server():
 		return
 
-	var bag = get_parent().spawn_bag()
-	if bag:
-		bag.name = "CornBag"
-		# bag.set_multiplayer_authority(1)
-		bag.thrown = false
-		print("CLIENT SPAWNED BAG:", bag.get_path())
-# =========================
-# Helpers
-# =========================
-func _player_id_for_peer(peer_id: int) -> int:
-	return 1 if peer_id == 1 else 2
+	get_parent().call_deferred("spawn_bag")
 
 
 func _is_my_turn() -> bool:
@@ -140,6 +173,7 @@ func _is_my_turn() -> bool:
 		return true
 
 	var my_id := 1 if multiplayer.is_server() else 2
+
 	print("TURN:", GameSession.current_turn, " MY ID:", my_id)
 
 	return GameSession.current_turn == my_id
@@ -148,3 +182,7 @@ func _is_my_turn() -> bool:
 func _on_body_entered(body: Node) -> void:
 	if body.has_method("on_bag_landed"):
 		body.on_bag_landed(self)
+
+func deactivate_bag():
+	freeze = true
+	sleeping = true

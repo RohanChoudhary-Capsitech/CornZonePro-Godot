@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var win_message: Label = $"Control/GameOver BG/Win message"
 @onready var restart: Button = $"Control/GameOver BG/Rematch"
 
+
 func _ready() -> void:
 	GameSession.turns_exhausted.connect(_update_results)
 	NetworkManager.match_forfeit.connect(show_message)
