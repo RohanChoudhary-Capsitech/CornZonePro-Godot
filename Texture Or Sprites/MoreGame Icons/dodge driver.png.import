@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wxlein54c1qj"
-path="res://.godot/imported/SettingBg.png-80179b03f62e6b2040ddede3f5ea03d8.ctex"
+uid="uid://cm36t43r5gcru"
+path="res://.godot/imported/dodge driver.png-525bd45828f708faa3cc1ee30191a56f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Setting Screen/SettingBg.png"
-dest_files=["res://.godot/imported/SettingBg.png-80179b03f62e6b2040ddede3f5ea03d8.ctex"]
+source_file="res://Texture Or Sprites/MoreGame Icons/dodge driver.png"
+dest_files=["res://.godot/imported/dodge driver.png-525bd45828f708faa3cc1ee30191a56f.ctex"]
 
 [params]
 
