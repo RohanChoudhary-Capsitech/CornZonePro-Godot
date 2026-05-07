@@ -91,7 +91,7 @@
 [ext_resource type="Texture2D" uid="uid://blrgnaniuw5ts" path="res://Texture Or Sprites/DailyRewards/Group 275.png" id="62_um175"]
 [ext_resource type="Texture2D" uid="uid://bp3273yyx6uva" path="res://Texture Or Sprites/Bags/Group 571.png" id="63_0u48y"]
 [ext_resource type="Texture2D" uid="uid://dch1w5blud1y2" path="res://Texture Or Sprites/DailyRewards/Group 278.png" id="63_b16xs"]
-[ext_resource type="Script" path="res://Scripts/Home/daily_reward_screen_list.gd" id="64_fa687"]
+[ext_resource type="Script" uid="uid://dcpb5o46t1dcl" path="res://Scripts/Home/daily_reward_screen_list.gd" id="64_fa687"]
 [ext_resource type="Texture2D" uid="uid://ctfga2ywnkuhs" path="res://Texture Or Sprites/Bags/Group 572.png" id="64_qnn5i"]
 [ext_resource type="Texture2D" uid="uid://drc4lr74fovon" path="res://Texture Or Sprites/Bags/Group 573.png" id="65_ym5e3"]
 [ext_resource type="Texture2D" uid="uid://cn4vnibkehdgu" path="res://Texture Or Sprites/Bags/Group 575.png" id="66_ym5e3"]
@@ -153,6 +153,7 @@
 [ext_resource type="Texture2D" uid="uid://diy8cusw23xn5" path="res://Texture Or Sprites/MoreGame Icons/laserMind.png" id="109_sg8ud"]
 [ext_resource type="Texture2D" uid="uid://k13v3ek2drk0" path="res://Texture Or Sprites/MoreGame Icons/SymbolSync.png" id="110_v6eu8"]
 [ext_resource type="Script" uid="uid://m372ho3svafv" path="res://Scripts/Home/map_select_screen.gd" id="114_ttur7"]
+[ext_resource type="Script" uid="uid://crvxuifakyi1c" path="res://Scripts/Home/reward_screen.gd" id="139_pmkjb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0rbp"]
 
@@ -4356,6 +4357,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ttur7")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_pmkjb")
 
 [node name="MapSelectScreen" type="CanvasLayer" parent="." unique_id=1321304884]
+visible = false
 script = ExtResource("114_ttur7")
 
 [node name="BG" type="TextureRect" parent="MapSelectScreen" unique_id=1114887386]
@@ -4897,7 +4899,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_f74ik")
 theme_override_styles/hover = SubResource("StyleBoxTexture_fhrbv")
 
 [node name="DailyRewardScreen" type="CanvasLayer" parent="." unique_id=304440633]
-visible = false
 script = ExtResource("64_fa687")
 
 [node name="BG" type="TextureRect" parent="DailyRewardScreen" unique_id=1477647898]
@@ -4991,7 +4992,7 @@ texture = ExtResource("67_jmoue")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day1" unique_id=1317683251]
+[node name="Day1Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day1" unique_id=1317683251]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -5004,6 +5005,7 @@ offset_right = 30.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 12
@@ -5051,7 +5053,7 @@ texture = ExtResource("67_jmoue")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day2" unique_id=253219623]
+[node name="Day2Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day2" unique_id=253219623]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -5064,7 +5066,7 @@ offset_right = 30.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(16.638432, 16.638432, 16.638432, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 12
@@ -5112,7 +5114,7 @@ texture = ExtResource("67_jmoue")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day3" unique_id=1392972724]
+[node name="Day3Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day3" unique_id=1392972724]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -5125,7 +5127,7 @@ offset_right = 30.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(16.638432, 16.638432, 16.638432, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 12
@@ -5173,7 +5175,7 @@ texture = ExtResource("67_jmoue")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day4" unique_id=552332656]
+[node name="Day4Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day4" unique_id=552332656]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -5186,7 +5188,7 @@ offset_right = 30.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(16.638432, 16.638432, 16.638432, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 12
@@ -5234,7 +5236,7 @@ texture = ExtResource("67_jmoue")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day5" unique_id=193076926]
+[node name="Day5Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day5" unique_id=193076926]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -5247,7 +5249,7 @@ offset_right = 30.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(16.638432, 16.638432, 16.638432, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 12
@@ -5295,7 +5297,7 @@ texture = ExtResource("67_jmoue")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day6" unique_id=1543151584]
+[node name="Day6Button" type="Button" parent="DailyRewardScreen/Panel/GridContainer/Day6" unique_id=1543151584]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -5308,7 +5310,7 @@ offset_right = 30.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(16.638432, 16.638432, 16.638432, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 12
@@ -5367,7 +5369,7 @@ texture = ExtResource("70_0bc6n")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="DailyRewardScreen/Panel/Day7" unique_id=397110696]
+[node name="Day7Button" type="Button" parent="DailyRewardScreen/Panel/Day7" unique_id=397110696]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -5380,7 +5382,7 @@ offset_right = 30.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(16.638432, 16.638432, 16.638432, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 12
@@ -5390,7 +5392,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_jl4rm")
 text = "Claim"
 
 [node name="RewardScreen" type="CanvasLayer" parent="." unique_id=1371893266]
-visible = false
+script = ExtResource("139_pmkjb")
 
 [node name="BG" type="TextureRect" parent="RewardScreen" unique_id=1150166980]
 anchors_preset = 15
@@ -5475,7 +5477,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.78431374, 0.4627451, 0.30588236, 1)
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 55
-text = "+5"
+text = "+0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -5913,6 +5915,14 @@ autowrap_mode = 2
 [connection signal="pressed" from="ProfileScreen/Panel/ProfileBg/CrossButton" to="ProfileScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="InfoScreen/Panel/PanelBg/CrossButton" to="InfoScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="DailyRewardScreen/Panel/CrossButton" to="DailyRewardScreen" method="_on_cross_button_pressed"]
+[connection signal="pressed" from="DailyRewardScreen/Panel/GridContainer/Day1/Day1Button" to="DailyRewardScreen" method="_on_day_1_button_pressed"]
+[connection signal="pressed" from="DailyRewardScreen/Panel/GridContainer/Day2/Day2Button" to="DailyRewardScreen" method="_on_day_2_button_pressed"]
+[connection signal="pressed" from="DailyRewardScreen/Panel/GridContainer/Day3/Day3Button" to="DailyRewardScreen" method="_on_day_3_button_pressed"]
+[connection signal="pressed" from="DailyRewardScreen/Panel/GridContainer/Day4/Day4Button" to="DailyRewardScreen" method="_on_day_4_button_pressed"]
+[connection signal="pressed" from="DailyRewardScreen/Panel/GridContainer/Day5/Day5Button" to="DailyRewardScreen" method="_on_day_5_button_pressed"]
+[connection signal="pressed" from="DailyRewardScreen/Panel/GridContainer/Day6/Day6Button" to="DailyRewardScreen" method="_on_day_6_button_pressed"]
+[connection signal="pressed" from="DailyRewardScreen/Panel/Day7/Day7Button" to="DailyRewardScreen" method="_on_day_7_button_pressed"]
+[connection signal="pressed" from="RewardScreen/Panel/PanelBG/Claim" to="RewardScreen" method="_on_claim_pressed"]
 [connection signal="pressed" from="MultiplayerScreen/Panel/PanelBg/CrossButton" to="MultiplayerScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="MultiplayerScreen/Panel/PanelBg/HostButton" to="MultiplayerScreen" method="_on_host_button_pressed"]
 [connection signal="pressed" from="MultiplayerScreen/Panel/PanelBg/JoinButton" to="MultiplayerScreen" method="_on_join_button_pressed"]
