@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bp5y8cd1uho6r"]
+
+[ext_resource type="Texture2D" uid="uid://ce3xjaepn7i5n" path="res://Texture Or Sprites/MoreGame Icons/DropandScore.png" id="1_2bsgs"]
+[ext_resource type="Texture2D" uid="uid://cpod1a6vfn258" path="res://Texture Or Sprites/MoreGame Icons/ButtonBg.png" id="2_kpmxh"]
+[ext_resource type="Script" uid="uid://dtgn6omnw6qt" path="res://Scripts/Settings/game_icon.gd" id="2_vfk35"]
+[ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="3_thed0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vfk35"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6r81b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5wtb"]
+
+[node name="GameIcon" type="TextureRect" unique_id=1388731155]
+custom_minimum_size = Vector2(0, 124)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -71.0
+offset_right = 107.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2bsgs")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_vfk35")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2025970953]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -58.911667
+offset_top = -2.0
+offset_right = 58.911682
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_kpmxh")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=1930464366]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -12.5
+offset_right = 37.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.07450981, 0.53333336, 0.1254902, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_thed0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vfk35")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6r81b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g5wtb")
+text = "Play now"
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
