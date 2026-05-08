@@ -5421,7 +5421,6 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_dlmwe")
 text = "Claim"
 
 [node name="RewardScreen" type="CanvasLayer" parent="." unique_id=1371893266]
-visible = false
 script = ExtResource("139_pmkjb")
 
 [node name="BG" type="TextureRect" parent="RewardScreen" unique_id=1150166980]

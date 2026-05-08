@@ -37,16 +37,16 @@ func _on_day_2_button_pressed() -> void:
 	send_reward(2, 10)
 
 func _on_day_3_button_pressed() -> void:
-	send_reward(2, 15)
+	send_reward(3, 15)
 
 func _on_day_4_button_pressed() -> void:
-	send_reward(2, 20)
+	send_reward(4, 20)
 
 func _on_day_5_button_pressed() -> void:
-	send_reward(2, 25)
+	send_reward(5, 25)
 
 func _on_day_6_button_pressed() -> void:
-	send_reward(2, 30)
+	send_reward(6, 30)
 
 func _on_day_7_button_pressed() -> void:
-	send_reward(2, 35)
+	send_reward(7, 35)
