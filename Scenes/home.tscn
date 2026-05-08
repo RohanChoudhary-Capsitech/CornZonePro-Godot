@@ -3831,7 +3831,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_5id56")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xdufu")
 
 [node name="MusicOffButton" type="Button" parent="SettingScreen/Panel/SettingBg/SettingPanel/AudioMusicBg" unique_id=592955231]
-visible = false
 layout_mode = 0
 offset_left = 153.00038
 offset_top = 40.0
@@ -3852,7 +3851,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_5id56")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xdufu")
 
 [node name="SoundOffButton" type="Button" parent="SettingScreen/Panel/SettingBg/SettingPanel/AudioMusicBg" unique_id=1555426933]
-visible = false
 layout_mode = 0
 offset_left = 153.0
 offset_top = 100.0
@@ -5421,6 +5419,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_dlmwe")
 text = "Claim"
 
 [node name="RewardScreen" type="CanvasLayer" parent="." unique_id=1371893266]
+visible = false
 script = ExtResource("139_pmkjb")
 
 [node name="BG" type="TextureRect" parent="RewardScreen" unique_id=1150166980]
@@ -5933,6 +5932,10 @@ autowrap_mode = 2
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Shop/ShopButton" to="InventoryScreen" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Play/PlayButton" to="InventoryScreen" method="_on_play_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/CrossButton" to="SettingScreen" method="_on_cross_button_pressed"]
+[connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOnButton" to="SettingScreen" method="_on_music_on_button_pressed"]
+[connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOffButton" to="SettingScreen" method="_on_music_off_button_pressed"]
+[connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOnButton" to="SettingScreen" method="_on_sound_on_button_pressed"]
+[connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOffButton" to="SettingScreen" method="_on_sound_off_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/PrivacyPolicyButton" to="SettingScreen" method="_on_privacy_policy_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Facebook/GoBtn/FacebookButton" to="SettingScreen" method="_on_facebook_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Instagram/GoBtn/InstagramButton" to="SettingScreen" method="_on_instagram_button_pressed"]

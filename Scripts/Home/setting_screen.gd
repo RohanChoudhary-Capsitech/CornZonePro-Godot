@@ -8,6 +8,13 @@ extends CanvasLayer
 @onready var social_panel = $Panel/SettingBg/SocialPanel
 @onready var more_games_panel = $Panel/SettingBg/MoreGamesPanel
 
+
+# Music and Audio
+@onready var music_on = $Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOnButton
+@onready var music_off = $Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOffButton
+@onready var sound_on = $Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOnButton
+@onready var sound_off = $Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOffButton
+
 @export var setting_off: Texture2D
 @export var setting_on: Texture2D
 
@@ -33,6 +40,21 @@ func _ready() -> void:
 	
 	setting_panel.visible = true
 	is_setting_open = true
+	
+	if Prefs.get_bool("music", true):
+		music_on.visible = true
+		music_off.visible = false
+	else:
+		music_on.visible = false
+		music_off.visible = true
+	
+	if Prefs.get_bool("sound", true):
+		sound_on.visible = true
+		sound_off.visible = false
+	else:
+		sound_on.visible = false
+		sound_off.visible = true
+
 
 func _on_cross_button_pressed() -> void:
 	UIManager.toggle_canvas($".")
@@ -104,3 +126,26 @@ func _on_more_game_panel_button_pressed() -> void:
 	setting_panel.visible =  false
 	social_panel.visible = false
 	
+
+# Audio and Music settings system
+func _on_music_on_button_pressed() -> void:
+	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOnButton.visible = false
+	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOffButton.visible =  true
+	Prefs.set_bool("music", false)
+
+
+func _on_music_off_button_pressed() -> void:
+	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOffButton.visible =  false
+	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOnButton.visible = true
+	Prefs.set_bool("music", true)
+
+
+func _on_sound_on_button_pressed() -> void:
+	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOnButton.visible = false
+	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOffButton.visible = true
+	Prefs.set_bool("sound", false)
+
+func _on_sound_off_button_pressed() -> void:
+	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOffButton.visible = false
+	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOnButton.visible = true
+	Prefs.set_bool("sound", true)
