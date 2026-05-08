@@ -6,10 +6,39 @@ var bag_counter := 0
 
 
 func _ready() -> void:
-	$"../StartTimer".start()
+	bag_counter = 0
+	_clear_spawned_bags()
+
+	if GameSession.selected_mode == "Local" and multiplayer and multiplayer.multiplayer_peer != null:
+		if multiplayer.is_server():
+			$"../StartTimer".start()
+		else:
+			$"../StartTimer".stop()
+	else:
+		$"../StartTimer".start()
+
+
+func _clear_spawned_bags() -> void:
+	for child in get_children():
+		child.queue_free()
+
+
+func _get_waiting_bag() -> Node:
+	for child in get_children():
+		if not is_instance_valid(child):
+			continue
+		if not child.has_method("is_waiting_for_throw"):
+			continue
+		if bool(child.call("is_waiting_for_throw")):
+			return child
+	return null
 
 
 func spawn_bag():
+	var waiting_bag := _get_waiting_bag()
+	if waiting_bag != null:
+		return waiting_bag
+
 	var obj = bag.instantiate()
 
 	obj.name = "CornBag_%d" % bag_counter
@@ -28,6 +57,21 @@ func spawn_bag():
 	return obj
 
 
-func _on_timer_timeout() -> void:
+@rpc("authority", "reliable")
+func spawn_bag_rpc() -> void:
+	if multiplayer and multiplayer.is_server():
+		return
+
 	spawn_bag()
+
+
+func _on_timer_timeout() -> void:
 	$"../StartTimer".stop()
+
+	if GameSession.selected_mode == "Local" and multiplayer and multiplayer.multiplayer_peer != null:
+		if multiplayer.is_server():
+			spawn_bag()
+			spawn_bag_rpc.rpc()
+		return
+
+	spawn_bag()

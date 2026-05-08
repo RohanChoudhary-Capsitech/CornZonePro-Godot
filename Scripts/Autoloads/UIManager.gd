@@ -116,19 +116,33 @@ func _go_home_rpc():
 func _go_home_local():
 	GameSession.reset_match()
 	SceneManager.free_all()
+	NetworkManager.rematch_in_progress = false
 	SceneManager.goto("res://Scenes/home.tscn")
 
-func restart() -> void:
+func restart(
+	mode_override: String = "",
+	map_path_override: String = "",
+	ui_override: String = "",
+	time_limit_override: float = -1.0
+) -> void:
 	UI_required.emit()
 
-	if GameSession.selected_mode.is_empty() or GameSession.selected_map_path.is_empty():
+	var mode := mode_override if not mode_override.is_empty() else GameSession.selected_mode
+	var map_path := (
+		map_path_override
+		if not map_path_override.is_empty()
+		else GameSession.selected_map_path
+	)
+	var ui := ui_override if not ui_override.is_empty() else GameSession.required_ui
+	var time_limit := (
+		time_limit_override
+		if time_limit_override >= 0.0
+		else GameSession.time_left
+	)
+
+	if mode.is_empty() or map_path.is_empty():
 		push_warning("[UIManager] No active match to restart")
 		return
-
-	var mode := GameSession.selected_mode
-	var map_path := GameSession.selected_map_path
-	var ui := GameSession.required_ui
-	var time_limit := GameSession.time_left
 
 	# RESET GAME SESSION
 	GameSession.reset_match()
@@ -147,6 +161,7 @@ func restart() -> void:
 	await SceneManager.wait_until_loaded(map_path)
 
 	SceneManager.goto(map_path)
+	NetworkManager.rematch_in_progress = false
 
 # func restart() -> void:
 # 	UI_required.emit()

@@ -56,6 +56,9 @@ func _swap_scene_packed(packed:PackedScene,path:String="")->void:
 			previous_path = previous_scene.scene_file_path
 
 	if previous_scene and is_instance_valid(previous_scene):
+		var previous_parent := previous_scene.get_parent()
+		if previous_parent:
+			previous_parent.remove_child(previous_scene)
 		previous_scene.queue_free()
 		_current_scene = null
 		print("[SceneManager] Freed scene: ", previous_path)

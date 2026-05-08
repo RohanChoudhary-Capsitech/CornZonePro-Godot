@@ -6,6 +6,7 @@ extends RigidBody3D
 @onready var swipe_controller: SwipeInputController = $SwipeInputController
 
 var thrown: bool = false
+var throw_requested: bool = false
 
 @export var throw_gravity_scale: float = 4.0
 
@@ -16,6 +17,7 @@ func _ready() -> void:
 	print("NODE PATH:", get_path(), " AUTH:", get_multiplayer_authority())
 
 	thrown = false
+	throw_requested = false
 
 	freeze = true
 	sleeping = false
@@ -31,17 +33,28 @@ func _ready() -> void:
 
 
 func is_waiting_for_throw() -> bool:
-	return not thrown
+	return not thrown and not throw_requested
 
 
 func _mark_as_thrown() -> void:
 	thrown = true
+	throw_requested = false
 	if is_in_group("active_bag"):
 		remove_from_group("active_bag")
 
 
+func _start_throw_physics(direction: Vector3, strength: float) -> void:
+	freeze = false
+	sleeping = false
+	gravity_scale = throw_gravity_scale
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
+	apply_central_impulse(direction * strength)
+	_mark_as_thrown()
+
+
 func _on_swipe_completed(direction: Vector3, strength: float) -> void:
-	if thrown:
+	if thrown or throw_requested:
 		return
 
 	# Offline
@@ -63,12 +76,7 @@ func _on_swipe_completed(direction: Vector3, strength: float) -> void:
 		_apply_throw(direction, strength)
 	else:
 		print("CLIENT sending RPC throw")
-
-		# Local visual throw immediately
-		freeze = false
-		gravity_scale = throw_gravity_scale
-		apply_central_impulse(direction * strength)
-		_mark_as_thrown()
+		throw_requested = true
 
 		# Tell host
 		NetworkManager.request_throw.rpc_id(1, direction, strength)
@@ -78,26 +86,18 @@ func server_apply_throw(direction: Vector3, strength: float) -> void:
 	_apply_throw(direction, strength)
 
 
-func _apply_throw(direction: Vector3, strength: float, from_sync := false) -> void:
+func _apply_throw(direction: Vector3, strength: float) -> void:
 	if thrown:
 		return
 
 	set_meta("throw_player", GameSession.current_turn)
-
-	freeze = false
-
-	gravity_scale = throw_gravity_scale
-
-	apply_central_impulse(direction * strength)
-
-	_mark_as_thrown()
+	_start_throw_physics(direction, strength)
 
 	# Sync to clients
 	if (
 		GameSession.selected_mode == "Local"
 		and multiplayer
 		and multiplayer.is_server()
-		and not from_sync
 	):
 		sync_throw.rpc(direction, strength)
 
@@ -112,17 +112,7 @@ func sync_throw(direction: Vector3, strength: float) -> void:
 	if multiplayer.is_server():
 		return
 
-	# Force sync visually on client
-	freeze = false
-	sleeping = false
-	gravity_scale = throw_gravity_scale
-
-	linear_velocity = Vector3.ZERO
-	angular_velocity = Vector3.ZERO
-
-	apply_central_impulse(direction * strength)
-
-	_mark_as_thrown()
+	_start_throw_physics(direction, strength)
 
 
 func request_next_bag() -> void:
@@ -154,18 +144,12 @@ func request_next_bag() -> void:
 
 	if GameSession.selected_mode == "Local":
 		if multiplayer and multiplayer.is_server():
-			get_parent().call_deferred("spawn_bag")
-			spawn_bag_rpc.rpc()
+			var spawn_point := get_parent()
+			if is_instance_valid(spawn_point):
+				spawn_point.call_deferred("spawn_bag")
+				spawn_point.rpc("spawn_bag_rpc")
 	else:
 		get_parent().call_deferred("spawn_bag")
-
-
-@rpc("authority", "reliable")
-func spawn_bag_rpc() -> void:
-	if multiplayer.is_server():
-		return
-
-	get_parent().call_deferred("spawn_bag")
 
 
 func _is_my_turn() -> bool:

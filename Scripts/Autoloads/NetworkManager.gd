@@ -24,6 +24,7 @@ var players: Dictionary = {}
 var udp := PacketPeerUDP.new()
 var broadcast_timer: Timer
 var found_servers: Array = []
+var rematch_in_progress: bool = false
 
 # =========================
 # SIGNALS
@@ -145,6 +146,7 @@ func register_player(data: Dictionary):
 @rpc("any_peer", "reliable")
 func start_match_rpc(map_path: String):
 	print("[RPC RECEIVED] Loading:", map_path)
+	rematch_in_progress = false
 
 	GameSession.start_match("Local", map_path, "Local", 20.0)
 
@@ -159,6 +161,9 @@ func start_match_rpc(map_path: String):
 # REMATCH
 # =========================
 func send_rematch_request() -> void:
+	if rematch_in_progress:
+		return
+
 	for id in players.keys():
 		if id != multiplayer.get_unique_id():
 			receive_rematch_request.rpc_id(id)
@@ -166,19 +171,50 @@ func send_rematch_request() -> void:
 
 @rpc("any_peer", "reliable")
 func receive_rematch_request() -> void:
+	if rematch_in_progress:
+		return
+
 	rematch_requested.emit()
 
 
 @rpc("any_peer", "reliable")
 func accept_rematch() -> void:
+	if rematch_in_progress:
+		return
+
 	if multiplayer.is_server():
-		start_rematch()
-		start_rematch.rpc()
+		var mode := GameSession.selected_mode
+		var map_path := GameSession.selected_map_path
+		var ui := GameSession.required_ui
+		var time_limit := GameSession.time_left
+
+		_begin_rematch(mode, map_path, ui, time_limit)
 
 
 @rpc("authority", "reliable")
-func start_rematch() -> void:
-	UIManager.restart()
+func start_rematch(
+	mode: String,
+	map_path: String,
+	ui: String,
+	time_limit: float
+) -> void:
+	rematch_in_progress = true
+	UIManager.restart(mode, map_path, ui, time_limit)
+
+
+func _begin_rematch(
+	mode: String,
+	map_path: String,
+	ui: String,
+	time_limit: float
+) -> void:
+	if mode.is_empty() or map_path.is_empty():
+		push_warning("[Network] Cannot rematch without an active match")
+		return
+
+	rematch_in_progress = true
+	start_rematch.rpc(mode, map_path, ui, time_limit)
+	start_rematch(mode, map_path, ui, time_limit)
 
 
 # =========================
@@ -286,6 +322,7 @@ func disconnect_game() -> void:
 	multiplayer.multiplayer_peer = null
 
 	players.clear()
+	rematch_in_progress = false
 
 	is_host = false
 	my_id = 0
