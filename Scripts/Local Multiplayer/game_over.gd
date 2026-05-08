@@ -11,6 +11,7 @@ func _ready() -> void:
 	GameSession.turns_exhausted.connect(_update_results)
 	NetworkManager.match_forfeit.connect(show_message)
 	NetworkManager.rematch_requested.connect(_on_rematch_requested)
+	NetworkManager.rematch_declined.connect(_on_rematch_declined)
 
 func _score_key(base_key: String) -> String:
 	if GameSession.selected_mode == "Local":
@@ -55,3 +56,9 @@ func _on_rematch_pressed() -> void:
 
 func _on_rematch_requested()->void:
 	UIManager.toggle_canvas($"../Rematch popup")
+
+
+func _on_rematch_declined(message: String) -> void:
+	restart.disabled = false
+	$"../Rematch popup".visible = false
+	$"../WarningPanel".show_alert(message)

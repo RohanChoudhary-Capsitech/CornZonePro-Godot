@@ -12,6 +12,13 @@ const MAP_LIST := [
 	"res://Scenes/Maps/stadium.tscn"
 ]
 
+const HOST_DEFAULT_BAG_ID := "rogue"
+const CLIENT_DEFAULT_BAG_ID := "neon"
+const BAG_CONFIGS := {
+	"rogue": preload("res://Resources/Bags/Rogue_bag.tres"),
+	"neon": preload("res://Resources/Bags/Neon_bag.tres")
+}
+
 # =========================
 # STATE
 # =========================
@@ -25,6 +32,8 @@ var udp := PacketPeerUDP.new()
 var broadcast_timer: Timer
 var found_servers: Array = []
 var rematch_in_progress: bool = false
+var pending_rematch_requester_id: int = 0
+var outgoing_rematch_target_id: int = 0
 
 # =========================
 # SIGNALS
@@ -41,6 +50,7 @@ signal server_found(server: Dictionary)
 signal match_forfeit(reason: String)
 
 signal rematch_requested
+signal rematch_declined(message: String)
 
 
 # =========================
@@ -83,7 +93,8 @@ func host_game() -> void:
 
 	var my_data = {
 		"id": my_id,
-		"name": Prefs.get_string("username", "Host")
+		"name": Prefs.get_string("username", "Host"),
+		"bag_id": get_local_bag_id()
 	}
 
 	players[my_id] = my_data
@@ -147,6 +158,7 @@ func register_player(data: Dictionary):
 func start_match_rpc(map_path: String):
 	print("[RPC RECEIVED] Loading:", map_path)
 	rematch_in_progress = false
+	_clear_rematch_request_state()
 
 	GameSession.start_match("Local", map_path, "Local", 20.0)
 
@@ -166,6 +178,7 @@ func send_rematch_request() -> void:
 
 	for id in players.keys():
 		if id != multiplayer.get_unique_id():
+			outgoing_rematch_target_id = int(id)
 			receive_rematch_request.rpc_id(id)
 
 
@@ -174,6 +187,7 @@ func receive_rematch_request() -> void:
 	if rematch_in_progress:
 		return
 
+	pending_rematch_requester_id = multiplayer.get_remote_sender_id()
 	rematch_requested.emit()
 
 
@@ -189,6 +203,37 @@ func accept_rematch() -> void:
 		var time_limit := GameSession.time_left
 
 		_begin_rematch(mode, map_path, ui, time_limit)
+
+
+func reject_rematch() -> void:
+	if not multiplayer or multiplayer.multiplayer_peer == null:
+		return
+
+	if multiplayer.is_server():
+		if pending_rematch_requester_id > 0:
+			rematch_declined_rpc.rpc_id(
+				pending_rematch_requester_id,
+				"Opponent declined rematch"
+			)
+		_clear_rematch_request_state()
+	else:
+		decline_rematch.rpc_id(1)
+		_clear_rematch_request_state()
+
+
+@rpc("any_peer", "reliable")
+func decline_rematch() -> void:
+	if not multiplayer.is_server():
+		return
+
+	rematch_declined.emit("Opponent declined rematch")
+	_clear_rematch_request_state()
+
+
+@rpc("authority", "reliable")
+func rematch_declined_rpc(message: String) -> void:
+	rematch_declined.emit(message)
+	_clear_rematch_request_state()
 
 
 @rpc("authority", "reliable")
@@ -215,6 +260,7 @@ func _begin_rematch(
 	rematch_in_progress = true
 	start_rematch.rpc(mode, map_path, ui, time_limit)
 	start_rematch(mode, map_path, ui, time_limit)
+	_clear_rematch_request_state()
 
 
 # =========================
@@ -285,7 +331,8 @@ func _on_connected_to_server() -> void:
 
 	var my_data = {
 		"id": my_id,
-		"name": Prefs.get_string("username", "Player")
+		"name": Prefs.get_string("username", "Player"),
+		"bag_id": get_local_bag_id()
 	}
 
 	register_player.rpc_id(1, my_data)
@@ -323,6 +370,7 @@ func disconnect_game() -> void:
 
 	players.clear()
 	rematch_in_progress = false
+	_clear_rematch_request_state()
 
 	is_host = false
 	my_id = 0
@@ -436,6 +484,105 @@ func get_local_ip() -> String:
 
 func is_connected_to_network() -> bool:
 	return multiplayer.multiplayer_peer != null
+
+
+func get_saved_equipped_bag_id(pref_key: String = "equipped_bag_id") -> String:
+	var bag_id := str(Prefs.get_string(pref_key, "")).to_lower()
+	if BAG_CONFIGS.has(bag_id):
+		return bag_id
+
+	return ""
+
+
+func get_local_bag_id() -> String:
+	var bag_id := get_saved_equipped_bag_id()
+	if not bag_id.is_empty():
+		return bag_id
+
+	return HOST_DEFAULT_BAG_ID if is_host else CLIENT_DEFAULT_BAG_ID
+
+
+func get_bag_config_for_player(player_index: int) -> BagConfig:
+	var bag_id := get_bag_id_for_player(player_index)
+	return get_bag_config_by_id(bag_id)
+
+
+func get_bag_config_by_id(bag_id: String) -> BagConfig:
+	var normalized_bag_id := bag_id.to_lower()
+	if BAG_CONFIGS.has(normalized_bag_id):
+		return BAG_CONFIGS[normalized_bag_id] as BagConfig
+
+	return BAG_CONFIGS[HOST_DEFAULT_BAG_ID] as BagConfig
+
+
+func get_bag_id_for_player(player_index: int) -> String:
+	if GameSession.selected_mode == "Local":
+		return _get_local_multiplayer_bag_id_for_player(player_index)
+	if GameSession.selected_mode == "PassPlay":
+		return _get_pass_play_bag_id_for_player(player_index)
+
+	if player_index == 2:
+		return get_alternate_bag_id(get_local_bag_id())
+
+	return get_local_bag_id()
+
+
+func get_alternate_bag_id(bag_id: String) -> String:
+	var normalized_bag_id := bag_id.to_lower()
+	if normalized_bag_id == HOST_DEFAULT_BAG_ID:
+		return CLIENT_DEFAULT_BAG_ID
+	if normalized_bag_id == CLIENT_DEFAULT_BAG_ID:
+		return HOST_DEFAULT_BAG_ID
+
+	return CLIENT_DEFAULT_BAG_ID
+
+
+func _get_local_multiplayer_bag_id_for_player(player_index: int) -> String:
+	var player_data := get_player_data_for_index(player_index)
+	var bag_id := str(player_data.get("bag_id", "")).to_lower()
+	var fallback_bag_id := HOST_DEFAULT_BAG_ID if player_index == 1 else CLIENT_DEFAULT_BAG_ID
+	if not BAG_CONFIGS.has(bag_id):
+		return fallback_bag_id
+
+	var other_player_index := 2 if player_index == 1 else 1
+	var other_player_data := get_player_data_for_index(other_player_index)
+	var other_bag_id := str(other_player_data.get("bag_id", "")).to_lower()
+
+	if BAG_CONFIGS.has(other_bag_id) and other_bag_id == bag_id:
+		return fallback_bag_id
+
+	return bag_id
+
+
+func _get_pass_play_bag_id_for_player(player_index: int) -> String:
+	var player_one_bag_id := get_saved_equipped_bag_id()
+	if player_one_bag_id.is_empty():
+		player_one_bag_id = HOST_DEFAULT_BAG_ID
+
+	if player_index == 1:
+		return player_one_bag_id
+
+	var player_two_bag_id := get_saved_equipped_bag_id("equipped_bag_id_p2")
+	if player_two_bag_id.is_empty() or player_two_bag_id == player_one_bag_id:
+		player_two_bag_id = get_alternate_bag_id(player_one_bag_id)
+
+	return player_two_bag_id
+
+
+func get_player_data_for_index(player_index: int) -> Dictionary:
+	if player_index == 1:
+		return players.get(1, {})
+
+	for peer_id in players.keys():
+		if int(peer_id) != 1:
+			return players.get(peer_id, {})
+
+	return {}
+
+
+func _clear_rematch_request_state() -> void:
+	pending_rematch_requester_id = 0
+	outgoing_rematch_target_id = 0
 
 
 

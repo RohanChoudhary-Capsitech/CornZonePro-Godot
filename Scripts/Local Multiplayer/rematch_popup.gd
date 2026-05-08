@@ -8,4 +8,7 @@ func _on_yes_pressed() -> void:
 
 func _on_no_pressed() -> void:
 	$"../GameOver/Control/GameOver BG/Rematch".disabled=false
-	UIManager.home()
+	NetworkManager.reject_rematch()
+	visible = false
+	if UIManager.result_screen:
+		UIManager.enable_canvas(UIManager.result_screen)

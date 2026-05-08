@@ -34,7 +34,7 @@ func _get_waiting_bag() -> Node:
 	return null
 
 
-func spawn_bag():
+func spawn_bag(player_index: int = GameSession.current_turn):
 	var waiting_bag := _get_waiting_bag()
 	if waiting_bag != null:
 		return waiting_bag
@@ -48,7 +48,7 @@ func spawn_bag():
 
 	obj.rotation_degrees = Vector3(-87.8, 0, 90)
 
-	obj.set_meta("throw_player", GameSession.current_turn)
+	obj.set_meta("throw_player", player_index)
 
 	add_child(obj)
 
@@ -58,11 +58,11 @@ func spawn_bag():
 
 
 @rpc("authority", "reliable")
-func spawn_bag_rpc() -> void:
+func spawn_bag_rpc(player_index: int) -> void:
 	if multiplayer and multiplayer.is_server():
 		return
 
-	spawn_bag()
+	spawn_bag(player_index)
 
 
 func _on_timer_timeout() -> void:
@@ -70,8 +70,9 @@ func _on_timer_timeout() -> void:
 
 	if GameSession.selected_mode == "Local" and multiplayer and multiplayer.multiplayer_peer != null:
 		if multiplayer.is_server():
-			spawn_bag()
-			spawn_bag_rpc.rpc()
+			var player_index := GameSession.current_turn
+			spawn_bag(player_index)
+			spawn_bag_rpc.rpc(player_index)
 		return
 
 	spawn_bag()

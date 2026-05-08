@@ -66,7 +66,7 @@ func save() -> void:
 	var file = FileAccess.open(PATH, FileAccess.WRITE)
 	if file:
 		var encoded = _encode(_data)
-		file.store_string(JSON.stringify(encoded))
+		file.store_string(JSON.stringify(encoded, "\t") + "\n")
 		_dirty = false
 		_timer = 0.0
 

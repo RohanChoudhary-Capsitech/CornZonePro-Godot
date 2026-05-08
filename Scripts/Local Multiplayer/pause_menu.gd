@@ -20,4 +20,4 @@ func _on_resume_pressed() -> void:
 	UIManager.toggle_canvas(self)
 
 func _on_leave_match_pressed() -> void:
-	UIManager.toggle_canvas($"../WarningPanel")
+	$"../WarningPanel".show_leave_match_warning()

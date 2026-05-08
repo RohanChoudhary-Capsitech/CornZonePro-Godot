@@ -1,6 +1,7 @@
 extends StaticBody3D
 
 const AWARDED_POINTS_META := "awarded_points"
+const TOUCHED_BOARD_META := "touched_board"
 
 # Board.gd or Game.gd
 func _ready() -> void:
@@ -32,6 +33,8 @@ func on_bag_landed(body: Node3D) -> void:
 	if GameSession.selected_mode == "Local":
 		if not multiplayer or multiplayer.multiplayer_peer == null or not multiplayer.is_server():
 			return
+
+	body.set_meta(TOUCHED_BOARD_META, true)
 
 	var awarded_points: int = int(body.get_meta(AWARDED_POINTS_META, 0))
 	if awarded_points >= 1:
