@@ -19,7 +19,7 @@ extends CanvasLayer
 
 var facebook_link: String = "https://www.facebook.com/profile.php?id=61585251616629"
 var instagram_link: String = "https://www.instagram.com/gameewisee/"
-var twitter_link: String = ""
+var gamewise_link: String = "https://www.thegamewise.com/"
 var linkedin_link: String = "https://www.linkedin.com/company/gamewiseglobal/about/?viewAsMember=true"
 
 var is_setting_open = false
@@ -52,7 +52,7 @@ func _on_instagram_button_pressed() -> void:
 
 
 func _on_twitter_button_pressed() -> void:
-	OS.shell_open(twitter_link)
+	OS.shell_open(gamewise_link)
 
 
 func _on_linked_in_button_pressed() -> void:

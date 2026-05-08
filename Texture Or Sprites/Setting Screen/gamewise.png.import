@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg1ctry5rvt2u"
-path="res://.godot/imported/twitter.png-07ee507686ab5513f4419d5ef5f2a15e.ctex"
+uid="uid://jl8yy52xu3r7"
+path="res://.godot/imported/gamewise.png-4c061ac194f7fddc8ebeaeca4f50832e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Setting Screen/twitter.png"
-dest_files=["res://.godot/imported/twitter.png-07ee507686ab5513f4419d5ef5f2a15e.ctex"]
+source_file="res://Texture Or Sprites/Setting Screen/gamewise.png"
+dest_files=["res://.godot/imported/gamewise.png-4c061ac194f7fddc8ebeaeca4f50832e.ctex"]
 
 [params]
 
