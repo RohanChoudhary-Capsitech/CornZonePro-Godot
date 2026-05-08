@@ -3711,6 +3711,7 @@ item_scene = ExtResource("86_vaya1")
 datas = Array[Texture2D]([ExtResource("59_gr5sq"), ExtResource("60_u6nbl"), ExtResource("61_4xdiu"), ExtResource("62_0u48y"), ExtResource("63_0u48y"), ExtResource("64_qnn5i"), ExtResource("65_ym5e3"), ExtResource("66_ym5e3"), ExtResource("67_503ab"), ExtResource("68_nbuyv"), ExtResource("69_as3ia"), ExtResource("70_fgm6c"), ExtResource("71_52jo1"), ExtResource("72_tuwk5"), ExtResource("73_r13op")])
 
 [node name="SettingScreen" type="CanvasLayer" parent="." unique_id=1804771245]
+visible = false
 script = ExtResource("44_m3bm7")
 setting_off = ExtResource("89_f3k6c")
 setting_on = ExtResource("91_6ojkg")
@@ -5928,6 +5929,8 @@ autowrap_mode = 2
 [connection signal="pressed" from="ShopScreen/Panel/BottomPanel/Play/PlayButton" to="ShopScreen" method="_on_play_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/BagsPanel/BagCrossButton" to="ShopScreen" method="_on_bag_cross_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/BoardsPanel/BoardCrossButton" to="ShopScreen" method="_on_board_cross_button_pressed"]
+[connection signal="pressed" from="InventoryScreen/Panel/TopPanel/Profile/Profile Icon" to="HomeScreen" method="_on_profile_icon_pressed"]
+[connection signal="pressed" from="InventoryScreen/Panel/TopPanel/SettingButton" to="HomeScreen" method="_on_setting_button_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Shop/ShopButton" to="InventoryScreen" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Play/PlayButton" to="InventoryScreen" method="_on_play_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/CrossButton" to="SettingScreen" method="_on_cross_button_pressed"]
