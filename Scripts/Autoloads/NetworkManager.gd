@@ -9,7 +9,11 @@ const DISCOVERY_PORT := 8888
 
 const MAP_LIST := [
 	"res://Scenes/Maps/street.tscn",
-	"res://Scenes/Maps/stadium.tscn"
+	"res://Scenes/Maps/stadium.tscn",
+	"res://Scenes/Maps/backyard.tscn",
+	"res://Scenes/Maps/metro.tscn",
+	"res://Scenes/Maps/rooftop.tscn",
+	"res://Scenes/Maps/lawn.tscn"
 ]
 
 const HOST_DEFAULT_BAG_ID := "rogue"
