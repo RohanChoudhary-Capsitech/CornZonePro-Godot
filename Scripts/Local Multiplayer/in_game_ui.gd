@@ -32,9 +32,8 @@ func _ready() -> void:
 	GameSession.turns_exhausted.connect(_on_match_over)
 	_clear_labels()
 	_sync_total_scores()
-	p1_turn_ui.visible = true
-	await get_tree().create_timer(1.0).timeout
-	p1_turn_ui.visible = false
+	
+	_on_turn_changed(GameSession.current_turn)
 	print("Player ", GameSession.current_turn, "'s turn")
 
 func _clear_labels() -> void:
@@ -65,6 +64,8 @@ func _on_bag_result_changed(player: int, index: int, points: int) -> void:
 	_sync_total_scores()
 
 func _on_turn_changed(player: int) -> void:
+	p1_turn_ui.visible = false
+	p2_turn_ui.visible = false
 	if player == 1:
 		p1_turn_ui.visible = true
 		await get_tree().create_timer(1.0).timeout
