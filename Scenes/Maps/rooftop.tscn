@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b5xrxo8gdcqo"]
+[gd_scene format=3 uid="uid://dhy1ll24edepl"]
 
 [ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="1_pjteq"]
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_dv67y"]
@@ -10,6 +10,12 @@ size = Vector3(50, 0.25, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ey7h"]
 size = Vector3(50, 0.25, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pjteq"]
+size = Vector3(40, 25, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dv67y"]
+size = Vector3(40, 25, 0.5)
 
 [node name="Rooftop" type="Node3D" unique_id=1397785541]
 
@@ -41,7 +47,37 @@ bag = ExtResource("3_f53w0")
 [node name="StartTimer" type="Timer" parent="." unique_id=919203266]
 wait_time = 0.5
 
-[node name="Bg 5" parent="." unique_id=935024502 instance=ExtResource("4_pjteq")]
+[node name="RoofTopScene" parent="." unique_id=935024502 instance=ExtResource("4_pjteq")]
 transform = Transform3D(1.285, 0, 0, 0, 1, 0, 0, 0, 1, 2.8042383, 0.12530994, 39.93816)
+
+[node name="BackWall" type="StaticBody3D" parent="." unique_id=1606519818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9336824, 11.294596, 6.9951277)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BackWall" unique_id=1394449577]
+visible = false
+mesh = SubResource("BoxMesh_pjteq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackWall" unique_id=1861056584]
+shape = SubResource("BoxShape3D_dv67y")
+
+[node name="LeftWall" type="StaticBody3D" parent="." unique_id=2097835289]
+transform = Transform3D(-0.2872937, 0, 0.9578425, 0, 1, 0, -0.9578425, 0, -0.2872937, -10.137142, 11.294596, 27.689476)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftWall" unique_id=2119964368]
+visible = false
+mesh = SubResource("BoxMesh_pjteq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall" unique_id=570419228]
+shape = SubResource("BoxShape3D_dv67y")
+
+[node name="RightWall" type="StaticBody3D" parent="." unique_id=116737034]
+transform = Transform3D(0.06242468, 0, 0.9980497, 0, 1, 0, -0.9980497, 0, 0.06242468, 8.356433, 11.294596, 27.09415)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightWall" unique_id=1830725499]
+visible = false
+mesh = SubResource("BoxMesh_pjteq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall" unique_id=326969798]
+shape = SubResource("BoxShape3D_dv67y")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]

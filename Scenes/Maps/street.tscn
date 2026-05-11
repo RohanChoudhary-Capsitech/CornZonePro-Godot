@@ -11,6 +11,12 @@ size = Vector3(50, 0.25, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ey7h"]
 size = Vector3(50, 0.25, 100)
 
+[sub_resource type="BoxMesh" id="BoxMesh_x6xx7"]
+size = Vector3(50, 20, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xknfr"]
+size = Vector3(50, 20, 0.5)
+
 [node name="Street" type="Node3D" unique_id=1397785541]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
@@ -41,7 +47,37 @@ bag = ExtResource("3_3qr72")
 [node name="StartTimer" type="Timer" parent="." unique_id=919203266]
 wait_time = 0.5
 
-[node name="Bg 3" parent="." unique_id=858353015 instance=ExtResource("4_x6xx7")]
+[node name="StreetScene" parent="." unique_id=858353015 instance=ExtResource("4_x6xx7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26307583, 0.12530994, 39.93816)
+
+[node name="BackWall" type="StaticBody3D" parent="." unique_id=652998891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BackWall" unique_id=1299533513]
+visible = false
+mesh = SubResource("BoxMesh_x6xx7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackWall" unique_id=588287138]
+shape = SubResource("BoxShape3D_xknfr")
+
+[node name="LeftWall" type="StaticBody3D" parent="." unique_id=1812478078]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -6.497259, 10, 30.160507)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftWall" unique_id=373362554]
+visible = false
+mesh = SubResource("BoxMesh_x6xx7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall" unique_id=915739894]
+shape = SubResource("BoxShape3D_xknfr")
+
+[node name="RightWall" type="StaticBody3D" parent="." unique_id=1295650896]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 6.571558, 10, 30.160507)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightWall" unique_id=1410519349]
+visible = false
+mesh = SubResource("BoxMesh_x6xx7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall" unique_id=244009044]
+shape = SubResource("BoxShape3D_xknfr")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]

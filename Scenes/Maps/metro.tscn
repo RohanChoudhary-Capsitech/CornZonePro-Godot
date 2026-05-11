@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bl35e8alh6883"]
+[gd_scene format=3 uid="uid://b0kflru1alw5l"]
 
 [ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="1_48jhn"]
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_dv4fa"]
@@ -10,6 +10,26 @@ size = Vector3(50, 0.25, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ey7h"]
 size = Vector3(50, 0.25, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_48jhn"]
+size = Vector3(20, 20, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dv4fa"]
+size = Vector3(20, 20, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ja58s"]
+size = Vector3(0.5, 10, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_48jhn"]
+size = Vector3(0.5, 10, 60)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_48jhn"]
+radius = 1.75
+height = 18.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dv4fa"]
+height = 18.0
+radius = 1.75
 
 [node name="Metro" type="Node3D" unique_id=1397785541]
 
@@ -41,7 +61,67 @@ bag = ExtResource("3_ja58s")
 [node name="StartTimer" type="Timer" parent="." unique_id=919203266]
 wait_time = 0.5
 
-[node name="Bg 4" parent="." unique_id=2054336397 instance=ExtResource("4_48jhn")]
+[node name="MetroScene" parent="." unique_id=2054336397 instance=ExtResource("4_48jhn")]
 transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 1, -0.2629094, 0.124792576, 35.301083)
+
+[node name="BackWall" type="StaticBody3D" parent="." unique_id=91303208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.7724905, -8.147257)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BackWall" unique_id=607997541]
+visible = false
+mesh = SubResource("BoxMesh_48jhn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackWall" unique_id=987800323]
+shape = SubResource("BoxShape3D_dv4fa")
+
+[node name="LeftWall" type="StaticBody3D" parent="." unique_id=643941475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6119537, 4.0054607, 27.369555)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftWall" unique_id=1669415996]
+visible = false
+mesh = SubResource("BoxMesh_ja58s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall" unique_id=1753772728]
+shape = SubResource("BoxShape3D_48jhn")
+
+[node name="RightWall" type="StaticBody3D" parent="." unique_id=1080468497]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8.397965, 4.0054607, 27.369555)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightWall" unique_id=782821867]
+visible = false
+mesh = SubResource("BoxMesh_ja58s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall" unique_id=2020907110]
+shape = SubResource("BoxShape3D_48jhn")
+
+[node name="Pillar 1" type="StaticBody3D" parent="." unique_id=211834962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.843893, 7.469122, 46.121666)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pillar 1" unique_id=2100127504]
+mesh = SubResource("CapsuleMesh_48jhn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar 1" unique_id=624896454]
+shape = SubResource("CylinderShape3D_dv4fa")
+
+[node name="Pillar 2" type="StaticBody3D" parent="." unique_id=378523983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.843893, 7.469122, 24.916538)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pillar 2" unique_id=224261231]
+visible = false
+mesh = SubResource("CapsuleMesh_48jhn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar 2" unique_id=286623204]
+shape = SubResource("CylinderShape3D_dv4fa")
+
+[node name="Pillar 3" type="StaticBody3D" parent="." unique_id=1406443150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.844, 7.469, 0.4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pillar 3" unique_id=1861158838]
+visible = false
+mesh = SubResource("CapsuleMesh_48jhn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar 3" unique_id=1200587505]
+shape = SubResource("CylinderShape3D_dv4fa")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]

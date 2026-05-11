@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://bvke31y5qqei2"]
+[gd_scene format=3 uid="uid://kvbkcag00f0t"]
 
 [ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="1_a6nnl"]
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_ie6kc"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_m0gys"]
-[ext_resource type="PackedScene" uid="uid://b3vy6ody5vijx" path="res://3D Models/BG Scenes/Street(Bg 3)/Bg 3.glb" id="4_jq6d2"]
+[ext_resource type="PackedScene" uid="uid://b8qonhotjm8cx" path="res://3D Models/BG Scenes/Backyard(Bg 6)/Bg 6.glb" id="4_a6nnl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(50, 0.25, 100)
@@ -11,12 +11,24 @@ size = Vector3(50, 0.25, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ey7h"]
 size = Vector3(50, 0.25, 100)
 
-[node name="Street" type="Node3D" unique_id=1397785541]
+[sub_resource type="BoxMesh" id="BoxMesh_a6nnl"]
+size = Vector3(50, 20, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ie6kc"]
+size = Vector3(50, 20, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ie6kc"]
+size = Vector3(1, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a6nnl"]
+size = Vector3(1, 1, 50)
+
+[node name="Backyard" type="Node3D" unique_id=1397785541]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
-transform = Transform3D(1, 0, 0, 0, 0.17155087, 0.9851753, 0, -0.9851753, 0.17155087, 0, 6.6319437, 19.546883)
+transform = Transform3D(1, 0, 0, 0, 0.17155087, 0.9851753, 0, -0.9851753, 0.17155087, 0, 7.8243723, 19.546883)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
 transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.8792332, 0, 4.751979, 51.187668)
@@ -41,7 +53,49 @@ bag = ExtResource("3_m0gys")
 [node name="StartTimer" type="Timer" parent="." unique_id=919203266]
 wait_time = 0.5
 
-[node name="Bg 3" parent="." unique_id=1787735423 instance=ExtResource("4_jq6d2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26307583, 0.12530994, 39.93816)
+[node name="BackyardScene" parent="." unique_id=2105745883 instance=ExtResource("4_a6nnl")]
+transform = Transform3D(1, 0, 0, 0, 1.375, 0, 0, 0, 1, -0.26307583, 0.12530994, 39.93816)
+
+[node name="Backwall" type="StaticBody3D" parent="." unique_id=768037440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8266277, 0, 0.9075365)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Backwall" unique_id=437245597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.5, 0)
+visible = false
+mesh = SubResource("BoxMesh_a6nnl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Backwall" unique_id=966049974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.5, 0)
+shape = SubResource("BoxShape3D_ie6kc")
+
+[node name="LeftSideWall" type="StaticBody3D" parent="." unique_id=919889098]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -6.269452, 9.319756, 27.030005)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftSideWall" unique_id=995302670]
+visible = false
+mesh = SubResource("BoxMesh_a6nnl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftSideWall" unique_id=99408624]
+shape = SubResource("BoxShape3D_ie6kc")
+
+[node name="RightSideWall" type="StaticBody3D" parent="." unique_id=981057679]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 8.21917, 9.319756, 27.030005)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightSideWall" unique_id=371803039]
+visible = false
+mesh = SubResource("BoxMesh_a6nnl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightSideWall" unique_id=1537780124]
+shape = SubResource("BoxShape3D_ie6kc")
+
+[node name="Holder" type="StaticBody3D" parent="." unique_id=1047562679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.296881, 0.9290123, 26.117485)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Holder" unique_id=177129449]
+visible = false
+mesh = SubResource("BoxMesh_ie6kc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Holder" unique_id=494584725]
+shape = SubResource("BoxShape3D_a6nnl")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
