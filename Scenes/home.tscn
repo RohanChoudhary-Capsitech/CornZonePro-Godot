@@ -5554,7 +5554,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_gr5sq")
 text = "2x reward"
 
 [node name="MultiplayerScreen" type="CanvasLayer" parent="." unique_id=910901950]
-visible = false
 script = ExtResource("73_2pxd8")
 server_button_scene = ExtResource("82_wg2o6")
 
@@ -5693,22 +5692,24 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="MultiplayerScreen/Panel/PanelBg" unique_id=1793440525]
-visible = false
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -53.0
-offset_top = -37.0
-offset_right = 53.0
-offset_bottom = -12.0
+anchor_bottom = 0.5
+offset_left = -129.5225
+offset_top = 66.182495
+offset_right = 129.52252
+offset_bottom = 171.8175
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_vkfas")
-theme_override_font_sizes/font_size = 20
-text = "Loading..."
+theme_override_font_sizes/font_size = 25
+text = "Host/search with a room id/name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="LeaderBoardScreen" type="CanvasLayer" parent="." unique_id=302118161]
 visible = false

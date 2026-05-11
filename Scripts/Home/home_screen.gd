@@ -25,7 +25,10 @@ func _on_pass_n_play_button_pressed() -> void:
 	UIManager.pass_play()
 
 func _on_lan_button_pressed() -> void:
-	UIManager.toggle_canvas($"../MultiplayerScreen")
+	var multiplayer_screen := $"../MultiplayerScreen"
+	UIManager.toggle_canvas(multiplayer_screen)
+	if multiplayer_screen.visible and multiplayer_screen.has_method("on_menu_opened"):
+		multiplayer_screen.on_menu_opened()
 
 
 func _on_leaderboard_button_pressed() -> void:

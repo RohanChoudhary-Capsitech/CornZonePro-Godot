@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-const ROOM_SEARCH_TIMEOUT_SECONDS := 5.0
+const DEFAULT_STATUS_MESSAGE = "Host/search with a room id/name"
+const ROOM_SEARCH_TIMEOUT_SECONDS = 5.0
 
 @export var server_button_scene: PackedScene
 @onready var container: VBoxContainer = $Panel/PanelBg/ScrollContainer/RoomsContent
@@ -24,7 +25,11 @@ func _ready() -> void:
 	search_timeout_timer.wait_time = ROOM_SEARCH_TIMEOUT_SECONDS
 	search_timeout_timer.timeout.connect(_on_room_search_timeout)
 	add_child(search_timeout_timer)
-	_set_status("")
+	_show_default_status()
+
+
+func on_menu_opened() -> void:
+	_show_default_status()
 
 
 func _on_cross_button_pressed() -> void:
@@ -36,7 +41,7 @@ func _on_cross_button_pressed() -> void:
 	host_button.disabled = false
 	join_button.disabled = false
 	room_input.editable = true
-	_set_status("")
+	_show_default_status()
 	UIManager.toggle_canvas(self)
 
 
@@ -71,7 +76,13 @@ func _on_join_button_pressed() -> void:
 	join_button.disabled = true
 	room_input.editable = true
 	_set_status("Searching for room ID: " + room_id)
-	NetworkManager.start_search()
+	var search_started = NetworkManager.start_search()
+	if not search_started:
+		host_button.disabled = false
+		join_button.disabled = false
+		room_input.editable = true
+		pending_join_room_id = ""
+		return
 	_start_room_search_timeout()
 
 
@@ -156,6 +167,13 @@ func _set_status(message: String) -> void:
 	status_label.visible = not message.is_empty()
 
 
+func _show_default_status() -> void:
+	if not pending_join_room_id.is_empty():
+		return
+	if not host_button.disabled and not join_button.disabled:
+		_set_status(DEFAULT_STATUS_MESSAGE)
+
+
 func _start_room_search_timeout() -> void:
 	if search_timeout_timer == null:
 		return
@@ -179,7 +197,7 @@ func _on_room_search_timeout() -> void:
 	join_button.disabled = false
 	room_input.editable = true
 	pending_join_room_id = ""
-	_set_status("Room not found after 5 seconds")
+	_set_status("Room not found!!! Refresh")
 
 
 func _normalize_room_id(value: String) -> String:

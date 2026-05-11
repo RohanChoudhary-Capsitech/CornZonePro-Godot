@@ -452,14 +452,20 @@ func stop_broadcast() -> void:
 # =========================
 # SEARCH
 # =========================
-func start_search() -> void:
+func start_search() -> bool:
 	udp.close()
 
 	found_servers.clear()
 
-	udp.bind(DISCOVERY_PORT)
+	var error := udp.bind(DISCOVERY_PORT)
+	if error != OK:
+		var message := "Unable to search for rooms: " + error_string(error)
+		push_error("[Network] " + message)
+		room_join_failed.emit(message)
+		return false
 
 	print("[Network] Searching...")
+	return true
 
 
 func stop_search() -> void:
