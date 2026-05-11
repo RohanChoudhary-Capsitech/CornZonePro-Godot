@@ -4369,6 +4369,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ttur7")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_pmkjb")
 
 [node name="MapSelectScreen" type="CanvasLayer" parent="." unique_id=1321304884]
+visible = false
 script = ExtResource("114_ttur7")
 
 [node name="BG" type="TextureRect" parent="MapSelectScreen" unique_id=1114887386]
@@ -5917,7 +5918,6 @@ autowrap_mode = 2
 [connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/TimerButton" to="HomeScreen" method="_on_timer_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/PassNPlayButton" to="HomeScreen" method="_on_pass_n_play_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/LANButton" to="HomeScreen" method="_on_lan_button_pressed"]
-[connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/LockedButton" to="HomeScreen" method="_on_locked_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/BottomPanel/Shop/ShopButton" to="HomeScreen" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/BottomPanel/Inventory/InventoryButton" to="HomeScreen" method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/MidPanel/BagPanel/Bottom/BagBuyButton" to="ShopScreen" method="_on_bag_buy_button_pressed"]
@@ -5945,6 +5945,11 @@ autowrap_mode = 2
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/TopPanel/Social/SocialsButton" to="SettingScreen" method="_on_socials_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/TopPanel/MoreGames/MoreGamePanelButton" to="SettingScreen" method="_on_more_game_panel_button_pressed"]
 [connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/LawnMap" to="MapSelectScreen" method="_on_lawn_map_pressed"]
+[connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StreetMap" to="MapSelectScreen" method="_on_street_map_pressed"]
+[connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StadiumMap" to="MapSelectScreen" method="_on_stadium_map_pressed"]
+[connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/BackyardMap" to="MapSelectScreen" method="_on_backyard_map_pressed"]
+[connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/RooftopMap" to="MapSelectScreen" method="_on_rooftop_map_pressed"]
+[connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/MetroMap" to="MapSelectScreen" method="_on_metro_map_pressed"]
 [connection signal="pressed" from="MapSelectScreen/Panel/CrossButton" to="MapSelectScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="ProfileScreen/Panel/ProfileBg/CrossButton" to="ProfileScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="InfoScreen/Panel/PanelBg/CrossButton" to="InfoScreen" method="_on_cross_button_pressed"]

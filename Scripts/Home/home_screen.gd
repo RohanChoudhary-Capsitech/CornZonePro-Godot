@@ -31,10 +31,6 @@ func _on_lan_button_pressed() -> void:
 func _on_leaderboard_button_pressed() -> void:
 	UIManager.toggle_canvas($"../LeaderBoardScreen")
 
-
-func _on_locked_button_pressed() -> void:
-	UIManager.toggle_canvas($"../MapSelectScreen") 
-
 func _on_shop_button_pressed() -> void:
 	UIManager.toggle_canvas($"../ShopScreen")
 

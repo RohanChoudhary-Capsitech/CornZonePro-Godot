@@ -636,14 +636,14 @@ anchor_left = 0.5
 anchor_top = 0.38700002
 anchor_right = 0.5
 anchor_bottom = 0.38700002
-offset_left = -140.54625
-offset_top = -72.72418
-offset_right = 140.54626
-offset_bottom = 24.525818
+offset_left = -142.0
+offset_top = -60.715027
+offset_right = 139.09253
+offset_bottom = 36.534973
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_fbptx")
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 74
 text = "99955"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -671,10 +671,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -132.5
-offset_top = -27.500008
-offset_right = 132.5
-offset_bottom = 27.500008
+offset_left = -160.0
+offset_top = 4.0
+offset_right = 160.40906
+offset_bottom = 70.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -695,10 +695,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -132.5
-offset_top = 50.5
-offset_right = 132.5
-offset_bottom = 105.5
+offset_left = -160.20453
+offset_top = 101.75
+offset_right = 160.20453
+offset_bottom = 168.25
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -713,6 +713,7 @@ action_mode = 0
 text = "Restart"
 
 [node name="Share" type="Button" parent="GameOver/Control/PausePanel BG" unique_id=303444037]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -744,4 +745,3 @@ text = "Share"
 [connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Cross" to="PauseMenu" method="_on_cross_pressed"]
 [connection signal="pressed" from="GameOver/Control/PausePanel BG/Home" to="GameOver" method="_on_home_pressed"]
 [connection signal="pressed" from="GameOver/Control/PausePanel BG/Restart" to="GameOver" method="_on_restart_pressed"]
-[connection signal="pressed" from="GameOver/Control/PausePanel BG/Share" to="GameOver" method="_on_share_pressed"]
