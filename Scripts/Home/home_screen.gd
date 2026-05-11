@@ -8,6 +8,7 @@ func _on_setting_button_pressed() -> void:
 	UIManager.toggle_canvas($"../SettingScreen")
 
 func _on_timer_button_pressed() -> void:
+	UIManager.toggle_canvas($"../MapSelectScreen")
 	UIManager.single_player()
 
 func _on_profile_icon_pressed() -> void:
@@ -20,6 +21,7 @@ func _on_daily_reward_button_pressed() -> void:
 	UIManager.toggle_canvas($"../DailyRewardScreen")
 
 func _on_pass_n_play_button_pressed() -> void:
+	UIManager.toggle_canvas($"../MapSelectScreen")
 	UIManager.pass_play()
 
 func _on_lan_button_pressed() -> void:

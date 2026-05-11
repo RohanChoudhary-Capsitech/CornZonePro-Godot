@@ -1,7 +1,12 @@
 extends Node
 
+
+#------Scenes----------------------------
 const DEFAULT_MAP_SCENE_PATH := "res://Scenes/Maps/street.tscn"
 const DEFAULT_MAP_CONFIG := preload("res://Resources/Maps/street.tres")
+
+
+
 
 var canvas_layers: Array[CanvasLayer] = []
 var loading_screen: CanvasLayer
@@ -92,7 +97,13 @@ func _goto_match()->void:
 	SceneManager.goto(GameSession.selected_map_path)
 
 func single_player()->void:
-	_start_match("Single")
+	GameSession.selected_mode="Single"
+	GameSession.required_ui="Single"
+	# toggle_canvas($MapSelectScreen)
+	# _start_match("Single")
+
+func map_select_data()->void:
+	pass
 
 
 func home() -> void:
@@ -182,7 +193,9 @@ func restart(
 # 	_begin_match(mode, map_path, ui, time_limit)
 
 func pass_play()->void:
-	_start_match("PassPlay")
+	GameSession.selected_mode="PassPlay"
+	GameSession.required_ui="PassPlay"
+	# _start_match("PassPlay")
 
 func local_multiplayer()->void:
 	pass
