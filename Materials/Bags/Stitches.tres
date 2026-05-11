@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dfvf33aasv75v"]
+
+[ext_resource type="Texture2D" uid="uid://dojal3ic1p7sh" path="res://Texture Or Sprites/Bags/stichess.png" id="1_co46j"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_co46j")
+uv1_scale = Vector3(4.185, 4.235, 4.185)
+uv1_offset = Vector3(0.035, 0.02, 0)

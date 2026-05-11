@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7p4s0fr1k8gt"]
+
+[ext_resource type="Texture2D" uid="uid://ccwfwr3drabxe" path="res://Texture Or Sprites/Bags/PicPunk.png" id="1_x4pal"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_x4pal")
+uv1_scale = Vector3(4.185, 4.1, 4.185)
+uv1_offset = Vector3(0.035, 0.02, 0)

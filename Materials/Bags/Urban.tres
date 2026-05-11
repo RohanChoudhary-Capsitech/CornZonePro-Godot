@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bi3oop0ghs2or"]
+
+[ext_resource type="Texture2D" uid="uid://b183gbrttn0r7" path="res://Texture Or Sprites/Bags/urban.png" id="1_2jnyd"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_2jnyd")
+uv1_scale = Vector3(4.185, 4.1, 4.185)
+uv1_offset = Vector3(0.035, 0.02, 0)

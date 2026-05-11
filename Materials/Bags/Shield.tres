@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cqf7qdjlechkq"]
+
+[ext_resource type="Texture2D" uid="uid://dkfpc48ydi1un" path="res://Texture Or Sprites/Bags/shield.png" id="1_rb25c"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_rb25c")
+uv1_scale = Vector3(4.185, 4.1, 4.185)
+uv1_offset = Vector3(0.035, 0.02, 0)

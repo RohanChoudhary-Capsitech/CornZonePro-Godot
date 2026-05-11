@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://uu21at5wqngj"]
+
+[ext_resource type="Texture2D" uid="uid://cxcjxp052jd4u" path="res://Texture Or Sprites/Bags/Peace.png" id="1_rrnbj"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_rrnbj")
+uv1_scale = Vector3(4.215, 4.41, 4.185)
+uv1_offset = Vector3(0.035, 0.02, 0)

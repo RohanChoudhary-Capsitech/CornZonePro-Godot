@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://kf6r22mrcdaa" path="res://3D Models/bag (1).glb" id="1_wly7n"]
 [ext_resource type="Script" uid="uid://ckyc7bi5mvrio" path="res://Scripts/corn_bag.gd" id="2_6qegm"]
-[ext_resource type="Material" uid="uid://dr0rmg33fscfy" path="res://Materials/Rogue.tres" id="3_7uun7"]
+[ext_resource type="Material" uid="uid://bi3oop0ghs2or" path="res://Materials/Bags/Urban.tres" id="3_3ifbe"]
 [ext_resource type="Script" uid="uid://dvh52d1f3pjcy" path="res://Scripts/swipe_input_controller.gd" id="4_1mq3k"]
 [ext_resource type="Script" uid="uid://dhymrr1rn2t57" path="res://Scripts/projectile_path.gd" id="5_3ifbe"]
 
@@ -22,7 +22,7 @@ script = ExtResource("2_6qegm")
 
 [node name="sandbag_geo1" parent="." index="0" unique_id=164163211]
 transform = Transform3D(25, 0, 0, 0, -1.8718511, -24.929825, 0, 24.929825, -1.8718511, 0, 0, 0)
-material_override = ExtResource("3_7uun7")
+material_override = ExtResource("3_3ifbe")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1974710764]
 transform = Transform3D(25, 0, 0, 0, -1.8718511, -24.929825, 0, 24.929825, -1.8718511, 0, 0, 0)
