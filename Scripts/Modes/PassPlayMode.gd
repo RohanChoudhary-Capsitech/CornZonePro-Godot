@@ -31,7 +31,7 @@ func on_bag_thrown()->void:
 	GameSession.turn_changed.emit(GameSession.current_turn)
 
 func on_match_end() -> void:
-	if not results_saved and (GameSession.score_p1 > 0 or GameSession.score_p2 > 0):
+	if GameSession.match_over and not results_saved:
 		_save_scores()
 	_reset_round()
 

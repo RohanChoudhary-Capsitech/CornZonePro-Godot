@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drmvoxy81hgc2"
-path="res://.godot/imported/Bg.png-db2bf5e9c975d387e48f7276bf623906.ctex"
+uid="uid://cn4vnibkehdgu"
+path="res://.godot/imported/Group 575.png-7f4d22e2cce57fdf9c38d5c8bcc4c422.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Home Screen/Bg.png"
-dest_files=["res://.godot/imported/Bg.png-db2bf5e9c975d387e48f7276bf623906.ctex"]
+source_file="res://Texture Or Sprites/Bags UI/Group 575.png"
+dest_files=["res://.godot/imported/Group 575.png-7f4d22e2cce57fdf9c38d5c8bcc4c422.ctex"]
 
 [params]
 

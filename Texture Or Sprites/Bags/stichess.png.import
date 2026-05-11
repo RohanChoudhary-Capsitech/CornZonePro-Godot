@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drmvoxy81hgc2"
-path="res://.godot/imported/Bg.png-db2bf5e9c975d387e48f7276bf623906.ctex"
+uid="uid://dojal3ic1p7sh"
+path="res://.godot/imported/stichess.png-c45dcbd94d9b4fd05303fdd929a548d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Home Screen/Bg.png"
-dest_files=["res://.godot/imported/Bg.png-db2bf5e9c975d387e48f7276bf623906.ctex"]
+source_file="res://Texture Or Sprites/Bags/stichess.png"
+dest_files=["res://.godot/imported/stichess.png-c45dcbd94d9b4fd05303fdd929a548d9.ctex"]
 
 [params]
 

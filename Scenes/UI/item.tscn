@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chhpkvyv8fja0"]
 
 [ext_resource type="Texture2D" uid="uid://ghlhps58qs8g" path="res://Texture Or Sprites/Inventory Screen/Rectangle 30.png" id="1_2eekc"]
-[ext_resource type="Texture2D" uid="uid://bl4p6it0edd3p" path="res://Texture Or Sprites/Bags/blue  3.png" id="2_6u4ry"]
+[ext_resource type="Texture2D" uid="uid://bl4p6it0edd3p" path="res://Texture Or Sprites/Bags UI/blue  3.png" id="2_6u4ry"]
 [ext_resource type="Script" uid="uid://c0cdod7n0km0d" path="res://Scripts/Inventory/item.gd" id="2_e5txi"]
 [ext_resource type="Texture2D" uid="uid://bo67y4iu5rkb4" path="res://Texture Or Sprites/Inventory Screen/Equipicon.png" id="2_jl4sg"]
 [ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="2_lxahe"]

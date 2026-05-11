@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl4p6it0edd3p"
-path="res://.godot/imported/blue  3.png-ee6c5f37fd2c81368231f79c1226479c.ctex"
+uid="uid://dkfpc48ydi1un"
+path="res://.godot/imported/shield.png-d2164ca8c1ea8844435a42c8cced2014.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags/blue  3.png"
-dest_files=["res://.godot/imported/blue  3.png-ee6c5f37fd2c81368231f79c1226479c.ctex"]
+source_file="res://Texture Or Sprites/Bags/shield.png"
+dest_files=["res://.godot/imported/shield.png-d2164ca8c1ea8844435a42c8cced2014.ctex"]
 
 [params]
 

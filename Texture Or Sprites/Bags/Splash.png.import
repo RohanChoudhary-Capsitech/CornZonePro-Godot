@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6gouvhxs8q47"
-path="res://.godot/imported/shild 4.png-6eaa770b38ddcdab6f098b39c3db5d63.ctex"
+uid="uid://laqoaelkvolf"
+path="res://.godot/imported/Splash.png-5efe31a51bc2b5f97293baa2d123f002.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags/shild 4.png"
-dest_files=["res://.godot/imported/shild 4.png-6eaa770b38ddcdab6f098b39c3db5d63.ctex"]
+source_file="res://Texture Or Sprites/Bags/Splash.png"
+dest_files=["res://.godot/imported/Splash.png-5efe31a51bc2b5f97293baa2d123f002.ctex"]
 
 [params]
 

@@ -7,14 +7,9 @@ extends CanvasLayer
 func _ready() -> void:
 	GameSession.turns_exhausted.connect(_update_results)
 
-func _score_key(base_key: String) -> String:
-	if GameSession.selected_mode == "Local":
-		return base_key
-	return "passplay_" + base_key
-
 func _update_results() -> void:
-	var p1_score: int = int(Prefs.get_int(_score_key("last_score_p1"), GameSession.score_p1))
-	var p2_score: int = int(Prefs.get_int(_score_key("last_score_p2"), GameSession.score_p2))
+	var p1_score: int = GameSession.score_p1
+	var p2_score: int = GameSession.score_p2
 
 	p1_score_text.text = str(p1_score)
 	p2_score_text.text = str(p2_score)

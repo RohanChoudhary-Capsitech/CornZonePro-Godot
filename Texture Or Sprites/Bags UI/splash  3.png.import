@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dng4caaq31pgn"
-path="res://.godot/imported/Group 568.png-d0d1965957e6aea03301d429028b3620.ctex"
+uid="uid://de0koktxpq518"
+path="res://.godot/imported/splash  3.png-bf5651e33aff15d46fa0611d601a11fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags/Group 568.png"
-dest_files=["res://.godot/imported/Group 568.png-d0d1965957e6aea03301d429028b3620.ctex"]
+source_file="res://Texture Or Sprites/Bags UI/splash  3.png"
+dest_files=["res://.godot/imported/splash  3.png-bf5651e33aff15d46fa0611d601a11fc.ctex"]
 
 [params]
 
