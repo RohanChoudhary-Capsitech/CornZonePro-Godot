@@ -153,7 +153,7 @@
 [ext_resource type="Texture2D" uid="uid://k13v3ek2drk0" path="res://Texture Or Sprites/MoreGame Icons/SymbolSync.png" id="110_v6eu8"]
 [ext_resource type="Texture2D" uid="uid://c6tpb5rbwmc7c" path="res://Texture Or Sprites/MoreGame Icons/wrapvector.png" id="114_453j7"]
 [ext_resource type="Script" uid="uid://m372ho3svafv" path="res://Scripts/Home/map_select_screen.gd" id="114_ttur7"]
-[ext_resource type="Texture2D" uid="uid://cit5583dfsa5f" path="res://Texture Or Sprites/MapsBG/Lawn.png" id="117_453j7"]
+[ext_resource type="Texture2D" uid="uid://b2jpm0batwjc6" path="res://Texture Or Sprites/MapsBG/Lawn.png" id="117_453j7"]
 [ext_resource type="Texture2D" uid="uid://8hxstwn0h1sb" path="res://Texture Or Sprites/DailyRewards/Rectangle 111.png" id="137_qfixt"]
 [ext_resource type="Script" uid="uid://crvxuifakyi1c" path="res://Scripts/Home/reward_screen.gd" id="139_pmkjb"]
 
@@ -4369,7 +4369,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ttur7")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_pmkjb")
 
 [node name="MapSelectScreen" type="CanvasLayer" parent="." unique_id=1321304884]
-visible = false
 script = ExtResource("114_ttur7")
 
 [node name="BG" type="TextureRect" parent="MapSelectScreen" unique_id=1114887386]

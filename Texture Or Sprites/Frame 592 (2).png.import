@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2jpm0batwjc6"
-path="res://.godot/imported/Lawn.png-b3c32917d043610e68f2652865f62637.ctex"
+uid="uid://bke3tewr6vchn"
+path="res://.godot/imported/Frame 592 (2).png-45245df5b256aa88fbea0215fedfdef8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/MapsBG/Lawn.png"
-dest_files=["res://.godot/imported/Lawn.png-b3c32917d043610e68f2652865f62637.ctex"]
+source_file="res://Texture Or Sprites/Frame 592 (2).png"
+dest_files=["res://.godot/imported/Frame 592 (2).png-45245df5b256aa88fbea0215fedfdef8.ctex"]
 
 [params]
 
