@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c2dbjirpm1ase" path="res://Texture Or Sprites/Login Screen/Line 14.png" id="13_jjai4"]
 [ext_resource type="Texture2D" uid="uid://cgqyho8ne3j3a" path="res://Texture Or Sprites/Login Screen/Google.png" id="14_lddgv"]
 [ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
-[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/Bg.png" id="16_848r5"]
+[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/BG.png" id="16_848r5"]
 [ext_resource type="Texture2D" uid="uid://df3uq3lg4t57f" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
 [ext_resource type="Texture2D" uid="uid://dhaiu8nexctvx" path="res://Texture Or Sprites/Home Screen/ProfileBG.png" id="17_g2bjx"]
 [ext_resource type="Script" uid="uid://51frmnaa34pj" path="res://Scripts/Home/home_screen.gd" id="17_mkkvt"]
@@ -63,11 +63,10 @@
 [ext_resource type="Texture2D" uid="uid://btpffg6n6cv3v" path="res://Texture Or Sprites/MapsBG/Backyard.png" id="50_mkkvt"]
 [ext_resource type="Texture2D" uid="uid://dlf5m2v5om5e0" path="res://Texture Or Sprites/MapsBG/Rooftop.png" id="51_m3bm7"]
 [ext_resource type="Texture2D" uid="uid://b223k4hdbcjl" path="res://Texture Or Sprites/MapsBG/Metro.png" id="52_0htr1"]
-[ext_resource type="Texture2D" uid="uid://bd4a8x4psao4u" path="res://Texture Or Sprites/MapsBG/Garden.png" id="53_44eka"]
 [ext_resource type="Texture2D" uid="uid://bbku5rr5mt372" path="res://Texture Or Sprites/Inventory Screen/Frame 85.png" id="53_56oc6"]
 [ext_resource type="PackedScene" uid="uid://dkxtmd1so4k4r" path="res://Scenes/UI/bag_data.tscn" id="53_afc64"]
 [ext_resource type="Script" uid="uid://co234yrsdo1xy" path="res://Scripts/Home/inventory_screen.gd" id="53_jl4rm"]
-[ext_resource type="Script" path="res://Scripts/Shop/bag_data_content.gd" id="54_is5vx"]
+[ext_resource type="Script" uid="uid://b53a3fuc8clmd" path="res://Scripts/Shop/bag_data_content.gd" id="54_is5vx"]
 [ext_resource type="Texture2D" uid="uid://cynxb4vuhdeyy" path="res://Texture Or Sprites/Profile Screen/PanelBg.png" id="54_jv2cb"]
 [ext_resource type="Script" uid="uid://b5c44ivano6da" path="res://Scripts/Home/profile_screen.gd" id="54_um175"]
 [ext_resource type="Texture2D" uid="uid://c3sqfc8ekq3uu" path="res://Texture Or Sprites/Shop Screen/Rectangle 2 (1).png" id="54_wyrdr"]
@@ -87,7 +86,7 @@
 [ext_resource type="Texture2D" uid="uid://dng4caaq31pgn" path="res://Texture Or Sprites/Bags UI/Group 568.png" id="61_4xdiu"]
 [ext_resource type="Texture2D" uid="uid://b0xkux1bwuy1d" path="res://Texture Or Sprites/Bags UI/Group 569.png" id="62_0u48y"]
 [ext_resource type="Texture2D" uid="uid://bwwsdktfulm2u" path="res://Texture Or Sprites/DailyRewards/Union.png" id="62_5id56"]
-[ext_resource type="Script" uid="uid://nn6aqsvgnste" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
+[ext_resource type="Script" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
 [ext_resource type="Texture2D" uid="uid://blrgnaniuw5ts" path="res://Texture Or Sprites/DailyRewards/Group 275.png" id="62_um175"]
 [ext_resource type="Texture2D" uid="uid://bp3273yyx6uva" path="res://Texture Or Sprites/Bags UI/Group 571.png" id="63_0u48y"]
 [ext_resource type="Texture2D" uid="uid://dch1w5blud1y2" path="res://Texture Or Sprites/DailyRewards/Group 278.png" id="63_b16xs"]
@@ -110,14 +109,14 @@
 [ext_resource type="Texture2D" uid="uid://b57l4j3nvj2ly" path="res://Texture Or Sprites/Multiplayer/Rectangle 384.png" id="73_f74ik"]
 [ext_resource type="Texture2D" uid="uid://de0koktxpq518" path="res://Texture Or Sprites/Bags UI/splash  3.png" id="73_r13op"]
 [ext_resource type="Texture2D" uid="uid://wrrua84wko28" path="res://Texture Or Sprites/Multiplayer/Rectangle 126.png" id="74_fhrbv"]
-[ext_resource type="Script" path="res://Scripts/Shop/board_data_content.gd" id="74_nbuyv"]
+[ext_resource type="Script" uid="uid://busaot12ag5ol" path="res://Scripts/Shop/board_data_content.gd" id="74_nbuyv"]
 [ext_resource type="PackedScene" uid="uid://bdhfavj1k6vco" path="res://Scenes/UI/board_data.tscn" id="75_as3ia"]
 [ext_resource type="Texture2D" uid="uid://dxf6n2bo32ivg" path="res://Texture Or Sprites/Multiplayer/Rectangle 385.png" id="75_cco2g"]
 [ext_resource type="Texture2D" uid="uid://sv3gugcvj1fd" path="res://Texture Or Sprites/Multiplayer/Rectangle 386.png" id="76_2pxd8"]
-[ext_resource type="Script" path="res://Scripts/Resource Structures/BoardConfig.gd" id="76_ie2bs"]
+[ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="76_ie2bs"]
 [ext_resource type="Texture2D" uid="uid://ctt8ix34drhr3" path="res://Texture Or Sprites/Boards/1 569.png" id="77_vaya1"]
 [ext_resource type="Texture2D" uid="uid://ds7mdrl5khx06" path="res://Texture Or Sprites/Leaderboard Screen/Group 257.png" id="78_36lgj"]
-[ext_resource type="Script" path="res://Scripts/Home/leaderboard_screen.gd" id="78_meagp"]
+[ext_resource type="Script" uid="uid://bu665fyesiov4" path="res://Scripts/Home/leaderboard_screen.gd" id="78_meagp"]
 [ext_resource type="Texture2D" uid="uid://cg0qd7xkog8by" path="res://Texture Or Sprites/Boards/hole fix 2 3.png" id="78_tbwbq"]
 [ext_resource type="Texture2D" uid="uid://csdmjw1sfmh2k" path="res://Texture Or Sprites/Boards/hole fix 3 3.png" id="79_1wbho"]
 [ext_resource type="Texture2D" uid="uid://cieryegijog3d" path="res://Texture Or Sprites/Boards/hole fix 5 2.png" id="80_6rbbw"]
@@ -146,7 +145,7 @@
 [ext_resource type="Script" uid="uid://6g8sj6qio4ro" path="res://Scripts/Settings/games_container.gd" id="103_2vxpu"]
 [ext_resource type="Texture2D" uid="uid://jl8yy52xu3r7" path="res://Texture Or Sprites/Setting Screen/gamewise.png" id="104_qfixt"]
 [ext_resource type="PackedScene" uid="uid://bp5y8cd1uho6r" path="res://Scenes/UI/game_icon.tscn" id="104_rvq4h"]
-[ext_resource type="Script" path="res://Scripts/Resource Structures/MoreGameData.gd" id="105_n2f85"]
+[ext_resource type="Script" uid="uid://hg7o7dnfqa0x" path="res://Scripts/Resource Structures/MoreGameData.gd" id="105_n2f85"]
 [ext_resource type="Texture2D" uid="uid://ce3xjaepn7i5n" path="res://Texture Or Sprites/MoreGame Icons/DropandScore.png" id="106_04qca"]
 [ext_resource type="Texture2D" uid="uid://pkyghxe5wddp" path="res://Texture Or Sprites/MoreGame Icons/pebble trace.png" id="107_stky2"]
 [ext_resource type="Texture2D" uid="uid://cm36t43r5gcru" path="res://Texture Or Sprites/MoreGame Icons/dodge driver.png" id="108_ochsh"]
@@ -154,6 +153,7 @@
 [ext_resource type="Texture2D" uid="uid://k13v3ek2drk0" path="res://Texture Or Sprites/MoreGame Icons/SymbolSync.png" id="110_v6eu8"]
 [ext_resource type="Texture2D" uid="uid://c6tpb5rbwmc7c" path="res://Texture Or Sprites/MoreGame Icons/wrapvector.png" id="114_453j7"]
 [ext_resource type="Script" uid="uid://m372ho3svafv" path="res://Scripts/Home/map_select_screen.gd" id="114_ttur7"]
+[ext_resource type="Texture2D" uid="uid://cit5583dfsa5f" path="res://Texture Or Sprites/MapsBG/Lawn.png" id="117_453j7"]
 [ext_resource type="Texture2D" uid="uid://8hxstwn0h1sb" path="res://Texture Or Sprites/DailyRewards/Rectangle 111.png" id="137_qfixt"]
 [ext_resource type="Script" uid="uid://crvxuifakyi1c" path="res://Scripts/Home/reward_screen.gd" id="139_pmkjb"]
 
@@ -2002,6 +2002,15 @@ metadata/_custom_type_script = "uid://hg7o7dnfqa0x"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmkjb"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbwbq"]
+texture = ExtResource("117_453j7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1wbho"]
+texture = ExtResource("117_453j7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6rbbw"]
+texture = ExtResource("117_453j7")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2fil"]
 texture = ExtResource("48_bih4p")
 
@@ -2046,15 +2055,6 @@ texture = ExtResource("52_0htr1")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vaya1"]
 texture = ExtResource("52_0htr1")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbwbq"]
-texture = ExtResource("53_44eka")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1wbho"]
-texture = ExtResource("53_44eka")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6rbbw"]
-texture = ExtResource("53_44eka")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4u64y"]
 texture = ExtResource("62_5id56")
@@ -4419,6 +4419,16 @@ mouse_filter = 2
 theme_override_constants/separation = 80
 alignment = 1
 
+[node name="LawnMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=151983639]
+custom_minimum_size = Vector2(220, 350)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbwbq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1wbho")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6rbbw")
+
 [node name="StreetMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=1537847604]
 custom_minimum_size = Vector2(220, 350)
 layout_mode = 2
@@ -4468,16 +4478,6 @@ mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_lqqs2")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ie2bs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vaya1")
-
-[node name="GardenMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=151983639]
-custom_minimum_size = Vector2(220, 350)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 1
-theme_override_styles/normal = SubResource("StyleBoxTexture_tbwbq")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1wbho")
-theme_override_styles/hover = SubResource("StyleBoxTexture_6rbbw")
 
 [node name="CrossButton" type="Button" parent="MapSelectScreen/Panel" unique_id=1056937909]
 layout_mode = 1
