@@ -11,3 +11,7 @@ func _on_cross_button_pressed() -> void:
 func update_ui()->void:
 	$"Panel/ProfileBg/Total Pots/Value".text=str(Prefs.get_int("total_pots"))
 	$Panel/ProfileBg/GamePlaySection/GamesPlayedValue.text=str(Prefs.get_int("matches_played"))
+
+
+func _on_edit_button_pressed() -> void:
+	pass # Replace with function body.
