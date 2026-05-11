@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mf42jmew874p"]
 
-[ext_resource type="PackedScene" uid="uid://kf6r22mrcdaa" path="res://3D Models/bag (1).glb" id="1_wly7n"]
+[ext_resource type="PackedScene" uid="uid://kf6r22mrcdaa" path="res://3D Models/Bag/bag (1).glb" id="1_wly7n"]
 [ext_resource type="Script" uid="uid://ckyc7bi5mvrio" path="res://Scripts/corn_bag.gd" id="2_6qegm"]
 [ext_resource type="Material" uid="uid://bi3oop0ghs2or" path="res://Materials/Bags/Urban.tres" id="3_3ifbe"]
 [ext_resource type="Script" uid="uid://dvh52d1f3pjcy" path="res://Scripts/swipe_input_controller.gd" id="4_1mq3k"]

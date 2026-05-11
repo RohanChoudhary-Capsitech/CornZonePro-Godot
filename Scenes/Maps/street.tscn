@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="1_ywqqe"]
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_fbdad"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_3qr72"]
-[ext_resource type="PackedScene" uid="uid://bdeqs0jrryr5c" path="res://3D Models/Bg 1/Bg 1.glb" id="21_7bn77"]
+[ext_resource type="PackedScene" uid="uid://b3vy6ody5vijx" path="res://3D Models/BG Scenes/Street(Bg 3)/Bg 3.glb" id="4_x6xx7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(50, 0.25, 100)
@@ -41,7 +41,7 @@ bag = ExtResource("3_3qr72")
 [node name="StartTimer" type="Timer" parent="." unique_id=919203266]
 wait_time = 0.5
 
-[node name="StadiumScene" parent="." unique_id=1237082087 instance=ExtResource("21_7bn77")]
-transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, 0.4706818, 0.125, 44.70993)
+[node name="Bg 3" parent="." unique_id=1787735423 instance=ExtResource("4_x6xx7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26307583, 0.12530994, 39.93816)
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
