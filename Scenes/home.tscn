@@ -5626,7 +5626,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_u6nbl")
 theme_override_styles/read_only = SubResource("StyleBoxTexture_uahhm")
 theme_override_styles/focus = SubResource("StyleBoxTexture_4xdiu")
-placeholder_text = "Enter Room Id"
+placeholder_text = "Enter Room Name / ID"
 alignment = 1
 
 [node name="HostButton" type="Button" parent="MultiplayerScreen/Panel/PanelBg" unique_id=652364819]

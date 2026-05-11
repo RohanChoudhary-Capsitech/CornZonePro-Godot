@@ -5,6 +5,7 @@ extends Node
 # =========================
 const PORT := 7777
 const MAX_PLAYERS := 2
+const MAX_REMOTE_CLIENTS := MAX_PLAYERS - 1
 const DISCOVERY_PORT := 8888
 
 const MAP_LIST := [
@@ -52,9 +53,13 @@ signal game_ready
 signal server_found(server: Dictionary)
 
 signal match_forfeit(reason: String)
+signal room_join_failed(message: String)
 
 signal rematch_requested
 signal rematch_declined(message: String)
+
+var hosted_room_name: String = ""
+var hosted_room_id: String = ""
 
 
 # =========================
@@ -75,20 +80,32 @@ func _ready() -> void:
 # =========================
 # HOST
 # =========================
-func host_game() -> void:
+func host_game(room_name: String = "") -> void:
 	if multiplayer.multiplayer_peer != null:
 		await get_tree().process_frame
 		disconnect_game()
 		await get_tree().process_frame
 
 	is_host = true
+	var normalized_room_name := room_name.strip_edges()
+	if normalized_room_name.is_empty():
+		normalized_room_name = hosted_room_name.strip_edges()
+	if normalized_room_name.is_empty():
+		normalized_room_name = "%s's Room" % Prefs.get_string("username", "Host")
+
+	hosted_room_name = normalized_room_name
+	hosted_room_id = _normalize_room_id(hosted_room_name)
 
 	var peer = ENetMultiplayerPeer.new()
 
-	var error = peer.create_server(PORT, MAX_PLAYERS)
+	var error = peer.create_server(PORT, MAX_REMOTE_CLIENTS)
 
 	if error != OK:
+		is_host = false
+		hosted_room_name = ""
+		hosted_room_id = ""
 		push_error("Failed to create server")
+		room_join_failed.emit("Failed to create room")
 		return
 
 	multiplayer.multiplayer_peer = peer
@@ -140,6 +157,10 @@ func get_random_map() -> String:
 @rpc("any_peer", "reliable")
 func register_player(data: Dictionary):
 	var sender_id = multiplayer.get_remote_sender_id()
+	if is_host and not players.has(sender_id) and players.size() >= MAX_PLAYERS:
+		room_full_rpc.rpc_id(sender_id, "Room already full")
+		_disconnect_peer(sender_id)
+		return
 
 	players[sender_id] = data
 
@@ -311,6 +332,10 @@ func request_throw(direction: Vector3, strength: float) -> void:
 # =========================
 func _on_peer_connected(id: int) -> void:
 	print("[Network] Player connected:", id)
+	if is_host and players.size() >= MAX_PLAYERS:
+		room_full_rpc.rpc_id(id, "Room already full")
+		_disconnect_peer(id)
+		return
 
 	player_connected.emit(id)
 
@@ -373,6 +398,8 @@ func disconnect_game() -> void:
 	multiplayer.multiplayer_peer = null
 
 	players.clear()
+	hosted_room_name = ""
+	hosted_room_id = ""
 	rematch_in_progress = false
 	_clear_rematch_request_state()
 
@@ -406,7 +433,10 @@ func start_broadcast() -> void:
 
 func _broadcast_ping() -> void:
 	var msg = {
-		"name": Prefs.get_string("username", "Host"),
+		"name": hosted_room_name if not hosted_room_name.is_empty() else Prefs.get_string("username", "Host"),
+		"room_id": hosted_room_id if not hosted_room_id.is_empty() else _normalize_room_id(Prefs.get_string("username", "Host")),
+		"player_count": players.size(),
+		"max_players": MAX_PLAYERS,
 		"port": PORT
 	}
 
@@ -449,7 +479,10 @@ func _process(_delta: float) -> void:
 
 		var server = {
 			"name": data.get("name", "Unknown"),
+			"room_id": _normalize_room_id(str(data.get("room_id", data.get("name", "")))),
 			"ip": ip,
+			"player_count": int(data.get("player_count", 0)),
+			"max_players": int(data.get("max_players", MAX_PLAYERS)),
 			"port": data.get("port", PORT)
 		}
 
@@ -589,6 +622,12 @@ func _clear_rematch_request_state() -> void:
 	outgoing_rematch_target_id = 0
 
 
+@rpc("authority", "reliable")
+func room_full_rpc(message: String) -> void:
+	room_join_failed.emit(message)
+	disconnect_game()
+
+
 
 func _connect_multiplayer_signals() -> void:
 	multiplayer.peer_connected.connect(_on_peer_connected)
@@ -597,3 +636,15 @@ func _connect_multiplayer_signals() -> void:
 	multiplayer.connected_to_server.connect(_on_connected_to_server)
 	multiplayer.connection_failed.connect(_on_connection_failed)
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
+
+
+func _normalize_room_id(value: String) -> String:
+	return value.strip_edges().to_upper()
+
+
+func _disconnect_peer(peer_id: int) -> void:
+	var peer := multiplayer.multiplayer_peer as ENetMultiplayerPeer
+	if peer == null:
+		return
+
+	peer.disconnect_peer(peer_id, true)
