@@ -3,6 +3,9 @@ extends CanvasLayer
 @onready var p1_total_score: Label = $"ScoreBoard/P1 Total Score"
 @onready var p2_total_score: Label = $"ScoreBoard/P2 Total Score"
 
+@onready var p1_turn_ui = $Player1TurnUI
+@onready var p2_turn_ui = $Player2TurnUI
+
 # Player 1 score labels
 @onready var p1_scores: Array[Label] = [
 	$"ScoreBoard/Player 1 Scores/p1/1st score",
@@ -29,6 +32,9 @@ func _ready() -> void:
 	GameSession.turns_exhausted.connect(_on_match_over)
 	_clear_labels()
 	_sync_total_scores()
+	p1_turn_ui.visible = true
+	await get_tree().create_timer(1.0).timeout
+	p1_turn_ui.visible = false
 	print("Player ", GameSession.current_turn, "'s turn")
 
 func _clear_labels() -> void:
@@ -59,6 +65,14 @@ func _on_bag_result_changed(player: int, index: int, points: int) -> void:
 	_sync_total_scores()
 
 func _on_turn_changed(player: int) -> void:
+	if player == 1:
+		p1_turn_ui.visible = true
+		await get_tree().create_timer(1.0).timeout
+		p1_turn_ui.visible = false
+	else:
+		p2_turn_ui.visible = true
+		await get_tree().create_timer(1.0).timeout
+		p2_turn_ui.visible = false
 	print("Player ", player, "'s turn")
 
 func _on_match_over() -> void:
