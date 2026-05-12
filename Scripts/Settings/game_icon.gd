@@ -10,4 +10,5 @@ func setup(data):
 
 
 func _on_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	OS.shell_open(link)

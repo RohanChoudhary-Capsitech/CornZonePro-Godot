@@ -6,6 +6,7 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body: Node3D) -> void:
+	
 	if not (body is RigidBody3D):
 		return
 	if bool(body.get_meta(SCORED_META, false)):
@@ -15,7 +16,8 @@ func _on_body_entered(body: Node3D) -> void:
 	if not GameSession.mode_logic.has_method("on_ball_entered"):
 		push_warning("[Pointer] Active mode cannot score bodies: " + GameSession.selected_mode)
 		return
-
+	
+	SoundManager.play_bag_pot()
 	var scoring_player: int = int(body.get_meta("throw_player", GameSession.current_turn))
 	var score_before: int = GameSession.score_p1 + GameSession.score_p2
 	body.set_meta(SCORED_META, true)

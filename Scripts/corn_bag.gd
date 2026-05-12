@@ -122,7 +122,7 @@ func server_apply_throw(direction: Vector3, strength: float) -> void:
 func _apply_throw(direction: Vector3, strength: float) -> void:
 	if thrown:
 		return
-
+	SoundManager.play_bag_throw()
 	set_meta("throw_player", GameSession.current_turn)
 	_start_throw_physics(direction, strength)
 
@@ -206,6 +206,7 @@ func _is_my_turn() -> bool:
 
 
 func _on_body_entered(body: Node) -> void:
+	SoundManager.play_bag_drop()
 	if body.has_method("on_bag_landed"):
 		body.on_bag_landed(self)
 		return

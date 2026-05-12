@@ -36,6 +36,7 @@ func _update_results() -> void:
 	win_message.visible=false
 
 func _on_home_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.home()
 
 func show_message(reason: String) -> void:
@@ -51,6 +52,7 @@ func show_message(reason: String) -> void:
 
 
 func _on_rematch_pressed() -> void:
+	SoundManager.play_button_clicks()
 	restart.disabled=true
 	NetworkManager.send_rematch_request()
 

@@ -3,6 +3,7 @@ extends Node
 @export_group("Audio sources")
 @onready var bgm_source: AudioStreamPlayer = $BGMSource
 @onready var sfx_source: AudioStreamPlayer = $SFXSource
+@onready var pot_source: AudioStreamPlayer = $PotSource
 
 @export_group("Audio Clips")
 @export var bgm_clip: AudioStream
@@ -32,8 +33,8 @@ func load_setting():
 
 
 func play_bgm():
-	if not is_music_on: 
-		stop_bgm()
+	is_music_on = Prefs.get_bool("music")
+	if not is_music_on:
 		return
 	if bgm_source.playing: return
 	bgm_source.play()
@@ -45,18 +46,25 @@ func stop_bgm():
 
 
 func play_sfx(clip: AudioStream):
+	is_sound_on = Prefs.get_bool("sound")
 	if not is_sound_on or clip == null: return
 	sfx_source.stream = clip
 	sfx_source.play()
 	
 func play_button_clicks():
 	play_sfx(button_tap_clip)
-
+	
+func play_bag_throw():
+	play_sfx(bag_throw_clip)
+	
 func play_bag_drop():
 	play_sfx(bag_drop_clip)
 
 func play_bag_pot():
-	play_sfx(bag_pot_clip)
+	is_sound_on = Prefs.get_bool("sound")
+	if not is_sound_on or bag_pot_clip == null: return
+	pot_source.stream = bag_pot_clip
+	pot_source.play()
 
 func play_coin_collect():
 	play_sfx(coin_collect_clip)

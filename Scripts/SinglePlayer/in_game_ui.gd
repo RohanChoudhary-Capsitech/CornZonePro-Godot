@@ -12,6 +12,7 @@ func update_ui()->void:
 	timer_slider.add_time(5)
 
 func _on_add_timer_pressed() -> void:
+	SoundManager.play_button_clicks()
 	var possible:bool=DataManager.spend_coins(20)
 	if possible:
 		timer_slider.add_time(5)
@@ -20,6 +21,7 @@ func _on_add_timer_pressed() -> void:
 
 
 func _on_show_projectile_pressed() -> void:
+	SoundManager.play_button_clicks()
 	var possible:bool=DataManager.spend_coins(30)
 	if possible:
 		GameSession.activate_projectile_preview(5.0)

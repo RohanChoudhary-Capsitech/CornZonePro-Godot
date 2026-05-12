@@ -28,8 +28,10 @@ func show_alert(message: String, heading: String = "Alert") -> void:
 
 
 func _on_no_pressed() -> void:
+	SoundManager.play_button_clicks()
 	visible = false
 
 func _on_yes_pressed() -> void:
+	SoundManager.play_button_clicks()
 	if leave_match_mode:
 		UIManager.home()

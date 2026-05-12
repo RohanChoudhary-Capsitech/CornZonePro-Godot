@@ -77,10 +77,12 @@ func _on_turn_changed(player: int) -> void:
 	print("Player ", player, "'s turn")
 
 func _on_match_over() -> void:
+	SoundManager.play_game_over()
 	_sync_total_scores()
 	if UIManager.result_screen:
 		UIManager.enable_canvas(UIManager.result_screen)
 
 
 func _on_pause_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../PauseMenu")

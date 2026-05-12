@@ -54,7 +54,8 @@ func _ready() -> void:
 	else:
 		sound_on.visible = false
 		sound_off.visible = true
-
+		
+	SoundManager.play_bgm()
 
 func _on_cross_button_pressed() -> void:
 	SoundManager.play_button_clicks()

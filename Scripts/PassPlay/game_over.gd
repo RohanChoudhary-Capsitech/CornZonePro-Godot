@@ -22,7 +22,9 @@ func _update_results() -> void:
 		winner_text.text = "You have a tie"
 
 func _on_home_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.home()
 
 func _on_restart_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.restart()

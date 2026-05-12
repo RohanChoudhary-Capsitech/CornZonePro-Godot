@@ -5,10 +5,12 @@ func _ready() -> void:
 	_sync_total_scores()
 
 func _on_cross_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($".")
 
 	
 func _on_home_pressed() -> void:
+	SoundManager.play_button_clicks()
 	#UIManager.home()
 	pass
 
@@ -17,7 +19,9 @@ func _sync_total_scores() -> void:
 	$"Control/PausePanel BG/Dash/Player 2 Score".text = str(GameSession.score_p2)
 
 func _on_resume_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas(self)
 
 func _on_leave_match_pressed() -> void:
+	SoundManager.play_button_clicks()
 	$"../WarningPanel".show_leave_match_warning()
