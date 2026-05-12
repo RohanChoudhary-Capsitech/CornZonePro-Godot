@@ -2071,6 +2071,9 @@ texture = ExtResource("62_5id56")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_moiof"]
 texture = ExtResource("62_5id56")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_453j7"]
+load_path = "res://.godot/imported/MaleIcon.png-857a68958b6e985437de73fefa4adc32.ctex"
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f4aua"]
 resource_local_to_scene = true
 texture = ExtResource("43_6mqkx")
@@ -4519,7 +4522,9 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_i6hta")
 theme_override_styles/hover = SubResource("StyleBoxTexture_moiof")
 
 [node name="ProfileScreen" type="CanvasLayer" parent="." unique_id=151759795]
+visible = false
 script = ExtResource("54_um175")
+icons = Array[Texture2D]([SubResource("CompressedTexture2D_453j7"), ExtResource("55_62iqh")])
 
 [node name="BG" type="TextureRect" parent="ProfileScreen" unique_id=136809705]
 anchors_preset = 15
@@ -4865,7 +4870,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Control" type="Control" parent="ProfileScreen" unique_id=258305054]
+[node name="ProfilePanel" type="Control" parent="ProfileScreen" unique_id=258305054]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -4874,7 +4879,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="TextureRect" parent="ProfileScreen/Control" unique_id=126598534]
+[node name="BG" type="TextureRect" parent="ProfileScreen/ProfilePanel" unique_id=126598534]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -4884,7 +4889,7 @@ grow_vertical = 2
 texture = ExtResource("9_cykap")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="ProfileScreen/Control/BG" unique_id=1474293754]
+[node name="Button" type="Button" parent="ProfileScreen/ProfilePanel/BG" unique_id=1474293754]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0

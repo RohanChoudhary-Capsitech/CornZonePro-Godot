@@ -6,7 +6,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	coin_text.text = str(Prefs.get_int("coins",0))
-	profile_icon.texute = icons[Prefs.get_int("profile_index",0)]
+	profile_icon.texture = icons[Prefs.get_int("profile_index",0)]
 	
 
 func _on_setting_button_pressed() -> void:
