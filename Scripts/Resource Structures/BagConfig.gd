@@ -4,6 +4,7 @@ class_name BagConfig
 enum Rarity {Standard, Epic, Rare}
 
 @export_group("Bag Details")
+@export var item_id:String=""
 @export var bag_name: String = ""
 @export var price: int = 0 # Price
 @export var unlocked: bool = false
