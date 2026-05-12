@@ -5,6 +5,7 @@ extends CanvasLayer
 @export var icons: Array[Texture2D]
 
 func _ready() -> void:
+	#AdManager.show_banner()
 	coin_text.text = str(Prefs.get_int("coins",0))
 	profile_icon.texture = icons[Prefs.get_int("profile_index",0)]
 	

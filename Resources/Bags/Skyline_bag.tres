@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("3_sr07v")
+item_id = "S11"
 bag_name = "Skyline"
 icon = ExtResource("1_qmp2y")
 material_override = ExtResource("2_nlvug")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://kqtybsx7re56"]
+
+[ext_resource type="Script" uid="uid://dnbprd2sg1sih" path="res://Scripts/Autoloads/AdManager.gd" id="1_8g3ir"]
+[ext_resource type="Script" uid="uid://dcn1d5v18kj1" path="res://addons/AdmobPlugin/Admob.gd" id="1_kojyc"]
+
+[node name="ADManager" type="Node" unique_id=511309765]
+script = ExtResource("1_8g3ir")
+
+[node name="Admob" type="Node" parent="." unique_id=817933829]
+script = ExtResource("1_kojyc")
+android_debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+android_real_application_id = "ca-app-pub-3940256099942544~1458002511"
+metadata/_custom_type_script = "uid://dcn1d5v18kj1"

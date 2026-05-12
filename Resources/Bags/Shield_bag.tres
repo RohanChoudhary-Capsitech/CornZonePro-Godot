@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("3_d645l")
+item_id = "S9"
 bag_name = "Shield"
 icon = ExtResource("1_t5lto")
 material_override = ExtResource("2_omunk")

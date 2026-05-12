@@ -26,6 +26,7 @@ DataManager="*uid://b2xdrng7rbmc2"
 UIManager="*uid://dfx1esru4gan0"
 SceneManager="*uid://c7mqcw5iaaa06"
 NetworkManager="*uid://ctjccyw8qw2a6"
+AdManager="*uid://kqtybsx7re56"
 
 [display]
 
@@ -41,7 +42,7 @@ project/assembly_name="Cornzone"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godotshare/plugin.cfg", "res://addons/playerprefs/plugin.cfg")
+enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/godotshare/plugin.cfg", "res://addons/playerprefs/plugin.cfg")
 
 [physics]
 
