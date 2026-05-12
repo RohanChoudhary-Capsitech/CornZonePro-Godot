@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BagConfig" format=3 uid="uid://c2vrby3yw1hrx"]
+
+[ext_resource type="Texture2D" uid="uid://dyyrk0wpb7ec8" path="res://Texture Or Sprites/Bags/Neon.png" id="1_kgi5u"]
+[ext_resource type="Material" uid="uid://bqou4twwrthfb" path="res://Materials/Bags/Arctic.tres" id="2_kgi5u"]
+[ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/Resource Structures/BagConfig.gd" id="3_lyovf"]
+
+[resource]
+script = ExtResource("3_lyovf")
+bag_name = "Arctic"
+icon = ExtResource("1_kgi5u")
+material_override = ExtResource("2_kgi5u")
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"

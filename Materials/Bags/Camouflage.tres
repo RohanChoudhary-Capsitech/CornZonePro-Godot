@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dty05hernmrxc"]
 
-[ext_resource type="Texture2D" uid="uid://boqa7w4grv1k4" path="res://Texture Or Sprites/Bags/camouflage.png" id="1_ymvpc"]
+[ext_resource type="Texture2D" uid="uid://boqa7w4grv1k4" path="res://Texture Or Sprites/Bags/Camouflage.png" id="1_ymvpc"]
 
 [resource]
 cull_mode = 2

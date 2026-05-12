@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci5jmtrj7lsee"
-path="res://.godot/imported/Group 581.png-803c3c36d1b3b7a2cba1f6d730ca5e0d.ctex"
+uid="uid://4tulrxf3tc8l"
+path="res://.godot/imported/Shurican.png-6930b439565871c085aa9587c0e7693c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags UI/Group 581.png"
-dest_files=["res://.godot/imported/Group 581.png-803c3c36d1b3b7a2cba1f6d730ca5e0d.ctex"]
+source_file="res://Texture Or Sprites/Bags UI/Shurican.png"
+dest_files=["res://.godot/imported/Shurican.png-6930b439565871c085aa9587c0e7693c.ctex"]
 
 [params]
 

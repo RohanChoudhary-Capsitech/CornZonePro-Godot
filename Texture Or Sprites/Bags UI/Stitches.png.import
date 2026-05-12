@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl4p6it0edd3p"
-path="res://.godot/imported/blue  3.png-cca4b0f1010edf423f373bbf982043cc.ctex"
+uid="uid://gdliamoipqfo"
+path="res://.godot/imported/Stitches.png-3c616d83f72c0d4bf7b91c179bb9fb68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags UI/blue  3.png"
-dest_files=["res://.godot/imported/blue  3.png-cca4b0f1010edf423f373bbf982043cc.ctex"]
+source_file="res://Texture Or Sprites/Bags UI/Stitches.png"
+dest_files=["res://.godot/imported/Stitches.png-3c616d83f72c0d4bf7b91c179bb9fb68.ctex"]
 
 [params]
 

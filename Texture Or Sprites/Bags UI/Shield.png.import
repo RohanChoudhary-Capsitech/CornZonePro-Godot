@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0xkux1bwuy1d"
-path="res://.godot/imported/Group 569.png-6742cde9b009a3584598cc51c1edf176.ctex"
+uid="uid://bj3bm6egwqpl6"
+path="res://.godot/imported/Shield.png-82e489ced0a9a0609cc253686c4324ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags UI/Group 569.png"
-dest_files=["res://.godot/imported/Group 569.png-6742cde9b009a3584598cc51c1edf176.ctex"]
+source_file="res://Texture Or Sprites/Bags UI/Shield.png"
+dest_files=["res://.godot/imported/Shield.png-82e489ced0a9a0609cc253686c4324ae.ctex"]
 
 [params]
 

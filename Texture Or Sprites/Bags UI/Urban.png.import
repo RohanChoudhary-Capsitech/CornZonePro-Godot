@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsrle5x3heb8j"
-path="res://.godot/imported/image 5.png-5fb1030253ce628f74db2c6d393c3893.ctex"
+uid="uid://bx1dryfjajk7e"
+path="res://.godot/imported/Urban.png-66f44ad1562b77bd8c6ff2bef6d46ebc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags UI/image 5.png"
-dest_files=["res://.godot/imported/image 5.png-5fb1030253ce628f74db2c6d393c3893.ctex"]
+source_file="res://Texture Or Sprites/Bags UI/Urban.png"
+dest_files=["res://.godot/imported/Urban.png-66f44ad1562b77bd8c6ff2bef6d46ebc.ctex"]
 
 [params]
 

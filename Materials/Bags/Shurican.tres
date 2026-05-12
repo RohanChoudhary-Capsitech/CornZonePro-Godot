@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://d0ipdb3kmxnh8"]
 
-[ext_resource type="Texture2D" uid="uid://b1b15aoygoovu" path="res://Texture Or Sprites/Bags/shurican.png" id="1_jblqn"]
+[ext_resource type="Texture2D" uid="uid://b1b15aoygoovu" path="res://Texture Or Sprites/Bags/Shurican.png" id="1_jblqn"]
 
 [resource]
 cull_mode = 2

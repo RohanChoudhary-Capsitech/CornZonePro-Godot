@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6gouvhxs8q47"
-path="res://.godot/imported/shild 4.png-cd88863ce3231c4ef77aab4938b97d53.ctex"
+uid="uid://bnmjupbvtalkk"
+path="res://.godot/imported/PicPunk.png-9679b334bc7141ec6484da3c3814be4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags UI/shild 4.png"
-dest_files=["res://.godot/imported/shild 4.png-cd88863ce3231c4ef77aab4938b97d53.ctex"]
+source_file="res://Texture Or Sprites/Bags UI/PicPunk.png"
+dest_files=["res://.godot/imported/PicPunk.png-9679b334bc7141ec6484da3c3814be4a.ctex"]
 
 [params]
 

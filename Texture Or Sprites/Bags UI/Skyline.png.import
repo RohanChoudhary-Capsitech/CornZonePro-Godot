@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de0koktxpq518"
-path="res://.godot/imported/splash  3.png-bf5651e33aff15d46fa0611d601a11fc.ctex"
+uid="uid://dpoktc6t3phlj"
+path="res://.godot/imported/Skyline.png-f4981bcdc9930a4817bcc2bcc392b9a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags UI/splash  3.png"
-dest_files=["res://.godot/imported/splash  3.png-bf5651e33aff15d46fa0611d601a11fc.ctex"]
+source_file="res://Texture Or Sprites/Bags UI/Skyline.png"
+dest_files=["res://.godot/imported/Skyline.png-f4981bcdc9930a4817bcc2bcc392b9a4.ctex"]
 
 [params]
 

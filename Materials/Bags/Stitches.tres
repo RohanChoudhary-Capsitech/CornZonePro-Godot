@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dfvf33aasv75v"]
 
-[ext_resource type="Texture2D" uid="uid://dojal3ic1p7sh" path="res://Texture Or Sprites/Bags/stichess.png" id="1_co46j"]
+[ext_resource type="Texture2D" uid="uid://dojal3ic1p7sh" path="res://Texture Or Sprites/Bags/Stiches.png" id="1_co46j"]
 
 [resource]
 cull_mode = 2
