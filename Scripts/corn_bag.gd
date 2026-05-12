@@ -134,8 +134,16 @@ func _apply_throw(direction: Vector3, strength: float) -> void:
 	):
 		sync_throw.rpc(direction, strength)
 
-	# Host progresses match
-	if multiplayer and multiplayer.is_server():
+	# Offline modes still need to advance the turn and spawn the next bag.
+	var should_schedule_next_bag := GameSession.selected_mode != "Local"
+	if (
+		GameSession.selected_mode == "Local"
+		and multiplayer
+		and multiplayer.is_server()
+	):
+		should_schedule_next_bag = true
+
+	if should_schedule_next_bag:
 		await get_tree().create_timer(1.5).timeout
 		call_deferred("request_next_bag")
 
