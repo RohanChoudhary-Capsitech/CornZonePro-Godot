@@ -31,7 +31,10 @@ func load_setting():
 
 
 func play_bgm():
-	if not is_music_on and bgm_source.playing: return
+	if not is_music_on: 
+		stop_bgm()
+		return
+	if bgm_source.playing: return
 	bgm_source.play()
 	
 func stop_bgm():
