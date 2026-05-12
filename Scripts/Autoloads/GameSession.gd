@@ -142,7 +142,13 @@ func reset_match() -> void:
 	p1_bag_results.clear()
 	p2_bag_results.clear()
 	clear_projectile_preview()
+	var interad := int(Prefs.get_int("interstitial_ad_count", 1))
+	var should_show_interstitial := interad % 3 == 0
+	Prefs.set_int("interstitial_ad_count", interad + 1)
 
+	# Avoid showing ads in the middle of scene teardown.
+	if should_show_interstitial and is_instance_valid(AdManager) and AdManager.is_inside_tree():
+		AdManager.call_deferred("show_interstitial")
 
 func on_bag_thrown() -> void:
 	bags_thrown_this_turn += 1
