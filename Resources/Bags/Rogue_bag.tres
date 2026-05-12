@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/Resource Structures/BagConfig.gd" id="1_8dv25"]
 [ext_resource type="Material" uid="uid://dr0rmg33fscfy" path="res://Materials/Bags/Rogue.tres" id="1_g6fcd"]
-[ext_resource type="Texture2D" uid="uid://tn4evmrgxmoj" path="res://Texture Or Sprites/Bags/Rogue.png" id="1_ns5wg"]
+[ext_resource type="Texture2D" uid="uid://dw2wqne2o12gc" path="res://Texture Or Sprites/Bags UI/Rogue.png" id="1_ns5wg"]
 
 [resource]
 script = ExtResource("1_8dv25")

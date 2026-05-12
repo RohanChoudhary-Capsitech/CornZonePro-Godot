@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BagConfig" format=3 uid="uid://c2vrby3yw1hrx"]
 
-[ext_resource type="Texture2D" uid="uid://dyyrk0wpb7ec8" path="res://Texture Or Sprites/Bags/Neon.png" id="1_kgi5u"]
+[ext_resource type="Texture2D" uid="uid://b1rygxatep8n0" path="res://Texture Or Sprites/Bags UI/Arctic.png" id="1_kgi5u"]
 [ext_resource type="Material" uid="uid://bqou4twwrthfb" path="res://Materials/Bags/Arctic.tres" id="2_kgi5u"]
 [ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/Resource Structures/BagConfig.gd" id="3_lyovf"]
 

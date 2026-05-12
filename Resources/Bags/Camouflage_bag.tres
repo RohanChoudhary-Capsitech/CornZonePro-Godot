@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="BagConfig" format=3 uid="uid://bqn3tt2y58q4w"]
 
-[ext_resource type="Texture2D" uid="uid://dyyrk0wpb7ec8" path="res://Texture Or Sprites/Bags/Neon.png" id="1_xt4pg"]
-[ext_resource type="Material" uid="uid://bqou4twwrthfb" path="res://Materials/Bags/Arctic.tres" id="2_r8bus"]
+[ext_resource type="Texture2D" uid="uid://bf0xor1enuc7y" path="res://Texture Or Sprites/Bags UI/Camouflage.png" id="1_xt4pg"]
+[ext_resource type="Material" uid="uid://dty05hernmrxc" path="res://Materials/Bags/Camouflage.tres" id="2_r8bus"]
 [ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/Resource Structures/BagConfig.gd" id="3_8ha7m"]
 
 [resource]
 script = ExtResource("3_8ha7m")
-bag_name = "Arctic"
+bag_name = "Camouflage"
 icon = ExtResource("1_xt4pg")
 material_override = ExtResource("2_r8bus")
 metadata/_custom_type_script = "uid://cs2g11q6pm16d"

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BagConfig" format=3 uid="uid://b53s6tykkkbdu"]
 
-[ext_resource type="Texture2D" uid="uid://tn4evmrgxmoj" path="res://Texture Or Sprites/Bags/Rogue.png" id="1_q0jjn"]
-[ext_resource type="Material" uid="uid://dr0rmg33fscfy" path="res://Materials/Bags/Rogue.tres" id="2_arfwx"]
+[ext_resource type="Texture2D" uid="uid://4tulrxf3tc8l" path="res://Texture Or Sprites/Bags UI/Shurican.png" id="1_q0jjn"]
+[ext_resource type="Material" uid="uid://d0ipdb3kmxnh8" path="res://Materials/Bags/Shurican.tres" id="2_arfwx"]
 [ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/Resource Structures/BagConfig.gd" id="3_oae7m"]
 
 [resource]

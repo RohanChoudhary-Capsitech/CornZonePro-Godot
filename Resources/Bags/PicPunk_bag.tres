@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="BagConfig" format=3 uid="uid://yfg4atx6eroc"]
 
-[ext_resource type="Texture2D" uid="uid://dyyrk0wpb7ec8" path="res://Texture Or Sprites/Bags/Neon.png" id="1_u4io7"]
-[ext_resource type="Material" uid="uid://bqou4twwrthfb" path="res://Materials/Bags/Arctic.tres" id="2_oya8j"]
+[ext_resource type="Texture2D" uid="uid://bnmjupbvtalkk" path="res://Texture Or Sprites/Bags UI/PicPunk.png" id="1_u4io7"]
+[ext_resource type="Material" uid="uid://7p4s0fr1k8gt" path="res://Materials/Bags/PicPunk.tres" id="2_oya8j"]
 [ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/Resource Structures/BagConfig.gd" id="3_qob3d"]
 
 [resource]
 script = ExtResource("3_qob3d")
-bag_name = "Arctic"
+bag_name = "PicPunk"
 icon = ExtResource("1_u4io7")
 material_override = ExtResource("2_oya8j")
 metadata/_custom_type_script = "uid://cs2g11q6pm16d"
