@@ -5,7 +5,7 @@ extends Node
 const DEFAULT_MAP_SCENE_PATH := "res://Scenes/Maps/street.tscn"
 const DEFAULT_MAP_CONFIG := preload("res://Resources/Maps/street.tres")
 
-
+signal home_comeing(value:int)
 
 
 var canvas_layers: Array[CanvasLayer] = []
@@ -125,10 +125,12 @@ func _go_home_rpc():
 	_go_home_local()
 
 func _go_home_local():
+	Prefs.set_int("home_comeing",1)
 	GameSession.reset_match()
 	SceneManager.free_all()
 	NetworkManager.rematch_in_progress = false
 	SceneManager.goto("res://Scenes/home.tscn")
+	
 
 func restart(
 	mode_override: String = "",

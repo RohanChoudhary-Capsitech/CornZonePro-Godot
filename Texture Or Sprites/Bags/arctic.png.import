@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dimt3b5e6hg0a"
-path.s3tc="res://.godot/imported/arctic.png-33ae79a8220b4c3ca75399ff004ffb17.s3tc.ctex"
-path.etc2="res://.godot/imported/arctic.png-33ae79a8220b4c3ca75399ff004ffb17.etc2.ctex"
+path.s3tc="res://.godot/imported/Arctic.png-ca2c490ee3241c8b2e3f71a55546ac0c.s3tc.ctex"
+path.etc2="res://.godot/imported/Arctic.png-ca2c490ee3241c8b2e3f71a55546ac0c.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags/arctic.png"
-dest_files=["res://.godot/imported/arctic.png-33ae79a8220b4c3ca75399ff004ffb17.s3tc.ctex", "res://.godot/imported/arctic.png-33ae79a8220b4c3ca75399ff004ffb17.etc2.ctex"]
+source_file="res://Texture Or Sprites/Bags/Arctic.png"
+dest_files=["res://.godot/imported/Arctic.png-ca2c490ee3241c8b2e3f71a55546ac0c.s3tc.ctex", "res://.godot/imported/Arctic.png-ca2c490ee3241c8b2e3f71a55546ac0c.etc2.ctex"]
 
 [params]
 
