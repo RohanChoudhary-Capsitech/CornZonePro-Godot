@@ -11,26 +11,33 @@ func _ready() -> void:
 	
 
 func _on_setting_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../SettingScreen")
 
 func _on_timer_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../MapSelectScreen")
 	UIManager.single_player()
 
 func _on_profile_icon_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../ProfileScreen")
 
 func _on_info_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../InfoScreen")
 
 func _on_daily_reward_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../DailyRewardScreen")
 
 func _on_pass_n_play_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../MapSelectScreen")
 	UIManager.pass_play()
 
 func _on_lan_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	var multiplayer_screen := $"../MultiplayerScreen"
 	UIManager.toggle_canvas(multiplayer_screen)
 	if multiplayer_screen.visible and multiplayer_screen.has_method("on_menu_opened"):
@@ -38,11 +45,14 @@ func _on_lan_button_pressed() -> void:
 
 
 func _on_leaderboard_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../LeaderBoardScreen")
 
 func _on_shop_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../ShopScreen")
 
 
 func _on_inventory_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../InventoryScreen")

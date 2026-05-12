@@ -29,37 +29,44 @@ func game_setup()->void:
 	GameSession.selected_map_path,GameSession.required_ui,map_time)
 
 func _on_cross_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($".")
 
 
 #region Map_Button_Functions
 
 func _on_lawn_map_pressed() -> void:
+	SoundManager.play_button_clicks()
 	GameSession.selected_map_path=lawn
 	map_time=lawn_config.time_limit
 	game_setup()
 
 func _on_street_map_pressed() -> void:
+	SoundManager.play_button_clicks()
 	GameSession.selected_map_path=street
 	map_time=street_config.time_limit
 	game_setup()
 
 func _on_stadium_map_pressed() -> void:
+	SoundManager.play_button_clicks()
 	GameSession.selected_map_path=stadium
 	map_time=stadium_config.time_limit
 	game_setup()
 
 func _on_backyard_map_pressed() -> void:
+	SoundManager.play_button_clicks()
 	GameSession.selected_map_path=backyard
 	map_time=backyard_config.time_limit
 	game_setup()
 
 func _on_rooftop_map_pressed() -> void:
+	SoundManager.play_button_clicks()
 	GameSession.selected_map_path=rooftop
 	map_time=rooftop_config.time_limit
 	game_setup()
 
 func _on_metro_map_pressed() -> void:
+	SoundManager.play_button_clicks()
 	GameSession.selected_map_path=metro
 	map_time=metro_config.time_limit
 	game_setup()

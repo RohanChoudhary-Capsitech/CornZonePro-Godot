@@ -24,6 +24,7 @@ func update_button_visibility():
 		buttons[i].disabled = !(day_num == current_day and can_claim_today)
 
 func _on_cross_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($".")
 
 func send_reward(day: int, amount: int):
@@ -31,22 +32,29 @@ func send_reward(day: int, amount: int):
 	reward_collect.emit({"day": day, "coin_amount": amount})
 
 func _on_day_1_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	send_reward(1, 5)
 	
 func _on_day_2_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	send_reward(2, 10)
 
 func _on_day_3_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	send_reward(3, 15)
 
 func _on_day_4_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	send_reward(4, 20)
 
 func _on_day_5_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	send_reward(5, 25)
 
 func _on_day_6_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	send_reward(6, 30)
 
 func _on_day_7_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	send_reward(7, 35)

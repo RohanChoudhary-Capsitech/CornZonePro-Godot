@@ -6,8 +6,9 @@ extends Node
 
 @export_group("Audio Clips")
 @export var bgm_clip: AudioStream
-@export var button_clip: AudioStream
-@export var bag_collide_clip: AudioStream
+@export var button_tap_clip: AudioStream
+@export var bag_throw_clip: AudioStream
+@export var bag_drop_clip: AudioStream
 @export var bag_pot_clip: AudioStream
 @export var coin_collect_clip: AudioStream
 @export var gameover_clip: AudioStream
@@ -36,6 +37,7 @@ func play_bgm():
 		return
 	if bgm_source.playing: return
 	bgm_source.play()
+	print("BGM Playing")
 	
 func stop_bgm():
 	if bgm_source.playing:
@@ -48,10 +50,10 @@ func play_sfx(clip: AudioStream):
 	sfx_source.play()
 	
 func play_button_clicks():
-	play_sfx(button_clip)
+	play_sfx(button_tap_clip)
 
-func play_bag_collide():
-	play_sfx(bag_collide_clip)
+func play_bag_drop():
+	play_sfx(bag_drop_clip)
 
 func play_bag_pot():
 	play_sfx(bag_pot_clip)

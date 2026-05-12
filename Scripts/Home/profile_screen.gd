@@ -10,6 +10,7 @@ func _ready() -> void:
 	$Panel/ProfileBg/ProfilePic.texture = icons[Prefs.get_int("profile_index", 0)]
 
 func _on_cross_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($".")
 
 func update_ui()->void:
@@ -18,4 +19,5 @@ func update_ui()->void:
 
 
 func _on_edit_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	pass

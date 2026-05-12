@@ -17,4 +17,5 @@ func _ready() -> void:
 		$InventoryScreen
 	)
 	UIManager.enable_canvas(UIManager.loading_screen)
-	#AdManager.show_banner()
+	AdManager.show_banner()
+	SoundManager.play_bgm()

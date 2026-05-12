@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 run/low_processor_mode=true
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 Prefs="*uid://bq4vynw7q6sul"
@@ -43,7 +47,7 @@ project/assembly_name="Cornzone"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/godotshare/plugin.cfg", "res://addons/playerprefs/plugin.cfg")
+enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/playerprefs/plugin.cfg")
 
 [physics]
 

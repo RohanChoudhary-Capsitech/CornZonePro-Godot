@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c2dbjirpm1ase" path="res://Texture Or Sprites/Login Screen/Line 14.png" id="13_jjai4"]
 [ext_resource type="Texture2D" uid="uid://cgqyho8ne3j3a" path="res://Texture Or Sprites/Login Screen/Google.png" id="14_lddgv"]
 [ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
-[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/BG.png" id="16_848r5"]
+[ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/Bg.png" id="16_848r5"]
 [ext_resource type="Texture2D" uid="uid://df3uq3lg4t57f" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
 [ext_resource type="Texture2D" uid="uid://dhaiu8nexctvx" path="res://Texture Or Sprites/Home Screen/ProfileBG.png" id="17_g2bjx"]
 [ext_resource type="Script" uid="uid://51frmnaa34pj" path="res://Scripts/Home/home_screen.gd" id="17_mkkvt"]
@@ -84,7 +84,7 @@
 [ext_resource type="Texture2D" uid="uid://cb5cirqsllo4x" path="res://Texture Or Sprites/Info Screen/Group 410.png" id="61_3fp5a"]
 [ext_resource type="Texture2D" uid="uid://bf0xor1enuc7y" path="res://Texture Or Sprites/Bags UI/Camouflage.png" id="61_4u64y"]
 [ext_resource type="Texture2D" uid="uid://bwwsdktfulm2u" path="res://Texture Or Sprites/DailyRewards/Union.png" id="62_5id56"]
-[ext_resource type="Script" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
+[ext_resource type="Script" uid="uid://nn6aqsvgnste" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
 [ext_resource type="Texture2D" uid="uid://de7xpsxtxc01w" path="res://Texture Or Sprites/Bags UI/Cobalt.png" id="62_i6hta"]
 [ext_resource type="Texture2D" uid="uid://blrgnaniuw5ts" path="res://Texture Or Sprites/DailyRewards/Group 275.png" id="62_um175"]
 [ext_resource type="Texture2D" uid="uid://dch1w5blud1y2" path="res://Texture Or Sprites/DailyRewards/Group 278.png" id="63_b16xs"]
@@ -3754,7 +3754,6 @@ item_scene = ExtResource("86_vaya1")
 datas = Array[Texture2D]([ExtResource("60_453j7"), ExtResource("61_4u64y"), ExtResource("62_i6hta"), ExtResource("63_moiof"), ExtResource("64_rjsir"), ExtResource("65_dlmwe"), ExtResource("66_yr2fe"), ExtResource("67_83p4v"), ExtResource("68_gtgww"), ExtResource("69_bxkn3"), ExtResource("70_ffjic"), ExtResource("71_xpsj5"), ExtResource("72_qi751"), ExtResource("73_2vf33"), ExtResource("74_12lhb")])
 
 [node name="SettingScreen" type="CanvasLayer" parent="." unique_id=1804771245]
-visible = false
 script = ExtResource("44_m3bm7")
 setting_off = ExtResource("89_f3k6c")
 setting_on = ExtResource("91_6ojkg")
@@ -3843,7 +3842,7 @@ texture = ExtResource("44_vdfna")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="AudioText" type="Label" parent="SettingScreen/Panel/SettingBg/SettingPanel/AudioMusicBg" unique_id=807528863]
+[node name="MusicText" type="Label" parent="SettingScreen/Panel/SettingBg/SettingPanel/AudioMusicBg" unique_id=807528863]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 30.0
@@ -3851,9 +3850,9 @@ offset_right = 127.0
 offset_bottom = 65.0
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 28
-text = "Audio"
+text = "Music"
 
-[node name="MusicText" type="Label" parent="SettingScreen/Panel/SettingBg/SettingPanel/AudioMusicBg" unique_id=1241709567]
+[node name="AudiioText" type="Label" parent="SettingScreen/Panel/SettingBg/SettingPanel/AudioMusicBg" unique_id=1241709567]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 90.0
@@ -3861,7 +3860,7 @@ offset_right = 130.0
 offset_bottom = 125.0
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 28
-text = "Music"
+text = "Audio"
 
 [node name="MusicOnButton" type="Button" parent="SettingScreen/Panel/SettingBg/SettingPanel/AudioMusicBg" unique_id=2079967415]
 layout_mode = 0

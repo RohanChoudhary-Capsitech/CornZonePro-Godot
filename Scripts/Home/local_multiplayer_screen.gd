@@ -33,6 +33,7 @@ func on_menu_opened() -> void:
 
 
 func _on_cross_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	print("Closing multiplayer session")
 	NetworkManager.disconnect_game()
 	_cancel_room_search_timeout()
@@ -46,6 +47,7 @@ func _on_cross_button_pressed() -> void:
 
 
 func _on_host_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	var room_name := room_input.text.strip_edges()
 	if room_name.is_empty():
 		_set_status("Enter a room name first")
@@ -65,6 +67,7 @@ func _on_host_button_pressed() -> void:
 
 
 func _on_join_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	var room_id := _normalize_room_id(room_input.text)
 	if room_id.is_empty():
 		_set_status("Enter a room ID first")

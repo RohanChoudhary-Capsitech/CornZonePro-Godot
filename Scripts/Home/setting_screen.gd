@@ -57,35 +57,43 @@ func _ready() -> void:
 
 
 func _on_cross_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($".")
 
 
 func _on_privacy_policy_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	OS.shell_open("https://www.thegamewise.com/privacy-policy/")
 
 
 
 func _on_facebook_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	OS.shell_open(facebook_link)
 
 
 func _on_instagram_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	OS.shell_open(instagram_link)
 
 
 func _on_twitter_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	OS.shell_open(gamewise_link)
 
 
 func _on_linked_in_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	OS.shell_open(linkedin_link)
 
 
 func _on_more_games_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	OS.shell_open("https://play.google.com/store/apps/dev?id=8346369525251412033")
 
 
 func _on_settings_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	if is_setting_open:
 		return
 	is_setting_open = true
@@ -101,6 +109,7 @@ func _on_settings_button_pressed() -> void:
 
 
 func _on_socials_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	if is_social_open:
 		return
 	is_social_open = true
@@ -114,6 +123,7 @@ func _on_socials_button_pressed() -> void:
 	more_games_panel.visible = false
 
 func _on_more_game_panel_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	if is_more_game_open:
 		return
 	is_more_game_open = true
@@ -129,23 +139,29 @@ func _on_more_game_panel_button_pressed() -> void:
 
 # Audio and Music settings system
 func _on_music_on_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOnButton.visible = false
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOffButton.visible =  true
 	Prefs.set_bool("music", false)
+	SoundManager.stop_bgm()
 
 
 func _on_music_off_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOffButton.visible =  false
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOnButton.visible = true
 	Prefs.set_bool("music", true)
+	SoundManager.play_bgm()
 
 
 func _on_sound_on_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOnButton.visible = false
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOffButton.visible = true
 	Prefs.set_bool("sound", false)
 
 func _on_sound_off_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOffButton.visible = false
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOnButton.visible = true
 	Prefs.set_bool("sound", true)

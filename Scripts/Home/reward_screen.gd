@@ -14,6 +14,7 @@ func _on_reward_collect(reward):
 
 
 func _on_claim_pressed() -> void:
+	SoundManager.play_button_clicks()
 	DataManager.add_coins(current_reward_data.coin_amount)
 	DataManager.save_claim_success()
 	UIManager.toggle_canvas($".")
