@@ -5,7 +5,7 @@ extends Node
 const DEFAULT_MAP_SCENE_PATH := "res://Scenes/Maps/street.tscn"
 const DEFAULT_MAP_CONFIG := preload("res://Resources/Maps/street.tres")
 
-signal home_comeing(value:int)
+# signal home_comeing(value:int)
 
 
 var canvas_layers: Array[CanvasLayer] = []
@@ -35,6 +35,20 @@ signal UI_required
 
 # func _ready() -> void:
 # 	NetworkManager.game_ready.connect(local_multiplayer)
+
+func _notification(what: int) -> void:
+	match what:
+		NOTIFICATION_APPLICATION_PAUSED, NOTIFICATION_APPLICATION_FOCUS_OUT, NOTIFICATION_WM_WINDOW_FOCUS_OUT:
+			_set_home_coming_state(0)
+		NOTIFICATION_APPLICATION_RESUMED, NOTIFICATION_APPLICATION_FOCUS_IN, NOTIFICATION_WM_WINDOW_FOCUS_IN:
+			_set_home_coming_state(1)
+
+func _set_home_coming_state(value: int) -> void:
+	if Prefs.get_int("home_comeing", -1) == value:
+		return
+
+	Prefs.set_int("home_comeing", value)
+	Prefs.save()
 
 func home_setup(loading, home, login, setting, map, profile, info, rewards_list, reward, local_multilplayer, leaderboard, shop, inventory):
 	loading_screen = loading

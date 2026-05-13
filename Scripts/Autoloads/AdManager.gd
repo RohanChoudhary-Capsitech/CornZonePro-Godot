@@ -153,7 +153,7 @@ func _on_initialized(status):
 
 func preload_ads():
 
-	load_banner()
+	#load_banner()
 
 	load_interstitial()
 
