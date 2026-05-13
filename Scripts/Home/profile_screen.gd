@@ -15,8 +15,8 @@ func _on_cross_button_pressed() -> void:
 	UIManager.toggle_canvas($".")
 
 func update_ui()->void:
-	$"Panel/ProfileBg/Total Pots/Value".text=str(Prefs.get_int("total_pots"))
-	$Panel/ProfileBg/GamePlaySection/GamesPlayedValue.text=str(Prefs.get_int("matches_played"))
+	$"Panel/ProfileBg/PlayerCard/Total Pots/Value".text=str(Prefs.get_int("total_pots"))
+	$Panel/ProfileBg/PlayerCard/GamePlaySection/GamesPlayedValue.text=str(Prefs.get_int("matches_played"))
 
 
 func _on_edit_button_pressed() -> void:

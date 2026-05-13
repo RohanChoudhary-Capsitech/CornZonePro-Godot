@@ -154,6 +154,7 @@
 [ext_resource type="Texture2D" uid="uid://c6tpb5rbwmc7c" path="res://Texture Or Sprites/MoreGame Icons/wrapvector.png" id="114_453j7"]
 [ext_resource type="Script" uid="uid://m372ho3svafv" path="res://Scripts/Home/map_select_screen.gd" id="114_ttur7"]
 [ext_resource type="Texture2D" uid="uid://b2jpm0batwjc6" path="res://Texture Or Sprites/MapsBG/Lawn.png" id="117_453j7"]
+[ext_resource type="Texture2D" uid="uid://cy4m5k6w3y8qj" path="res://Texture Or Sprites/Profile Screen/player_card_bg.png" id="129_moiof"]
 [ext_resource type="Texture2D" uid="uid://cf37b2322wdpq" path="res://Texture Or Sprites/Profile Screen/profile_panel_bg.png" id="132_i6hta"]
 [ext_resource type="Texture2D" uid="uid://1tn66sa1ibds" path="res://Texture Or Sprites/Profile Screen/Rectangle 125.png" id="133_moiof"]
 [ext_resource type="Texture2D" uid="uid://8hxstwn0h1sb" path="res://Texture Or Sprites/DailyRewards/Rectangle 111.png" id="137_qfixt"]
@@ -2981,37 +2982,37 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="MidPanel" type="VBoxContainer" parent="ShopScreen/Panel" unique_id=1631213551]
-custom_minimum_size = Vector2(400, 500)
+custom_minimum_size = Vector2(430, 450)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -236.0
-offset_right = 200.0
-offset_bottom = 264.0
+offset_left = -215.0
+offset_top = -259.5
+offset_right = 215.0
+offset_bottom = 263.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 60
 
 [node name="BagPanel" type="TextureRect" parent="ShopScreen/Panel/MidPanel" unique_id=1344024291]
+custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
-size_flags_vertical = 10
 texture = ExtResource("43_q6kyu")
 expand_mode = 5
-stretch_mode = 4
+stretch_mode = 5
 
 [node name="Top" type="HBoxContainer" parent="ShopScreen/Panel/MidPanel/BagPanel" unique_id=980806474]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -187.0
-offset_top = 8.0
-offset_right = 188.0
-offset_bottom = 128.0
+offset_left = -189.5
+offset_top = 19.0
+offset_right = 191.5
+offset_bottom = 166.5
 grow_horizontal = 2
 theme_override_constants/separation = 10
 
@@ -3036,13 +3037,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -169.0
-offset_top = -51.914063
-offset_right = 163.0
-offset_bottom = -3.9140625
+offset_left = -172.0
+offset_top = -68.91406
+offset_right = 166.0
+offset_bottom = -28.914063
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 12
+theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="ShopScreen/Panel/MidPanel/BagPanel/Bottom" unique_id=2106154745]
 layout_mode = 2
@@ -3087,21 +3088,21 @@ theme_override_font_sizes/font_size = 28
 text = "Buy"
 
 [node name="BoardPanel" type="TextureRect" parent="ShopScreen/Panel/MidPanel" unique_id=65650425]
+custom_minimum_size = Vector2(0, 230)
 layout_mode = 2
-size_flags_vertical = 10
 texture = ExtResource("44_rdxgg")
 expand_mode = 5
-stretch_mode = 4
+stretch_mode = 5
 
 [node name="Top" type="HBoxContainer" parent="ShopScreen/Panel/MidPanel/BoardPanel" unique_id=1002389661]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -189.25
-offset_top = 5.0
-offset_right = 189.25
-offset_bottom = 126.0
+offset_left = -186.625
+offset_top = 8.0
+offset_right = 190.625
+offset_bottom = 155.19876
 grow_horizontal = 2
 theme_override_constants/separation = 10
 
@@ -3126,13 +3127,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -176.5
-offset_top = -51.914078
-offset_right = 176.5
-offset_bottom = -3.9140778
+offset_left = -185.5
+offset_top = -59.0
+offset_right = 185.5
+offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 6
+theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="ShopScreen/Panel/MidPanel/BoardPanel/Bottom" unique_id=167165978]
 layout_mode = 2
@@ -4757,7 +4758,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="GamePlaySection" type="Control" parent="ProfileScreen/Panel/ProfileBg" unique_id=1625278630]
+[node name="PlayerCard" type="TextureRect" parent="ProfileScreen/Panel/ProfileBg" unique_id=996445300]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.5
+offset_top = 23.0
+offset_right = 151.5
+offset_bottom = 216.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("129_moiof")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="GamePlaySection" type="Control" parent="ProfileScreen/Panel/ProfileBg/PlayerCard" unique_id=1625278630]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4765,13 +4783,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -130.0
-offset_top = 19.0
+offset_top = -85.75
 offset_right = 130.0
-offset_bottom = 59.0
+offset_bottom = -45.75
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Icon" type="TextureRect" parent="ProfileScreen/Panel/ProfileBg/GamePlaySection" unique_id=940385129]
+[node name="Icon" type="TextureRect" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/GamePlaySection" unique_id=940385129]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4788,7 +4806,7 @@ texture = ExtResource("58_0g73e")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Text" type="Label" parent="ProfileScreen/Panel/ProfileBg/GamePlaySection" unique_id=1901456643]
+[node name="Text" type="Label" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/GamePlaySection" unique_id=1901456643]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4805,7 +4823,7 @@ theme_override_fonts/font = ExtResource("20_ao7do")
 theme_override_font_sizes/font_size = 20
 text = "Games Played"
 
-[node name="GamesPlayedValue" type="Label" parent="ProfileScreen/Panel/ProfileBg/GamePlaySection" unique_id=1034104630]
+[node name="GamesPlayedValue" type="Label" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/GamePlaySection" unique_id=1034104630]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4825,7 +4843,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Achievement" type="Control" parent="ProfileScreen/Panel/ProfileBg" unique_id=1681644384]
+[node name="Achievement" type="Control" parent="ProfileScreen/Panel/ProfileBg/PlayerCard" unique_id=1681644384]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4833,13 +4851,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -130.0
-offset_top = 84.0
+offset_top = -26.75
 offset_right = 130.0
-offset_bottom = 124.0
+offset_bottom = 13.25
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Icon" type="TextureRect" parent="ProfileScreen/Panel/ProfileBg/Achievement" unique_id=34058975]
+[node name="Icon" type="TextureRect" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/Achievement" unique_id=34058975]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4856,7 +4874,7 @@ texture = ExtResource("59_3fp5a")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Text" type="Label" parent="ProfileScreen/Panel/ProfileBg/Achievement" unique_id=1528552720]
+[node name="Text" type="Label" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/Achievement" unique_id=1528552720]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4873,7 +4891,7 @@ theme_override_fonts/font = ExtResource("20_ao7do")
 theme_override_font_sizes/font_size = 20
 text = "Achievements"
 
-[node name="Value" type="Label" parent="ProfileScreen/Panel/ProfileBg/Achievement" unique_id=517013968]
+[node name="Value" type="Label" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/Achievement" unique_id=517013968]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4893,7 +4911,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Total Pots" type="Control" parent="ProfileScreen/Panel/ProfileBg" unique_id=1777381793]
+[node name="Total Pots" type="Control" parent="ProfileScreen/Panel/ProfileBg/PlayerCard" unique_id=1777381793]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4901,13 +4919,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -130.0
-offset_top = 156.0
+offset_top = 33.25
 offset_right = 130.0
-offset_bottom = 196.0
+offset_bottom = 73.25
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Icon" type="TextureRect" parent="ProfileScreen/Panel/ProfileBg/Total Pots" unique_id=134022430]
+[node name="Icon" type="TextureRect" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/Total Pots" unique_id=134022430]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4924,7 +4942,7 @@ texture = ExtResource("60_um175")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Text" type="Label" parent="ProfileScreen/Panel/ProfileBg/Total Pots" unique_id=1097142877]
+[node name="Text" type="Label" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/Total Pots" unique_id=1097142877]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4941,7 +4959,7 @@ theme_override_fonts/font = ExtResource("20_ao7do")
 theme_override_font_sizes/font_size = 20
 text = "Total Pots"
 
-[node name="Value" type="Label" parent="ProfileScreen/Panel/ProfileBg/Total Pots" unique_id=431165004]
+[node name="Value" type="Label" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/Total Pots" unique_id=431165004]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -4956,7 +4974,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("20_ao7do")
 theme_override_font_sizes/font_size = 20
-text = "156"
+text = "151"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
