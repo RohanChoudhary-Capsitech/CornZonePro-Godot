@@ -54,8 +54,6 @@ func _ready() -> void:
 	else:
 		sound_on.visible = false
 		sound_off.visible = true
-		
-	SoundManager.play_bgm()
 
 func _on_cross_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -143,7 +141,7 @@ func _on_music_on_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOnButton.visible = false
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOffButton.visible =  true
-	Prefs.set_bool("music", false)
+	SoundManager.set_music(false)
 	SoundManager.stop_bgm()
 
 
@@ -151,7 +149,7 @@ func _on_music_off_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOffButton.visible =  false
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOnButton.visible = true
-	Prefs.set_bool("music", true)
+	SoundManager.set_music(true)
 	SoundManager.play_bgm()
 
 
@@ -159,10 +157,10 @@ func _on_sound_on_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOnButton.visible = false
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOffButton.visible = true
-	Prefs.set_bool("sound", false)
+	SoundManager.set_sfx(false)
 
 func _on_sound_off_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOffButton.visible = false
 	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOnButton.visible = true
-	Prefs.set_bool("sound", true)
+	SoundManager.set_sfx(true)

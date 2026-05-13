@@ -17,8 +17,7 @@ func _ready() -> void:
 		$InventoryScreen
 	)
 	var home:=Prefs.get_int("home_comeing",0)
-	if 0==home:
+	if home == 0:
 		UIManager.enable_canvas($LoadingScreen)
 	else:
 		UIManager.enable_canvas($HomeScreen)
-	#AdManager.show_banner()
