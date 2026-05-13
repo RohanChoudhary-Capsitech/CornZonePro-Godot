@@ -1,6 +1,6 @@
 extends CanvasLayer
 @onready var coin_text: Label = $Panel/TopPanel/Coin/CoinText
-@onready var profile_icon = $"Panel/TopPanel/Profile/Profile Icon/TextureRect"
+@onready var profile_icon = $"Panel/Profile/Profile Icon/TextureRect"
 
 @export var icons: Array[Texture2D]
 
@@ -8,7 +8,7 @@ func _ready() -> void:
 	#AdManager.show_banner()
 	coin_text.text = str(Prefs.get_int("coins",0))
 	profile_icon.texture = icons[Prefs.get_int("profile_index",0)]
-	
+	$"../InventoryScreen/Panel/Profile/Profile Icon/TextureRect".texture = icons[Prefs.get_int("profile_index",0)]
 
 func _on_setting_button_pressed() -> void:
 	SoundManager.play_button_clicks()

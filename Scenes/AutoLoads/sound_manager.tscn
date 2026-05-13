@@ -49,7 +49,7 @@ wind_clip = ExtResource("7_iyob5")
 powerup_clip = ExtResource("8_skk2w")
 
 [node name="BGMSource" type="AudioStreamPlayer" parent="." unique_id=172078272]
-max_polyphony = 10
+max_polyphony = 8
 bus = &"Music"
 
 [node name="SFXSource" type="AudioStreamPlayer" parent="." unique_id=1741974118]

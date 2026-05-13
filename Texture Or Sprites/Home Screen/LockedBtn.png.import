@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hg2rfu4eple4"
-path="res://.godot/imported/homeicon.png-53b729a1032cd35fe3b56e010a18b633.ctex"
+uid="uid://rchidgrtkn3h"
+path="res://.godot/imported/LockedBtn.png-7ed57943a9f97ef99636e21d93c71209.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Shop Screen/homeicon.png"
-dest_files=["res://.godot/imported/homeicon.png-53b729a1032cd35fe3b56e010a18b633.ctex"]
+source_file="res://Texture Or Sprites/Home Screen/LockedBtn.png"
+dest_files=["res://.godot/imported/LockedBtn.png-7ed57943a9f97ef99636e21d93c71209.ctex"]
 
 [params]
 

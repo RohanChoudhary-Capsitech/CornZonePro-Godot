@@ -37,8 +37,8 @@
 [ext_resource type="Texture2D" uid="uid://dyl7w8wg6qtfw" path="res://Texture Or Sprites/Home Screen/Shop.png" id="27_wflhj"]
 [ext_resource type="Texture2D" uid="uid://dt04wp8g38tdf" path="res://Texture Or Sprites/Home Screen/Inventory.png" id="28_krc7t"]
 [ext_resource type="Texture2D" uid="uid://3s0vfahwau58" path="res://Texture Or Sprites/Home Screen/PlayiconBg.png" id="30_hk3dx"]
-[ext_resource type="Texture2D" uid="uid://dvwxkku6qo65k" path="res://Texture Or Sprites/Home Screen/LockBtn.png" id="30_iw3j6"]
 [ext_resource type="Texture2D" uid="uid://0fjc2e2mdyqo" path="res://Texture Or Sprites/Home Screen/PlayAnimIcon.png" id="31_vihvb"]
+[ext_resource type="Texture2D" uid="uid://rchidgrtkn3h" path="res://Texture Or Sprites/Home Screen/LockedBtn.png" id="41_i6hta"]
 [ext_resource type="Texture2D" uid="uid://bh3fafq7melkt" path="res://Texture Or Sprites/Shop Screen/ShopBG.png" id="41_q0rbp"]
 [ext_resource type="Script" uid="uid://6ti8bts85mso" path="res://Scripts/Home/shop_screen.gd" id="41_xfm00"]
 [ext_resource type="Texture2D" uid="uid://b7vfboswoyyd2" path="res://Texture Or Sprites/Shop Screen/Group.png" id="42_2seyu"]
@@ -49,7 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://5m5jugnw8t7o" path="res://Texture Or Sprites/Shop Screen/Group 231.png" id="44_rdxgg"]
 [ext_resource type="Texture2D" uid="uid://b4n1ji3y2jtwr" path="res://Texture Or Sprites/Setting Screen/Rectangle 366.png" id="44_vdfna"]
 [ext_resource type="Texture2D" uid="uid://dtyqe8slqicdl" path="res://Texture Or Sprites/Shop Screen/Rectangle a.png" id="45_qeivk"]
-[ext_resource type="Texture2D" uid="uid://bn41igymqe1fh" path="res://Texture Or Sprites/Shop Screen/homeicon.png" id="45_rdxgg"]
+[ext_resource type="Texture2D" uid="uid://hg2rfu4eple4" path="res://Texture Or Sprites/Shop Screen/homeicon.png" id="45_rdxgg"]
 [ext_resource type="Texture2D" uid="uid://scwcx3w0wn7h" path="res://Texture Or Sprites/Shop Screen/bags.png" id="45_stdfk"]
 [ext_resource type="Texture2D" uid="uid://b1oonxfycxe2h" path="res://Texture Or Sprites/Setting Screen/on.png" id="45_sxluj"]
 [ext_resource type="Texture2D" uid="uid://cnpebfalm5426" path="res://Texture Or Sprites/Setting Screen/off.png" id="46_d3n2e"]
@@ -154,6 +154,8 @@
 [ext_resource type="Texture2D" uid="uid://c6tpb5rbwmc7c" path="res://Texture Or Sprites/MoreGame Icons/wrapvector.png" id="114_453j7"]
 [ext_resource type="Script" uid="uid://m372ho3svafv" path="res://Scripts/Home/map_select_screen.gd" id="114_ttur7"]
 [ext_resource type="Texture2D" uid="uid://b2jpm0batwjc6" path="res://Texture Or Sprites/MapsBG/Lawn.png" id="117_453j7"]
+[ext_resource type="Texture2D" uid="uid://cf37b2322wdpq" path="res://Texture Or Sprites/Profile Screen/profile_panel_bg.png" id="132_i6hta"]
+[ext_resource type="Texture2D" uid="uid://1tn66sa1ibds" path="res://Texture Or Sprites/Profile Screen/Rectangle 125.png" id="133_moiof"]
 [ext_resource type="Texture2D" uid="uid://8hxstwn0h1sb" path="res://Texture Or Sprites/DailyRewards/Rectangle 111.png" id="137_qfixt"]
 [ext_resource type="Script" uid="uid://crvxuifakyi1c" path="res://Scripts/Home/reward_screen.gd" id="139_pmkjb"]
 
@@ -191,12 +193,6 @@ texture = ExtResource("15_smgrs")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smgrs"]
 texture = ExtResource("15_smgrs")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_453j7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4u64y"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i6hta"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jv2cb"]
 texture = ExtResource("19_kx4oe")
 
@@ -205,6 +201,12 @@ texture = ExtResource("19_kx4oe")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aoomy"]
 texture = ExtResource("19_kx4oe")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_453j7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4u64y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i6hta"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7wmtr"]
 texture = ExtResource("18_848r5")
@@ -293,22 +295,22 @@ texture = ExtResource("28_krc7t")
 texture = ExtResource("28_krc7t")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bih4p"]
-texture = ExtResource("30_iw3j6")
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cmu2r"]
-texture = ExtResource("30_iw3j6")
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mkkvt"]
-texture = ExtResource("30_iw3j6")
+texture = ExtResource("41_i6hta")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3bm7"]
-texture = ExtResource("30_iw3j6")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qi751"]
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0htr1"]
-texture = ExtResource("30_iw3j6")
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44eka"]
-texture = ExtResource("30_iw3j6")
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ochsh"]
 texture = ExtResource("45_qeivk")
@@ -348,27 +350,27 @@ texture = ExtResource("45_rdxgg")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4yy14"]
 resource_local_to_scene = true
-texture = ExtResource("30_iw3j6")
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2vxpu"]
 resource_local_to_scene = true
-texture = ExtResource("30_iw3j6")
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvq4h"]
 resource_local_to_scene = true
-texture = ExtResource("30_iw3j6")
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stky2"]
 resource_local_to_scene = true
-texture = ExtResource("30_iw3j6")
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n2f85"]
 resource_local_to_scene = true
-texture = ExtResource("30_iw3j6")
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04qca"]
 resource_local_to_scene = true
-texture = ExtResource("30_iw3j6")
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmkjb"]
 texture = ExtResource("62_5id56")
@@ -534,15 +536,6 @@ icon = ExtResource("82_jicx3")
 rarity = 2
 metadata/_custom_type_script = "uid://dontqd7ds4gei"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43epo"]
-texture = ExtResource("18_55ff8")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7q78h"]
-texture = ExtResource("18_55ff8")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndhgh"]
-texture = ExtResource("18_55ff8")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afdxe"]
 resource_local_to_scene = true
 texture = ExtResource("45_rdxgg")
@@ -554,6 +547,9 @@ texture = ExtResource("45_rdxgg")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ttur7"]
 resource_local_to_scene = true
 texture = ExtResource("45_rdxgg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3bm7"]
+texture = ExtResource("41_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0g73e"]
 texture = ExtResource("62_5id56")
@@ -2108,6 +2104,24 @@ texture = ExtResource("56_aoomy")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pxd8"]
 texture = ExtResource("56_aoomy")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yr2fe"]
+texture = ExtResource("55_62iqh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83p4v"]
+texture = ExtResource("55_62iqh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gtgww"]
+texture = ExtResource("55_62iqh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bxkn3"]
+texture = ExtResource("18_55ff8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ffjic"]
+texture = ExtResource("18_55ff8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xpsj5"]
+texture = ExtResource("18_55ff8")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_36lgj"]
 resource_local_to_scene = true
 texture = ExtResource("62_5id56")
@@ -2425,28 +2439,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopPanel" type="HBoxContainer" parent="HomeScreen/Panel" unique_id=472766109]
-custom_minimum_size = Vector2(0, 10)
+[node name="SettingButton" type="Button" parent="HomeScreen/Panel" unique_id=768354547]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
+anchor_left = 0.95400006
 anchor_top = 0.05
-anchor_right = 0.5
+anchor_right = 0.95400006
 anchor_bottom = 0.05
-offset_left = -214.0
-offset_top = 14.0
-offset_right = 236.0
-offset_bottom = 46.0
-grow_horizontal = 2
-theme_override_constants/separation = 18
+offset_left = -38.920013
+offset_top = 5.0
+offset_right = 3.0799866
+offset_bottom = 47.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_jv2cb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_62iqh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aoomy")
 
-[node name="Profile" type="TextureRect" parent="HomeScreen/Panel/TopPanel" unique_id=1919251055]
-layout_mode = 2
+[node name="Profile" type="TextureRect" parent="HomeScreen/Panel" unique_id=1919251055]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062000003
+anchor_top = 0.047000002
+anchor_right = 0.062000003
+anchor_bottom = 0.047000002
+offset_left = -3.7600021
+offset_top = 11.16
+offset_right = 140.86499
+offset_bottom = 50.16
 texture = ExtResource("17_g2bjx")
 expand_mode = 3
-stretch_mode = 6
+stretch_mode = 4
 
-[node name="Profile Icon" type="Button" parent="HomeScreen/Panel/TopPanel/Profile" unique_id=1614137076]
+[node name="Profile Icon" type="Button" parent="HomeScreen/Panel/Profile" unique_id=1614137076]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -2460,74 +2486,87 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_453j7")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_4u64y")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_i6hta")
 
-[node name="TextureRect" type="TextureRect" parent="HomeScreen/Panel/TopPanel/Profile/Profile Icon" unique_id=357646580]
+[node name="TextureRect" type="TextureRect" parent="HomeScreen/Panel/Profile/Profile Icon" unique_id=357646580]
 custom_minimum_size = Vector2(39, 40)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
+offset_left = 4.0
+offset_top = -25.5
+offset_right = 53.0
+offset_bottom = 23.5
 grow_vertical = 2
 texture = ExtResource("18_55ff8")
 expand_mode = 1
-stretch_mode = 4
+stretch_mode = 5
 
-[node name="Label" type="Label" parent="HomeScreen/Panel/TopPanel/Profile" unique_id=883186087]
+[node name="Label" type="Label" parent="HomeScreen/Panel/Profile" unique_id=883186087]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 2.0
-offset_right = 103.0
-offset_bottom = 16.0
+offset_left = 37.0
+offset_top = 3.0
+offset_right = 132.0
+offset_bottom = 20.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
 theme_override_fonts/font = ExtResource("19_55ff8")
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 13
 text = "Himanshu 1234"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Badge" type="TextureRect" parent="HomeScreen/Panel/TopPanel/Profile" unique_id=1560160933]
+[node name="Badge" type="TextureRect" parent="HomeScreen/Panel/Profile" unique_id=1560160933]
 layout_mode = 0
-offset_left = 41.0
-offset_top = 19.0
-offset_right = 49.0
-offset_bottom = 27.0
+offset_left = 51.0
+offset_top = 22.0
+offset_right = 59.089172
+offset_bottom = 32.0
 texture = ExtResource("20_uctue")
-expand_mode = 2
-stretch_mode = 4
+expand_mode = 3
+stretch_mode = 5
 
-[node name="Label2" type="Label" parent="HomeScreen/Panel/TopPanel/Profile" unique_id=1725353192]
+[node name="Label2" type="Label" parent="HomeScreen/Panel/Profile" unique_id=1725353192]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 16.0
-offset_right = 81.0
-offset_bottom = 28.0
+offset_left = 61.0
+offset_top = 20.0
+offset_right = 99.0
+offset_bottom = 34.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
 theme_override_fonts/font = ExtResource("20_ao7do")
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 11
 text = "Bronze"
 
+[node name="TopPanel" type="HBoxContainer" parent="HomeScreen/Panel" unique_id=472766109]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.619
+anchor_top = 0.041
+anchor_right = 0.619
+anchor_bottom = 0.041
+offset_left = -112.119995
+offset_top = 8.48
+offset_right = 111.880005
+offset_bottom = 63.48
+grow_horizontal = 2
+theme_override_constants/separation = 14
+
 [node name="Coin" type="TextureRect" parent="HomeScreen/Panel/TopPanel" unique_id=1463064628]
-custom_minimum_size = Vector2(50, 20)
+custom_minimum_size = Vector2(105, 55)
 layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("17_yxu73")
-expand_mode = 3
-stretch_mode = 6
+expand_mode = 2
+stretch_mode = 5
 
 [node name="CoinIcon" type="TextureRect" parent="HomeScreen/Panel/TopPanel/Coin" unique_id=674128418]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -15.0
-offset_top = -15.0
-offset_right = 15.0
-offset_bottom = 15.0
+offset_left = -12.0
+offset_top = -14.0
+offset_right = 16.0
+offset_bottom = 14.0
 grow_vertical = 2
 texture = ExtResource("18_kx4oe")
 expand_mode = 2
@@ -2540,39 +2579,40 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.808502
+offset_left = -31.808502
 offset_top = -10.0
-offset_right = 47.191498
+offset_right = 48.0
 offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "2357"
+vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="XP" type="TextureRect" parent="HomeScreen/Panel/TopPanel" unique_id=1572530790]
-custom_minimum_size = Vector2(50, 10)
+custom_minimum_size = Vector2(105, 55)
 layout_mode = 2
 texture = ExtResource("17_yxu73")
-expand_mode = 3
-stretch_mode = 6
+expand_mode = 2
+stretch_mode = 5
 
 [node name="XpIcon" type="TextureRect" parent="HomeScreen/Panel/TopPanel/XP" unique_id=1945381247]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = -15.0
-offset_right = 14.0
-offset_bottom = 17.0
+offset_left = -14.0
+offset_top = -14.25
+offset_right = 16.5
+offset_bottom = 16.25
 grow_vertical = 2
 texture = ExtResource("18_uo4rt")
 expand_mode = 4
-stretch_mode = 4
+stretch_mode = 5
 
 [node name="XpText" type="Label" parent="HomeScreen/Panel/TopPanel/XP" unique_id=731114475]
 custom_minimum_size = Vector2(-50, 0)
@@ -2582,25 +2622,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -38.808502
+offset_left = -32.0
 offset_top = -9.0
-offset_right = 50.191498
+offset_right = 50.0
 offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "50"
-
-[node name="SettingButton" type="Button" parent="HomeScreen/Panel/TopPanel" unique_id=768354547]
-custom_minimum_size = Vector2(40, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_styles/normal = SubResource("StyleBoxTexture_jv2cb")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_62iqh")
-theme_override_styles/hover = SubResource("StyleBoxTexture_aoomy")
+vertical_alignment = 1
 
 [node name="LeftPanel" type="VBoxContainer" parent="HomeScreen/Panel" unique_id=817961446]
 layout_mode = 1
@@ -2874,15 +2907,16 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="Button" type="Button" parent="HomeScreen/Panel/BottomPanel/Locked" unique_id=1471951552]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.999998
+offset_left = -20.0
 offset_top = -25.0
-offset_right = 24.999998
+offset_right = 20.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -2903,13 +2937,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.0
+offset_left = -20.0
 offset_top = -25.0
-offset_right = 25.0
+offset_right = 20.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_m3bm7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qi751")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
@@ -2947,22 +2981,24 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="MidPanel" type="VBoxContainer" parent="ShopScreen/Panel" unique_id=1631213551]
+custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -191.5
-offset_top = -204.0
-offset_right = 191.5
-offset_bottom = 204.0
+offset_left = -200.0
+offset_top = -236.0
+offset_right = 200.0
+offset_bottom = 264.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 70
+theme_override_constants/separation = 100
 
 [node name="BagPanel" type="TextureRect" parent="ShopScreen/Panel/MidPanel" unique_id=1344024291]
 layout_mode = 2
+size_flags_vertical = 10
 texture = ExtResource("43_q6kyu")
 expand_mode = 5
 stretch_mode = 4
@@ -3052,6 +3088,7 @@ text = "Buy"
 
 [node name="BoardPanel" type="TextureRect" parent="ShopScreen/Panel/MidPanel" unique_id=65650425]
 layout_mode = 2
+size_flags_vertical = 10
 texture = ExtResource("44_rdxgg")
 expand_mode = 5
 stretch_mode = 4
@@ -3252,9 +3289,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.0
+offset_left = -20.0
 offset_top = -25.0
-offset_right = 25.0
+offset_right = 20.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -3275,9 +3312,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.0
+offset_left = -20.0
 offset_top = -25.0
-offset_right = 25.0
+offset_right = 20.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -3401,28 +3438,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopPanel" type="HBoxContainer" parent="InventoryScreen/Panel" unique_id=1114907192]
-custom_minimum_size = Vector2(0, 10)
+[node name="SettingButton" type="Button" parent="InventoryScreen/Panel" unique_id=1221071677]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
+anchor_left = 0.95400006
 anchor_top = 0.05
-anchor_right = 0.5
+anchor_right = 0.95400006
 anchor_bottom = 0.05
-offset_left = -214.0
-offset_top = 14.0
-offset_right = 236.0
-offset_bottom = 46.0
-grow_horizontal = 2
-theme_override_constants/separation = 18
+offset_left = -38.920013
+offset_top = 5.0
+offset_right = 3.0799866
+offset_bottom = 47.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_jv2cb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_62iqh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aoomy")
 
-[node name="Profile" type="TextureRect" parent="InventoryScreen/Panel/TopPanel" unique_id=628766286]
-layout_mode = 2
+[node name="Profile" type="TextureRect" parent="InventoryScreen/Panel" unique_id=1757906638]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062000003
+anchor_top = 0.047000002
+anchor_right = 0.062000003
+anchor_bottom = 0.047000002
+offset_left = -3.7600021
+offset_top = 11.16
+offset_right = 140.86499
+offset_bottom = 50.16
 texture = ExtResource("17_g2bjx")
 expand_mode = 3
-stretch_mode = 6
+stretch_mode = 4
 
-[node name="Profile Icon" type="Button" parent="InventoryScreen/Panel/TopPanel/Profile" unique_id=861492003]
+[node name="Profile Icon" type="Button" parent="InventoryScreen/Panel/Profile" unique_id=2075725053]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -3432,107 +3481,139 @@ offset_top = -22.0
 offset_right = 19.0
 offset_bottom = 21.0
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_43epo")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_7q78h")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ndhgh")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_453j7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4u64y")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i6hta")
 
-[node name="Label" type="Label" parent="InventoryScreen/Panel/TopPanel/Profile" unique_id=1372433767]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 2.0
-offset_right = 103.0
-offset_bottom = 16.0
-theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
-theme_override_fonts/font = ExtResource("19_55ff8")
-theme_override_font_sizes/font_size = 11
-text = "Himanshu 1234"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Badge" type="TextureRect" parent="InventoryScreen/Panel/TopPanel/Profile" unique_id=323016410]
-layout_mode = 0
-offset_left = 41.0
-offset_top = 19.0
-offset_right = 49.0
-offset_bottom = 27.0
-texture = ExtResource("20_uctue")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="Label2" type="Label" parent="InventoryScreen/Panel/TopPanel/Profile" unique_id=175151851]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 16.0
-offset_right = 81.0
-offset_bottom = 28.0
-theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
-theme_override_fonts/font = ExtResource("20_ao7do")
-theme_override_font_sizes/font_size = 9
-text = "Bronze"
-
-[node name="Coin" type="TextureRect" parent="InventoryScreen/Panel/TopPanel" unique_id=1526291918]
-custom_minimum_size = Vector2(50, 20)
-layout_mode = 2
-texture = ExtResource("17_yxu73")
-expand_mode = 3
-stretch_mode = 6
-
-[node name="CoinIcon" type="TextureRect" parent="InventoryScreen/Panel/TopPanel/Coin" unique_id=213100866]
+[node name="TextureRect" type="TextureRect" parent="InventoryScreen/Panel/Profile/Profile Icon" unique_id=1664886852]
+custom_minimum_size = Vector2(39, 40)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -15.0
-offset_top = -15.0
-offset_right = 15.0
-offset_bottom = 15.0
+offset_left = 4.0
+offset_top = -25.5
+offset_right = 53.0
+offset_bottom = 23.5
+grow_vertical = 2
+texture = ExtResource("18_55ff8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="InventoryScreen/Panel/Profile" unique_id=1979933053]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 3.0
+offset_right = 132.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_fonts/font = ExtResource("19_55ff8")
+theme_override_font_sizes/font_size = 13
+text = "Himanshu 1234"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Badge" type="TextureRect" parent="InventoryScreen/Panel/Profile" unique_id=830262559]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 22.0
+offset_right = 59.089172
+offset_bottom = 32.0
+texture = ExtResource("20_uctue")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="InventoryScreen/Panel/Profile" unique_id=1215273597]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 20.0
+offset_right = 99.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_fonts/font = ExtResource("20_ao7do")
+theme_override_font_sizes/font_size = 11
+text = "Bronze"
+
+[node name="TopPanel" type="HBoxContainer" parent="InventoryScreen/Panel" unique_id=1344382898]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.619
+anchor_top = 0.041
+anchor_right = 0.619
+anchor_bottom = 0.041
+offset_left = -112.119995
+offset_top = 8.48
+offset_right = 111.880005
+offset_bottom = 63.48
+grow_horizontal = 2
+theme_override_constants/separation = 14
+
+[node name="Coin" type="TextureRect" parent="InventoryScreen/Panel/TopPanel" unique_id=2000182902]
+custom_minimum_size = Vector2(105, 55)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("17_yxu73")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CoinIcon" type="TextureRect" parent="InventoryScreen/Panel/TopPanel/Coin" unique_id=1458767702]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -14.0
+offset_right = 16.0
+offset_bottom = 14.0
 grow_vertical = 2
 texture = ExtResource("18_kx4oe")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="CoinText" type="Label" parent="InventoryScreen/Panel/TopPanel/Coin" unique_id=408071979]
+[node name="CoinText" type="Label" parent="InventoryScreen/Panel/TopPanel/Coin" unique_id=1004914562]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.808502
+offset_left = -31.808502
 offset_top = -10.0
-offset_right = 47.191498
+offset_right = 48.0
 offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "2357"
+vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="XP" type="TextureRect" parent="InventoryScreen/Panel/TopPanel" unique_id=1573802703]
-custom_minimum_size = Vector2(50, 10)
+[node name="XP" type="TextureRect" parent="InventoryScreen/Panel/TopPanel" unique_id=110015331]
+custom_minimum_size = Vector2(105, 55)
 layout_mode = 2
 texture = ExtResource("17_yxu73")
-expand_mode = 3
-stretch_mode = 6
+expand_mode = 2
+stretch_mode = 5
 
-[node name="XpIcon" type="TextureRect" parent="InventoryScreen/Panel/TopPanel/XP" unique_id=990845943]
+[node name="XpIcon" type="TextureRect" parent="InventoryScreen/Panel/TopPanel/XP" unique_id=1583593697]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = -15.0
-offset_right = 14.0
-offset_bottom = 17.0
+offset_left = -14.0
+offset_top = -14.25
+offset_right = 16.5
+offset_bottom = 16.25
 grow_vertical = 2
 texture = ExtResource("18_uo4rt")
 expand_mode = 4
-stretch_mode = 4
+stretch_mode = 5
 
-[node name="XpText" type="Label" parent="InventoryScreen/Panel/TopPanel/XP" unique_id=1364862776]
+[node name="XpText" type="Label" parent="InventoryScreen/Panel/TopPanel/XP" unique_id=122339729]
 custom_minimum_size = Vector2(-50, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -3540,25 +3621,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -38.808502
+offset_left = -32.0
 offset_top = -9.0
-offset_right = 50.191498
+offset_right = 50.0
 offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "50"
-
-[node name="SettingButton" type="Button" parent="InventoryScreen/Panel/TopPanel" unique_id=1983463641]
-custom_minimum_size = Vector2(40, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_styles/normal = SubResource("StyleBoxTexture_jv2cb")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_62iqh")
-theme_override_styles/hover = SubResource("StyleBoxTexture_aoomy")
+vertical_alignment = 1
 
 [node name="BottomPanel" type="HBoxContainer" parent="InventoryScreen/Panel" unique_id=913769882]
 layout_mode = 1
@@ -3672,9 +3746,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.999998
+offset_left = -20.0
 offset_top = -25.0
-offset_right = 24.999998
+offset_right = 20.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -3695,9 +3769,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.0
+offset_left = -20.0
 offset_top = -25.0
-offset_right = 25.0
+offset_right = 20.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -4463,7 +4537,7 @@ theme_override_constants/separation = 80
 alignment = 1
 
 [node name="LawnMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=151983639]
-custom_minimum_size = Vector2(220, 350)
+custom_minimum_size = Vector2(220, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -4473,7 +4547,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_1wbho")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6rbbw")
 
 [node name="StreetMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=1537847604]
-custom_minimum_size = Vector2(220, 350)
+custom_minimum_size = Vector2(220, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -4483,7 +4557,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_06dss")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bj8j3")
 
 [node name="StadiumMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=248956907]
-custom_minimum_size = Vector2(220, 350)
+custom_minimum_size = Vector2(220, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -4493,7 +4567,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_503ab")
 theme_override_styles/hover = SubResource("StyleBoxTexture_nbuyv")
 
 [node name="BackyardMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=1609837201]
-custom_minimum_size = Vector2(220, 350)
+custom_minimum_size = Vector2(220, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -4503,7 +4577,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_fgm6c")
 theme_override_styles/hover = SubResource("StyleBoxTexture_52jo1")
 
 [node name="RooftopMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=1248623913]
-custom_minimum_size = Vector2(220, 350)
+custom_minimum_size = Vector2(220, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -4513,7 +4587,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_r13op")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6xe2f")
 
 [node name="MetroMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=205719508]
-custom_minimum_size = Vector2(220, 350)
+custom_minimum_size = Vector2(220, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -4524,13 +4598,15 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_vaya1")
 
 [node name="CrossButton" type="Button" parent="MapSelectScreen/Panel" unique_id=1056937909]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = -1
 anchor_left = 1.0
+anchor_top = 0.049000002
 anchor_right = 1.0
-offset_left = -61.0
-offset_top = 49.0
-offset_right = -21.0
-offset_bottom = 89.0
+anchor_bottom = 0.049000002
+offset_left = -63.0
+offset_top = 29.719997
+offset_right = -23.0
+offset_bottom = 69.72
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_4u64y")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_i6hta")
@@ -4598,10 +4674,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -60.0
-offset_top = 12.5
-offset_right = -29.0
-offset_bottom = 42.5
+offset_left = -63.0
+offset_top = 7.5
+offset_right = -23.0
+offset_bottom = 47.5
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_f4aua")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_f74ik")
@@ -4901,13 +4977,59 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_cykap")
+texture = ExtResource("132_i6hta")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="ProfileScreen/ProfilePanel/BG" unique_id=1474293754]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="TextureRect" type="TextureRect" parent="ProfileScreen/ProfilePanel/BG" unique_id=823224229]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.54236
+offset_top = -69.0
+offset_right = 230.0
+offset_bottom = 29.477753
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("133_moiof")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="FemaleIcon" type="Button" parent="ProfileScreen/ProfilePanel/BG/TextureRect" unique_id=1474293754]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -40.0
+offset_right = -13.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_yr2fe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_83p4v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gtgww")
+
+[node name="MaleIcon" type="Button" parent="ProfileScreen/ProfilePanel/BG/TextureRect" unique_id=1950780038]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -40.0
+offset_right = 97.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_bxkn3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ffjic")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xpsj5")
 
 [node name="InfoScreen" type="CanvasLayer" parent="." unique_id=1061760385]
 visible = false
@@ -4969,10 +5091,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -59.0625
-offset_top = 14.075043
-offset_right = -32.0625
-offset_bottom = 40.075043
+offset_left = -62.0
+offset_top = 7.0
+offset_right = -24.0
+offset_bottom = 45.0
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_f4aua")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_f74ik")
@@ -5002,15 +5124,15 @@ grow_vertical = 2
 
 [node name="CrossButton" type="Button" parent="DailyRewardScreen/Panel" unique_id=1333463656]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.4
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.4
 offset_left = 144.0
-offset_top = -253.0
+offset_top = -199.0
 offset_right = 182.0
-offset_bottom = -215.0
+offset_bottom = -161.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_36lgj")
@@ -5666,10 +5788,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -46.0
-offset_top = 14.0
-offset_right = -19.0
-offset_bottom = 40.0
+offset_left = -52.0
+offset_top = 9.5
+offset_right = -17.0
+offset_bottom = 44.5
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_f4aua")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_f74ik")
@@ -5810,9 +5932,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -275.0
+offset_top = -282.5
 offset_right = 200.0
-offset_bottom = 275.0
+offset_bottom = 282.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("78_36lgj")
@@ -5824,10 +5946,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -70.5
-offset_top = 9.5
-offset_right = -43.5
-offset_bottom = 35.5
+offset_left = -75.0
+offset_top = 7.5
+offset_right = -42.0
+offset_bottom = 40.5
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_f4aua")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_f74ik")
@@ -5856,9 +5978,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 45.0
-offset_top = 55.0
+offset_top = 59.0
 offset_right = -45.0
-offset_bottom = -101.0
+offset_bottom = -97.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
@@ -5980,8 +6102,8 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="pressed" from="LoginScreen/LoginPanel/Panel/SubmitButton" to="LoginScreen" method="_on_submit_button_pressed"]
-[connection signal="pressed" from="HomeScreen/Panel/TopPanel/Profile/Profile Icon" to="HomeScreen" method="_on_profile_icon_pressed"]
-[connection signal="pressed" from="HomeScreen/Panel/TopPanel/SettingButton" to="HomeScreen" method="_on_setting_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/SettingButton" to="HomeScreen" method="_on_setting_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/Profile/Profile Icon" to="HomeScreen" method="_on_profile_icon_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/LeftPanel/LeftPanelBG/DailyRewardButton" to="HomeScreen" method="_on_daily_reward_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/LeftPanel/LeftPanelBG/LeaderboardButton" to="HomeScreen" method="_on_leaderboard_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/LeftPanel/LeftPanelBG/InfoButton" to="HomeScreen" method="_on_info_button_pressed"]
@@ -5996,8 +6118,8 @@ autowrap_mode = 2
 [connection signal="pressed" from="ShopScreen/Panel/BottomPanel/Play/PlayButton" to="ShopScreen" method="_on_play_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/BagsPanel/BagCrossButton" to="ShopScreen" method="_on_bag_cross_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/BoardsPanel/BoardCrossButton" to="ShopScreen" method="_on_board_cross_button_pressed"]
-[connection signal="pressed" from="InventoryScreen/Panel/TopPanel/Profile/Profile Icon" to="HomeScreen" method="_on_profile_icon_pressed"]
-[connection signal="pressed" from="InventoryScreen/Panel/TopPanel/SettingButton" to="HomeScreen" method="_on_setting_button_pressed"]
+[connection signal="pressed" from="InventoryScreen/Panel/SettingButton" to="HomeScreen" method="_on_setting_button_pressed"]
+[connection signal="pressed" from="InventoryScreen/Panel/Profile/Profile Icon" to="HomeScreen" method="_on_profile_icon_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Shop/ShopButton" to="InventoryScreen" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Play/PlayButton" to="InventoryScreen" method="_on_play_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/CrossButton" to="SettingScreen" method="_on_cross_button_pressed"]
@@ -6023,6 +6145,8 @@ autowrap_mode = 2
 [connection signal="pressed" from="MapSelectScreen/Panel/CrossButton" to="MapSelectScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="ProfileScreen/Panel/ProfileBg/CrossButton" to="ProfileScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="ProfileScreen/Panel/ProfileBg/ProfilePic/EditButton" to="ProfileScreen" method="_on_edit_button_pressed"]
+[connection signal="pressed" from="ProfileScreen/ProfilePanel/BG/TextureRect/FemaleIcon" to="ProfileScreen" method="_on_female_icon_pressed"]
+[connection signal="pressed" from="ProfileScreen/ProfilePanel/BG/TextureRect/MaleIcon" to="ProfileScreen" method="_on_male_icon_pressed"]
 [connection signal="pressed" from="InfoScreen/Panel/PanelBg/CrossButton" to="InfoScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="DailyRewardScreen/Panel/CrossButton" to="DailyRewardScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="DailyRewardScreen/Panel/GridContainer/Day1/Day1Button" to="DailyRewardScreen" method="_on_day_1_button_pressed"]

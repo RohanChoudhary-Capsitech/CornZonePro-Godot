@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvwxkku6qo65k"
-path="res://.godot/imported/LockBtn.png-caa0d889925780248e100dd158370f75.ctex"
+uid="uid://cf37b2322wdpq"
+path="res://.godot/imported/profile_panel_bg.png-d1c43be6edf7e3570b34fb01f0fe7159.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Home Screen/LockBtn.png"
-dest_files=["res://.godot/imported/LockBtn.png-caa0d889925780248e100dd158370f75.ctex"]
+source_file="res://Texture Or Sprites/Profile Screen/profile_panel_bg.png"
+dest_files=["res://.godot/imported/profile_panel_bg.png-d1c43be6edf7e3570b34fb01f0fe7159.ctex"]
 
 [params]
 

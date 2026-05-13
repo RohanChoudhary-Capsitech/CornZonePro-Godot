@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hg2rfu4eple4"
-path="res://.godot/imported/homeicon.png-53b729a1032cd35fe3b56e010a18b633.ctex"
+uid="uid://1tn66sa1ibds"
+path="res://.godot/imported/Rectangle 125.png-bb1ad6cee31631d66817a9bf9e530454.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Shop Screen/homeicon.png"
-dest_files=["res://.godot/imported/homeicon.png-53b729a1032cd35fe3b56e010a18b633.ctex"]
+source_file="res://Texture Or Sprites/Profile Screen/Rectangle 125.png"
+dest_files=["res://.godot/imported/Rectangle 125.png-bb1ad6cee31631d66817a9bf9e530454.ctex"]
 
 [params]
 

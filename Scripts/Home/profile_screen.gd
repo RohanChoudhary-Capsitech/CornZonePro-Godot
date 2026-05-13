@@ -8,6 +8,7 @@ func _ready() -> void:
 	GameSession.match_played.connect(update_ui)
 	update_ui()
 	$Panel/ProfileBg/ProfilePic.texture = icons[Prefs.get_int("profile_index", 0)]
+	$ProfilePanel.visible = false
 
 func _on_cross_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -20,4 +21,19 @@ func update_ui()->void:
 
 func _on_edit_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	pass
+	$ProfilePanel.visible = true
+
+func _on_female_icon_pressed() -> void:
+	Prefs.set_int("profile_index", 1)
+	$Panel/ProfileBg/ProfilePic.texture = icons[1]
+	$"../HomeScreen/Panel/Profile/Profile Icon/TextureRect".texture = icons[1]
+	$"../InventoryScreen/Panel/Profile/Profile Icon/TextureRect".texture = icons[1]
+	$ProfilePanel.visible = false
+
+func _on_male_icon_pressed() -> void:
+	Prefs.set_int("profile_index", 0)
+	$Panel/ProfileBg/ProfilePic.texture = icons[0]
+	$"../HomeScreen/Panel/Profile/Profile Icon/TextureRect".texture = icons[0]
+	$"../InventoryScreen/Panel/Profile/Profile Icon/TextureRect".texture = icons[0]
+	$ProfilePanel.visible = false
+	
