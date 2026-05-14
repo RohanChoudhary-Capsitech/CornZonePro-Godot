@@ -3361,7 +3361,7 @@ horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
 [node name="BagDataContent" type="VBoxContainer" parent="ShopScreen/Panel/BagsPanel/ScrollContainer" unique_id=441605921]
-custom_minimum_size = Vector2(436, 460)
+custom_minimum_size = Vector2(413, 460)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -3410,7 +3410,7 @@ horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
 [node name="BoardDataContent" type="VBoxContainer" parent="ShopScreen/Panel/BoardsPanel/ScrollContainer" unique_id=1738712793]
-custom_minimum_size = Vector2(460, 460)
+custom_minimum_size = Vector2(413, 460)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
