@@ -22,7 +22,7 @@ func gameover()->void:
 func _on_home_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.home()
-
+ 
 
 func _on_share_pressed() -> void:
 	print("share button pressed")

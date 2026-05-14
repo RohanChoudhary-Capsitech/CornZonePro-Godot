@@ -113,11 +113,13 @@ func _goto_match()->void:
 func single_player()->void:
 	GameSession.selected_mode="Single"
 	GameSession.required_ui="Single"
+	map_select_data()
 	# toggle_canvas($MapSelectScreen)
 	# _start_match("Single")
 
 func map_select_data()->void:
-	pass
+	if is_instance_valid(map_select_screen) and map_select_screen.has_method("refresh_map_locks"):
+		map_select_screen.refresh_map_locks()
 
 
 func home() -> void:
@@ -211,6 +213,7 @@ func restart(
 func pass_play()->void:
 	GameSession.selected_mode="PassPlay"
 	GameSession.required_ui="PassPlay"
+	map_select_data()
 	# _start_match("PassPlay")
 
 func local_multiplayer()->void:

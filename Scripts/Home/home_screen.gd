@@ -16,8 +16,8 @@ func _on_setting_button_pressed() -> void:
 
 func _on_timer_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	UIManager.toggle_canvas($"../MapSelectScreen")
 	UIManager.single_player()
+	UIManager.toggle_canvas($"../MapSelectScreen")
 
 func _on_profile_icon_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -33,8 +33,8 @@ func _on_daily_reward_button_pressed() -> void:
 
 func _on_pass_n_play_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	UIManager.toggle_canvas($"../MapSelectScreen")
 	UIManager.pass_play()
+	UIManager.toggle_canvas($"../MapSelectScreen")
 
 func _on_lan_button_pressed() -> void:
 	SoundManager.play_button_clicks()
