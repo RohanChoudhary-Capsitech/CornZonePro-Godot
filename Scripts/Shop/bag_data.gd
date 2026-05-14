@@ -14,7 +14,7 @@ func setup(data: BagConfig, green: Texture2D, white: Texture2D, parent):
 	icon.texture = data.icon
 	price_text.text = str(data.price) + " Buy"
 	if data.rarity == BagConfig.Rarity.Standard:
-		$HBoxContainer.add_theme_constant_override("separation", 0)
+		$HBoxContainer.add_theme_constant_override("separation", 2)
 	rarity_text.text = BagConfig.Rarity.keys()[data.rarity]
 	
 	update_signals(clutch_spot_container, data.min_swipe_dist, parent.max_clutch_spot, green, white)
