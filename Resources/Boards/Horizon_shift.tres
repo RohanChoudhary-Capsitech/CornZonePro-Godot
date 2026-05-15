@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BoardConfig" format=3 uid="uid://ciid7mmxmdpwq"]
+
+[ext_resource type="Script" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_fowxf"]
+
+[resource]
+script = ExtResource("1_fowxf")
+board_name = "Sunburst"

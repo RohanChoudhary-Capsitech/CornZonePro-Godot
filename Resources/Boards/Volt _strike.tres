@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BoardConfig" format=3 uid="uid://ba5wrpt4puobl"]
+
+[ext_resource type="Script" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_8c3ee"]
+
+[resource]
+script = ExtResource("1_8c3ee")
+board_name = "Volt strike"
