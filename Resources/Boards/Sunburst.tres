@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="BoardConfig" format=3 uid="uid://bflb6l7u2kslk"]
 
-[ext_resource type="Script" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_51jak"]
+[ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_51jak"]
+[ext_resource type="Texture2D" uid="uid://82cjdb1xl5nd" path="res://Texture Or Sprites/Boards/hole fix 7 5.png" id="1_g8wiu"]
 
 [resource]
 script = ExtResource("1_51jak")
 board_name = "Sunburst"
+icon = ExtResource("1_g8wiu")

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cbw7jvw1u81cr"]
+
+[ext_resource type="Texture2D" uid="uid://ks1pbxt62dvq" path="res://3D Models/Board/Texures/shield Board_M 4K.png" id="1_dw45t"]
+
+[resource]
+albedo_texture = ExtResource("1_dw45t")

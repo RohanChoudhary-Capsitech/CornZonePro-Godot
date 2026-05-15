@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="BoardConfig" format=3 uid="uid://dbmmkkq48m3q5"]
 
-[ext_resource type="Script" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_7vsh5"]
+[ext_resource type="Texture2D" uid="uid://csdmjw1sfmh2k" path="res://Texture Or Sprites/Boards/hole fix 3 3.png" id="1_3r8b7"]
+[ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_7vsh5"]
 
 [resource]
 script = ExtResource("1_7vsh5")
-board_name = "Volt strike"
+board_name = "Vanguard"
+icon = ExtResource("1_3r8b7")

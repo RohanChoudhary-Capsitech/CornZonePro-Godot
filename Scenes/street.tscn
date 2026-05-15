@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="1_ywqqe"]
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_fbdad"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_3qr72"]
-[ext_resource type="PackedScene" uid="uid://bdeqs0jrryr5c" path="res://3D Models/Bg 1/Bg 1.glb" id="21_7bn77"]
+[ext_resource type="PackedScene" uid="uid://bdeqs0jrryr5c" path="res://3D Models/BG Scenes/Stadium(BG1)/Bg 1.glb" id="21_7bn77"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(50, 0.25, 100)

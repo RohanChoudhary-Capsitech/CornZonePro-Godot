@@ -20,7 +20,7 @@ linear_damp = 0.1
 angular_damp = 0.1
 script = ExtResource("2_6qegm")
 
-[node name="sandbag_geo1" parent="." index="0" unique_id=164163211]
+[node name="sandbag_geo1" parent="." index="0" unique_id=2110927028]
 transform = Transform3D(25, 0, 0, 0, -1.8718511, -24.929825, 0, 24.929825, -1.8718511, 0, 0, 0)
 material_override = ExtResource("3_3ifbe")
 

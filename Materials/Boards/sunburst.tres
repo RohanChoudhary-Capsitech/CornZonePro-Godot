@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://crhc6nwq10mpv"]
+
+[ext_resource type="Texture2D" uid="uid://bmiu311jtuvue" path="res://3D Models/Board/Texures/TS_Board_M 4K.png" id="1_66hbu"]
+
+[resource]
+albedo_texture = ExtResource("1_66hbu")
+metallic = 0.5
+metallic_specular = 0.2

@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="BoardConfig" format=3 uid="uid://ciid7mmxmdpwq"]
 
-[ext_resource type="Script" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_fowxf"]
+[ext_resource type="Texture2D" uid="uid://cg0qd7xkog8by" path="res://Texture Or Sprites/Boards/hole fix 2 3.png" id="1_bh2ma"]
+[ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_fowxf"]
 
 [resource]
 script = ExtResource("1_fowxf")
-board_name = "Sunburst"
+board_name = "Horizon Shift"
+icon = ExtResource("1_bh2ma")

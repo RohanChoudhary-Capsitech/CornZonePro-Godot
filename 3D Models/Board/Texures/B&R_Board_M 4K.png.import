@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkfpc48ydi1un"
-path.s3tc="res://.godot/imported/shield.png-d2164ca8c1ea8844435a42c8cced2014.s3tc.ctex"
-path.etc2="res://.godot/imported/shield.png-d2164ca8c1ea8844435a42c8cced2014.etc2.ctex"
+uid="uid://dcfxr834evtln"
+path.s3tc="res://.godot/imported/B&R_Board_M 4K.png-597bdd1f993786f6d6d6133e77a51292.s3tc.ctex"
+path.etc2="res://.godot/imported/B&R_Board_M 4K.png-597bdd1f993786f6d6d6133e77a51292.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags/shield.png"
-dest_files=["res://.godot/imported/shield.png-d2164ca8c1ea8844435a42c8cced2014.s3tc.ctex", "res://.godot/imported/shield.png-d2164ca8c1ea8844435a42c8cced2014.etc2.ctex"]
+source_file="res://3D Models/Board/Texures/B&R_Board_M 4K.png"
+dest_files=["res://.godot/imported/B&R_Board_M 4K.png-597bdd1f993786f6d6d6133e77a51292.s3tc.ctex", "res://.godot/imported/B&R_Board_M 4K.png-597bdd1f993786f6d6d6133e77a51292.etc2.ctex"]
 
 [params]
 
