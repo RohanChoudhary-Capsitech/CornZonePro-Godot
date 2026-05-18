@@ -1,14 +1,18 @@
 extends CanvasLayer
 
+func _ready() -> void:
+	AdManager.show_banner()
 
 func _on_play_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.enable_canvas($"../HomeScreen")
+	AdManager.show_banner()
 
 
 func _on_inventory_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.enable_canvas($"../InventoryScreen")
+	AdManager.show_banner()
 
 
 func _on_bag_buy_button_pressed() -> void:

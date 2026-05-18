@@ -202,6 +202,7 @@ func show_banner():
 func hide_banner():
 
 	admob.hide_banner_ad()
+	print("banner hide")
 
 
 func _on_banner_loaded(ad_info, response_info):

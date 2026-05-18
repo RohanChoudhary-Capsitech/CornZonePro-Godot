@@ -3,10 +3,12 @@ extends CanvasLayer
 @onready var setting_texture = $Panel/SettingBg/TopPanel/Setting
 @onready var socials_texture = $Panel/SettingBg/TopPanel/Social
 @onready var more_games_texture = $Panel/SettingBg/TopPanel/MoreGames
+@onready var godot_credit_texture = $Panel/SettingBg/TopPanel/GodotCredit
 
 @onready var setting_panel = $Panel/SettingBg/SettingPanel
 @onready var social_panel = $Panel/SettingBg/SocialPanel
 @onready var more_games_panel = $Panel/SettingBg/MoreGamesPanel
+@onready var godot_credit_panel = $Panel/SettingBg/GodotCreditPanel
 
 
 # Music and Audio
@@ -24,14 +26,18 @@ extends CanvasLayer
 @export var more_games_off: Texture2D
 @export var more_games_on: Texture2D
 
+@export var godot_off: Texture2D
+@export var godot_on: Texture2D
+
 var facebook_link: String = "https://www.facebook.com/profile.php?id=61585251616629"
 var instagram_link: String = "https://www.instagram.com/gameewisee/"
-var gamewise_link: String = "https://www.thegamewise.com/"
+var youtube_link: String = "https://www.youtube.com/@thegamerwise"
 var linkedin_link: String = "https://www.linkedin.com/company/gamewiseglobal/about/?viewAsMember=true"
 
 var is_setting_open = false
 var is_social_open = false
 var is_more_game_open = false
+var is_godot_open = false
 
 func _ready() -> void:
 	setting_panel.visible = false
@@ -76,9 +82,9 @@ func _on_instagram_button_pressed() -> void:
 	OS.shell_open(instagram_link)
 
 
-func _on_twitter_button_pressed() -> void:
+func _on_youtube_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	OS.shell_open(gamewise_link)
+	OS.shell_open(youtube_link)
 
 
 func _on_linked_in_button_pressed() -> void:
@@ -98,12 +104,15 @@ func _on_settings_button_pressed() -> void:
 	is_setting_open = true
 	is_social_open = false
 	is_more_game_open = false
+	is_godot_open = false
 	setting_texture.texture = setting_on
 	socials_texture.texture = social_off
 	more_games_texture.texture = more_games_off
+	godot_credit_texture.texture = godot_off
 	setting_panel.visible =  true
 	social_panel.visible = false
 	more_games_panel.visible = false
+	godot_credit_panel.visible = false
 	
 
 
@@ -114,12 +123,15 @@ func _on_socials_button_pressed() -> void:
 	is_social_open = true
 	is_setting_open = false
 	is_more_game_open = false
+	is_godot_open = false
 	socials_texture.texture = social_on
 	setting_texture.texture = setting_off
 	more_games_texture.texture = more_games_off
+	godot_credit_texture.texture = godot_off
 	social_panel.visible = true
 	setting_panel.visible = false
 	more_games_panel.visible = false
+	godot_credit_panel.visible = false
 
 func _on_more_game_panel_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -128,13 +140,35 @@ func _on_more_game_panel_button_pressed() -> void:
 	is_more_game_open = true
 	is_setting_open = false
 	is_social_open = false
+	is_godot_open = false
 	more_games_texture.texture = more_games_on
 	setting_texture.texture = setting_off
 	socials_texture.texture = social_off
+	godot_credit_texture.texture = godot_off
 	more_games_panel.visible = true
 	setting_panel.visible =  false
 	social_panel.visible = false
+	godot_credit_panel.visible = false
+
 	
+func _on_godot_credit_button_pressed() -> void:
+	SoundManager.play_button_clicks()
+	if is_godot_open:
+		return
+	is_godot_open = true
+	is_more_game_open = false
+	is_setting_open = false
+	is_social_open = false
+	godot_credit_texture.texture = godot_on
+	setting_texture.texture = setting_off
+	socials_texture.texture = social_off
+	more_games_texture.texture = more_games_off
+	godot_credit_panel.visible = true
+	setting_panel.visible =  false
+	social_panel.visible = false
+	more_games_panel.visible = false
+	
+
 
 # Audio and Music settings system
 func _on_music_on_button_pressed() -> void:

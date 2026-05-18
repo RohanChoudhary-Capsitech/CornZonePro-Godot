@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqhmoc234jmd3"
-path="res://.godot/imported/moregame_not_click.png-9d4b141e7cff9611cbb4ec1995999118.ctex"
+uid="uid://5md07hbidd24"
+path="res://.godot/imported/youtube.png-94723d9d9b06d9a9a2ee72676eb66d5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Setting Screen/moregame_not_click.png"
-dest_files=["res://.godot/imported/moregame_not_click.png-9d4b141e7cff9611cbb4ec1995999118.ctex"]
+source_file="res://Texture Or Sprites/Setting Screen/youtube.png"
+dest_files=["res://.godot/imported/youtube.png-94723d9d9b06d9a9a2ee72676eb66d5a.ctex"]
 
 [params]
 

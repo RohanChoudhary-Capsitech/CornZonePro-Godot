@@ -27,7 +27,7 @@ const BAG_CONFIGS := {
 # =========================
 # STATE
 # =========================
-var is_host: bool = false
+var is_host: bool = false               
 var my_id: int = 0
 
 var players: Dictionary = {}

@@ -130,33 +130,39 @@
 [ext_resource type="Texture2D" uid="uid://clo1pi3no6404" path="res://Texture Or Sprites/Leaderboard Screen/Coin.png" id="84_dwsb2"]
 [ext_resource type="Script" uid="uid://c6bm43mycwtp4" path="res://Scripts/Inventory/content.gd" id="86_tbwbq"]
 [ext_resource type="PackedScene" uid="uid://chhpkvyv8fja0" path="res://Scenes/UI/item.tscn" id="86_vaya1"]
-[ext_resource type="Texture2D" uid="uid://cfiy8nd66x1vq" path="res://Texture Or Sprites/Setting Screen/setting_not_click.png" id="89_f3k6c"]
-[ext_resource type="Texture2D" uid="uid://dtck6pysfejqv" path="res://Texture Or Sprites/Setting Screen/setting_click.png" id="91_6ojkg"]
-[ext_resource type="Texture2D" uid="uid://6p3ing1rpxgl" path="res://Texture Or Sprites/Setting Screen/social_not_click.png" id="92_jicx3"]
-[ext_resource type="Texture2D" uid="uid://bo72bffsuteik" path="res://Texture Or Sprites/Setting Screen/social_click.png" id="92_ttur7"]
-[ext_resource type="Texture2D" uid="uid://bos2c84fudynq" path="res://Texture Or Sprites/Setting Screen/moregame_not_click.png" id="93_ouj5o"]
-[ext_resource type="Texture2D" uid="uid://nbqim04d18c4" path="res://Texture Or Sprites/Setting Screen/moregame_click.png" id="94_pmkjb"]
+[ext_resource type="Texture2D" uid="uid://c4vajkjb5owun" path="res://Texture Or Sprites/Setting Screen/setting_not_click.png" id="89_f3k6c"]
+[ext_resource type="Texture2D" uid="uid://dq0sj18qaeqed" path="res://Texture Or Sprites/Setting Screen/setting_click.png" id="91_6ojkg"]
+[ext_resource type="Texture2D" uid="uid://dwxdhvrtnf32e" path="res://Texture Or Sprites/Setting Screen/social_not_click.png" id="92_jicx3"]
+[ext_resource type="Texture2D" uid="uid://meeda4gasq0u" path="res://Texture Or Sprites/Setting Screen/social_click.png" id="92_ttur7"]
+[ext_resource type="Texture2D" uid="uid://dqhmoc234jmd3" path="res://Texture Or Sprites/Setting Screen/moregame_not_click.png" id="93_ouj5o"]
+[ext_resource type="Texture2D" uid="uid://imibm052rgg" path="res://Texture Or Sprites/Setting Screen/moregame_click.png" id="94_pmkjb"]
 [ext_resource type="Texture2D" uid="uid://dlvdu1xs2qk4p" path="res://Texture Or Sprites/Setting Screen/SocialBg.png" id="97_jicx3"]
-[ext_resource type="Texture2D" uid="uid://d1vlvdbxsfcv4" path="res://Texture Or Sprites/Setting Screen/facebook.png" id="98_4yy14"]
+[ext_resource type="Texture2D" uid="uid://dsto80te60dno" path="res://Texture Or Sprites/Setting Screen/godot_click.png" id="97_yr2fe"]
+[ext_resource type="Texture2D" uid="uid://cdtywfxnk3nxp" path="res://Texture Or Sprites/Setting Screen/facebook.png" id="98_4yy14"]
 [ext_resource type="Texture2D" uid="uid://oui3deab21xp" path="res://Texture Or Sprites/Setting Screen/button.png" id="99_2vxpu"]
 [ext_resource type="Texture2D" uid="uid://b14qhxel6mgjg" path="res://Texture Or Sprites/Setting Screen/Rectangle 124.png" id="99_f3k6c"]
-[ext_resource type="Texture2D" uid="uid://b6858tmce8h3n" path="res://Texture Or Sprites/Setting Screen/insta.png" id="100_rvq4h"]
-[ext_resource type="Texture2D" uid="uid://cup3hgfx6ha56" path="res://Texture Or Sprites/Setting Screen/linkedin.png" id="102_04qca"]
+[ext_resource type="Texture2D" uid="uid://cswodd435pmgo" path="res://Texture Or Sprites/Setting Screen/insta.png" id="100_rvq4h"]
+[ext_resource type="Texture2D" uid="uid://bh81reh2yj5sx" path="res://Texture Or Sprites/Setting Screen/linkedin.png" id="102_04qca"]
 [ext_resource type="Script" uid="uid://6g8sj6qio4ro" path="res://Scripts/Settings/games_container.gd" id="103_2vxpu"]
-[ext_resource type="Texture2D" uid="uid://jl8yy52xu3r7" path="res://Texture Or Sprites/Setting Screen/gamewise.png" id="104_qfixt"]
 [ext_resource type="PackedScene" uid="uid://bp5y8cd1uho6r" path="res://Scenes/UI/game_icon.tscn" id="104_rvq4h"]
 [ext_resource type="Script" uid="uid://hg7o7dnfqa0x" path="res://Scripts/Resource Structures/MoreGameData.gd" id="105_n2f85"]
 [ext_resource type="Texture2D" uid="uid://ce3xjaepn7i5n" path="res://Texture Or Sprites/MoreGame Icons/DropandScore.png" id="106_04qca"]
+[ext_resource type="Texture2D" uid="uid://drsoh7t4nrfqt" path="res://Texture Or Sprites/Setting Screen/Group 608 (1).png" id="106_moiof"]
+[ext_resource type="Shader" uid="uid://bohat414bcbjh" path="res://Materials/UI/stayconnetc.gdshader" id="107_rjsir"]
 [ext_resource type="Texture2D" uid="uid://pkyghxe5wddp" path="res://Texture Or Sprites/MoreGame Icons/pebble trace.png" id="107_stky2"]
+[ext_resource type="Texture2D" uid="uid://5md07hbidd24" path="res://Texture Or Sprites/Setting Screen/youtube.png" id="108_gtgww"]
 [ext_resource type="Texture2D" uid="uid://cm36t43r5gcru" path="res://Texture Or Sprites/MoreGame Icons/dodge driver.png" id="108_ochsh"]
 [ext_resource type="Texture2D" uid="uid://diy8cusw23xn5" path="res://Texture Or Sprites/MoreGame Icons/laserMind.png" id="109_sg8ud"]
 [ext_resource type="Texture2D" uid="uid://k13v3ek2drk0" path="res://Texture Or Sprites/MoreGame Icons/SymbolSync.png" id="110_v6eu8"]
 [ext_resource type="Texture2D" uid="uid://c6tpb5rbwmc7c" path="res://Texture Or Sprites/MoreGame Icons/wrapvector.png" id="114_453j7"]
 [ext_resource type="Script" uid="uid://m372ho3svafv" path="res://Scripts/Home/map_select_screen.gd" id="114_ttur7"]
 [ext_resource type="Texture2D" uid="uid://b2jpm0batwjc6" path="res://Texture Or Sprites/MapsBG/Lawn.png" id="117_453j7"]
+[ext_resource type="Texture2D" uid="uid://benv2lyjwa1uv" path="res://Texture Or Sprites/Setting Screen/godot_not_click.png" id="117_dlmwe"]
+[ext_resource type="Texture2D" uid="uid://c6hyvld6pd7mc" path="res://Texture Or Sprites/Setting Screen/Polygon 3.png" id="119_83p4v"]
 [ext_resource type="Texture2D" uid="uid://cy4m5k6w3y8qj" path="res://Texture Or Sprites/Profile Screen/player_card_bg.png" id="129_moiof"]
 [ext_resource type="Texture2D" uid="uid://cf37b2322wdpq" path="res://Texture Or Sprites/Profile Screen/profile_panel_bg.png" id="132_i6hta"]
 [ext_resource type="Texture2D" uid="uid://1tn66sa1ibds" path="res://Texture Or Sprites/Profile Screen/Rectangle 125.png" id="133_moiof"]
+[ext_resource type="FontFile" uid="uid://c5ju1f60ajujo" path="res://Fonts/Poppins-SemiBold.ttf" id="136_bxkn3"]
 [ext_resource type="Texture2D" uid="uid://8hxstwn0h1sb" path="res://Texture Or Sprites/DailyRewards/Rectangle 111.png" id="137_qfixt"]
 [ext_resource type="Script" uid="uid://crvxuifakyi1c" path="res://Scripts/Home/reward_screen.gd" id="139_pmkjb"]
 
@@ -1972,6 +1978,11 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sg8ud"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dlmwe"]
+shader = ExtResource("107_rjsir")
+shader_parameter/top_color = Color(1, 1, 1, 1)
+shader_parameter/bottom_color = Color(0.56078434, 0.6509804, 1, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2vxpu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvq4h"]
@@ -2019,6 +2030,12 @@ metadata/_custom_type_script = "uid://hg7o7dnfqa0x"
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttur7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmkjb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yr2fe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_83p4v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtgww"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbwbq"]
 texture = ExtResource("117_453j7")
@@ -3839,6 +3856,8 @@ social_off = ExtResource("92_jicx3")
 social_on = ExtResource("92_ttur7")
 more_games_off = ExtResource("93_ouj5o")
 more_games_on = ExtResource("94_pmkjb")
+godot_off = ExtResource("117_dlmwe")
+godot_on = ExtResource("97_yr2fe")
 
 [node name="BG" type="TextureRect" parent="SettingScreen" unique_id=552536001]
 anchors_preset = 15
@@ -3857,10 +3876,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.5
-offset_top = -200.0
-offset_right = 164.5
-offset_bottom = 200.0
+offset_left = -175.0
+offset_top = -210.0
+offset_right = 175.0
+offset_bottom = 210.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -3870,9 +3889,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -26.5
-offset_top = -86.0
+offset_top = -84.0
 offset_right = 10.5
-offset_bottom = -50.0
+offset_bottom = -48.0
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_0g73e")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3fp5a")
@@ -4113,10 +4132,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.00589
-offset_top = -148.875
-offset_right = 170.00589
-offset_bottom = 196.875
+offset_left = -162.40405
+offset_top = -142.0
+offset_right = 160.40405
+offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("97_jicx3")
@@ -4130,17 +4149,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -147.5
-offset_top = -160.0
-offset_right = 147.5
-offset_bottom = 160.0
+offset_left = -139.5
+offset_top = -141.75
+offset_right = 139.5
+offset_bottom = 78.25
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 20
 
 [node name="Facebook" type="HBoxContainer" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer" unique_id=834753540]
 layout_mode = 2
-theme_override_constants/separation = 35
+theme_override_constants/separation = 30
 
 [node name="Label" type="Label" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Facebook" unique_id=1034060923]
 layout_mode = 2
@@ -4152,7 +4171,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Facebook" unique_id=1484239376]
-custom_minimum_size = Vector2(0, 45)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 texture = ExtResource("98_4yy14")
 expand_mode = 3
@@ -4190,7 +4209,7 @@ text = "Go"
 
 [node name="Instagram" type="HBoxContainer" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer" unique_id=1925609414]
 layout_mode = 2
-theme_override_constants/separation = 35
+theme_override_constants/separation = 30
 
 [node name="Label" type="Label" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Instagram" unique_id=2018186961]
 layout_mode = 2
@@ -4202,7 +4221,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Instagram" unique_id=1090875695]
-custom_minimum_size = Vector2(0, 45)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 texture = ExtResource("100_rvq4h")
 expand_mode = 3
@@ -4240,7 +4259,7 @@ text = "Go"
 
 [node name="Linkedin" type="HBoxContainer" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer" unique_id=1910719026]
 layout_mode = 2
-theme_override_constants/separation = 35
+theme_override_constants/separation = 30
 
 [node name="Label" type="Label" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Linkedin" unique_id=603181987]
 layout_mode = 2
@@ -4252,7 +4271,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Linkedin" unique_id=315983457]
-custom_minimum_size = Vector2(0, 45)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 texture = ExtResource("102_04qca")
 expand_mode = 3
@@ -4288,26 +4307,26 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ochsh")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_sg8ud")
 text = "Go"
 
-[node name="GmaeWiseWebsite" type="HBoxContainer" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer" unique_id=1727675998]
+[node name="Youtube" type="HBoxContainer" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer" unique_id=1727675998]
 layout_mode = 2
-theme_override_constants/separation = 35
+theme_override_constants/separation = 30
 
-[node name="Label" type="Label" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/GmaeWiseWebsite" unique_id=2112163201]
+[node name="Label" type="Label" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Youtube" unique_id=2112163201]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 18
-text = "Visit us on   "
+text = "Follow us on"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Icon" type="TextureRect" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/GmaeWiseWebsite" unique_id=1344783870]
-custom_minimum_size = Vector2(0, 45)
+[node name="Icon" type="TextureRect" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Youtube" unique_id=1344783870]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-texture = ExtResource("104_qfixt")
+texture = ExtResource("108_gtgww")
 expand_mode = 3
 
-[node name="GoBtn" type="TextureRect" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/GmaeWiseWebsite" unique_id=62137625]
+[node name="GoBtn" type="TextureRect" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Youtube" unique_id=62137625]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -4315,7 +4334,7 @@ size_flags_vertical = 4
 texture = ExtResource("99_2vxpu")
 expand_mode = 3
 
-[node name="TwitterButton" type="Button" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/GmaeWiseWebsite/GoBtn" unique_id=2102530958]
+[node name="YoutubeButton" type="Button" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Youtube/GoBtn" unique_id=2102530958]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -4338,6 +4357,44 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ochsh")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_sg8ud")
 text = "Go"
 
+[node name="TextureRect" type="TextureRect" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG" unique_id=1603711072]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -75.0
+offset_right = 155.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("106_moiof")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG" unique_id=704388038]
+material = SubResource("ShaderMaterial_dlmwe")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -89.5
+offset_top = -36.0
+offset_right = 89.5
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 14
+text = "Stay connected with us!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
 [node name="MoreGamesPanel" type="Control" parent="SettingScreen/Panel/SettingBg" unique_id=2033433414]
 visible = false
 layout_mode = 1
@@ -4348,17 +4405,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BG" type="TextureRect" parent="SettingScreen/Panel/SettingBg/MoreGamesPanel" unique_id=1572132893]
-custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -171.1842
-offset_top = -149.99805
-offset_right = 171.1842
-offset_bottom = 199.99805
+offset_left = -161.40405
+offset_top = -143.0
+offset_right = 161.40405
+offset_bottom = 187.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("97_jicx3")
@@ -4370,14 +4426,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -45.0
-offset_top = 4.0
-offset_right = 45.0
-offset_bottom = 22.0
+offset_left = -38.5
+offset_top = 1.0
+offset_right = 38.5
+offset_bottom = 17.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_vkfas")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2vxpu")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_rvq4h")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_n2f85")
@@ -4390,17 +4446,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -142.0
-offset_right = 149.0
-offset_bottom = 158.0
+offset_left = -145.0
+offset_top = -144.0
+offset_right = 145.0
+offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
 [node name="GamesContainer" type="VBoxContainer" parent="SettingScreen/Panel/SettingBg/MoreGamesPanel/BG/ScrollContainer" unique_id=795734701]
-custom_minimum_size = Vector2(280, 1000)
+custom_minimum_size = Vector2(250, 1000)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
@@ -4408,6 +4464,69 @@ theme_override_constants/separation = 30
 script = ExtResource("103_2vxpu")
 game_icon_scene = ExtResource("104_rvq4h")
 data_sets = Array[ExtResource("105_n2f85")]([SubResource("Resource_afdxe"), SubResource("Resource_f3k6c"), SubResource("Resource_ttur7"), SubResource("Resource_pmkjb"), SubResource("Resource_qfixt"), SubResource("Resource_4u64y")])
+
+[node name="TextureRect" type="TextureRect" parent="SettingScreen/Panel/SettingBg/MoreGamesPanel/BG" unique_id=1988245059]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -6.3313904
+offset_top = -10.0
+offset_right = 6.3314056
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("119_83p4v")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="GodotCreditPanel" type="Control" parent="SettingScreen/Panel/SettingBg" unique_id=1627384785]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="SettingScreen/Panel/SettingBg/GodotCreditPanel" unique_id=560743778]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.40405
+offset_top = -143.0
+offset_right = 161.40405
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("97_jicx3")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SettingScreen/Panel/SettingBg/GodotCreditPanel/BG" unique_id=1318703620]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -144.0
+offset_right = 145.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Label" type="Label" parent="SettingScreen/Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer" unique_id=224973837]
+layout_mode = 2
+text = "hii
+"
 
 [node name="TopPanel" type="HBoxContainer" parent="SettingScreen/Panel/SettingBg" unique_id=176684443]
 layout_mode = 1
@@ -4422,23 +4541,21 @@ grow_horizontal = 2
 theme_override_constants/separation = -4
 
 [node name="Setting" type="TextureRect" parent="SettingScreen/Panel/SettingBg/TopPanel" unique_id=1508976908]
-custom_minimum_size = Vector2(124, 63)
 layout_mode = 2
 texture = ExtResource("91_6ojkg")
 expand_mode = 3
 stretch_mode = 4
 
 [node name="SettingsButton" type="Button" parent="SettingScreen/Panel/SettingBg/TopPanel/Setting" unique_id=1368975989]
-custom_minimum_size = Vector2(106, 45)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = -22.5
-offset_right = 53.0
+offset_left = -38.134148
+offset_top = -24.0
+offset_right = 39.865852
 offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -4455,13 +4572,16 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="SocialsButton" type="Button" parent="SettingScreen/Panel/SettingBg/TopPanel/Social" unique_id=1398299208]
-custom_minimum_size = Vector2(106, 45)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -39.9413
+offset_top = -23.0
+offset_right = 40.058704
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_f3k6c")
@@ -4475,18 +4595,44 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="MoreGamePanelButton" type="Button" parent="SettingScreen/Panel/SettingBg/TopPanel/MoreGames" unique_id=644453810]
-custom_minimum_size = Vector2(106, 45)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -39.9413
+offset_top = -24.0
+offset_right = 40.058704
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_f3k6c")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ttur7")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_pmkjb")
+
+[node name="GodotCredit" type="TextureRect" parent="SettingScreen/Panel/SettingBg/TopPanel" unique_id=812308332]
+layout_mode = 2
+texture = ExtResource("117_dlmwe")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="GodotCreditButton" type="Button" parent="SettingScreen/Panel/SettingBg/TopPanel/GodotCredit" unique_id=2115270755]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.524597
+offset_top = -25.0
+offset_right = 39.475403
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yr2fe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_83p4v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gtgww")
 
 [node name="MapSelectScreen" type="CanvasLayer" parent="." unique_id=1321304884]
 visible = false
@@ -4815,14 +4961,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -11.5
-offset_right = 54.5
-offset_bottom = 13.5
+offset_left = -88.0
+offset_top = -12.0
+offset_right = 56.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("20_ao7do")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 19
 text = "Games Played"
 
 [node name="GamesPlayedValue" type="Label" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/GamePlaySection" unique_id=1034104630]
@@ -4833,13 +4979,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 59.0
-offset_top = -11.5
+offset_top = -12.0
 offset_right = 131.0
-offset_bottom = 13.5
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("20_ao7do")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 19
 text = "156"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -4883,14 +5029,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -87.5
-offset_top = -9.5
-offset_right = 51.5
-offset_bottom = 15.5
+offset_left = -88.0
+offset_top = -10.5
+offset_right = 52.0
+offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("20_ao7do")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 19
 text = "Achievements"
 
 [node name="Value" type="Label" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/Achievement" unique_id=517013968]
@@ -4901,13 +5047,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 59.0
-offset_top = -8.5
+offset_top = -9.5
 offset_right = 131.0
-offset_bottom = 16.5
+offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("20_ao7do")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 19
 text = "156"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -4952,13 +5098,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -82.5
-offset_top = -9.5
-offset_right = 42.5
-offset_bottom = 15.5
+offset_top = -10.5
+offset_right = 39.0
+offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("20_ao7do")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 19
 text = "Total Pots"
 
 [node name="Value" type="Label" parent="ProfileScreen/Panel/ProfileBg/PlayerCard/Total Pots" unique_id=431165004]
@@ -4969,13 +5115,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 59.0
-offset_top = -9.5
+offset_top = -10.5
 offset_right = 131.0
-offset_bottom = 15.5
+offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("20_ao7do")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 19
 text = "151"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -6151,11 +6297,12 @@ autowrap_mode = 2
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Facebook/GoBtn/FacebookButton" to="SettingScreen" method="_on_facebook_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Instagram/GoBtn/InstagramButton" to="SettingScreen" method="_on_instagram_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Linkedin/GoBtn/LinkedInButton" to="SettingScreen" method="_on_linked_in_button_pressed"]
-[connection signal="pressed" from="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/GmaeWiseWebsite/GoBtn/TwitterButton" to="SettingScreen" method="_on_twitter_button_pressed"]
+[connection signal="pressed" from="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Youtube/GoBtn/YoutubeButton" to="SettingScreen" method="_on_youtube_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/MoreGamesPanel/BG/MoreGamesButton" to="SettingScreen" method="_on_more_games_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/TopPanel/Setting/SettingsButton" to="SettingScreen" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/TopPanel/Social/SocialsButton" to="SettingScreen" method="_on_socials_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/TopPanel/MoreGames/MoreGamePanelButton" to="SettingScreen" method="_on_more_game_panel_button_pressed"]
+[connection signal="pressed" from="SettingScreen/Panel/SettingBg/TopPanel/GodotCredit/GodotCreditButton" to="SettingScreen" method="_on_godot_credit_button_pressed"]
 [connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/LawnMap" to="MapSelectScreen" method="_on_lawn_map_pressed"]
 [connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StreetMap" to="MapSelectScreen" method="_on_street_map_pressed"]
 [connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StadiumMap" to="MapSelectScreen" method="_on_stadium_map_pressed"]

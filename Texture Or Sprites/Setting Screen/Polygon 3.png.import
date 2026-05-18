@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jl8yy52xu3r7"
-path="res://.godot/imported/gamewise.png-4c061ac194f7fddc8ebeaeca4f50832e.ctex"
+uid="uid://c6hyvld6pd7mc"
+path="res://.godot/imported/Polygon 3.png-6a5b3d030e39ebe8b5f63a14dade577c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/Setting Screen/gamewise.png"
-dest_files=["res://.godot/imported/gamewise.png-4c061ac194f7fddc8ebeaeca4f50832e.ctex"]
+source_file="res://Texture Or Sprites/Setting Screen/Polygon 3.png"
+dest_files=["res://.godot/imported/Polygon 3.png-6a5b3d030e39ebe8b5f63a14dade577c.ctex"]
 
 [params]
 
