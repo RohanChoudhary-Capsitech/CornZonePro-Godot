@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dci6yslamvhy8"]
+
+[ext_resource type="Texture2D" uid="uid://c65midlo72hvu" path="res://3D Models/BG Scenes/Backyard(Bg 6)/Bg 6_Bg 6 M _Base_color_1001.png" id="1_d5pq0"]
+[ext_resource type="Texture2D" uid="uid://b15uq7i44v8fs" path="res://3D Models/BG Scenes/Backyard(Bg 6)/Bg 6 M _Base_color_1001.png" id="2_d5pq0"]
+[ext_resource type="Texture2D" uid="uid://c23mra2pmu2uf" path="res://3D Models/BG Scenes/Backyard(Bg 6)/Bg 6_Bg 6 M _Metallic_1001.png-Bg 6 M _Roughness_1001.png" id="2_obewj"]
+[ext_resource type="Texture2D" uid="uid://csidi22u6yblv" path="res://3D Models/BG Scenes/Backyard(Bg 6)/Bg 6_Bg 6 M _Normal_1001.png" id="3_v3iy1"]
+
+[resource]
+resource_name = "Bg 6 M "
+cull_mode = 2
+albedo_texture = ExtResource("1_d5pq0")
+metallic = 1.0
+metallic_texture = ExtResource("2_obewj")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_obewj")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("2_d5pq0")
+normal_enabled = true
+normal_texture = ExtResource("3_v3iy1")

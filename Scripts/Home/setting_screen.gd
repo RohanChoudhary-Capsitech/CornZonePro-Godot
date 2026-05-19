@@ -12,10 +12,10 @@ extends CanvasLayer
 
 
 # Music and Audio
-@onready var music_on = $Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOnButton
-@onready var music_off = $Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOffButton
-@onready var sound_on = $Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOnButton
-@onready var sound_off = $Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOffButton
+@onready var music_on = $Panel/SettingBg/SettingPanel/BG/MusicOnButton
+@onready var music_off = $Panel/SettingBg/SettingPanel/BG/MusicOffButton
+@onready var sound_on = $Panel/SettingBg/SettingPanel/BG/SoundOnButton
+@onready var sound_off = $Panel/SettingBg/SettingPanel/BG/SoundOffButton
 
 @export var setting_off: Texture2D
 @export var setting_on: Texture2D
@@ -173,28 +173,28 @@ func _on_godot_credit_button_pressed() -> void:
 # Audio and Music settings system
 func _on_music_on_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOnButton.visible = false
-	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOffButton.visible =  true
+	$Panel/SettingBg/SettingPanel/BG/MusicOnButton.visible = false
+	$Panel/SettingBg/SettingPanel/BG/MusicOffButton.visible =  true
 	SoundManager.set_music(false)
 	SoundManager.stop_bgm()
 
 
 func _on_music_off_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOffButton.visible =  false
-	$Panel/SettingBg/SettingPanel/AudioMusicBg/MusicOnButton.visible = true
+	$Panel/SettingBg/SettingPanel/BG/MusicOffButton.visible =  false
+	$Panel/SettingBg/SettingPanel/BG/MusicOnButton.visible = true
 	SoundManager.set_music(true)
 	SoundManager.play_bgm()
 
 
 func _on_sound_on_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOnButton.visible = false
-	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOffButton.visible = true
+	$Panel/SettingBg/SettingPanel/BG/SoundOnButton.visible = false
+	$Panel/SettingBg/SettingPanel/BG/SoundOffButton.visible = true
 	SoundManager.set_sfx(false)
 
 func _on_sound_off_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOffButton.visible = false
-	$Panel/SettingBg/SettingPanel/AudioMusicBg/SoundOnButton.visible = true
+	$Panel/SettingBg/SettingPanel/BG/SoundOffButton.visible = false
+	$Panel/SettingBg/SettingPanel/BG/SoundOnButton.visible = true
 	SoundManager.set_sfx(true)

@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cf4ysji1t68qo"]
+
+[ext_resource type="Texture2D" uid="uid://dvqfc60gcnbcb" path="res://3D Models/BG Scenes/Stadium(BG1)/Bg 1_BG 2 M_Base_color_1001.png" id="1_qo5on"]
+[ext_resource type="Texture2D" uid="uid://cfgx1vm4jqphd" path="res://3D Models/BG Scenes/Stadium(BG1)/Bg 1_BG 2 M_Metallic_1001-BG 2 M_Roughness_1001.png" id="2_hoxlo"]
+[ext_resource type="Texture2D" uid="uid://ihdrlxq0carl" path="res://3D Models/BG Scenes/Stadium(BG1)/Bg 1_BG 2 M_Normal_1001.png" id="3_l8gom"]
+
+[resource]
+resource_name = "BG 2 M"
+cull_mode = 2
+albedo_texture = ExtResource("1_qo5on")
+metallic = 1.0
+metallic_texture = ExtResource("2_hoxlo")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_hoxlo")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_energy_multiplier = 0.9
+emission_texture = ExtResource("1_qo5on")
+normal_enabled = true
+normal_texture = ExtResource("3_l8gom")

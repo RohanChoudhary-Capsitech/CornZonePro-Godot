@@ -9,3 +9,7 @@ metallic_specular = 0.2
 
 [resource]
 next_pass = SubResource("StandardMaterial3D_c858s")
+albedo_texture = ExtResource("1_gg3ip")
+emission_enabled = true
+emission_energy_multiplier = 0.85
+emission_texture = ExtResource("1_gg3ip")

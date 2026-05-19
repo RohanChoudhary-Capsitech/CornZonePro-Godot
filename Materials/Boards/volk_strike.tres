@@ -4,3 +4,5 @@
 
 [resource]
 albedo_texture = ExtResource("1_jialk")
+emission_enabled = true
+emission_texture = ExtResource("1_jialk")

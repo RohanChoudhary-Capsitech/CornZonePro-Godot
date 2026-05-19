@@ -53,7 +53,7 @@ bag = ExtResource("3_m0gys")
 [node name="StartTimer" type="Timer" parent="." unique_id=919203266]
 wait_time = 0.5
 
-[node name="BackyardScene" parent="." unique_id=2105745883 instance=ExtResource("4_a6nnl")]
+[node name="BackyardScene" parent="." unique_id=663459497 instance=ExtResource("4_a6nnl")]
 transform = Transform3D(1, 0, 0, 0, 1.375, 0, 0, 0, 1, -0.26307583, 0.12530994, 39.93816)
 
 [node name="Backwall" type="StaticBody3D" parent="." unique_id=768037440]

@@ -111,3 +111,5 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_iceo3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_4us0v")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_oppfs")
 text = "Equip"
+
+[connection signal="pressed" from="Icon/Button" to="." method="_on_button_pressed"]

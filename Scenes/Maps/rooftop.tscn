@@ -47,8 +47,8 @@ bag = ExtResource("3_f53w0")
 [node name="StartTimer" type="Timer" parent="." unique_id=919203266]
 wait_time = 0.5
 
-[node name="RoofTopScene" parent="." unique_id=935024502 instance=ExtResource("4_pjteq")]
-transform = Transform3D(1.285, 0, 0, 0, 1, 0, 0, 0, 1, 2.8042383, 0.12530994, 39.93816)
+[node name="RoofTopScene" parent="." unique_id=795058313 instance=ExtResource("4_pjteq")]
+transform = Transform3D(1.285, 0, 0, 0, 1, 0, 0, 0, 0.885, 2.8042383, 0.12530994, 39.93816)
 
 [node name="BackWall" type="StaticBody3D" parent="." unique_id=1606519818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9336824, 11.294596, 6.9951277)

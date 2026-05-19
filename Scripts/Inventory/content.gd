@@ -1,7 +1,9 @@
 extends GridContainer
 
 @export var item_scene: PackedScene
-@export var datas: Array[Texture2D] = []
+@export var datas: Array[ItemData] = []
+
+signal item_selected(material)
 
 func _ready() -> void:
 	load_data()
@@ -15,3 +17,7 @@ func load_data():
 			var instance = item_scene.instantiate()
 			add_child(instance)
 			instance.setup(data)
+			instance.item_clicked.connect(_on_item_clicked)
+
+func _on_item_clicked(material):
+	item_selected.emit(material)
