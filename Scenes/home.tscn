@@ -4144,10 +4144,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -161.40405
-offset_top = -139.0
-offset_right = 161.40405
-offset_bottom = 191.0
+offset_left = -162.40405
+offset_top = -142.0
+offset_right = 160.40405
+offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("97_jicx3")
@@ -4769,19 +4769,80 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -145.0
-offset_top = -144.0
-offset_right = 145.0
-offset_bottom = 156.0
+offset_left = -149.0
+offset_top = -145.0
+offset_right = 160.0
+offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
+vertical_scroll_mode = 2
 
-[node name="Label" type="Label" parent="SettingScreen/Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer" unique_id=224973837]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingScreen/Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer" unique_id=123744264]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "hii
-"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Label1" type="Label" parent="SettingScreen/Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer/VBoxContainer" unique_id=224973837]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 14
+text = "This game uses Godot Engine,available
+ under the following license:"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="SettingScreen/Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer/VBoxContainer" unique_id=900215341]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 11
+text = "Copyright (c) 2014-present Godot Engine contributors.
+Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur."
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="SettingScreen/Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer/VBoxContainer" unique_id=420530954]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 12
+text = "Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the \"Software\"), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: "
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="SettingScreen/Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer/VBoxContainer" unique_id=1327843946]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 12
+text = "The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="SettingScreen/Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer/VBoxContainer" unique_id=1871412186]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 13
+text = "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+IN THE 
+SOFTWARE."
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="TopPanel" type="HBoxContainer" parent="SettingScreen/Panel/SettingBg" unique_id=176684443]
 layout_mode = 1
