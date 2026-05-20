@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://d0ipdb3kmxnh8"]
 
-[ext_resource type="Texture2D" uid="uid://b1b15aoygoovu" path="res://Texture Or Sprites/Bags/Shurican.png" id="1_jblqn"]
+[ext_resource type="Texture2D" uid="uid://72to5xqgsclg" path="res://3D Models/Bag/Textures/Shrican_Bag_M 4k.png" id="1_b6541"]
 
 [resource]
 cull_mode = 2
-albedo_texture = ExtResource("1_jblqn")
-uv1_scale = Vector3(4.185, 4.1, 4.185)
-uv1_offset = Vector3(0.035, 0.02, 0)
+albedo_texture = ExtResource("1_b6541")
+emission_enabled = true
+emission_texture = ExtResource("1_b6541")

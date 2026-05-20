@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cqf7qdjlechkq"]
 
-[ext_resource type="Texture2D" uid="uid://dkfpc48ydi1un" path="res://Texture Or Sprites/Bags/Shield.png" id="1_rb25c"]
+[ext_resource type="Texture2D" uid="uid://cfnkv83e3uq52" path="res://3D Models/Bag/Textures/shild_Bag_M 4k.png" id="1_ajtx3"]
 
 [resource]
 cull_mode = 2
-albedo_texture = ExtResource("1_rb25c")
-uv1_scale = Vector3(4.185, 4.1, 4.185)
-uv1_offset = Vector3(0.035, 0.02, 0)
+albedo_texture = ExtResource("1_ajtx3")
+emission_enabled = true
+emission_texture = ExtResource("1_ajtx3")

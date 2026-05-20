@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://brvworqxc0eki"]
 
-[ext_resource type="Texture2D" uid="uid://dyyrk0wpb7ec8" path="res://Texture Or Sprites/Bags/Neon.png" id="1_soqjt"]
+[ext_resource type="Texture2D" uid="uid://e6wy6rgrt082" path="res://3D Models/Bag/Textures/Neon Bag_M.png" id="1_goc88"]
 
 [resource]
 cull_mode = 2
-albedo_texture = ExtResource("1_soqjt")
-uv1_scale = Vector3(4.335, 2.579, 3.3)
-uv1_offset = Vector3(1.92, 0.43, 0)
+albedo_texture = ExtResource("1_goc88")
+emission_enabled = true
+emission_texture = ExtResource("1_goc88")

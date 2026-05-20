@@ -3720,7 +3720,6 @@ board_data_scene = ExtResource("75_as3ia")
 board_data = Array[ExtResource("76_ie2bs")]([SubResource("Resource_ouj5o"), SubResource("Resource_82hot"), SubResource("Resource_k0i76"), SubResource("Resource_oi70t"), SubResource("Resource_4yy14"), SubResource("Resource_2vxpu")])
 
 [node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=918893846]
-visible = false
 script = ExtResource("53_jl4rm")
 
 [node name="BG" type="TextureRect" parent="InventoryScreen" unique_id=2092382539]
@@ -3940,13 +3939,13 @@ vertical_alignment = 1
 [node name="PreviewArea" type="Control" parent="InventoryScreen/Panel" unique_id=505330208]
 layout_mode = 1
 anchor_left = 0.5
-anchor_top = 0.066
+anchor_top = 0.083000004
 anchor_right = 0.5
-anchor_bottom = 0.066
+anchor_bottom = 0.083000004
 offset_left = -188.0
-offset_top = 45.48
+offset_top = 33.239998
 offset_right = 188.0
-offset_bottom = 295.48
+offset_bottom = 283.24
 grow_horizontal = 2
 script = ExtResource("86_2vf33")
 
@@ -3985,7 +3984,7 @@ grow_vertical = 2
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(300, 300)
-render_target_update_mode = 0
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="InventoryScreen/Panel/PreviewArea/InspectTexture/SubViewportContainer/SubViewport" unique_id=679452600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52608347)
@@ -3995,7 +3994,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52608347)
 [node name="ModelPivot" type="Node3D" parent="InventoryScreen/Panel/PreviewArea/InspectTexture/SubViewportContainer/SubViewport" unique_id=429662656]
 
 [node name="Bag" type="MeshInstance3D" parent="InventoryScreen/Panel/PreviewArea/InspectTexture/SubViewportContainer/SubViewport/ModelPivot" unique_id=1948835954]
-transform = Transform3D(0.16798782, 1.8718085, 24.92926, 24.999437, -0.012577799, -0.1675148, 6.0696884e-08, 24.929823, -1.8718508, 0, 0, 0)
+transform = Transform3D(-24.999998, -2.185569e-06, 1.0927845e-06, 1.0927846e-06, 4.7767125e-14, 24.999994, -2.1855692e-06, 24.999994, 4.7767125e-14, 0, 0, 0)
 mesh = SubResource("ArrayMesh_12lhb")
 
 [node name="BottomPanel" type="HBoxContainer" parent="InventoryScreen/Panel" unique_id=913769882]
@@ -4998,10 +4997,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -38.134148
-offset_top = -24.0
-offset_right = 39.865852
-offset_bottom = 22.5
+offset_left = -41.134148
+offset_top = -27.0
+offset_right = 42.865852
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -5023,10 +5022,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.9413
-offset_top = -23.0
-offset_right = 40.058704
-offset_bottom = 23.0
+offset_left = -41.9413
+offset_top = -27.0
+offset_right = 42.058704
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_f3k6c")
@@ -5046,10 +5045,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.9413
-offset_top = -24.0
-offset_right = 40.058704
-offset_bottom = 22.0
+offset_left = -41.9413
+offset_top = -27.0
+offset_right = 42.058704
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_f3k6c")
@@ -5069,10 +5068,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.524597
-offset_top = -25.0
-offset_right = 39.475403
-offset_bottom = 22.5
+offset_left = -42.524597
+offset_top = -27.0
+offset_right = 43.475403
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yr2fe")

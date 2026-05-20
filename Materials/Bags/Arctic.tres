@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bqou4twwrthfb"]
 
-[ext_resource type="Texture2D" uid="uid://dimt3b5e6hg0a" path="res://Texture Or Sprites/Bags/arctic.png" id="1_61tlw"]
+[ext_resource type="Texture2D" uid="uid://bbsysfd6pj1no" path="res://3D Models/Bag/Textures/blue Bag_M 4K.png" id="1_wp8hv"]
 
 [resource]
 cull_mode = 2
-albedo_texture = ExtResource("1_61tlw")
-uv1_scale = Vector3(4.195, 4.195, 4.195)
-uv1_offset = Vector3(0.035, 0.02, 0)
+albedo_texture = ExtResource("1_wp8hv")
+emission_enabled = true
+emission_texture = ExtResource("1_wp8hv")
