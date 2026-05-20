@@ -3720,6 +3720,7 @@ board_data_scene = ExtResource("75_as3ia")
 board_data = Array[ExtResource("76_ie2bs")]([SubResource("Resource_ouj5o"), SubResource("Resource_82hot"), SubResource("Resource_k0i76"), SubResource("Resource_oi70t"), SubResource("Resource_4yy14"), SubResource("Resource_2vxpu")])
 
 [node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=918893846]
+visible = false
 script = ExtResource("53_jl4rm")
 
 [node name="BG" type="TextureRect" parent="InventoryScreen" unique_id=2092382539]
@@ -3984,7 +3985,7 @@ grow_vertical = 2
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(300, 300)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Camera3D" type="Camera3D" parent="InventoryScreen/Panel/PreviewArea/InspectTexture/SubViewportContainer/SubViewport" unique_id=679452600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52608347)

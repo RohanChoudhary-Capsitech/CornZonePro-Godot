@@ -16,6 +16,7 @@ func _on_reward_collect(reward):
 func _on_claim_pressed() -> void:
 	SoundManager.play_button_clicks()
 	DataManager.add_coins(current_reward_data.coin_amount)
+	SoundManager.play_coin_collect()
 	DataManager.save_claim_success()
 	UIManager.toggle_canvas($".")
 	$"../HomeScreen/Panel/TopPanel/Coin/CoinText".text = str(Prefs.get_int("coins",0))

@@ -1,7 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cn5msjrcpmq5j"]
 
 [ext_resource type="Texture2D" uid="uid://byl0wy0oly5yb" path="res://3D Models/BG Scenes/Street(Bg 3)/Bg 3_3 bg M_Base_color_1001.png" id="1_tis84"]
-[ext_resource type="Texture2D" uid="uid://hupbf2j58wjo" path="res://3D Models/BG Scenes/Street(Bg 3)/Bg 3_3 bg M_Metallic_1001-3 bg M_Roughness_1001.png" id="2_drilf"]
 [ext_resource type="Texture2D" uid="uid://diny0h0fqo1a2" path="res://3D Models/BG Scenes/Street(Bg 3)/3 bg M_Base_color_1001.png" id="2_hgd8p"]
 [ext_resource type="Texture2D" uid="uid://dy0817dwf8pm8" path="res://3D Models/BG Scenes/Street(Bg 3)/Bg 3_3 bg M_Normal_1001.png" id="3_hgd8p"]
 
@@ -9,13 +8,7 @@
 resource_name = "3 bg M"
 cull_mode = 2
 albedo_texture = ExtResource("1_tis84")
-metallic = 1.0
-metallic_texture = ExtResource("2_drilf")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("2_drilf")
-roughness_texture_channel = 1
 emission_enabled = true
-emission_energy_multiplier = 0.7
+emission_energy_multiplier = 0.35
 emission_texture = ExtResource("2_hgd8p")
-normal_enabled = true
 normal_texture = ExtResource("3_hgd8p")

@@ -19,4 +19,5 @@ func setup(data):
 
 
 func _on_button_pressed() -> void:
+	SoundManager.play_button_clicks()
 	item_clicked.emit(item_material)
