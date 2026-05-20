@@ -14,7 +14,7 @@ func set_item_material(material : Material):
 	pivot.rotation_degrees = Vector3.ZERO
 	model.position = Vector3.ZERO 
 
-func _input(event):
+func _gui_input(event):
 	# MOUSE PRESS
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		dragging = event.pressed
@@ -30,6 +30,10 @@ func _input(event):
 	# MOBILE DRAG
 	if event is InputEventScreenDrag and dragging:
 		_apply_rotation(event.relative)
+
+func _notification(what):
+	if what == NOTIFICATION_MOUSE_EXIT:
+		dragging = false
 
 func _apply_rotation(relative_movement: Vector2):
 	# 1. Horizontal rotation (Spin around global Y axis)
