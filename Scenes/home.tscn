@@ -11,9 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://cijoie8i5b5b" path="res://Texture Or Sprites/Login Screen/input_bg.png" id="10_nw1ns"]
 [ext_resource type="Texture2D" uid="uid://bd46b8iankgmr" path="res://Texture Or Sprites/Login Screen/BtnBg.png" id="12_gyiet"]
 [ext_resource type="Texture2D" uid="uid://c2dbjirpm1ase" path="res://Texture Or Sprites/Login Screen/Line 14.png" id="13_jjai4"]
+[ext_resource type="Texture2D" uid="uid://cv2pey7gw7urv" path="res://Texture Or Sprites/NoInternetScreen/Group 197.png" id="14_fhwdd"]
 [ext_resource type="Texture2D" uid="uid://cgqyho8ne3j3a" path="res://Texture Or Sprites/Login Screen/Google.png" id="14_lddgv"]
+[ext_resource type="Script" uid="uid://sty50noy0kn3" path="res://Scripts/Home/no_internet_screen.gd" id="14_meccc"]
+[ext_resource type="Texture2D" uid="uid://cc166qa1qu6y1" path="res://Texture Or Sprites/NoInternetScreen/Rectangle 161.png" id="15_gsbml"]
 [ext_resource type="Texture2D" uid="uid://dncwhfd5ipdbo" path="res://Texture Or Sprites/Login Screen/Apple.png" id="15_smgrs"]
 [ext_resource type="Texture2D" uid="uid://drmvoxy81hgc2" path="res://Texture Or Sprites/Home Screen/Bg.png" id="16_848r5"]
+[ext_resource type="Texture2D" uid="uid://7d18fv4bd741" path="res://Texture Or Sprites/NoInternetScreen/Rectangle 162.png" id="16_gsbml"]
 [ext_resource type="Texture2D" uid="uid://df3uq3lg4t57f" path="res://Texture Or Sprites/Home Screen/LeftPanel.png" id="17_dyher"]
 [ext_resource type="Texture2D" uid="uid://dhaiu8nexctvx" path="res://Texture Or Sprites/Home Screen/ProfileBG.png" id="17_g2bjx"]
 [ext_resource type="Script" uid="uid://51frmnaa34pj" path="res://Scripts/Home/home_screen.gd" id="17_mkkvt"]
@@ -185,6 +189,7 @@
 [ext_resource type="FontFile" uid="uid://c5ju1f60ajujo" path="res://Fonts/Poppins-SemiBold.ttf" id="136_bxkn3"]
 [ext_resource type="Texture2D" uid="uid://8hxstwn0h1sb" path="res://Texture Or Sprites/DailyRewards/Rectangle 111.png" id="137_qfixt"]
 [ext_resource type="Script" uid="uid://crvxuifakyi1c" path="res://Scripts/Home/reward_screen.gd" id="139_pmkjb"]
+[ext_resource type="FontFile" uid="uid://bd1ufqcf784jg" path="res://Fonts/Poppins-SemiBoldItalic.ttf" id="163_74adv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0rbp"]
 
@@ -219,6 +224,15 @@ texture = ExtResource("15_smgrs")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smgrs"]
 texture = ExtResource("15_smgrs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_meccc"]
+texture = ExtResource("16_gsbml")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44nip"]
+texture = ExtResource("16_gsbml")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lnl1s"]
+texture = ExtResource("16_gsbml")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jv2cb"]
 texture = ExtResource("19_kx4oe")
@@ -2490,6 +2504,7 @@ vertical_alignment = 1
 script = ExtResource("9_cmu2r")
 
 [node name="BG" type="TextureRect" parent="LoginScreen" unique_id=635102092]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2588,6 +2603,120 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ppvi3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lddgv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_smgrs")
+
+[node name="NoInternetScreen" type="CanvasLayer" parent="." unique_id=2058686150]
+visible = false
+script = ExtResource("14_meccc")
+
+[node name="BG" type="TextureRect" parent="NoInternetScreen" unique_id=1977291362]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_cykap")
+expand_mode = 4
+
+[node name="Panel" type="Control" parent="NoInternetScreen" unique_id=1178752521]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelBG" type="TextureRect" parent="NoInternetScreen/Panel" unique_id=1937300396]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.78107
+offset_top = -79.41385
+offset_right = 206.78107
+offset_bottom = 79.41385
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_fhwdd")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Texure1" type="TextureRect" parent="NoInternetScreen/Panel/PanelBG" unique_id=1625014015]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -122.16146
+offset_top = -26.0
+offset_right = 122.16144
+offset_bottom = 22.586151
+grow_horizontal = 2
+texture = ExtResource("15_gsbml")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label1" type="Label" parent="NoInternetScreen/Panel/PanelBG/Texure1" unique_id=747336545]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -11.5
+offset_right = 45.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 25
+text = "No Internet"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="NoInternetScreen/Panel/PanelBG" unique_id=1695456693]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -15.5
+offset_right = 142.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 28
+text = "Turn on Your Internet"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="NoInternetScreen/Panel/PanelBG" unique_id=606988986]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -18.413849
+offset_right = 50.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_meccc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_44nip")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lnl1s")
+text = "GO
+"
 
 [node name="HomeScreen" type="CanvasLayer" parent="." unique_id=623974019]
 script = ExtResource("17_mkkvt")
@@ -5582,6 +5711,81 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_f4aua")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_f74ik")
 theme_override_styles/hover = SubResource("StyleBoxTexture_fhrbv")
 
+[node name="ScrollContainer" type="ScrollContainer" parent="InfoScreen/Panel/PanelBg" unique_id=85018871]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.5
+offset_top = -186.0
+offset_right = 138.5
+offset_bottom = 219.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoScreen/Panel/PanelBg/ScrollContainer" unique_id=2025930397]
+custom_minimum_size = Vector2(277, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Label1" type="Label" parent="InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer" unique_id=2010524505]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("163_74adv")
+theme_override_font_sizes/font_size = 18
+text = "About Us"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer" unique_id=1562255566]
+custom_minimum_size = Vector2(277, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 16
+text = "Cornzone Pro go on! Toss the beanbag, aim for the board, and score big in this fun mobile challenge. Easy to play, tough to master - perfect for quick matches."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer" unique_id=1725750065]
+custom_minimum_size = Vector2(277, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 17
+text = "Key Fearutes"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer" unique_id=142636778]
+custom_minimum_size = Vector2(277, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 16
+text = "Simple controls, Realistic physics, Timer mode to play alone
+ or 
+Pass&Play and Local 2 Player modes to challenge friends.
+Different maps to play."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer" unique_id=1031303068]
+custom_minimum_size = Vector2(277, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 16
+text = "\"Toss. Score. Win\""
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="DailyRewardScreen" type="CanvasLayer" parent="." unique_id=304440633]
 visible = false
 script = ExtResource("64_fa687")
@@ -6584,6 +6788,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="pressed" from="LoginScreen/LoginPanel/Panel/SubmitButton" to="LoginScreen" method="_on_submit_button_pressed"]
+[connection signal="pressed" from="NoInternetScreen/Panel/PanelBG/Button" to="NoInternetScreen" method="_on_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/SettingButton" to="HomeScreen" method="_on_setting_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/Profile/Profile Icon" to="HomeScreen" method="_on_profile_icon_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/LeftPanel/LeftPanelBG/DailyRewardButton" to="HomeScreen" method="_on_daily_reward_button_pressed"]

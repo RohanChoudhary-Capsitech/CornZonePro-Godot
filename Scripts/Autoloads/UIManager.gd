@@ -22,6 +22,7 @@ var local_multiplayer_screen:CanvasLayer
 var leaderboard_screen: CanvasLayer
 var shop_screen: CanvasLayer
 var inventory_screen: CanvasLayer
+var no_internet_screen: CanvasLayer
 
 var ingame_screen:CanvasLayer
 var pause_screen:CanvasLayer
@@ -50,7 +51,7 @@ func _set_home_coming_state(value: int) -> void:
 	Prefs.set_int("home_comeing", value)
 	Prefs.save()
 
-func home_setup(loading, home, login, setting, map, profile, info, rewards_list, reward, local_multilplayer, leaderboard, shop, inventory):
+func home_setup(loading, home, login, setting, map, profile, info, rewards_list, reward, local_multilplayer, leaderboard, shop, inventory, no_internet):
 	loading_screen = loading
 	home_screen = home
 	login_screen = login
@@ -64,7 +65,8 @@ func home_setup(loading, home, login, setting, map, profile, info, rewards_list,
 	leaderboard_screen = leaderboard
 	shop_screen = shop
 	inventory_screen = inventory
-	canvas_layers = [loading, home, login, setting, map, profile, info, rewards_list, reward, local_multilplayer, leaderboard, shop, inventory]
+	no_internet_screen = no_internet
+	canvas_layers = [loading, home, login, setting, map, profile, info, rewards_list, reward, local_multilplayer, leaderboard, shop, inventory, no_internet]
 
 func single_setup(ingame, pause, result):
 	#loading_screen = loading

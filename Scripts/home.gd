@@ -14,7 +14,8 @@ func _ready() -> void:
 		$MultiplayerScreen,
 		$LeaderBoardScreen,
 		$ShopScreen,
-		$InventoryScreen
+		$InventoryScreen,
+		$NoInternetScreen
 	)
 	var home:=Prefs.get_int("home_comeing",0)
 	if home == 0:
