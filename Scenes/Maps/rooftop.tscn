@@ -22,7 +22,7 @@ size = Vector3(40, 25, 0.5)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
-transform = Transform3D(0.6540163, -0.6249387, -0.4262794, 0.6517982, 0.17951697, 0.73683965, -0.3839552, -0.7597532, 0.524741, 0, 22.843765, 34.74121)
+transform = Transform3D(1, 0, 0, 0, 0.86082196, 0.5089062, 0, -0.5089062, 0.86082196, -7.8151817, 15.942152, 16.024406)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
 transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.8792332, 0, 4.751979, 51.187668)
@@ -30,6 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.87923
 [node name="Ground" type="StaticBody3D" parent="." unique_id=961487849]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=310348646]
+visible = false
 mesh = SubResource("BoxMesh_1ey7h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1311580137]
@@ -48,7 +49,7 @@ bag = ExtResource("3_f53w0")
 wait_time = 0.5
 
 [node name="RoofTopScene" parent="." unique_id=795058313 instance=ExtResource("4_pjteq")]
-transform = Transform3D(1.285, 0, 0, 0, 1, 0, 0, 0, 0.885, 2.8042383, 0.12530994, 39.93816)
+transform = Transform3D(0.845, 0, 0, 0, 0.845, 0, 0, 0, 0.775, 0.80730534, 0.12530994, 38.01204)
 
 [node name="BackWall" type="StaticBody3D" parent="." unique_id=1606519818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9336824, 11.294596, 6.9951277)
@@ -61,7 +62,7 @@ mesh = SubResource("BoxMesh_pjteq")
 shape = SubResource("BoxShape3D_dv67y")
 
 [node name="LeftWall" type="StaticBody3D" parent="." unique_id=2097835289]
-transform = Transform3D(-0.2872937, 0, 0.9578425, 0, 1, 0, -0.9578425, 0, -0.2872937, -10.137142, 11.294596, 27.689476)
+transform = Transform3D(-0.23410729, 0, 0.9722109, 0, 1, 0, -0.9722109, 0, -0.23410729, -10.414, 11.295, 27.689)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LeftWall" unique_id=2119964368]
 visible = false
@@ -71,7 +72,7 @@ mesh = SubResource("BoxMesh_pjteq")
 shape = SubResource("BoxShape3D_dv67y")
 
 [node name="RightWall" type="StaticBody3D" parent="." unique_id=116737034]
-transform = Transform3D(0.06242468, 0, 0.9980497, 0, 1, 0, -0.9980497, 0, 0.06242468, 8.356433, 11.294596, 27.09415)
+transform = Transform3D(0.008901019, 0, 0.9999603, 0, 1, 0, -0.9999603, 0, 0.008901019, 5.2949476, 11.294596, 30.374325)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightWall" unique_id=1830725499]
 visible = false

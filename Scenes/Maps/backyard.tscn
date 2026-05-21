@@ -6,18 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_m0gys"]
 [ext_resource type="PackedScene" uid="uid://b8qonhotjm8cx" path="res://3D Models/BG Scenes/Backyard(Bg 6)/Bg 6.glb" id="4_a6nnl"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_m0gys"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ie6kc"]
 panorama = ExtResource("1_ie6kc")
-energy_multiplier = 1.2
 
 [sub_resource type="Sky" id="Sky_jq6d2"]
-sky_material = SubResource("PanoramaSkyMaterial_m0gys")
+sky_material = SubResource("PanoramaSkyMaterial_ie6kc")
 
 [sub_resource type="Environment" id="Environment_sq0tn"]
 background_mode = 2
-background_energy_multiplier = 1.5
 sky = SubResource("Sky_jq6d2")
-ambient_light_source = 3
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(50, 0.25, 100)
@@ -43,7 +40,7 @@ size = Vector3(1, 1, 50)
 environment = SubResource("Environment_sq0tn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
-transform = Transform3D(1, 0, 0, 0, 0.17155087, 0.9851753, 0, -0.9851753, 0.17155087, 0, 7.8243723, 19.546883)
+transform = Transform3D(0.90721047, -0.42067695, -0.00016876939, 0.3721357, 0.8023417, 0.46665108, -0.1961738, -0.42341334, 0.88444155, 0, 9.155856, 24.866087)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
 transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.8792332, 0, 4.751979, 51.187668)
@@ -70,7 +67,7 @@ bag = ExtResource("3_m0gys")
 wait_time = 0.5
 
 [node name="BackyardScene" parent="." unique_id=663459497 instance=ExtResource("4_a6nnl")]
-transform = Transform3D(1, 0, 0, 0, 1.375, 0, 0, 0, 1, -0.26307583, 0.12530994, 39.93816)
+transform = Transform3D(1, 0, 0, 0, 1.375, 0, 0, 0, 0.8634662, -0.26307583, 0.12530994, 40.85371)
 
 [node name="Backwall" type="StaticBody3D" parent="." unique_id=768037440]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8266277, 0, 0.9075365)
@@ -85,7 +82,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.5, 0)
 shape = SubResource("BoxShape3D_ie6kc")
 
 [node name="LeftSideWall" type="StaticBody3D" parent="." unique_id=919889098]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -6.269452, 9.319756, 27.030005)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -6.343, 9.32, 27.03)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LeftSideWall" unique_id=995302670]
 visible = false
@@ -95,7 +92,7 @@ mesh = SubResource("BoxMesh_a6nnl")
 shape = SubResource("BoxShape3D_ie6kc")
 
 [node name="RightSideWall" type="StaticBody3D" parent="." unique_id=981057679]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 8.21917, 9.319756, 27.030005)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 8.269, 9.32, 27.03)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightSideWall" unique_id=371803039]
 visible = false

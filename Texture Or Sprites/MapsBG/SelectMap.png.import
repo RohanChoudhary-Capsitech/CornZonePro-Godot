@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd4a8x4psao4u"
-path="res://.godot/imported/Garden.png-53119161be7fdbac016c2473c42ee19c.ctex"
+uid="uid://dqcaig6nvmj"
+path="res://.godot/imported/SelectMap.png-1e1c73baa4c33e8e59d4ab70830e917f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/MapsBG/Garden.png"
-dest_files=["res://.godot/imported/Garden.png-53119161be7fdbac016c2473c42ee19c.ctex"]
+source_file="res://Texture Or Sprites/MapsBG/SelectMap.png"
+dest_files=["res://.godot/imported/SelectMap.png-1e1c73baa4c33e8e59d4ab70830e917f.ctex"]
 
 [params]
 

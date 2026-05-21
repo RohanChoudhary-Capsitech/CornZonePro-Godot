@@ -1,9 +1,20 @@
 [gd_scene format=3 uid="uid://cbdwn7albabob"]
 
+[ext_resource type="Texture2D" uid="uid://bwkwwbyjmopad" path="res://3D Models/Sky Materials/sunflowers_puresky_4k.hdr" id="1_xknfr"]
 [ext_resource type="PackedScene" uid="uid://b3xkqv7jt6tis" path="res://Scenes/board.tscn" id="1_ywqqe"]
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_fbdad"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_3qr72"]
 [ext_resource type="PackedScene" uid="uid://b3vy6ody5vijx" path="res://3D Models/BG Scenes/Street(Bg 3)/Bg 3.glb" id="4_x6xx7"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_s6ylb"]
+panorama = ExtResource("1_xknfr")
+
+[sub_resource type="Sky" id="Sky_5f685"]
+sky_material = SubResource("PanoramaSkyMaterial_s6ylb")
+
+[sub_resource type="Environment" id="Environment_x6xx7"]
+background_mode = 2
+sky = SubResource("Sky_5f685")
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(50, 0.25, 100)
@@ -20,9 +31,10 @@ size = Vector3(50, 20, 0.5)
 [node name="Street" type="Node3D" unique_id=1397785541]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
+environment = SubResource("Environment_x6xx7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
-transform = Transform3D(0.9603318, 0.14776725, -0.23649055, -0.08553715, 0.96327233, 0.2545389, 0.26541734, -0.22421306, 0.93770057, -3.2810001, 19.194292, 33.819633)
+transform = Transform3D(1, 0, 0, 0, 0.99939096, 0.0348995, 0, -0.0348995, 0.99939096, 0, 10, 0)
 light_energy = 1.649
 light_indirect_energy = 3.047
 light_volumetric_fog_energy = 1.837
@@ -54,7 +66,7 @@ bag = ExtResource("3_3qr72")
 wait_time = 0.5
 
 [node name="StreetScene" parent="." unique_id=759581957 instance=ExtResource("4_x6xx7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.87, -0.263, 0.125, 41.993)
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 1, -0.263, 0.125, 41.04639)
 
 [node name="BackWall" type="StaticBody3D" parent="." unique_id=652998891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 10)
@@ -67,7 +79,7 @@ mesh = SubResource("BoxMesh_x6xx7")
 shape = SubResource("BoxShape3D_xknfr")
 
 [node name="LeftWall" type="StaticBody3D" parent="." unique_id=1812478078]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -6.497259, 10, 30.160507)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5.872, 10, 30.161)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LeftWall" unique_id=373362554]
 visible = false
@@ -77,7 +89,7 @@ mesh = SubResource("BoxMesh_x6xx7")
 shape = SubResource("BoxShape3D_xknfr")
 
 [node name="RightWall" type="StaticBody3D" parent="." unique_id=1295650896]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 6.571558, 10, 30.160507)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 5.907, 10, 30.161)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightWall" unique_id=1410519349]
 visible = false

@@ -50,7 +50,7 @@ size = Vector3(2, 1, 50)
 environment = SubResource("Environment_ty46g")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
-transform = Transform3D(0.70465237, 0.21306196, 0.6768085, -0.7076061, 0.14040123, 0.69251806, 0.05252451, -0.9668982, 0.24969798, 5.921001, 11.942902, 24.339258)
+transform = Transform3D(1, 0, 0, 0, 0.99983686, 0.018063176, 0, -0.018063176, 0.99983686, 0, 7.2820177, 29.402454)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
 transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.8792332, 0, 4.751979, 51.187668)
@@ -90,7 +90,7 @@ mesh = SubResource("BoxMesh_mvdow")
 shape = SubResource("BoxShape3D_mvdow")
 
 [node name="LeftWall" type="StaticBody3D" parent="." unique_id=267546357]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21, 3.197, 38.351135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.201, 3.197, 38.351)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LeftWall" unique_id=69713650]
 visible = false
@@ -100,7 +100,7 @@ mesh = SubResource("BoxMesh_hrk1m")
 shape = SubResource("BoxShape3D_hrk1m")
 
 [node name="RightWall" type="StaticBody3D" parent="." unique_id=270912459]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7625446, 3.197, 38.351135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.928, 3.197, 38.351)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightWall" unique_id=1320602722]
 visible = false

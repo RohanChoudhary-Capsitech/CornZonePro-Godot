@@ -36,7 +36,7 @@ radius = 1.75
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
-transform = Transform3D(0.51411456, 0.76926935, 0.3793561, -0.64567405, 0.055959757, 0.7615599, 0.5646161, -0.6364694, 0.525467, 0, 13.13209, 34.74121)
+transform = Transform3D(0.8939236, 0.40582433, 0.19028218, -0.35420132, 0.37944826, 0.8547284, 0.27466726, -0.83146006, 0.4829413, 1.7788033, 9.658752, 31.955296)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
 transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.8792332, 0, 4.751979, 51.187668)
@@ -44,6 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.87923
 [node name="Ground" type="StaticBody3D" parent="." unique_id=961487849]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=310348646]
+visible = false
 mesh = SubResource("BoxMesh_1ey7h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1311580137]
@@ -62,10 +63,10 @@ bag = ExtResource("3_ja58s")
 wait_time = 0.5
 
 [node name="MetroScene" parent="." unique_id=2054336397 instance=ExtResource("4_48jhn")]
-transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 1, -0.2629094, 0.124792576, 35.301083)
+transform = Transform3D(0.715, 0, 0, 0, 1, 0, 0, 0, 0.875, -0.2629094, 0.124792576, 36.21195)
 
 [node name="BackWall" type="StaticBody3D" parent="." unique_id=91303208]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.7724905, -8.147257)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.7724905, 2.1204624)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BackWall" unique_id=607997541]
 visible = false
@@ -75,7 +76,7 @@ mesh = SubResource("BoxMesh_48jhn")
 shape = SubResource("BoxShape3D_dv4fa")
 
 [node name="LeftWall" type="StaticBody3D" parent="." unique_id=643941475]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6119537, 4.0054607, 27.369555)
+transform = Transform3D(0.99921596, -0.03959117, 0, 0.03959117, 0.99921596, 0, 0, 0, 1, -5.074669, 4.0054607, 27.369555)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LeftWall" unique_id=1669415996]
 visible = false
@@ -85,7 +86,7 @@ mesh = SubResource("BoxMesh_ja58s")
 shape = SubResource("BoxShape3D_48jhn")
 
 [node name="RightWall" type="StaticBody3D" parent="." unique_id=1080468497]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8.397965, 4.0054607, 27.369555)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.310916, 4.0054607, 27.369555)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightWall" unique_id=782821867]
 visible = false
@@ -95,19 +96,21 @@ mesh = SubResource("BoxMesh_ja58s")
 shape = SubResource("BoxShape3D_48jhn")
 
 [node name="Pillar 1" type="StaticBody3D" parent="." unique_id=211834962]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.843893, 7.469122, 46.121666)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6881256, 7.469122, 45.819458)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pillar 1" unique_id=2100127504]
+transform = Transform3D(0.92, 0, 0, 0, 1, 0, 0, 0, 0.865, 0, 0, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_48jhn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar 1" unique_id=624896454]
 shape = SubResource("CylinderShape3D_dv4fa")
 
 [node name="Pillar 2" type="StaticBody3D" parent="." unique_id=378523983]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.843893, 7.469122, 24.916538)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35116, 7.469122, 26.582474)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pillar 2" unique_id=224261231]
+transform = Transform3D(0.855, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.07967758)
 visible = false
 mesh = SubResource("CapsuleMesh_48jhn")
 
@@ -118,6 +121,7 @@ shape = SubResource("CylinderShape3D_dv4fa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.844, 7.469, 0.4)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pillar 3" unique_id=1861158838]
+transform = Transform3D(0.9, 0, 0, 0, 1, 0, 0, 0, 1, -0.5196781, 0, 4.929001)
 visible = false
 mesh = SubResource("CapsuleMesh_48jhn")
 

@@ -22,7 +22,7 @@ size = Vector3(40, 30, 0.5)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
-transform = Transform3D(1, 0, 0, 0, 0.17155087, 0.9851753, 0, -0.9851753, 0.17155087, 0, 6.6319437, 19.546883)
+transform = Transform3D(0.9965857, 0.07241577, 0.03965962, -0.081277855, 0.77598524, 0.62549245, 0.014520243, -0.62658024, 0.7792216, 0, 11.865119, 41.831398)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
 transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.8792332, 0, 4.751979, 51.187668)
@@ -30,6 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.87923
 [node name="Ground" type="StaticBody3D" parent="." unique_id=961487849]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=310348646]
+visible = false
 mesh = SubResource("BoxMesh_1ey7h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1311580137]
@@ -48,10 +49,10 @@ bag = ExtResource("3_8syye")
 wait_time = 0.5
 
 [node name="StadiumScene" parent="." unique_id=395620200 instance=ExtResource("4_4lg7g")]
-transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, 0.4706818, 0.125, 44.70993)
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1, 0.12574685, 0.125, 43.650536)
 
 [node name="BackWall" type="StaticBody3D" parent="." unique_id=501456103]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.163303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.411186)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BackWall" unique_id=841539535]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
@@ -63,7 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
 shape = SubResource("BoxShape3D_jltii")
 
 [node name="LeftSideWall" type="StaticBody3D" parent="." unique_id=95734038]
-transform = Transform3D(-0.3420201, 0, 0.9396925, 0, 1, 0, -0.9396925, 0, -0.3420201, -9.290068, 0, 32.355457)
+transform = Transform3D(-0.3420201, 0, 0.9396925, 0, 1, 0, -0.9396925, 0, -0.3420201, -9.210213, 0, 32.355457)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LeftSideWall" unique_id=169728727]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
@@ -75,7 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
 shape = SubResource("BoxShape3D_jltii")
 
 [node name="RightSideWall" type="StaticBody3D" parent="." unique_id=2014283977]
-transform = Transform3D(-0.3350734, 0, -0.942192, 0, 1, 0, 0.942192, 0, -0.3350734, 8.838152, 0, 32.355457)
+transform = Transform3D(-0.3763699, 0, -0.9264696, 0, 1, 0, 0.9264696, 0, -0.3763699, 9.784788, 0, 32.355457)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightSideWall" unique_id=803750347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
