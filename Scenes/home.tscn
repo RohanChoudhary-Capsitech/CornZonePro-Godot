@@ -48,9 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://b7vfboswoyyd2" path="res://Texture Or Sprites/Shop Screen/Group.png" id="42_2seyu"]
 [ext_resource type="Texture2D" uid="uid://wxlein54c1qj" path="res://Texture Or Sprites/Setting Screen/SettingBg.png" id="42_ridcw"]
 [ext_resource type="Texture2D" uid="uid://dwu1nf7abokum" path="res://Texture Or Sprites/Setting Screen/CrossIcon.png" id="43_6mqkx"]
-[ext_resource type="Texture2D" uid="uid://b3imojsl7adon" path="res://Texture Or Sprites/Shop Screen/Group 48.png" id="43_q6kyu"]
 [ext_resource type="Script" uid="uid://braim0r3r8miu" path="res://Scripts/Home/setting_screen.gd" id="44_m3bm7"]
-[ext_resource type="Texture2D" uid="uid://5m5jugnw8t7o" path="res://Texture Or Sprites/Shop Screen/Group 231.png" id="44_rdxgg"]
 [ext_resource type="Texture2D" uid="uid://dtyqe8slqicdl" path="res://Texture Or Sprites/Shop Screen/Rectangle a.png" id="45_qeivk"]
 [ext_resource type="Texture2D" uid="uid://hg2rfu4eple4" path="res://Texture Or Sprites/Shop Screen/homeicon.png" id="45_rdxgg"]
 [ext_resource type="Texture2D" uid="uid://scwcx3w0wn7h" path="res://Texture Or Sprites/Shop Screen/bags.png" id="45_stdfk"]
@@ -59,6 +57,7 @@
 [ext_resource type="Texture2D" uid="uid://dy0nduu3w1fnv" path="res://Texture Or Sprites/Shop Screen/Rectangle 94.png" id="46_o3vp4"]
 [ext_resource type="Texture2D" uid="uid://dtdwb8exx5n7c" path="res://Texture Or Sprites/Shop Screen/Group 563.png" id="46_te4e6"]
 [ext_resource type="Script" uid="uid://blp7na1jmy62s" path="res://Scripts/Home/scroll_container.gd" id="48_q0rbp"]
+[ext_resource type="Texture2D" uid="uid://bp4wm57hmwqq4" path="res://Texture Or Sprites/Shop Screen/bagsbg.png" id="49_44nip"]
 [ext_resource type="Texture2D" uid="uid://qerl7mwtd6pu" path="res://Texture Or Sprites/MapsBG/Stadium.png" id="49_cmu2r"]
 [ext_resource type="Texture2D" uid="uid://b4anxdeudcr81" path="res://Texture Or Sprites/Shop Screen/boards.png" id="49_ildo7"]
 [ext_resource type="Texture2D" uid="uid://c81fv812yb54l" path="res://Texture Or Sprites/Shop Screen/Group 564.png" id="50_56oc6"]
@@ -67,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://bbku5rr5mt372" path="res://Texture Or Sprites/Inventory Screen/Frame 85.png" id="53_56oc6"]
 [ext_resource type="PackedScene" uid="uid://dkxtmd1so4k4r" path="res://Scenes/UI/bag_data.tscn" id="53_afc64"]
 [ext_resource type="Script" uid="uid://co234yrsdo1xy" path="res://Scripts/Home/inventory_screen.gd" id="53_jl4rm"]
+[ext_resource type="Texture2D" uid="uid://0wvb7q67gtp6" path="res://Texture Or Sprites/Shop Screen/boardsbg.png" id="53_lnl1s"]
 [ext_resource type="Script" uid="uid://b53a3fuc8clmd" path="res://Scripts/Shop/bag_data_content.gd" id="54_is5vx"]
 [ext_resource type="Texture2D" uid="uid://cynxb4vuhdeyy" path="res://Texture Or Sprites/Profile Screen/PanelBg.png" id="54_jv2cb"]
 [ext_resource type="Script" uid="uid://b5c44ivano6da" path="res://Scripts/Home/profile_screen.gd" id="54_um175"]
@@ -3276,7 +3276,7 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 1.0
-offset_bottom = 112.0
+offset_bottom = 108.0
 grow_horizontal = 2
 texture = ExtResource("42_2seyu")
 expand_mode = 1
@@ -3285,25 +3285,23 @@ stretch_mode = 5
 [node name="MidPanel" type="VBoxContainer" parent="ShopScreen/Panel" unique_id=1631213551]
 custom_minimum_size = Vector2(430, 450)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -215.0
-offset_top = -259.5
-offset_right = 215.0
-offset_bottom = 263.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = 112.0
+offset_right = -24.0
+offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 60
+theme_override_constants/separation = 70
+alignment = 1
 
 [node name="BagPanel" type="TextureRect" parent="ShopScreen/Panel/MidPanel" unique_id=1344024291]
-custom_minimum_size = Vector2(0, 250)
+custom_minimum_size = Vector2(0, 220)
 layout_mode = 2
-texture = ExtResource("43_q6kyu")
-expand_mode = 5
-stretch_mode = 5
+texture = ExtResource("49_44nip")
+expand_mode = 3
 
 [node name="Top" type="HBoxContainer" parent="ShopScreen/Panel/MidPanel/BagPanel" unique_id=980806474]
 layout_mode = 1
@@ -3311,9 +3309,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -189.5
-offset_top = 19.0
+offset_top = 5.0
 offset_right = 191.5
-offset_bottom = 166.5
+offset_bottom = 152.5
 grow_horizontal = 2
 theme_override_constants/separation = 10
 
@@ -3338,10 +3336,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -172.0
-offset_top = -68.91406
-offset_right = 166.0
-offset_bottom = -28.914063
+offset_left = -177.0
+offset_top = -53.914063
+offset_right = 171.0
+offset_bottom = -13.9140625
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 20
@@ -3389,11 +3387,10 @@ theme_override_font_sizes/font_size = 28
 text = "Buy"
 
 [node name="BoardPanel" type="TextureRect" parent="ShopScreen/Panel/MidPanel" unique_id=65650425]
-custom_minimum_size = Vector2(0, 230)
+custom_minimum_size = Vector2(0, 220)
 layout_mode = 2
-texture = ExtResource("44_rdxgg")
-expand_mode = 5
-stretch_mode = 5
+texture = ExtResource("53_lnl1s")
+expand_mode = 3
 
 [node name="Top" type="HBoxContainer" parent="ShopScreen/Panel/MidPanel/BoardPanel" unique_id=1002389661]
 layout_mode = 1
@@ -3401,9 +3398,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -186.625
-offset_top = 8.0
+offset_top = 6.0
 offset_right = 190.625
-offset_bottom = 155.19876
+offset_bottom = 153.19876
 grow_horizontal = 2
 theme_override_constants/separation = 10
 
@@ -3429,9 +3426,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -185.5
-offset_top = -59.0
+offset_top = -55.0
 offset_right = 185.5
-offset_bottom = -19.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 15
