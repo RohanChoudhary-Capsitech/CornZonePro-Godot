@@ -20,14 +20,27 @@ const MAP_LIST := [
 const HOST_DEFAULT_BAG_ID := "rogue"
 const CLIENT_DEFAULT_BAG_ID := "neon"
 const BAG_CONFIGS := {
+	"arctic": preload("res://Resources/Bags/Arctic_bag.tres"),
+	"camouflage": preload("res://Resources/Bags/Camouflage_bag.tres"),
+	"cobalt": preload("res://Resources/Bags/Cobalt_bag.tres"),
+	"neon": preload("res://Resources/Bags/Neon_bag.tres"),
+	"peace": preload("res://Resources/Bags/Peace_bag.tres"),
+	"picpunk": preload("res://Resources/Bags/PicPunk_bag.tres"),
 	"rogue": preload("res://Resources/Bags/Rogue_bag.tres"),
-	"neon": preload("res://Resources/Bags/Neon_bag.tres")
+	"shell": preload("res://Resources/Bags/Shell_bag.tres"),
+	"shield": preload("res://Resources/Bags/Shield_bag.tres"),
+	"shurican": preload("res://Resources/Bags/Shurican_bag.tres"),
+	"skyline": preload("res://Resources/Bags/Skyline_bag.tres"),
+	"splash": preload("res://Resources/Bags/Splash_bag.tres"),
+	"stitches": preload("res://Resources/Bags/Stitches_bag.tres"),
+	"target": preload("res://Resources/Bags/Target_bag.tres"),
+	"urban": preload("res://Resources/Bags/Urban_bag.tres")
 }
 
 # =========================
 # STATE
 # =========================
-var is_host: bool = false               
+var is_host: bool = false
 var my_id: int = 0
 
 var players: Dictionary = {}
@@ -537,6 +550,15 @@ func get_saved_equipped_bag_id(pref_key: String = "equipped_bag_id") -> String:
 	return ""
 
 
+func save_equipped_bag_id(bag_id: String, pref_key: String = "equipped_bag_id") -> bool:
+	var normalized_bag_id := bag_id.to_lower()
+	if not BAG_CONFIGS.has(normalized_bag_id):
+		return false
+ 
+	Prefs.set_string(pref_key, normalized_bag_id)
+	Prefs.save()
+	return true
+
 func get_local_bag_id() -> String:
 	var bag_id := get_saved_equipped_bag_id()
 	if not bag_id.is_empty():
@@ -632,7 +654,6 @@ func _clear_rematch_request_state() -> void:
 func room_full_rpc(message: String) -> void:
 	room_join_failed.emit(message)
 	disconnect_game()
-
 
 
 func _connect_multiplayer_signals() -> void:
