@@ -73,7 +73,7 @@ func _finish_loading():
 # ── SHARED ───────────────────────────────────────────
 func _on_loading_finished():
 	var val: int = int(Prefs.get_int("user", 0))
-	if val == 1:
+	if val == 1 and PlayerData.player_id != "":
 		UIManager.enable_canvas(UIManager.home_screen)
 	else:
 		UIManager.enable_canvas(UIManager.login_screen)
