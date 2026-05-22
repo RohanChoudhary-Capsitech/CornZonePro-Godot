@@ -128,7 +128,7 @@
 [ext_resource type="Texture2D" uid="uid://btdfupgl4pcpu" path="res://Texture Or Sprites/Setting Screen/apple-logo 2.png" id="104_qi751"]
 [ext_resource type="PackedScene" uid="uid://bp5y8cd1uho6r" path="res://Scenes/UI/game_icon.tscn" id="104_rvq4h"]
 [ext_resource type="Texture2D" uid="uid://brrm3uu2l6spv" path="res://Texture Or Sprites/Setting Screen/Vector 475.png" id="105_2vf33"]
-[ext_resource type="Script" path="res://Scripts/Resource Structures/MoreGameData.gd" id="105_n2f85"]
+[ext_resource type="Script" uid="uid://hg7o7dnfqa0x" path="res://Scripts/Resource Structures/MoreGameData.gd" id="105_n2f85"]
 [ext_resource type="Texture2D" uid="uid://ce3xjaepn7i5n" path="res://Texture Or Sprites/MoreGame Icons/DropandScore.png" id="106_04qca"]
 [ext_resource type="Texture2D" uid="uid://drsoh7t4nrfqt" path="res://Texture Or Sprites/Setting Screen/Group 608 (1).png" id="106_moiof"]
 [ext_resource type="Texture2D" uid="uid://b82jveq4iihgy" path="res://Texture Or Sprites/Setting Screen/Delete_bg.png" id="106_qi751"]

@@ -14,6 +14,7 @@ func _log(msg):
 	print("[AUTH] ", msg)
  
 func _ready():
+	cleanup_invalid_local_files()
 	# _log("READY STARTED")
 	
 	if not Firebase.Auth.login_succeeded.is_connected(on_login_succeeded):
@@ -229,14 +230,14 @@ func _handle_session(uid: String) -> bool:
 		var server_device_id = str(data.get("device_id", ""))
 		var time_since_last  = current_time - last_active
 
-		_log("🔍 Session check:")
+		_log("Session check:")
 		_log("   My device:     ")
 		_log("   Server device: ")
 		_log("   Time since:    ")
 
-		# ✅ SAME DEVICE → always allow
+		# SAME DEVICE → always allow
 		if server_device_id == my_device_id:
-			print("Same device relogin ✅")
+			print("Same device relogin")
 			samedevice = true
 			PlayerData.session_id     = str(randi())
 			PlayerData.session_active = true
@@ -252,7 +253,7 @@ func _handle_session(uid: String) -> bool:
 
 
 		if time_since_last < 40:
-			print("❌ Account active on another device (", time_since_last, "s ago)")
+			print("Account active on another device (", time_since_last, "s ago)")
 			#%StateLabel.text = "Account already in use on another device"
 			return false
 
@@ -277,3 +278,18 @@ func _change_to_profile():
 	print("profile called")
 	Prefs.set_int("user",1)
 		
+		
+func cleanup_invalid_local_files():
+	var dir = DirAccess.open("user://")
+	var has_playerdata := false
+	dir.list_dir_begin()
+	var file_name := dir.get_next()
+	while file_name != "":
+		if file_name.begins_with("playerData_") and file_name.ends_with(".json"):
+			has_playerdata = true
+			break
+			
+	file_name = dir.get_next()
+	dir.list_dir_end()
+	if not has_playerdata and FileAccess.file_exists("user://user.auth"):
+		dir.remove("user.auth")

@@ -11,11 +11,6 @@ extends Control
 
 var dragging := false
 
-func _ready() -> void:
-	#print("Preview area", CatalogManager.get_material(PlayerData.equipped_cornbag, ""))
-	#model.material_override = load(CatalogManager.get_material(PlayerData.equipped_cornbag, ""))
-	print("Called form preview area")
-	#PlayerData.equipped_cornbag
 
 func set_item_material(material):
 	model.material_override = load(material)
