@@ -31,6 +31,7 @@ func _ready() -> void:
 func _on_setting_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../SettingScreen")
+	pop_animation($"../SettingScreen/Panel")
 
 func _on_timer_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -40,10 +41,12 @@ func _on_timer_button_pressed() -> void:
 func _on_profile_icon_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../ProfileScreen")
+	pop_animation($"../ProfileScreen/Panel")
 
 func _on_info_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../InfoScreen")
+	pop_animation($"../InfoScreen/Panel")
 
 func _on_daily_reward_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -58,6 +61,7 @@ func _on_lan_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	var multiplayer_screen := $"../MultiplayerScreen"
 	UIManager.toggle_canvas(multiplayer_screen)
+	pop_animation($"../MultiplayerScreen/Panel")
 	if multiplayer_screen.visible and multiplayer_screen.has_method("on_menu_opened"):
 		multiplayer_screen.on_menu_opened()
 
@@ -65,6 +69,7 @@ func _on_lan_button_pressed() -> void:
 func _on_leaderboard_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../LeaderBoardScreen")
+	pop_animation($"../LeaderBoardScreen/Panel")
 
 func _on_shop_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -93,3 +98,10 @@ func _apply_config():
 func _update_ui():
 	profile_name.text = str(PlayerData.player_name)
 	coin_text.text = str(PlayerData.coins)
+
+func pop_animation(node: Control):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(node, "scale", Vector2(1.15, 1.15), 0.3)
+	tween.tween_property(node, "scale", Vector2.ONE, 0.3)
