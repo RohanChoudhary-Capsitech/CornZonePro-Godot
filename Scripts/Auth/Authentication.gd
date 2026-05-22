@@ -14,7 +14,7 @@ func _log(msg):
 	print("[AUTH] ", msg)
  
 func _ready():
-	cleanup_invalid_local_files()
+	#cleanup_invalid_local_files()
 	# _log("READY STARTED")
 	
 	if not Firebase.Auth.login_succeeded.is_connected(on_login_succeeded):
@@ -279,17 +279,17 @@ func _change_to_profile():
 	Prefs.set_int("user",1)
 		
 		
-func cleanup_invalid_local_files():
-	var dir = DirAccess.open("user://")
-	var has_playerdata := false
-	dir.list_dir_begin()
-	var file_name := dir.get_next()
-	while file_name != "":
-		if file_name.begins_with("playerData_") and file_name.ends_with(".json"):
-			has_playerdata = true
-			break
-			
-	file_name = dir.get_next()
-	dir.list_dir_end()
-	if not has_playerdata and FileAccess.file_exists("user://user.auth"):
-		dir.remove("user.auth")
+#func cleanup_invalid_local_files():
+	#var dir = DirAccess.open("user://")
+	#var has_playerdata := false
+	#dir.list_dir_begin()
+	#var file_name := dir.get_next()
+	#while file_name != "":
+		#if file_name.begins_with("playerData_") and file_name.ends_with(".json"):
+			#has_playerdata = true
+			#break
+			#
+	#file_name = dir.get_next()
+	#dir.list_dir_end()
+	#if not has_playerdata and FileAccess.file_exists("user://user.auth"):
+		#dir.remove("user.auth")
