@@ -1,7 +1,9 @@
 extends Control
 
 @onready var pivot = $InspectTexture/SubViewportContainer/SubViewport/ModelPivot
-@onready var model = $InspectTexture/SubViewportContainer/SubViewport/ModelPivot/Bag
+#@onready var model: GeometryInstance3D = $InspectTexture/SubViewportContainer/SubViewport/ModelPivot/Bag
+
+@export var model: GeometryInstance3D
 
 @export var rotation_speed := 0.5
 @export var return_speed := 5.0
@@ -13,7 +15,7 @@ func _ready() -> void:
 	#model.material_override = 
 	pass
 
-func set_item_material(material : Material):
+func set_item_material(material):
 	model.material_override = material
 	pivot.rotation_degrees = Vector3.ZERO
 	model.position = Vector3.ZERO

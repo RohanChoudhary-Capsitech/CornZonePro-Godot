@@ -2,8 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cg0qd7xkog8by" path="res://Texture Or Sprites/Boards/hole fix 2 3.png" id="1_bh2ma"]
 [ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_fowxf"]
+[ext_resource type="Material" uid="uid://d3r18qj1d7iig" path="res://Materials/Boards/horizon_shift.tres" id="2_ou1pv"]
 
 [resource]
 script = ExtResource("1_fowxf")
+item_id = "B2"
 board_name = "Horizon Shift"
 icon = ExtResource("1_bh2ma")
+material_override = ExtResource("2_ou1pv")

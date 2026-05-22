@@ -2,14 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://chl5b2m036w1" path="res://3D Models/Board/Texures/Target_Board_M 4K.png" id="1_gg3ip"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c858s"]
-albedo_texture = ExtResource("1_gg3ip")
-metallic = 0.5
-metallic_specular = 0.2
-
 [resource]
-next_pass = SubResource("StandardMaterial3D_c858s")
 albedo_texture = ExtResource("1_gg3ip")
 emission_enabled = true
-emission_energy_multiplier = 0.85
+emission_energy_multiplier = 0.5
 emission_texture = ExtResource("1_gg3ip")

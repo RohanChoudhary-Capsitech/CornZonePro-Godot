@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_6uidg"]
 [ext_resource type="Texture2D" uid="uid://b0rr27dhxpbqi" path="res://Texture Or Sprites/Boards/hole fix 6 3.png" id="1_kl7qv"]
+[ext_resource type="Material" uid="uid://ba7tftqm7jg3u" path="res://Materials/Boards/deadlock.tres" id="2_ar3ts"]
 
 [resource]
 script = ExtResource("1_6uidg")
+item_id = "B1"
 board_name = "Deadlock"
 icon = ExtResource("1_kl7qv")
+material_override = ExtResource("2_ar3ts")

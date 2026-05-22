@@ -2,8 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://csdmjw1sfmh2k" path="res://Texture Or Sprites/Boards/hole fix 3 3.png" id="1_3r8b7"]
 [ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_7vsh5"]
+[ext_resource type="Material" uid="uid://b3oickfxjvp0c" path="res://Materials/Boards/vanguard.tres" id="2_fc5h0"]
 
 [resource]
 script = ExtResource("1_7vsh5")
+item_id = "B5"
 board_name = "Vanguard"
 icon = ExtResource("1_3r8b7")
+material_override = ExtResource("2_fc5h0")

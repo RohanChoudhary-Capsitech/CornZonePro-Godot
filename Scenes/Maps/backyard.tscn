@@ -40,7 +40,7 @@ size = Vector3(1, 1, 50)
 environment = SubResource("Environment_sq0tn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1494316418]
-transform = Transform3D(0.90721047, -0.42067695, -0.00016876939, 0.3721357, 0.8023417, 0.46665108, -0.1961738, -0.42341334, 0.88444155, 0, 9.155856, 24.866087)
+transform = Transform3D(0.9072106, -0.420677, -0.00016880062, 0.33225042, 0.71626806, 0.61365306, -0.2580288, -0.55676854, 0.7895758, 0, 9.155856, 24.866087)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1268012123]
 transform = Transform3D(1, 0, 0, 0, 0.8792332, 0.4763917, 0, -0.4763917, 0.8792332, 0, 4.751979, 51.187668)

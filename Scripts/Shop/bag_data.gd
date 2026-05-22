@@ -4,34 +4,84 @@ extends TextureRect
 @onready var rarity_text = $HBoxContainer/Rarity
 @onready var bag_button: Button = $BagBuyButton
 @onready var price_text = $BagBuyButton/BagPrice
- 
+@onready var coin_icon = $BagBuyButton/TextureRect
+# @onready var bag_name_text = $HBoxContainer/Name
+
+const RARITY_NAMES = ["Standard", "Rare", "Epic", "Legendary"]
+const MAX_SWIPE_DIST   = 50.0
+const MAX_VERTICAL     = 4.0
+
+const MAX_HORIZONTAL   = 1.5
+const MAX_BAG_STRENGTH = 50.0
+
 @onready var clutch_spot_container = $HBoxContainer/TextureRect2/Powers/ClutchSpot/HBoxContainer
 @onready var miss_clock_container = $HBoxContainer/TextureRect2/Powers/MissClock/HBoxContainer
 @onready var air_control_container = $HBoxContainer/TextureRect2/Powers/AirControl/HBoxContainer
 @onready var power_shot_container = $HBoxContainer/TextureRect2/Powers/PowerShot/HBoxContainer
- 
-var bag_config: BagConfig
-var bag_list_parent: Node
- 
- 
-func setup(data: BagConfig, green: Texture2D, white: Texture2D, parent):
-	bag_config = data
-	bag_list_parent = parent
- 
-	icon.texture = data.icon
-	if data.rarity == BagConfig.Rarity.Standard:
-		$HBoxContainer.add_theme_constant_override("separation", 2)
-	rarity_text.text = BagConfig.Rarity.keys()[data.rarity]
-   
-	update_signals(clutch_spot_container, data.min_swipe_dist, parent.max_clutch_spot, green, white)
-	update_signals(miss_clock_container, data.vertical_sensitivity, parent.max_miss_clock, green, white)
-	update_signals(air_control_container, data.horizontal_sensitivity, parent.max_air_control, green, white)
-	update_signals(power_shot_container, data.max_bag_strength, parent.max_power_shot, green, white)
-	_refresh_button_label()
- 
-	if not bag_button.pressed.is_connected(_on_bag_buy_button_pressed):
-		bag_button.pressed.connect(_on_bag_buy_button_pressed)
- 
+@onready var buy_button: Button = $BagBuyButton
+
+func setup(data: Dictionary, green: Texture2D, white: Texture2D) -> void:
+	var item_id = data.get("itemId", "")
+	data["bought"] = PlayerData.bags_owned.has(item_id)
+	data["equipped"] = item_id == PlayerData.equipped_cornbag
+
+	# Icon
+	var icon_path: String = data.get("icon", "")
+	if icon_path != "":
+		var tex = load(icon_path)
+		if tex:
+			icon.texture = tex
+			
+	# #Name
+	# var bag = data.get("bag_name","")
+	# bag_name_text.text = bag
+
+	# Price
+	var price: int = data.get("price", 0)
+
+	# Rarity
+	var rarity_index: int = data.get("rarity", 0)
+	rarity_text.text = RARITY_NAMES[clamp(rarity_index, 0, RARITY_NAMES.size() - 1)]
+	if rarity_index == 0:
+		$HBoxContainer.add_theme_constant_override("separation", 0)
+		
+
+	# Power bars
+	update_signals(clutch_spot_container,  data.get("min_swipe_dist", 0.0),         MAX_SWIPE_DIST,   green, white)
+	update_signals(miss_clock_container,   data.get("vertical_sensitivity", 0.0),   MAX_VERTICAL,     green, white)
+	update_signals(air_control_container,  data.get("horizontal_sensitivity", 0.0), MAX_HORIZONTAL,   green, white)
+	update_signals(power_shot_container,   data.get("max_bag_strength", 0.0),       MAX_BAG_STRENGTH, green, white)
+
+	# Button state
+	if data.get("bought", false):
+		_set_button_label("Bought")
+		buy_button.disabled = true
+	else:
+		_set_button_label(str(price) + " Buy" if price > 0 else "FREE")
+		buy_button.disabled = false
+		buy_button.pressed.connect(_on_buy_pressed.bind(data))
+
+func _set_button_label(label: String) -> void:
+	price_text.text = label
+	buy_button.text = ""
+	coin_icon.visible = label.ends_with("Buy") or label == "FREE"
+
+func _on_buy_pressed(data: Dictionary) -> void:
+	var item_id = str(data.get("itemId", ""))
+	if item_id == "":
+		return
+	var price: int = data.get("price", 0)
+	if price > 0 and not await  DataManager.spend_coins(price):
+		return
+	if not PlayerData.bags_owned.has(item_id):
+		PlayerData.bags_owned.append(item_id)
+	PlayerData.save_local()
+	FirebaseManager.mark_dirty([FirebaseManager.SECTION_INVENTORY])
+	get_parent().load_bag_data()
+	# if PlayerData.needs_cloud_sync:
+	# 	await FirebaseManager.push_to_firestore()
+	
+
 func update_signals(container: HBoxContainer, value: float, max_value: float, green: Texture2D, white: Texture2D):
 	if not container: return
    
@@ -43,42 +93,6 @@ func update_signals(container: HBoxContainer, value: float, max_value: float, gr
 		if signals[i] is TextureRect:
 			signals[i].texture = green if i < green_count else white
  
- 
-func _on_bag_buy_button_pressed() -> void:
-	if bag_config == null:
-		return
- 
-	var bag_id := _get_bag_id()
-	if bag_id.is_empty():
-		return
- 
-	if NetworkManager.save_equipped_bag_id(bag_id):
-		SoundManager.play_button_clicks()
-		if bag_list_parent != null and bag_list_parent.has_method("load_bag_data"):
-			bag_list_parent.call_deferred("load_bag_data")
-		else:
-			_refresh_button_label()
- 
- 
-func _refresh_button_label() -> void:
-	if bag_config == null:
-		return
- 
-	var bag_id := _get_bag_id()
-	if NetworkManager.get_local_bag_id() == bag_id:
-		price_text.text = "Equipped"
-		return
- 
-	price_text.text = "Equip"
- 
- 
-func _get_bag_id() -> String:
-	if bag_config == null:
-		return ""
- 
-	if not bag_config.item_id.is_empty() and NetworkManager.BAG_CONFIGS.has(bag_config.item_id.to_lower()):
-		return bag_config.item_id.to_lower()
- 
-	return bag_config.bag_name.to_lower()
+
  
  

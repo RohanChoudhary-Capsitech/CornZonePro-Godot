@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_51jak"]
 [ext_resource type="Texture2D" uid="uid://82cjdb1xl5nd" path="res://Texture Or Sprites/Boards/hole fix 7 5.png" id="1_g8wiu"]
+[ext_resource type="Material" uid="uid://crhc6nwq10mpv" path="res://Materials/Boards/sunburst.tres" id="2_a7anh"]
 
 [resource]
 script = ExtResource("1_51jak")
+item_id = "B4"
 board_name = "Sunburst"
 icon = ExtResource("1_g8wiu")
+material_override = ExtResource("2_a7anh")

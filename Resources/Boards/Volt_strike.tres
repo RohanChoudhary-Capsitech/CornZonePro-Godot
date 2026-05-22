@@ -1,9 +1,12 @@
 [gd_resource type="Resource" script_class="BoardConfig" format=3 uid="uid://ba5wrpt4puobl"]
 
 [ext_resource type="Texture2D" uid="uid://ctt8ix34drhr3" path="res://Texture Or Sprites/Boards/1 569.png" id="1_xssle"]
+[ext_resource type="Material" uid="uid://bi6uqs07vilvq" path="res://Materials/Boards/volt_strike.tres" id="2_b2w6s"]
 [ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="2_vgo83"]
 
 [resource]
 script = ExtResource("2_vgo83")
+item_id = "B6"
 board_name = "Volt Strike"
 icon = ExtResource("1_xssle")
+material_override = ExtResource("2_b2w6s")

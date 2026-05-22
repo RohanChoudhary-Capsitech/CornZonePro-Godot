@@ -22,7 +22,6 @@ var local_multiplayer_screen:CanvasLayer
 var leaderboard_screen: CanvasLayer
 var shop_screen: CanvasLayer
 var inventory_screen: CanvasLayer
-var no_internet_screen: CanvasLayer
 
 var ingame_screen:CanvasLayer
 var pause_screen:CanvasLayer
@@ -30,6 +29,8 @@ var result_screen:CanvasLayer
 
 var warning_screen:CanvasLayer
 var rematch_popup:CanvasLayer
+var login_loading_screen:CanvasLayer
+var no_internet_screen:CanvasLayer
 
 signal UI_required
 
@@ -51,7 +52,7 @@ func _set_home_coming_state(value: int) -> void:
 	Prefs.set_int("home_comeing", value)
 	Prefs.save()
 
-func home_setup(loading, home, login, setting, map, profile, info, rewards_list, reward, local_multilplayer, leaderboard, shop, inventory, no_internet):
+func home_setup(loading, home, login, setting, map, profile, info, rewards_list, reward, local_multilplayer, leaderboard, shop, inventory,login_loading,no_internet):
 	loading_screen = loading
 	home_screen = home
 	login_screen = login
@@ -65,8 +66,9 @@ func home_setup(loading, home, login, setting, map, profile, info, rewards_list,
 	leaderboard_screen = leaderboard
 	shop_screen = shop
 	inventory_screen = inventory
+	login_loading_screen = login_loading
 	no_internet_screen = no_internet
-	canvas_layers = [loading, home, login, setting, map, profile, info, rewards_list, reward, local_multilplayer, leaderboard, shop, inventory, no_internet]
+	canvas_layers = [loading, home, login, setting, map, profile, info, rewards_list, reward, local_multilplayer, leaderboard, shop, inventory,login_loading,no_internet]
 
 func single_setup(ingame, pause, result):
 	#loading_screen = loading
@@ -211,6 +213,20 @@ func restart(
 # 	await get_tree().process_frame
 
 # 	_begin_match(mode, map_path, ui, time_limit)
+
+
+#func _notification(what: int) -> void:
+	#match what:
+		#NOTIFICATION_APPLICATION_PAUSED, NOTIFICATION_APPLICATION_FOCUS_OUT, NOTIFICATION_WM_WINDOW_FOCUS_OUT:
+			#_set_home_coming_state(0)
+		#NOTIFICATION_APPLICATION_RESUMED, NOTIFICATION_APPLICATION_FOCUS_IN, NOTIFICATION_WM_WINDOW_FOCUS_IN:
+			#_set_home_coming_state(1)
+ #
+#func _set_home_coming_state(value: int) -> void:
+	#if Prefs.get_int("home_comeing", -1) == value:
+		#return
+	#Prefs.set_int("home_comeing", value)
+	#Prefs.save()
 
 func pass_play()->void:
 	GameSession.selected_mode="PassPlay"

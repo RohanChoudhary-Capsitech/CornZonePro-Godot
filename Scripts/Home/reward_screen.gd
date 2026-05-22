@@ -19,5 +19,6 @@ func _on_claim_pressed() -> void:
 	SoundManager.play_coin_collect()
 	DataManager.save_claim_success()
 	UIManager.toggle_canvas($".")
-	$"../HomeScreen/Panel/TopPanel/Coin/CoinText".text = str(Prefs.get_int("coins",0))
+	$"../HomeScreen/Panel/TopPanel/Coin/CoinText".text = str(PlayerData.coins)
+	$"../InventoryScreen/Panel/TopPanel/Coin/CoinText".text = str(PlayerData.coins)
 	get_node("../DailyRewardScreen").update_button_visibility()

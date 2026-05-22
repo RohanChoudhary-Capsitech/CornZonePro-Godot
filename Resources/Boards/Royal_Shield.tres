@@ -2,8 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cieryegijog3d" path="res://Texture Or Sprites/Boards/hole fix 5 2.png" id="1_dqxmg"]
 [ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="1_y8dmb"]
+[ext_resource type="Material" uid="uid://cbw7jvw1u81cr" path="res://Materials/Boards/royal_shield.tres" id="2_uvmms"]
 
 [resource]
 script = ExtResource("1_y8dmb")
+item_id = "B3"
 board_name = "Royal Shield"
 icon = ExtResource("1_dqxmg")
+material_override = ExtResource("2_uvmms")

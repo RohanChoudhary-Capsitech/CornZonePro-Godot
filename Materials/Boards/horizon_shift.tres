@@ -4,3 +4,6 @@
 
 [resource]
 albedo_texture = ExtResource("1_cl87w")
+emission_enabled = true
+emission_energy_multiplier = 0.75
+emission_texture = ExtResource("1_cl87w")

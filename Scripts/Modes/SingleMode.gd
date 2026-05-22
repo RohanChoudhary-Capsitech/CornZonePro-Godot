@@ -9,6 +9,13 @@ func on_ball_entered(body: Node3D) -> void:
 	GameSession.add_score(1, delta)
 	on_score()
 
+	PlayerData.total_pots += 1
+	PlayerData.save_local()
+	FirebaseManager.mark_dirty([
+		FirebaseManager.SECTION_STATS
+	])
+	print("total pot of the player is " , PlayerData.total_pots)
+
 func on_score() -> void:
 	DataManager.add_coins(2)
 

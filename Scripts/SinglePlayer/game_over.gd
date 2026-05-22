@@ -1,11 +1,17 @@
 extends CanvasLayer
 
+
 var is_game_over := false
 @onready var timer_slider := $"../InGame UI/Slider/TimerSlider" as MatchTimerSlider
 @onready var coins_text := $"Control/PausePanel BG/CoinsText" as Label
 
 func _ready() -> void:
 	timer_slider.time_over.connect(gameover)
+
+# func gameover()->void:
+# 	print("game over")
+# 	UIManager.enable_canvas($".")
+# 	coins_text.text = str(DataManager.get_coins())
 
 func gameover()->void:
 	if is_game_over:
@@ -17,12 +23,14 @@ func gameover()->void:
 	SoundManager.play_game_over()
 	UIManager.enable_canvas($".")
 	coins_text.text = str(DataManager.get_coins())
-
+	if PlayerData.needs_cloud_sync:
+		await FirebaseManager.push_to_firestore()
+ 
 
 func _on_home_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.home()
- 
+
 
 func _on_share_pressed() -> void:
 	print("share button pressed")

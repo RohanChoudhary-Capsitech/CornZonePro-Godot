@@ -76,55 +76,32 @@
 [ext_resource type="Texture2D" uid="uid://dy4843x7t2wha" path="res://Texture Or Sprites/Profile Screen/EditIcon.png" id="56_aoomy"]
 [ext_resource type="Texture2D" uid="uid://bmakehfvqjb14" path="res://Texture Or Sprites/Inventory Screen/Rectangle 26.png" id="56_is5vx"]
 [ext_resource type="Texture2D" uid="uid://c357ox0g0yyvy" path="res://Texture Or Sprites/Shop Screen/Rectangle 166.png" id="56_u6nbl"]
-[ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/Resource Structures/BagConfig.gd" id="56_uh715"]
 [ext_resource type="Texture2D" uid="uid://3le37tvidjth" path="res://Texture Or Sprites/Profile Screen/NameBg.png" id="57_43epo"]
 [ext_resource type="Texture2D" uid="uid://2g673pld8oyk" path="res://Texture Or Sprites/Profile Screen/Group 273.png" id="58_0g73e"]
 [ext_resource type="Texture2D" uid="uid://d0vqutakwe4x0" path="res://Texture Or Sprites/Profile Screen/Group 270.png" id="59_3fp5a"]
-[ext_resource type="Texture2D" uid="uid://b1rygxatep8n0" path="res://Texture Or Sprites/Bags UI/Arctic.png" id="60_453j7"]
 [ext_resource type="Texture2D" uid="uid://bvcl7swd13pd5" path="res://Texture Or Sprites/Profile Screen/Group 271.png" id="60_um175"]
 [ext_resource type="Texture2D" uid="uid://cb5cirqsllo4x" path="res://Texture Or Sprites/Info Screen/Group 410.png" id="61_3fp5a"]
-[ext_resource type="Texture2D" uid="uid://bf0xor1enuc7y" path="res://Texture Or Sprites/Bags UI/Camouflage.png" id="61_4u64y"]
 [ext_resource type="Texture2D" uid="uid://bwwsdktfulm2u" path="res://Texture Or Sprites/DailyRewards/Union.png" id="62_5id56"]
 [ext_resource type="Script" uid="uid://nn6aqsvgnste" path="res://Scripts/Home/info_screen.gd" id="62_8lqci"]
-[ext_resource type="Texture2D" uid="uid://de7xpsxtxc01w" path="res://Texture Or Sprites/Bags UI/Cobalt.png" id="62_i6hta"]
 [ext_resource type="Texture2D" uid="uid://blrgnaniuw5ts" path="res://Texture Or Sprites/DailyRewards/Group 275.png" id="62_um175"]
 [ext_resource type="Texture2D" uid="uid://dch1w5blud1y2" path="res://Texture Or Sprites/DailyRewards/Group 278.png" id="63_b16xs"]
-[ext_resource type="Texture2D" uid="uid://c13vw2my17xnn" path="res://Texture Or Sprites/Bags UI/Neon.png" id="63_moiof"]
 [ext_resource type="Script" uid="uid://dcpb5o46t1dcl" path="res://Scripts/Home/daily_reward_screen_list.gd" id="64_fa687"]
-[ext_resource type="Texture2D" uid="uid://cmviwbxidnt3f" path="res://Texture Or Sprites/Bags UI/Peace.png" id="64_rjsir"]
-[ext_resource type="Texture2D" uid="uid://bnmjupbvtalkk" path="res://Texture Or Sprites/Bags UI/PicPunk.png" id="65_dlmwe"]
-[ext_resource type="Texture2D" uid="uid://dw2wqne2o12gc" path="res://Texture Or Sprites/Bags UI/Rogue.png" id="66_yr2fe"]
-[ext_resource type="Texture2D" uid="uid://m58spjgxubc6" path="res://Texture Or Sprites/Bags UI/Shell.png" id="67_83p4v"]
 [ext_resource type="Texture2D" uid="uid://c8nhel4e2gwj6" path="res://Texture Or Sprites/DailyRewards/Group 183.png" id="67_jmoue"]
-[ext_resource type="Texture2D" uid="uid://bj3bm6egwqpl6" path="res://Texture Or Sprites/Bags UI/Shield.png" id="68_gtgww"]
 [ext_resource type="Texture2D" uid="uid://ca1j6ne1xq86d" path="res://Texture Or Sprites/DailyRewards/Rectangle 11.png" id="69_0iwel"]
-[ext_resource type="Texture2D" uid="uid://4tulrxf3tc8l" path="res://Texture Or Sprites/Bags UI/Shurican.png" id="69_bxkn3"]
 [ext_resource type="Texture2D" uid="uid://dtg5r0c6qfg8i" path="res://Texture Or Sprites/DailyRewards/Group 411.png" id="70_0bc6n"]
-[ext_resource type="Texture2D" uid="uid://dpoktc6t3phlj" path="res://Texture Or Sprites/Bags UI/Skyline.png" id="70_ffjic"]
 [ext_resource type="Texture2D" uid="uid://4wkegni34mpb" path="res://Texture Or Sprites/DailyRewards/Group 279.png" id="71_0iwel"]
-[ext_resource type="Texture2D" uid="uid://b1dbus7wdo6ph" path="res://Texture Or Sprites/Bags UI/Splash.png" id="71_xpsj5"]
 [ext_resource type="Texture2D" uid="uid://cpry17us0mfq7" path="res://Texture Or Sprites/DailyRewards/Rectangle 111 (3).png" id="72_f4aua"]
-[ext_resource type="Texture2D" uid="uid://gdliamoipqfo" path="res://Texture Or Sprites/Bags UI/Stitches.png" id="72_qi751"]
 [ext_resource type="Script" uid="uid://dff31wh8m586l" path="res://Scripts/Home/local_multiplayer_screen.gd" id="73_2pxd8"]
-[ext_resource type="Texture2D" uid="uid://cg8nuin5m7jcq" path="res://Texture Or Sprites/Bags UI/Target.png" id="73_2vf33"]
 [ext_resource type="Texture2D" uid="uid://b57l4j3nvj2ly" path="res://Texture Or Sprites/Multiplayer/Rectangle 384.png" id="73_f74ik"]
-[ext_resource type="Texture2D" uid="uid://bx1dryfjajk7e" path="res://Texture Or Sprites/Bags UI/Urban.png" id="74_12lhb"]
 [ext_resource type="Texture2D" uid="uid://wrrua84wko28" path="res://Texture Or Sprites/Multiplayer/Rectangle 126.png" id="74_fhrbv"]
 [ext_resource type="Script" uid="uid://busaot12ag5ol" path="res://Scripts/Shop/board_data_content.gd" id="74_nbuyv"]
 [ext_resource type="PackedScene" uid="uid://bdhfavj1k6vco" path="res://Scenes/UI/board_data.tscn" id="75_as3ia"]
 [ext_resource type="Texture2D" uid="uid://dxf6n2bo32ivg" path="res://Texture Or Sprites/Multiplayer/Rectangle 385.png" id="75_cco2g"]
 [ext_resource type="Texture2D" uid="uid://sv3gugcvj1fd" path="res://Texture Or Sprites/Multiplayer/Rectangle 386.png" id="76_2pxd8"]
-[ext_resource type="Script" uid="uid://dontqd7ds4gei" path="res://Scripts/Resource Structures/BoardConfig.gd" id="76_ie2bs"]
-[ext_resource type="Texture2D" uid="uid://ctt8ix34drhr3" path="res://Texture Or Sprites/Boards/1 569.png" id="77_vaya1"]
 [ext_resource type="Texture2D" uid="uid://ds7mdrl5khx06" path="res://Texture Or Sprites/Leaderboard Screen/Group 257.png" id="78_36lgj"]
 [ext_resource type="Script" uid="uid://bu665fyesiov4" path="res://Scripts/Home/leaderboard_screen.gd" id="78_meagp"]
-[ext_resource type="Texture2D" uid="uid://cg0qd7xkog8by" path="res://Texture Or Sprites/Boards/hole fix 2 3.png" id="78_tbwbq"]
-[ext_resource type="Texture2D" uid="uid://csdmjw1sfmh2k" path="res://Texture Or Sprites/Boards/hole fix 3 3.png" id="79_1wbho"]
-[ext_resource type="Texture2D" uid="uid://cieryegijog3d" path="res://Texture Or Sprites/Boards/hole fix 5 2.png" id="80_6rbbw"]
 [ext_resource type="Script" uid="uid://dsd1a0tinias5" path="res://Scripts/Home/content.gd" id="80_smodv"]
-[ext_resource type="Texture2D" uid="uid://b0rr27dhxpbqi" path="res://Texture Or Sprites/Boards/hole fix 6 3.png" id="81_6ojkg"]
 [ext_resource type="PackedScene" uid="uid://osb5nqpdetfk" path="res://Scenes/UI/row_data.tscn" id="81_xe1up"]
-[ext_resource type="Texture2D" uid="uid://82cjdb1xl5nd" path="res://Texture Or Sprites/Boards/hole fix 7 5.png" id="82_jicx3"]
 [ext_resource type="Texture2D" uid="uid://cb2aor4n4myri" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle .png" id="82_p47cj"]
 [ext_resource type="PackedScene" uid="uid://b2ggaod7b75ko" path="res://Scenes/UI/room_button.tscn" id="82_wg2o6"]
 [ext_resource type="Texture2D" uid="uid://s5wsx11qb1k2" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle 136.png" id="83_wt16q"]
@@ -133,40 +110,25 @@
 [ext_resource type="Script" uid="uid://c6bm43mycwtp4" path="res://Scripts/Inventory/content.gd" id="86_tbwbq"]
 [ext_resource type="PackedScene" uid="uid://chhpkvyv8fja0" path="res://Scenes/UI/item.tscn" id="86_vaya1"]
 [ext_resource type="Texture2D" uid="uid://c4vajkjb5owun" path="res://Texture Or Sprites/Setting Screen/setting_not_click.png" id="89_f3k6c"]
-[ext_resource type="Script" uid="uid://dwv0jbqguqw23" path="res://Scripts/Resource Structures/ItemData.gd" id="90_lfbfi"]
 [ext_resource type="Texture2D" uid="uid://dq0sj18qaeqed" path="res://Texture Or Sprites/Setting Screen/setting_click.png" id="91_6ojkg"]
 [ext_resource type="Material" uid="uid://bqou4twwrthfb" path="res://Materials/Bags/Arctic.tres" id="91_ldetl"]
-[ext_resource type="Material" uid="uid://dty05hernmrxc" path="res://Materials/Bags/Camouflage.tres" id="92_6jlkp"]
 [ext_resource type="Texture2D" uid="uid://dwxdhvrtnf32e" path="res://Texture Or Sprites/Setting Screen/social_not_click.png" id="92_jicx3"]
 [ext_resource type="Texture2D" uid="uid://meeda4gasq0u" path="res://Texture Or Sprites/Setting Screen/social_click.png" id="92_ttur7"]
-[ext_resource type="Material" uid="uid://c7pwijusqfj4c" path="res://Materials/Bags/Cobalt.tres" id="93_74adv"]
 [ext_resource type="Texture2D" uid="uid://dqhmoc234jmd3" path="res://Texture Or Sprites/Setting Screen/moregame_not_click.png" id="93_ouj5o"]
-[ext_resource type="Material" uid="uid://brvworqxc0eki" path="res://Materials/Bags/Neon.tres" id="94_2hhmx"]
 [ext_resource type="Texture2D" uid="uid://imibm052rgg" path="res://Texture Or Sprites/Setting Screen/moregame_click.png" id="94_pmkjb"]
-[ext_resource type="Material" uid="uid://uu21at5wqngj" path="res://Materials/Bags/Peace.tres" id="95_fhwdd"]
-[ext_resource type="Material" uid="uid://7p4s0fr1k8gt" path="res://Materials/Bags/PicPunk.tres" id="96_gsbml"]
 [ext_resource type="Texture2D" uid="uid://dlvdu1xs2qk4p" path="res://Texture Or Sprites/Setting Screen/SocialBg.png" id="97_jicx3"]
-[ext_resource type="Material" uid="uid://dr0rmg33fscfy" path="res://Materials/Bags/Rogue.tres" id="97_meccc"]
 [ext_resource type="Texture2D" uid="uid://dsto80te60dno" path="res://Texture Or Sprites/Setting Screen/godot_click.png" id="97_yr2fe"]
 [ext_resource type="Texture2D" uid="uid://cdtywfxnk3nxp" path="res://Texture Or Sprites/Setting Screen/facebook.png" id="98_4yy14"]
-[ext_resource type="Material" uid="uid://c8or1udtevvda" path="res://Materials/Bags/Shell.tres" id="98_44nip"]
 [ext_resource type="Texture2D" uid="uid://oui3deab21xp" path="res://Texture Or Sprites/Setting Screen/button.png" id="99_2vxpu"]
 [ext_resource type="Texture2D" uid="uid://b14qhxel6mgjg" path="res://Texture Or Sprites/Setting Screen/Rectangle 124.png" id="99_f3k6c"]
-[ext_resource type="Material" uid="uid://cqf7qdjlechkq" path="res://Materials/Bags/Shield.tres" id="99_lnl1s"]
-[ext_resource type="Material" uid="uid://d0ipdb3kmxnh8" path="res://Materials/Bags/Shurican.tres" id="100_d3i65"]
 [ext_resource type="Texture2D" uid="uid://cswodd435pmgo" path="res://Texture Or Sprites/Setting Screen/insta.png" id="100_rvq4h"]
-[ext_resource type="Material" uid="uid://cwdmtkkj38yn7" path="res://Materials/Bags/Skyline.tres" id="101_heue6"]
 [ext_resource type="Texture2D" uid="uid://bh81reh2yj5sx" path="res://Texture Or Sprites/Setting Screen/linkedin.png" id="102_04qca"]
-[ext_resource type="Material" uid="uid://bn6tpdiqj5gm0" path="res://Materials/Bags/Splash.tres" id="102_ebcbo"]
 [ext_resource type="Script" uid="uid://6g8sj6qio4ro" path="res://Scripts/Settings/games_container.gd" id="103_2vxpu"]
-[ext_resource type="Material" uid="uid://dfvf33aasv75v" path="res://Materials/Bags/Stitches.tres" id="103_86tlo"]
 [ext_resource type="Texture2D" uid="uid://cmgcj1npsnacm" path="res://Texture Or Sprites/Setting Screen/google 2.png" id="103_xpsj5"]
 [ext_resource type="Texture2D" uid="uid://btdfupgl4pcpu" path="res://Texture Or Sprites/Setting Screen/apple-logo 2.png" id="104_qi751"]
 [ext_resource type="PackedScene" uid="uid://bp5y8cd1uho6r" path="res://Scenes/UI/game_icon.tscn" id="104_rvq4h"]
-[ext_resource type="Material" uid="uid://8pohkw5tx6ej" path="res://Materials/Bags/Target.tres" id="104_t6gt0"]
 [ext_resource type="Texture2D" uid="uid://brrm3uu2l6spv" path="res://Texture Or Sprites/Setting Screen/Vector 475.png" id="105_2vf33"]
-[ext_resource type="Material" uid="uid://bi3oop0ghs2or" path="res://Materials/Bags/Urban.tres" id="105_kgpn3"]
-[ext_resource type="Script" uid="uid://hg7o7dnfqa0x" path="res://Scripts/Resource Structures/MoreGameData.gd" id="105_n2f85"]
+[ext_resource type="Script" path="res://Scripts/Resource Structures/MoreGameData.gd" id="105_n2f85"]
 [ext_resource type="Texture2D" uid="uid://ce3xjaepn7i5n" path="res://Texture Or Sprites/MoreGame Icons/DropandScore.png" id="106_04qca"]
 [ext_resource type="Texture2D" uid="uid://drsoh7t4nrfqt" path="res://Texture Or Sprites/Setting Screen/Group 608 (1).png" id="106_moiof"]
 [ext_resource type="Texture2D" uid="uid://b82jveq4iihgy" path="res://Texture Or Sprites/Setting Screen/Delete_bg.png" id="106_qi751"]
@@ -188,7 +150,7 @@
 [ext_resource type="Script" uid="uid://crvxuifakyi1c" path="res://Scripts/Home/reward_screen.gd" id="139_pmkjb"]
 [ext_resource type="Texture2D" uid="uid://bnalbe47r5l6w" path="res://Texture Or Sprites/MapsBG/Lawn.png" id="148_meccc"]
 [ext_resource type="Texture2D" uid="uid://hrnu0frmtchn" path="res://Texture Or Sprites/MapsBG/Street.png" id="149_meccc"]
-[ext_resource type="Texture2D" uid="uid://d4rut3ibrag7" path="res://Texture Or Sprites/MapsBG/RoofTop.png" id="152_meccc"]
+[ext_resource type="Texture2D" uid="uid://d4rut3ibrag7" path="res://Texture Or Sprites/MapsBG/Rooftop.png" id="152_meccc"]
 [ext_resource type="Texture2D" uid="uid://dqcaig6nvmj" path="res://Texture Or Sprites/MapsBG/SelectMap.png" id="154_44nip"]
 [ext_resource type="FontFile" uid="uid://bd1ufqcf784jg" path="res://Fonts/Poppins-SemiBoldItalic.ttf" id="163_74adv"]
 
@@ -423,161 +385,6 @@ texture = ExtResource("62_5id56")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_453j7"]
 texture = ExtResource("62_5id56")
 
-[sub_resource type="Resource" id="Resource_ie2bs"]
-script = ExtResource("56_uh715")
-bag_name = "Arctic"
-price = 799
-icon = ExtResource("60_453j7")
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_vaya1"]
-script = ExtResource("56_uh715")
-bag_name = "Camouflage"
-price = 899
-icon = ExtResource("61_4u64y")
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_tbwbq"]
-script = ExtResource("56_uh715")
-bag_name = "Cobalt"
-price = 999
-icon = ExtResource("62_i6hta")
-rarity = 1
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_1wbho"]
-script = ExtResource("56_uh715")
-bag_name = "Neon"
-price = 1199
-icon = ExtResource("63_moiof")
-rarity = 1
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_6rbbw"]
-script = ExtResource("56_uh715")
-bag_name = "Peace"
-price = 1599
-icon = ExtResource("64_rjsir")
-rarity = 2
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_6ojkg"]
-script = ExtResource("56_uh715")
-bag_name = "PicPunk"
-price = 999
-icon = ExtResource("65_dlmwe")
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_jicx3"]
-script = ExtResource("56_uh715")
-bag_name = "Rogue"
-price = 1099
-icon = ExtResource("66_yr2fe")
-rarity = 1
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_rvq4h"]
-script = ExtResource("56_uh715")
-bag_name = "Shell"
-price = 1299
-icon = ExtResource("67_83p4v")
-rarity = 1
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_n2f85"]
-script = ExtResource("56_uh715")
-bag_name = "Shield"
-price = 899
-icon = ExtResource("68_gtgww")
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_04qca"]
-script = ExtResource("56_uh715")
-bag_name = "Shurican"
-price = 1099
-icon = ExtResource("69_bxkn3")
-rarity = 1
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_stky2"]
-script = ExtResource("56_uh715")
-bag_name = "Skyline"
-price = 2999
-icon = ExtResource("70_ffjic")
-rarity = 2
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_ochsh"]
-script = ExtResource("56_uh715")
-bag_name = "Splash"
-price = 2499
-icon = ExtResource("71_xpsj5")
-rarity = 2
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_sg8ud"]
-script = ExtResource("56_uh715")
-bag_name = "Stitches"
-price = 1899
-icon = ExtResource("72_qi751")
-rarity = 1
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_v6eu8"]
-script = ExtResource("56_uh715")
-bag_name = "Target"
-price = 799
-icon = ExtResource("73_2vf33")
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_dwtdj"]
-script = ExtResource("56_uh715")
-bag_name = "Urban"
-price = 1599
-icon = ExtResource("74_12lhb")
-rarity = 1
-metadata/_custom_type_script = "uid://cs2g11q6pm16d"
-
-[sub_resource type="Resource" id="Resource_ouj5o"]
-script = ExtResource("76_ie2bs")
-price = 999
-icon = ExtResource("77_vaya1")
-metadata/_custom_type_script = "uid://dontqd7ds4gei"
-
-[sub_resource type="Resource" id="Resource_82hot"]
-script = ExtResource("76_ie2bs")
-price = 1099
-icon = ExtResource("78_tbwbq")
-metadata/_custom_type_script = "uid://dontqd7ds4gei"
-
-[sub_resource type="Resource" id="Resource_k0i76"]
-script = ExtResource("76_ie2bs")
-price = 899
-icon = ExtResource("79_1wbho")
-rarity = 1
-metadata/_custom_type_script = "uid://dontqd7ds4gei"
-
-[sub_resource type="Resource" id="Resource_oi70t"]
-script = ExtResource("76_ie2bs")
-price = 1199
-icon = ExtResource("80_6rbbw")
-rarity = 1
-metadata/_custom_type_script = "uid://dontqd7ds4gei"
-
-[sub_resource type="Resource" id="Resource_4yy14"]
-script = ExtResource("76_ie2bs")
-price = 1499
-icon = ExtResource("81_6ojkg")
-rarity = 2
-metadata/_custom_type_script = "uid://dontqd7ds4gei"
-
-[sub_resource type="Resource" id="Resource_2vxpu"]
-script = ExtResource("76_ie2bs")
-price = 1999
-icon = ExtResource("82_jicx3")
-rarity = 2
-metadata/_custom_type_script = "uid://dontqd7ds4gei"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlpdf"]
 resource_name = "aiStandardSurface1"
 cull_mode = 2
@@ -630,96 +437,6 @@ texture = ExtResource("45_rdxgg")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3bm7"]
 texture = ExtResource("41_i6hta")
-
-[sub_resource type="Resource" id="Resource_bnlv0"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("60_453j7")
-material = ExtResource("91_ldetl")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_lsr6p"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("61_4u64y")
-material = ExtResource("92_6jlkp")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_2moyb"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("62_i6hta")
-material = ExtResource("93_74adv")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_vmsgp"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("63_moiof")
-material = ExtResource("94_2hhmx")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_mtwt2"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("64_rjsir")
-material = ExtResource("95_fhwdd")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_yiwaa"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("65_dlmwe")
-material = ExtResource("96_gsbml")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_g80mk"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("66_yr2fe")
-material = ExtResource("97_meccc")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_5oujh"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("67_83p4v")
-material = ExtResource("98_44nip")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_ksx7v"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("68_gtgww")
-material = ExtResource("99_lnl1s")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_ipnt4"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("69_bxkn3")
-material = ExtResource("100_d3i65")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_uj6lx"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("70_ffjic")
-material = ExtResource("101_heue6")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_gpp10"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("71_xpsj5")
-material = ExtResource("102_ebcbo")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_vi4kb"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("72_qi751")
-material = ExtResource("103_86tlo")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_iobkp"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("73_2vf33")
-material = ExtResource("104_t6gt0")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
-
-[sub_resource type="Resource" id="Resource_drfyf"]
-script = ExtResource("90_lfbfi")
-icon = ExtResource("74_12lhb")
-material = ExtResource("105_kgpn3")
-metadata/_custom_type_script = "uid://dwv0jbqguqw23"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0g73e"]
 texture = ExtResource("62_5id56")
@@ -2605,6 +2322,36 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ppvi3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lddgv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_smgrs")
 
+[node name="LoginLoadingScreen" type="CanvasLayer" parent="." unique_id=1160084063]
+visible = false
+
+[node name="BG" type="TextureRect" parent="LoginLoadingScreen" unique_id=16847954]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_cykap")
+expand_mode = 1
+
+[node name="LoadingText" type="RichTextLabel" parent="LoginLoadingScreen" unique_id=1972666639]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.5
+offset_top = -22.5
+offset_right = 156.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("7_vkfas")
+theme_override_font_sizes/normal_font_size = 36
+text = "Loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="NoInternetScreen" type="CanvasLayer" parent="." unique_id=2058686150]
 visible = false
 script = ExtResource("14_meccc")
@@ -3668,7 +3415,6 @@ script = ExtResource("54_is5vx")
 green_signal = ExtResource("55_gr5sq")
 white_signal = ExtResource("56_u6nbl")
 bag_data_scene = ExtResource("53_afc64")
-bag_datas = Array[ExtResource("56_uh715")]([SubResource("Resource_ie2bs"), SubResource("Resource_vaya1"), SubResource("Resource_tbwbq"), SubResource("Resource_1wbho"), SubResource("Resource_6rbbw"), SubResource("Resource_6ojkg"), SubResource("Resource_jicx3"), SubResource("Resource_rvq4h"), SubResource("Resource_n2f85"), SubResource("Resource_04qca"), SubResource("Resource_stky2"), SubResource("Resource_ochsh"), SubResource("Resource_sg8ud"), SubResource("Resource_v6eu8"), SubResource("Resource_dwtdj")])
 
 [node name="BoardsPanel" type="Control" parent="ShopScreen/Panel" unique_id=37055526]
 visible = false
@@ -3714,11 +3460,11 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_constants/separation = 35
 script = ExtResource("74_nbuyv")
+green_signal = ExtResource("55_gr5sq")
+white_signal = ExtResource("56_u6nbl")
 board_data_scene = ExtResource("75_as3ia")
-board_data = Array[ExtResource("76_ie2bs")]([SubResource("Resource_ouj5o"), SubResource("Resource_82hot"), SubResource("Resource_k0i76"), SubResource("Resource_oi70t"), SubResource("Resource_4yy14"), SubResource("Resource_2vxpu")])
 
 [node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=918893846]
-visible = false
 script = ExtResource("53_jl4rm")
 
 [node name="BG" type="TextureRect" parent="InventoryScreen" unique_id=2092382539]
@@ -3935,7 +3681,7 @@ theme_override_font_sizes/font_size = 13
 text = "50"
 vertical_alignment = 1
 
-[node name="PreviewArea" type="Control" parent="InventoryScreen/Panel" unique_id=505330208]
+[node name="PreviewArea" type="Control" parent="InventoryScreen/Panel" unique_id=505330208 node_paths=PackedStringArray("model")]
 layout_mode = 1
 anchor_left = 0.5
 anchor_top = 0.083000004
@@ -3947,6 +3693,7 @@ offset_right = 188.0
 offset_bottom = 283.24
 grow_horizontal = 2
 script = ExtResource("86_2vf33")
+model = NodePath("InspectTexture/SubViewportContainer/SubViewport/ModelPivot/Bag")
 
 [node name="InspectTexture" type="TextureRect" parent="InventoryScreen/Panel/PreviewArea" unique_id=1969765482]
 layout_mode = 1
@@ -3983,7 +3730,7 @@ grow_vertical = 2
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(300, 300)
-render_target_update_mode = 0
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="InventoryScreen/Panel/PreviewArea/InspectTexture/SubViewportContainer/SubViewport" unique_id=679452600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52608347)
@@ -3994,6 +3741,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52608347)
 
 [node name="Bag" type="MeshInstance3D" parent="InventoryScreen/Panel/PreviewArea/InspectTexture/SubViewportContainer/SubViewport/ModelPivot" unique_id=1948835954]
 transform = Transform3D(-24.999998, -2.185569e-06, 1.0927845e-06, 1.0927846e-06, 4.7767125e-14, 24.999994, -2.1855692e-06, 24.999994, 4.7767125e-14, 0, 0, 0)
+material_override = ExtResource("91_ldetl")
 mesh = SubResource("ArrayMesh_12lhb")
 
 [node name="BottomPanel" type="HBoxContainer" parent="InventoryScreen/Panel" unique_id=913769882]
@@ -4186,8 +3934,7 @@ theme_override_constants/h_separation = 13
 theme_override_constants/v_separation = 15
 columns = 3
 script = ExtResource("86_tbwbq")
-item_scene = ExtResource("86_vaya1")
-datas = Array[ExtResource("90_lfbfi")]([SubResource("Resource_bnlv0"), SubResource("Resource_lsr6p"), SubResource("Resource_2moyb"), SubResource("Resource_vmsgp"), SubResource("Resource_mtwt2"), SubResource("Resource_yiwaa"), SubResource("Resource_g80mk"), SubResource("Resource_5oujh"), SubResource("Resource_ksx7v"), SubResource("Resource_ipnt4"), SubResource("Resource_uj6lx"), SubResource("Resource_gpp10"), SubResource("Resource_vi4kb"), SubResource("Resource_iobkp"), SubResource("Resource_drfyf")])
+item_card_scene = ExtResource("86_vaya1")
 
 [node name="SettingScreen" type="CanvasLayer" parent="." unique_id=1804771245]
 visible = false
@@ -6828,6 +6575,7 @@ autowrap_mode = 2
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/MusicOffButton" to="SettingScreen" method="_on_music_off_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/SoundOnButton" to="SettingScreen" method="_on_sound_on_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/SoundOffButton" to="SettingScreen" method="_on_sound_off_button_pressed"]
+[connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/DeleteAccountButton" to="." method="_on_delete_account_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/PrivacyPolicyButton" to="SettingScreen" method="_on_privacy_policy_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Facebook/GoBtn/FacebookButton" to="SettingScreen" method="_on_facebook_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Instagram/GoBtn/InstagramButton" to="SettingScreen" method="_on_instagram_button_pressed"]

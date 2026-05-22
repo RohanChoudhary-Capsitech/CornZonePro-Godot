@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4rut3ibrag7"
-path="res://.godot/imported/RoofTop.png-8b8191d7271d786b9ff433d8312a159a.ctex"
+path="res://.godot/imported/Rooftop.png-115f2751e3f2b34f90f1ee9ca60adf7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture Or Sprites/MapsBG/RoofTop.png"
-dest_files=["res://.godot/imported/RoofTop.png-8b8191d7271d786b9ff433d8312a159a.ctex"]
+source_file="res://Texture Or Sprites/MapsBG/Rooftop.png"
+dest_files=["res://.godot/imported/Rooftop.png-115f2751e3f2b34f90f1ee9ca60adf7f.ctex"]
 
 [params]
 

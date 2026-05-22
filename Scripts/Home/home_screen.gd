@@ -1,14 +1,32 @@
 extends CanvasLayer
 @onready var coin_text: Label = $Panel/TopPanel/Coin/CoinText
 @onready var profile_icon = $"Panel/Profile/Profile Icon/TextureRect"
-
+@onready var profile_name = $Panel/Profile/Label
+@onready var profile_edit: Button = $"../ProfileScreen/Panel/ProfileBg/ProfilePic/EditButton"
+ 
 @export var icons: Array[Texture2D]
-
+ 
 func _ready() -> void:
 	#AdManager.show_banner()
-	coin_text.text = str(Prefs.get_int("coins",0))
+	#coin_text.text = str(Prefs.get_int("coins",0))
 	profile_icon.texture = icons[Prefs.get_int("profile_index",0)]
-	$"../InventoryScreen/Panel/Profile/Profile Icon/TextureRect".texture = icons[Prefs.get_int("profile_index",0)]
+	if not FirebaseManager.on_data_loaded.is_connected(_on_data_ready):
+		FirebaseManager.on_data_loaded.connect(_on_data_ready)
+	if FirebaseManager.data_loaded or PlayerData.has_loaded_data:
+		await _on_data_ready()
+	else:
+		pass
+		#rank_label.text = "Loading..."
+#
+	if not RemoteConfiguration.config_loaded.is_connected(_apply_config):
+		RemoteConfiguration.config_loaded.connect(_apply_config)
+	if RemoteConfiguration.is_loaded:
+		_apply_config()
+	#input_player_name.editable = false
+	#is_editing = false
+	#player_name_submit.pressed.connect(_on_edit_pressed);
+	#input_player_name.text_submitted.connect(_on_name_submitted)
+	PlayerData.detect_device_type()
 
 func _on_setting_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -55,4 +73,23 @@ func _on_shop_button_pressed() -> void:
 
 func _on_inventory_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	UIManager.toggle_canvas($"../InventoryScreen")
+	var inventory_screen := $"../InventoryScreen"
+	if inventory_screen.has_method("refresh_from_local"):
+		inventory_screen.refresh_from_local()
+	UIManager.toggle_canvas(inventory_screen)
+ 
+func _on_data_ready():
+	_update_ui()
+func _apply_config():
+	var daily_bonus = RemoteConfiguration.config.get("daily_bonus",false)
+	var halloween_event = RemoteConfiguration.config.get("halloween_event",false)
+	if daily_bonus == true:
+		pass
+		#%TitleLabel.visible = true
+	else:
+		pass
+		#%TitleLabel.visible = false
+ 
+func _update_ui():
+	profile_name.text = str(PlayerData.player_name)
+	coin_text.text = str(PlayerData.coins)

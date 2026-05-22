@@ -2,24 +2,53 @@ extends VBoxContainer
 
 @export var row_data: PackedScene
 
-func  _ready() -> void:
+
+func _ready() -> void:
+
+	# Connect signal once
+	if not LeaderboardManager.leaderboard_loaded.is_connected(_on_leaderboard_loaded):
+
+		LeaderboardManager.leaderboard_loaded.connect(_on_leaderboard_loaded)
+
 	load_leaderboard()
-	
+
+
 func load_leaderboard():
-	var data: Array[Dictionary] = [
-		{"rank":1, "name":"Himanshu", "score":120},
-		{"rank":2, "name":"Chintu", "score":110},
-		{"rank":3, "name":"Mohan", "score":100},
-		{"rank":4, "name":"Sundanshu", "score":90},
-		{"rank":5, "name":"Mukesh", "score":80},
-		{"rank":6, "name":"Rohit", "score":70},
-		{"rank":7, "name":"Kanha", "score":60},
-		{"rank":8, "name":"Bodhesh", "score":50},
-		{"rank":9, "name":"Chandan", "score":40},
-		{"rank":10,"name":"Utkasrsh","score":30}
-	]
-	
-	for player in data:
-		var row: Node = row_data.instantiate()
+
+	# Fetch leaderboard from Firebase
+	await LeaderboardManager.fetch_top(false)
+
+
+func _on_leaderboard_loaded(entries: Array, my_rank: int):
+
+
+	# Clear old rows
+	for child in get_children():
+
+		child.queue_free()
+
+
+	# Create leaderboard rows
+	for i in range(entries.size()):
+
+		var entry = entries[i]
+
+		var player_data = {
+			"rank": i + 1,
+			"name": entry.get("player_name", "Unknown"),
+			"score": entry.get("Coins", 0),
+			"uid": entry.get("uid", "")
+		}
+
+
+		var row = row_data.instantiate()
+
 		add_child(row)
-		row.setup(player)
+
+		row.setup(player_data)
+
+
+		# Highlight current player
+		if player_data["uid"] == FirebaseManager.player_id:
+
+			row.modulate = Color.YELLOW

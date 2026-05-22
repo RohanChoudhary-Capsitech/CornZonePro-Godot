@@ -22,6 +22,8 @@ func _on_resume_pressed() -> void:
 func _on_home_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.home()
+	if PlayerData.needs_cloud_sync:
+		await FirebaseManager.push_to_firestore()
 
 func _on_restart_pressed() -> void:
 	SoundManager.play_button_clicks()

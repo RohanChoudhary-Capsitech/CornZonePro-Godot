@@ -66,6 +66,7 @@ func _apply_bag_visual() -> void:
 			material = bag_config.material_override
 	else:
 		var local_bag_config := NetworkManager.get_bag_config_by_id(NetworkManager.get_local_bag_id())
+		#print("Bag material ", local_bag_config)
 		if local_bag_config:
 			material = local_bag_config.material_override
 

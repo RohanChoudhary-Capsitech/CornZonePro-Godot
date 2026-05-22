@@ -36,7 +36,49 @@ const BAG_CONFIGS := {
 	"target": preload("res://Resources/Bags/Target_bag.tres"),
 	"urban": preload("res://Resources/Bags/Urban_bag.tres")
 }
-
+ 
+# id for bag config
+const BAG_ID_TO_KEY := {
+	"S1": "arctic",
+	"S2": "camouflage",
+	"S3": "cobalt",
+	"S4": "neon",
+	"S5": "peace",
+	"S6": "picpunk",
+	"S7": "rogue",
+	"S8": "shell",
+	"S9": "shield",
+	"S10": "shurican",
+	"S11": "skyline",
+	"S12": "splash",
+	"S13": "stitches",
+	"S14": "target",
+	"S15": "urban"
+}
+ 
+ 
+const HOST_DEFAULT_BOARD_ID := "deadlock"
+const DEFAULT_BOARD_ID := "sunburst"
+ 
+const BOARD_CONFIGS := {
+	"deadlock": preload("res://Resources/Boards/Deadlock.tres"),
+	"horizon_shift": preload("res://Resources/Boards/Horizon_shift.tres"),
+	"royal_sheild": preload("res://Resources/Boards/Royal_Shield.tres"),
+	"sunburst": preload("res://Resources/Boards/Sunburst.tres"),
+	"vanguard": preload("res://Resources/Boards/Vanguard.tres"),
+	"volt_strike": preload("res://Resources/Boards/Volt_strike.tres")
+}
+ 
+# id for bag config
+const BOARD_ID_TO_KEY := {
+	"B1": "deadlock",
+	"B2": "horizon_shift",
+	"B3": "royal_sheild",
+	"B4": "sunburst",
+	"B5": "vanguard",
+	"B6": "volt_strike"
+}
+ 
 # =========================
 # STATE
 # =========================
@@ -127,8 +169,10 @@ func host_game(room_name: String = "") -> void:
 
 	var my_data = {
 		"id": my_id,
-		"name": Prefs.get_string("username", "Host"),
-		"bag_id": get_local_bag_id()
+		"name": PlayerData.player_name,
+		"bag_id": get_local_bag_id(),
+		"board_id": get_local_board_id(),
+		"boards_owned": PlayerData.boards_owned.duplicate()
 	}
 
 	players[my_id] = my_data
@@ -374,7 +418,9 @@ func _on_connected_to_server() -> void:
 	var my_data = {
 		"id": my_id,
 		"name": Prefs.get_string("username", "Player"),
-		"bag_id": get_local_bag_id()
+		"bag_id": get_local_bag_id(),
+		"board_id": get_local_board_id(),
+		"boards_owned": PlayerData.boards_owned.duplicate()
 	}
 
 	register_player.rpc_id(1, my_data)
@@ -477,7 +523,7 @@ func start_search() -> bool:
 		room_join_failed.emit(message)
 		return false
 
-	print("[Network] Searching...")
+	#print("[Network] Searching...")
 	return true
 
 
@@ -511,7 +557,7 @@ func _process(_delta: float) -> void:
 
 		found_servers.append(server)
 
-		print("[Network] Found:", server)
+		#print("[Network] Found:", server)
 
 		server_found.emit(server)
 
@@ -540,22 +586,60 @@ func get_local_ip() -> String:
 
 func is_connected_to_network() -> bool:
 	return multiplayer.multiplayer_peer != null
-
-
+ 
+ 
+# func get_saved_equipped_bag_id(pref_key: String = "equipped_bag_id") -> String:
+# 	var bag_id := str(PlayerData.equipped_cornbag)
+# 	print("the bag id is " , bag_id)
+# 	if BAG_CONFIGS.has(bag_id):
+# 		print("The new eqipped bag id is ",bag_id)
+# 		return bag_id
+ 
+# 	return ""
+ 
+# new function which acess id from bag id then config from bag config
 func get_saved_equipped_bag_id(pref_key: String = "equipped_bag_id") -> String:
-	var bag_id := str(Prefs.get_string(pref_key, "")).to_lower()
-	if BAG_CONFIGS.has(bag_id):
-		return bag_id
-
+	var item_id := str(PlayerData.equipped_cornbag).strip_edges()
+ 
+	#print("Saved Item ID: ", item_id)
+ 
+	# Convert S10 -> shurican
+	if BAG_ID_TO_KEY.has(item_id):
+		var bag_key = BAG_ID_TO_KEY[item_id]
+		if BAG_CONFIGS.has(bag_key):
+			return bag_key
+ 
+	#print("Bag config not found")
 	return ""
-
-
+ 
+func get_saved_equipped_board_id(pref_key: String = "equipped_board_id") -> String:
+	var item_id := str(PlayerData.equipped_board).strip_edges()
+ 
+	print("Saved Item ID: ", item_id)
+ 
+	# Convert S10 -> shurican
+	if BOARD_ID_TO_KEY.has(item_id):
+		var board_key = BOARD_ID_TO_KEY[item_id]
+		if BOARD_CONFIGS.has(board_key):
+			return board_key
+ 
+	#print("Board config not found")
+	return ""
+ 
+ 
 func save_equipped_bag_id(bag_id: String, pref_key: String = "equipped_bag_id") -> bool:
 	var normalized_bag_id := bag_id.to_lower()
 	if not BAG_CONFIGS.has(normalized_bag_id):
 		return false
  
 	Prefs.set_string(pref_key, normalized_bag_id)
+	Prefs.save()
+	return true
+func save_equipped_board_id(board_id: String, pref_key: String = "equipped_board_id") -> bool:
+	var normalized_board_id := board_id.to_lower()
+	if not BOARD_CONFIGS.has(normalized_board_id):
+		return false
+	Prefs.set_string(pref_key, normalized_board_id)
 	Prefs.save()
 	return true
 
@@ -565,21 +649,37 @@ func get_local_bag_id() -> String:
 		return bag_id
 
 	return HOST_DEFAULT_BAG_ID if is_host else CLIENT_DEFAULT_BAG_ID
-
-
+ 
+func get_local_board_id() -> String:
+	var board_id := get_saved_equipped_board_id()
+	if not board_id.is_empty():
+		return board_id
+ 
+	return HOST_DEFAULT_BOARD_ID
+ 
 func get_bag_config_for_player(player_index: int) -> BagConfig:
 	var bag_id := get_bag_id_for_player(player_index)
 	return get_bag_config_by_id(bag_id)
-
-
+func get_board_config_for_player(player_index: int) -> BoardConfig:
+	var board_id := get_board_id_for_player(player_index)
+	return get_board_config_by_id(board_id)
+ 
+func get_match_board_config() -> BoardConfig:
+	return get_board_config_by_id(get_match_board_id())
+ 
 func get_bag_config_by_id(bag_id: String) -> BagConfig:
 	var normalized_bag_id := bag_id.to_lower()
 	if BAG_CONFIGS.has(normalized_bag_id):
 		return BAG_CONFIGS[normalized_bag_id] as BagConfig
 
 	return BAG_CONFIGS[HOST_DEFAULT_BAG_ID] as BagConfig
-
-
+func get_board_config_by_id(board_id: String) -> BoardConfig:
+	var normalized_board_id := board_id.to_lower()
+	if BOARD_CONFIGS.has(normalized_board_id):
+		return BOARD_CONFIGS[normalized_board_id] as BoardConfig
+ 
+	return BOARD_CONFIGS[DEFAULT_BOARD_ID] as BoardConfig
+ 
 func get_bag_id_for_player(player_index: int) -> String:
 	if GameSession.selected_mode == "Local":
 		return _get_local_multiplayer_bag_id_for_player(player_index)
@@ -590,8 +690,15 @@ func get_bag_id_for_player(player_index: int) -> String:
 		return get_alternate_bag_id(get_local_bag_id())
 
 	return get_local_bag_id()
-
-
+func get_board_id_for_player(player_index: int) -> String:
+	return get_match_board_id()
+ 
+func get_match_board_id() -> String:
+	if GameSession.selected_mode == "Local":
+		return _get_local_multiplayer_board_id()
+ 
+	return get_local_board_id()
+ 
 func get_alternate_bag_id(bag_id: String) -> String:
 	var normalized_bag_id := bag_id.to_lower()
 	if normalized_bag_id == HOST_DEFAULT_BAG_ID:
@@ -617,8 +724,24 @@ func _get_local_multiplayer_bag_id_for_player(player_index: int) -> String:
 		return fallback_bag_id
 
 	return bag_id
-
-
+func _get_local_multiplayer_board_id() -> String:
+	var host_data := get_player_data_for_index(1)
+	var host_board_id := str(host_data.get("board_id", "")).to_lower()
+	if host_board_id.is_empty() and is_host:
+		host_board_id = get_local_board_id()
+	if not BOARD_CONFIGS.has(host_board_id):
+		return DEFAULT_BOARD_ID
+ 
+	var host_board_item_id := get_board_item_id_from_key(host_board_id)
+	if host_board_item_id.is_empty():
+		return DEFAULT_BOARD_ID
+ 
+	var player_two_boards_owned := _get_player_two_boards_owned()
+	if player_two_boards_owned.has(host_board_item_id):
+		return host_board_id
+ 
+	return DEFAULT_BOARD_ID
+ 
 func _get_pass_play_bag_id_for_player(player_index: int) -> String:
 	var player_one_bag_id := get_saved_equipped_bag_id()
 	if player_one_bag_id.is_empty():
@@ -632,8 +755,28 @@ func _get_pass_play_bag_id_for_player(player_index: int) -> String:
 		player_two_bag_id = get_alternate_bag_id(player_one_bag_id)
 
 	return player_two_bag_id
-
-
+func get_board_item_id_from_key(board_key: String) -> String:
+	var normalized_board_key := board_key.to_lower()
+	for item_id in BOARD_ID_TO_KEY.keys():
+		if str(BOARD_ID_TO_KEY[item_id]).to_lower() == normalized_board_key:
+			print("ITEM BOARD Id FOUND::::::::::::",item_id)
+			return str(item_id)
+ 
+	return ""
+ 
+ 
+func _get_player_two_boards_owned() -> Array:
+	if multiplayer and multiplayer.multiplayer_peer != null and not multiplayer.is_server():
+		return PlayerData.boards_owned
+ 
+	var player_two_data := get_player_data_for_index(2)
+	var owned = player_two_data.get("boards_owned", [])
+	if owned is Array:
+		return owned
+ 
+	return []
+ 
+ 
 func get_player_data_for_index(player_index: int) -> Dictionary:
 	if player_index == 1:
 		return players.get(1, {})

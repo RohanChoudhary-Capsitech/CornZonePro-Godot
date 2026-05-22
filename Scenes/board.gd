@@ -2,12 +2,31 @@ extends StaticBody3D
 
 const AWARDED_POINTS_META := "awarded_points"
 const TOUCHED_BOARD_META := "touched_board"
-
+ 
+@onready var board_visual: GeometryInstance3D = $throwingStand_grp/stand_geo
+@onready var board_visual_sec: GeometryInstance3D = $throwingStand_grp/planring_geo_002
+ 
 # Board.gd or Game.gd
 func _ready() -> void:
 	UIManager.UI_required.connect(load_ui)
+	_apply_board_visual()
 	load_ui()
-
+ 
+ 
+func _apply_board_visual() -> void:
+	if board_visual == null:
+		return
+ 
+	var board_config = NetworkManager.get_match_board_config()
+	var board_material = board_config.material_override
+	#print("Board material  is ", board_material)
+	
+	
+	
+	if board_material != null:
+		board_visual.material_override = board_material
+		board_visual_sec.material_override = board_material
+ 
 func load_ui() -> void:
 	var existing_ui: Node = get_node_or_null("MatchUI")
 	if existing_ui:
