@@ -23,7 +23,6 @@ func _ready():
 	button.pressed.connect(_on_button_pressed)
 
 func setup(item_id: String, item_type: String):
-	#data_icon.texture = data.icon
 	item_material = CatalogManager.get_material(item_id)
 	#actual_material = 
 	print("Item material is ",item_material)

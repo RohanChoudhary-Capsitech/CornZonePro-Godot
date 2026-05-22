@@ -26,7 +26,6 @@ func _ready() -> void:
 			#instance.item_clicked.connect(_on_item_clicked)
 
 func _on_item_clicked(material):
-	#print("bag material from signal is ", material)
 	item_selected.emit(material)
 
 func refresh_from_local() -> void:
@@ -39,6 +38,8 @@ func refresh_from_local() -> void:
 		CatalogManager.load_catalog()
 
 func _populate() -> void:
+	item_selected.emit(CatalogManager.get_material(PlayerData.equipped_cornbag,""))
+	
 	for c in get_children():
 		c.queue_free()
 

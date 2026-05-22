@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BagConfig" format=3 uid="uid://bo30y0g8khkju"]
 
-[ext_resource type="Texture2D" uid="uid://b1dbus7wdo6ph" path="res://Texture Or Sprites/Bags UI/Splash.png" id="1_qmp2y"]
-[ext_resource type="Material" uid="uid://bn6tpdiqj5gm0" path="res://Materials/Bags/Splash.tres" id="2_nlvug"]
+[ext_resource type="Texture2D" uid="uid://dpoktc6t3phlj" path="res://Texture Or Sprites/Bags UI/Skyline.png" id="1_qmp2y"]
+[ext_resource type="Material" uid="uid://cwdmtkkj38yn7" path="res://Materials/Bags/Skyline.tres" id="2_nlvug"]
 [ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/Resource Structures/BagConfig.gd" id="3_sr07v"]
 
 [resource]
