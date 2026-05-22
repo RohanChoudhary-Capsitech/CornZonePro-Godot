@@ -16,7 +16,7 @@ func _ready() -> void:
 	pass
 
 func set_item_material(material):
-	model.material_override = material
+	model.material_override = load(material)
 	pivot.rotation_degrees = Vector3.ZERO
 	model.position = Vector3.ZERO
 
