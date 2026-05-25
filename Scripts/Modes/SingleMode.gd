@@ -17,7 +17,7 @@ func on_ball_entered(body: Node3D) -> void:
 	print("total pot of the player is " , PlayerData.total_pots)
 
 func on_score() -> void:
-	DataManager.add_coins(2)
+	DataManager.add_coins(5)
 
 func on_match_end() -> void:
 	# DataManager.add_coins(GameSession.score_p1 * 2)

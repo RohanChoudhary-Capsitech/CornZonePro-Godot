@@ -50,5 +50,4 @@ func _on_leaderboard_loaded(entries: Array, my_rank: int):
 
 		# Highlight current player
 		if player_data["uid"] == FirebaseManager.player_id:
-
 			row.modulate = Color.YELLOW

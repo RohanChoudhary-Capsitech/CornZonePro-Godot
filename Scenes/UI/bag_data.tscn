@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://yy74v722fdpe" path="res://Texture Or Sprites/Shop Screen/Rectangle 357.png" id="6_b2qrc"]
 [ext_resource type="Texture2D" uid="uid://c8nhel4e2gwj6" path="res://Texture Or Sprites/DailyRewards/Group 183.png" id="7_4h1m5"]
 [ext_resource type="Texture2D" uid="uid://c357ox0g0yyvy" path="res://Texture Or Sprites/Shop Screen/Rectangle 166.png" id="7_qg5gt"]
+[ext_resource type="Texture2D" uid="uid://b3oha21wbyy1k" path="res://Texture Or Sprites/Shop Screen/Group 633.png" id="9_cxigs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qg5gt"]
 texture = ExtResource("6_b2qrc")
@@ -18,6 +19,9 @@ texture = ExtResource("6_b2qrc")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cuu48"]
 texture = ExtResource("6_b2qrc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjv3i"]
+texture = ExtResource("9_cxigs")
 
 [node name="BagData" type="TextureRect" unique_id=775086764]
 custom_minimum_size = Vector2(0, 130)
@@ -401,6 +405,7 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_qg5gt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cxigs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_cuu48")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_mjv3i")
 
 [node name="TextureRect" type="TextureRect" parent="BagBuyButton" unique_id=71617339]
 layout_mode = 1

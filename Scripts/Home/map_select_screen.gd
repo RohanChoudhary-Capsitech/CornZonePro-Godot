@@ -98,9 +98,6 @@ func _ready() -> void:
 		var config = entry["config"]
 
 		unlock_button.pressed.connect(_on_unlock_button_pressed.bind(config))
-	
-	#for index in range(map_entries.size()):
-		#map_entries[index] = _build_lock_overlay(map_entries[index])
 
 	visibility_changed.connect(_on_visibility_changed)
 	refresh_map_locks()
@@ -143,10 +140,8 @@ func refresh_map_locks() -> void:
 
 		if is_locked:
 			price_label.text = "Price: %d" % config.get_price_for_mode(GameSession.selected_mode)
-			#unlock_button.text = "Unlock"
 		else:
 			price_label.text = ""
-			#unlock_button.text = ""
 
 
 func _is_map_available(config: MapConfig) -> bool:
@@ -244,7 +239,8 @@ func _on_unlock_button_pressed(config: MapConfig) -> void:
 		push_warning("[MapSelect] Not enough coins to unlock %s for %s." % [config.map_name, GameSession.selected_mode])
 		return
 
-	Prefs.set_int("coins", coins - price)
+	#Prefs.set_int("coins", coins - price)
+	DataManager.spend_coins(price)
 	config.set_unlocked_for_mode(GameSession.selected_mode, true)
 	_update_coin_labels()
 	refresh_map_locks()

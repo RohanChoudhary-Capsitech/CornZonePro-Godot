@@ -97,7 +97,7 @@ func _get_my_rank_from_entries(entries: Array) -> int:
 	for i in range(entries.size()):
 		if entries[i].get("uid", "") == my_uid:
 			return i + 1
-	return -1
+	return entries.size()
 
 
 func get_global_rank() -> int:

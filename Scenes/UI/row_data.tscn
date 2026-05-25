@@ -56,6 +56,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_2pf5w")
 theme_override_font_sizes/font_size = 16
 text = "himanshu"
+autowrap_mode = 2
 
 [node name="ScoreGroup" type="TextureRect" parent="." unique_id=1702430566]
 layout_mode = 1

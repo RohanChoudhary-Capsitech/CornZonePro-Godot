@@ -90,18 +90,20 @@ func _apply_config():
 	var halloween_event = RemoteConfiguration.config.get("halloween_event",false)
 	if daily_bonus == true:
 		pass
-		#%TitleLabel.visible = true
 	else:
 		pass
-		#%TitleLabel.visible = false
  
 func _update_ui():
 	profile_name.text = str(PlayerData.player_name)
 	coin_text.text = str(PlayerData.coins)
 
 func pop_animation(node: Control):
+	node.scale = Vector2.ZERO
+	node.pivot_offset = node.size / 2
 	var tween = create_tween()
-	tween.set_trans(Tween.TRANS_BACK)
-	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(node, "scale", Vector2(1.15, 1.15), 0.3)
-	tween.tween_property(node, "scale", Vector2.ONE, 0.3)
+	tween.tween_property(node, "scale", Vector2(1.15, 1.15), 0.35)\
+		.set_trans(Tween.TRANS_BACK)\
+		.set_ease(Tween.EASE_OUT)
+	tween.tween_property(node, "scale", Vector2.ONE, 0.15)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_OUT)
