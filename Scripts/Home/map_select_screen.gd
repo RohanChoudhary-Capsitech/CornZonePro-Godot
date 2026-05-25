@@ -37,16 +37,70 @@ const OVERLAY_COLOR := Color(0.0, 0.0, 0.0, 0.72)
 
 func _ready() -> void:
 	map_entries = [
-		{"button": lawn_button, "scene_path": lawn, "config": lawn_config},
-		{"button": street_button, "scene_path": street, "config": street_config},
-		{"button": stadium_button, "scene_path": stadium, "config": stadium_config},
-		{"button": backyard_button, "scene_path": backyard, "config": backyard_config},
-		{"button": rooftop_button, "scene_path": rooftop, "config": rooftop_config},
-		{"button": metro_button, "scene_path": metro, "config": metro_config}
+		{
+			"button": lawn_button,
+			"scene_path": lawn,
+			"config": lawn_config,
+			"overlay": $Panel/ScrollContainer/HBoxContainer/LawnMap/Overlay,
+			"status_label": $Panel/ScrollContainer/HBoxContainer/LawnMap/Overlay/StatusLabel,
+			"price_text": $Panel/ScrollContainer/HBoxContainer/LawnMap/Overlay/TextureRect/Price,
+			"unlock_button": $Panel/ScrollContainer/HBoxContainer/LawnMap/Overlay/UnlockButton
+		},
+		{
+			"button": street_button,
+			"scene_path": street,
+			"config": street_config,
+			"overlay": $Panel/ScrollContainer/HBoxContainer/StreetMap/Overlay,
+			"status_label": $Panel/ScrollContainer/HBoxContainer/StreetMap/Overlay/StatusLabel,
+			"price_text": $Panel/ScrollContainer/HBoxContainer/StreetMap/Overlay/TextureRect/Price,
+			"unlock_button": $Panel/ScrollContainer/HBoxContainer/StreetMap/Overlay/UnlockButton
+		},
+		{
+			"button": stadium_button,
+			"scene_path": stadium,
+			"config": stadium_config,
+			"overlay": $Panel/ScrollContainer/HBoxContainer/StadiumMap/Overlay,
+			"status_label": $Panel/ScrollContainer/HBoxContainer/StadiumMap/Overlay/StatusLabel,
+			"price_text": $Panel/ScrollContainer/HBoxContainer/StadiumMap/Overlay/TextureRect/Price,
+			"unlock_button": $Panel/ScrollContainer/HBoxContainer/StadiumMap/Overlay/UnlockButton
+		},
+		{
+			"button": backyard_button,
+			"scene_path": backyard,
+			"config": backyard_config,
+			"overlay": $Panel/ScrollContainer/HBoxContainer/BackyardMap/Overlay,
+			"status_label": $Panel/ScrollContainer/HBoxContainer/BackyardMap/Overlay/StatusLabel,
+			"price_text": $Panel/ScrollContainer/HBoxContainer/BackyardMap/Overlay/TextureRect/Price,
+			"unlock_button": $Panel/ScrollContainer/HBoxContainer/BackyardMap/Overlay/UnlockButton
+		},
+		{
+			"button": rooftop_button,
+			"scene_path": rooftop,
+			"config": rooftop_config,
+			"overlay": $Panel/ScrollContainer/HBoxContainer/RooftopMap/Overlay,
+			"status_label": $Panel/ScrollContainer/HBoxContainer/RooftopMap/Overlay/StatusLabel,
+			"price_text": $Panel/ScrollContainer/HBoxContainer/RooftopMap/Overlay/TextureRect/Price,
+			"unlock_button": $Panel/ScrollContainer/HBoxContainer/RooftopMap/Overlay/UnlockButton
+		},
+		{
+			"button": metro_button,
+			"scene_path": metro,
+			"config": metro_config,
+			"overlay": $Panel/ScrollContainer/HBoxContainer/MetroMap/Overlay,
+			"status_label": $Panel/ScrollContainer/HBoxContainer/MetroMap/Overlay/StatusLabel,
+			"price_text": $Panel/ScrollContainer/HBoxContainer/MetroMap/Overlay/TextureRect/Price,
+			"unlock_button": $Panel/ScrollContainer/HBoxContainer/MetroMap/Overlay/UnlockButton
+		}
 	]
 
-	for index in range(map_entries.size()):
-		map_entries[index] = _build_lock_overlay(map_entries[index])
+	for entry in map_entries:
+		var unlock_button = entry["unlock_button"]
+		var config = entry["config"]
+
+		unlock_button.pressed.connect(_on_unlock_button_pressed.bind(config))
+	
+	#for index in range(map_entries.size()):
+		#map_entries[index] = _build_lock_overlay(map_entries[index])
 
 	visibility_changed.connect(_on_visibility_changed)
 	refresh_map_locks()
@@ -68,10 +122,12 @@ func refresh_map_locks() -> void:
 	for entry in map_entries:
 		var button: Button = entry["button"]
 		var config: MapConfig = entry["config"]
-		var overlay: ColorRect = entry["overlay"]
+		
+		var overlay: Control = entry["overlay"]
 		var status_label: Label = entry["status_label"]
-		var price_label: Label = entry["price_label"]
+		var price_label: Label = entry["price_text"]
 		var unlock_button: Button = entry["unlock_button"]
+		
 		var is_available := _is_map_available(config)
 		var is_locked := _is_map_locked(config)
 
@@ -87,10 +143,10 @@ func refresh_map_locks() -> void:
 
 		if is_locked:
 			price_label.text = "Price: %d" % config.get_price_for_mode(GameSession.selected_mode)
-			unlock_button.text = "Unlock"
+			#unlock_button.text = "Unlock"
 		else:
 			price_label.text = ""
-			unlock_button.text = ""
+			#unlock_button.text = ""
 
 
 func _is_map_available(config: MapConfig) -> bool:
@@ -116,63 +172,63 @@ func _get_map_tooltip(config: MapConfig) -> String:
 
 	return config.get_unavailable_reason(GameSession.selected_mode)
 
-
-func _build_lock_overlay(entry: Dictionary) -> Dictionary:
-	var button: Button = entry["button"]
-	var config: MapConfig = entry["config"]
-
-	var overlay := ColorRect.new()
-	overlay.name = "%sLockOverlay" % button.name
-	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	overlay.color = OVERLAY_COLOR
-	overlay.visible = false
-	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
-
-	var layout := VBoxContainer.new()
-	layout.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	layout.alignment = BoxContainer.ALIGNMENT_CENTER
-	layout.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	layout.add_theme_constant_override("separation", 12)
-
-	var top_spacer := Control.new()
-	top_spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	layout.add_child(top_spacer)
-
-	var status_label := Label.new()
-	status_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	status_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	status_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	status_label.add_theme_color_override("font_color", Color.WHITE)
-	layout.add_child(status_label)
-
-	var price_label := Label.new()
-	price_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	price_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	price_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	price_label.add_theme_color_override("font_color", Color(1.0, 0.9, 0.35, 1.0))
-	layout.add_child(price_label)
-
-	var unlock_button := Button.new()
-	unlock_button.custom_minimum_size = Vector2(120.0, 42.0)
-	unlock_button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-	unlock_button.text = "Unlock"
-	unlock_button.pressed.connect(_on_unlock_button_pressed.bind(config))
-	layout.add_child(unlock_button)
-
-	var bottom_spacer := Control.new()
-	bottom_spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	layout.add_child(bottom_spacer)
-
-	overlay.add_child(layout)
-	button.add_child(overlay)
-
-	entry["overlay"] = overlay
-	entry["status_label"] = status_label
-	entry["price_label"] = price_label
-	entry["unlock_button"] = unlock_button
-	return entry
+#
+#func _build_lock_overlay(entry: Dictionary) -> Dictionary:
+	#var button: Button = entry["button"]
+	#var config: MapConfig = entry["config"]
+#
+	#var overlay := ColorRect.new()
+	#overlay.name = "%sLockOverlay" % button.name
+	#overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	#overlay.color = OVERLAY_COLOR
+	#overlay.visible = false
+	#overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+#
+	#var layout := VBoxContainer.new()
+	#layout.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	#layout.alignment = BoxContainer.ALIGNMENT_CENTER
+	#layout.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	#layout.add_theme_constant_override("separation", 12)
+#
+	#var top_spacer := Control.new()
+	#top_spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	#layout.add_child(top_spacer)
+#
+	#var status_label := Label.new()
+	#status_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	#status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	#status_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	#status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	#status_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	#status_label.add_theme_color_override("font_color", Color.WHITE)
+	#layout.add_child(status_label)
+#
+	#var price_label := Label.new()
+	#price_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	#price_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	#price_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	#price_label.add_theme_color_override("font_color", Color(1.0, 0.9, 0.35, 1.0))
+	#layout.add_child(price_label)
+#
+	#var unlock_button := Button.new()
+	#unlock_button.custom_minimum_size = Vector2(120.0, 42.0)
+	#unlock_button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	#unlock_button.text = "Unlock"
+	#unlock_button.pressed.connect(_on_unlock_button_pressed.bind(config))
+	#layout.add_child(unlock_button)
+#
+	#var bottom_spacer := Control.new()
+	#bottom_spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	#layout.add_child(bottom_spacer)
+#
+	#overlay.add_child(layout)
+	#button.add_child(overlay)
+#
+	#entry["overlay"] = overlay
+	#entry["status_label"] = status_label
+	#entry["price_label"] = price_label
+	#entry["unlock_button"] = unlock_button
+	#return entry
 
 
 func _on_unlock_button_pressed(config: MapConfig) -> void:
@@ -182,7 +238,7 @@ func _on_unlock_button_pressed(config: MapConfig) -> void:
 		return
 
 	var price := config.get_price_for_mode(GameSession.selected_mode)
-	var coins := int(Prefs.get_int("coins", 0))
+	var coins := int(PlayerData.coins)
 
 	if price > coins:
 		push_warning("[MapSelect] Not enough coins to unlock %s for %s." % [config.map_name, GameSession.selected_mode])
@@ -197,11 +253,11 @@ func _on_unlock_button_pressed(config: MapConfig) -> void:
 func _update_coin_labels() -> void:
 	var coin_text := get_node_or_null("../HomeScreen/Panel/TopPanel/Coin/CoinText") as Label
 	if coin_text != null:
-		coin_text.text = str(Prefs.get_int("coins", 0))
+		coin_text.text = str(PlayerData.coins)
 
 	var inventory_coin_text := get_node_or_null("../InventoryScreen/Panel/TopPanel/Coin/CoinText") as Label
 	if inventory_coin_text != null:
-		inventory_coin_text.text = str(Prefs.get_int("coins", 0))
+		inventory_coin_text.text = str(PlayerData.coins)
 
 
 func _select_map(scene_path: String, config: MapConfig) -> void:

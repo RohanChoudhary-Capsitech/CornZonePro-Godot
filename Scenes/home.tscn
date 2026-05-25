@@ -138,7 +138,11 @@
 [ext_resource type="Texture2D" uid="uid://cm36t43r5gcru" path="res://Texture Or Sprites/MoreGame Icons/dodge driver.png" id="108_ochsh"]
 [ext_resource type="Texture2D" uid="uid://diy8cusw23xn5" path="res://Texture Or Sprites/MoreGame Icons/laserMind.png" id="109_sg8ud"]
 [ext_resource type="Texture2D" uid="uid://k13v3ek2drk0" path="res://Texture Or Sprites/MoreGame Icons/SymbolSync.png" id="110_v6eu8"]
+[ext_resource type="Texture2D" uid="uid://c5a4ref66oxlk" path="res://Texture Or Sprites/MapsBG/Rectangle 428.png" id="111_pmkjb"]
+[ext_resource type="Texture2D" uid="uid://dy4bagd3gaunh" path="res://Texture Or Sprites/MapsBG/Rectangle 429.png" id="112_4u64y"]
+[ext_resource type="Texture2D" uid="uid://rsn6qit528c4" path="res://Texture Or Sprites/MapsBG/Rectangle 1004.png" id="113_i6hta"]
 [ext_resource type="Texture2D" uid="uid://c6tpb5rbwmc7c" path="res://Texture Or Sprites/MoreGame Icons/wrapvector.png" id="114_453j7"]
+[ext_resource type="Texture2D" uid="uid://sn17m4m5wmdn" path="res://Texture Or Sprites/MapsBG/lock.png" id="114_moiof"]
 [ext_resource type="Script" uid="uid://m372ho3svafv" path="res://Scripts/Home/map_select_screen.gd" id="114_ttur7"]
 [ext_resource type="Texture2D" uid="uid://benv2lyjwa1uv" path="res://Texture Or Sprites/Setting Screen/godot_not_click.png" id="117_dlmwe"]
 [ext_resource type="Texture2D" uid="uid://c6hyvld6pd7mc" path="res://Texture Or Sprites/Setting Screen/Polygon 3.png" id="119_83p4v"]
@@ -1931,6 +1935,18 @@ texture = ExtResource("148_meccc")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6rbbw"]
 texture = ExtResource("148_meccc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ldetl"]
+resource_local_to_scene = true
+texture = ExtResource("113_i6hta")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bnlv0"]
+resource_local_to_scene = true
+texture = ExtResource("113_i6hta")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5kcdf"]
+resource_local_to_scene = true
+texture = ExtResource("113_i6hta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2fil"]
 texture = ExtResource("149_meccc")
@@ -4826,7 +4842,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_83p4v")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_gtgww")
 
 [node name="MapSelectScreen" type="CanvasLayer" parent="." unique_id=1321304884]
-visible = false
 script = ExtResource("114_ttur7")
 
 [node name="BG" type="TextureRect" parent="MapSelectScreen" unique_id=1114887386]
@@ -4886,6 +4901,129 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_tbwbq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_1wbho")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6rbbw")
 
+[node name="Overlay" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/LawnMap" unique_id=1109056673]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("111_pmkjb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StatusLabel" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/LawnMap/Overlay" unique_id=1188687714]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -106.5
+offset_right = 93.0
+offset_bottom = -47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Lawn is lockedfor pass & play"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/LawnMap/Overlay" unique_id=548580517]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.04762
+offset_top = -6.5
+offset_right = 85.04762
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("112_4u64y")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Price" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/LawnMap/Overlay/TextureRect" unique_id=676639784]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -19.0
+offset_right = 93.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Price : "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="UnlockButton" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/LawnMap/Overlay" unique_id=1178069192]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 58.5
+offset_right = 59.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ldetl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bnlv0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5kcdf")
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/LawnMap/Overlay/UnlockButton" unique_id=1971766074]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -9.625
+offset_right = 32.0
+offset_bottom = 7.625
+grow_vertical = 2
+texture = ExtResource("114_moiof")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/LawnMap/Overlay/UnlockButton" unique_id=543356874]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -11.5
+offset_right = 34.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+text = "Unlock"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="StreetMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=1537847604]
 custom_minimum_size = Vector2(220, 400)
 layout_mode = 2
@@ -4895,6 +5033,129 @@ mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_t2fil")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_06dss")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bj8j3")
+
+[node name="Overlay" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StreetMap" unique_id=1010281543]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("111_pmkjb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StatusLabel" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StreetMap/Overlay" unique_id=155830299]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -106.5
+offset_right = 93.0
+offset_bottom = -47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Lawn is lockedfor pass & play"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StreetMap/Overlay" unique_id=1425848067]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.04762
+offset_top = -6.5
+offset_right = 85.04762
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("112_4u64y")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Price" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StreetMap/Overlay/TextureRect" unique_id=869639956]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -19.0
+offset_right = 93.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Price : "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="UnlockButton" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StreetMap/Overlay" unique_id=474535651]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 58.5
+offset_right = 59.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ldetl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bnlv0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5kcdf")
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StreetMap/Overlay/UnlockButton" unique_id=524323775]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -9.625
+offset_right = 32.0
+offset_bottom = 7.625
+grow_vertical = 2
+texture = ExtResource("114_moiof")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StreetMap/Overlay/UnlockButton" unique_id=611403181]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -11.5
+offset_right = 34.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+text = "Unlock"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StadiumMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=248956907]
 custom_minimum_size = Vector2(220, 400)
@@ -4906,6 +5167,129 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_k0r3p")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_503ab")
 theme_override_styles/hover = SubResource("StyleBoxTexture_nbuyv")
 
+[node name="Overlay" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StadiumMap" unique_id=39054748]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("111_pmkjb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StatusLabel" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StadiumMap/Overlay" unique_id=1932967155]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -106.5
+offset_right = 93.0
+offset_bottom = -47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Lawn is lockedfor pass & play"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StadiumMap/Overlay" unique_id=527620798]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.04762
+offset_top = -6.5
+offset_right = 85.04762
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("112_4u64y")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Price" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StadiumMap/Overlay/TextureRect" unique_id=2023255367]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -19.0
+offset_right = 93.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Price : "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="UnlockButton" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StadiumMap/Overlay" unique_id=1334155623]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 58.5
+offset_right = 59.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ldetl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bnlv0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5kcdf")
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StadiumMap/Overlay/UnlockButton" unique_id=383284276]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -9.625
+offset_right = 32.0
+offset_bottom = 7.625
+grow_vertical = 2
+texture = ExtResource("114_moiof")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StadiumMap/Overlay/UnlockButton" unique_id=1021274916]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -11.5
+offset_right = 34.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+text = "Unlock"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BackyardMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=1609837201]
 custom_minimum_size = Vector2(220, 400)
 layout_mode = 2
@@ -4915,6 +5299,129 @@ mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_as3ia")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fgm6c")
 theme_override_styles/hover = SubResource("StyleBoxTexture_52jo1")
+
+[node name="Overlay" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/BackyardMap" unique_id=1695960368]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("111_pmkjb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StatusLabel" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/BackyardMap/Overlay" unique_id=2002106693]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -106.5
+offset_right = 93.0
+offset_bottom = -47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Lawn is lockedfor pass & play"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/BackyardMap/Overlay" unique_id=321795205]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.04762
+offset_top = -6.5
+offset_right = 85.04762
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("112_4u64y")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Price" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/BackyardMap/Overlay/TextureRect" unique_id=195412364]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -19.0
+offset_right = 93.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Price : "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="UnlockButton" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/BackyardMap/Overlay" unique_id=119124735]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 58.5
+offset_right = 59.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ldetl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bnlv0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5kcdf")
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/BackyardMap/Overlay/UnlockButton" unique_id=581781029]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -9.625
+offset_right = 32.0
+offset_bottom = 7.625
+grow_vertical = 2
+texture = ExtResource("114_moiof")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/BackyardMap/Overlay/UnlockButton" unique_id=1039092963]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -11.5
+offset_right = 34.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+text = "Unlock"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RooftopMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=1248623913]
 custom_minimum_size = Vector2(220, 400)
@@ -4926,6 +5433,129 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_tuwk5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_r13op")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6xe2f")
 
+[node name="Overlay" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/RooftopMap" unique_id=1168719149]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("111_pmkjb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StatusLabel" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/RooftopMap/Overlay" unique_id=1093504421]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -106.5
+offset_right = 93.0
+offset_bottom = -47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Lawn is lockedfor pass & play"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/RooftopMap/Overlay" unique_id=1269084309]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.04762
+offset_top = -6.5
+offset_right = 85.04762
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("112_4u64y")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Price" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/RooftopMap/Overlay/TextureRect" unique_id=922112195]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -19.0
+offset_right = 93.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Price : "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="UnlockButton" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/RooftopMap/Overlay" unique_id=491695912]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 58.5
+offset_right = 59.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ldetl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bnlv0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5kcdf")
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/RooftopMap/Overlay/UnlockButton" unique_id=84904396]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -9.625
+offset_right = 32.0
+offset_bottom = 7.625
+grow_vertical = 2
+texture = ExtResource("114_moiof")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/RooftopMap/Overlay/UnlockButton" unique_id=2044598408]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -11.5
+offset_right = 34.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+text = "Unlock"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MetroMap" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer" unique_id=205719508]
 custom_minimum_size = Vector2(220, 400)
 layout_mode = 2
@@ -4935,6 +5565,129 @@ mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_lqqs2")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ie2bs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vaya1")
+
+[node name="Overlay" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/MetroMap" unique_id=1427678273]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("111_pmkjb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StatusLabel" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/MetroMap/Overlay" unique_id=355352007]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -106.5
+offset_right = 93.0
+offset_bottom = -47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Lawn is lockedfor pass & play"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/MetroMap/Overlay" unique_id=854649699]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.04762
+offset_top = -6.5
+offset_right = 85.04762
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("112_4u64y")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Price" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/MetroMap/Overlay/TextureRect" unique_id=298659558]
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -19.0
+offset_right = 93.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+theme_override_font_sizes/font_size = 20
+text = "Price : "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="UnlockButton" type="Button" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/MetroMap/Overlay" unique_id=1976174668]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 58.5
+offset_right = 59.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ldetl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bnlv0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5kcdf")
+
+[node name="TextureRect" type="TextureRect" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/MetroMap/Overlay/UnlockButton" unique_id=1681602843]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -9.625
+offset_right = 32.0
+offset_bottom = 7.625
+grow_vertical = 2
+texture = ExtResource("114_moiof")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/MetroMap/Overlay/UnlockButton" unique_id=401745687]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -11.5
+offset_right = 34.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("136_bxkn3")
+text = "Unlock"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SelectMap" type="TextureRect" parent="MapSelectScreen/Panel" unique_id=1261706940]
 layout_mode = 1
