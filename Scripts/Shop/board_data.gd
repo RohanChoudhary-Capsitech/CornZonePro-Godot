@@ -34,7 +34,7 @@ func setup(data: Dictionary, green: Texture2D, white: Texture2D) -> void:
 		
 	# Button state
 	if data.get("bought", false):
-		_set_button_label("Bought")
+		_set_button_label("Purchased")
 		buy_button.disabled = true
 	else:
 		_set_button_label(str(price) + " Buy" if price > 0 else "FREE")

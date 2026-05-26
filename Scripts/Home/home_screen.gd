@@ -42,11 +42,22 @@ func _on_profile_icon_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../ProfileScreen")
 	pop_animation($"../ProfileScreen/Panel")
+	_set_animation([$"../ProfileScreen/Panel/ProfileBg/ProfilePic",
+	$"../ProfileScreen/Panel/ProfileBg/UserNameBG",
+	$"../ProfileScreen/Panel/ProfileBg/PlayerCard/GamePlaySection",
+	$"../ProfileScreen/Panel/ProfileBg/PlayerCard/Achievement",
+	$"../ProfileScreen/Panel/ProfileBg/PlayerCard/Total Pots"])
 
 func _on_info_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../InfoScreen")
 	pop_animation($"../InfoScreen/Panel")
+	_set_animation([$"../InfoScreen/Panel/PanelBg/PanelText",
+	$"../InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer/Label1",
+	$"../InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer/Label2",
+	$"../InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer/Label3",
+	$"../InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer/Label4",
+	$"../InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer/Label5"])
 
 func _on_daily_reward_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -107,3 +118,27 @@ func pop_animation(node: Control):
 	tween.tween_property(node, "scale", Vector2.ONE, 0.15)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_OUT)
+
+
+func show_fade_item(node: Control, delay: float):
+	node.modulate.a = 0.0
+	node.show()
+	await get_tree().create_timer(delay).timeout
+ 
+	var tween = create_tween()
+ 
+	tween.tween_property(
+		node,
+		"modulate:a",
+		1.0,
+		0.35
+	).set_trans(Tween.TRANS_SINE)\
+	.set_ease(Tween.EASE_OUT)
+
+
+func _set_animation(nodes:Array[Node]):
+	var val = 0.0
+	var inc = 0.05
+	for node in nodes:
+		val += inc
+		show_fade_item(node, val)

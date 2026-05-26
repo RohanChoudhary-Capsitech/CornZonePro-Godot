@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ctt8ix34drhr3" path="res://Texture Or Sprites/Boards/1 569.png" id="3_aii58"]
 [ext_resource type="Texture2D" uid="uid://yy74v722fdpe" path="res://Texture Or Sprites/Shop Screen/Rectangle 357.png" id="4_42yom"]
 [ext_resource type="Texture2D" uid="uid://c8nhel4e2gwj6" path="res://Texture Or Sprites/DailyRewards/Group 183.png" id="5_34fi1"]
+[ext_resource type="Texture2D" uid="uid://d16qnrs4mqp7j" path="res://Texture Or Sprites/Shop Screen/Rectangle 454.png" id="6_hwdvy"]
 [ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="6_y6278"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qg5gt"]
@@ -15,6 +16,9 @@ texture = ExtResource("4_42yom")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cuu48"]
 texture = ExtResource("4_42yom")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aii58"]
+texture = ExtResource("6_hwdvy")
 
 [node name="BoardData" type="TextureRect" unique_id=775086764]
 custom_minimum_size = Vector2(0, 150)
@@ -40,9 +44,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -187.0
+offset_left = -189.0
 offset_top = -61.5
-offset_right = 187.0
+offset_right = 189.0
 offset_bottom = 61.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -75,12 +79,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BagBuyButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=297140912]
-custom_minimum_size = Vector2(196, 50)
+custom_minimum_size = Vector2(200, 45)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_qg5gt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cxigs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_cuu48")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_aii58")
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/BagBuyButton" unique_id=71617339]
 layout_mode = 1

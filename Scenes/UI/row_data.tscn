@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://drfwkc6y61u5g" path="res://Scripts/Home/row_data.gd" id="2_2pf5w"]
 [ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="3_2pf5w"]
 [ext_resource type="Texture2D" uid="uid://s5wsx11qb1k2" path="res://Texture Or Sprites/Leaderboard Screen/Rectangle 136.png" id="4_tpf1i"]
-[ext_resource type="Texture2D" uid="uid://clo1pi3no6404" path="res://Texture Or Sprites/Leaderboard Screen/Coin.png" id="5_tpf1i"]
+[ext_resource type="Texture2D" uid="uid://dvf7kds3bcepb" path="res://Texture Or Sprites/Leaderboard Screen/Group 258.png" id="5_tpf1i"]
 
 [node name="RowData" type="TextureRect" unique_id=1836885732]
 custom_minimum_size = Vector2(0, 30)

@@ -2575,7 +2575,6 @@ offset_bottom = 20.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
 theme_override_fonts/font = ExtResource("19_55ff8")
 theme_override_font_sizes/font_size = 13
-text = "Himanshu 1234"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -2697,7 +2696,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 13
-text = "50"
+text = "🔒"
 vertical_alignment = 1
 
 [node name="LeftPanel" type="VBoxContainer" parent="HomeScreen/Panel" unique_id=817961446]
@@ -3573,7 +3572,6 @@ offset_bottom = 20.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
 theme_override_fonts/font = ExtResource("19_55ff8")
 theme_override_font_sizes/font_size = 13
-text = "Himanshu 1234"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -3695,7 +3693,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 13
-text = "50"
+text = "🔒"
 vertical_alignment = 1
 
 [node name="PreviewArea" type="Control" parent="InventoryScreen/Panel" unique_id=505330208 node_paths=PackedStringArray("model")]
@@ -4254,6 +4252,10 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.57254905, 0.57254905, 0.57254905, 1)
+theme_override_colors/font_focus_color = Color(0.57254905, 0.57254905, 0.57254905, 1)
+theme_override_colors/font_pressed_color = Color(0.57254905, 0.57254905, 0.57254905, 1)
+theme_override_colors/font_hover_color = Color(0.57254905, 0.57254905, 0.57254905, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.57254905, 0.57254905, 0.57254905, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("FontFile_8lqci")
 theme_override_font_sizes/font_size = 12
@@ -6015,7 +6017,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("136_bxkn3")
 theme_override_font_sizes/font_size = 19
-text = "156"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

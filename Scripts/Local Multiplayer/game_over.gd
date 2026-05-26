@@ -19,6 +19,7 @@ func _score_key(base_key: String) -> String:
 	return "passplay_" + base_key
 
 func _update_results() -> void:
+	pop_animation($Control)
 	var p1_score: int = GameSession.score_p1
 	var p2_score: int = GameSession.score_p2
 
@@ -58,9 +59,22 @@ func _on_rematch_pressed() -> void:
 
 func _on_rematch_requested()->void:
 	UIManager.toggle_canvas($"../Rematch popup")
+	pop_animation($"../Rematch popup/Control")
 
 
 func _on_rematch_declined(message: String) -> void:
 	restart.disabled = false
 	$"../Rematch popup".visible = false
 	$"../WarningPanel".show_alert(message)
+	#pop_animation($"../WarningPanel/Control")
+
+func pop_animation(node: Control):
+	node.scale = Vector2.ZERO
+	node.pivot_offset = node.size / 2
+	var tween = create_tween()
+	tween.tween_property(node, "scale", Vector2(1.15, 1.15), 0.35)\
+		.set_trans(Tween.TRANS_BACK)\
+		.set_ease(Tween.EASE_OUT)
+	tween.tween_property(node, "scale", Vector2.ONE, 0.15)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_OUT)

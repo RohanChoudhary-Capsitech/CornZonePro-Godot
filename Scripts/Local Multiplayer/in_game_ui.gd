@@ -78,6 +78,7 @@ func _on_turn_changed(player: int) -> void:
 
 func _on_match_over() -> void:
 	SoundManager.play_game_over()
+	pop_animation($"../GameOver/Control")
 	_sync_total_scores()
 	if UIManager.result_screen:
 		UIManager.enable_canvas(UIManager.result_screen)
@@ -86,3 +87,15 @@ func _on_match_over() -> void:
 func _on_pause_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../PauseMenu")
+	pop_animation($"../PauseMenu/Control")
+
+func pop_animation(node: Control):
+	node.scale = Vector2.ZERO
+	node.pivot_offset = node.size / 2
+	var tween = create_tween()
+	tween.tween_property(node, "scale", Vector2(1.15, 1.15), 0.35)\
+		.set_trans(Tween.TRANS_BACK)\
+		.set_ease(Tween.EASE_OUT)
+	tween.tween_property(node, "scale", Vector2.ONE, 0.15)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_OUT)
