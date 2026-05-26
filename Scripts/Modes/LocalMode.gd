@@ -71,7 +71,7 @@ func _apply_bag_thrown() -> void:
 	GameSession.current_turn = next_turn
 	GameSession.turn_changed.emit(next_turn)
 
-# 🔴 THIS LINE IS THE FIX
+#  THIS LINE IS THE FIX
 	sync_turn.rpc(next_turn)
 
 

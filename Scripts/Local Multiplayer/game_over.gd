@@ -66,7 +66,6 @@ func _on_rematch_declined(message: String) -> void:
 	restart.disabled = false
 	$"../Rematch popup".visible = false
 	$"../WarningPanel".show_alert(message)
-	#pop_animation($"../WarningPanel/Control")
 
 func pop_animation(node: Control):
 	node.scale = Vector2.ZERO

@@ -41,6 +41,7 @@ RemoteConfiguration="*uid://cerln7aavb3il"
 StatsManager="*uid://d0wc1bcokkoto"
 Authentication="*uid://ddlraklpim8jq"
 AnimateManager="*uid://chnbo5soimd3"
+TransitionManager="*uid://bipay2e3jxs6"
 
 [display]
 

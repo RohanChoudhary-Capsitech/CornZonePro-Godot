@@ -8,5 +8,6 @@
 script = ExtResource("1_fowxf")
 item_id = "B2"
 board_name = "Horizon Shift"
+price = 1000
 icon = ExtResource("1_bh2ma")
 material_override = ExtResource("2_ou1pv")

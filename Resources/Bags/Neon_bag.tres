@@ -8,7 +8,9 @@
 script = ExtResource("2_vj60b")
 item_id = "S4"
 bag_name = "Neon"
+price = 20000
 icon = ExtResource("1_vj60b")
+rarity = 1
 throw_strength_multiplier = 0.1
 max_pitch_angle = 47.0
 material_override = ExtResource("2_4eg3t")

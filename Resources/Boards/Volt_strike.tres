@@ -8,5 +8,6 @@
 script = ExtResource("2_vgo83")
 item_id = "B6"
 board_name = "Volt Strike"
+unlocked = true
 icon = ExtResource("1_xssle")
 material_override = ExtResource("2_b2w6s")

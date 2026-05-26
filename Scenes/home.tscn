@@ -2496,6 +2496,18 @@ texture = ExtResource("16_848r5")
 expand_mode = 1
 stretch_mode = 6
 
+[node name="Notification" type="Label" parent="HomeScreen" unique_id=845040643]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.0
+offset_top = 116.0
+offset_right = 68.0
+offset_bottom = 139.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 18
+
 [node name="Panel" type="Control" parent="HomeScreen" unique_id=689472103]
 layout_mode = 3
 anchors_preset = 15
@@ -2970,7 +2982,7 @@ texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="HomeScreen/Panel/BottomPanel/Locked" unique_id=1471951552]
+[node name="LockedIcon1" type="Button" parent="HomeScreen/Panel/BottomPanel/Locked" unique_id=1471951552]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -2994,7 +3006,7 @@ texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="HomeScreen/Panel/BottomPanel/Locked2" unique_id=1079596992]
+[node name="LockedIcon2" type="Button" parent="HomeScreen/Panel/BottomPanel/Locked2" unique_id=1079596992]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -7315,8 +7327,11 @@ autowrap_mode = 2
 [connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/TimerButton" to="HomeScreen" method="_on_timer_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/PassNPlayButton" to="HomeScreen" method="_on_pass_n_play_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/LANButton" to="HomeScreen" method="_on_lan_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/RightPanel/RightPanelBG/LockedButton" to="HomeScreen" method="_on_locked_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/BottomPanel/Shop/ShopButton" to="HomeScreen" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/BottomPanel/Inventory/InventoryButton" to="HomeScreen" method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/BottomPanel/Locked/LockedIcon1" to="HomeScreen" method="_on_locked_icon_1_pressed"]
+[connection signal="pressed" from="HomeScreen/Panel/BottomPanel/Locked2/LockedIcon2" to="HomeScreen" method="_on_locked_icon_2_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/MidPanel/BagPanel/Bottom/BagBuyButton" to="ShopScreen" method="_on_bag_buy_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/MidPanel/BoardPanel/Bottom/BoardBuyButton" to="ShopScreen" method="_on_board_buy_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/BottomPanel/Inventory/InventoryButton" to="ShopScreen" method="_on_inventory_button_pressed"]

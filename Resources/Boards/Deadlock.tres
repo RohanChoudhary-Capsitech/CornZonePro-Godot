@@ -8,5 +8,6 @@
 script = ExtResource("1_6uidg")
 item_id = "B1"
 board_name = "Deadlock"
+price = 2000
 icon = ExtResource("1_kl7qv")
 material_override = ExtResource("2_ar3ts")

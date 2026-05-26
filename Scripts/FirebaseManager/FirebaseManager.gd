@@ -227,7 +227,7 @@ func _check_internet_and_sync():
 		await push_to_firestore()
 	elif not currently_online and _last_internet_status:
 
-		print("📴 Internet lost!")
+		print("Internet lost!")
 
 		_last_internet_status = false
 		is_offline_mode = true
@@ -758,7 +758,7 @@ func sync_from_cloud_if_newer():
 		PlayerData.has_loaded_data = true
 		PlayerData.save_local()
 
-		print("✅ Mobile updated from Firebase")
+		print("Mobile updated from Firebase")
 		return true
 
 	print("📱 Local data already latest")

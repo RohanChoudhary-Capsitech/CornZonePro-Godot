@@ -8,6 +8,8 @@
 script = ExtResource("3_8ha7m")
 item_id = "S2"
 bag_name = "Camouflage"
+price = 9500
 icon = ExtResource("1_xt4pg")
+rarity = 2
 material_override = ExtResource("2_r8bus")
 metadata/_custom_type_script = "uid://cs2g11q6pm16d"

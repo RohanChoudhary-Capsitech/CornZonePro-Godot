@@ -114,3 +114,15 @@ func _apply_config():
 func _update_ui():
 	profile_name.text = str(PlayerData.player_name)
 	coin_text.text = str(PlayerData.coins)
+
+
+func _on_locked_button_pressed() -> void:
+	AnimateManager.show_notification($Notification, "New Mode will coming soon", 1.5)
+
+
+func _on_locked_icon_1_pressed() -> void:
+	AnimateManager.show_notification($Notification, "New Features will coming soon", 1.5)
+
+
+func _on_locked_icon_2_pressed() -> void:
+	AnimateManager.show_notification($Notification, "New Features will coming soon", 1.5)

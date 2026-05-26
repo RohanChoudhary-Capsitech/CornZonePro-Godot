@@ -17,8 +17,8 @@ const MAP_LIST := [
 	"res://Scenes/Maps/lawn.tscn"
 ]
 
-const HOST_DEFAULT_BAG_ID := "rogue"
-const CLIENT_DEFAULT_BAG_ID := "neon"
+const HOST_DEFAULT_BAG_ID := "carmine"
+const CLIENT_DEFAULT_BAG_ID := "cobalt"
 const BAG_CONFIGS := {
 	"arctic": preload("res://Resources/Bags/Arctic_bag.tres"),
 	"camouflage": preload("res://Resources/Bags/Camouflage_bag.tres"),
@@ -34,7 +34,8 @@ const BAG_CONFIGS := {
 	"splash": preload("res://Resources/Bags/Splash_bag.tres"),
 	"stitches": preload("res://Resources/Bags/Stitches_bag.tres"),
 	"target": preload("res://Resources/Bags/Target_bag.tres"),
-	"urban": preload("res://Resources/Bags/Urban_bag.tres")
+	"urban": preload("res://Resources/Bags/Urban_bag.tres"),
+	"carmine": preload("res://Resources/Bags/Carmine_bag.tres")
 }
  
 # id for bag config
@@ -53,12 +54,12 @@ const BAG_ID_TO_KEY := {
 	"S12": "splash",
 	"S13": "stitches",
 	"S14": "target",
-	"S15": "urban"
+	"S15": "urban",
+	"S16": "carmine"
 }
  
- 
-const HOST_DEFAULT_BOARD_ID := "deadlock"
-const DEFAULT_BOARD_ID := "sunburst"
+const HOST_DEFAULT_BOARD_ID := "volt_strike"
+const DEFAULT_BOARD_ID := "volt_strike"
  
 const BOARD_CONFIGS := {
 	"deadlock": preload("res://Resources/Boards/Deadlock.tres"),

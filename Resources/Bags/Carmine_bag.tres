@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BagConfig" format=3 uid="uid://clk8m2p12usf0"]
+
+[ext_resource type="Texture2D" uid="uid://dvsm524s22bnv" path="res://Texture Or Sprites/Bags UI/Carmine.png" id="1_k6mqc"]
+[ext_resource type="Material" uid="uid://c6w2oqsnb70m8" path="res://Materials/Bags/Carmine.tres" id="2_k6mqc"]
+[ext_resource type="Script" uid="uid://cs2g11q6pm16d" path="res://Scripts/Resource Structures/BagConfig.gd" id="3_63v2m"]
+
+[resource]
+script = ExtResource("3_63v2m")
+item_id = "S16"
+bag_name = "Carmine"
+unlocked = true
+icon = ExtResource("1_k6mqc")
+material_override = ExtResource("2_k6mqc")
+metadata/_custom_type_script = "uid://cs2g11q6pm16d"

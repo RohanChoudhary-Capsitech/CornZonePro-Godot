@@ -21,10 +21,10 @@ var rank_points: int = 0
 var last_saved_timestamp: int = 0  # Unix timestamp (equivalent of lastSavedTicks)
  
 # ── Inventory ─────────────────────────────────────────────────────
-var equipped_cornbag: String = "S4"
-var equipped_board: String = "B1"
-var bags_owned: Array = ["S4","S7"]
-var boards_owned: Array = ["B1"]
+var equipped_cornbag: String = "S3"
+var equipped_board: String = "B6"
+var bags_owned: Array = ["S3","S16"]
+var boards_owned: Array = ["B6"]
  
 # ── Miscellaneous ─────────────────────────────────────────────────
 var coins: int = 0
@@ -67,10 +67,10 @@ func reset_defaults():
 	rank = ""
 	rank_points = 0
 	last_saved_timestamp = 0
-	equipped_cornbag = "S4"
-	equipped_board = "B1"
-	bags_owned = ["S4","S7"]
-	boards_owned = ["B1"]
+	equipped_cornbag = "S3"
+	equipped_board = "B6"
+	bags_owned = ["S3","S16"]
+	boards_owned = ["B6"]
 	coins = 0
 	achievements = 0
 	daily_rewards_taken = 0
@@ -320,7 +320,7 @@ func _apply_json(json_string: String) -> bool:
 	var result = JSON.parse_string(json_string)
 	if result == null:
 		return false
-	# 🔥 Apply each section separately
+	# Apply each section separately
 	if result.has("Profile"):
 		apply_dict(result["Profile"])
  
@@ -377,7 +377,7 @@ func get_or_create_device_id() -> String:
 		if device_id != "":
 			return device_id
 
-	# 🔥 Generate new unique ID (better than timestamp + randi)
+	# Generate new unique ID (better than timestamp + randi)
 	device_id = _generate_device_id()
 
 	# Save locally
@@ -390,7 +390,7 @@ func get_or_create_device_id() -> String:
 
 func _generate_device_id() -> String:
 	var base = str(Time.get_unix_time_from_system()) + "_" + str(randi()) + "_" + str(OS.get_unique_id())
-	return base.sha256_text()  # 🔥 hashed → fixed length + secure
+	return base.sha256_text()  # hashed → fixed length + secure
  
 func detect_device_type():
 	var os_name = OS.get_name()
