@@ -21,7 +21,7 @@ func _ensure_collection():
 		_col = Firebase.Firestore.collection(COLLECTION)
 
 # ─────────────────────────────────────────────────────────────
-# 🔥 SAVE / UPDATE PLAYER ENTRY
+# SAVE / UPDATE PLAYER ENTRY
 # ─────────────────────────────────────────────────────────────
 func update_entry():
 	_ensure_collection()
@@ -29,7 +29,7 @@ func update_entry():
 
 	
 # ─────────────────────────────────────────────────────────────
-# 📊 FETCH TOP PLAYERS
+# FETCH TOP PLAYERS
 # ─────────────────────────────────────────────────────────────
 func fetch_top(force_refresh: bool = false) -> Array:
 	_ensure_collection()
@@ -87,7 +87,7 @@ func fetch_top(force_refresh: bool = false) -> Array:
 	return entries
 
 # ─────────────────────────────────────────────────────────────
-# 🧠 GET CURRENT PLAYER RANK (GLOBAL)
+# GET CURRENT PLAYER RANK (GLOBAL)
 # ─────────────────────────────────────────────────────────────
 func _get_my_rank_from_entries(entries: Array) -> int:
 	if FirebaseManager.player_id == "":
@@ -148,7 +148,7 @@ func _enterDataFirebase():
 	await _col.set_doc(uid, data)
 
 # ─────────────────────────────────────────────────────────────
-# 🔽 SORTING (TIE BREAKER)
+# SORTING (TIE BREAKER)
 # ─────────────────────────────────────────────────────────────
 func _sort_entries(entries: Array):
 	entries.sort_custom(func(a, b):
@@ -168,7 +168,7 @@ func _sort_entries(entries: Array):
 	)
 
 # ─────────────────────────────────────────────────────────────
-# 🧪 DEBUG (OPTIONAL)
+# DEBUG (OPTIONAL)
 # ─────────────────────────────────────────────────────────────
 func print_leaderboard(entries: Array):
 	print("=== LEADERBOARD ===")

@@ -29,6 +29,7 @@ func _on_cross_button_pressed() -> void:
 
 func send_reward(day: int, amount: int):
 	UIManager.toggle_canvas($"../RewardScreen")
+	AnimateManager.pop_animation($"../RewardScreen/Panel")
 	reward_collect.emit({"day": day, "coin_amount": amount})
 
 func _on_day_1_button_pressed() -> void:

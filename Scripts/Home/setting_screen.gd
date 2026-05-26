@@ -46,7 +46,7 @@ func _ready() -> void:
 	
 	setting_panel.visible = true
 	is_setting_open = true
-	_set_animation([$Panel/SettingBg/SettingPanel/BG/MusicText,
+	AnimateManager.set_animation([$Panel/SettingBg/SettingPanel/BG/MusicText,
 	 $Panel/SettingBg/SettingPanel/BG/AudiioText,
 	 $Panel/SettingBg/SettingPanel/BG/Divider,
 	 $Panel/SettingBg/SettingPanel/BG/VBoxContainer/LoginWithGoogle,
@@ -57,20 +57,20 @@ func _ready() -> void:
 	if Prefs.get_bool("music", true):
 		music_on.visible = true
 		music_off.visible = false
-		show_fade_item($Panel/SettingBg/SettingPanel/BG/MusicOnButton, 0.05)
+		AnimateManager.show_fade_item($Panel/SettingBg/SettingPanel/BG/MusicOnButton, 0.05)
 	else:
 		music_on.visible = false
 		music_off.visible = true
-		show_fade_item($Panel/SettingBg/SettingPanel/BG/MusicOffButton, 0.05)
+		AnimateManager.show_fade_item($Panel/SettingBg/SettingPanel/BG/MusicOffButton, 0.05)
 	
 	if Prefs.get_bool("sound", true):
 		sound_on.visible = true
 		sound_off.visible = false
-		show_fade_item($Panel/SettingBg/SettingPanel/BG/SoundOnButton, 0.1)
+		AnimateManager.show_fade_item($Panel/SettingBg/SettingPanel/BG/SoundOnButton, 0.1)
 	else:
 		sound_on.visible = false
 		sound_off.visible = true
-		show_fade_item($Panel/SettingBg/SettingPanel/BG/SoundOffButton, 0.05)
+		AnimateManager.show_fade_item($Panel/SettingBg/SettingPanel/BG/SoundOffButton, 0.05)
 	
 
 func _on_cross_button_pressed() -> void:
@@ -123,15 +123,15 @@ func _on_settings_button_pressed() -> void:
 	godot_credit_texture.texture = godot_off
 	setting_panel.visible =  true
 	if Prefs.get_bool("music", true):
-		show_fade_item($Panel/SettingBg/SettingPanel/BG/MusicOnButton, 0.05)
+		AnimateManager.show_fade_item($Panel/SettingBg/SettingPanel/BG/MusicOnButton, 0.05)
 	else:
-		show_fade_item($Panel/SettingBg/SettingPanel/BG/MusicOffButton, 0.05)
+		AnimateManager.show_fade_item($Panel/SettingBg/SettingPanel/BG/MusicOffButton, 0.05)
 	
 	if Prefs.get_bool("sound", true):
-		show_fade_item($Panel/SettingBg/SettingPanel/BG/SoundOnButton, 0.1)
+		AnimateManager.show_fade_item($Panel/SettingBg/SettingPanel/BG/SoundOnButton, 0.1)
 	else:
-		show_fade_item($Panel/SettingBg/SettingPanel/BG/SoundOffButton, 0.05)
-	_set_animation([$Panel/SettingBg/SettingPanel/BG/MusicText,
+		AnimateManager.show_fade_item($Panel/SettingBg/SettingPanel/BG/SoundOffButton, 0.05)
+	AnimateManager.set_animation([$Panel/SettingBg/SettingPanel/BG/MusicText,
 	 $Panel/SettingBg/SettingPanel/BG/AudiioText,
 	 $Panel/SettingBg/SettingPanel/BG/Divider,
 	 $Panel/SettingBg/SettingPanel/BG/VBoxContainer/LoginWithGoogle,
@@ -157,7 +157,7 @@ func _on_socials_button_pressed() -> void:
 	more_games_texture.texture = more_games_off
 	godot_credit_texture.texture = godot_off
 	social_panel.visible = true
-	_set_animation([$Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Facebook,
+	AnimateManager.set_animation([$Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Facebook,
 	 $Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Instagram,
 	 $Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Linkedin,
 	 $Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Youtube,
@@ -180,7 +180,7 @@ func _on_more_game_panel_button_pressed() -> void:
 	socials_texture.texture = social_off
 	godot_credit_texture.texture = godot_off
 	more_games_panel.visible = true
-	_set_animation([$Panel/SettingBg/MoreGamesPanel/BG/MoreGamesButton,
+	AnimateManager.set_animation([$Panel/SettingBg/MoreGamesPanel/BG/MoreGamesButton,
 	 $Panel/SettingBg/MoreGamesPanel/BG/ScrollContainer/GamesContainer,
 	 $Panel/SettingBg/MoreGamesPanel/BG/TextureRect])
 	setting_panel.visible =  false
@@ -201,7 +201,7 @@ func _on_godot_credit_button_pressed() -> void:
 	socials_texture.texture = social_off
 	more_games_texture.texture = more_games_off
 	godot_credit_panel.visible = true
-	_set_animation([$Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer/VBoxContainer/Label1,
+	AnimateManager.set_animation([$Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer/VBoxContainer/Label1,
 	 $Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer/VBoxContainer/Label2,
 	 $Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer/VBoxContainer/Label3,
 	 $Panel/SettingBg/GodotCreditPanel/BG/ScrollContainer/VBoxContainer/Label4,
@@ -240,32 +240,3 @@ func _on_sound_off_button_pressed() -> void:
 	$Panel/SettingBg/SettingPanel/BG/SoundOffButton.visible = false
 	$Panel/SettingBg/SettingPanel/BG/SoundOnButton.visible = true
 	SoundManager.set_sfx(true)
-
-
-func show_fade_item(node: Control, delay: float):
-	# RESET ALPHA
-	node.modulate.a = 0.0
-	# MAKE VISIBLE
-	node.show()
- 
-	# WAIT
-	await get_tree().create_timer(delay).timeout
- 
-	# FADE TWEEN
-	var tween = create_tween()
- 
-	tween.tween_property(
-		node,
-		"modulate:a",
-		1.0,
-		0.35
-	).set_trans(Tween.TRANS_SINE)\
-	.set_ease(Tween.EASE_OUT)
-
-
-func _set_animation(nodes:Array[Node]):
-	var val = 0.0
-	var inc = 0.05
-	for node in nodes:
-		val += inc
-		show_fade_item(node, val)

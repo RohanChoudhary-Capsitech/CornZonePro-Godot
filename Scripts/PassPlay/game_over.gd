@@ -8,7 +8,7 @@ func _ready() -> void:
 	GameSession.turns_exhausted.connect(_update_results)
 
 func _update_results() -> void:
-	pop_animation($Control)
+	AnimateManager.pop_animation($Control)
 	var p1_score: int = GameSession.score_p1
 	var p2_score: int = GameSession.score_p2
 
@@ -29,14 +29,3 @@ func _on_home_pressed() -> void:
 func _on_restart_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.restart()
-
-func pop_animation(node: Control):
-	node.scale = Vector2.ZERO
-	node.pivot_offset = node.size / 2
-	var tween = create_tween()
-	tween.tween_property(node, "scale", Vector2(1.15, 1.15), 0.35)\
-		.set_trans(Tween.TRANS_BACK)\
-		.set_ease(Tween.EASE_OUT)
-	tween.tween_property(node, "scale", Vector2.ONE, 0.15)\
-		.set_trans(Tween.TRANS_SINE)\
-		.set_ease(Tween.EASE_OUT)

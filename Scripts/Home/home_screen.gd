@@ -31,7 +31,7 @@ func _ready() -> void:
 func _on_setting_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../SettingScreen")
-	pop_animation($"../SettingScreen/Panel")
+	AnimateManager.pop_animation($"../SettingScreen/Panel")
 
 func _on_timer_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -41,8 +41,8 @@ func _on_timer_button_pressed() -> void:
 func _on_profile_icon_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../ProfileScreen")
-	pop_animation($"../ProfileScreen/Panel")
-	_set_animation([$"../ProfileScreen/Panel/ProfileBg/ProfilePic",
+	AnimateManager.pop_animation($"../ProfileScreen/Panel")
+	AnimateManager.set_animation([$"../ProfileScreen/Panel/ProfileBg/ProfilePic",
 	$"../ProfileScreen/Panel/ProfileBg/UserNameBG",
 	$"../ProfileScreen/Panel/ProfileBg/PlayerCard/GamePlaySection",
 	$"../ProfileScreen/Panel/ProfileBg/PlayerCard/Achievement",
@@ -51,8 +51,8 @@ func _on_profile_icon_pressed() -> void:
 func _on_info_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../InfoScreen")
-	pop_animation($"../InfoScreen/Panel")
-	_set_animation([$"../InfoScreen/Panel/PanelBg/PanelText",
+	AnimateManager.pop_animation($"../InfoScreen/Panel")
+	AnimateManager.set_animation([$"../InfoScreen/Panel/PanelBg/PanelText",
 	$"../InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer/Label1",
 	$"../InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer/Label2",
 	$"../InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer/Label3",
@@ -62,6 +62,13 @@ func _on_info_button_pressed() -> void:
 func _on_daily_reward_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../DailyRewardScreen")
+	AnimateManager.set_animation([$"../DailyRewardScreen/Panel/GridContainer/Day1",
+	$"../DailyRewardScreen/Panel/GridContainer/Day2",
+	$"../DailyRewardScreen/Panel/GridContainer/Day3",
+	$"../DailyRewardScreen/Panel/GridContainer/Day4",
+	$"../DailyRewardScreen/Panel/GridContainer/Day5",
+	$"../DailyRewardScreen/Panel/GridContainer/Day6",
+	$"../DailyRewardScreen/Panel/Day7"])
 
 func _on_pass_n_play_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -72,7 +79,7 @@ func _on_lan_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	var multiplayer_screen := $"../MultiplayerScreen"
 	UIManager.toggle_canvas(multiplayer_screen)
-	pop_animation($"../MultiplayerScreen/Panel")
+	AnimateManager.pop_animation($"../MultiplayerScreen/Panel")
 	if multiplayer_screen.visible and multiplayer_screen.has_method("on_menu_opened"):
 		multiplayer_screen.on_menu_opened()
 
@@ -80,7 +87,7 @@ func _on_lan_button_pressed() -> void:
 func _on_leaderboard_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../LeaderBoardScreen")
-	pop_animation($"../LeaderBoardScreen/Panel")
+	AnimateManager.pop_animation($"../LeaderBoardScreen/Panel")
 
 func _on_shop_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -107,38 +114,3 @@ func _apply_config():
 func _update_ui():
 	profile_name.text = str(PlayerData.player_name)
 	coin_text.text = str(PlayerData.coins)
-
-func pop_animation(node: Control):
-	node.scale = Vector2.ZERO
-	node.pivot_offset = node.size / 2
-	var tween = create_tween()
-	tween.tween_property(node, "scale", Vector2(1.15, 1.15), 0.35)\
-		.set_trans(Tween.TRANS_BACK)\
-		.set_ease(Tween.EASE_OUT)
-	tween.tween_property(node, "scale", Vector2.ONE, 0.15)\
-		.set_trans(Tween.TRANS_SINE)\
-		.set_ease(Tween.EASE_OUT)
-
-
-func show_fade_item(node: Control, delay: float):
-	node.modulate.a = 0.0
-	node.show()
-	await get_tree().create_timer(delay).timeout
- 
-	var tween = create_tween()
- 
-	tween.tween_property(
-		node,
-		"modulate:a",
-		1.0,
-		0.35
-	).set_trans(Tween.TRANS_SINE)\
-	.set_ease(Tween.EASE_OUT)
-
-
-func _set_animation(nodes:Array[Node]):
-	var val = 0.0
-	var inc = 0.05
-	for node in nodes:
-		val += inc
-		show_fade_item(node, val)
