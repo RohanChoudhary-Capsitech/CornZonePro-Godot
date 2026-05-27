@@ -2,8 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://0g3uixenjvgj" path="res://3D Models/BG Scenes/Lawn(Bg 2)/Bg 2_BG 1 M_Base_color_1001.png" id="1_wy7vm"]
 [ext_resource type="Texture2D" uid="uid://clan8gmv45dhn" path="res://3D Models/BG Scenes/Lawn(Bg 2)/Bg 2_BG 1 M_Metallic_1001.png-BG 1 M_Roughness_1001.png" id="2_4ej5q"]
-[ext_resource type="Texture2D" uid="uid://csboqdbpgj553" path="res://3D Models/BG Scenes/Lawn(Bg 2)/Bg 1 1_BG 1 M_Base_color_1001.png" id="2_uaxf6"]
-[ext_resource type="Texture2D" uid="uid://cc8imoh8y4muy" path="res://3D Models/BG Scenes/Lawn(Bg 2)/BG 1 M_Normal_1001.png" id="4_4ej5q"]
+[ext_resource type="Texture2D" uid="uid://bu16a28fidlqr" path="res://3D Models/BG Scenes/Lawn(Bg 2)/Bg 2_BG 1 M_Normal_1001.png" id="3_uaxf6"]
 
 [resource]
 resource_name = "BG 1 M"
@@ -14,7 +13,5 @@ metallic_texture = ExtResource("2_4ej5q")
 metallic_texture_channel = 2
 roughness_texture = ExtResource("2_4ej5q")
 roughness_texture_channel = 1
-emission_enabled = true
-emission_texture = ExtResource("2_uaxf6")
 normal_enabled = true
-normal_texture = ExtResource("4_4ej5q")
+normal_texture = ExtResource("3_uaxf6")

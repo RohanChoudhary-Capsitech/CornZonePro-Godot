@@ -1,5 +1,6 @@
 extends Node
 
+var current_pots:int=0
 
 
 func on_ball_entered(body: Node3D) -> void:
@@ -18,10 +19,16 @@ func on_ball_entered(body: Node3D) -> void:
 
 func on_score() -> void:
 	DataManager.add_coins(5)
+	current_pots+=1
+	print(current_pots," shot")
+	if current_pots>3:
+		GameSession.wind_control(1)
+
 
 func on_match_end() -> void:
 	# DataManager.add_coins(GameSession.score_p1 * 2)
 	_save_scores()
+	# print(current_pots,"itna h player k")
 
 func _save_scores() -> void:
 	var pot: int = GameSession.score_p1

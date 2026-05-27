@@ -14,6 +14,7 @@ signal pots_update
 signal match_played
 signal projectile_preview_changed(active: bool)
 signal turns_exhausted
+signal activate_wind
 signal turn_changed(player: int)
 signal bag_result_recorded(player: int, points: int)
 signal bag_result_changed(player: int, index: int, points: int)
@@ -33,6 +34,11 @@ var time_left: float = 20.0
 var projectile_preview_until_msec: int = 0
 var p1_bag_results: Array = []
 var p2_bag_results: Array = []
+
+func wind_control(value:int)->void:
+	if 1== value:
+		activate_wind.emit()
+		print("chala ")
 
 
 func is_network_mode() -> bool:

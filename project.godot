@@ -40,8 +40,8 @@ CatalogManager="*uid://3o1cjjsu8rm6"
 RemoteConfiguration="*uid://cerln7aavb3il"
 StatsManager="*uid://d0wc1bcokkoto"
 Authentication="*uid://ddlraklpim8jq"
-AnimateManager="*uid://chnbo5soimd3"
 TransitionManager="*uid://bipay2e3jxs6"
+AnimateManager="*uid://chnbo5soimd3"
 
 [display]
 

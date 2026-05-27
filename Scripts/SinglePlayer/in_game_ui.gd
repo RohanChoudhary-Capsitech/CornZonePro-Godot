@@ -1,9 +1,11 @@
 extends CanvasLayer
 
 @onready var timer_slider := $Slider/TimerSlider as MatchTimerSlider
+const wind = preload("res://Scenes/Animations/wind_animation.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameSession.activate_wind.connect(show_wind)
 	DataManager.coins_changed.connect(update_ui)
 	update_ui()
 
@@ -19,6 +21,8 @@ func _on_add_timer_pressed() -> void:
 	else:
 		print("Not neough coins")
 
+func show_wind()->void:
+	wind.instantiate()
 
 func _on_show_projectile_pressed() -> void:
 	var possible:bool=await  DataManager.spend_coins(30)
