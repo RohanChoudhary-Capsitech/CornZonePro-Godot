@@ -29,7 +29,11 @@ func load_board_data():
 		push_error("Invalid catalog format")
 		return
 
-	for item in result["items"]:
+	var items = result["items"]
+	items.sort_custom(func(a,b):
+		return a.get("price", 0) < b.get("price", 0)
+	)
+	for item in items:
 		if item.get("type", "") != "Boards":
 			continue
 

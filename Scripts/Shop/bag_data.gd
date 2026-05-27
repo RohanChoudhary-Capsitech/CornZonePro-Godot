@@ -7,7 +7,7 @@ extends TextureRect
 @onready var coin_icon = $BagBuyButton/TextureRect
 # @onready var bag_name_text = $HBoxContainer/Name
 
-const RARITY_NAMES = ["Standard", "Rare", "Epic", "Legendary"]
+const RARITY_NAMES = ["Standard", "Epic", "Rare", "Legendary"]
 const MAX_SWIPE_DIST   = 50.0
 const MAX_VERTICAL     = 4.0
 
