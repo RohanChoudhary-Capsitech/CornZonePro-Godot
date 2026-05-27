@@ -47,6 +47,11 @@ func _swap_scene(path:String)->void:
 	_swap_scene_packed(packed,path)
 
 func _swap_scene_packed(packed:PackedScene,path:String="")->void:
+	if get_node_or_null("/root/TransitionLayer") != null:
+		await TransitionLayer.fade_out()
+	elif has_node("TransitionLayer"):
+		await $TransitionManager.fade_out()
+	
 	var previous_scene := _current_scene
 	var previous_path := _current_path
 
@@ -71,6 +76,13 @@ func _swap_scene_packed(packed:PackedScene,path:String="")->void:
 	print("[SceneManager] Scene changed: ", path)
 	print_memory()
 	scene_changed.emit(path)
+	
+	if get_node_or_null("/root/TransitionLayer") != null:
+		await TransitionLayer.fade_in()
+		print("fade ho rha hai")
+	elif has_node("TransitionLayer"):
+		await $TransitionManager.fade_in()
+		print("fade nhi ho rha hai")
 
 #--PRELOAD-------------------------
 func preload_scene(path:String)->void:
