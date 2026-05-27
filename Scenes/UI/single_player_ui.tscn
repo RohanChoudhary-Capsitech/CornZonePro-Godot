@@ -4,15 +4,17 @@
 [ext_resource type="Script" uid="uid://3pggsby7gmny" path="res://Scripts/SinglePlayer/in_game_ui.gd" id="2_alutp"]
 [ext_resource type="Texture2D" uid="uid://btculmbe0q8g1" path="res://Texture Or Sprites/SinglePlayer/InGameBlackBg.png" id="3_parwe"]
 [ext_resource type="Texture2D" uid="uid://dp300l6x0itc6" path="res://Texture Or Sprites/SinglePlayer/NoWind.png" id="4_ofndc"]
+[ext_resource type="Texture2D" uid="uid://f1mllhi6xluc" path="res://Texture Or Sprites/SinglePlayer/Group 637 (1).png" id="5_ofndc"]
 [ext_resource type="Texture2D" uid="uid://cdm0hrbr0ff5" path="res://Texture Or Sprites/SinglePlayer/Button BG.png" id="5_oh4au"]
 [ext_resource type="Texture2D" uid="uid://crnc1sm38481a" path="res://Texture Or Sprites/SinglePlayer/coin.png" id="6_mydpy"]
 [ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="7_fbptx"]
 [ext_resource type="Texture2D" uid="uid://canberf3sh7ro" path="res://Texture Or Sprites/SinglePlayer/AddTimer.png" id="8_2gfs6"]
 [ext_resource type="Texture2D" uid="uid://ncvk0n3uqptg" path="res://Texture Or Sprites/SinglePlayer/ShowProjectile.png" id="9_37jix"]
-[ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="10_3lfi4"]
+[ext_resource type="Texture2D" uid="uid://dcvrn8vpg34e8" path="res://Texture Or Sprites/SinglePlayer/Group 309.png" id="10_parwe"]
 [ext_resource type="Texture2D" uid="uid://cdug7sre63vt5" path="res://Texture Or Sprites/SinglePlayer/SingleTimer.png" id="11_ivw3v"]
+[ext_resource type="Texture2D" uid="uid://c4edp1t65doeq" path="res://Texture Or Sprites/SinglePlayer/Group 637 (2).png" id="11_oh4au"]
 [ext_resource type="Script" uid="uid://r8egelqwvacm" path="res://Scripts/timer_slider.gd" id="12_3uy7w"]
-[ext_resource type="Resource" uid="uid://ckobu3v1aeo" path="res://Resources/Maps/street.tres" id="13_5mb7j"]
+[ext_resource type="Resource" uid="uid://6ntvcftj5ca5" path="res://Resources/Maps/street.tres" id="13_5mb7j"]
 [ext_resource type="Texture2D" uid="uid://8njfj1mnt6bv" path="res://Texture Or Sprites/SinglePlayer/TimerClock.png" id="14_47w8h"]
 [ext_resource type="Texture2D" uid="uid://bcf3cmwpvp2mu" path="res://Texture Or Sprites/SinglePlayer/coins.png" id="15_52utu"]
 [ext_resource type="PackedScene" uid="uid://ccb3frw5tmq4t" path="res://Scenes/Animations/wind_animation.tscn" id="16_alutp"]
@@ -32,8 +34,8 @@ texture = ExtResource("4_ofndc")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_luw2b"]
 texture = ExtResource("4_ofndc")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bctio"]
-bg_color = Color(0, 0, 0, 0.7058824)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mydpy"]
+texture = ExtResource("5_ofndc")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bxwey"]
 texture = ExtResource("8_2gfs6")
@@ -53,17 +55,20 @@ texture = ExtResource("9_37jix")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywqqe"]
 texture = ExtResource("9_37jix")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbdad"]
-bg_color = Color(0, 0, 0, 0.7058824)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbptx"]
+texture = ExtResource("11_oh4au")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbdad"]
-texture = ExtResource("10_3lfi4")
+texture = ExtResource("10_parwe")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qr72"]
-texture = ExtResource("10_3lfi4")
+texture = ExtResource("10_parwe")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bn77"]
-texture = ExtResource("10_3lfi4")
+texture = ExtResource("10_parwe")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1locx"]
 texture = ExtResource("19_erx2j")
@@ -121,7 +126,7 @@ grow_horizontal = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_nrnkq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bctio")
 theme_override_styles/hover = SubResource("StyleBoxTexture_luw2b")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_bctio")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_mydpy")
 
 [node name="Button BG" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/NoWind" unique_id=1999188942]
 layout_mode = 1
@@ -261,7 +266,7 @@ grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_3jtxs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_k32e6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ywqqe")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_fbdad")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_fbptx")
 
 [node name="TextureRect" type="TextureRect" parent="InGame UI/PowerUp Panel/PowerUp Panel BG/ShowProjectile" unique_id=1568561768]
 layout_mode = 1
@@ -321,11 +326,12 @@ vertical_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -54.0
-offset_top = 69.0
-offset_right = -20.0
-offset_bottom = 109.0
+offset_left = -60.0
+offset_top = 50.0
+offset_right = -26.0
+offset_bottom = 90.0
 grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_fbdad")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3qr72")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7bn77")
@@ -336,9 +342,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -150.0
-offset_top = 75.0
+offset_top = 101.0
 offset_right = 150.0
-offset_bottom = 117.0
+offset_bottom = 136.0
 grow_horizontal = 2
 
 [node name="TimerSlider" type="TextureProgressBar" parent="InGame UI/Slider" unique_id=733454383]
@@ -364,18 +370,20 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -22.5
-offset_right = 45.403587
-offset_bottom = 22.5
+offset_left = -3.0
+offset_top = -19.5
+offset_right = 38.0
+offset_bottom = 21.135555
 grow_vertical = 2
 texture = ExtResource("14_47w8h")
-expand_mode = 3
+expand_mode = 5
 stretch_mode = 4
 
 [node name="Coins" type="TextureRect" parent="InGame UI" unique_id=1695119757]
-offset_top = 46.0
-offset_right = 108.0
-offset_bottom = 76.0
+offset_left = 20.0
+offset_top = 55.0
+offset_right = 128.0
+offset_bottom = 85.0
 texture = ExtResource("15_52utu")
 expand_mode = 3
 stretch_mode = 4
@@ -675,10 +683,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = 4.0
-offset_right = 160.40906
-offset_bottom = 70.5
+offset_left = -132.5
+offset_top = 16.5
+offset_right = 132.5
+offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -699,10 +707,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -160.20453
-offset_top = 101.75
-offset_right = 160.20453
-offset_bottom = 168.25
+offset_left = -132.5
+offset_top = 101.5
+offset_right = 132.5
+offset_bottom = 156.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -740,8 +748,8 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_8jfpn")
 action_mode = 0
 text = "Share"
 
-[connection signal="pressed" from="InGame UI/PowerUp Panel/PowerUp Panel BG/AddTimer" to="InGame UI" method="_on_add_timer_pressed"]
 [connection signal="pressed" from="InGame UI/PowerUp Panel/PowerUp Panel BG/NoWind" to="InGame UI" method="_on_no_wind_pressed"]
+[connection signal="pressed" from="InGame UI/PowerUp Panel/PowerUp Panel BG/AddTimer" to="InGame UI" method="_on_add_timer_pressed"]
 [connection signal="pressed" from="InGame UI/PowerUp Panel/PowerUp Panel BG/ShowProjectile" to="InGame UI" method="_on_show_projectile_pressed"]
 [connection signal="pressed" from="InGame UI/Pause Button" to="PauseMenu" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Control/PausePanel BG/Home" to="PauseMenu" method="_on_home_pressed"]

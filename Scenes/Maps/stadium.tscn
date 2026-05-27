@@ -97,7 +97,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
 shape = SubResource("BoxShape3D_jltii")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1716390831]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.291, 17.12)
+transform = Transform3D(1, 0, 0, 0, 0.9167745, 0.3994052, 0, -0.3994052, 0.9167745, 0, -1.1060139, 17.12)
 material_override = SubResource("StandardMaterial3D_8syye")
 mesh = SubResource("QuadMesh_4lg7g")
 

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://chw5mq1yrv5n1"]
 
 [ext_resource type="Script" uid="uid://i3bhkuso6b1g" path="res://Scripts/Local Multiplayer/local_multiplayer_ui.gd" id="1_44ejo"]
-[ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="1_oeynd"]
 [ext_resource type="Texture2D" uid="uid://mtx40gu2p1hh" path="res://Texture Or Sprites/Multiplayer/ScoreBoard.png" id="2_nfuvo"]
 [ext_resource type="Script" uid="uid://ddttat4wpmia" path="res://Scripts/Local Multiplayer/in_game_ui.gd" id="2_p0jib"]
+[ext_resource type="Texture2D" uid="uid://dcvrn8vpg34e8" path="res://Texture Or Sprites/SinglePlayer/Group 309.png" id="3_6kel6"]
 [ext_resource type="Texture2D" uid="uid://dvf1tnqw6o70h" path="res://Texture Or Sprites/Multiplayer/player1 score.png" id="3_kvliv"]
 [ext_resource type="Texture2D" uid="uid://dh6vyiwxacav2" path="res://Texture Or Sprites/Multiplayer/pointerbox.png" id="4_txe7k"]
 [ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="5_hlcc8"]
@@ -23,13 +23,16 @@
 [ext_resource type="Script" uid="uid://owqqak1qhuqh" path="res://Scripts/Local Multiplayer/rematch_popup.gd" id="19_edp0u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbdad"]
-texture = ExtResource("1_oeynd")
+texture = ExtResource("3_6kel6")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qr72"]
-texture = ExtResource("1_oeynd")
+texture = ExtResource("3_6kel6")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bn77"]
-texture = ExtResource("1_oeynd")
+texture = ExtResource("3_6kel6")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1locx"]
 texture = ExtResource("9_q3ai2")

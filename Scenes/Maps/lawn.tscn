@@ -47,6 +47,7 @@ size = Vector3(2, 1, 50)
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_vo65v"]
 albedo_texture = ExtResource("6_qhomv")
+albedo_texture_force_srgb = true
 emission_enabled = true
 emission_energy_multiplier = 0.65
 emission_texture = ExtResource("6_qhomv")
@@ -140,7 +141,7 @@ mesh = SubResource("BoxMesh_qhomv")
 shape = SubResource("BoxShape3D_qhomv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=166954310]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.254343, -15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.886364, -20.65626, -15)
 material_override = SubResource("ORMMaterial3D_vo65v")
 mesh = SubResource("QuadMesh_ty46g")
 

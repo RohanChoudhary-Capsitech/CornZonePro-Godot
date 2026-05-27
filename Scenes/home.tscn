@@ -52,8 +52,8 @@
 [ext_resource type="Texture2D" uid="uid://dtyqe8slqicdl" path="res://Texture Or Sprites/Shop Screen/Rectangle a.png" id="45_qeivk"]
 [ext_resource type="Texture2D" uid="uid://hg2rfu4eple4" path="res://Texture Or Sprites/Shop Screen/homeicon.png" id="45_rdxgg"]
 [ext_resource type="Texture2D" uid="uid://scwcx3w0wn7h" path="res://Texture Or Sprites/Shop Screen/bags.png" id="45_stdfk"]
-[ext_resource type="Texture2D" uid="uid://b1oonxfycxe2h" path="res://Texture Or Sprites/Setting Screen/on.png" id="45_sxluj"]
-[ext_resource type="Texture2D" uid="uid://cnpebfalm5426" path="res://Texture Or Sprites/Setting Screen/off.png" id="46_d3n2e"]
+[ext_resource type="Texture2D" uid="uid://dt5pi22lgmjwd" path="res://Texture Or Sprites/Setting Screen/on.png" id="45_sxluj"]
+[ext_resource type="Texture2D" uid="uid://cm0dvidpg4dky" path="res://Texture Or Sprites/Setting Screen/off.png" id="46_d3n2e"]
 [ext_resource type="Texture2D" uid="uid://dy0nduu3w1fnv" path="res://Texture Or Sprites/Shop Screen/Rectangle 94.png" id="46_o3vp4"]
 [ext_resource type="Texture2D" uid="uid://dtdwb8exx5n7c" path="res://Texture Or Sprites/Shop Screen/Group 563.png" id="46_te4e6"]
 [ext_resource type="Script" uid="uid://blp7na1jmy62s" path="res://Scripts/Home/scroll_container.gd" id="48_q0rbp"]
@@ -156,7 +156,6 @@
 [ext_resource type="Texture2D" uid="uid://hrnu0frmtchn" path="res://Texture Or Sprites/MapsBG/Street.png" id="149_meccc"]
 [ext_resource type="Texture2D" uid="uid://d4rut3ibrag7" path="res://Texture Or Sprites/MapsBG/Rooftop.png" id="152_meccc"]
 [ext_resource type="Texture2D" uid="uid://dqcaig6nvmj" path="res://Texture Or Sprites/MapsBG/SelectMap.png" id="154_44nip"]
-[ext_resource type="FontFile" uid="uid://bd1ufqcf784jg" path="res://Fonts/Poppins-SemiBoldItalic.ttf" id="163_74adv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0rbp"]
 
@@ -203,12 +202,15 @@ texture = ExtResource("16_gsbml")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jv2cb"]
 texture = ExtResource("19_kx4oe")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62iqh"]
 texture = ExtResource("19_kx4oe")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aoomy"]
 texture = ExtResource("19_kx4oe")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_453j7"]
 
@@ -2182,8 +2184,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource("2_dwsb2")
 expand_mode = 4
+stretch_mode = 6
 
 [node name="LoadPanel" type="Control" parent="LoadingScreen" unique_id=1411730518]
 layout_mode = 3
@@ -2235,6 +2240,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LoginScreen" type="CanvasLayer" parent="." unique_id=1588224233]
+visible = false
 script = ExtResource("9_cmu2r")
 
 [node name="BG" type="TextureRect" parent="LoginScreen" unique_id=635102092]
@@ -2496,18 +2502,6 @@ texture = ExtResource("16_848r5")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Notification" type="Label" parent="HomeScreen" unique_id=845040643]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -84.0
-offset_top = 116.0
-offset_right = 68.0
-offset_bottom = 139.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("7_vkfas")
-theme_override_font_sizes/font_size = 18
-
 [node name="Panel" type="Control" parent="HomeScreen" unique_id=689472103]
 layout_mode = 3
 anchors_preset = 15
@@ -2592,9 +2586,9 @@ vertical_alignment = 1
 
 [node name="Badge" type="TextureRect" parent="HomeScreen/Panel/Profile" unique_id=1560160933]
 layout_mode = 0
-offset_left = 51.0
+offset_left = 50.0
 offset_top = 22.0
-offset_right = 59.089172
+offset_right = 58.089172
 offset_bottom = 32.0
 texture = ExtResource("20_uctue")
 expand_mode = 3
@@ -2609,7 +2603,7 @@ offset_bottom = 34.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
 theme_override_fonts/font = ExtResource("20_ao7do")
 theme_override_font_sizes/font_size = 11
-text = "Bronze"
+text = "Unranked"
 
 [node name="TopPanel" type="HBoxContainer" parent="HomeScreen/Panel" unique_id=472766109]
 custom_minimum_size = Vector2(0, 10)
@@ -2665,7 +2659,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 13
-text = "2357"
+text = "0"
 vertical_alignment = 1
 autowrap_mode = 3
 
@@ -2698,17 +2692,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -9.0
-offset_right = 50.0
-offset_bottom = 9.5
+offset_left = -39.5
+offset_top = -10.0
+offset_right = 44.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 13
-text = "🔒"
+text = "Soon..."
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LeftPanel" type="VBoxContainer" parent="HomeScreen/Panel" unique_id=817961446]
@@ -3023,6 +3018,21 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_qi751")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0htr1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_44eka")
 
+[node name="Notification" type="Label" parent="HomeScreen" unique_id=845040643]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.36800003
+anchor_right = 0.5
+anchor_bottom = 0.36800003
+offset_left = -76.0
+offset_top = -19.460022
+offset_right = 76.0
+offset_bottom = 3.539978
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 18
+
 [node name="ShopScreen" type="CanvasLayer" parent="." unique_id=1113232569]
 visible = false
 script = ExtResource("41_xfm00")
@@ -3063,12 +3073,12 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 26.0
-offset_top = 112.0
+offset_top = 109.0
 offset_right = -24.0
-offset_bottom = -108.0
+offset_bottom = -103.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 70
+theme_override_constants/separation = 68
 alignment = 1
 
 [node name="BagPanel" type="TextureRect" parent="ShopScreen/Panel/MidPanel" unique_id=1344024291]
@@ -3408,13 +3418,15 @@ grow_vertical = 2
 
 [node name="BagCrossButton" type="Button" parent="ShopScreen/Panel/BagsPanel" unique_id=465299273]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = -1
 anchor_left = 1.0
+anchor_top = 0.022000002
 anchor_right = 1.0
-offset_left = -61.0
-offset_top = -4.0
-offset_right = -31.0
-offset_bottom = 26.0
+anchor_bottom = 0.022000002
+offset_left = -64.0
+offset_top = -62.0
+offset_right = -29.0
+offset_bottom = -27.0
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_pmkjb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qfixt")
@@ -3456,13 +3468,13 @@ grow_vertical = 2
 
 [node name="BoardCrossButton" type="Button" parent="ShopScreen/Panel/BoardsPanel" unique_id=1911548775]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -61.0
-offset_top = 1.0
-offset_right = -31.0
-offset_bottom = 31.0
+offset_left = -64.0
+offset_top = -45.0
+offset_right = -29.0
+offset_bottom = -10.0
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_pmkjb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qfixt")
@@ -3606,7 +3618,7 @@ offset_bottom = 34.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
 theme_override_fonts/font = ExtResource("20_ao7do")
 theme_override_font_sizes/font_size = 11
-text = "Bronze"
+text = "Unranked"
 
 [node name="TopPanel" type="HBoxContainer" parent="InventoryScreen/Panel" unique_id=1344382898]
 custom_minimum_size = Vector2(0, 10)
@@ -3705,7 +3717,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 13
-text = "🔒"
+text = "Soon..."
 vertical_alignment = 1
 
 [node name="PreviewArea" type="Control" parent="InventoryScreen/Panel" unique_id=505330208 node_paths=PackedStringArray("model")]
@@ -3985,6 +3997,21 @@ texture = ExtResource("9_cykap")
 expand_mode = 1
 stretch_mode = 6
 
+[node name="CrossButton" type="Button" parent="SettingScreen" unique_id=489184082]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.048
+anchor_right = 1.0
+anchor_bottom = 0.048
+offset_left = -62.0
+offset_top = 29.439999
+offset_right = -27.0
+offset_bottom = 64.44
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_0g73e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3fp5a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_um175")
+
 [node name="Panel" type="Control" parent="SettingScreen" unique_id=2031224292]
 layout_mode = 3
 anchors_preset = 8
@@ -3998,20 +4025,6 @@ offset_right = 175.0
 offset_bottom = 218.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="CrossButton" type="Button" parent="SettingScreen/Panel" unique_id=489184082]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -26.5
-offset_top = -84.0
-offset_right = 10.5
-offset_bottom = -48.0
-grow_horizontal = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_0g73e")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_3fp5a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_um175")
 
 [node name="SettingBg" type="TextureRect" parent="SettingScreen/Panel" unique_id=1243536937]
 layout_mode = 1
@@ -4078,19 +4091,20 @@ text = "Audio"
 [node name="MusicOnButton" type="Button" parent="SettingScreen/Panel/SettingBg/SettingPanel/BG" unique_id=2079967415]
 layout_mode = 0
 offset_left = 160.0
-offset_top = 40.0
+offset_top = 35.0
 offset_right = 282.0
-offset_bottom = 61.0
+offset_bottom = 63.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_b16xs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5id56")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xdufu")
 
 [node name="MusicOffButton" type="Button" parent="SettingScreen/Panel/SettingBg/SettingPanel/BG" unique_id=592955231]
+visible = false
 layout_mode = 0
 offset_left = 160.0
-offset_top = 40.0
+offset_top = 35.0
 offset_right = 282.0
-offset_bottom = 61.0
+offset_bottom = 63.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_8lqci")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fa687")
 theme_override_styles/hover = SubResource("StyleBoxTexture_4ssmp")
@@ -4098,19 +4112,20 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_4ssmp")
 [node name="SoundOnButton" type="Button" parent="SettingScreen/Panel/SettingBg/SettingPanel/BG" unique_id=2032925972]
 layout_mode = 0
 offset_left = 160.0
-offset_top = 100.0
+offset_top = 96.0
 offset_right = 282.0
-offset_bottom = 121.0
+offset_bottom = 124.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_b16xs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5id56")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xdufu")
 
 [node name="SoundOffButton" type="Button" parent="SettingScreen/Panel/SettingBg/SettingPanel/BG" unique_id=1555426933]
+visible = false
 layout_mode = 0
 offset_left = 160.0
-offset_top = 100.0
+offset_top = 96.0
 offset_right = 282.0
-offset_bottom = 121.0
+offset_bottom = 124.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_8lqci")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fa687")
 theme_override_styles/hover = SubResource("StyleBoxTexture_4ssmp")
@@ -5708,14 +5723,15 @@ vertical_alignment = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.18900001
+anchor_top = 0.28800002
 anchor_right = 0.5
-anchor_bottom = 0.18900001
-offset_left = -243.2969
-offset_top = -69.08
-offset_right = 243.2969
-offset_bottom = -33.08
+anchor_bottom = 0.28800002
+offset_left = -211.19522
+offset_top = -118.860016
+offset_right = 211.19522
+offset_bottom = -73.860016
 grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("154_44nip")
 expand_mode = 3
 stretch_mode = 5
@@ -5726,11 +5742,11 @@ anchors_preset = -1
 anchor_left = 1.0
 anchor_top = 0.049000002
 anchor_right = 1.0
-anchor_bottom = 0.049000002
-offset_left = -63.0
-offset_top = 29.719997
-offset_right = -23.0
-offset_bottom = 69.72
+anchor_bottom = 0.05
+offset_left = -62.0
+offset_top = 28.719997
+offset_right = -27.0
+offset_bottom = 63.0
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_4u64y")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_i6hta")
@@ -6264,12 +6280,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 15
 
-[node name="Label1" type="Label" parent="InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer" unique_id=2010524505]
+[node name="Label1" type="RichTextLabel" parent="InfoScreen/Panel/PanelBg/ScrollContainer/VBoxContainer" unique_id=309006818]
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("163_74adv")
-theme_override_font_sizes/font_size = 18
-text = "About Us"
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("136_bxkn3")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[u]About Us[/u]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -6341,16 +6359,15 @@ grow_vertical = 2
 [node name="CrossButton" type="Button" parent="DailyRewardScreen/Panel" unique_id=1333463656]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.4
-anchor_right = 0.5
-anchor_bottom = 0.4
-offset_left = 144.0
-offset_top = -199.0
-offset_right = 182.0
-offset_bottom = -161.0
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 1.0
+anchor_top = 0.044000003
+anchor_right = 1.0
+anchor_bottom = 0.044000003
+offset_left = -64.0
+offset_top = 32.32
+offset_right = -34.0
+offset_bottom = 62.32
+grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_36lgj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_meagp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_smodv")
@@ -7342,7 +7359,7 @@ autowrap_mode = 2
 [connection signal="pressed" from="InventoryScreen/Panel/Profile/Profile Icon" to="HomeScreen" method="_on_profile_icon_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Shop/ShopButton" to="InventoryScreen" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Play/PlayButton" to="InventoryScreen" method="_on_play_button_pressed"]
-[connection signal="pressed" from="SettingScreen/Panel/CrossButton" to="SettingScreen" method="_on_cross_button_pressed"]
+[connection signal="pressed" from="SettingScreen/CrossButton" to="SettingScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/MusicOnButton" to="SettingScreen" method="_on_music_on_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/MusicOffButton" to="SettingScreen" method="_on_music_off_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/SoundOnButton" to="SettingScreen" method="_on_sound_on_button_pressed"]

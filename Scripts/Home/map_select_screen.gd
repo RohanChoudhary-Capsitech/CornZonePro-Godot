@@ -167,64 +167,6 @@ func _get_map_tooltip(config: MapConfig) -> String:
 
 	return config.get_unavailable_reason(GameSession.selected_mode)
 
-#
-#func _build_lock_overlay(entry: Dictionary) -> Dictionary:
-	#var button: Button = entry["button"]
-	#var config: MapConfig = entry["config"]
-#
-	#var overlay := ColorRect.new()
-	#overlay.name = "%sLockOverlay" % button.name
-	#overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	#overlay.color = OVERLAY_COLOR
-	#overlay.visible = false
-	#overlay.mouse_filter = Control.MOUSE_FILTER_STOP
-#
-	#var layout := VBoxContainer.new()
-	#layout.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	#layout.alignment = BoxContainer.ALIGNMENT_CENTER
-	#layout.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	#layout.add_theme_constant_override("separation", 12)
-#
-	#var top_spacer := Control.new()
-	#top_spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	#layout.add_child(top_spacer)
-#
-	#var status_label := Label.new()
-	#status_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	#status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	#status_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	#status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	#status_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	#status_label.add_theme_color_override("font_color", Color.WHITE)
-	#layout.add_child(status_label)
-#
-	#var price_label := Label.new()
-	#price_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	#price_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	#price_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	#price_label.add_theme_color_override("font_color", Color(1.0, 0.9, 0.35, 1.0))
-	#layout.add_child(price_label)
-#
-	#var unlock_button := Button.new()
-	#unlock_button.custom_minimum_size = Vector2(120.0, 42.0)
-	#unlock_button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-	#unlock_button.text = "Unlock"
-	#unlock_button.pressed.connect(_on_unlock_button_pressed.bind(config))
-	#layout.add_child(unlock_button)
-#
-	#var bottom_spacer := Control.new()
-	#bottom_spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	#layout.add_child(bottom_spacer)
-#
-	#overlay.add_child(layout)
-	#button.add_child(overlay)
-#
-	#entry["overlay"] = overlay
-	#entry["status_label"] = status_label
-	#entry["price_label"] = price_label
-	#entry["unlock_button"] = unlock_button
-	#return entry
-
 
 func _on_unlock_button_pressed(config: MapConfig) -> void:
 	SoundManager.play_button_clicks()

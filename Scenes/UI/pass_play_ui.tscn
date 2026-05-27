@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://btk0fiq4exnxk" path="res://Scripts/PassPlay/pass_play_ui.gd" id="1_golj3"]
 [ext_resource type="Script" uid="uid://dxlrr57wc0htr" path="res://Scripts/PassPlay/in_game_ui.gd" id="1_jk3gn"]
-[ext_resource type="Texture2D" uid="uid://cbxojcj7p3g0q" path="res://Texture Or Sprites/SinglePlayer/Pause Button.png" id="1_ted4b"]
 [ext_resource type="Texture2D" uid="uid://mtx40gu2p1hh" path="res://Texture Or Sprites/Multiplayer/ScoreBoard.png" id="2_jk3gn"]
+[ext_resource type="Texture2D" uid="uid://dcvrn8vpg34e8" path="res://Texture Or Sprites/SinglePlayer/Group 309.png" id="3_2xlup"]
 [ext_resource type="Texture2D" uid="uid://dvf1tnqw6o70h" path="res://Texture Or Sprites/Multiplayer/player1 score.png" id="3_golj3"]
 [ext_resource type="Texture2D" uid="uid://dh6vyiwxacav2" path="res://Texture Or Sprites/Multiplayer/pointerbox.png" id="4_t1nm0"]
 [ext_resource type="FontFile" uid="uid://k1fhn3g4drkk" path="res://Fonts/Qiproko Trial Extended.ttf" id="5_j2kp1"]
@@ -18,13 +18,16 @@
 [ext_resource type="Script" uid="uid://d0kaspfe4voos" path="res://Scripts/PassPlay/game_over.gd" id="11_ltabj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbdad"]
-texture = ExtResource("1_ted4b")
+texture = ExtResource("3_2xlup")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qr72"]
-texture = ExtResource("1_ted4b")
+texture = ExtResource("3_2xlup")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bn77"]
-texture = ExtResource("1_ted4b")
+texture = ExtResource("3_2xlup")
+modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1locx"]
 texture = ExtResource("9_ae0ph")

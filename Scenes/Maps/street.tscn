@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_fbdad"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_3qr72"]
 [ext_resource type="PackedScene" uid="uid://b3vy6ody5vijx" path="res://3D Models/BG Scenes/Street(Bg 3)/Bg 3.glb" id="4_x6xx7"]
+[ext_resource type="Texture2D" uid="uid://fp0g2air42gq" path="res://Texture Or Sprites/MapsBack/streetbg.png" id="6_s6ylb"]
+[ext_resource type="PackedScene" uid="uid://dndicbdxt0jgj" path="res://3D Models/Environment/street asset.glb" id="7_m70vr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_s6ylb"]
 panorama = ExtResource("1_xknfr")
@@ -27,6 +29,18 @@ size = Vector3(50, 20, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xknfr"]
 size = Vector3(50, 20, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5f685"]
+albedo_texture = ExtResource("6_s6ylb")
+metallic = 0.46
+metallic_specular = 0.3
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("6_s6ylb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_m70vr"]
+lightmap_size_hint = Vector2i(33, 0)
+uv2_padding = 1.52
+size = Vector2(21.035, 20)
 
 [node name="Street" type="Node3D" unique_id=1397785541]
 
@@ -68,6 +82,9 @@ wait_time = 0.5
 [node name="StreetScene" parent="." unique_id=759581957 instance=ExtResource("4_x6xx7")]
 transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 1, -0.263, 0.125, 41.04639)
 
+[node name="street asset" parent="StreetScene" unique_id=1737763843 instance=ExtResource("7_m70vr")]
+transform = Transform3D(11.175001, 0, 0, 0, 11.63, 0, 0, 0, 15.555, -0.1292161, 0, -20.297697)
+
 [node name="BackWall" type="StaticBody3D" parent="." unique_id=652998891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 10)
 
@@ -97,5 +114,10 @@ mesh = SubResource("BoxMesh_x6xx7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall" unique_id=244009044]
 shape = SubResource("BoxShape3D_xknfr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=215559077]
+transform = Transform3D(1, 0, 0, 0, 1.03, 0, 0, 0, 1, 0, 10.658674, 1.8780394)
+material_override = SubResource("StandardMaterial3D_5f685")
+mesh = SubResource("QuadMesh_m70vr")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
