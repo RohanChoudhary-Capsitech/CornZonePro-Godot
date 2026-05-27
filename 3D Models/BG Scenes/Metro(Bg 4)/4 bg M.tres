@@ -1,6 +1,7 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://wlkbty7x3cma"]
 
 [ext_resource type="Texture2D" uid="uid://des1dg5qtosc1" path="res://3D Models/BG Scenes/Metro(Bg 4)/Bg 4_4 bg M_Base_color_1001.png" id="1_1ccvq"]
+[ext_resource type="Texture2D" uid="uid://bxujp4m2bifsj" path="res://3D Models/BG Scenes/Metro(Bg 4)/4 bg M_Base_color_1001.png" id="2_1ahy7"]
 [ext_resource type="Texture2D" uid="uid://dolh05r1fsqdm" path="res://3D Models/BG Scenes/Metro(Bg 4)/Bg 4_4 bg M_Metallic_1001-4 bg M_Roughness_1001.png" id="2_pxsck"]
 [ext_resource type="Texture2D" uid="uid://fbcxtvy75fbc" path="res://3D Models/BG Scenes/Metro(Bg 4)/Bg 4_4 bg M_Normal_1001.png" id="3_1ahy7"]
 
@@ -13,5 +14,8 @@ metallic_texture = ExtResource("2_pxsck")
 metallic_texture_channel = 2
 roughness_texture = ExtResource("2_pxsck")
 roughness_texture_channel = 1
+emission_enabled = true
+emission_energy_multiplier = 0.9
+emission_texture = ExtResource("2_1ahy7")
 normal_enabled = true
 normal_texture = ExtResource("3_1ahy7")
