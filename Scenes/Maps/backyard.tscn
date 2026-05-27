@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_ie6kc"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_m0gys"]
 [ext_resource type="PackedScene" uid="uid://b8qonhotjm8cx" path="res://3D Models/BG Scenes/Backyard(Bg 6)/Bg 6.glb" id="4_a6nnl"]
+[ext_resource type="Texture2D" uid="uid://dmbij30bwcem6" path="res://Texture Or Sprites/MapsBack/backyardbg.png" id="6_m0gys"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ie6kc"]
 panorama = ExtResource("1_ie6kc")
@@ -29,10 +30,22 @@ size = Vector3(50, 20, 0.5)
 size = Vector3(50, 20, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ie6kc"]
-size = Vector3(1, 1, 50)
+size = Vector3(2, 1, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a6nnl"]
-size = Vector3(1, 1, 50)
+size = Vector3(2, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jq6d2"]
+albedo_texture = ExtResource("6_m0gys")
+emission_texture = ExtResource("6_m0gys")
+
+[sub_resource type="QuadMesh" id="QuadMesh_sq0tn"]
+size = Vector2(29, 35)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0gys"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jq6d2"]
+size = Vector2(50, 50)
 
 [node name="Backyard" type="Node3D" unique_id=1397785541]
 
@@ -67,10 +80,10 @@ bag = ExtResource("3_m0gys")
 wait_time = 0.5
 
 [node name="BackyardScene" parent="." unique_id=663459497 instance=ExtResource("4_a6nnl")]
-transform = Transform3D(1, 0, 0, 0, 1.375, 0, 0, 0, 0.8634662, -0.26307583, 0.12530994, 40.85371)
+transform = Transform3D(1.405, 0, 0, 0, 0.785, 0, 0, 0, 0.863, -0.26307583, 0.12530994, 40.85371)
 
 [node name="Backwall" type="StaticBody3D" parent="." unique_id=768037440]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8266277, 0, 0.9075365)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8266277, 0, 6.6148157)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Backwall" unique_id=437245597]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.5, 0)
@@ -82,7 +95,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.5, 0)
 shape = SubResource("BoxShape3D_ie6kc")
 
 [node name="LeftSideWall" type="StaticBody3D" parent="." unique_id=919889098]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -6.343, 9.32, 27.03)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -8.691, 9.32, 27.03)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LeftSideWall" unique_id=995302670]
 visible = false
@@ -92,7 +105,7 @@ mesh = SubResource("BoxMesh_a6nnl")
 shape = SubResource("BoxShape3D_ie6kc")
 
 [node name="RightSideWall" type="StaticBody3D" parent="." unique_id=981057679]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 8.269, 9.32, 27.03)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 11.574, 9.32, 27.03)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightSideWall" unique_id=371803039]
 visible = false
@@ -102,7 +115,7 @@ mesh = SubResource("BoxMesh_a6nnl")
 shape = SubResource("BoxShape3D_ie6kc")
 
 [node name="Holder" type="StaticBody3D" parent="." unique_id=1047562679]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.296881, 0.9290123, 26.117485)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.675, 0.299, 26.117)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Holder" unique_id=177129449]
 visible = false
@@ -110,5 +123,15 @@ mesh = SubResource("BoxMesh_ie6kc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Holder" unique_id=494584725]
 shape = SubResource("BoxShape3D_a6nnl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=80323030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.389, -3.28, 4.406)
+material_override = SubResource("StandardMaterial3D_jq6d2")
+mesh = SubResource("QuadMesh_sq0tn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=132427738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.679, 0)
+material_override = SubResource("StandardMaterial3D_m0gys")
+mesh = SubResource("QuadMesh_jq6d2")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]

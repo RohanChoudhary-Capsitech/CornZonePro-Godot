@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MapConfig" format=3 uid="uid://n53aik05gvfx"]
+[gd_resource type="Resource" script_class="MapConfig" format=3 uid="uid://dj03atbulw21y"]
 
 [ext_resource type="Script" uid="uid://cb5msbqy6mbc7" path="res://Scripts/Resource Structures/Map_Config.gd" id="1_b17e4"]
 
@@ -7,6 +7,7 @@ script = ExtResource("1_b17e4")
 map_name = "Metro"
 supports_single_player = true
 supports_pass_and_play = true
+single_player_unlocked = true
 single_player_cost = 10000
 pass_and_play_cost = 10000
 metadata/_custom_type_script = "uid://cb5msbqy6mbc7"

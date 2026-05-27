@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_jltii"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_8syye"]
 [ext_resource type="PackedScene" uid="uid://bdeqs0jrryr5c" path="res://3D Models/BG Scenes/Stadium(BG1)/Bg 1.glb" id="4_4lg7g"]
+[ext_resource type="Texture2D" uid="uid://d16he634it64d" path="res://Texture Or Sprites/MapsBack/stadiumbg.png" id="5_jltii"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(50, 0.25, 100)
@@ -16,6 +17,14 @@ size = Vector3(40, 30, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jltii"]
 size = Vector3(40, 30, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8syye"]
+albedo_texture = ExtResource("5_jltii")
+emission_energy_multiplier = 0.5
+emission_texture = ExtResource("5_jltii")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4lg7g"]
+size = Vector2(35, 40)
 
 [node name="Stadium" type="Node3D" unique_id=1397785541]
 
@@ -86,5 +95,10 @@ mesh = SubResource("BoxMesh_wwnb1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightSideWall" unique_id=1406077550]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
 shape = SubResource("BoxShape3D_jltii")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1716390831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.291, 17.12)
+material_override = SubResource("StandardMaterial3D_8syye")
+mesh = SubResource("QuadMesh_4lg7g")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]

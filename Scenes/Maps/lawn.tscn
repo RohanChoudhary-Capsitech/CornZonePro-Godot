@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_hrk1m"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_qhomv"]
 [ext_resource type="PackedScene" uid="uid://dwlkvqomhvq70" path="res://3D Models/BG Scenes/Lawn(Bg 2)/Bg 2.glb" id="4_mvdow"]
+[ext_resource type="Texture2D" uid="uid://bue3nbew0dnex" path="res://Texture Or Sprites/MapsBack/lawn.png" id="6_qhomv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qhomv"]
 panorama = ExtResource("1_hrk1m")
@@ -43,6 +44,15 @@ size = Vector3(2, 1, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhomv"]
 size = Vector3(2, 1, 50)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_vo65v"]
+albedo_texture = ExtResource("6_qhomv")
+emission_enabled = true
+emission_energy_multiplier = 0.65
+emission_texture = ExtResource("6_qhomv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ty46g"]
+size = Vector2(100, 100)
 
 [node name="lawn" type="Node3D" unique_id=1397785541]
 
@@ -128,5 +138,10 @@ mesh = SubResource("BoxMesh_qhomv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightHolder" unique_id=1251673024]
 shape = SubResource("BoxShape3D_qhomv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=166954310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.254343, -15)
+material_override = SubResource("ORMMaterial3D_vo65v")
+mesh = SubResource("QuadMesh_ty46g")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]

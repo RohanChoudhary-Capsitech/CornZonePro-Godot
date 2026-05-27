@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bwtri3ajr1ned" path="res://Scripts/spawn_point.gd" id="2_dv67y"]
 [ext_resource type="PackedScene" uid="uid://mf42jmew874p" path="res://Scenes/corn_bag.tscn" id="3_f53w0"]
 [ext_resource type="PackedScene" uid="uid://caaafjfgr73ig" path="res://3D Models/BG Scenes/Rooftop(Bg 5)/Bg 5.glb" id="4_pjteq"]
+[ext_resource type="Texture2D" uid="uid://bsorp5mn7jq3l" path="res://Texture Or Sprites/MapsBack/rooftopbg.png" id="5_dv67y"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ey7h"]
 size = Vector3(50, 0.25, 100)
@@ -16,6 +17,15 @@ size = Vector3(40, 25, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dv67y"]
 size = Vector3(40, 25, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f53w0"]
+albedo_texture = ExtResource("5_dv67y")
+emission_enabled = true
+emission_energy_multiplier = 0.65
+emission_texture = ExtResource("5_dv67y")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gxpyy"]
+size = Vector2(25, 45)
 
 [node name="Rooftop" type="Node3D" unique_id=1397785541]
 
@@ -49,10 +59,10 @@ bag = ExtResource("3_f53w0")
 wait_time = 0.5
 
 [node name="RoofTopScene" parent="." unique_id=795058313 instance=ExtResource("4_pjteq")]
-transform = Transform3D(0.845, 0, 0, 0, 0.845, 0, 0, 0, 0.775, 0.80730534, 0.12530994, 38.01204)
+transform = Transform3D(1.035, 0, 0, 0, 0.845, 0, 0, 0, 0.775, 0.567, 0.125, 38.594)
 
 [node name="BackWall" type="StaticBody3D" parent="." unique_id=1606519818]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9336824, 11.294596, 6.9951277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9336824, 11.294596, 6.168708)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BackWall" unique_id=1394449577]
 visible = false
@@ -62,7 +72,7 @@ mesh = SubResource("BoxMesh_pjteq")
 shape = SubResource("BoxShape3D_dv67y")
 
 [node name="LeftWall" type="StaticBody3D" parent="." unique_id=2097835289]
-transform = Transform3D(-0.23410729, 0, 0.9722109, 0, 1, 0, -0.9722109, 0, -0.23410729, -10.414, 11.295, 27.689)
+transform = Transform3D(-0.333083, 0, 0.9428977, 0, 1, 0, -0.9428977, 0, -0.333083, -11.662491, 11.295, 27.689)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LeftWall" unique_id=2119964368]
 visible = false
@@ -72,7 +82,7 @@ mesh = SubResource("BoxMesh_pjteq")
 shape = SubResource("BoxShape3D_dv67y")
 
 [node name="RightWall" type="StaticBody3D" parent="." unique_id=116737034]
-transform = Transform3D(0.008901019, 0, 0.9999603, 0, 1, 0, -0.9999603, 0, 0.008901019, 5.2949476, 11.294596, 30.374325)
+transform = Transform3D(0.048012953, 0, 0.99884677, 0, 1, 0, -0.99884677, 0, 0.048012953, 6.0676603, 11.294596, 31.104694)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightWall" unique_id=1830725499]
 visible = false
@@ -80,5 +90,10 @@ mesh = SubResource("BoxMesh_pjteq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall" unique_id=326969798]
 shape = SubResource("BoxShape3D_dv67y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1303003692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.256279, 2.7670035, 12.298)
+material_override = SubResource("StandardMaterial3D_f53w0")
+mesh = SubResource("QuadMesh_gxpyy")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]
