@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dm8nofew0bkaw"
-path.s3tc="res://.godot/imported/shell.png-55d4aa514a4e8dd451b41ed7af395870.s3tc.ctex"
-path.etc2="res://.godot/imported/shell.png-55d4aa514a4e8dd451b41ed7af395870.etc2.ctex"
+path.s3tc="res://.godot/imported/Shell.png-1dab7e778bd6b802c402e9f06b8adbb8.s3tc.ctex"
+path.etc2="res://.godot/imported/Shell.png-1dab7e778bd6b802c402e9f06b8adbb8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags/shell.png"
-dest_files=["res://.godot/imported/shell.png-55d4aa514a4e8dd451b41ed7af395870.s3tc.ctex", "res://.godot/imported/shell.png-55d4aa514a4e8dd451b41ed7af395870.etc2.ctex"]
+source_file="res://Texture Or Sprites/Bags/Shell.png"
+dest_files=["res://.godot/imported/Shell.png-1dab7e778bd6b802c402e9f06b8adbb8.s3tc.ctex", "res://.godot/imported/Shell.png-1dab7e778bd6b802c402e9f06b8adbb8.etc2.ctex"]
 
 [params]
 

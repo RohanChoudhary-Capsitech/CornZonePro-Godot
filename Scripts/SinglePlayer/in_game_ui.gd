@@ -1,12 +1,18 @@
 extends CanvasLayer
 
 @onready var timer_slider := $Slider/TimerSlider as MatchTimerSlider
-const wind = preload("res://Scenes/Animations/wind_animation.tscn")
+@onready var wind_animation := get_node_or_null("WindAnimation") as Node2D
+@onready var wind_particles := get_node_or_null("WindAnimation/GPUParticles2D") as GPUParticles2D
+@onready var no_wind_button := $"PowerUp Panel/PowerUp Panel BG/NoWind" as Button
+
+var no_wind_until_msec: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameSession.activate_wind.connect(show_wind)
 	DataManager.coins_changed.connect(update_ui)
+	if no_wind_button:
+		no_wind_button.disabled = true
 	update_ui()
 
 func update_ui()->void:
@@ -22,7 +28,24 @@ func _on_add_timer_pressed() -> void:
 		print("Not neough coins")
 
 func show_wind()->void:
-	wind.instantiate()
+	if Time.get_ticks_msec() < no_wind_until_msec:
+		return
+	if wind_animation:
+		wind_animation.visible = true
+	if wind_particles:
+		wind_particles.emitting = true
+		wind_particles.restart()
+	if no_wind_button:
+		no_wind_button.disabled = false
+	SoundManager.play_wind()
+
+func hide_wind() -> void:
+	if wind_particles:
+		wind_particles.emitting = false
+	if wind_animation:
+		wind_animation.visible = false
+	if no_wind_button:
+		no_wind_button.disabled = true
 
 func _on_show_projectile_pressed() -> void:
 	var possible:bool=await  DataManager.spend_coins(30)
@@ -31,3 +54,19 @@ func _on_show_projectile_pressed() -> void:
 		SoundManager.play_powerup()
 	else:
 		print("Not enough coins")
+
+
+func _on_no_wind_pressed() -> void:
+	var possible: bool = await DataManager.spend_coins(10)
+	if not possible:
+		print("Not enough coins")
+		return
+
+	no_wind_until_msec = Time.get_ticks_msec() + 5000
+	hide_wind()
+	SoundManager.play_powerup()
+
+	await get_tree().create_timer(5.0).timeout
+
+	if Time.get_ticks_msec() >= no_wind_until_msec:
+		show_wind()

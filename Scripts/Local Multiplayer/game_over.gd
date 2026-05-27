@@ -19,7 +19,7 @@ func _score_key(base_key: String) -> String:
 	return "passplay_" + base_key
 
 func _update_results() -> void:
-	pop_animation($Control)
+	AnimateManager.pop_animation($Control)
 	var p1_score: int = GameSession.score_p1
 	var p2_score: int = GameSession.score_p2
 

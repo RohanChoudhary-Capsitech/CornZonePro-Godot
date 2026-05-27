@@ -22,6 +22,7 @@ func on_score() -> void:
 	current_pots+=1
 	print(current_pots," shot")
 	if current_pots>3:
+		print("value sent")
 		GameSession.wind_control(1)
 
 
