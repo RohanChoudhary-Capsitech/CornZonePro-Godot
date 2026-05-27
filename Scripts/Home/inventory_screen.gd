@@ -19,7 +19,7 @@ func _on_item_selected(material):
 
 func _on_shop_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	UIManager.enable_canvas($"../ShopScreen")
+	UIManager.enable_canvas_with_transition($"../ShopScreen")
 	if PlayerData.needs_cloud_sync:
 		await FirebaseManager.push_to_firestore()
 
@@ -36,6 +36,6 @@ func refresh_from_local() -> void:
  
 func _on_play_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	UIManager.enable_canvas($"../HomeScreen")
+	UIManager.enable_canvas_with_transition($"../HomeScreen")
 	if PlayerData.needs_cloud_sync:
 		await FirebaseManager.push_to_firestore()

@@ -94,8 +94,19 @@ func enable_canvas(layer: CanvasLayer):
 	disable_all_canvaslayers()
 	layer.visible = true
 
+func enable_canvas_with_transition(layer: CanvasLayer):
+	await TransitionLayer.fade_out()
+	disable_all_canvaslayers()
+	layer.visible = true
+	await TransitionLayer.fade_in()
+	
 func toggle_canvas(layer: CanvasLayer):
 	layer.visible = !layer.visible
+
+func toggle_canvas_with_transition(canvas: CanvasLayer) -> void:
+	await TransitionLayer.fade_out()
+	toggle_canvas(canvas)
+	await TransitionLayer.fade_in()
 
 func _begin_match(mode: String, map_path: String, ui: String, time_limit: float) -> void:
 	GameSession.start_match(mode, map_path, ui, time_limit)

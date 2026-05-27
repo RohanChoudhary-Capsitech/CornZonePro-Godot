@@ -91,7 +91,7 @@ func _on_leaderboard_button_pressed() -> void:
 
 func _on_shop_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	UIManager.toggle_canvas($"../ShopScreen")
+	UIManager.toggle_canvas_with_transition($"../ShopScreen")
 
 
 func _on_inventory_button_pressed() -> void:
@@ -99,7 +99,7 @@ func _on_inventory_button_pressed() -> void:
 	var inventory_screen := $"../InventoryScreen"
 	if inventory_screen.has_method("refresh_from_local"):
 		inventory_screen.refresh_from_local()
-	UIManager.toggle_canvas(inventory_screen)
+	UIManager.toggle_canvas_with_transition(inventory_screen)
  
 func _on_data_ready():
 	_update_ui()

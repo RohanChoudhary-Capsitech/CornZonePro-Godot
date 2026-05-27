@@ -5,7 +5,7 @@ func _ready() -> void:
 
 func _on_play_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	UIManager.enable_canvas($"../HomeScreen")
+	UIManager.enable_canvas_with_transition($"../HomeScreen")
 	#AdManager.show_banner()
 	if PlayerData.needs_cloud_sync:
 		await FirebaseManager.push_to_firestore()
@@ -17,7 +17,7 @@ func _on_inventory_button_pressed() -> void:
 	var inventory_screen := $"../InventoryScreen"
 	if inventory_screen.has_method("refresh_from_local"):
 		inventory_screen.refresh_from_local()
-	UIManager.enable_canvas(inventory_screen)
+	UIManager.enable_canvas_with_transition(inventory_screen)
 	if PlayerData.needs_cloud_sync:
 		await FirebaseManager.push_to_firestore()
 
@@ -26,14 +26,18 @@ func _on_bag_buy_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	PlayerData.load_local()
 	$Panel/BagsPanel/ScrollContainer/BagDataContent.load_bag_data()
+	await TransitionLayer.fade_out()
 	$Panel/MidPanel.visible = false
 	$Panel/BagsPanel.visible = true
+	await TransitionLayer.fade_in()
 
 
 func _on_bag_cross_button_pressed() -> void:
 	SoundManager.play_button_clicks()
+	await TransitionLayer.fade_out()
 	$Panel/BagsPanel.visible = false
 	$Panel/MidPanel.visible = true
+	await TransitionLayer.fade_in()
 	if PlayerData.needs_cloud_sync:
 		await FirebaseManager.push_to_firestore()
  
@@ -42,14 +46,18 @@ func _on_board_buy_button_pressed() -> void:
 	SoundManager.play_button_clicks()
 	PlayerData.load_local()
 	$Panel/BoardsPanel/ScrollContainer/BoardDataContent.load_board_data()
+	await TransitionLayer.fade_out()
 	$Panel/MidPanel.visible = false
 	$Panel/BoardsPanel.visible = true
+	await TransitionLayer.fade_in()
 
 
 func _on_board_cross_button_pressed() -> void:
 	SoundManager.play_button_clicks()
+	await TransitionLayer.fade_out()
 	$Panel/BoardsPanel.visible = false
 	$Panel/MidPanel.visible = true
+	await TransitionLayer.fade_in()
 	if PlayerData.needs_cloud_sync:
 		await FirebaseManager.push_to_firestore()
 
