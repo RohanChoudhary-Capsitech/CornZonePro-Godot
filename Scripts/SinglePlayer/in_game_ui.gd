@@ -27,7 +27,11 @@ func _on_add_timer_pressed() -> void:
 		timer_slider.add_time(5)
 		SoundManager.play_powerup()
 	else:
-		print("Not neough coins")
+		AdManager.Callable(self, "add_time")
+
+func add_time():
+	timer_slider.add_time(5)
+	SoundManager.play_powerup()
 
 func show_wind()->void:
 	if Time.get_ticks_msec() < no_wind_until_msec:
@@ -41,13 +45,14 @@ func show_wind()->void:
 		no_wind_button.disabled = false
 	SoundManager.play_wind()
 
-func hide_wind() -> void:
+func hide_wind():
 	if wind_particles:
 		wind_particles.emitting = false
 	if wind_animation:
 		wind_animation.visible = false
 	if no_wind_button:
 		no_wind_button.disabled = true
+
 
 func _on_show_projectile_pressed() -> void:
 	var possible:bool = await DataManager.spend_coins(30)
@@ -57,8 +62,14 @@ func _on_show_projectile_pressed() -> void:
 		GameSession.activate_projectile_preview(5.0)
 		SoundManager.play_powerup()
 	else:
-		print("Not enough coins")		
-		
+		AdManager.show_rewarded(Callable(self, "add_projectile"))
+
+func add_projectile():
+	AnimateManager.power_up = true
+	print("SIGNAL BUS POWERUP WALA ",AnimateManager.power_up)
+	GameSession.activate_projectile_preview(5.0)
+	SoundManager.play_powerup()
+
 func pop_in(img_path: String):
 	print("THIS GOT CALLED")
 	var texture = load(img_path) as Texture2D
@@ -92,8 +103,7 @@ func party_popper():
 func _on_no_wind_pressed() -> void:
 	var possible: bool = await DataManager.spend_coins(10)
 	if not possible:
-		print("Not enough coins")
-		return
+		AdManager.show_rewarded(Callable(self, "hide_wind"))
 
 	no_wind_until_msec = Time.get_ticks_msec() + 5000
 	hide_wind()

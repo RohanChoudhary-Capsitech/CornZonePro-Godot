@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b183gbrttn0r7"
-path.s3tc="res://.godot/imported/Urban.png-49c80ce6e5d38c92203a2e6c231e298b.s3tc.ctex"
-path.etc2="res://.godot/imported/Urban.png-49c80ce6e5d38c92203a2e6c231e298b.etc2.ctex"
+path.s3tc="res://.godot/imported/urban.png-fdaa99bfdaeca8632624cc768fad5c84.s3tc.ctex"
+path.etc2="res://.godot/imported/urban.png-fdaa99bfdaeca8632624cc768fad5c84.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags/Urban.png"
-dest_files=["res://.godot/imported/Urban.png-49c80ce6e5d38c92203a2e6c231e298b.s3tc.ctex", "res://.godot/imported/Urban.png-49c80ce6e5d38c92203a2e6c231e298b.etc2.ctex"]
+source_file="res://Texture Or Sprites/Bags/urban.png"
+dest_files=["res://.godot/imported/urban.png-fdaa99bfdaeca8632624cc768fad5c84.s3tc.ctex", "res://.godot/imported/urban.png-fdaa99bfdaeca8632624cc768fad5c84.etc2.ctex"]
 
 [params]
 

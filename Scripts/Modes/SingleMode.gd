@@ -20,7 +20,7 @@ func on_ball_entered(body: Node3D) -> void:
 	
 	#print("SUCCCESSSIVE POTSSSSSSSS:",AnimateManager.successive_pots)
 		
-	if AnimateManager.successive_pots % 2 == 0:
+	if AnimateManager.successive_pots % 5 == 0:
 		AnimateManager.micro_interaction_signal.emit(micro_interaction_texture_legendary)
 		AnimateManager.party_popper_signal.emit()
 		

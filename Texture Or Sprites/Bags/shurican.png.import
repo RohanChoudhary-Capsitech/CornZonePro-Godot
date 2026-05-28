@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1b15aoygoovu"
-path.s3tc="res://.godot/imported/Shurican.png-b2e0e1bcb74011b6741cda38ddcc1b37.s3tc.ctex"
-path.etc2="res://.godot/imported/Shurican.png-b2e0e1bcb74011b6741cda38ddcc1b37.etc2.ctex"
+path.s3tc="res://.godot/imported/shurican.png-6add14f9153cedc73a06d98994d4039a.s3tc.ctex"
+path.etc2="res://.godot/imported/shurican.png-6add14f9153cedc73a06d98994d4039a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Texture Or Sprites/Bags/Shurican.png"
-dest_files=["res://.godot/imported/Shurican.png-b2e0e1bcb74011b6741cda38ddcc1b37.s3tc.ctex", "res://.godot/imported/Shurican.png-b2e0e1bcb74011b6741cda38ddcc1b37.etc2.ctex"]
+source_file="res://Texture Or Sprites/Bags/shurican.png"
+dest_files=["res://.godot/imported/shurican.png-6add14f9153cedc73a06d98994d4039a.s3tc.ctex", "res://.godot/imported/shurican.png-6add14f9153cedc73a06d98994d4039a.etc2.ctex"]
 
 [params]
 

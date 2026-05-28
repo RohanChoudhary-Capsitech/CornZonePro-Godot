@@ -6366,6 +6366,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="DailyRewardScreen" type="CanvasLayer" parent="." unique_id=304440633]
+visible = false
 script = ExtResource("64_fa687")
 
 [node name="BG" type="TextureRect" parent="DailyRewardScreen" unique_id=1477647898]
