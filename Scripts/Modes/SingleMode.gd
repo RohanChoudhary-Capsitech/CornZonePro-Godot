@@ -1,7 +1,8 @@
 extends Node
 
 var current_pots:int=0
-
+var micro_interaction_texture_legendary: String = "res://Texture Or Sprites/MicroInteractions/Legendary.png"
+var micro_interaction_texture_perfect_shot: String = "res://Texture Or Sprites/MicroInteractions/perfectshot.png"
 
 func on_ball_entered(body: Node3D) -> void:
 	var awarded_points: int = int(body.get_meta("awarded_points", 0))
@@ -14,9 +15,20 @@ func on_ball_entered(body: Node3D) -> void:
 	PlayerData.save_local()
 	FirebaseManager.mark_dirty([
 		FirebaseManager.SECTION_STATS
-	])
-	print("total pot of the player is " , PlayerData.total_pots)
-
+	])	
+	AnimateManager.successive_pots += 1
+	
+	#print("SUCCCESSSIVE POTSSSSSSSS:",AnimateManager.successive_pots)
+		
+	if AnimateManager.successive_pots % 2 == 0:
+		AnimateManager.micro_interaction_signal.emit(micro_interaction_texture_legendary)
+		AnimateManager.party_popper_signal.emit()
+		
+	if AnimateManager.power_up:
+		print("SIGNAL POWERUP IS TRUE")
+		AnimateManager.micro_interaction_signal.emit(micro_interaction_texture_perfect_shot)
+	AnimateManager.power_up = false	
+	
 func on_score() -> void:
 	DataManager.add_coins(5)
 	current_pots+=1

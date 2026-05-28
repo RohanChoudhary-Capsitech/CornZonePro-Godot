@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cdug7sre63vt5" path="res://Texture Or Sprites/SinglePlayer/SingleTimer.png" id="11_ivw3v"]
 [ext_resource type="Texture2D" uid="uid://c4edp1t65doeq" path="res://Texture Or Sprites/SinglePlayer/Group 637 (2).png" id="11_oh4au"]
 [ext_resource type="Script" uid="uid://r8egelqwvacm" path="res://Scripts/timer_slider.gd" id="12_3uy7w"]
-[ext_resource type="Resource" uid="uid://6ntvcftj5ca5" path="res://Resources/Maps/street.tres" id="13_5mb7j"]
+[ext_resource type="Resource" uid="uid://b484kxoqdn4iv" path="res://Resources/Maps/street.tres" id="13_5mb7j"]
 [ext_resource type="Texture2D" uid="uid://8njfj1mnt6bv" path="res://Texture Or Sprites/SinglePlayer/TimerClock.png" id="14_47w8h"]
 [ext_resource type="Texture2D" uid="uid://bcf3cmwpvp2mu" path="res://Texture Or Sprites/SinglePlayer/coins.png" id="15_52utu"]
 [ext_resource type="PackedScene" uid="uid://ccb3frw5tmq4t" path="res://Scenes/Animations/wind_animation.tscn" id="16_alutp"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://br2f810pal41w" path="res://Texture Or Sprites/SinglePlayer/PanelsBg.png" id="17_2h2jy"]
 [ext_resource type="Texture2D" uid="uid://cq48i81ursqx3" path="res://Texture Or Sprites/SinglePlayer/pausedbg.png" id="18_1rofv"]
 [ext_resource type="Texture2D" uid="uid://upq0lyqb8g3w" path="res://Texture Or Sprites/SinglePlayer/Panel Button BG.png" id="19_erx2j"]
+[ext_resource type="Texture2D" uid="uid://dyn8mgpqcqqo2" path="res://Texture Or Sprites/MicroInteractions/ConfettiParticle.png" id="19_oh4au"]
 [ext_resource type="Texture2D" uid="uid://bqnun5nbf26i8" path="res://Texture Or Sprites/SinglePlayer/cross.png" id="20_sphmr"]
 [ext_resource type="Script" uid="uid://53gimtpbtcvx" path="res://Scripts/SinglePlayer/game_over.gd" id="21_6jvyj"]
 
@@ -69,6 +70,13 @@ modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bn77"]
 texture = ExtResource("10_parwe")
 modulate_color = Color(0.34901962, 0.3529412, 0.36862746, 1)
+
+[sub_resource type="Gradient" id="Gradient_ofndc"]
+colors = PackedColorArray(0, 0, 0, 1, 0.9025366, 0.07944272, 1.4439225e-06, 1)
+
+[sub_resource type="Gradient" id="Gradient_oh4au"]
+offsets = PackedFloat32Array(0, 0.99382716)
+colors = PackedColorArray(0, 0, 0, 1, 0.9019608, 0.9019608, 0.011764706, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1locx"]
 texture = ExtResource("19_erx2j")
@@ -409,6 +417,45 @@ vertical_alignment = 1
 
 [node name="WindAnimation" parent="InGame UI" unique_id=1800590410 instance=ExtResource("16_alutp")]
 visible = false
+
+[node name="MicroInteraction" type="TextureRect" parent="InGame UI" unique_id=766649581]
+clip_contents = true
+custom_minimum_size = Vector2(88, 0)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.197
+anchor_right = 0.5
+anchor_bottom = 0.197
+offset_left = -45.0
+offset_top = -29.839996
+offset_right = 43.0
+offset_bottom = 32.160004
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(44, 31)
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Confetti" type="CPUParticles2D" parent="InGame UI" unique_id=340622877]
+position = Vector2(238, 141)
+emitting = false
+amount = 120
+texture = ExtResource("19_oh4au")
+lifetime = 2.0
+one_shot = true
+speed_scale = 0.75
+explosiveness = 1.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 700)
+initial_velocity_min = 250.0
+initial_velocity_max = 450.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+scale_amount_min = 0.5
+scale_amount_max = 1.2
+color_ramp = SubResource("Gradient_ofndc")
+color_initial_ramp = SubResource("Gradient_oh4au")
 
 [node name="PauseMenu" type="CanvasLayer" parent="." unique_id=918784366]
 visible = false

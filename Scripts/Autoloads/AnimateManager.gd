@@ -1,6 +1,14 @@
 extends Node
 
 signal notify
+signal micro_interaction_signal(img_path: String)
+signal party_popper_signal
+
+var power_up:bool = false
+var show_once:bool = true
+var is_pot:bool = false
+var is_grounded:bool = false
+var successive_pots = 0
 
 func show_notification(label_node: Label, message: String, display_time: float = 2.0):
 	if not is_instance_valid(label_node) or not label_node.is_inside_tree():
