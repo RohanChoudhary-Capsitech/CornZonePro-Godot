@@ -26,7 +26,10 @@ func _on_claim_pressed() -> void:
 
 func _on_x_button_pressed() -> void:
 	SoundManager.play_button_clicks()
-	AdManager.show_rewarded(claim_reward())
+	if AdManager.is_rewarded_ready():
+		AdManager.show_rewarded(Callable(self, "claim_reward"))
+	else:
+		AnimateManager.show_notification($Notification, "No ads available", 1.5)
 
 
 func claim_reward():

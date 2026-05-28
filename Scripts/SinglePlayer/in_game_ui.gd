@@ -27,7 +27,10 @@ func _on_add_timer_pressed() -> void:
 		timer_slider.add_time(5)
 		SoundManager.play_powerup()
 	else:
-		AdManager.Callable(self, "add_time")
+		if AdManager.is_rewarded_ready():
+			AdManager.Callable(self, "add_time")
+		else:
+			AnimateManager.show_notification($Notification, " No ads available", 1.5)
 
 func add_time():
 	timer_slider.add_time(5)
@@ -62,7 +65,10 @@ func _on_show_projectile_pressed() -> void:
 		GameSession.activate_projectile_preview(5.0)
 		SoundManager.play_powerup()
 	else:
-		AdManager.show_rewarded(Callable(self, "add_projectile"))
+		if AdManager.is_rewarded_ready():
+			AdManager.show_rewarded(Callable(self, "add_projectile"))
+		else:
+			AnimateManager.show_notification($Notification, " No ads available", 1.5)
 
 func add_projectile():
 	AnimateManager.power_up = true
@@ -103,7 +109,10 @@ func party_popper():
 func _on_no_wind_pressed() -> void:
 	var possible: bool = await DataManager.spend_coins(10)
 	if not possible:
-		AdManager.show_rewarded(Callable(self, "hide_wind"))
+		if AdManager.is_rewarded_ready():
+			AdManager.show_rewarded(Callable(self, "hide_wind"))
+		else:
+			AnimateManager.show_notification($Notification, " No ads available", 1.5)
 
 	no_wind_until_msec = Time.get_ticks_msec() + 5000
 	hide_wind()

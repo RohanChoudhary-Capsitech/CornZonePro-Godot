@@ -457,6 +457,21 @@ scale_amount_max = 1.2
 color_ramp = SubResource("Gradient_ofndc")
 color_initial_ramp = SubResource("Gradient_oh4au")
 
+[node name="Notification" type="Label" parent="InGame UI" unique_id=1715601842]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.36800003
+anchor_right = 0.5
+anchor_bottom = 0.36800003
+offset_left = -76.0
+offset_top = -19.460022
+offset_right = 76.0
+offset_bottom = 3.539978
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fbptx")
+theme_override_font_sizes/font_size = 18
+
 [node name="PauseMenu" type="CanvasLayer" parent="." unique_id=918784366]
 visible = false
 script = ExtResource("16_w4rqa")

@@ -2348,6 +2348,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_smgrs")
 
 [node name="LoginLoadingScreen" type="CanvasLayer" parent="." unique_id=1160084063]
 layer = 50
+visible = false
 
 [node name="BG" type="TextureRect" parent="LoginLoadingScreen" unique_id=16847954]
 anchors_preset = 15
@@ -7006,6 +7007,21 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_eoxhj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rysjn")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gr5sq")
 text = "2x reward"
+
+[node name="Notification" type="Label" parent="RewardScreen" unique_id=1885681384]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.36800003
+anchor_right = 0.5
+anchor_bottom = 0.36800003
+offset_left = -76.0
+offset_top = -19.460022
+offset_right = 76.0
+offset_bottom = 3.539978
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 18
 
 [node name="MultiplayerScreen" type="CanvasLayer" parent="." unique_id=910901950]
 visible = false
