@@ -1,7 +1,14 @@
 extends CanvasLayer
+const BAG_DATA = preload("uid://dkxtmd1so4k4r")
+
 
 func _ready() -> void:
 	AdManager.show_banner()
+	AnimateManager.notify.connect(_notify)
+
+
+func _notify():
+	AnimateManager.show_notification($Label,"Not enough coins", 1.5)
 
 func _on_play_button_pressed() -> void:
 	SoundManager.play_button_clicks()

@@ -119,7 +119,7 @@ mesh = SubResource("BoxMesh_a6nnl")
 shape = SubResource("BoxShape3D_ie6kc")
 
 [node name="Holder" type="StaticBody3D" parent="." unique_id=1047562679]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.356, 0.491, 26.117)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.584, 0.52, 26.117)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Holder" unique_id=177129449]
 visible = false

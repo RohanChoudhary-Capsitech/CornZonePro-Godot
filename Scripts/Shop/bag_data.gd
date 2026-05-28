@@ -1,4 +1,5 @@
 extends TextureRect
+signal notification
  
 @onready var icon = $HBoxContainer/BagIcon
 @onready var rarity_text = $HBoxContainer/Rarity
@@ -71,7 +72,10 @@ func _on_buy_pressed(data: Dictionary) -> void:
 	if item_id == "":
 		return
 	var price: int = data.get("price", 0)
-	if price > 0 and not await  DataManager.spend_coins(price):
+	if price > 0 and not await DataManager.spend_coins(price):
+		#AnimateManager.show_notification($ShopScreen/Label, "Not enough coins", 1.5)
+		AnimateManager.notify.emit()
+		print("Nhi hai paise")
 		return
 	if not PlayerData.bags_owned.has(item_id):
 		PlayerData.bags_owned.append(item_id)

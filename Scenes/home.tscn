@@ -3503,6 +3503,20 @@ green_signal = ExtResource("55_gr5sq")
 white_signal = ExtResource("56_u6nbl")
 board_data_scene = ExtResource("75_as3ia")
 
+[node name="Label" type="Label" parent="ShopScreen" unique_id=982797880]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 80.0
+offset_right = 20.0
+offset_bottom = 103.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="InventoryScreen" type="CanvasLayer" parent="." unique_id=918893846]
 visible = false
 script = ExtResource("53_jl4rm")

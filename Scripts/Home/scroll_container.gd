@@ -8,6 +8,14 @@ extends ScrollContainer
 var target_scroll_x: float = 0.0
 var is_scrolling: bool = false
 
+
+#var touch_start_position:= Vector2.ZERO
+
+var is_dragging := false
+const DRAG_THRESHOLD := 15.0
+
+var drag_start_position := Vector2.ZERO
+
 func _ready():
 	follow_focus = false
 	for child in hbox.get_children():
@@ -25,15 +33,34 @@ func _process(_delta):
 		child.scale = Vector2(s, s)
 		
 func _gui_input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			drag_start_position = event.position
+			is_dragging = false
+		else:
+			# Finger released
+			if is_dragging:
+				_snap_to_closest()
+				_release_buttons()
+				# IMPORTANT
+				get_viewport().set_input_as_handled()
+	elif event is InputEventScreenDrag:
+		target_scroll_x -= event.relative.x
+		# Detect drag distance
+		if event.position.distance_to(drag_start_position) > DRAG_THRESHOLD:
+			if not is_dragging:
+				is_dragging = true
+				_disable_buttons()
+			#is_dragging = true
+			# Prevent button click
+			#get_viewport().set_input_as_handled()
+	elif event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			target_scroll_x -= 100
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			target_scroll_x += 100
 		if not event.pressed:
 			_snap_to_closest()
-	if event is InputEventScreenDrag:
-		target_scroll_x -= event.relative.x
 
 func _snap_to_closest():
 	var center_x: float = target_scroll_x + (size.x / 2)
@@ -49,3 +76,16 @@ func _snap_to_closest():
 	
 	if closest_node:
 		target_scroll_x = closest_node.position.x - (size.x / 2) + (closest_node.size.x / 2)
+
+
+func _disable_buttons():
+	for child in hbox.get_children():
+		if child is Button:
+			child.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+
+func _release_buttons():
+	await get_tree().process_frame
+	for child in hbox.get_children():
+		if child is Button:
+			child.mouse_filter = Control.MOUSE_FILTER_STOP

@@ -42,6 +42,10 @@ lightmap_size_hint = Vector2i(33, 0)
 uv2_padding = 1.52
 size = Vector2(21.035, 20)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_5f685"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m70vr"]
+
 [node name="Street" type="Node3D" unique_id=1397785541]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=666952983]
@@ -119,5 +123,15 @@ shape = SubResource("BoxShape3D_xknfr")
 transform = Transform3D(1, 0, 0, 0, 1.03, 0, 0, 0, 1, 0, 10.658674, 1.8780394)
 material_override = SubResource("StandardMaterial3D_5f685")
 mesh = SubResource("QuadMesh_m70vr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1183783256]
+transform = Transform3D(0.8412561, -0.54063684, 0, 0.54063684, 0.8412561, 0, 0, 0, 1, -4.8346205, 0.8908069, 34.938972)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=424778784]
+visible = false
+mesh = SubResource("CylinderMesh_5f685")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1487960532]
+shape = SubResource("CapsuleShape3D_m70vr")
 
 [connection signal="timeout" from="StartTimer" to="SpawnPOINT" method="_on_timer_timeout"]

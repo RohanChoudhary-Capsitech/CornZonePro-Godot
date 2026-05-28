@@ -1,5 +1,6 @@
 extends Node
 
+signal notify
 
 func show_notification(label_node: Label, message: String, display_time: float = 2.0):
 	if not is_instance_valid(label_node) or not label_node.is_inside_tree():

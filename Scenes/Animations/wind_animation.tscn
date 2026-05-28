@@ -40,5 +40,6 @@ material = SubResource("CanvasItemMaterial_y8eic")
 position = Vector2(234, 270)
 amount = 20
 texture = ExtResource("1_y8eic")
+collision_base_size = 1.25
 visibility_rect = Rect2(-500, -200, 1000, 400)
 process_material = SubResource("ParticleProcessMaterial_4nbjt")

@@ -29,6 +29,7 @@ func get_coins()->int:
 func spend_coins(amount:int)->bool:
 	var current: int = get_coins()
 	if current<amount:
+		#AnimateManager.show_notification($ShopScreen/Label, "Not enough coins")
 		print("Not enough coins")
 		return false
 	PlayerData.coins = current - amount

@@ -6,4 +6,5 @@
 cull_mode = 2
 albedo_texture = ExtResource("1_1teh7")
 emission_enabled = true
+emission_energy_multiplier = 0.8
 emission_texture = ExtResource("1_1teh7")
