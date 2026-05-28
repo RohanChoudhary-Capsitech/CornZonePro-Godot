@@ -480,6 +480,8 @@ texture = ExtResource("99_f3k6c")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0iwel"]
 texture = ExtResource("99_f3k6c")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_65b52"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2vf33"]
 texture = ExtResource("106_qi751")
 
@@ -2692,10 +2694,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.5
-offset_top = -10.0
-offset_right = 44.0
-offset_bottom = 8.5
+offset_left = -31.5
+offset_top = -9.0
+offset_right = 52.0
+offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -2703,7 +2705,6 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 13
 text = "Soon..."
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LeftPanel" type="VBoxContainer" parent="HomeScreen/Panel" unique_id=817961446]
@@ -3365,7 +3366,7 @@ texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="ShopScreen/Panel/BottomPanel/Locked" unique_id=1875288919]
+[node name="LockButton1st" type="Button" parent="ShopScreen/Panel/BottomPanel/Locked" unique_id=1875288919]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3388,7 +3389,7 @@ texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="ShopScreen/Panel/BottomPanel/Locked2" unique_id=1492342102]
+[node name="LockButton2nd" type="Button" parent="ShopScreen/Panel/BottomPanel/Locked2" unique_id=1492342102]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3503,7 +3504,7 @@ green_signal = ExtResource("55_gr5sq")
 white_signal = ExtResource("56_u6nbl")
 board_data_scene = ExtResource("75_as3ia")
 
-[node name="Label" type="Label" parent="ShopScreen" unique_id=982797880]
+[node name="Notification" type="Label" parent="ShopScreen" unique_id=982797880]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -3902,7 +3903,7 @@ texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="InventoryScreen/Panel/BottomPanel/Locked" unique_id=417393661]
+[node name="LockButton1st" type="Button" parent="InventoryScreen/Panel/BottomPanel/Locked" unique_id=417393661]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3925,7 +3926,7 @@ texture = ExtResource("26_h6vkq")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="InventoryScreen/Panel/BottomPanel/Locked2" unique_id=2012338327]
+[node name="LockButton2nd" type="Button" parent="InventoryScreen/Panel/BottomPanel/Locked2" unique_id=2012338327]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3988,6 +3989,21 @@ theme_override_constants/v_separation = 15
 columns = 3
 script = ExtResource("86_tbwbq")
 item_card_scene = ExtResource("86_vaya1")
+
+[node name="Notification" type="Label" parent="InventoryScreen" unique_id=994552482]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.36800003
+anchor_right = 0.5
+anchor_bottom = 0.36800003
+offset_left = -76.0
+offset_top = -19.460022
+offset_right = 76.0
+offset_bottom = 3.539978
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 18
 
 [node name="SettingScreen" type="CanvasLayer" parent="." unique_id=1804771245]
 visible = false
@@ -4183,6 +4199,7 @@ size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_jmoue")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0bc6n")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0iwel")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_65b52")
 
 [node name="GoogleIcon" type="TextureRect" parent="SettingScreen/Panel/SettingBg/SettingPanel/BG/VBoxContainer/LoginWithGoogle" unique_id=2090565516]
 layout_mode = 1
@@ -7367,12 +7384,16 @@ autowrap_mode = 2
 [connection signal="pressed" from="ShopScreen/Panel/MidPanel/BoardPanel/Bottom/BoardBuyButton" to="ShopScreen" method="_on_board_buy_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/BottomPanel/Inventory/InventoryButton" to="ShopScreen" method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/BottomPanel/Play/PlayButton" to="ShopScreen" method="_on_play_button_pressed"]
+[connection signal="pressed" from="ShopScreen/Panel/BottomPanel/Locked/LockButton1st" to="ShopScreen" method="_on_lock_button_1_st_pressed"]
+[connection signal="pressed" from="ShopScreen/Panel/BottomPanel/Locked2/LockButton2nd" to="ShopScreen" method="_on_lock_button_2_nd_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/BagsPanel/BagCrossButton" to="ShopScreen" method="_on_bag_cross_button_pressed"]
 [connection signal="pressed" from="ShopScreen/Panel/BoardsPanel/BoardCrossButton" to="ShopScreen" method="_on_board_cross_button_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/SettingButton" to="HomeScreen" method="_on_setting_button_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/Profile/Profile Icon" to="HomeScreen" method="_on_profile_icon_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Shop/ShopButton" to="InventoryScreen" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Play/PlayButton" to="InventoryScreen" method="_on_play_button_pressed"]
+[connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Locked/LockButton1st" to="InventoryScreen" method="_on_lock_button_1_st_pressed"]
+[connection signal="pressed" from="InventoryScreen/Panel/BottomPanel/Locked2/LockButton2nd" to="InventoryScreen" method="_on_lock_button_2_nd_pressed"]
 [connection signal="pressed" from="SettingScreen/CrossButton" to="SettingScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/MusicOnButton" to="SettingScreen" method="_on_music_on_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/MusicOffButton" to="SettingScreen" method="_on_music_off_button_pressed"]

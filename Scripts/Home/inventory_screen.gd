@@ -39,3 +39,11 @@ func _on_play_button_pressed() -> void:
 	UIManager.enable_canvas_with_transition($"../HomeScreen")
 	if PlayerData.needs_cloud_sync:
 		await FirebaseManager.push_to_firestore()
+
+
+func _on_lock_button_1_st_pressed() -> void:
+	AnimateManager.show_notification($Notification, "New Features will coming soon", 1.5)
+
+
+func _on_lock_button_2_nd_pressed() -> void:
+	AnimateManager.show_notification($Notification, "New Features will coming soon", 1.5)

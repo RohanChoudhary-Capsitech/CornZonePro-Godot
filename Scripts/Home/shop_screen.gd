@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 func _notify():
-	AnimateManager.show_notification($Label,"Not enough coins", 1.5)
+	AnimateManager.show_notification($Notification,"Not enough coins", 1.5)
 
 func _on_play_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -69,3 +69,11 @@ func _on_board_cross_button_pressed() -> void:
 		await FirebaseManager.push_to_firestore()
 
  
+
+
+func _on_lock_button_1_st_pressed() -> void:
+	AnimateManager.show_notification($Notification, "New Features will coming soon", 1.5)
+
+
+func _on_lock_button_2_nd_pressed() -> void:
+	AnimateManager.show_notification($Notification, "New Features will coming soon", 1.5)

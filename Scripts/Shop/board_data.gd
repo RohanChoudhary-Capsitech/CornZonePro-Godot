@@ -52,6 +52,7 @@ func _on_buy_pressed(data: Dictionary) -> void:
 		return
 	var price: int = data.get("price", 0)
 	if price > 0 and not await  DataManager.spend_coins(price):
+		AnimateManager.notify.emit()
 		return
 	if not PlayerData.boards_owned.has(item_id):
 		PlayerData.boards_owned.append(item_id)

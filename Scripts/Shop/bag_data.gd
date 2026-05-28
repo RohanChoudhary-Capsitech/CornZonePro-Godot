@@ -1,5 +1,4 @@
 extends TextureRect
-signal notification
  
 @onready var icon = $HBoxContainer/BagIcon
 @onready var rarity_text = $HBoxContainer/Rarity
