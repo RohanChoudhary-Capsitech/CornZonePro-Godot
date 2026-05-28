@@ -22,3 +22,18 @@ func _on_claim_pressed() -> void:
 	$"../HomeScreen/Panel/TopPanel/Coin/CoinText".text = str(PlayerData.coins)
 	$"../InventoryScreen/Panel/TopPanel/Coin/CoinText".text = str(PlayerData.coins)
 	get_node("../DailyRewardScreen").update_button_visibility()
+
+
+func _on_x_button_pressed() -> void:
+	SoundManager.play_button_clicks()
+	AdManager.show_rewarded(claim_reward())
+
+
+func claim_reward():
+	DataManager.add_coins(current_reward_data.coin_amount * 2)
+	SoundManager.play_coin_collect()
+	DataManager.save_claim_success()
+	UIManager.toggle_canvas($".")
+	$"../HomeScreen/Panel/TopPanel/Coin/CoinText".text = str(PlayerData.coins)
+	$"../InventoryScreen/Panel/TopPanel/Coin/CoinText".text = str(PlayerData.coins)
+	get_node("../DailyRewardScreen").update_button_visibility()

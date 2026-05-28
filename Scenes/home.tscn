@@ -6366,7 +6366,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="DailyRewardScreen" type="CanvasLayer" parent="." unique_id=304440633]
-visible = false
 script = ExtResource("64_fa687")
 
 [node name="BG" type="TextureRect" parent="DailyRewardScreen" unique_id=1477647898]
@@ -7431,6 +7430,7 @@ autowrap_mode = 2
 [connection signal="pressed" from="DailyRewardScreen/Panel/GridContainer/Day6/Day6Button" to="DailyRewardScreen" method="_on_day_6_button_pressed"]
 [connection signal="pressed" from="DailyRewardScreen/Panel/Day7/Day7Button" to="DailyRewardScreen" method="_on_day_7_button_pressed"]
 [connection signal="pressed" from="RewardScreen/Panel/PanelBG/Claim" to="RewardScreen" method="_on_claim_pressed"]
+[connection signal="pressed" from="RewardScreen/Panel/PanelBG/2XButton" to="RewardScreen" method="_on_x_button_pressed"]
 [connection signal="pressed" from="MultiplayerScreen/Panel/PanelBg/CrossButton" to="MultiplayerScreen" method="_on_cross_button_pressed"]
 [connection signal="pressed" from="MultiplayerScreen/Panel/PanelBg/HostButton" to="MultiplayerScreen" method="_on_host_button_pressed"]
 [connection signal="pressed" from="MultiplayerScreen/Panel/PanelBg/JoinButton" to="MultiplayerScreen" method="_on_join_button_pressed"]
