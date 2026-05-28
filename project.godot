@@ -24,8 +24,9 @@ buses/default_bus_layout="uid://bgq11akt5g4fg"
 
 [autoload]
 
-FirebaseManager="*uid://crhv260a1g3bj"
 Firebase="*uid://cvb26atjckwlq"
+FirebaseManager="*uid://crhv260a1g3bj"
+AnalyticsManager="*uid://b8tm10dxdb6sl"
 Prefs="*uid://bq4vynw7q6sul"
 GameSession="*uid://uatweii6sv5o"
 DataManager="*uid://b2xdrng7rbmc2"
@@ -57,7 +58,7 @@ project/assembly_name="Cornzone"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/playerprefs/plugin.cfg")
+enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/godotx_firebase/plugin.cfg", "res://addons/playerprefs/plugin.cfg")
 
 [physics]
 

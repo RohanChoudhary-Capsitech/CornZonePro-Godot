@@ -13,6 +13,8 @@ func _ready() -> void:
  
 	if FirebaseManager.data_loaded or PlayerData.has_loaded_data:
 		await _on_data_ready()
+		
+	
 	else:
 		pass
 		#rank_label.text = "Loading..."

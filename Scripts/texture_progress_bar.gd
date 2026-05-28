@@ -3,9 +3,9 @@ var _tween: Tween
 var _fetch_done := 0
 var _fetch_count := 3
 var _current_progress := 0.0
-const MILESTONE_AUTH   := 0.30
+const MILESTONE_AUTH   := 0.20
 const MILESTONE_PLAYER := 0.65
-const MILESTONE_CONFIG := 0.90
+const MILESTONE_CONFIG := 0.95
 const MILESTONE_DONE   := 1.00
 func _ready():
 	value = 0

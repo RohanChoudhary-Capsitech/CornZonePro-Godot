@@ -3,7 +3,10 @@ extends Node3D
 signal username_changed(user_name: String)
 @onready var username:LineEdit = $LoginScreen/LoginPanel/Panel/UserName
 var user_name: String = ""
- 
+
+@onready var delete_loading_screen: CanvasLayer =  $LoginLoadingScreen
+@onready var delete_loading_text :RichTextLabel = $LoginLoadingScreen/LoadingText
+
 func _ready() -> void:
 	if not username.text_changed.is_connected(_on_user_name_text_changed):
 		username.text_changed.connect(_on_user_name_text_changed)
@@ -38,12 +41,15 @@ func _on_user_name_text_changed(new_text: String) -> void:
 	Authentication.user_name = user_name
 
  
- 
 func _on_delete_account_button_pressed() -> void:
+	delete_loading_text.text = "Deleting..."
+	UIManager.toggle_canvas(delete_loading_screen)
+	
+
 	var uid = Firebase.Auth.auth.localid
-	print("UID:::::",uid)
+	#print("UID:::::",uid)
 	if uid == "":
-		print("Cannot delete player data: missing Firebase uid")
+		#print("Cannot delete player data: missing Firebase uid")
 		return
 		
 	var username = PlayerData.player_name.strip_edges().to_lower()
@@ -59,7 +65,7 @@ func _on_delete_account_button_pressed() -> void:
 		
 	var auth_deleted = await _delete_authenticated_user()
 	if not auth_deleted:
-		print("Player data was deleted, but Firebase Auth account delete failed")
+		#print("Player data was deleted, but Firebase Auth account delete failed")
 		return
 	#PlayerData.reset_defaults()
 	delete_local_save()
@@ -97,7 +103,6 @@ func _delete_player_document(collection_path: String, document_id: String) -> vo
 	document.collection_name = collection_path
 	var result = await collection.delete(document)
 	print("Deleted ", collection_path, "/", document_id, ": ", result)
- 
  
 func _delete_authenticated_user() -> bool:
 	if Firebase.Auth.auth.is_empty() or not Firebase.Auth.auth.has("idtoken"):

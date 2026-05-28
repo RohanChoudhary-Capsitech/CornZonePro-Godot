@@ -2347,7 +2347,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_lddgv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_smgrs")
 
 [node name="LoginLoadingScreen" type="CanvasLayer" parent="." unique_id=1160084063]
-visible = false
+layer = 50
 
 [node name="BG" type="TextureRect" parent="LoginLoadingScreen" unique_id=16847954]
 anchors_preset = 15

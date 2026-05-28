@@ -12,6 +12,9 @@ func _ready() -> void:
  
  
 func load_leaderboard():
+	
+	#UIManager.toggle_canvas($"../../../../../LoginLoadingScreen")
+	
 	if FirebaseManager.player_id == "" or not PlayerData.has_loaded_data:
 		await FirebaseManager.on_data_loaded
  
@@ -20,6 +23,9 @@ func load_leaderboard():
  
  
 func _on_leaderboard_loaded(entries: Array, my_rank: int):
+	
+	#UIManager.toggle_canvas($"../../../..")
+	
 	# Clear old rows
 	for child in get_children():
 		child.queue_free()
@@ -52,4 +58,4 @@ func _on_leaderboard_loaded(entries: Array, my_rank: int):
 		print("MY UID: ", my_uid)
  
 		if row_uid == my_uid:
-			row.modulate = Color.YELLOW
+			row.modulate = Color.CYAN

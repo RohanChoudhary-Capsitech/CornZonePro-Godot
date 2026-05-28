@@ -11,6 +11,8 @@ func on_ball_entered(body: Node3D) -> void:
 	GameSession.add_score(1, delta)
 	on_score()
 
+	AnalyticsManager.log_event("pots")
+	
 	PlayerData.total_pots += 1
 	PlayerData.save_local()
 	FirebaseManager.mark_dirty([
