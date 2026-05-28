@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var wind_animation := get_node_or_null("WindAnimation") as Node2D
 @onready var wind_particles := get_node_or_null("WindAnimation/GPUParticles2D") as GPUParticles2D
 @onready var no_wind_button := $"PowerUp Panel/PowerUp Panel BG/NoWind" as Button
-
+@onready var micro_interaction := $MicroInteraction
 var no_wind_until_msec: int = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +14,8 @@ func _ready() -> void:
 	if no_wind_button:
 		no_wind_button.disabled = true
 	update_ui()
+	AnimateManager.micro_interaction_signal.connect(pop_in)
+	AnimateManager.party_popper_signal.connect(party_popper)
 
 func update_ui()->void:
 	$Coins/Label.text = str(DataManager.get_coins())
@@ -48,13 +50,44 @@ func hide_wind() -> void:
 		no_wind_button.disabled = true
 
 func _on_show_projectile_pressed() -> void:
-	var possible:bool=await  DataManager.spend_coins(30)
+	var possible:bool = await DataManager.spend_coins(30)
 	if possible:
+		AnimateManager.power_up = true
+		print("SIGNAL BUS POWERUP WALA ",AnimateManager.power_up)
 		GameSession.activate_projectile_preview(5.0)
 		SoundManager.play_powerup()
 	else:
-		print("Not enough coins")
+		print("Not enough coins")		
+		
+func pop_in(img_path: String):
+	print("THIS GOT CALLED")
+	var texture = load(img_path) as Texture2D
+	micro_interaction.texture = texture
+	micro_interaction.visible = true
+	
+	# Reset — no position override, stays where placed in scene
+	micro_interaction.scale = Vector2.ZERO
+	micro_interaction.modulate.a = 0.0
+	micro_interaction.rotation = 0.0
 
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(micro_interaction, "scale", Vector2.ONE, 0.1)\
+		.set_trans(Tween.TRANS_EXPO)\
+		.set_ease(Tween.EASE_OUT)
+	tween.tween_property(micro_interaction, "modulate:a", 1.0, 0.1)\
+		.set_trans(Tween.TRANS_LINEAR)
+	await get_tree().create_timer(0.8).timeout
+	var tween2 = create_tween()
+	tween2.tween_property(micro_interaction, "modulate:a", 0.0, 0.5)\
+		.set_trans(Tween.TRANS_LINEAR)
+
+	await get_tree().create_timer(0.5).timeout
+	micro_interaction.visible = false
+
+func party_popper():
+	$Confetti.restart()
+	$Confetti.emitting = true
 
 func _on_no_wind_pressed() -> void:
 	var possible: bool = await DataManager.spend_coins(10)

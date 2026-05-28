@@ -31,4 +31,5 @@ func _on_body_entered(body: Node3D) -> void:
 		GameSession.pots_update.emit()
 
 func _on_body_exited(body: Node3D) -> void:
-	pass
+	AnimateManager.is_pot = true
+	AnimateManager.is_grounded = false

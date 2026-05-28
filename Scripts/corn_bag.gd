@@ -15,6 +15,8 @@ var throw_requested: bool = false
 
 @export var throw_gravity_scale: float = 4.0
 
+var micro_interaction_img = "res://Texture Or Sprites/MicroInteractions/oops.png"
+var is_pot:bool = false
 
 func _ready() -> void:
 	add_to_group("active_bag")
@@ -126,6 +128,7 @@ func _apply_throw(direction: Vector3, strength: float) -> void:
 	SoundManager.play_bag_throw()
 	set_meta("throw_player", GameSession.current_turn)
 	_start_throw_physics(direction, strength)
+	AnimateManager.show_once = true
 
 	# Sync to clients
 	if (
@@ -213,6 +216,18 @@ func _on_body_entered(body: Node) -> void:
 		return
 
 	if _is_ground_body(body):
+		await get_tree().create_timer(0.1).timeout  # wait for body_exited to fire
+		
+		print("GROUND PE GIR GAYA")
+		
+		if not AnimateManager.is_pot:
+			AnimateManager.successive_pots = 0
+			if AnimateManager.show_once:
+				AnimateManager.micro_interaction_signal.emit(micro_interaction_img)
+		
+		AnimateManager.is_pot = false
+		AnimateManager.show_once = false
+		print("BAG ON GROUND")
 		_handle_ground_after_board()
 
 func deactivate_bag():
