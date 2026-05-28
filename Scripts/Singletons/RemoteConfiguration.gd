@@ -1,7 +1,7 @@
 extends Node
  
-const PROJECT_ID = "practicehaigodotme"
-const CONFIG_URL = "https://firestore.googleapis.com/v1/projects/" + "practicehaigodotme" + "/databases/(default)/documents/config/game_settings"
+const PROJECT_ID = "cornzonepro"
+const CONFIG_URL = "https://firestore.googleapis.com/v1/projects/" + "cornzonepro" + "/databases/(default)/documents/config/game_settings"
  
 signal config_loaded
  
@@ -13,7 +13,7 @@ func _ready():
 	# ✅ Re-fetch every 30 seconds
 	var timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = 20000.0
+	timer.wait_time = 86400.0
 	timer.autostart = true
 	timer.timeout.connect(fetch_config)
 	timer.start()

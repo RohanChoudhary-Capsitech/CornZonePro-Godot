@@ -45,15 +45,18 @@ func _on_delete_account_button_pressed() -> void:
 	if uid == "":
 		print("Cannot delete player data: missing Firebase uid")
 		return
- 
+		
+	var username = PlayerData.player_name.strip_edges().to_lower()
+	
 	await _delete_player_document("players/" + uid + "/Profile", "Profile")
 	await _delete_player_document("players/" + uid + "/Stats", "stats")
 	await _delete_player_document("players/" + uid + "/Inventory", "inventory")
 	await _delete_player_document("players/" + uid + "/Miscellaneous", "misc")
 	await _delete_player_document("players/" + uid + "/Session", "active")
 	await _delete_player_document("players", uid)
-	#await _delete_player_document("usernames/", Authentication.user_name)
- 
+	if username != "":
+		await _delete_player_document("usernames", username)
+		
 	var auth_deleted = await _delete_authenticated_user()
 	if not auth_deleted:
 		print("Player data was deleted, but Firebase Auth account delete failed")
