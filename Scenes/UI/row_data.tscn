@@ -49,13 +49,12 @@ anchor_right = 0.293
 anchor_bottom = 0.5
 offset_left = -39.197006
 offset_top = -11.5
-offset_right = 38.802994
+offset_right = 147.94
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_2pf5w")
 theme_override_font_sizes/font_size = 16
-text = "himanshu"
 autowrap_mode = 2
 
 [node name="ScoreGroup" type="TextureRect" parent="." unique_id=1702430566]

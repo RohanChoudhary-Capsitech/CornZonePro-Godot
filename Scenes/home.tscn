@@ -7267,6 +7267,28 @@ text = "Leaderboard"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="LoadingText" type="Label" parent="LeaderBoardScreen/Panel/PanelBg" unique_id=1791420348]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -12.5
+offset_right = 155.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 20
+text = "Loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="DataContainer" type="ScrollContainer" parent="LeaderBoardScreen/Panel/PanelBg" unique_id=2086032764]
 layout_mode = 1
 anchors_preset = 15
