@@ -4,6 +4,7 @@ var isInternetConnected:bool = false
 
 func _ready():
 	Authentication.account_created.connect(naya_func)
+	Authentication.duplicate_name.connect(notificate_changed)
 
 func _on_submit_button_pressed() -> void:
 	SoundManager.play_button_clicks()
@@ -21,3 +22,5 @@ func _on_submit_button_pressed() -> void:
 func naya_func():
 	UIManager.enable_canvas($"../HomeScreen")
 	
+func notificate_changed():
+	$"../LoginLoadingScreen/LoadingText".text = "Username exists"

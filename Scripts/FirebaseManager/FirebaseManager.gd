@@ -274,23 +274,24 @@ func init(uid: String, login_method: String = "", create_defaults: bool = false,
 	create_defaults_for_missing_docs = create_defaults
 	PlayerData.player_id = uid
 	PlayerData.login_method = login_method
-	if create_defaults_for_missing_docs:
-		var clean_name = user_name.strip_edges()
-		# User entered custom username
-		if clean_name != "":
-			PlayerData.player_name = clean_name
-			await register_username(clean_name)
-			# Guest account → auto generate username
-		else:
-			var generated_name := ""
-			while true:
-				generated_name = generate_random_names() + uid.right(4)
-				var available = await is_username_available(generated_name)
-				if available:
-					break
-			PlayerData.player_name = generated_name
-			# Register inside usernames collection
-			await register_username(generated_name)
+
+	# if create_defaults_for_missing_docs:
+	# 	var clean_name = user_name.strip_edges()
+	# 	# User entered custom username
+	# 	if clean_name != "":
+	# 		PlayerData.player_name = clean_name
+	# 		await register_username(clean_name)
+	# 		# Guest account → auto generate username
+	# 	else:
+	# 		var generated_name := ""
+	# 		while true:
+	# 			generated_name = generate_random_names() + uid.right(4)
+	# 			var available = await is_username_available(generated_name)
+	# 			if available:
+	# 				break
+	# 		PlayerData.player_name = generated_name
+	# 		# Register inside usernames collection
+	# 		await register_username(generated_name)
 	_players_col = Firebase.Firestore.collection("players/" + uid + "/Profile")
 	_stats_col = Firebase.Firestore.collection("players/" + uid + "/Stats")
 	_inventory_col = Firebase.Firestore.collection("players/" + uid + "/Inventory")
@@ -305,7 +306,6 @@ func generate_random_names() -> String:
 		"Neo", "Dark", "Ghost", "Turbo",
 		"Blaze", "Venom", "Pixel", "Hyper",
 		"Nova", "Rex", "Ace", "Bolt",
- 
 		"Axel", "Zion", "Fury", "Drift",
 		"Vibe", "Glitch", "Frost", "Flare",
 		"Storm", "Spike", "Flint", "Shadow",
@@ -781,7 +781,14 @@ func is_username_available(username: String) -> bool:
 
 	var data = doc.get_unsafe_document()
 
-	return data.is_empty()
+	if data.is_empty():
+		return true
+
+	# FIX: agar same uid ka username hai toh available maano
+	if str(data.get("uid", "")) == player_id:
+		return true
+
+	return false
 
 
 func register_username(username: String) -> bool:
@@ -808,3 +815,23 @@ func register_username(username: String) -> bool:
 	await usernames_col.set_doc(username, data)
 
 	return true
+
+
+func is_username_mine(username: String, uid: String) -> bool:
+	username = username.strip_edges().to_lower()
+	if username == "":
+		return false
+
+	usernames_col = Firebase.Firestore.collection("usernames")
+	var doc = await usernames_col.get_doc(username)
+	if doc == null:
+		return false
+
+	var data = doc.get_unsafe_document()
+	if data.is_empty():
+		return false
+
+	# Agar username ka uid match karta hai — ye mera username hai
+	return str(data.get("uid", "")) == uid
+
+	

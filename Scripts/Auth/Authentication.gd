@@ -6,8 +6,14 @@ var online
 var _auth_flow_in_progress: bool = false
 var _loaded_uid: String = ""
 var samedevice:bool = false
+var _play_games_available: bool = false
+var YOUR_WEB_CLIENT_ID = "667151349390-cae5rviit5lepl8hrscuc1qsj7oe7eis.apps.googleusercontent.com"
+var sign_in_client
+var _play_games_player_name: String = ""
+var _play_games_auth_code: String = ""
 
 signal account_created
+signal duplicate_name
 
 
 func _log(msg):
@@ -15,6 +21,7 @@ func _log(msg):
  
 func _ready():
 	cleanup_invalid_local_files()
+	#_setup_play_games()
 	# _log("READY STARTED")
 	
 	if not Firebase.Auth.login_succeeded.is_connected(on_login_succeeded):
@@ -27,7 +34,7 @@ func _ready():
 		Firebase.Auth.signup_failed.connect(on_signup_failed)
  
 	# Detect logged in device
-	PlayerData.detect_device_type()
+	# PlayerData.detect_device_type()
 	online = await FirebaseManager.internet_available()
 	await _restore_saved_session()
  
@@ -48,7 +55,7 @@ func _restore_saved_session():
 			PlayerData.check_logged_in = true
 
 			# Init manager without cloud access
-			FirebaseManager.init(
+			await FirebaseManager.init(
 				saved_uid,
 				PlayerData.get_saved_session_method(),
 				false
@@ -106,13 +113,43 @@ func on_login_succeeded(auth):
 		print("ERROR: uid empty after login!")
 		_log("Calling _init_and_load with uid = " + uid)
 		return
-	if _auth_flow_in_progress or _loaded_uid == uid:
+	if _auth_flow_in_progress:
 		return
 
 	_log("Firebase localid = " + str(Firebase.Auth.auth.localid))
 	Firebase.Auth.save_auth(auth)
 	PlayerData.check_logged_in = true
-	await _init_and_load(uid, pending_login_method, pending_login_method == "anonymous")
+	var create_defaults := false
+
+	# PLAY GAMES LOGIN FLOW
+	if pending_login_method == "google_play":
+
+		var profile_ref = Firebase.Firestore.collection(
+			"players/" + uid + "/Profile"
+		)
+
+		var profile_doc = await profile_ref.get_doc("Profile")
+
+		var profile_exists := false
+
+		if profile_doc != null:
+			var data = profile_doc.get_unsafe_document()
+
+			if not data.is_empty():
+				profile_exists = true
+
+		# Existing account → FALSE
+		# New account → TRUE
+		create_defaults = !profile_exists
+
+		print("[PLAY GAMES]")
+		print("Profile exists: ", profile_exists)
+		print("create_defaults: ", create_defaults)
+	# Guest login
+	elif pending_login_method == "anonymous":
+		create_defaults = true
+	
+	await _init_and_load(uid, pending_login_method, create_defaults)
  
 func on_signup_succeeded(auth):
 	print(auth)
@@ -152,7 +189,6 @@ func on_login_as_a_guest_pressed():
  
 # ── Shared init function used by all login paths ──────────────────
 func _init_and_load(uid: String, login_method: String, create_defaults: bool):
-	
 	_log("_init_and_load START")
 	_log("uid = " + uid)
 	_log("login_method = " + login_method)
@@ -170,12 +206,7 @@ func _init_and_load(uid: String, login_method: String, create_defaults: bool):
 		_auth_flow_in_progress = false
 		return
 
-	# var clean_name = user_name.strip_edges().to_lower()
-	# var available = await FirebaseManager.is_username_available(clean_name)
-	# if not available:
-	# 	print("Username already exists")
-	# 	return
-	FirebaseManager.init(uid, login_method, create_defaults,user_name)
+	await FirebaseManager.init(uid, login_method, create_defaults,user_name)
 	if create_defaults:
 		var clean_name = user_name.strip_edges().to_lower()
 
@@ -184,11 +215,17 @@ func _init_and_load(uid: String, login_method: String, create_defaults: bool):
 			clean_name = FirebaseManager.generate_random_names().to_lower() + uid.right(4)
 
 		var available = await FirebaseManager.is_username_available(clean_name)
-		if not available:
+		if not available and create_defaults == true:
+			duplicate_name.emit()
 			print("Username already exists")
 			_auth_flow_in_progress = false
 			return
-
+			# if username_belongs_to_me == true:
+			# 	await FirebaseManager.register_username(clean_name)
+			# else:
+			# 	return
+			
+		PlayerData.player_name = clean_name
 		await FirebaseManager.register_username(clean_name)
 	# await FirebaseManager.register_username(clean_name)
 	
@@ -252,7 +289,7 @@ func _handle_session(uid: String) -> bool:
 			return true
 
 
-		if time_since_last < 40:
+		if time_since_last < 10:
 			print("Account active on another device (", time_since_last, "s ago)")
 			#%StateLabel.text = "Account already in use on another device"
 			return false
@@ -295,3 +332,110 @@ func cleanup_invalid_local_files():
 		dir.remove("user.auth")
 		if FileAccess.file_exists("user://prefs.save"):
 			dir.remove("prefs.save")
+
+
+
+#func _setup_play_games():
+	#print("[PLAY GAMES] Checking plugin...")
+#
+	#if not Engine.has_singleton("GodotPlayGameServices"):
+		#print("[PLAY GAMES] Plugin not available")
+		#_play_games_available = false
+		#return
+#
+	#_play_games_available = true
+#
+	#GodotPlayGameServices.initialize()
+#
+	#sign_in_client = preload("res://addons/GodotPlayGameServices/scripts/sign_in/sign_in_client.gd").new()
+#
+	#add_child(sign_in_client)
+#
+	#if not sign_in_client.server_side_access_requested.is_connected(_on_server_auth_code_received):
+		#sign_in_client.server_side_access_requested.connect(_on_server_auth_code_received)
+#
+	## Player info ke liye plugin signal connect karo
+	#var plugin = Engine.get_singleton("GodotPlayGameServices")
+	#if plugin and not plugin.is_connected("currentPlayerLoaded", _on_play_games_player_loaded):
+		#plugin.connect("currentPlayerLoaded", _on_play_games_player_loaded)
+#
+	#print("[PLAY GAMES]  Setup complete")
+#
+
+
+func on_play_games_button_pressed():
+	print("[PLAY GAMES]  Button clicked")
+	
+	if not _play_games_available:
+		print("[PLAY GAMES]  Not available on this platform")
+		return
+	if _auth_flow_in_progress:
+		print("[PLAY GAMES]  Auth already in progress")
+		return
+
+	pending_login_method = "google_play"
+	_play_games_player_name = ""
+	_play_games_auth_code = ""
+
+	
+	var plugin = Engine.get_singleton("GodotPlayGameServices")
+	if plugin == null:
+		print("[PLAY GAMES] Plugin null")
+		return
+
+	# Purane code ki tarah — signIn() not sign_in()
+	print("[PLAY GAMES]  Calling signIn()...")
+	sign_in_client.request_server_side_access(
+	YOUR_WEB_CLIENT_ID,
+	true
+	)
+	
+	if not plugin.is_connected("currentPlayerLoaded", _on_play_games_player_loaded):
+		plugin.connect("currentPlayerLoaded", _on_play_games_player_loaded)
+	plugin.loadCurrentPlayer(false)
+
+
+func _on_server_auth_code_received(auth_code: String) -> void:
+	print("[PLAY GAMES] Server auth code received")
+
+	if auth_code.is_empty():
+		print("[PLAY GAMES]  Empty auth code")
+		return
+
+	_play_games_auth_code = auth_code
+	print(auth_code)
+	await get_tree().create_timer(1.0).timeout
+	# REAL Firebase Google Play login
+	Firebase.Auth.login_with_google_play(auth_code)
+
+
+func _on_play_games_player_loaded(player_json: String) -> void:
+	print("[PLAY GAMES]  Player data received!")
+	print("[PLAY GAMES] Raw: ", player_json)
+
+	var player = JSON.parse_string(player_json)
+	if player == null:
+		print("[PLAY GAMES]  JSON parse failed")
+		return
+
+	var player_name = player.get("displayName", "")
+	var pg_id       = player.get("playerId", "")
+
+	if user_name.strip_edges() != "":
+		# User ne custom name enter kiya — use wahi rakho
+		print("[PLAY GAMES] Using user entered name: ", user_name)
+	elif player_name != "":
+		# User ne koi name nahi diya — Play Games name use karo
+		user_name = player_name
+		print("[PLAY GAMES] Using Play Games name: ", user_name)
+
+	print("[PLAY GAMES] Name: ", player_name)
+	print("[PLAY GAMES] ID: ",   pg_id)
+
+	_play_games_player_name = player_name
+	print("[PLAY GAMES] Final user_name: ", user_name)
+
+	# # Username set karo — Firebase login ke baad use hoga
+	# if player_name != "":
+	# 	user_name = player_name
+	# 	print("[PLAY GAMES]  user_name set to: ", user_name)

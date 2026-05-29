@@ -58,7 +58,7 @@ project/assembly_name="Cornzone"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/godotx_firebase/plugin.cfg", "res://addons/playerprefs/plugin.cfg")
+enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/godotx_firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg", "res://addons/playerprefs/plugin.cfg")
 
 [physics]
 

@@ -324,6 +324,29 @@ func login_with_oauth(_token: String, provider: AuthProvider) -> void:
 			if err != OK:
 				is_busy = false
 				Firebase._printerr("Error logging in with oauth: %s" % err)
+				
+func login_with_google_play(auth_code: String) -> void:
+	if _is_ready():
+		is_busy = true
+
+		_oauth_login_request_body.postBody = "code=" + auth_code.uri_encode() + "&providerId=playgames.google.com"
+		_oauth_login_request_body.requestUri = "http://localhost"
+		_oauth_login_request_body.returnIdpCredential = true
+
+		requesting = Requests.LOGIN_WITH_OAUTH
+		auth_request_type = Auth_Type.LOGIN_OAUTH
+
+		var err = request(
+			_base_url + _signin_with_oauth_request_url,
+			_headers,
+			HTTPClient.METHOD_POST,
+			JSON.stringify(_oauth_login_request_body)
+		)
+
+		if err != OK:
+			is_busy = false
+			Firebase._printerr("Error logging in with Google Play: %s" % err)
+
 
 # Exchange the authorization oAuth2 code obtained from browser with a proper access id_token
 func exchange_token(code : String, redirect_uri : String, request_url: String, _client_id: String, _client_secret: String) -> void:

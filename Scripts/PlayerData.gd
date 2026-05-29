@@ -42,6 +42,10 @@ const DEVICE_ID_PATH = "user://device_id.txt"
 var session_id: String = ""
 var session_active: bool = false
 
+
+var _cached_session: Dictionary = {}
+var _session_cache_valid: bool = false
+
  
 # ── Local save path ───────────────────────────────────────────────
 const SAVE_PATH = "user://playerData.json"
@@ -49,6 +53,8 @@ const SESSION_PATH = "user://loginSession.json"
  
 func _ready():
 	get_or_create_device_id()
+	detect_device_type()
+	print("device type " , detect_device_type())
 	if player_id != "":
 		check_logged_in = true
 	# print("LOGGED IN: ",check_logged_in)
@@ -88,6 +94,8 @@ func save_login_session(uid: String, method: String = ""):
 		"player_id": uid,
 		"login_method": method
 	}
+	_cached_session = data
+	_session_cache_valid = true
 	var file = FileAccess.open(SESSION_PATH, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(data))
@@ -99,6 +107,8 @@ func has_saved_login_session() -> bool:
 	return check_logged_in
 
 func get_saved_login_session() -> Dictionary:
+	if _session_cache_valid and not _cached_session.is_empty():
+		return _cached_session
 	if not FileAccess.file_exists(SESSION_PATH):
 		return {}
 	var file = FileAccess.open(SESSION_PATH, FileAccess.READ)
@@ -118,6 +128,8 @@ func get_saved_session_method() -> String:
  
 func clear_login_session():
 	check_logged_in = false
+	_cached_session = {}
+	_session_cache_valid = false
 	if FileAccess.file_exists(SESSION_PATH):
 		var dir = DirAccess.open("user://")
 		if dir:
@@ -266,6 +278,8 @@ func apply_dict(data: Dictionary):
 	last_claim_time = float(data.get("last_claim_time", last_claim_time))
 	reward_day = int(data.get("reward_day", reward_day))
 
+	detect_device_type()
+
 	print("claim data",last_claim_time)
 	print("reward day",reward_day)
  
@@ -392,7 +406,7 @@ func _generate_device_id() -> String:
 	var base = str(Time.get_unix_time_from_system()) + "_" + str(randi()) + "_" + str(OS.get_unique_id())
 	return base.sha256_text()  # hashed → fixed length + secure
  
-func detect_device_type():
+func detect_device_type() -> String:
 	var os_name = OS.get_name()
  
 	match os_name:
@@ -406,3 +420,5 @@ func detect_device_type():
 			device_type = "web"
 		_:
 			device_type = "unknown"
+	
+	return device_type

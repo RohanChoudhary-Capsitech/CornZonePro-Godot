@@ -178,6 +178,7 @@ func _on_unlock_button_pressed(config: MapConfig) -> void:
 	var coins := int(PlayerData.coins)
 
 	if price > coins:
+		AnimateManager.show_notification($Notification, "Not enough coins to unlock", 1.5)
 		push_warning("[MapSelect] Not enough coins to unlock %s for %s." % [config.map_name, GameSession.selected_mode])
 		return
 
