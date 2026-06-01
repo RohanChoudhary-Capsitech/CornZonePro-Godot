@@ -17,17 +17,15 @@ func on_ball_entered(body: Node3D) -> void:
 	PlayerData.save_local()
 	FirebaseManager.mark_dirty([
 		FirebaseManager.SECTION_STATS
-	])	
-	AnimateManager.successive_pots += 1
+	])
 	
-	#print("SUCCCESSSIVE POTSSSSSSSS:",AnimateManager.successive_pots)
-		
-	if AnimateManager.successive_pots % 5 == 0:
+	AnimateManager.successive_pots += 1
+	print("SUCCCESSSIVE POTSSSSSSSS:",AnimateManager.successive_pots)
+	if AnimateManager.successive_pots % 4 == 0:
 		AnimateManager.micro_interaction_signal.emit(micro_interaction_texture_legendary)
 		AnimateManager.party_popper_signal.emit()
 		
 	if AnimateManager.power_up:
-		print("SIGNAL POWERUP IS TRUE")
 		AnimateManager.micro_interaction_signal.emit(micro_interaction_texture_perfect_shot)
 	AnimateManager.power_up = false	
 	

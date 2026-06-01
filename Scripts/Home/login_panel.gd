@@ -13,6 +13,7 @@ func _on_submit_button_pressed() -> void:
 		print("internet is available")
 		Authentication.on_login_as_a_guest_pressed()
 		UIManager.toggle_canvas($"../LoginLoadingScreen")
+		$LoginPanel/Panel/SubmitButton.disabled = true
 	else:
 		print("internet not available")
 		UIManager.toggle_canvas($"../NoInternetScreen")
@@ -24,3 +25,11 @@ func naya_func():
 	
 func notificate_changed():
 	$"../LoginLoadingScreen/LoadingText".text = "Username exists"
+	$LoginPanel/Panel/SubmitButton.disabled = false
+
+
+func _on_google_pressed() -> void:
+	AnimateManager.show_notification($Notification, "Coming soon...", 1.5)
+
+func _on_apple_pressed() -> void:
+	AnimateManager.show_notification($Notification, "Coming soon...", 1.5)

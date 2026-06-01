@@ -4,5 +4,6 @@ var isInternetConnected : bool = false
 
 func _on_button_pressed() -> void:
 	isInternetConnected = await FirebaseManager.internet_available()
-	if  isInternetConnected == true:
+	if isInternetConnected == true:
 		hide()
+		$"../LoginScreen/LoginPanel/Panel/SubmitButton".disabled = false

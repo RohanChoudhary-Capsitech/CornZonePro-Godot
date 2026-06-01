@@ -134,8 +134,11 @@
 [ext_resource type="Shader" uid="uid://bohat414bcbjh" path="res://Materials/UI/stayconnetc.gdshader" id="107_rjsir"]
 [ext_resource type="Texture2D" uid="uid://pkyghxe5wddp" path="res://Texture Or Sprites/MoreGame Icons/pebble trace.png" id="107_stky2"]
 [ext_resource type="Texture2D" uid="uid://5md07hbidd24" path="res://Texture Or Sprites/Setting Screen/youtube.png" id="108_gtgww"]
+[ext_resource type="Texture2D" uid="uid://cueeife8yfgqx" path="res://Texture Or Sprites/Multiplayer/warningbg.png" id="108_i6hta"]
 [ext_resource type="Texture2D" uid="uid://cm36t43r5gcru" path="res://Texture Or Sprites/MoreGame Icons/dodge driver.png" id="108_ochsh"]
+[ext_resource type="Texture2D" uid="uid://w0c5b1sd2ro5" path="res://Texture Or Sprites/Multiplayer/heading.png" id="109_moiof"]
 [ext_resource type="Texture2D" uid="uid://diy8cusw23xn5" path="res://Texture Or Sprites/MoreGame Icons/laserMind.png" id="109_sg8ud"]
+[ext_resource type="Texture2D" uid="uid://6vsnyed7htdp" path="res://Texture Or Sprites/Multiplayer/yesnobox.png" id="110_moiof"]
 [ext_resource type="Texture2D" uid="uid://k13v3ek2drk0" path="res://Texture Or Sprites/MoreGame Icons/SymbolSync.png" id="110_v6eu8"]
 [ext_resource type="Texture2D" uid="uid://c5a4ref66oxlk" path="res://Texture Or Sprites/MapsBG/Rectangle 428.png" id="111_pmkjb"]
 [ext_resource type="Texture2D" uid="uid://dy4bagd3gaunh" path="res://Texture Or Sprites/MapsBG/Rectangle 429.png" id="112_4u64y"]
@@ -172,6 +175,10 @@ texture = ExtResource("12_gyiet")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyiet"]
 texture = ExtResource("12_gyiet")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dcc5r"]
+texture = ExtResource("12_gyiet")
+modulate_color = Color(0.5686275, 0.5686275, 0.5686275, 0.89411765)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dyher"]
 texture = ExtResource("14_lddgv")
@@ -1931,6 +1938,15 @@ metadata/_custom_type_script = "uid://hg7o7dnfqa0x"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtgww"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_41rvc"]
+texture = ExtResource("110_moiof")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgr6f"]
+texture = ExtResource("110_moiof")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rky14"]
+texture = ExtResource("110_moiof")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbwbq"]
 texture = ExtResource("148_meccc")
 
@@ -2242,6 +2258,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LoginScreen" type="CanvasLayer" parent="." unique_id=1588224233]
+visible = false
 script = ExtResource("9_cmu2r")
 
 [node name="BG" type="TextureRect" parent="LoginScreen" unique_id=635102092]
@@ -2315,6 +2332,7 @@ theme_override_font_sizes/font_size = 23
 theme_override_styles/normal = SubResource("StyleBoxTexture_jjai4")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t7s13")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gyiet")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_dcc5r")
 text = "Play as guest"
 text_overrun_behavior = 2
 
@@ -2344,6 +2362,20 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ppvi3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lddgv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_smgrs")
+
+[node name="Notification" type="Label" parent="LoginScreen" unique_id=917701428]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 123.0
+offset_right = 20.0
+offset_bottom = 146.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LoginLoadingScreen" type="CanvasLayer" parent="." unique_id=1160084063]
 layer = 50
@@ -2582,7 +2614,7 @@ offset_top = 3.0
 offset_right = 132.0
 offset_bottom = 20.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
-theme_override_fonts/font = ExtResource("19_55ff8")
+theme_override_fonts/font = ExtResource("136_bxkn3")
 theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2604,7 +2636,7 @@ offset_top = 20.0
 offset_right = 99.0
 offset_bottom = 34.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
-theme_override_fonts/font = ExtResource("20_ao7do")
+theme_override_fonts/font = ExtResource("136_bxkn3")
 theme_override_font_sizes/font_size = 11
 text = "Unranked"
 
@@ -4292,6 +4324,7 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxTexture_2vf33")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_12lhb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_lfbfi")
@@ -4901,6 +4934,150 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yr2fe")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_83p4v")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_gtgww")
+
+[node name="Control" type="Control" parent="SettingScreen" unique_id=841563230]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="SettingScreen/Control" unique_id=1263043892]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_cykap")
+expand_mode = 3
+
+[node name="DeleteConfirm" type="TextureRect" parent="SettingScreen/Control/BG" unique_id=1340112740]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.64616
+offset_top = -88.125
+offset_right = 182.64616
+offset_bottom = 88.125
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("108_i6hta")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Top" type="TextureRect" parent="SettingScreen/Control/BG/DeleteConfirm" unique_id=1253257595]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -102.06913
+offset_top = -19.0
+offset_right = 102.06912
+offset_bottom = 18.125
+grow_horizontal = 2
+texture = ExtResource("109_moiof")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="SettingScreen/Control/BG/DeleteConfirm/Top" unique_id=1408059812]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.875
+offset_top = -15.5
+offset_right = 32.875
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 25
+text = "Alert"
+
+[node name="Mid" type="Label" parent="SettingScreen/Control/BG/DeleteConfirm" unique_id=1157353518]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.75
+offset_top = -32.5
+offset_right = 154.75
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 25
+text = "Are you sure want to delete ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingScreen/Control/BG/DeleteConfirm" unique_id=1454289434]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.5
+offset_top = -16.125
+offset_right = 112.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 60
+
+[node name="Yes" type="Button" parent="SettingScreen/Control/BG/DeleteConfirm/HBoxContainer" unique_id=547878716]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_styles/normal = SubResource("StyleBoxTexture_41rvc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgr6f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rky14")
+text = "Yes"
+
+[node name="No" type="Button" parent="SettingScreen/Control/BG/DeleteConfirm/HBoxContainer" unique_id=210352946]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_styles/normal = SubResource("StyleBoxTexture_41rvc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rgr6f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rky14")
+text = "No"
+
+[node name="Notification" type="Label" parent="SettingScreen" unique_id=724089698]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 94.0
+offset_right = 20.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_vkfas")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MapSelectScreen" type="CanvasLayer" parent="." unique_id=1321304884]
 visible = false
@@ -7419,6 +7596,8 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="pressed" from="LoginScreen/LoginPanel/Panel/SubmitButton" to="LoginScreen" method="_on_submit_button_pressed"]
+[connection signal="pressed" from="LoginScreen/LoginPanel/Panel/OauthContainer/Google" to="LoginScreen" method="_on_google_pressed"]
+[connection signal="pressed" from="LoginScreen/LoginPanel/Panel/OauthContainer/Apple" to="LoginScreen" method="_on_apple_pressed"]
 [connection signal="pressed" from="NoInternetScreen/Panel/PanelBG/Button" to="NoInternetScreen" method="_on_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/SettingButton" to="HomeScreen" method="_on_setting_button_pressed"]
 [connection signal="pressed" from="HomeScreen/Panel/Profile/Profile Icon" to="HomeScreen" method="_on_profile_icon_pressed"]
@@ -7452,6 +7631,8 @@ autowrap_mode = 2
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/MusicOffButton" to="SettingScreen" method="_on_music_off_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/SoundOnButton" to="SettingScreen" method="_on_sound_on_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/SoundOffButton" to="SettingScreen" method="_on_sound_off_button_pressed"]
+[connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/VBoxContainer/LoginWithGoogle" to="SettingScreen" method="_on_login_with_google_pressed"]
+[connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/VBoxContainer/LoginWithApple" to="SettingScreen" method="_on_login_with_apple_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/DeleteAccountButton" to="." method="_on_delete_account_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SettingPanel/BG/PrivacyPolicyButton" to="SettingScreen" method="_on_privacy_policy_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/SocialPanel/SocialBG/VBoxContainer/Facebook/GoBtn/FacebookButton" to="SettingScreen" method="_on_facebook_button_pressed"]
@@ -7463,6 +7644,8 @@ autowrap_mode = 2
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/TopPanel/Social/SocialsButton" to="SettingScreen" method="_on_socials_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/TopPanel/MoreGames/MoreGamePanelButton" to="SettingScreen" method="_on_more_game_panel_button_pressed"]
 [connection signal="pressed" from="SettingScreen/Panel/SettingBg/TopPanel/GodotCredit/GodotCreditButton" to="SettingScreen" method="_on_godot_credit_button_pressed"]
+[connection signal="pressed" from="SettingScreen/Control/BG/DeleteConfirm/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="SettingScreen/Control/BG/DeleteConfirm/HBoxContainer/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/LawnMap" to="MapSelectScreen" method="_on_lawn_map_pressed"]
 [connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StreetMap" to="MapSelectScreen" method="_on_street_map_pressed"]
 [connection signal="pressed" from="MapSelectScreen/Panel/ScrollContainer/HBoxContainer/StadiumMap" to="MapSelectScreen" method="_on_stadium_map_pressed"]

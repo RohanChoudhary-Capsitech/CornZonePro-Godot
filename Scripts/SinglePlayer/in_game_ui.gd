@@ -28,7 +28,7 @@ func _on_add_timer_pressed() -> void:
 		SoundManager.play_powerup()
 	else:
 		if AdManager.is_rewarded_ready():
-			AdManager.Callable(self, "add_time")
+			AdManager.show_rewarded(Callable(self, "add_time"))
 		else:
 			AnimateManager.show_notification($Notification, " No ads available", 1.5)
 

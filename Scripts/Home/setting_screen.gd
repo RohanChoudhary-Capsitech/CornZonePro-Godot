@@ -240,3 +240,11 @@ func _on_sound_off_button_pressed() -> void:
 	$Panel/SettingBg/SettingPanel/BG/SoundOffButton.visible = false
 	$Panel/SettingBg/SettingPanel/BG/SoundOnButton.visible = true
 	SoundManager.set_sfx(true)
+
+
+func _on_login_with_google_pressed() -> void:
+	AnimateManager.show_notification($Notification, "Coming soon", 1.5)
+
+
+func _on_login_with_apple_pressed() -> void:
+	AnimateManager.show_notification($Notification, "Coming soon", 1.5)

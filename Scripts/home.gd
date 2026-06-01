@@ -42,35 +42,9 @@ func _on_user_name_text_changed(new_text: String) -> void:
 
  
 func _on_delete_account_button_pressed() -> void:
-	delete_loading_text.text = "Deleting..."
-	UIManager.toggle_canvas(delete_loading_screen)
-	
+	$SettingScreen/Control.visible = true
+	AnimateManager.pop_animation($SettingScreen/Control)
 
-	var uid = Firebase.Auth.auth.localid
-	#print("UID:::::",uid)
-	if uid == "":
-		#print("Cannot delete player data: missing Firebase uid")
-		return
-		
-	var username = PlayerData.player_name.strip_edges().to_lower()
-	
-	await _delete_player_document("players/" + uid + "/Profile", "Profile")
-	await _delete_player_document("players/" + uid + "/Stats", "stats")
-	await _delete_player_document("players/" + uid + "/Inventory", "inventory")
-	await _delete_player_document("players/" + uid + "/Miscellaneous", "misc")
-	await _delete_player_document("players/" + uid + "/Session", "active")
-	await _delete_player_document("players", uid)
-	if username != "":
-		await _delete_player_document("usernames", username)
-		
-	var auth_deleted = await _delete_authenticated_user()
-	if not auth_deleted:
-		#print("Player data was deleted, but Firebase Auth account delete failed")
-		return
-	#PlayerData.reset_defaults()
-	delete_local_save()
-	get_tree().quit()
- 
 func delete_local_save() -> void:
 	var uid = Firebase.Auth.auth.localid
  
@@ -117,3 +91,37 @@ func _delete_authenticated_user() -> bool:
  
 	print("Firebase Auth account deleted")
 	return true
+
+
+func _on_yes_pressed() -> void:
+	delete_loading_text.text = "Deleting..."
+	UIManager.toggle_canvas(delete_loading_screen)
+
+	var uid = Firebase.Auth.auth.localid
+	#print("UID:::::",uid)
+	if uid == "":
+		#print("Cannot delete player data: missing Firebase uid")
+		return
+		
+	var username = PlayerData.player_name.strip_edges().to_lower()
+	
+	await _delete_player_document("players/" + uid + "/Profile", "Profile")
+	await _delete_player_document("players/" + uid + "/Stats", "stats")
+	await _delete_player_document("players/" + uid + "/Inventory", "inventory")
+	await _delete_player_document("players/" + uid + "/Miscellaneous", "misc")
+	await _delete_player_document("players/" + uid + "/Session", "active")
+	await _delete_player_document("players", uid)
+	if username != "":
+		await _delete_player_document("usernames", username)
+		
+	var auth_deleted = await _delete_authenticated_user()
+	if not auth_deleted:
+		#print("Player data was deleted, but Firebase Auth account delete failed")
+		return
+	#PlayerData.reset_defaults()
+	delete_local_save()
+	get_tree().quit()
+
+
+func _on_no_pressed() -> void:
+	$SettingScreen/Control.visible = false
