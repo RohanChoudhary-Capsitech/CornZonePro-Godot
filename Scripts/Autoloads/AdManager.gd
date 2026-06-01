@@ -220,8 +220,10 @@ func show_interstitial(callback = null):
 		#log_msg("Showing Interstitial")
 		admob.show_interstitial_ad()
 	else:
-		#log_msg("Interstitial Not Ready")
+		#log_msg("Interstitial Not Ready")	
 		load_interstitial()
+
+
 
 func _on_interstitial_loaded(ad_info, response_info):
 	log_msg("Interstitial Loaded")
@@ -236,6 +238,7 @@ func _on_interstitial_failed(ad_info, error):
 
 func _on_interstitial_closed(ad_info):
 	#log_msg("Interstitial Closed")
+	UIManager.ad_showing = false
 	get_tree().paused = false
 	interstitial_loaded = false
 	load_interstitial()
@@ -364,6 +367,7 @@ func _on_user_earned_reward(ad_info, reward_data):
 # =========================================================
 func _on_ad_opened(ad_info):
 	#log_msg("Ad Opened → Pause Game")
+	UIManager.ad_showing = true
 	get_tree().paused = true
 
 # =========================================================

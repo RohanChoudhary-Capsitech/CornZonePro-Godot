@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://d0m2tntjy8sdo" path="res://Texture Or Sprites/Home Screen/Coin.png" id="18_kx4oe"]
 [ext_resource type="Texture2D" uid="uid://c8m6hjr6dhre8" path="res://Texture Or Sprites/Home Screen/RightPanel.png" id="18_ppvi3"]
 [ext_resource type="Texture2D" uid="uid://b5bryhtvbharh" path="res://Texture Or Sprites/Home Screen/xp.png" id="18_uo4rt"]
-[ext_resource type="FontFile" uid="uid://b2fmlgiq7kk2o" path="res://Fonts/Inter_18pt-Medium.ttf" id="19_55ff8"]
 [ext_resource type="Texture2D" uid="uid://ci1a7ul0of74y" path="res://Texture Or Sprites/Home Screen/Setting.png" id="19_kx4oe"]
 [ext_resource type="Texture2D" uid="uid://b42mg77pltmtv" path="res://Texture Or Sprites/Home Screen/Achievement.png" id="19_pkgvh"]
 [ext_resource type="Texture2D" uid="uid://cn8thjv6khfxw" path="res://Texture Or Sprites/Home Screen/Info.png" id="20_7wmtr"]
@@ -3642,7 +3641,7 @@ offset_top = 3.0
 offset_right = 132.0
 offset_bottom = 20.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
-theme_override_fonts/font = ExtResource("19_55ff8")
+theme_override_fonts/font = ExtResource("136_bxkn3")
 theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -3664,7 +3663,7 @@ offset_top = 20.0
 offset_right = 99.0
 offset_bottom = 34.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
-theme_override_fonts/font = ExtResource("20_ao7do")
+theme_override_fonts/font = ExtResource("136_bxkn3")
 theme_override_font_sizes/font_size = 11
 text = "Unranked"
 

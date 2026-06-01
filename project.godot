@@ -16,7 +16,10 @@ config/auto_accept_quit=false
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/low_processor_mode=true
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://bh668o1e47qcv"
+config/icon="uid://devm0nre7n3ia"
+boot_splash/minimum_display_time=3000
 
 [audio]
 

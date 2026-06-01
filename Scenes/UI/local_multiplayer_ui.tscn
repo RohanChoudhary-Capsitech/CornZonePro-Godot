@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://d08raarnnjqhd" path="res://Scripts/Local Multiplayer/warning_panel.gd" id="15_0jujm"]
 [ext_resource type="Texture2D" uid="uid://cueeife8yfgqx" path="res://Texture Or Sprites/Multiplayer/warningbg.png" id="15_kqj4q"]
 [ext_resource type="Texture2D" uid="uid://w0c5b1sd2ro5" path="res://Texture Or Sprites/Multiplayer/heading.png" id="16_0wiir"]
+[ext_resource type="FontFile" uid="uid://c5ju1f60ajujo" path="res://Fonts/Poppins-SemiBold.ttf" id="17_8nca6"]
 [ext_resource type="Texture2D" uid="uid://6vsnyed7htdp" path="res://Texture Or Sprites/Multiplayer/yesnobox.png" id="18_edp0u"]
 [ext_resource type="Script" uid="uid://owqqak1qhuqh" path="res://Scripts/Local Multiplayer/rematch_popup.gd" id="19_edp0u"]
 
@@ -973,12 +974,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -41.5
-offset_top = -50.0
-offset_right = 41.5
-offset_bottom = -22.0
+offset_left = -70.0
+offset_top = -55.0
+offset_right = 70.0
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("17_8nca6")
 theme_override_font_sizes/font_size = 20
 text = "Opponent left"
 horizontal_alignment = 1

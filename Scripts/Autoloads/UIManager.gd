@@ -34,11 +34,15 @@ var no_internet_screen:CanvasLayer
 
 signal UI_required
 
-
+var ad_showing := false
 # func _ready() -> void:
 # 	NetworkManager.game_ready.connect(local_multiplayer)
 
+
+
 func _notification(what: int) -> void:
+	if ad_showing:
+		return
 	match what:
 		NOTIFICATION_APPLICATION_PAUSED, NOTIFICATION_APPLICATION_FOCUS_OUT, NOTIFICATION_WM_WINDOW_FOCUS_OUT:
 			_set_home_coming_state(0)
@@ -156,6 +160,15 @@ func _go_home_rpc():
 	_go_home_local()
 
 func _go_home_local():
+	var interad := int(Prefs.get_int("interstitial_ad_count", 1))
+	var should_show_interstitial := interad % 3 == 0
+	Prefs.set_int("interstitial_ad_count", interad + 1)
+	if should_show_interstitial and AdManager.is_interstitial_ready():
+		AdManager.show_interstitial(Callable(self,"_finish_go_home"))
+	else:
+		_finish_go_home()
+	
+func _finish_go_home():
 	Prefs.set_int("home_comeing",1)
 	GameSession.reset_match()
 	SceneManager.free_all()
