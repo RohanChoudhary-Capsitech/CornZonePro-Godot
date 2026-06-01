@@ -13,8 +13,6 @@ func _ready() -> void:
  
 	if FirebaseManager.data_loaded or PlayerData.has_loaded_data:
 		await _on_data_ready()
-		
-	
 	else:
 		pass
 		#rank_label.text = "Loading..."
@@ -23,7 +21,8 @@ func _ready() -> void:
 		RemoteConfiguration.config_loaded.connect(_apply_config)
 	if RemoteConfiguration.is_loaded:
 		_apply_config()
-	   
+	
+	LeaderboardManager.current_user_rank.connect(update_ui)
 	   
 func _apply_config():
 	var daily_bonus = RemoteConfiguration.config.get("daily_bonus", false)

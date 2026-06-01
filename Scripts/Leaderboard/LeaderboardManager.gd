@@ -1,6 +1,7 @@
 extends Node
  
 signal leaderboard_loaded(entries: Array, my_rank: int)
+signal current_user_rank()
  
 const COLLECTION = "leaderboard"
 const PAGE_SIZE = 10
@@ -178,7 +179,8 @@ func get_global_rank() -> int:
 			return rank
  
 		rank += 1
- 
+	PlayerData.rank = str(rank)
+	current_user_rank.emit()
 	return rank
  
  
