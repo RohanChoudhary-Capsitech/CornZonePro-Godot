@@ -23,6 +23,7 @@ func load_leaderboard():
  
 	# Fetch leaderboard from Firebase
 	await LeaderboardManager.fetch_top(false)
+	LeaderboardManager.update_cached_player()
  
  
 func _on_leaderboard_loaded(entries: Array, my_rank: int):

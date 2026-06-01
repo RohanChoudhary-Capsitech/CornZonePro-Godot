@@ -237,3 +237,41 @@ func print_leaderboard(entries: Array):
 			e.get("player_name", "Unknown"),
 			e.get("Coins", 0)
 		])
+		
+		
+		
+func update_cached_player() -> void:
+
+	if FirebaseManager.player_id == "":
+		return
+
+	var uid := FirebaseManager.player_id
+	var found := false
+
+	for i in range(_cached_entries.size()):
+
+		if _cached_entries[i].get("uid","") == uid:
+
+			_cached_entries[i]["Coins"] = PlayerData.coins
+			_cached_entries[i]["ELO"] = PlayerData.elo
+			_cached_entries[i]["MatchesWon"] = PlayerData.matches_won
+			_cached_entries[i]["MatchesLost"] = PlayerData.matches_lost
+			_cached_entries[i]["Rank"] = PlayerData.rank
+
+			found = true
+			break
+
+	if found:
+
+		_sort_entries(_cached_entries)
+
+		_cached_my_rank = _get_my_rank_from_entries(_cached_entries)
+
+		PlayerData.rank = str(_cached_my_rank)
+
+		leaderboard_loaded.emit(
+			_cached_entries,
+			_cached_my_rank
+		)
+
+		current_user_rank.emit()

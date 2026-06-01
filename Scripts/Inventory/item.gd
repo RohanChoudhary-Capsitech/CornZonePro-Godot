@@ -56,6 +56,7 @@ func _on_equip_pressed() -> void:
 	elif _item_type == "Boards":
 		PlayerData.equipped_board = _item_id 
 	PlayerData.save_local()
+	_on_button_pressed()
 	FirebaseManager.mark_dirty([FirebaseManager.SECTION_INVENTORY])
  
 	# Refresh all sibling cards so equipped state updates
