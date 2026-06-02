@@ -34,6 +34,8 @@ func get_my_player_id() -> int:
 	return 1 if multiplayer.is_server() else 2
 
 func _input(event: InputEvent) -> void:
+	if GameSession.game_paused:
+		return
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			start_pos = event.position

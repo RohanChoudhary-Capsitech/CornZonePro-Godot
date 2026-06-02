@@ -5,18 +5,22 @@ func _ready() -> void:
 	_sync_total_scores()
 
 func _on_resume_pressed() -> void:
+	GameSession.game_paused = false
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($".")
 
 func _on_cross_pressed() -> void:
+	GameSession.game_paused = false
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($".")
 
 func _on_restart_pressed() -> void:
+	GameSession.game_paused = false
 	SoundManager.play_button_clicks()
 	UIManager.restart()
 
 func _on_home_pressed() -> void:
+	GameSession.game_paused = false
 	SoundManager.play_button_clicks()
 	UIManager.home()
 

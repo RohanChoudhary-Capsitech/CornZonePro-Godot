@@ -83,6 +83,7 @@ func _on_match_over() -> void:
 
 
 func _on_pause_button_pressed() -> void:
+	GameSession.game_paused = true
 	SoundManager.play_button_clicks()
 	UIManager.toggle_canvas($"../PauseMenu")
 	AnimateManager.pop_animation($"../PauseMenu/Control")

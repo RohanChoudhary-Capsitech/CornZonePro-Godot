@@ -18,7 +18,7 @@ func gameover()->void:
 		return
 	
 	is_game_over = true
-	
+	GameSession.game_paused = true
 	timer_slider.time_over.disconnect(gameover)
 	SoundManager.play_game_over()
 	UIManager.enable_canvas($".")
@@ -29,12 +29,14 @@ func gameover()->void:
  
 
 func _on_home_pressed() -> void:
+	GameSession.game_paused = false
 	SoundManager.play_button_clicks()
 	UIManager.home()
 	LeaderboardManager.update_cached_player()
 
 
 func _on_share_pressed() -> void:
+	GameSession.game_paused = false
 	print("share button pressed")
 	if Engine.has_singleton("GodotShare"):
 		var share: Object = Engine.get_singleton("GodotShare")
@@ -44,5 +46,6 @@ func _on_share_pressed() -> void:
 
 
 func _on_restart_pressed() -> void:
+	GameSession.game_paused = false
 	SoundManager.play_button_clicks()
 	UIManager.restart()

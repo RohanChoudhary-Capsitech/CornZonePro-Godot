@@ -12,15 +12,13 @@ signal item_clicked(material)
 var item_material
 var actual_material: Material
 
-
-
 @onready var equip_button: Button = $TextureRect/EquipButton
  
 var _item_id: String = ""
 var _item_type: String = ""  # "Cornbags" or "Boards"
 
-func _ready():
-	button.pressed.connect(_on_button_pressed)
+#func _ready():
+	#button.pressed.connect(_on_button_pressed)
 
 func setup(item_id: String, item_type: String):
 	item_material = CatalogManager.get_material(item_id)

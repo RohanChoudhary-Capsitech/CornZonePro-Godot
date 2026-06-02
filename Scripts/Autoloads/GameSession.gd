@@ -19,6 +19,8 @@ signal turn_changed(player: int)
 signal bag_result_recorded(player: int, points: int)
 signal bag_result_changed(player: int, index: int, points: int)
 
+var game_paused:bool
+
 var bags_thrown_this_turn: int = 0
 var match_over: bool = false
 
