@@ -41,6 +41,7 @@ func on_score() -> void:
 func on_match_end() -> void:
 	# DataManager.add_coins(GameSession.score_p1 * 2)
 	_save_scores()
+	AnalyticsManager.log_event("Timer mode end")
 	# print(current_pots,"itna h player k")
 
 func _save_scores() -> void:

@@ -34,6 +34,7 @@ func on_match_end() -> void:
 	if GameSession.match_over and not results_saved:
 		_save_scores()
 	_reset_round()
+	AnalyticsManager.log_event("Pass & Play end")
 
 func _reset_round()->void:
 	p1_bags_thrown = 0

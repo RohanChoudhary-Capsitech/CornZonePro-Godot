@@ -159,8 +159,6 @@
 [ext_resource type="Texture2D" uid="uid://dqcaig6nvmj" path="res://Texture Or Sprites/MapsBG/SelectMap.png" id="154_44nip"]
 [ext_resource type="Texture2D" uid="uid://dvf7kds3bcepb" path="res://Texture Or Sprites/Leaderboard Screen/Group 258.png" id="156_453j7"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0rbp"]
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cykap"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nw1ns"]
@@ -2194,6 +2192,7 @@ visible = false
 script = ExtResource("1_bih4p")
 
 [node name="LoadingScreen" type="CanvasLayer" parent="." unique_id=1544671716]
+visible = false
 
 [node name="BG" type="TextureRect" parent="LoadingScreen" unique_id=1198044369]
 anchors_preset = 15
@@ -2257,17 +2256,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LoginScreen" type="CanvasLayer" parent="." unique_id=1588224233]
-visible = false
 script = ExtResource("9_cmu2r")
 
 [node name="BG" type="TextureRect" parent="LoginScreen" unique_id=635102092]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CompressedTexture2D_q0rbp")
+texture = ExtResource("2_dwsb2")
 expand_mode = 4
 
 [node name="LoginPanel" type="Control" parent="LoginScreen" unique_id=225060287]
@@ -2615,6 +2612,7 @@ offset_bottom = 20.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
 theme_override_fonts/font = ExtResource("136_bxkn3")
 theme_override_font_sizes/font_size = 13
+text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -6115,7 +6113,7 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("7_vkfas")
 theme_override_font_sizes/font_size = 20
-text = "Himanshu 1234"
+text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
